@@ -341,7 +341,7 @@ nav.scrolled {
   font-family: 'Cairo', sans-serif;
   font-size: 11px; font-weight: 500; letter-spacing: .12em;
   text-transform: uppercase;
-  background: var(--espresso); color: var(--ivory);
+  background: var(--ivory); color: var(--deep);
   border: none; padding: 14px 40px;
   border-radius: 2px; cursor: pointer;
   transition: background .2s; margin: 0 auto;
@@ -351,7 +351,7 @@ nav.scrolled {
 
 /* ── WAITLIST ── */
 .section-waitlist {
-  background: var(--ivory);
+  background: var(--espresso);
   padding: 100px 48px; text-align: center;
   position: relative; overflow: hidden;
 }
@@ -361,7 +361,7 @@ nav.scrolled {
   transform: translate(-50%, -50%);
   font-family: 'Spectral', serif;
   font-size: 300px; font-weight: 300;
-  color: rgba(74,51,40,.04);
+  color: rgba(255,255,255,.02);
   letter-spacing: .05em; white-space: nowrap;
   pointer-events: none; user-select: none;
 }
@@ -370,11 +370,11 @@ nav.scrolled {
 .waitlist-inner h2 {
   font-family: 'Spectral', serif;
   font-size: clamp(32px, 4vw, 48px); font-weight: 300;
-  color: var(--deep); margin-bottom: 16px; letter-spacing: .02em;
+  color: var(--ivory); margin-bottom: 16px; letter-spacing: .02em;
 }
 .waitlist-inner p {
   font-size: 15px; font-weight: 300; line-height: 1.85;
-  color: var(--rose); margin-bottom: 40px;
+  color: rgba(243,236,228,.75); margin-bottom: 40px;
 }
 .waitlist-form {
   display: flex; gap: 0; border: 0.5px solid rgba(243,236,228,.2);
@@ -583,8 +583,10 @@ nav.scrolled {
 .section-dr--dark {
   background: var(--espresso);
 }
+.section-dr .section-label { color: var(--terra); }
 .section-dr--dark .section-label { color: var(--terra); }
 .section-dr--dark h2 { color: var(--ivory); }
+.section-dr h2 { color: var(--deep); }
 .section-dr--dark .dr-right p { color: rgba(243,236,228,.82); }
 .section-dr--dark .dr-card {
   background: rgba(255,255,255,.05);
@@ -608,8 +610,8 @@ nav.scrolled {
     <div class="nav-sub">Medical Aesthetics</div>
   </div>
   <ul class="nav-links">
-    <li><a href="#how-we-work">Our process</a></li>
     <li><a href="#approach">Why Aahana</a></li>
+    <li><a href="#how-we-work">Our process</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#dr">Dr. Shankar</a></li>
   </ul>
@@ -646,29 +648,7 @@ nav.scrolled {
 </section>
 
 <!-- INTRO -->
-<section class="section-pillars" id="how-we-work">
-  <div class="section-label reveal">Our process</div>
-  <div class="pillars-grid">
-    <div class="pillar reveal">
-      <div class="pillar-img-placeholder"><span>Image · Consultation</span></div>
-      <div class="pillar-num">01</div>
-      <h3>Know you</h3>
-      <p>Every plan begins with a thorough intake — your health history, skin concerns, lifestyle, and goals. We also offer a <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Prakriti constitutional assessment</a> as part of this step: a brief Ayurvedic typing that tells us how your skin is built — not just how it looks today. It's optional, but we offer it to everyone.</p>
-    </div>
-    <div class="pillar reveal">
-      <div class="pillar-img-placeholder"><span>Image · Visia scan</span></div>
-      <div class="pillar-num">02</div>
-      <h3>See your skin</h3>
-      <p>Visia clinical imaging anchors every analysis — eight clinical metrics against a database matched to your age and skin tone. Where your intake calls for it, Dr. Shankar may also recommend labs or skin microbiome testing.</p>
-    </div>
-    <div class="pillar reveal">
-      <div class="pillar-img-placeholder"><span>Image · Treatment</span></div>
-      <div class="pillar-num">03</div>
-      <h3>Your plan</h3>
-      <p>A treatment plan built from everything we've learned — your clinical data, your constitution, your skin tone, your goals, and your life. Not a template borrowed from someone else's skin. Every recommendation is specific to you, sequenced correctly, and explained clearly.</p>
-    </div>
-  </div>
-</section><section class="section-combined" id="approach">
+<section class="section-combined" id="approach">
   <div class="combined-inner">
 
     <!-- Left: The Difference text -->
@@ -717,6 +697,28 @@ nav.scrolled {
     </div>
 
   </div>
+</section><section class="section-pillars" id="how-we-work">
+  <div class="section-label reveal">Our process</div>
+  <div class="pillars-grid">
+    <div class="pillar reveal">
+      <div class="pillar-img-placeholder"><span>Image · Consultation</span></div>
+      <div class="pillar-num">01</div>
+      <h3>Know you</h3>
+      <p>Every plan begins with a thorough intake — your health history, skin concerns, lifestyle, and goals. We also offer a <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Prakriti constitutional assessment</a> as part of this step: a brief Ayurvedic typing that tells us how your skin is built — not just how it looks today. It's optional, but we offer it to everyone.</p>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar-img-placeholder"><span>Image · Visia scan</span></div>
+      <div class="pillar-num">02</div>
+      <h3>See your skin</h3>
+      <p>Visia clinical imaging anchors every analysis — eight clinical metrics against a database matched to your age and skin tone. Where your intake calls for it, Dr. Shankar may also recommend labs or skin microbiome testing.</p>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar-img-placeholder"><span>Image · Treatment</span></div>
+      <div class="pillar-num">03</div>
+      <h3>Your plan</h3>
+      <p>A treatment plan built from everything we've learned — your clinical data, your constitution, your skin tone, your goals, and your life. Not a template borrowed from someone else's skin. Every recommendation is specific to you, sequenced correctly, and explained clearly.</p>
+    </div>
+  </div>
 </section>
 
 
@@ -725,7 +727,7 @@ nav.scrolled {
 
 
 <!-- DR MUNDLURU -->
-<section class="section-services" id="services">
+<section class="section-services section-services--dark" id="services">
   <div class="section-label reveal">What we offer</div>
   <div class="services-grid">
     <div class="service-item reveal">
@@ -756,7 +758,7 @@ nav.scrolled {
 </section>
 
 <!-- SERVICES -->
-<section class="section-dr section-dr--dark" id="dr">
+<section class="section-dr" id="dr">
   <div class="dr-left reveal">
     <div class="dr-card">
       <div class="dr-name">Dr. Shankar Mundluru</div>
