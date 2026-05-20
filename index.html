@@ -85,7 +85,7 @@ nav.scrolled {
   background: var(--deep);
   display: flex; flex-direction: column;
   justify-content: flex-end;
-  padding: 120px 48px 80px;
+  padding: 80px 48px 80px;
   position: relative;
   overflow: hidden;
 }
@@ -177,31 +177,6 @@ nav.scrolled {
   height: 48px; background: rgba(243,236,228,.2);
 }
 
-/* ── INTRO SECTION ── */
-.section-intro {
-  padding: 120px 48px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-  align-items: start;
-  border-bottom: 0.5px solid var(--border);
-}
-.section-label {
-  font-size: 11px; font-weight: 500; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--terra);
-  margin-bottom: 20px;
-}
-.section-intro-left h2 {
-  font-family: 'Spectral', serif;
-  font-size: clamp(36px, 4vw, 52px); font-weight: 300; letter-spacing: .01em;
-  line-height: 1.2; color: var(--deep); letter-spacing: .02em;
-}
-.section-intro-left h2 em {
-  font-style: italic; color: var(--brown);
-}
-.section-intro-right p {
-  font-size: 16px; font-weight: 300; line-height: 1.9;
-  color: var(--espresso); margin-bottom: 22px;
-}
-
 /* ── PILLARS ── */
 .section-pillars {
   padding: 100px 48px;
@@ -210,19 +185,23 @@ nav.scrolled {
 .pillars-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 0; margin-top: 60px;
+  align-items: start;
 }
 .pillar {
   padding: 40px 40px 40px 0;
   border-right: 0.5px solid var(--border);
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
 }
 .pillar:last-child { border-right: none; padding-right: 0; }
 .pillar:not(:first-child) { padding-left: 40px; }
 .pillar-img-placeholder {
-  width: 100%; aspect-ratio: 16/9;
+  width: 100%; height: 200px;
   background: var(--espresso);
   border-radius: 2px; margin-bottom: 24px;
   display: flex; align-items: center; justify-content: center;
   border: 0.5px dashed var(--clay); opacity: .45;
+  flex-shrink: 0;
 }
 .pillar-img-placeholder span {
   font-size: 10px; font-weight: 300; color: var(--clay);
@@ -232,7 +211,7 @@ nav.scrolled {
   font-family: 'Spectral', serif;
   font-size: 56px; font-weight: 300;
   color: var(--border); line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 20px; margin-top: 0;
 }
 .pillar h3 {
   font-family: 'Spectral', serif;
@@ -243,59 +222,9 @@ nav.scrolled {
   font-size: 14px; font-weight: 300; line-height: 1.85;
   color: var(--rose);
 }
-
-/* ── AYURVEDA SECTION ── */
-.section-ayurveda {
-  background: var(--deep);
-  padding: 120px 48px;
-  position: relative; overflow: hidden;
-}
-.section-ayurveda::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 0.5px;
-  background: linear-gradient(90deg, transparent, var(--clay), transparent);
-  opacity: .2;
-}
-.ayurveda-inner {
-  max-width: 800px; margin: 0 auto; text-align: center;
-}
-.ayurveda-inner .section-label { color: var(--terra); margin-bottom: 24px; }
-.ayurveda-inner h2 {
-  font-family: 'Spectral', serif;
-  font-size: clamp(32px, 4vw, 52px); font-weight: 300;
-  color: var(--ivory); line-height: 1.25; margin-bottom: 32px;
-  letter-spacing: .02em;
-}
-.ayurveda-inner h2 em { font-style: italic; color: var(--clay); }
-.ayurveda-inner p {
-  font-size: 16px; font-weight: 300; line-height: 1.9;
-  color: rgba(243,236,228,.75); margin-bottom: 20px;
-}
-.dosha-trio {
-  display: flex; gap: 0; margin-top: 64px;
-  border-top: 0.5px solid rgba(180,138,122,.2);
-  border-bottom: 0.5px solid rgba(180,138,122,.2);
-}
-.dosha {
-  flex: 1; padding: 40px 32px;
-  border-right: 0.5px solid rgba(180,138,122,.15);
-  text-align: left;
-}
-.dosha:last-child { border-right: none; }
-.dosha-name {
-  font-family: 'Spectral', serif;
-  font-size: 32px; font-weight: 300; font-style: italic;
-  color: var(--clay); margin-bottom: 8px;
-}
-.dosha-principle {
-  font-size: 11px; font-weight: 500; letter-spacing: .16em;
-  text-transform: uppercase; color: var(--terra);
-  margin-bottom: 16px;
-}
-.dosha-desc {
-  font-size: 13px; font-weight: 300; line-height: 1.85;
-  color: rgba(243,236,228,.6);
-}
+.pillar { display: flex; flex-direction: column; }
+.pillar-img-placeholder { order: -1; }
+.pillar-num { margin-top: auto; padding-top: 20px; }
 
 /* ── DR MUNDLURU ── */
 .section-dr {
@@ -347,7 +276,9 @@ nav.scrolled {
 }
 .section-services--dark .section-label { color: var(--terra); }
 .section-services--dark .service-cat { color: var(--terra); }
-.section-services--dark .service-item { border-right-color: rgba(180,138,122,.15); border-bottom-color: rgba(180,138,122,.15); }
+.section-services--dark .service-item { border-right-color: rgba(180,138,122,.15); border-bottom-color: rgba(180,138,122,.15); display: flex; flex-direction: column; }
+.section-services--dark .service-item h4 { margin-bottom: 10px; }
+.section-services--dark .service-cat { margin-bottom: 10px; }
 .section-services--dark h4 { color: var(--ivory); }
 .section-services--dark p { color: rgba(243,236,228,.5); }
 .section-services--dark .services-grid { border-top-color: rgba(180,138,122,.1); }
@@ -369,7 +300,11 @@ nav.scrolled {
 .service-item {
   padding: 32px 32px 32px 0;
   border-right: 0.5px solid var(--border);
+  display: flex; flex-direction: column;
 }
+.service-item .service-cat { margin-bottom: 8px; }
+.service-item h4 { margin-bottom: 8px; }
+.service-item p { margin-top: auto; }
 .service-item:last-child { border-right: none; }
 .service-item:not(:first-child) { padding-left: 32px; }
 .service-cat {
@@ -390,7 +325,7 @@ nav.scrolled {
   font-family: 'Cairo', sans-serif;
   font-size: 11px; font-weight: 500; letter-spacing: .12em;
   text-transform: uppercase;
-  background: var(--ivory); color: var(--deep);
+  background: var(--espresso); color: var(--ivory);
   border: none; padding: 14px 40px;
   border-radius: 2px; cursor: pointer;
   transition: background .2s; margin: 0 auto;
@@ -400,7 +335,7 @@ nav.scrolled {
 
 /* ── WAITLIST ── */
 .section-waitlist {
-  background: var(--espresso);
+  background: var(--ivory);
   padding: 100px 48px; text-align: center;
   position: relative; overflow: hidden;
 }
@@ -410,7 +345,7 @@ nav.scrolled {
   transform: translate(-50%, -50%);
   font-family: 'Spectral', serif;
   font-size: 300px; font-weight: 300;
-  color: rgba(255,255,255,.02);
+  color: rgba(74,51,40,.04);
   letter-spacing: .05em; white-space: nowrap;
   pointer-events: none; user-select: none;
 }
@@ -419,11 +354,11 @@ nav.scrolled {
 .waitlist-inner h2 {
   font-family: 'Spectral', serif;
   font-size: clamp(32px, 4vw, 48px); font-weight: 300;
-  color: var(--ivory); margin-bottom: 16px; letter-spacing: .02em;
+  color: var(--deep); margin-bottom: 16px; letter-spacing: .02em;
 }
 .waitlist-inner p {
   font-size: 15px; font-weight: 300; line-height: 1.85;
-  color: rgba(243,236,228,.7); margin-bottom: 40px;
+  color: var(--rose); margin-bottom: 40px;
 }
 .waitlist-form {
   display: flex; gap: 0; border: 0.5px solid rgba(243,236,228,.2);
@@ -463,11 +398,15 @@ nav.scrolled {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;
   padding-bottom: 60px;
   border-bottom: 0.5px solid rgba(243,236,228,.08);
+  align-items: start;
+}
+.footer-top > div:not(:first-child) {
+  padding-top: 40px;
 }
 .footer-brand-name {
-  font-family: 'Spectral', serif;
-  font-size: 28px; font-weight: 400; color: var(--ivory);
-  letter-spacing: .06em; margin-bottom: 6px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 28px; font-weight: 200; color: var(--ivory);
+  letter-spacing: .22em; margin-bottom: 6px;
 }
 .footer-brand-sub {
   font-size: 9px; font-weight: 300; letter-spacing: .2em;
@@ -564,6 +503,83 @@ nav.scrolled {
   .waitlist-form { flex-direction: column; }
   .waitlist-btn { text-align: center; }
 }
+
+/* ── COMBINED APPROACH + PRAKRITI ── */
+.section-combined {
+  background: var(--deep);
+  padding: 100px 48px;
+  position: relative; overflow: hidden;
+}
+.section-combined::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 0.5px;
+  background: linear-gradient(90deg, transparent, var(--clay), transparent);
+  opacity: .15;
+}
+.combined-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+.combined-left p, .combined-right p {
+  font-size: 15px; font-weight: 300; line-height: 1.9;
+  color: rgba(243,236,228,.65); margin-bottom: 18px;
+}
+.dosha-stack {
+  display: flex; flex-direction: column; gap: 0;
+  margin-top: 8px;
+}
+.dosha-row {
+  padding: 18px 0;
+  border-bottom: 0.5px solid rgba(180,138,122,.15);
+  display: grid;
+  grid-template-columns: 72px 140px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.dosha-row:last-child { border-bottom: none; }
+.dosha-name-sm {
+  font-family: 'Spectral', serif;
+  font-size: 18px; font-weight: 300; font-style: italic;
+  color: var(--clay);
+}
+.dosha-principle-sm {
+  font-size: 10px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--terra);
+  padding-top: 4px;
+}
+.dosha-desc-sm {
+  font-size: 13px; font-weight: 300; line-height: 1.75;
+  color: rgba(243,236,228,.55);
+}
+@media (max-width: 900px) {
+  .combined-inner { grid-template-columns: 1fr; gap: 48px; padding: 0; }
+  .section-combined { padding: 80px 24px; }
+  .dosha-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
+
+/* ── DR SECTION DARK VARIANT ── */
+.section-dr--dark {
+  background: var(--espresso);
+}
+.section-dr--dark .section-label { color: var(--terra); }
+.section-dr--dark h2 { color: var(--ivory); }
+.section-dr--dark .dr-right p { color: rgba(243,236,228,.65); }
+.section-dr--dark .dr-card {
+  background: rgba(255,255,255,.05);
+  border: 0.5px solid rgba(180,138,122,.2);
+}
+.section-dr--dark .dr-card::before {
+  border-color: rgba(180,138,122,.1);
+}
+.section-dr--dark .dr-name { color: var(--ivory); }
+.section-dr--dark .dr-creds { color: var(--terra); }
+.section-dr--dark .dr-detail { color: rgba(243,236,228,.5); }
+
 </style>
 </head>
 <body>
@@ -576,12 +592,11 @@ nav.scrolled {
   </div>
   <ul class="nav-links">
     <li><a href="#approach">Approach</a></li>
-    <li><a href="#ayurveda">Prakriti</a></li>
     <li><a href="#how-we-work">How we work</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#dr">Dr. Shankar</a></li>
   </ul>
-  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta" style="background:transparent;cursor:pointer;font-family:'Cairo',sans-serif;">Join the waitlist</button>
+  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta" style="background:transparent;cursor:pointer;font-family:'Cairo',sans-serif;border:0.5px solid rgba(243,236,228,.4);">Join the waitlist</button>
 </nav>
 
 <!-- HERO / COMING SOON -->
@@ -614,60 +629,6 @@ nav.scrolled {
 </section>
 
 <!-- INTRO -->
-<section class="section-intro" id="approach">
-  <div class="section-intro-left reveal">
-    <div class="section-label">The difference</div>
-    <h2>Where clinical science meets<br><em>constitutional wisdom</em></h2>
-  </div>
-  <div class="section-intro-right reveal">
-    <p>
-      Most medical aesthetics practices treat what they can see — what the scan shows, what the patient describes, what the mirror reveals. We go further.
-    </p>
-    <p>
-      Dr. Shankar's approach integrates Visia clinical imaging with Ayurvedic Prakriti typing — a framework for understanding individual constitution that has informed Indian medicine for thousands of years and that modern research is increasingly validating.
-    </p>
-    <p>
-      A <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Vata-dominant</a> patient with deep brown skin requires a completely different protocol than a <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Kapha-dominant</a> patient with the same Fitzpatrick type. Same melanin, different constitution, different plan. That specificity is what we're after.
-    </p>
-    <p>
-      Aahana was built to serve everyone — with particular expertise in skin of color, all gender identities, and patients who have historically felt overlooked or under-served by the aesthetics industry.
-    </p>
-  </div>
-  </div>
-</section>
-
-<!-- PILLARS -->
-<section class="section-ayurveda" id="ayurveda">
-  <div class="ayurveda-inner">
-    <div class="section-label">Prakriti · प्रकृति</div>
-    <h2>Your constitution shapes<br><em>everything about your skin</em></h2>
-    <p>
-      Prakriti identifies three fundamental constitutional forces — Vata, Pitta, and Kapha — and their unique combination in you determines your skin's characteristics, its sensitivities, its aging patterns, and its response to treatment.
-    </p>
-    <p>
-      At Aahana, Prakriti typing is central to how we practice — not an add-on, not a marketing angle. It's an optional assessment every patient can complete, and it's the layer that makes the difference between a good plan and one that's genuinely built for your skin.
-    </p>
-    <div class="dosha-trio reveal">
-      <div class="dosha">
-        <div class="dosha-name">Vata</div>
-        <div class="dosha-principle">Air · Space · Movement</div>
-        <div class="dosha-desc">Governs movement, circulation, and the nervous system. In the skin: dryness, delicacy, sensitivity. Reacts quickly to environment and stress. Ages early, needs barrier protection above all.</div>
-      </div>
-      <div class="dosha">
-        <div class="dosha-name">Pitta</div>
-        <div class="dosha-principle">Fire · Water · Transformation</div>
-        <div class="dosha-desc">Governs metabolism and transformation. In the skin: reactivity, photosensitivity, and pigmentation tendency. Bright and clear when balanced — flares with heat, hormones, and stress.</div>
-      </div>
-      <div class="dosha">
-        <div class="dosha-name">Kapha</div>
-        <div class="dosha-principle">Earth · Water · Structure</div>
-        <div class="dosha-desc">Governs structure, stability, and moisture. In the skin: thickness, resilience, natural oiliness. Stays youthful longer but prone to congestion and sluggishness. Ages with laxity.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AYURVEDA -->
 <section class="section-pillars" id="how-we-work">
   <div class="section-label reveal">How we work</div>
   <div class="pillars-grid">
@@ -681,7 +642,7 @@ nav.scrolled {
       <div class="pillar-img-placeholder"><span>Image · Visia scan</span></div>
       <div class="pillar-num">02</div>
       <h3>See your skin</h3>
-      <p>Visia clinical imaging is at the centre of every analysis — measuring eight metrics against a database matched to your age and skin tone. For patients where the intake suggests it, Dr. Shankar may also recommend additional testing: labs, skin microbiome analysis, or other assessments. The depth depends on what your skin and health history call for.</p>
+      <p>Visia clinical imaging anchors every analysis — eight clinical metrics against a database matched to your age and skin tone. Where your intake calls for it, Dr. Shankar may also recommend labs or microbiome testing.</p>
     </div>
     <div class="pillar reveal">
       <div class="pillar-img-placeholder"><span>Image · Treatment</span></div>
@@ -690,10 +651,64 @@ nav.scrolled {
       <p>A treatment plan built from everything we've learned — your clinical data, your constitution, your skin tone, your goals, and your life. Not a template borrowed from someone else's skin. Every recommendation is specific to you, sequenced correctly, and explained clearly.</p>
     </div>
   </div>
+</section><section class="section-combined" id="approach">
+  <div class="combined-inner">
+
+    <!-- Left: The Difference text -->
+    <div class="combined-left reveal">
+      <div class="section-label" style="color:var(--terra)">The difference</div>
+      <h2 style="font-family:'Spectral',serif;font-size:clamp(32px,3.5vw,48px);font-weight:300;color:var(--ivory);line-height:1.2;letter-spacing:.02em;margin-bottom:28px">
+        Where clinical science meets<br><em style="font-style:italic;color:var(--clay)">constitutional wisdom</em>
+      </h2>
+      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.65);margin-bottom:18px">
+        Most practices treat what they can see. We go further — integrating Visia clinical imaging with Ayurvedic Prakriti typing to understand how your skin is built, not just how it looks today.
+      </p>
+      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.65);margin-bottom:18px">
+        A Vata-dominant patient with deep brown skin needs a completely different protocol than a Kapha-dominant patient with the same Fitzpatrick type. Same melanin, different constitution, different plan.
+      </p>
+      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.65)">
+        Built for everyone — with particular expertise in skin of color, all gender identities, and patients who have felt overlooked by conventional aesthetics.
+      </p>
+    </div>
+
+    <!-- Right: Prakriti + doshas -->
+    <div class="combined-right reveal">
+      <div class="section-label" style="color:var(--terra);margin-bottom:12px">Prakriti · प्रकृति</div>
+      <h2 style="font-family:'Spectral',serif;font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--ivory);line-height:1.25;letter-spacing:.02em;margin-bottom:20px">
+        Your constitution shapes<br><em style="font-style:italic;color:var(--clay)">everything about your skin</em>
+      </h2>
+      <p style="font-size:14px;font-weight:300;line-height:1.85;color:rgba(243,236,228,.6);margin-bottom:32px">
+        Prakriti identifies three fundamental forces — Vata, Pitta, and Kapha — whose unique combination in you determines your skin's characteristics, its sensitivities, its aging patterns, and its response to treatment.
+      </p>
+      <div class="dosha-stack">
+        <div class="dosha-row">
+          <div class="dosha-name-sm">Vata</div>
+          <div class="dosha-principle-sm">Air · Movement</div>
+          <div class="dosha-desc-sm">Dry, sensitive, expressive. Reacts quickly. Ages early. Needs barrier protection above all.</div>
+        </div>
+        <div class="dosha-row">
+          <div class="dosha-name-sm">Pitta</div>
+          <div class="dosha-principle-sm">Fire · Transformation</div>
+          <div class="dosha-desc-sm">Reactive, photosensitive, pigmentation-prone. Bright when balanced — flares with heat and stress.</div>
+        </div>
+        <div class="dosha-row">
+          <div class="dosha-name-sm">Kapha</div>
+          <div class="dosha-principle-sm">Earth · Structure</div>
+          <div class="dosha-desc-sm">Thick, resilient, naturally oily. Stays youthful longer — but prone to congestion and laxity.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
+
+
+<!-- AYURVEDA -->
+
+
 <!-- DR MUNDLURU -->
-<section class="section-services section-services--dark" id="services">
+<section class="section-services" id="services">
   <div class="section-label reveal">What we offer</div>
   <div class="services-grid">
     <div class="service-item reveal">
@@ -719,12 +734,12 @@ nav.scrolled {
   </div>
   <div style="margin-top:48px;text-align:center" class="reveal">
     <p style="font-size:12px;font-weight:300;color:var(--rose);margin-bottom:20px">All treatment plans begin with a Visia skin analysis and consultation with Dr. Shankar.</p>
-    <a href="#waitlist" class="btn-primary" style="display:inline-block">Join the waitlist</a>
+    <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary" style="display:inline-block;cursor:pointer;font-family:'Cairo',sans-serif;border:none;">Join the waitlist</button>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="section-dr" id="dr">
+<section class="section-dr section-dr--dark" id="dr">
   <div class="dr-left reveal">
     <div class="dr-card">
       <div class="dr-name">Dr. Shankar Mundluru</div>
@@ -755,10 +770,8 @@ nav.scrolled {
     <div class="section-label">Opening soon</div>
     <h2>Opening 2026.<br>Be the first to know.</h2>
     <p>Aahana Medical Aesthetics opens in San Francisco in 2026. Join the waitlist to be notified when consultations open — and to receive early access.</p>
-    <button data-tally-open="kdJBYJ" data-tally-overlay="1" data-tally-emoji-text="✦" data-tally-emoji-animation="wave" class="waitlist-tally-btn">Join the waitlist</button>
-    <p style="font-size:11px;font-weight:300;color:rgba(243,236,228,.25);margin-top:16px">
-      No spam. We'll only write when consultations open.
-    </p>
+    <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="waitlist-tally-btn">Join the waitlist</button>
+    
   </div>
 </section>
 
@@ -775,7 +788,7 @@ nav.scrolled {
       <address>
         2175 3rd Street, Unit C1<br>
         San Francisco, CA 94107<br><br>
-        Hours TBD
+        Hours: coming soon
       </address>
     </div>
     <div class="footer-col">
