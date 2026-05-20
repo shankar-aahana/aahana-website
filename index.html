@@ -85,7 +85,7 @@ nav.scrolled {
   background: var(--deep);
   display: flex; flex-direction: column;
   justify-content: flex-end;
-  padding: 0 48px 80px;
+  padding: 120px 48px 80px;
   position: relative;
   overflow: hidden;
 }
@@ -185,7 +185,7 @@ nav.scrolled {
   border-bottom: 0.5px solid var(--border);
 }
 .section-label {
-  font-size: 9px; font-weight: 500; letter-spacing: .2em;
+  font-size: 11px; font-weight: 500; letter-spacing: .18em;
   text-transform: uppercase; color: var(--terra);
   margin-bottom: 20px;
 }
@@ -230,13 +230,13 @@ nav.scrolled {
 }
 .pillar-num {
   font-family: 'Spectral', serif;
-  font-size: 48px; font-weight: 300;
+  font-size: 56px; font-weight: 300;
   color: var(--border); line-height: 1;
   margin-bottom: 20px;
 }
 .pillar h3 {
   font-family: 'Spectral', serif;
-  font-size: 22px; font-weight: 400;
+  font-size: 26px; font-weight: 400;
   color: var(--deep); margin-bottom: 12px; letter-spacing: .02em;
 }
 .pillar p {
@@ -284,11 +284,11 @@ nav.scrolled {
 .dosha:last-child { border-right: none; }
 .dosha-name {
   font-family: 'Spectral', serif;
-  font-size: 28px; font-weight: 300; font-style: italic;
+  font-size: 32px; font-weight: 300; font-style: italic;
   color: var(--clay); margin-bottom: 8px;
 }
 .dosha-principle {
-  font-size: 9px; font-weight: 500; letter-spacing: .18em;
+  font-size: 11px; font-weight: 500; letter-spacing: .16em;
   text-transform: uppercase; color: var(--terra);
   margin-bottom: 16px;
 }
@@ -321,7 +321,7 @@ nav.scrolled {
   color: var(--ivory); margin-bottom: 6px; letter-spacing: .02em;
 }
 .dr-creds {
-  font-size: 10px; font-weight: 400; letter-spacing: .14em;
+  font-size: 12px; font-weight: 400; letter-spacing: .12em;
   text-transform: uppercase; color: var(--terra);
   margin-bottom: 24px;
 }
@@ -373,18 +373,30 @@ nav.scrolled {
 .service-item:last-child { border-right: none; }
 .service-item:not(:first-child) { padding-left: 32px; }
 .service-cat {
-  font-size: 8px; font-weight: 500; letter-spacing: .2em;
+  font-size: 11px; font-weight: 500; letter-spacing: .16em;
   text-transform: uppercase; color: var(--terra); margin-bottom: 12px;
 }
 .service-item h4 {
   font-family: 'Spectral', serif;
-  font-size: 18px; font-weight: 400; color: var(--deep);
+  font-size: 22px; font-weight: 400; color: var(--deep);
   margin-bottom: 10px; line-height: 1.3;
 }
 .service-item p {
   font-size: 13px; font-weight: 300; line-height: 1.8;
   color: var(--rose);
 }
+
+.waitlist-tally-btn {
+  font-family: 'Cairo', sans-serif;
+  font-size: 11px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase;
+  background: var(--ivory); color: var(--deep);
+  border: none; padding: 14px 40px;
+  border-radius: 2px; cursor: pointer;
+  transition: background .2s; margin: 0 auto;
+  display: block;
+}
+.waitlist-tally-btn:hover { background: var(--white); }
 
 /* ── WAITLIST ── */
 .section-waitlist {
@@ -466,7 +478,7 @@ nav.scrolled {
   color: rgba(243,236,228,.45); max-width: 240px;
 }
 .footer-col h5 {
-  font-size: 9px; font-weight: 500; letter-spacing: .2em;
+  font-size: 11px; font-weight: 500; letter-spacing: .16em;
   text-transform: uppercase; color: var(--terra); margin-bottom: 16px;
 }
 .footer-col p,
@@ -523,49 +535,6 @@ nav.scrolled {
 }
 
 /* ── HERO WAITLIST ── */
-.hero-waitlist {
-  margin-top: 32px;
-  opacity: 0; animation: fadeUp .8s ease 1s forwards;
-}
-.hero-waitlist-input-row {
-  display: flex; gap: 0;
-  border: 0.5px solid rgba(243,236,228,.25);
-  border-radius: 2px; overflow: hidden;
-  max-width: 480px;
-}
-.hero-waitlist-input-row input {
-  flex: 1; padding: 14px 20px;
-  background: rgba(255,255,255,.06);
-  border: none; outline: none;
-  font-family: 'Cairo', sans-serif;
-  font-size: 13px; font-weight: 300;
-  color: var(--ivory);
-}
-.hero-waitlist-input-row input::placeholder { color: rgba(243,236,228,.3); }
-.hero-waitlist-input-row button {
-  padding: 14px 24px;
-  background: var(--terra); color: var(--ivory);
-  border: none; cursor: pointer;
-  font-family: 'Cairo', sans-serif;
-  font-size: 11px; font-weight: 500; letter-spacing: .1em;
-  text-transform: uppercase; transition: background .2s;
-  white-space: nowrap;
-}
-.hero-waitlist-input-row button:hover { background: var(--clay); }
-.hero-waitlist-note {
-  font-size: 10px; font-weight: 300;
-  color: rgba(243,236,228,.25); margin-top: 10px;
-  letter-spacing: .04em;
-}
-.hero-waitlist-success {
-  display: none; margin-top: 32px;
-  font-size: 14px; font-weight: 300;
-  color: rgba(243,236,228,.65);
-  border-left: 2px solid var(--terra);
-  padding-left: 16px;
-  opacity: 0; animation: fadeUp .5s ease forwards;
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
@@ -612,7 +581,7 @@ nav.scrolled {
     <li><a href="#services">Services</a></li>
     <li><a href="#dr">Dr. Shankar</a></li>
   </ul>
-  <a href="#waitlist" class="nav-cta">Join the waitlist</a>
+  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta" style="background:transparent;cursor:pointer;font-family:'Cairo',sans-serif;">Join the waitlist</button>
 </nav>
 
 <!-- HERO / COMING SOON -->
@@ -636,21 +605,7 @@ nav.scrolled {
     <span class="hero-location-dot"></span>
     2175 3rd Street, Unit C1 · San Francisco, CA 94107 · Opening 2026
   </div>
-  <!-- Tally waitlist embed -->
-  <div class="hero-waitlist">
-    <iframe
-      data-tally-src="https://tally.so/embed/kdJBYJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-      loading="lazy"
-      width="100%"
-      height="80"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      title="Aahana Waitlist"
-      style="max-width:480px;display:block;"
-    ></iframe>
-    <div class="hero-waitlist-note">No spam. We'll only write when consultations open.</div>
-  </div>
+
   <div class="hero-actions" style="margin-top:24px">
     <a href="#approach" class="btn-ghost">Learn about our approach</a>
     
@@ -672,7 +627,7 @@ nav.scrolled {
       Dr. Shankar's approach integrates Visia clinical imaging with Ayurvedic Prakriti typing — a framework for understanding individual constitution that has informed Indian medicine for thousands of years and that modern research is increasingly validating.
     </p>
     <p>
-      A <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Vata-dominant</a> patient with deep brown skin requires a completely different protocol than a Kapha-dominant patient with the same Fitzpatrick type. Same melanin, different constitution, different plan. That specificity is what we're after.
+      A <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Vata-dominant</a> patient with deep brown skin requires a completely different protocol than a <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Kapha-dominant</a> patient with the same Fitzpatrick type. Same melanin, different constitution, different plan. That specificity is what we're after.
     </p>
     <p>
       Aahana was built to serve everyone — with particular expertise in skin of color, all gender identities, and patients who have historically felt overlooked or under-served by the aesthetics industry.
@@ -800,17 +755,7 @@ nav.scrolled {
     <div class="section-label">Opening soon</div>
     <h2>Opening 2026.<br>Be the first to know.</h2>
     <p>Aahana Medical Aesthetics opens in San Francisco in 2026. Join the waitlist to be notified when consultations open — and to receive early access.</p>
-    <iframe
-      data-tally-src="https://tally.so/embed/kdJBYJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-      loading="lazy"
-      width="100%"
-      height="80"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      title="Aahana Waitlist"
-      style="max-width:520px;margin:0 auto;display:block;"
-    ></iframe>
+    <button data-tally-open="kdJBYJ" data-tally-overlay="1" data-tally-emoji-text="✦" data-tally-emoji-animation="wave" class="waitlist-tally-btn">Join the waitlist</button>
     <p style="font-size:11px;font-weight:300;color:rgba(243,236,228,.25);margin-top:16px">
       No spam. We'll only write when consultations open.
     </p>
@@ -852,7 +797,7 @@ nav.scrolled {
 // Nav scroll effect
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
+  nav.classList.toggle('scrolled', window.scrollY > 10);
 });
 
 // Reveal on scroll
