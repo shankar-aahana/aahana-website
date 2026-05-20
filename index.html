@@ -101,9 +101,9 @@ nav.scrolled {
   position: absolute; inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(44,31,26,.7) 0%,
-    rgba(44,31,26,.55) 40%,
-    rgba(44,31,26,.75) 100%
+    rgba(44,31,26,.75) 0%,
+    rgba(44,31,26,.65) 40%,
+    rgba(44,31,26,.85) 100%
   );
 }
 .hero-rule {
@@ -124,8 +124,9 @@ nav.scrolled {
 .hero-lines::after  { left: 66.66%; }
 
 .hero-eyebrow {
-  font-size: 11px; font-weight: 300; letter-spacing: .18em;
+  font-size: 11px; font-weight: 400; letter-spacing: .18em;
   text-transform: uppercase; color: var(--terra);
+  text-shadow: 0 1px 8px rgba(0,0,0,.6);
   margin-bottom: 24px; position: relative;
   opacity: 0; animation: fadeUp .8s ease .2s forwards;
 }
@@ -150,8 +151,9 @@ nav.scrolled {
 .hero-divider-dot  { width: 4px; height: 4px; border-radius: 50%; background: var(--terra); }
 .hero-sub {
   font-size: clamp(16px, 1.8vw, 19px); font-weight: 300;
-  line-height: 1.8; color: rgba(243,236,228,.75);
+  line-height: 1.8; color: rgba(243,236,228,.9);
   max-width: 560px;
+  text-shadow: 0 1px 12px rgba(0,0,0,.5);
   opacity: 0; animation: fadeUp .8s ease .8s forwards;
 }
 .hero-actions {
@@ -476,7 +478,8 @@ nav.scrolled {
   display: flex; align-items: center; gap: 10px;
   margin-top: 20px; margin-bottom: 8px;
   font-size: 11px; font-weight: 300; letter-spacing: .1em;
-  color: rgba(243,236,228,.4);
+  color: rgba(243,236,228,.65);
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
   opacity: 0; animation: fadeUp .8s ease .9s forwards;
 }
 .hero-location-dot {
@@ -667,7 +670,7 @@ nav.scrolled {
 
     <!-- Left: The Difference text -->
     <div class="combined-left reveal">
-      <div class="section-label" style="color:var(--terra)">The difference</div>
+      <div class="section-label" style="color:var(--terra)">Our difference</div>
       <h2 style="font-family:'Spectral',serif;font-size:clamp(32px,3.5vw,48px);font-weight:300;color:var(--ivory);line-height:1.2;letter-spacing:.02em;margin-bottom:28px">
         Where clinical science meets<br><em style="font-style:italic;color:var(--clay)">constitutional wisdom</em>
       </h2>
