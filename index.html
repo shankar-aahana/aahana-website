@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aahana Medical Aesthetics — San Francisco</title>
+<meta name="description" content="Precision medical aesthetics at the intersection of clinical science and Ayurvedic constitutional medicine. San Francisco.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory:    #F3ECE4;
+  --brown:    #7A5A4A;
+  --espresso: #4A3328;
+  --deep:     #2C1F1A;
+  --clay:     #B48A7A;
+  --rose:     #9A6F63;
+  --terra:    #C07A5A;
+  --border:   #DDD8D0;
+  --white:    #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 300;
+  background: var(--ivory);
+  color: var(--deep);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  background: transparent;
+  transition: background .4s, padding .4s;
+}
+nav.scrolled {
+  background: rgba(44, 31, 26, 0.96);
+  backdrop-filter: blur(12px);
+  padding: 14px 48px;
+}
+.nav-brand {
+  display: flex; flex-direction: column;
+}
+.nav-name {
+  font-family: 'Cairo', sans-serif;
+  font-size: 26px; font-weight: 200;
+  color: var(--ivory); letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.nav-sub {
+  font-size: 9px; font-weight: 300;
+  color: var(--clay); letter-spacing: .22em;
+  text-transform: uppercase; margin-top: 3px;
+}
+.nav-links {
+  display: flex; gap: 36px; list-style: none;
+}
+.nav-links a {
+  font-size: 11px; font-weight: 300; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(243,236,228,.7);
+  text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--ivory); }
+.nav-cta {
+  font-size: 11px; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ivory);
+  border: 0.5px solid rgba(243,236,228,.4);
+  padding: 8px 20px; border-radius: 2px;
+  text-decoration: none; transition: all .2s;
+}
+.nav-cta:hover {
+  background: var(--ivory); color: var(--deep);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--deep);
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(122,90,74,.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(192,122,90,.08) 0%, transparent 60%);
+}
+.hero-rule {
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--clay), transparent);
+  opacity: .3;
+}
+/* Decorative vertical lines */
+.hero-lines {
+  position: absolute; inset: 0; pointer-events: none;
+}
+.hero-lines::before,
+.hero-lines::after {
+  content: ''; position: absolute; top: 0; bottom: 0;
+  width: 0.5px; background: var(--clay); opacity: .06;
+}
+.hero-lines::before { left: 33.33%; }
+.hero-lines::after  { left: 66.66%; }
+
+.hero-eyebrow {
+  font-size: 11px; font-weight: 300; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--terra);
+  margin-bottom: 24px; position: relative;
+  opacity: 0; animation: fadeUp .8s ease .2s forwards;
+}
+.hero-title {
+  font-family: 'Spectral', serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 300;
+  letter-spacing: .01em; line-height: 1.0;
+  color: var(--ivory); letter-spacing: .02em;
+  position: relative;
+  opacity: 0; animation: fadeUp .8s ease .4s forwards;
+}
+.hero-title em {
+  font-style: italic; color: var(--clay);
+}
+.hero-divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 32px 0;
+  opacity: 0; animation: fadeUp .8s ease .6s forwards;
+}
+.hero-divider-line { flex: 0 0 60px; height: 0.5px; background: var(--terra); }
+.hero-divider-dot  { width: 4px; height: 4px; border-radius: 50%; background: var(--terra); }
+.hero-sub {
+  font-size: clamp(16px, 1.8vw, 19px); font-weight: 300;
+  line-height: 1.8; color: rgba(243,236,228,.75);
+  max-width: 560px;
+  opacity: 0; animation: fadeUp .8s ease .8s forwards;
+}
+.hero-actions {
+  display: flex; gap: 16px; margin-top: 48px;
+  opacity: 0; animation: fadeUp .8s ease 1s forwards;
+}
+.btn-primary {
+  font-size: 11px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--deep);
+  background: var(--ivory); padding: 14px 32px;
+  border: none; border-radius: 2px; cursor: pointer;
+  text-decoration: none; transition: all .2s;
+}
+.btn-primary:hover { background: var(--white); }
+.btn-ghost {
+  font-size: 11px; font-weight: 400; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ivory);
+  background: transparent; padding: 14px 32px;
+  border: 0.5px solid rgba(243,236,228,.3); border-radius: 2px;
+  cursor: pointer; text-decoration: none; transition: all .2s;
+}
+.btn-ghost:hover { border-color: var(--ivory); }
+
+.hero-scroll {
+  position: absolute; bottom: 32px; right: 48px;
+  writing-mode: vertical-rl; text-orientation: mixed;
+  font-size: 9px; font-weight: 300; letter-spacing: .2em;
+  text-transform: uppercase; color: rgba(243,236,228,.3);
+  display: flex; align-items: center; gap: 12px;
+  opacity: 0; animation: fadeIn 1s ease 1.4s forwards;
+}
+.hero-scroll::before {
+  content: ''; display: block; width: 0.5px;
+  height: 48px; background: rgba(243,236,228,.2);
+}
+
+/* ── INTRO SECTION ── */
+.section-intro {
+  padding: 120px 48px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: start;
+  border-bottom: 0.5px solid var(--border);
+}
+.section-label {
+  font-size: 9px; font-weight: 500; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--terra);
+  margin-bottom: 20px;
+}
+.section-intro-left h2 {
+  font-family: 'Spectral', serif;
+  font-size: clamp(36px, 4vw, 52px); font-weight: 300; letter-spacing: .01em;
+  line-height: 1.2; color: var(--deep); letter-spacing: .02em;
+}
+.section-intro-left h2 em {
+  font-style: italic; color: var(--brown);
+}
+.section-intro-right p {
+  font-size: 16px; font-weight: 300; line-height: 1.9;
+  color: var(--espresso); margin-bottom: 22px;
+}
+
+/* ── PILLARS ── */
+.section-pillars {
+  padding: 100px 48px;
+  border-bottom: 0.5px solid var(--border);
+}
+.pillars-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; margin-top: 60px;
+}
+.pillar {
+  padding: 40px 40px 40px 0;
+  border-right: 0.5px solid var(--border);
+}
+.pillar:last-child { border-right: none; padding-right: 0; }
+.pillar:not(:first-child) { padding-left: 40px; }
+.pillar-img-placeholder {
+  width: 100%; aspect-ratio: 16/9;
+  background: var(--espresso);
+  border-radius: 2px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: center;
+  border: 0.5px dashed var(--clay); opacity: .45;
+}
+.pillar-img-placeholder span {
+  font-size: 10px; font-weight: 300; color: var(--clay);
+  letter-spacing: .1em;
+}
+.pillar-num {
+  font-family: 'Spectral', serif;
+  font-size: 48px; font-weight: 300;
+  color: var(--border); line-height: 1;
+  margin-bottom: 20px;
+}
+.pillar h3 {
+  font-family: 'Spectral', serif;
+  font-size: 22px; font-weight: 400;
+  color: var(--deep); margin-bottom: 12px; letter-spacing: .02em;
+}
+.pillar p {
+  font-size: 14px; font-weight: 300; line-height: 1.85;
+  color: var(--rose);
+}
+
+/* ── AYURVEDA SECTION ── */
+.section-ayurveda {
+  background: var(--deep);
+  padding: 120px 48px;
+  position: relative; overflow: hidden;
+}
+.section-ayurveda::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 0.5px;
+  background: linear-gradient(90deg, transparent, var(--clay), transparent);
+  opacity: .2;
+}
+.ayurveda-inner {
+  max-width: 800px; margin: 0 auto; text-align: center;
+}
+.ayurveda-inner .section-label { color: var(--terra); margin-bottom: 24px; }
+.ayurveda-inner h2 {
+  font-family: 'Spectral', serif;
+  font-size: clamp(32px, 4vw, 52px); font-weight: 300;
+  color: var(--ivory); line-height: 1.25; margin-bottom: 32px;
+  letter-spacing: .02em;
+}
+.ayurveda-inner h2 em { font-style: italic; color: var(--clay); }
+.ayurveda-inner p {
+  font-size: 16px; font-weight: 300; line-height: 1.9;
+  color: rgba(243,236,228,.75); margin-bottom: 20px;
+}
+.dosha-trio {
+  display: flex; gap: 0; margin-top: 64px;
+  border-top: 0.5px solid rgba(180,138,122,.2);
+  border-bottom: 0.5px solid rgba(180,138,122,.2);
+}
+.dosha {
+  flex: 1; padding: 40px 32px;
+  border-right: 0.5px solid rgba(180,138,122,.15);
+  text-align: left;
+}
+.dosha:last-child { border-right: none; }
+.dosha-name {
+  font-family: 'Spectral', serif;
+  font-size: 28px; font-weight: 300; font-style: italic;
+  color: var(--clay); margin-bottom: 8px;
+}
+.dosha-principle {
+  font-size: 9px; font-weight: 500; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--terra);
+  margin-bottom: 16px;
+}
+.dosha-desc {
+  font-size: 13px; font-weight: 300; line-height: 1.85;
+  color: rgba(243,236,228,.6);
+}
+
+/* ── DR MUNDLURU ── */
+.section-dr {
+  padding: 120px 48px;
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;
+  align-items: center; border-bottom: 0.5px solid var(--border);
+}
+.dr-left { position: relative; }
+.dr-card {
+  background: var(--espresso);
+  padding: 48px; border-radius: 2px;
+  position: relative;
+}
+.dr-card::before {
+  content: '';
+  position: absolute; inset: -8px;
+  border: 0.5px solid var(--border);
+  border-radius: 2px; pointer-events: none;
+}
+.dr-name {
+  font-family: 'Spectral', serif;
+  font-size: 32px; font-weight: 400; font-style: italic;
+  color: var(--ivory); margin-bottom: 6px; letter-spacing: .02em;
+}
+.dr-creds {
+  font-size: 10px; font-weight: 400; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--terra);
+  margin-bottom: 24px;
+}
+.dr-detail {
+  font-size: 13px; font-weight: 300; line-height: 1.9;
+  color: rgba(243,236,228,.65); margin-bottom: 10px;
+}
+.dr-right .section-label { margin-bottom: 20px; }
+.dr-right h2 {
+  font-family: 'Spectral', serif;
+  font-size: clamp(28px, 3vw, 40px); font-weight: 300;
+  line-height: 1.3; color: var(--deep); margin-bottom: 24px;
+  letter-spacing: .02em;
+}
+.dr-right p {
+  font-size: 15px; font-weight: 300; line-height: 1.9;
+  color: var(--espresso); margin-bottom: 18px;
+}
+
+/* ── SERVICES ── */
+.section-services--dark {
+  background: var(--deep);
+}
+.section-services--dark .section-label { color: var(--terra); }
+.section-services--dark .service-cat { color: var(--terra); }
+.section-services--dark .service-item { border-right-color: rgba(180,138,122,.15); border-bottom-color: rgba(180,138,122,.15); }
+.section-services--dark h4 { color: var(--ivory); }
+.section-services--dark p { color: rgba(243,236,228,.5); }
+.section-services--dark .services-grid { border-top-color: rgba(180,138,122,.1); }
+.section-services--dark > div p { color: rgba(243,236,228,.4); }
+.services-grid {
+  border-top: 0.5px solid var(--border);
+  padding-top: 0;
+}
+
+.section-services {
+  padding: 100px 48px;
+  border-bottom: 0.5px solid var(--border);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 60px;
+}
+.service-item {
+  padding: 32px 32px 32px 0;
+  border-right: 0.5px solid var(--border);
+}
+.service-item:last-child { border-right: none; }
+.service-item:not(:first-child) { padding-left: 32px; }
+.service-cat {
+  font-size: 8px; font-weight: 500; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 12px;
+}
+.service-item h4 {
+  font-family: 'Spectral', serif;
+  font-size: 18px; font-weight: 400; color: var(--deep);
+  margin-bottom: 10px; line-height: 1.3;
+}
+.service-item p {
+  font-size: 13px; font-weight: 300; line-height: 1.8;
+  color: var(--rose);
+}
+
+/* ── WAITLIST ── */
+.section-waitlist {
+  background: var(--espresso);
+  padding: 100px 48px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.section-waitlist::before {
+  content: 'AAHANA';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Spectral', serif;
+  font-size: 300px; font-weight: 300;
+  color: rgba(255,255,255,.02);
+  letter-spacing: .05em; white-space: nowrap;
+  pointer-events: none; user-select: none;
+}
+.waitlist-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+.waitlist-inner .section-label { color: var(--terra); margin-bottom: 20px; }
+.waitlist-inner h2 {
+  font-family: 'Spectral', serif;
+  font-size: clamp(32px, 4vw, 48px); font-weight: 300;
+  color: var(--ivory); margin-bottom: 16px; letter-spacing: .02em;
+}
+.waitlist-inner p {
+  font-size: 15px; font-weight: 300; line-height: 1.85;
+  color: rgba(243,236,228,.7); margin-bottom: 40px;
+}
+.waitlist-form {
+  display: flex; gap: 0; border: 0.5px solid rgba(243,236,228,.2);
+  border-radius: 2px; overflow: hidden;
+}
+.waitlist-input {
+  flex: 1; padding: 16px 20px;
+  background: rgba(255,255,255,.05);
+  border: none; outline: none;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px; font-weight: 300;
+  color: var(--ivory);
+}
+.waitlist-input::placeholder { color: rgba(243,236,228,.3); }
+.waitlist-btn {
+  padding: 16px 28px;
+  background: var(--ivory); color: var(--deep);
+  border: none; cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+  font-size: 11px; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; transition: background .2s;
+  white-space: nowrap;
+}
+.waitlist-btn:hover { background: var(--white); }
+.waitlist-success {
+  display: none; padding: 16px 20px;
+  font-size: 13px; font-weight: 300;
+  color: rgba(243,236,228,.7);
+}
+
+/* ── ADDRESS / FOOTER ── */
+.section-footer {
+  background: var(--deep);
+  padding: 80px 48px 40px;
+}
+.footer-top {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 60px;
+  border-bottom: 0.5px solid rgba(243,236,228,.08);
+}
+.footer-brand-name {
+  font-family: 'Spectral', serif;
+  font-size: 28px; font-weight: 400; color: var(--ivory);
+  letter-spacing: .06em; margin-bottom: 6px;
+}
+.footer-brand-sub {
+  font-size: 9px; font-weight: 300; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--clay); margin-bottom: 20px;
+}
+.footer-tagline {
+  font-size: 13px; font-weight: 300; line-height: 1.8;
+  color: rgba(243,236,228,.45); max-width: 240px;
+}
+.footer-col h5 {
+  font-size: 9px; font-weight: 500; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 16px;
+}
+.footer-col p,
+.footer-col address {
+  font-size: 13px; font-weight: 300; line-height: 1.9;
+  color: rgba(243,236,228,.55); font-style: normal;
+}
+.footer-col a {
+  color: rgba(243,236,228,.45); text-decoration: none;
+}
+.footer-col a:hover { color: var(--ivory); }
+.footer-bottom {
+  padding-top: 32px; display: flex;
+  justify-content: space-between; align-items: center;
+}
+.footer-legal {
+  font-size: 10px; font-weight: 300;
+  color: rgba(243,236,228,.2); letter-spacing: .06em;
+}
+.footer-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--terra); opacity: .4;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ── HERO LOCATION ── */
+.hero-location {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 20px; margin-bottom: 8px;
+  font-size: 11px; font-weight: 300; letter-spacing: .1em;
+  color: rgba(243,236,228,.4);
+  opacity: 0; animation: fadeUp .8s ease .9s forwards;
+}
+.hero-location-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--terra); flex-shrink: 0;
+}
+
+/* ── HERO WAITLIST ── */
+.hero-waitlist {
+  margin-top: 32px;
+  opacity: 0; animation: fadeUp .8s ease 1s forwards;
+}
+.hero-waitlist-input-row {
+  display: flex; gap: 0;
+  border: 0.5px solid rgba(243,236,228,.25);
+  border-radius: 2px; overflow: hidden;
+  max-width: 480px;
+}
+.hero-waitlist-input-row input {
+  flex: 1; padding: 14px 20px;
+  background: rgba(255,255,255,.06);
+  border: none; outline: none;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px; font-weight: 300;
+  color: var(--ivory);
+}
+.hero-waitlist-input-row input::placeholder { color: rgba(243,236,228,.3); }
+.hero-waitlist-input-row button {
+  padding: 14px 24px;
+  background: var(--terra); color: var(--ivory);
+  border: none; cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+  font-size: 11px; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; transition: background .2s;
+  white-space: nowrap;
+}
+.hero-waitlist-input-row button:hover { background: var(--clay); }
+.hero-waitlist-note {
+  font-size: 10px; font-weight: 300;
+  color: rgba(243,236,228,.25); margin-top: 10px;
+  letter-spacing: .04em;
+}
+.hero-waitlist-success {
+  display: none; margin-top: 32px;
+  font-size: 14px; font-weight: 300;
+  color: rgba(243,236,228,.65);
+  border-left: 2px solid var(--terra);
+  padding-left: 16px;
+  opacity: 0; animation: fadeUp .5s ease forwards;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  nav.scrolled { padding: 12px 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 0 24px 60px; }
+  .hero-scroll { display: none; }
+  .section-intro, .section-dr {
+    grid-template-columns: 1fr; gap: 48px; padding: 80px 24px;
+  }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .pillar {
+    border-right: none; border-bottom: 0.5px solid var(--border);
+    padding: 32px 0;
+  }
+  .pillar:last-child { border-bottom: none; }
+  .pillar:not(:first-child) { padding-left: 0; }
+  .section-pillars, .section-ayurveda, .section-services,
+  .section-waitlist { padding: 80px 24px; }
+  .dosha-trio { flex-direction: column; }
+  .dosha { border-right: none; border-bottom: 0.5px solid rgba(180,138,122,.15); }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .service-item { border-right: none; padding: 24px 0; border-bottom: 0.5px solid var(--border); }
+  .service-item:not(:first-child) { padding-left: 0; }
+  .footer-top { grid-template-columns: 1fr; }
+  .section-footer { padding: 60px 24px 32px; }
+  .waitlist-form { flex-direction: column; }
+  .waitlist-btn { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand">
+    <div class="nav-name">AAHANA</div>
+    <div class="nav-sub">Medical Aesthetics</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#ayurveda">Prakriti</a></li>
+    <li><a href="#how-we-work">How we work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#dr">Dr. Shankar</a></li>
+  </ul>
+  <a href="#waitlist" class="nav-cta">Join the waitlist</a>
+</nav>
+
+<!-- HERO / COMING SOON -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-rule"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-eyebrow">San Francisco · Opening Soon · Physician-Led Medical Aesthetics</div>
+  <h1 class="hero-title">
+    Coming<br>
+    <em>soon.</em>
+  </h1>
+  <div class="hero-divider">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-dot"></div>
+  </div>
+  <p class="hero-sub">
+    A physician-led medical aesthetics practice at the intersection of clinical science and Ayurvedic constitutional medicine.
+  </p>
+  <div class="hero-location">
+    <span class="hero-location-dot"></span>
+    2175 3rd Street, Unit C1 · San Francisco, CA 94107 · Opening 2026
+  </div>
+  <!-- Tally waitlist embed -->
+  <div class="hero-waitlist">
+    <iframe
+      data-tally-src="https://tally.so/embed/kdJBYJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="80"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="Aahana Waitlist"
+      style="max-width:480px;display:block;"
+    ></iframe>
+    <div class="hero-waitlist-note">No spam. We'll only write when consultations open.</div>
+  </div>
+  <div class="hero-actions" style="margin-top:24px">
+    <a href="#approach" class="btn-ghost">Learn about our approach</a>
+    
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- INTRO -->
+<section class="section-intro" id="approach">
+  <div class="section-intro-left reveal">
+    <div class="section-label">The difference</div>
+    <h2>Where clinical science meets<br><em>constitutional wisdom</em></h2>
+  </div>
+  <div class="section-intro-right reveal">
+    <p>
+      Most medical aesthetics practices treat what they can see — what the scan shows, what the patient describes, what the mirror reveals. We go further.
+    </p>
+    <p>
+      Dr. Shankar's approach integrates Visia clinical imaging with Ayurvedic Prakriti typing — a framework for understanding individual constitution that has informed Indian medicine for thousands of years and that modern research is increasingly validating.
+    </p>
+    <p>
+      A <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Vata-dominant</a> patient with deep brown skin requires a completely different protocol than a Kapha-dominant patient with the same Fitzpatrick type. Same melanin, different constitution, different plan. That specificity is what we're after.
+    </p>
+    <p>
+      Aahana was built to serve everyone — with particular expertise in skin of color, all gender identities, and patients who have historically felt overlooked or under-served by the aesthetics industry.
+    </p>
+  </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="section-ayurveda" id="ayurveda">
+  <div class="ayurveda-inner">
+    <div class="section-label">Prakriti · प्रकृति</div>
+    <h2>Your constitution shapes<br><em>everything about your skin</em></h2>
+    <p>
+      Prakriti identifies three fundamental constitutional forces — Vata, Pitta, and Kapha — and their unique combination in you determines your skin's characteristics, its sensitivities, its aging patterns, and its response to treatment.
+    </p>
+    <p>
+      At Aahana, Prakriti typing is central to how we practice — not an add-on, not a marketing angle. It's an optional assessment every patient can complete, and it's the layer that makes the difference between a good plan and one that's genuinely built for your skin.
+    </p>
+    <div class="dosha-trio reveal">
+      <div class="dosha">
+        <div class="dosha-name">Vata</div>
+        <div class="dosha-principle">Air · Space · Movement</div>
+        <div class="dosha-desc">Governs movement, circulation, and the nervous system. In the skin: dryness, delicacy, sensitivity. Reacts quickly to environment and stress. Ages early, needs barrier protection above all.</div>
+      </div>
+      <div class="dosha">
+        <div class="dosha-name">Pitta</div>
+        <div class="dosha-principle">Fire · Water · Transformation</div>
+        <div class="dosha-desc">Governs metabolism and transformation. In the skin: reactivity, photosensitivity, and pigmentation tendency. Bright and clear when balanced — flares with heat, hormones, and stress.</div>
+      </div>
+      <div class="dosha">
+        <div class="dosha-name">Kapha</div>
+        <div class="dosha-principle">Earth · Water · Structure</div>
+        <div class="dosha-desc">Governs structure, stability, and moisture. In the skin: thickness, resilience, natural oiliness. Stays youthful longer but prone to congestion and sluggishness. Ages with laxity.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AYURVEDA -->
+<section class="section-pillars" id="how-we-work">
+  <div class="section-label reveal">How we work</div>
+  <div class="pillars-grid">
+    <div class="pillar reveal">
+      <div class="pillar-img-placeholder"><span>Image · Consultation</span></div>
+      <div class="pillar-num">01</div>
+      <h3>Know you</h3>
+      <p>Every plan begins with a thorough intake — your health history, skin concerns, lifestyle, and goals. We also offer a <a href="#ayurveda" style="color:var(--terra);text-decoration:none;border-bottom:0.5px solid var(--terra)">Prakriti constitutional assessment</a> as part of this step: a brief Ayurvedic typing that tells us how your skin is built — not just how it looks today. It's optional, but we offer it to everyone.</p>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar-img-placeholder"><span>Image · Visia scan</span></div>
+      <div class="pillar-num">02</div>
+      <h3>See your skin</h3>
+      <p>Visia clinical imaging is at the centre of every analysis — measuring eight metrics against a database matched to your age and skin tone. For patients where the intake suggests it, Dr. Shankar may also recommend additional testing: labs, skin microbiome analysis, or other assessments. The depth depends on what your skin and health history call for.</p>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar-img-placeholder"><span>Image · Treatment</span></div>
+      <div class="pillar-num">03</div>
+      <h3>Your plan</h3>
+      <p>A treatment plan built from everything we've learned — your clinical data, your constitution, your skin tone, your goals, and your life. Not a template borrowed from someone else's skin. Every recommendation is specific to you, sequenced correctly, and explained clearly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DR MUNDLURU -->
+<section class="section-services section-services--dark" id="services">
+  <div class="section-label reveal">What we offer</div>
+  <div class="services-grid">
+    <div class="service-item reveal">
+      <div class="service-cat">Injectables</div>
+      <h4>Botox & Dermal Fillers</h4>
+      <p>Neuromodulators for smoothing, lifting, and contouring. Hyaluronic acid fillers for volume and definition. All placed by Dr. Shankar.</p>
+    </div>
+    <div class="service-item reveal">
+      <div class="service-cat">Laser & Energy</div>
+      <h4>Aerolase · Lutronic · XeRF</h4>
+      <p>1064nm laser for pigmentation and redness. 1927nm fractional for texture. Multifrequency RF for structural tightening. Safe across all skin tones.</p>
+    </div>
+    <div class="service-item reveal">
+      <div class="service-cat">Skin Treatments</div>
+      <h4>Microneedling · Peels · Hydrafacial</h4>
+      <p>Collagen stimulation, targeted infusions, chemical exfoliation, and deep cleansing — calibrated to your skin type and constitution.</p>
+    </div>
+    <div class="service-item reveal">
+      <div class="service-cat">Wellness</div>
+      <h4>GLP-1 · NAD+ · Peptides</h4>
+      <p>Medically supervised weight loss, cellular wellness injections, and a supervised peptide wellness program. Evidence-based, clinically overseen.</p>
+    </div>
+  </div>
+  <div style="margin-top:48px;text-align:center" class="reveal">
+    <p style="font-size:12px;font-weight:300;color:var(--rose);margin-bottom:20px">All treatment plans begin with a Visia skin analysis and consultation with Dr. Shankar.</p>
+    <a href="#waitlist" class="btn-primary" style="display:inline-block">Join the waitlist</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section-dr" id="dr">
+  <div class="dr-left reveal">
+    <div class="dr-card">
+      <div class="dr-name">Dr. Shankar Mundluru</div>
+      <div class="dr-creds">MD · MBA · Medical Aesthetics</div>
+      <div class="dr-detail">Board-certified physician and founder of Aahana Medical Aesthetics.</div>
+      <div class="dr-detail">Specialising in skin of color, Fitzpatrick III–VI, and the intersection of clinical and Ayurvedic medicine.</div>
+      <div class="dr-detail">San Francisco, California.</div>
+    </div>
+  </div>
+  <div class="dr-right reveal">
+    <div class="section-label">The practice</div>
+    <h2>Physician-led.<br>Every step.</h2>
+    <p>
+      At most medical aesthetics practices, a physician signs off on a treatment plan and someone else delivers it. At Aahana, Dr. Shankar leads all medical treatments directly — every consultation, every injectable, every laser treatment. That's not the industry standard. It's ours.
+    </p>
+    <p>
+      Our licensed aesthetician performs Hydrafacial and VI Peel treatments under Dr. Shankar's direct clinical oversight. As the practice grows, all clinical providers work under his supervision. The standard of care doesn't change as we scale.
+    </p>
+    <p>
+      Aahana is built for everyone. We have particular expertise in treating skin of color across all Fitzpatrick types, all genders, and all backgrounds — including patients who have felt overlooked, rushed, or under-served by conventional aesthetics. Every person deserves a plan built specifically for their skin.
+    </p>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="section-waitlist" id="waitlist">
+  <div class="waitlist-inner">
+    <div class="section-label">Opening soon</div>
+    <h2>Opening 2026.<br>Be the first to know.</h2>
+    <p>Aahana Medical Aesthetics opens in San Francisco in 2026. Join the waitlist to be notified when consultations open — and to receive early access.</p>
+    <iframe
+      data-tally-src="https://tally.so/embed/kdJBYJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="80"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="Aahana Waitlist"
+      style="max-width:520px;margin:0 auto;display:block;"
+    ></iframe>
+    <p style="font-size:11px;font-weight:300;color:rgba(243,236,228,.25);margin-top:16px">
+      No spam. We'll only write when consultations open.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="section-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">AAHANA</div>
+      <div class="footer-brand-sub">Medical Aesthetics</div>
+      <p class="footer-tagline">Physician-led medical aesthetics at the intersection of clinical science and Ayurvedic constitutional medicine. Opening San Francisco, 2026.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Location</h5>
+      <address>
+        2175 3rd Street, Unit C1<br>
+        San Francisco, CA 94107<br><br>
+        Hours TBD
+      </address>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <p>
+        <a href="#waitlist">Join the waitlist</a><br><br>
+        <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA</div>
+    <div class="footer-dot"></div>
+    <div class="footer-legal">aahanaaesthetics.com</div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Waitlist handled by Tally embed
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
