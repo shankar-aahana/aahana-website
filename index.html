@@ -200,7 +200,7 @@ nav.scrolled {
 }
 .pillars-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 0; margin-top: 20px;
+  gap: 0; margin-top: 10px;
   align-items: start;
 }
 .pillar {
@@ -298,10 +298,6 @@ nav.scrolled {
 .section-services--dark p { color: rgba(243,236,228,.5); }
 .section-services--dark .services-grid { border-top-color: rgba(180,138,122,.1); }
 .section-services--dark > div p { color: rgba(243,236,228,.72); }
-.services-grid {
-  border-top: 0.5px solid var(--border);
-  padding-top: 0;
-}
 
 .section-services {
   padding: 80px 48px;
@@ -309,7 +305,9 @@ nav.scrolled {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0; margin-top: 40px;
+  gap: 0; margin-top: 20px;
+  border-top: 0.5px solid var(--border);
+  padding-top: 0;
 }
 .service-item {
   padding: 32px 40px 32px 0;
