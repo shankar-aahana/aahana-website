@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,14 +37,14 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 48px;
+  padding: calc(20px + env(safe-area-inset-top)) 48px 20px;
   background: linear-gradient(to bottom, rgba(74,51,40,.5) 0%, transparent 100%);
   transition: background .4s, padding .4s;
 }
 nav.scrolled {
   background: rgba(44, 31, 26, 0.96);
   backdrop-filter: blur(12px);
-  padding: 14px 48px;
+  padding: calc(14px + env(safe-area-inset-top)) 48px 14px;
 }
 .nav-brand {
   display: flex; flex-direction: column;
@@ -490,8 +491,8 @@ nav.scrolled {
 /* ── HERO WAITLIST ── */
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  nav { padding: 16px 24px; }
-  nav.scrolled { padding: 12px 24px; }
+  nav { padding: calc(16px + env(safe-area-inset-top)) 24px 16px; }
+  nav.scrolled { padding: calc(12px + env(safe-area-inset-top)) 24px 12px; }
   .nav-links { display: none; }
   .hero { padding: 0 24px 60px; }
   .hero-scroll { display: none; }
