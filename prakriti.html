@@ -285,7 +285,7 @@
     .section-profiles { background: var(--ivory); }
     .profiles-intro {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start; margin-bottom: 32px;
+      gap: 80px; align-items: start; margin-bottom: 0;
     }
     .profiles-intro p {
       font-size: 15px; font-weight: 300; line-height: 1.9;
@@ -848,22 +848,19 @@
 <!-- 42 PROFILES -->
 <section class="section-profiles">
   <div class="section-inner">
-    <div class="profiles-intro">
-      <div class="reveal">
-        <span class="section-label">The 42 profiles</span>
-        <h2 class="section-heading" style="color:var(--deep)">
-          Your constitution and<br>
-          <em style="font-style:italic;color:var(--rose)">your skin tone together</em>
-        </h2>
-      </div>
-      <div class="reveal">
-        <p>Prakriti alone doesn't complete the picture. Combined with your Fitzpatrick skin type. Which determines your melanin concentration, UV response, and laser safety parameters. It creates one of 42 unique skin profiles.</p>
-        <p>Each profile carries different clinical implications: different device settings, different ingredient sensitivities, different aging trajectories. Understanding which profile you belong to allows Dr. Shankar to make recommendations that are calibrated not just for "your skin type," but for you specifically.</p>
-      </div>
+    <!-- Heading + intro -->
+    <div class="reveal" style="margin-bottom:32px">
+      <span class="section-label">The 42 profiles</span>
+      <h2 class="section-heading" style="color:var(--deep);margin-bottom:20px">
+        Your constitution and<br>
+        <em style="font-style:italic;color:var(--rose)">your skin tone together</em>
+      </h2>
+      <p style="font-size:15px;font-weight:400;line-height:1.9;color:var(--espresso);margin-bottom:16px;max-width:720px">Prakriti alone doesn't complete the picture. Combined with your Fitzpatrick skin type, which determines your melanin concentration, UV response, and laser safety parameters, it creates one of 42 unique skin profiles.</p>
+      <p style="font-size:15px;font-weight:400;line-height:1.9;color:var(--espresso);max-width:720px">Each profile carries different clinical implications, and understanding yours allows Dr. Shankar to make recommendations calibrated not just for "your skin type," but for you specifically.</p>
     </div>
 
     <!-- Fitzpatrick Scale -->
-    <div style="margin-bottom:24px" class="reveal">
+    <div style="margin-bottom:0" class="reveal">
       <div style="font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:16px">The Fitzpatrick Scale · Understanding skin tone</div>
       <p style="font-size:14px;font-weight:400;line-height:1.8;color:var(--espresso);max-width:700px;margin-bottom:24px">The Fitzpatrick scale classifies skin by melanin concentration and UV response, and it is a foundational clinical tool. But at Aahana, we don't stop there. We've developed our own skin profile system that layers Fitzpatrick typing with Ayurvedic Prakriti assessment to create something no standard scale offers: a complete picture of your skin's constitution, behavior, and clinical needs.</p>
       <div class="fitz-scale">
