@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firstlight — Aahana Medical Aesthetics</title>
+  <meta name="description" content="Firstlight by Aahana. Clinical insights, skin science, and perspectives on precision medicine, skin of color, Ayurveda, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #EDE8E1; --espresso: #4A3328; --deep: #4A3328;
+      --section-dark: #6B5147; --clay: #B48A7A; --rose: #9A6F63;
+      --terra: #C07A5A; --border: #DDD8D0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivory); color: var(--deep); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px;
+      background: linear-gradient(to bottom, rgba(74,51,40,.5) 0%, transparent 100%);
+      transition: background .4s, padding .4s;
+    }
+    nav.scrolled { background: rgba(74,51,40,0.96); backdrop-filter: blur(12px); padding: calc(14px + env(safe-area-inset-top)) 48px 14px; }
+    .nav-brand { text-decoration: none; }
+    .nav-name { font-size: 26px; font-weight: 200; color: var(--ivory); letter-spacing: .22em; text-transform: uppercase; text-shadow: 0 1px 12px rgba(0,0,0,.5); }
+    .nav-sub { font-size: 12px; font-weight: 300; color: var(--terra); letter-spacing: .18em; text-transform: uppercase; margin-top: 3px; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 300; letter-spacing: .08em; text-transform: uppercase; color: rgba(237,232,225,.9); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ivory); }
+    .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ivory); border: 0.5px solid rgba(237,232,225,.8); padding: 8px 20px; border-radius: 2px; cursor: pointer; background: transparent; font-family: 'Cairo', sans-serif; transition: all .2s; }
+    .nav-cta:hover { background: var(--ivory); color: var(--deep); }
+
+    /* HERO */
+    .hero {
+      min-height: 45vh; background: var(--section-dark);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 140px 48px 64px; position: relative; overflow: hidden;
+    }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 80% 40%, rgba(192,122,90,.1) 0%, transparent 60%); }
+    .hero-title {
+      font-family: 'Spectral', serif;
+      font-size: clamp(52px, 8vw, 100px);
+      font-weight: 300; line-height: 1; color: var(--ivory);
+      letter-spacing: .02em; position: relative; z-index: 1;
+      margin-bottom: 8px;
+    }
+    .hero-subtitle {
+      font-size: 14px; font-weight: 300; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--clay);
+      position: relative; z-index: 1; margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 16px; font-weight: 300; line-height: 1.8;
+      color: rgba(237,232,225,.75); max-width: 520px;
+      position: relative; z-index: 1;
+    }
+
+    /* CATEGORY FILTERS */
+    .filters {
+      background: var(--ivory);
+      padding: 32px 48px;
+      border-bottom: 0.5px solid var(--border);
+      position: sticky; top: 60px; z-index: 50;
+    }
+    .filters-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+    }
+    .filter-btn {
+      font-size: 12px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--rose);
+      background: transparent; border: 0.5px solid var(--border);
+      padding: 7px 16px; border-radius: 2px; cursor: pointer;
+      font-family: 'Cairo', sans-serif; transition: all .2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--espresso); color: var(--ivory);
+      border-color: var(--espresso);
+    }
+
+    /* MAIN CONTENT */
+    .journal-body { background: var(--ivory); padding: 60px 48px 100px; }
+    .journal-inner { max-width: 1100px; margin: 0 auto; }
+
+    /* CATEGORY SECTION */
+    .category-section { margin-bottom: 80px; }
+    .category-section:last-child { margin-bottom: 0; }
+    .category-header {
+      display: flex; align-items: baseline; gap: 16px;
+      margin-bottom: 32px; padding-bottom: 16px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .category-name {
+      font-family: 'Spectral', serif;
+      font-size: 28px; font-weight: 300; color: var(--deep);
+    }
+    .category-count {
+      font-size: 12px; font-weight: 400; color: var(--rose);
+      letter-spacing: .04em;
+    }
+
+    /* FEATURED POST — large card */
+    .featured-post {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; margin-bottom: 20px;
+      border: 0.5px solid var(--border); border-radius: 2px;
+      overflow: hidden; cursor: default;
+    }
+    .featured-post-img {
+      background: var(--section-dark);
+      min-height: 320px;
+      display: flex; align-items: flex-end;
+      padding: 28px; position: relative; overflow: hidden;
+    }
+    .featured-post-img::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 30% 60%, rgba(192,122,90,.15) 0%, transparent 70%);
+    }
+    .featured-img-label {
+      font-family: 'Spectral', serif;
+      font-size: clamp(28px, 3vw, 42px); font-weight: 300;
+      font-style: italic; color: rgba(237,232,225,.75);
+      line-height: 1.2; position: relative; z-index: 1;
+      user-select: none;
+    }
+    .featured-post-body {
+      padding: 36px; display: flex; flex-direction: column;
+      justify-content: space-between; background: white;
+    }
+    .post-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--terra);
+      margin-bottom: 12px; display: block;
+    }
+    .featured-post-title {
+      font-family: 'Spectral', serif;
+      font-size: clamp(22px, 2.2vw, 30px); font-weight: 400;
+      color: var(--deep); line-height: 1.3; margin-bottom: 16px;
+    }
+    .featured-post-excerpt {
+      font-size: 15px; font-weight: 400; line-height: 1.8;
+      color: var(--rose); margin-bottom: 24px; flex: 1;
+    }
+    .post-meta {
+      font-size: 12px; font-weight: 300; color: var(--clay);
+      letter-spacing: .04em;
+    }
+
+    /* SMALL POST GRID */
+    .small-posts {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .small-post {
+      border: 0.5px solid var(--border); border-radius: 2px;
+      overflow: hidden; cursor: default;
+      display: flex; flex-direction: column;
+    }
+    .small-post-img {
+      background: var(--section-dark);
+      height: 160px; position: relative; overflow: hidden;
+      display: flex; align-items: flex-end; padding: 16px;
+    }
+    .small-post-img.alt1 { background: #5A4535; }
+    .small-post-img.alt2 { background: #4A5A4A; }
+    .small-post-img.alt3 { background: #3A4A5A; }
+    .small-post-img.alt4 { background: #5A3A4A; }
+    .small-post-img.alt5 { background: #4A4A35; }
+    .small-img-label {
+      font-family: 'Spectral', serif;
+      font-size: 20px; font-weight: 300; font-style: italic;
+      color: rgba(237,232,225,.75); line-height: 1;
+      user-select: none;
+    }
+    .small-post-body {
+      padding: 20px; flex: 1; display: flex;
+      flex-direction: column; background: white;
+    }
+    .small-post-title {
+      font-family: 'Spectral', serif;
+      font-size: 17px; font-weight: 400;
+      color: var(--deep); line-height: 1.35; margin-bottom: 10px; flex: 1;
+    }
+    .small-post-excerpt {
+      font-size: 13px; font-weight: 300; line-height: 1.7;
+      color: var(--rose); margin-bottom: 14px;
+    }
+
+    /* VIEW ALL LINK */
+    .category-view-all {
+      display: flex; justify-content: flex-end;
+      margin-top: 16px;
+    }
+    .view-all-btn {
+      font-size: 12px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--terra);
+      background: none; border: none; cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      padding: 0; text-decoration: none;
+      border-bottom: 0.5px solid rgba(192,122,90,.4);
+      transition: color .2s;
+    }
+    .view-all-btn:hover { color: var(--espresso); }
+
+    /* COMING SOON CARD */
+    .coming-soon-card {
+      border: 0.5px dashed var(--border); border-radius: 2px;
+      padding: 32px; display: flex; align-items: center;
+      justify-content: center; min-height: 160px;
+      background: rgba(74,51,40,.02);
+    }
+    .coming-soon-card span {
+      font-size: 12px; font-weight: 400; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--border);
+    }
+
+    /* CTA */
+    .section-cta { background: var(--section-dark); text-align: center; padding: 80px 48px; }
+    .section-cta h2 { font-family: 'Spectral', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; color: var(--ivory); margin-bottom: 12px; }
+    .section-cta h2 em { font-style: italic; color: var(--clay); }
+    .section-cta p { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.85); max-width: 440px; margin: 0 auto 32px; }
+    .btn-primary { font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--deep); background: var(--ivory); border: none; padding: 14px 40px; border-radius: 2px; cursor: pointer; font-family: 'Cairo', sans-serif; transition: all .25s; }
+    .btn-primary:hover { background: white; }
+
+    /* FOOTER */
+    footer { background: #4A3328; padding: 60px 48px 32px; }
+    .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 0.5px solid rgba(237,232,225,.08); }
+    .footer-brand-name { font-size: 24px; font-weight: 200; color: var(--ivory); letter-spacing: .22em; margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 11px; font-weight: 300; letter-spacing: .18em; text-transform: uppercase; color: var(--terra); }
+    .footer-tagline { font-size: 14px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.6); max-width: 240px; margin-top: 12px; }
+    .footer-col h5 { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
+    .footer-col p, .footer-col address { font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(237,232,225,.75); font-style: normal; }
+    .footer-col a { color: rgba(237,232,225,.75); text-decoration: none; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; }
+    .footer-legal { font-size: 11px; font-weight: 300; color: rgba(237,232,225,.4); letter-spacing: .06em; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      nav.scrolled { padding: calc(12px + env(safe-area-inset-top)) 24px 12px; }
+      .nav-links { display: none; }
+      .hero, .journal-body, .section-cta { padding-left: 24px; padding-right: 24px; }
+      .filters { padding: 20px 24px; top: 52px; }
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-post-img { min-height: 200px; }
+      .small-posts { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 540px) {
+      .small-posts { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-name">AAHANA</div>
+    <div class="nav-sub">Medical Aesthetics</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="prakriti.html">Prakriti</a></li>
+    <li><a href="approach.html">Our approach</a></li>
+    <li><a href="journal.html">Firstlight</a></li>
+  </ul>
+  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="hero-title">Firstlight</h1>
+  <div class="hero-subtitle">Journal by Aahana</div>
+  <p class="hero-desc">Clinical insight, skin science, and perspectives on precision medicine, skin of color, Ayurveda, and the future of medical aesthetics.</p>
+</section>
+
+<!-- CATEGORY FILTERS -->
+<div class="filters">
+  <div class="filters-inner">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="anti-aging">Anti-aging</button>
+    <button class="filter-btn" data-filter="skin-of-color">Skin of color</button>
+    <button class="filter-btn" data-filter="lgbtq">LGBTQ+ health</button>
+    <button class="filter-btn" data-filter="sexual-health">Sexual health</button>
+    <button class="filter-btn" data-filter="precision">Precision medicine</button>
+    <button class="filter-btn" data-filter="ayurveda">Ayurveda</button>
+  </div>
+</div>
+
+<!-- JOURNAL BODY -->
+<div class="journal-body">
+  <div class="journal-inner">
+
+    <!-- ANTI-AGING -->
+    <div class="category-section reveal" data-category="anti-aging">
+      <div class="category-header">
+        <div class="category-name">Anti-aging</div>
+        <div class="category-count">4 articles</div>
+      </div>
+      <div class="featured-post">
+        <div class="featured-post-img" style="background:#3A3A2A">
+          <div class="featured-img-label">Aging well</div>
+        </div>
+        <div class="featured-post-body">
+          <div>
+            <span class="post-tag">Anti-aging</span>
+            <div class="featured-post-title">The difference between looking younger and looking like yourself</div>
+            <p class="featured-post-excerpt">The goal of aesthetic medicine is not to reverse time. It is to help you look like the version of yourself you already feel on the inside. That distinction changes everything about how we approach a treatment plan.</p>
+          </div>
+          <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
+        </div>
+      </div>
+      <div class="small-posts">
+        <div class="small-post">
+          <div class="small-post-img alt2"><div class="small-img-label">Collagen</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Anti-aging</span>
+            <div class="small-post-title">Collagen: what it is, when it starts declining, and what actually stimulates it</div>
+            <p class="small-post-excerpt">Collagen loss begins earlier than most people realize. Here is the science behind it and the evidence base for the treatments that address it.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="small-post">
+          <div class="small-post-img alt3"><div class="small-img-label">SMAS</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Anti-aging</span>
+            <div class="small-post-title">Why structural aging matters more than surface aging — and how we address it</div>
+            <p class="small-post-excerpt">Volume loss and laxity originate deep in the structural tissue of the face. Understanding this changes how we think about treatment sequencing.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="small-post">
+          <div class="small-post-img alt1"><div class="small-img-label">NAD+</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Anti-aging</span>
+            <div class="small-post-title">Cellular aging and the skin: what NAD+ decline actually means for how your skin looks</div>
+            <p class="small-post-excerpt">The biology of cellular aging shows up on the skin before it shows up anywhere else. Here is what the research says and what we can do about it.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+      </div>
+      <div class="category-view-all">
+        <button class="view-all-btn" onclick="filterTo('anti-aging')">View all Anti-aging →</button>
+      </div>
+    </div>
+
+    <!-- SKIN OF COLOR -->
+    <div class="category-section reveal" data-category="skin-of-color">
+      <div class="category-header">
+        <div class="category-name">Skin of color</div>
+        <div class="category-count">4 articles</div>
+      </div>
+      <div class="featured-post">
+        <div class="featured-post-img">
+          <div class="featured-img-label">Skin of color</div>
+        </div>
+        <div class="featured-post-body">
+          <div>
+            <span class="post-tag">Skin of color</span>
+            <div class="featured-post-title">Why most laser treatments weren't designed for your skin — and what that means for you</div>
+            <p class="featured-post-excerpt">The majority of clinical research and device testing in medical aesthetics has been conducted on Fitzpatrick Types I through III. Here is what that means for patients with deeper skin tones, and how to navigate treatment safely.</p>
+          </div>
+          <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
+        </div>
+      </div>
+      <div class="small-posts">
+        <div class="small-post">
+          <div class="small-post-img alt1"><div class="small-img-label">PIH</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Skin of color</span>
+            <div class="small-post-title">Post-inflammatory hyperpigmentation: what it is, why it happens, and how we treat it</div>
+            <p class="small-post-excerpt">PIH affects patients of all skin tones but presents differently and requires different management depending on melanin concentration.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="small-post">
+          <div class="small-post-img alt2"><div class="small-img-label">Melasma</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Skin of color</span>
+            <div class="small-post-title">Melasma in darker skin tones: why it's harder to treat and what actually works</div>
+            <p class="small-post-excerpt">Melasma is among the most complex pigmentation concerns in dermatology, and it is disproportionately undertreated in patients of color.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="small-post">
+          <div class="small-post-img alt3"><div class="small-img-label">Fitz</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Skin of color</span>
+            <div class="small-post-title">Understanding the Fitzpatrick scale — and why it's only part of the picture</div>
+            <p class="small-post-excerpt">The Fitzpatrick scale is a useful clinical tool, but it was designed in 1975 for a narrow patient population. Here is what it captures and what it misses.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+      </div>
+      <div class="category-view-all">
+        <button class="view-all-btn" onclick="filterTo('skin-of-color')">View all Skin of color →</button>
+      </div>
+    </div>
+
+    <!-- LGBTQ+ HEALTH -->
+    <div class="category-section reveal" data-category="lgbtq">
+      <div class="category-header">
+        <div class="category-name">LGBTQ+ health</div>
+        <div class="category-count">3 articles</div>
+      </div>
+      <div class="featured-post">
+        <div class="featured-post-img" style="background:#4A3A5A">
+          <div class="featured-img-label">LGBTQ+ skin</div>
+        </div>
+        <div class="featured-post-body">
+          <div>
+            <span class="post-tag">LGBTQ+ health</span>
+            <div class="featured-post-title">How hormone therapy changes your skin — and how to care for it at every stage</div>
+            <p class="featured-post-excerpt">For transgender and non-binary patients on hormone therapy, skin changes are among the most visible and meaningful physical shifts. Understanding them clinically makes care more precise and more affirming.</p>
+          </div>
+          <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
+        </div>
+      </div>
+      <div class="small-posts">
+        <div class="small-post">
+          <div class="small-post-img alt4"><div class="small-img-label">Aging</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">LGBTQ+ health</span>
+            <div class="small-post-title">Skin aging in gay men: what the data shows and what it means for your protocol</div>
+            <p class="small-post-excerpt">Gay men have distinct patterns of skin aging influenced by lifestyle, UV exposure, and historically limited access to tailored aesthetic care.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="small-post">
+          <div class="small-post-img alt5"><div class="small-img-label">Care</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">LGBTQ+ health</span>
+            <div class="small-post-title">What affirming aesthetic care actually looks like in a clinical setting</div>
+            <p class="small-post-excerpt">Beyond inclusivity language, what does it mean to genuinely build a practice for LGBTQ+ patients? A look at the clinical and operational choices that matter.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="coming-soon-card">
+          <span>More articles coming soon</span>
+        </div>
+      </div>
+      <div class="category-view-all">
+        <button class="view-all-btn" onclick="filterTo('lgbtq')">View all LGBTQ+ health →</button>
+      </div>
+    </div>
+
+    <!-- PRECISION MEDICINE -->
+    <div class="category-section reveal" data-category="precision">
+      <div class="category-header">
+        <div class="category-name">Precision medicine</div>
+        <div class="category-count">3 articles</div>
+      </div>
+      <div class="featured-post">
+        <div class="featured-post-img" style="background:#2A3A3A">
+          <div class="featured-img-label">Precision</div>
+        </div>
+        <div class="featured-post-body">
+          <div>
+            <span class="post-tag">Precision medicine</span>
+            <div class="featured-post-title">Your skin microbiome is already producing anti-aging compounds. Now we can measure them.</div>
+            <p class="featured-post-excerpt">Metabolic microbiome profiling moves skin longevity from intuition to molecular data. Here is what it measures, what it reveals, and how it changes the way we build protocols.</p>
+          </div>
+          <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
+        </div>
+      </div>
+      <div class="small-posts">
+        <div class="small-post">
+          <div class="small-post-img alt5"><div class="small-img-label">DNA</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Precision medicine</span>
+            <div class="small-post-title">What your skin DNA actually tells us — and what it doesn't</div>
+            <p class="small-post-excerpt">Genetic testing in aesthetics is powerful but often misunderstood. Here is a clear-eyed look at what the five SkinDNA categories reveal about your skin's future.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="small-post">
+          <div class="small-post-img alt4"><div class="small-img-label">Visia</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Precision medicine</span>
+            <div class="small-post-title">What Visia imaging reveals that a mirror cannot</div>
+            <p class="small-post-excerpt">Visia captures eight clinical metrics, including subsurface UV damage and bacterial activity that won't appear on the surface for years. Here is what we see and what we do with it.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="coming-soon-card">
+          <span>More articles coming soon</span>
+        </div>
+      </div>
+      <div class="category-view-all">
+        <button class="view-all-btn" onclick="filterTo('precision')">View all Precision medicine →</button>
+      </div>
+    </div>
+
+    <!-- AYURVEDA -->
+    <div class="category-section reveal" data-category="ayurveda">
+      <div class="category-header">
+        <div class="category-name">Ayurveda</div>
+        <div class="category-count">3 articles</div>
+      </div>
+      <div class="featured-post">
+        <div class="featured-post-img" style="background:#3A2A1A">
+          <div class="featured-img-label">प्रकृति</div>
+        </div>
+        <div class="featured-post-body">
+          <div>
+            <span class="post-tag">Ayurveda</span>
+            <div class="featured-post-title">Prakriti is not mysticism. It is constitutional medicine — and the research is catching up.</div>
+            <p class="featured-post-excerpt">Ayurvedic constitutional typing has been practiced for thousands of years. Modern genomic and microbiome research is beginning to validate what it has always described. Here is where the science stands.</p>
+          </div>
+          <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
+        </div>
+      </div>
+      <div class="small-posts">
+        <div class="small-post">
+          <div class="small-post-img alt1"><div class="small-img-label">Vata</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Ayurveda</span>
+            <div class="small-post-title">Vata skin: why dryness and sensitivity are constitutional, not just cosmetic</div>
+            <p class="small-post-excerpt">Vata skin is not simply dry skin. It is a constitutional pattern that shapes how your skin responds, ages, and heals. Understanding it changes how we treat it.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="small-post">
+          <div class="small-post-img alt3"><div class="small-img-label">42</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Ayurveda</span>
+            <div class="small-post-title">The 42 skin profiles: why the same treatment produces different results in different people</div>
+            <p class="small-post-excerpt">Two patients with the same skin tone and the same concern can need completely different protocols. The 42-profile system explains why, and what we do about it.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="coming-soon-card">
+          <span>More articles coming soon</span>
+        </div>
+      </div>
+      <div class="category-view-all">
+        <button class="view-all-btn" onclick="filterTo('ayurveda')">View all Ayurveda →</button>
+      </div>
+    </div>
+
+    <!-- SEXUAL HEALTH -->
+    <div class="category-section reveal" data-category="sexual-health">
+      <div class="category-header">
+        <div class="category-name">Sexual health</div>
+        <div class="category-count">3 articles</div>
+      </div>
+      <div class="featured-post">
+        <div class="featured-post-img" style="background:#3A2A3A">
+          <div class="featured-img-label">Sexual health</div>
+        </div>
+        <div class="featured-post-body">
+          <div>
+            <span class="post-tag">Sexual health</span>
+            <div class="featured-post-title">Sexual health and skin: the connection most practices aren't talking about</div>
+            <p class="featured-post-excerpt">Hormonal health, inflammation, and systemic wellbeing all show up on the skin. Sexual health is part of that picture, and it deserves the same clinical attention as any other factor we assess.</p>
+          </div>
+          <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
+        </div>
+      </div>
+      <div class="small-posts">
+        <div class="small-post">
+          <div class="small-post-img" style="background:#4A2A3A"><div class="small-img-label">PrEP</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Sexual health</span>
+            <div class="small-post-title">PrEP, skin, and the clinical picture: what patients should know</div>
+            <p class="small-post-excerpt">PrEP is life-changing medication. Understanding its dermatological implications helps patients make more informed decisions about their full health picture.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="small-post">
+          <div class="small-post-img" style="background:#3A2A4A"><div class="small-img-label">Hormones</div></div>
+          <div class="small-post-body">
+            <span class="post-tag">Sexual health</span>
+            <div class="small-post-title">How testosterone and estrogen affect your skin — and what changes when they shift</div>
+            <p class="small-post-excerpt">Sex hormones are among the most powerful drivers of skin behavior. Here is what the research shows about their role in aging, oiliness, pigmentation, and barrier function.</p>
+            <div class="post-meta">Coming soon</div>
+          </div>
+        </div>
+        <div class="coming-soon-card">
+          <span>More articles coming soon</span>
+        </div>
+      </div>
+      <div class="category-view-all">
+        <button class="view-all-btn" onclick="filterTo('sexual-health')">View all Sexual health →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="section-cta">
+  <h2>Get <em>Firstlight</em> first.</h2>
+  <p>Join the waitlist and be the first to receive new articles, clinical insights, and early access when Aahana opens.</p>
+  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">AAHANA</div>
+      <div class="footer-brand-sub">Medical Aesthetics</div>
+      <div style="font-size:12px;font-weight:300;color:rgba(237,232,225,.4);letter-spacing:.08em;margin-top:6px;font-style:italic">Aahana · आहान · first light of dawn</div>
+      <p class="footer-tagline">Physician-led medical aesthetics at the forefront of clinical science and Ayurvedic constitutional medicine.</p>
+    </div>
+    <div class="footer-col" style="padding-top:40px">
+      <h5>Location</h5>
+      <address>2175 3rd Street, Unit C1<br>San Francisco, CA 94107<br><br>Hours: coming soon</address>
+    </div>
+    <div class="footer-col" style="padding-top:40px">
+      <h5>Contact</h5>
+      <p>
+        <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="background:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:300;color:rgba(237,232,225,.75);padding:0;text-align:left;">Join the waitlist</button><br><br>
+        <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA</div>
+    <div class="footer-legal">·</div>
+    <div class="footer-legal">aahanasf.com</div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); });
+
+// Filter to specific category
+function filterTo(filter) {
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === filter);
+  });
+  document.querySelectorAll('.category-section').forEach(section => {
+    section.style.display = section.dataset.category === filter ? '' : 'none';
+  });
+  document.querySelector('.journal-body').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Category filtering
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.category-section').forEach(section => {
+      if (filter === 'all' || section.dataset.category === filter) {
+        section.style.display = '';
+        setTimeout(() => section.classList.add('visible'), 50);
+      } else {
+        section.style.display = 'none';
+      }
+    });
+    // Scroll to top of journal body
+    document.querySelector('.journal-body').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
