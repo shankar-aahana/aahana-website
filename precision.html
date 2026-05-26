@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precision Medicine — Aahana Medical Aesthetics</title>
+  <meta name="description" content="Aahana goes beyond the surface. Visia clinical imaging, skin DNA analysis, skin microbiome testing, and targeted lab work — a complete molecular picture of your skin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #EDE8E1; --espresso: #4A3328; --deep: #4A3328;
+      --section-dark: #6B5147; --clay: #B48A7A; --rose: #9A6F63;
+      --terra: #C07A5A; --border: #DDD8D0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivory); color: var(--deep); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px;
+      background: linear-gradient(to bottom, rgba(74,51,40,.5) 0%, transparent 100%);
+      transition: background .4s, padding .4s;
+    }
+    nav.scrolled { background: rgba(74,51,40,0.96); backdrop-filter: blur(12px); padding: calc(14px + env(safe-area-inset-top)) 48px 14px; }
+    .nav-brand { text-decoration: none; }
+    .nav-name { font-size: 26px; font-weight: 200; color: var(--ivory); letter-spacing: .22em; text-transform: uppercase; text-shadow: 0 1px 12px rgba(0,0,0,.5); }
+    .nav-sub { font-size: 12px; font-weight: 300; color: var(--terra); letter-spacing: .18em; text-transform: uppercase; margin-top: 3px; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 300; letter-spacing: .08em; text-transform: uppercase; color: rgba(237,232,225,.9); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ivory); }
+    .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ivory); border: 0.5px solid rgba(237,232,225,.8); padding: 8px 20px; border-radius: 2px; cursor: pointer; background: transparent; font-family: 'Cairo', sans-serif; transition: all .2s; }
+    .nav-cta:hover { background: var(--ivory); color: var(--deep); }
+
+    /* HERO */
+    .hero {
+      min-height: 55vh; background: var(--section-dark);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 140px 48px 80px; position: relative; overflow: hidden;
+    }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 80% 40%, rgba(192,122,90,.1) 0%, transparent 60%); }
+    .hero-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 20px; position: relative; z-index: 1; }
+    .hero-title { font-family: 'Spectral', serif; font-size: clamp(42px, 6vw, 80px); font-weight: 300; line-height: 1.05; color: var(--ivory); letter-spacing: .01em; margin-bottom: 24px; position: relative; z-index: 1; }
+    .hero-title em { font-style: italic; color: var(--clay); }
+    .hero-sub { font-size: clamp(16px, 1.6vw, 18px); font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.92); max-width: 580px; position: relative; z-index: 1; }
+
+    /* SECTIONS */
+    .section-light { background: var(--ivory); padding: 100px 48px; }
+    .section-dark { background: var(--section-dark); padding: 100px 48px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 28px; display: block; }
+    .section-heading { font-family: 'Spectral', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 300; line-height: 1.2; margin-bottom: 24px; }
+
+    /* TWO COLUMN */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .two-col-wide { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; }
+    p.body { font-size: 16px; font-weight: 400; line-height: 1.85; margin-bottom: 18px; }
+    p.body:last-child { margin-bottom: 0; }
+    .light-text { color: var(--espresso); }
+    .dark-text { color: rgba(237,232,225,.92); }
+
+    /* METRIC / TEST CARDS */
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .card-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+    .card {
+      padding: 24px; border-radius: 2px;
+      border: 0.5px solid;
+    }
+    .section-light .card { border-color: var(--border); background: rgba(74,51,40,.03); }
+    .section-dark .card { border-color: rgba(237,232,225,.12); background: rgba(237,232,225,.04); }
+    .card-label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; }
+    .card-title { font-family: 'Spectral', serif; font-size: 18px; font-weight: 400; margin-bottom: 8px; }
+    .section-light .card-title { color: var(--deep); }
+    .section-dark .card-title { color: var(--ivory); }
+    .card-desc { font-size: 14px; font-weight: 300; line-height: 1.7; }
+    .section-light .card-desc { color: var(--rose); }
+    .section-dark .card-desc { color: rgba(237,232,225,.7); }
+
+    /* PULL QUOTE */
+    .pull-quote { font-family: 'Spectral', serif; font-size: clamp(20px, 2.2vw, 28px); font-weight: 300; font-style: italic; line-height: 1.45; border-left: 2px solid var(--terra); padding-left: 28px; margin-bottom: 32px; }
+    .section-light .pull-quote { color: var(--rose); }
+    .section-dark .pull-quote { color: var(--clay); }
+
+    /* PARTNER TAG */
+    .partner-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--terra); border: 0.5px solid rgba(192,122,90,.3); padding: 5px 14px; border-radius: 2px; margin-bottom: 24px; }
+
+    /* LAB MARKERS */
+    .lab-group { margin-bottom: 36px; }
+    .lab-group:last-child { margin-bottom: 0; }
+    .lab-group-title { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 0.5px solid var(--border); }
+    .lab-markers { display: flex; flex-wrap: wrap; gap: 8px; }
+    .lab-marker { font-size: 13px; font-weight: 400; color: var(--espresso); background: rgba(74,51,40,.05); border: 0.5px solid var(--border); padding: 6px 14px; border-radius: 2px; }
+
+    /* HOW IT COMES TOGETHER */
+    .together-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px; border-top: 0.5px solid rgba(237,232,225,.12); }
+    .together-step { padding: 32px 28px 32px 0; border-right: 0.5px solid rgba(237,232,225,.12); }
+    .together-step:last-child { border-right: none; padding-right: 0; padding-left: 28px; }
+    .together-step:not(:first-child):not(:last-child) { padding-left: 28px; }
+    .together-step-num { font-family: 'Spectral', serif; font-size: 40px; font-weight: 300; color: rgba(237,232,225,.2); line-height: 1; margin-bottom: 16px; }
+    .together-step h4 { font-family: 'Spectral', serif; font-size: 18px; font-weight: 400; color: var(--ivory); margin-bottom: 8px; }
+    .together-step p { font-size: 14px; font-weight: 300; line-height: 1.75; color: rgba(237,232,225,.7); }
+
+    /* CTA */
+    .section-cta { background: var(--ivory); text-align: center; padding: 100px 48px; }
+    .section-cta h2 { font-family: 'Spectral', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--deep); margin-bottom: 16px; }
+    .section-cta h2 em { font-style: italic; color: var(--rose); }
+    .section-cta p { font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--rose); max-width: 480px; margin: 0 auto 40px; }
+    .btn-primary { font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ivory); background: var(--espresso); border: none; padding: 16px 48px; border-radius: 2px; cursor: pointer; font-family: 'Cairo', sans-serif; transition: all .25s; }
+    .btn-primary:hover { background: var(--section-dark); }
+
+    /* FOOTER */
+    footer { background: #4A3328; padding: 60px 48px 32px; }
+    .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 0.5px solid rgba(237,232,225,.08); }
+    .footer-brand-name { font-size: 24px; font-weight: 200; color: var(--ivory); letter-spacing: .22em; margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 11px; font-weight: 300; letter-spacing: .18em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+    .footer-tagline { font-size: 14px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.6); max-width: 240px; margin-top: 12px; }
+    .footer-col h5 { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
+    .footer-col p, .footer-col address { font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(237,232,225,.75); font-style: normal; }
+    .footer-col a { color: rgba(237,232,225,.75); text-decoration: none; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; }
+    .footer-legal { font-size: 11px; font-weight: 300; color: rgba(237,232,225,.4); letter-spacing: .06em; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      nav.scrolled { padding: calc(12px + env(safe-area-inset-top)) 24px 12px; }
+      .nav-links { display: none; }
+      .section-light, .section-dark, .section-cta { padding: 60px 24px; }
+      .hero { padding: 100px 24px 60px; }
+      .two-col, .two-col-wide { grid-template-columns: 1fr; gap: 40px; }
+      .card-grid { grid-template-columns: 1fr 1fr; }
+      [style*="repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+      [style*="repeat(5,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+      .card-grid-2 { grid-template-columns: 1fr; }
+      .together-steps { grid-template-columns: 1fr 1fr; }
+      .together-step { border-right: none; padding: 24px 0; border-bottom: 0.5px solid rgba(237,232,225,.12); }
+      .together-step:last-child { border-bottom: none; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 540px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .together-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-name">AAHANA</div>
+    <div class="nav-sub">Medical Aesthetics</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="prakriti.html">Prakriti</a></li>
+    <li><a href="precision.html">Precision medicine</a></li>
+    <li><a href="about.html">Dr. Shankar</a></li>
+  </ul>
+  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>
+</nav>
+
+<!-- HERO — DARK -->
+<section class="hero">
+  <div class="hero-eyebrow">Precision medicine</div>
+  <h1 class="hero-title">Beyond the surface.<br><em>Your skin at the molecular level.</em></h1>
+  <p class="hero-sub">Most practices treat what they can see. Aahana starts with what the data reveals: clinical imaging, genetic analysis, microbiome profiling, and targeted lab work — a complete picture of how your skin is built and why it behaves the way it does.</p>
+</section>
+
+<!-- WHY PRECISION — LIGHT -->
+<section class="section-light">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="section-label">Why it matters</span>
+        <h2 class="section-heading" style="color:var(--deep)">Symptoms are the last thing<br><em style="font-style:italic;color:var(--rose)">to show up.</em></h2>
+        <p class="body light-text">By the time a skin concern is visible, the underlying cause has often been active for months or years. Dryness, pigmentation, premature aging, and reactivity are outputs of deeper processes: genetic predispositions, microbial imbalances, inflammatory signaling, and nutrient deficiencies that topical treatments alone can never fully address.</p>
+        <p class="body light-text">Precision medicine for skin means diagnosing those root causes before treating their symptoms. It is what separates a protocol that works from one that manages.</p>
+      </div>
+      <div class="reveal">
+        <div class="pull-quote">"We are trying to take this concept a step further by using the patient's genetic profile, medical history, microbiome, lifestyle, diet and other environmental factors to create the most effective treatment plan for that individual."</div>
+        <p class="body light-text" style="font-size:14px;color:var(--rose)">Dr. Julie C. Harper, MD — Dermatology Times</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIA — DARK -->
+<section class="section-dark">
+  <div class="section-inner">
+    <div class="reveal">
+        <span class="section-label" style="color:var(--terra)">Clinical imaging</span>
+        <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,232,225,.7);border:0.5px solid rgba(237,232,225,.2);padding:5px 14px;border-radius:2px;margin-bottom:24px">Included in every consultation</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:40px">
+          <h2 class="section-heading" style="color:var(--ivory);margin-bottom:0">Visia skin analysis.<br><em style="font-style:italic;color:var(--clay)">The foundation of every plan.</em></h2>
+          <p class="body dark-text" style="margin-bottom:0">Visia clinical imaging captures eight skin metrics simultaneously, benchmarked against a database matched to your age and skin tone. It reveals what the eye cannot: subsurface pigmentation, UV damage, bacterial activity, and pore structure. Every Aahana patient receives a Visia analysis before any treatment is recommended.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+          <div class="card"><div class="card-label">01</div><div class="card-title">Spots</div><div class="card-desc">Surface and subsurface pigmentation, including sun damage not yet visible to the eye.</div></div>
+          <div class="card"><div class="card-label">02</div><div class="card-title">Wrinkles</div><div class="card-desc">Fine lines and deeper creases mapped across the face.</div></div>
+          <div class="card"><div class="card-label">03</div><div class="card-title">Texture</div><div class="card-desc">Surface irregularities that affect light reflection and skin smoothness.</div></div>
+          <div class="card"><div class="card-label">04</div><div class="card-title">Pores</div><div class="card-desc">Pore size distribution and congestion patterns.</div></div>
+          <div class="card"><div class="card-label">05</div><div class="card-title">UV spots</div><div class="card-desc">UV-induced damage visible under UV illumination before it reaches the surface.</div></div>
+          <div class="card"><div class="card-label">06</div><div class="card-title">Brown spots</div><div class="card-desc">Melanin-based pigmentation including melasma and post-inflammatory hyperpigmentation.</div></div>
+          <div class="card"><div class="card-label">07</div><div class="card-title">Red areas</div><div class="card-desc">Redness, rosacea, and vascular irregularities.</div></div>
+          <div class="card"><div class="card-label">08</div><div class="card-title">Porphyrins</div><div class="card-desc">Bacterial activity and sebaceous secretions linked to acne and congestion.</div></div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKIN DNA — LIGHT -->
+<section class="section-light">
+  <div class="section-inner">
+    <div class="reveal">
+        <span class="section-label">Skin DNA analysis</span>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px"><div class="partner-tag" style="margin-bottom:0">Powered by SkinDNA</div><div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);border:0.5px solid var(--border);padding:5px 14px;border-radius:2px">Optional · Available for an additional fee</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:40px">
+          <h2 class="section-heading" style="color:var(--deep);margin-bottom:0">What you were born with<br><em style="font-style:italic;color:var(--rose)">shapes everything.</em></h2>
+          <div>
+            <p class="body light-text">Your DNA determines how your skin produces collagen, responds to UV, manages oxidative stress, and ages. SkinDNA analysis identifies genetic variants across five clinically validated categories, giving Dr. Shankar a blueprint of your skin's intrinsic strengths and vulnerabilities before a single treatment begins.</p>
+            <p class="body light-text" style="margin-bottom:0">The test is a simple cheek swab. The results inform your protocol for life. Available as a standalone add-on or as part of a comprehensive precision medicine program.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+          <div class="card"><div class="card-label">01</div><div class="card-title">Firmness & Elasticity</div><div class="card-desc">Collagen and elastin production and structural resilience over time.</div></div>
+          <div class="card"><div class="card-label">02</div><div class="card-title">Glycation & Wrinkling</div><div class="card-desc">How your body processes sugars and their effect on deep wrinkle formation.</div></div>
+          <div class="card"><div class="card-label">03</div><div class="card-title">Sun Damage</div><div class="card-desc">Genetic susceptibility to UV damage and photoaging beyond Fitzpatrick type.</div></div>
+          <div class="card"><div class="card-label">04</div><div class="card-title">Skin Antioxidants</div><div class="card-desc">Your intrinsic capacity to neutralize free radicals and oxidative stress.</div></div>
+          <div class="card"><div class="card-label">05</div><div class="card-title">Skin Sensitivity</div><div class="card-desc">Inflammatory response, barrier integrity, and reactivity to products and treatments.</div></div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- MICROBIOME — DARK -->
+<section class="section-dark">
+  <div class="section-inner">
+    <div class="two-col reveal">
+      <div>
+        <span class="section-label" style="color:var(--terra)">Skin microbiome testing</span>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px"><div class="partner-tag" style="margin-bottom:0">In partnership with Parallel Health</div><div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,232,225,.6);border:0.5px solid rgba(237,232,225,.2);padding:5px 14px;border-radius:2px">Optional · Available for an additional fee</div></div>
+        <h2 class="section-heading" style="color:var(--ivory)">The ecosystem<br><em style="font-style:italic;color:var(--clay)">living on your skin.</em></h2>
+        <p class="body dark-text">Trillions of microorganisms live on your skin and play an active role in barrier function, immune regulation, inflammation, and aging. Parallel Health's skin microbiome testing goes beyond identifying which species are present — it maps what your microbiome is actually producing: the vitamins, antioxidants, lipids, and peptides it synthesizes, and the harmful metabolites generated by pathogenic species.</p>
+        <p class="body dark-text">Dr. Shankar co-led the development of the first microbiome-driven skincare line from bench to market at Parallel Health. That background informs how Aahana integrates microbiome data into clinical protocols, not just skincare recommendations.</p>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-label">What it reveals</div>
+          <div class="card-title">Species composition</div>
+          <div class="card-desc">Whole genome sequencing at strain-level resolution — who is present, in what amounts, and whether they are beneficial or pathogenic.</div>
+        </div>
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-label">What it reveals</div>
+          <div class="card-title">Metabolic output</div>
+          <div class="card-desc">The specific bioactive compounds your microbiome is actively producing or failing to produce — including vitamins, antioxidants, lipids, and short-chain fatty acids.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">What it means for your skin</div>
+          <div class="card-title">Targeted intervention</div>
+          <div class="card-desc">Results translate into clinical protocols addressing barrier repair, inflammation, acne, rosacea, and skin aging at the microbial root.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAB TESTING — LIGHT -->
+<section class="section-light">
+  <div class="section-inner reveal">
+    <div class="two-col-wide">
+      <div>
+        <span class="section-label">Lab testing</span>
+        <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);border:0.5px solid var(--border);padding:5px 14px;border-radius:2px;margin-bottom:24px">Optional · Available for an additional fee</div>
+        <h2 class="section-heading" style="color:var(--deep)">Skin is a readout<br><em style="font-style:italic;color:var(--rose)">of systemic health.</em></h2>
+        <p class="body light-text">Chronic inflammation, hormonal shifts, nutrient deficiencies, and metabolic dysfunction all manifest on the skin before they manifest anywhere else. Where clinically indicated, Aahana orders targeted lab panels to identify the systemic drivers of your skin concerns — and to ensure your treatment protocol addresses them.</p>
+        <p class="body light-text">All markers are selected for their direct relevance to skin health. Labs are not ordered routinely — Dr. Shankar recommends them only where your clinical picture suggests a systemic driver that would meaningfully change your treatment protocol. Any findings outside normal range are communicated to your primary care physician.</p>
+      </div>
+      <div>
+        <div class="lab-group">
+          <div class="lab-group-title">Nutrient status</div>
+          <div class="lab-markers">
+            <span class="lab-marker">Vitamin D</span>
+            <span class="lab-marker">Zinc</span>
+            <span class="lab-marker">Ferritin</span>
+            <span class="lab-marker">Omega-3 index</span>
+          </div>
+        </div>
+        <div class="lab-group">
+          <div class="lab-group-title">Inflammation</div>
+          <div class="lab-markers">
+            <span class="lab-marker">IL-6</span>
+          </div>
+        </div>
+        <div class="lab-group">
+          <div class="lab-group-title">Hormonal health</div>
+          <div class="lab-markers">
+            <span class="lab-marker">Cortisol</span>
+            <span class="lab-marker">DHEA-S</span>
+            <span class="lab-marker">Estradiol</span>
+            <span class="lab-marker">Testosterone</span>
+          </div>
+          <p style="font-size:13px;font-weight:300;color:var(--rose);margin-top:10px;font-style:italic">Ordered where hormonal fluctuation is a known driver of a patient's primary skin concern, such as melasma or hormonal acne. Any values outside normal range are referred to the patient's primary care physician.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT COMES TOGETHER — DARK -->
+<section class="section-dark">
+  <div class="section-inner">
+    <span class="section-label" style="color:var(--terra)">The complete picture</span>
+    <h2 class="section-heading" style="color:var(--ivory);max-width:600px">Every layer of data, read together.<br><em style="font-style:italic;color:var(--clay)">One protocol, specific to you.</em></h2>
+    <p style="font-size:15px;font-weight:300;color:rgba(237,232,225,.7);max-width:680px;margin-bottom:40px">Visia imaging is included in every consultation. Skin DNA analysis, microbiome testing, and lab panels are optional — available individually or as part of a comprehensive precision medicine program — and recommended only when they would meaningfully inform your care.</p>
+    <div class="together-steps reveal">
+      <div class="together-step">
+        <div class="together-step-num">01</div>
+        <h4>Visia imaging</h4>
+        <p>The clinical foundation. Eight metrics that reveal surface and subsurface skin health.</p>
+      </div>
+      <div class="together-step">
+        <div class="together-step-num">02</div>
+        <h4>Prakriti assessment</h4>
+        <p>Your constitutional type — how your skin is built to behave, age, and respond.</p>
+      </div>
+      <div class="together-step">
+        <div class="together-step-num">03</div>
+        <h4>DNA & microbiome</h4>
+        <p>Your genetic blueprint and microbial ecosystem — the layers beneath the surface.</p>
+      </div>
+      <div class="together-step">
+        <div class="together-step-num">04</div>
+        <h4>Lab markers</h4>
+        <p>The systemic signals driving your skin's behavior from within.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — LIGHT -->
+<section class="section-cta">
+  <span class="section-label" style="display:block;text-align:center">Opening Winter 2026</span>
+  <h2>See your skin<br><em>completely.</em></h2>
+  <p>Join the waitlist for early access and exclusive benefits for our first patients.</p>
+  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">AAHANA</div>
+      <div class="footer-brand-sub">Medical Aesthetics</div>
+      <div style="font-size:12px;font-weight:300;color:rgba(237,232,225,.4);letter-spacing:.08em;margin-top:6px;font-style:italic">Aahana · आहान · first light of dawn</div>
+      <p class="footer-tagline">Physician-led medical aesthetics at the forefront of clinical science and Ayurvedic constitutional medicine.</p>
+    </div>
+    <div class="footer-col" style="padding-top:40px">
+      <h5>Location</h5>
+      <address>2175 3rd Street, Unit C1<br>San Francisco, CA 94107<br><br>Hours: coming soon</address>
+    </div>
+    <div class="footer-col" style="padding-top:40px">
+      <h5>Contact</h5>
+      <p>
+        <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="background:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:300;color:rgba(237,232,225,.75);padding:0;text-align:left;">Join the waitlist</button><br><br>
+        <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA</div>
+    <div class="footer-legal">·</div>
+    <div class="footer-legal">aahanasf.com</div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); });
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
