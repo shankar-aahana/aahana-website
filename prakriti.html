@@ -62,14 +62,14 @@
       text-shadow: 0 1px 12px rgba(0,0,0,.5);
     }
     .nav-sub {
-      font-size: 11px; font-weight: 300;
+      font-size: 13px; font-weight: 300;
       color: var(--terra); letter-spacing: .18em;
       text-transform: uppercase; margin-top: 3px;
       text-shadow: 0 1px 8px rgba(0,0,0,.7);
     }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
-      font-size: 13px; font-weight: 300; letter-spacing: .1em;
+      font-size: 14px; font-weight: 300; letter-spacing: .08em;
       text-transform: uppercase; color: rgba(237,232,225,.9);
       text-decoration: none; transition: color .2s;
       text-shadow: 0 1px 8px rgba(0,0,0,.6);
@@ -166,46 +166,8 @@
       letter-spacing: .01em; margin-bottom: 40px;
     }
 
-    /* ── WHAT IS PRAKRITI ── */
-    .section-what { background: var(--ivory); }
-    .what-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start;
-    }
-    .what-left p {
-      font-size: 16px; font-weight: 400; line-height: 1.9;
-      color: var(--deep); margin-bottom: 20px;
-    }
-    .what-right { padding-top: 8px; }
-    .element-row {
-      display: flex; align-items: center; gap: 20px;
-      padding: 20px 0;
-      border-bottom: 0.5px solid var(--border);
-    }
-    .element-row:last-child { border-bottom: none; }
-    .element-symbol {
-      width: 48px; height: 48px; border-radius: 2px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Spectral', serif; font-size: 22px;
-      font-weight: 300; flex-shrink: 0;
-    }
-    .element-symbol.vata { background: var(--vata-light); color: var(--vata-primary); }
-    .element-symbol.pitta { background: var(--pitta-light); color: var(--pitta-primary); }
-    .element-symbol.kapha { background: var(--kapha-light); color: var(--kapha-primary); }
-    .element-name {
-      font-family: 'Spectral', serif;
-      font-size: 20px; font-weight: 300; font-style: italic;
-    }
-    .element-name.vata { color: var(--vata-primary); }
-    .element-name.pitta { color: var(--pitta-primary); }
-    .element-name.kapha { color: var(--kapha-primary); }
-    .element-desc {
-      font-size: 13px; font-weight: 300; line-height: 1.6;
-      color: var(--rose);
-    }
-
     /* ── THREE DOSHAS ── */
-    .section-doshas { background: var(--section-dark); padding: 100px 48px; }
+    .section-doshas { background: var(--ivory); padding: 100px 48px; }
     .doshas-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 32px; margin-top: 48px;
@@ -229,7 +191,7 @@
       user-select: none;
     }
     .dosha-card-label {
-      font-size: 10px; font-weight: 600; letter-spacing: .16em;
+      font-size: 12px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: rgba(255,255,255,.6);
       margin-bottom: 8px;
     }
@@ -244,7 +206,7 @@
       color: rgba(255,255,255,.65); margin-bottom: 16px;
     }
     .dosha-card-elements {
-      font-size: 10px; font-weight: 600; letter-spacing: .14em;
+      font-size: 12px; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; color: rgba(255,255,255,.8);
     }
     .dosha-card-body {
@@ -252,7 +214,7 @@
       background: var(--ivory);
     }
     .dosha-skin-label {
-      font-size: 10px; font-weight: 600; letter-spacing: .14em;
+      font-size: 12px; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; margin-bottom: 14px;
     }
     .dosha-skin-label.vata { color: var(--vata-primary); }
@@ -270,7 +232,7 @@
     .dosha-trait-dot.pitta { background: var(--pitta-primary); }
     .dosha-trait-dot.kapha { background: var(--kapha-primary); }
     .dosha-trait-text {
-      font-size: 13px; font-weight: 400; line-height: 1.65;
+      font-size: 15px; font-weight: 400; line-height: 1.7;
       color: var(--deep);
     }
     .dosha-quote {
@@ -282,7 +244,7 @@
     }
 
     /* ── 42 PROFILES ── */
-    .section-profiles { background: var(--ivory); }
+    .section-profiles { background: var(--section-dark); }
     .profiles-intro {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 80px; align-items: start; margin-bottom: 0;
@@ -296,14 +258,14 @@
       gap: 6px;
     }
     .matrix-header {
-      font-size: 8px; font-weight: 600; letter-spacing: .1em;
+      font-size: 12px; font-weight: 600; letter-spacing: .1em;
       text-transform: uppercase; color: var(--terra);
       text-align: center; padding: 6px 0;
     }
     .matrix-cell {
       height: 28px; border-radius: 2px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 8px; font-weight: 400; letter-spacing: .06em;
+      font-size: 12px; font-weight: 400; letter-spacing: .06em;
       transition: transform .15s;
       cursor: default;
     }
@@ -320,30 +282,30 @@
       gap: 6px; margin-bottom: 6px;
     }
     .fitz-label {
-      font-size: 8px; font-weight: 600; letter-spacing: .08em;
-      text-align: center; color: var(--espresso);
+      font-size: 12px; font-weight: 600; letter-spacing: .08em;
+      text-align: center; color: rgba(237,232,225,.5);
       text-transform: uppercase;
     }
     .dosha-row-label {
-      font-size: 8px; font-weight: 500; letter-spacing: .08em;
+      font-size: 12px; font-weight: 500; letter-spacing: .08em;
       text-transform: uppercase; color: rgba(237,232,225,.5);
       display: flex; align-items: center; margin-bottom: 4px;
     }
 
     /* ── QUIZ CTA ── */
     .section-quiz-cta {
-      background: var(--section-dark);
+      background: var(--ivory);
       text-align: center; padding: 100px 48px;
     }
     .section-quiz-cta h2 {
       font-family: 'Spectral', serif;
       font-size: clamp(32px, 4vw, 52px); font-weight: 300;
-      color: var(--ivory); margin-bottom: 16px;
+      color: var(--deep); margin-bottom: 16px;
     }
-    .section-quiz-cta h2 em { font-style: italic; color: var(--clay); }
+    .section-quiz-cta h2 em { font-style: italic; color: var(--rose); }
     .section-quiz-cta p {
       font-size: 16px; font-weight: 300; line-height: 1.8;
-      color: rgba(237,232,225,.92); max-width: 520px;
+      color: var(--rose); max-width: 520px;
       margin: 0 auto 40px;
     }
     .btn-quiz {
@@ -369,7 +331,7 @@
       letter-spacing: .22em; margin-bottom: 4px;
     }
     .footer-brand-sub {
-      font-size: 10px; font-weight: 300; letter-spacing: .18em;
+      font-size: 12px; font-weight: 300; letter-spacing: .18em;
       text-transform: uppercase; color: var(--terra); margin-bottom: 6px;
     }
     .footer-tagline {
@@ -377,7 +339,7 @@
       color: rgba(237,232,225,.6); max-width: 240px; margin-top: 12px;
     }
     .footer-col h5 {
-      font-size: 11px; font-weight: 600; letter-spacing: .14em;
+      font-size: 13px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: var(--terra); margin-bottom: 16px;
     }
     .footer-col p, .footer-col address {
@@ -390,7 +352,7 @@
       padding-top: 24px;
     }
     .footer-legal {
-      font-size: 10px; font-weight: 300;
+      font-size: 12px; font-weight: 300;
       color: rgba(237,232,225,.4); letter-spacing: .06em;
     }
 
@@ -417,7 +379,7 @@
       position: sticky; top: 0; z-index: 1;
     }
     .quiz-modal-label {
-      font-size: 10px; font-weight: 600; letter-spacing: .16em;
+      font-size: 12px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: var(--terra); margin-bottom: 6px;
     }
     .quiz-modal-title {
@@ -450,12 +412,12 @@
     }
     .quiz-question.active { display: block; }
     .quiz-q-label {
-      font-size: 10px; font-weight: 600; letter-spacing: .14em;
+      font-size: 12px; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; color: var(--terra); margin-bottom: 10px;
     }
     .quiz-q-text {
       font-family: 'Spectral', serif;
-      font-size: 20px; font-weight: 400; line-height: 1.4;
+      font-size: 22px; font-weight: 400; line-height: 1.4;
       color: var(--deep); margin-bottom: 28px;
     }
     .quiz-options { display: flex; flex-direction: column; gap: 10px; }
@@ -472,11 +434,11 @@
       background: rgba(192,122,90,.06);
     }
     .quiz-option-letter {
-      font-size: 11px; font-weight: 600; letter-spacing: .1em;
+      font-size: 13px; font-weight: 600; letter-spacing: .1em;
       color: var(--clay); flex-shrink: 0; margin-top: 1px;
     }
     .quiz-option-text {
-      font-size: 14px; font-weight: 400; line-height: 1.5;
+      font-size: 16px; font-weight: 400; line-height: 1.6;
       color: var(--deep);
     }
     .quiz-nav {
@@ -484,13 +446,13 @@
       align-items: center; margin-top: 28px;
     }
     .quiz-btn-back {
-      font-size: 11px; font-weight: 400; letter-spacing: .1em;
+      font-size: 13px; font-weight: 400; letter-spacing: .1em;
       text-transform: uppercase; color: var(--rose);
       background: none; border: none; cursor: pointer;
       font-family: 'Cairo', sans-serif;
     }
     .quiz-btn-next {
-      font-size: 11px; font-weight: 500; letter-spacing: .12em;
+      font-size: 13px; font-weight: 500; letter-spacing: .12em;
       text-transform: uppercase; color: var(--ivory);
       background: var(--espresso); border: none;
       padding: 12px 28px; border-radius: 2px;
@@ -513,7 +475,7 @@
     .result-header.kapha { background: var(--kapha-primary); }
     .result-header.mixed { background: var(--section-dark); }
     .result-label {
-      font-size: 10px; font-weight: 600; letter-spacing: .16em;
+      font-size: 12px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: rgba(255,255,255,.6);
       margin-bottom: 8px;
     }
@@ -528,7 +490,7 @@
       color: rgba(255,255,255,.6);
     }
     .result-elements {
-      font-size: 10px; font-weight: 600; letter-spacing: .14em;
+      font-size: 12px; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; color: rgba(255,255,255,.7);
       margin-top: 12px;
     }
@@ -576,18 +538,18 @@
     .fitz-swatch {
       height: 32px; border-radius: 2px 2px 0 0;
     }
-    .fitz-info { padding: 8px; background: rgba(74,51,40,.06); border-radius: 0 0 2px 2px; }
+    .fitz-info { padding: 8px; background: rgba(237,232,225,.06); border-radius: 0 0 2px 2px; }
     .fitz-num {
-      font-size: 9px; font-weight: 600; letter-spacing: .12em;
+      font-size: 13px; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; color: var(--terra); margin-bottom: 3px;
     }
     .fitz-name {
-      font-size: 10px; font-weight: 400; line-height: 1.4;
-      color: var(--espresso);
+      font-size: 12px; font-weight: 400; line-height: 1.4;
+      color: rgba(237,232,225,.85);
     }
     .fitz-reaction {
-      font-size: 9px; font-weight: 300; line-height: 1.4;
-      color: var(--rose); margin-top: 2px;
+      font-size: 13px; font-weight: 300; line-height: 1.4;
+      color: rgba(237,232,225,.55); margin-top: 2px;
     }
 
     /* ── PROFILE TOOLTIP ── */
@@ -613,7 +575,7 @@
     .tooltip-header.kapha { background: var(--kapha-primary); }
     .tooltip-header.mixed { background: var(--section-dark); }
     .tooltip-profile-id {
-      font-size: 10px; font-weight: 600; letter-spacing: .16em;
+      font-size: 12px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 6px;
     }
     .tooltip-profile-name {
@@ -622,14 +584,14 @@
     }
     .tooltip-fitz-tag {
       display: inline-block; margin-top: 10px;
-      font-size: 10px; font-weight: 500; letter-spacing: .1em;
+      font-size: 12px; font-weight: 500; letter-spacing: .1em;
       text-transform: uppercase; color: rgba(255,255,255,.7);
       border: 0.5px solid rgba(255,255,255,.25);
       padding: 4px 10px; border-radius: 2px;
     }
     .tooltip-body { padding: 22px 28px 28px; }
     .tooltip-body p {
-      font-size: 14px; font-weight: 400; line-height: 1.75;
+      font-size: 16px; font-weight: 400; line-height: 1.8;
       color: var(--deep); margin-bottom: 12px;
     }
     .tooltip-body p:last-child { margin-bottom: 0; }
@@ -690,62 +652,18 @@
   <div class="hero-eyebrow">Ayurvedic skin science</div>
   <h1 class="hero-title">Prakriti</h1>
   <div class="hero-title-sanskrit">प्रकृति · Your natural constitution</div>
-  <p class="hero-sub">In Ayurvedic medicine, Prakriti describes your unique constitutional makeup: the combination of elemental forces that shapes how your skin behaves, ages, and responds to treatment. Understanding it changes everything about how we care for you.</p>
+  <p class="hero-sub">Prakriti, from the Sanskrit for "nature" or "original form", is the Ayurvedic framework for understanding individual constitution. Every person is born with a unique combination of three fundamental forces, or doshas, that shapes how their skin behaves, ages, and responds to treatment.</p>
+  <p class="hero-sub" style="margin-top:16px">Two patients can have identical skin tones and entirely different treatment needs. Prakriti explains why. At Aahana, it is part of every patient's intake and it informs everything that follows.</p>
   <div class="hero-cta">
     <button class="btn-discover" onclick="openQuiz()">Discover your Prakriti</button>
-  </div>
-</section>
-
-<!-- WHAT IS PRAKRITI -->
-<section class="section-what">
-  <div class="section-inner">
-    <div class="what-grid">
-      <div class="what-left reveal">
-        <span class="section-label">What is Prakriti</span>
-        <h2 class="section-heading" style="color:var(--deep)">
-          The science of<br>
-          <em style="font-style:italic;color:var(--rose)">your skin's nature</em>
-        </h2>
-        <p>Prakriti, from the Sanskrit for "nature" or "original form", is the Ayurvedic framework for understanding individual constitution. It holds that every person is born with a unique combination of three fundamental forces, or doshas, that governs their physiology, their tendencies, and their relationship with the world.</p>
-        <p>In medical aesthetics, Prakriti typing tells us things no scan can fully capture. How your skin responds under stress, how it ages, what it craves, and what inflames it. Two patients can have identical Fitzpatrick types and entirely different treatment needs. Prakriti explains why.</p>
-        <p>At Aahana, Prakriti assessment is offered to every patient as part of the intake process. It takes minutes, and it informs everything that follows.</p>
-      </div>
-      <div class="what-right reveal">
-        <div class="element-row">
-          <div class="element-symbol vata">V</div>
-          <div>
-            <div class="element-name vata">Vata</div>
-            <div class="element-desc">Air & Space · Movement, creativity, dryness, sensitivity</div>
-          </div>
-        </div>
-        <div class="element-row">
-          <div class="element-symbol pitta">P</div>
-          <div>
-            <div class="element-name pitta">Pitta</div>
-            <div class="element-desc">Fire & Light · Transformation, precision, heat, reactivity</div>
-          </div>
-        </div>
-        <div class="element-row">
-          <div class="element-symbol kapha">K</div>
-          <div>
-            <div class="element-name kapha">Kapha</div>
-            <div class="element-desc">Earth & Water · Stability, resilience, oiliness, structure</div>
-          </div>
-        </div>
-        <div style="margin-top:32px;padding:24px;background:rgba(192,122,90,.08);border-radius:2px;border-left:2px solid var(--terra)">
-          <div style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:8px">A note from Dr. Shankar</div>
-          <div style="font-family:'Spectral',serif;font-size:15px;font-style:italic;line-height:1.7;color:var(--deep)">"Prakriti isn't mysticism. It's a sophisticated framework for understanding constitutional variation. One that modern research is increasingly validating. I use it because it works."</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- THREE DOSHAS -->
 <section class="section-doshas">
   <div class="section-inner">
-    <span class="section-label" style="color:var(--terra)">The three doshas</span>
-    <h2 class="section-heading" style="color:var(--ivory)">Each one shapes your skin<br><em style="font-style:italic;color:var(--clay)">in a completely different way</em></h2>
+    <span class="section-label">The three doshas</span>
+    <h2 class="section-heading" style="color:var(--deep)">Each one shapes your skin<br><em style="font-style:italic;color:var(--rose)">in a completely different way</em></h2>
     <div class="doshas-grid">
 
       <!-- VATA -->
@@ -850,19 +768,17 @@
   <div class="section-inner">
     <!-- Heading + intro -->
     <div class="reveal" style="margin-bottom:32px">
-      <span class="section-label">The 42 profiles</span>
+      <span class="section-label" style="color:var(--terra)">The 42 profiles</span>
       <h2 class="section-heading" style="color:var(--deep);margin-bottom:20px">
         Your constitution and<br>
         <em style="font-style:italic;color:var(--rose)">your skin tone together</em>
       </h2>
-      <p style="font-size:15px;font-weight:400;line-height:1.9;color:var(--espresso);margin-bottom:16px;max-width:720px">Prakriti alone doesn't complete the picture. Combined with your Fitzpatrick skin type, which determines your melanin concentration, UV response, and laser safety parameters, it creates one of 42 unique skin profiles.</p>
-      <p style="font-size:15px;font-weight:400;line-height:1.9;color:var(--espresso);max-width:720px">Each profile carries different clinical implications, and understanding yours allows Dr. Shankar to make recommendations calibrated not just for "your skin type," but for you specifically.</p>
+      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(237,232,225,.92);max-width:720px;margin-bottom:32px">Your skin constitution and your skin tone together define one of 42 unique profiles. The Fitzpatrick scale, a foundational clinical tool, classifies skin by melanin concentration and UV response. At Aahana, we layer it with your Prakriti constitutional type to create something no standard scale offers: a complete picture of how your skin is built, how it behaves, and what it needs.</p>
     </div>
 
     <!-- Fitzpatrick Scale -->
     <div style="margin-bottom:0" class="reveal">
-      <div style="font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:16px">The Fitzpatrick Scale · Understanding skin tone</div>
-      <p style="font-size:14px;font-weight:400;line-height:1.8;color:var(--espresso);max-width:700px;margin-bottom:24px">The Fitzpatrick scale classifies skin by melanin concentration and UV response, and it is a foundational clinical tool. But at Aahana, we don't stop there. We've developed our own skin profile system that layers Fitzpatrick typing with Ayurvedic Prakriti assessment to create something no standard scale offers: a complete picture of your skin's constitution, behavior, and clinical needs.</p>
+      <div style="font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:16px">The Fitzpatrick Scale</div>
       <div class="fitz-scale">
         <div class="fitz-type">
           <div class="fitz-swatch" style="background:#F9E4C8"></div>
@@ -955,7 +871,7 @@
           <div class="matrix-cell kapha-dom" onclick="showProfile('Kapha','VI','kapha')">K·VI</div>
         </div>
         <div style="display:grid;grid-template-columns:90px repeat(6,1fr);gap:6px;margin-bottom:6px">
-          <div class="dosha-row-label" style="color:var(--rose)">Vata-Pitta</div>
+          <div class="dosha-row-label" style="color:rgba(237,232,225,.6)">Vata-Pitta</div>
           <div class="matrix-cell vp" onclick="showProfile('Vata-Pitta','I','mixed')">VP·I</div>
           <div class="matrix-cell vp" onclick="showProfile('Vata-Pitta','II','mixed')">VP·II</div>
           <div class="matrix-cell vp" onclick="showProfile('Vata-Pitta','III','mixed')">VP·III</div>
@@ -964,7 +880,7 @@
           <div class="matrix-cell vp" onclick="showProfile('Vata-Pitta','VI','mixed')">VP·VI</div>
         </div>
         <div style="display:grid;grid-template-columns:90px repeat(6,1fr);gap:6px;margin-bottom:6px">
-          <div class="dosha-row-label" style="color:var(--rose)">Vata-Kapha</div>
+          <div class="dosha-row-label" style="color:rgba(237,232,225,.6)">Vata-Kapha</div>
           <div class="matrix-cell vk" onclick="showProfile('Vata-Kapha','I','mixed')">VK·I</div>
           <div class="matrix-cell vk" onclick="showProfile('Vata-Kapha','II','mixed')">VK·II</div>
           <div class="matrix-cell vk" onclick="showProfile('Vata-Kapha','III','mixed')">VK·III</div>
@@ -973,7 +889,7 @@
           <div class="matrix-cell vk" onclick="showProfile('Vata-Kapha','VI','mixed')">VK·VI</div>
         </div>
         <div style="display:grid;grid-template-columns:90px repeat(6,1fr);gap:6px;margin-bottom:6px">
-          <div class="dosha-row-label" style="color:var(--rose)">Pitta-Kapha</div>
+          <div class="dosha-row-label" style="color:rgba(237,232,225,.6)">Pitta-Kapha</div>
           <div class="matrix-cell pk" onclick="showProfile('Pitta-Kapha','I','mixed')">PK·I</div>
           <div class="matrix-cell pk" onclick="showProfile('Pitta-Kapha','II','mixed')">PK·II</div>
           <div class="matrix-cell pk" onclick="showProfile('Pitta-Kapha','III','mixed')">PK·III</div>
@@ -982,7 +898,7 @@
           <div class="matrix-cell pk" onclick="showProfile('Pitta-Kapha','VI','mixed')">PK·VI</div>
         </div>
         <div style="display:grid;grid-template-columns:90px repeat(6,1fr);gap:6px">
-          <div class="dosha-row-label" style="color:var(--rose)">Tridosha</div>
+          <div class="dosha-row-label" style="color:rgba(237,232,225,.6)">Tridosha</div>
           <div class="matrix-cell tri" onclick="showProfile('Tridosha','I','mixed')">T·I</div>
           <div class="matrix-cell tri" onclick="showProfile('Tridosha','II','mixed')">T·II</div>
           <div class="matrix-cell tri" onclick="showProfile('Tridosha','III','mixed')">T·III</div>
@@ -992,7 +908,7 @@
         </div>
       </div>
     </div>
-    <p style="font-size:12px;font-weight:300;color:var(--rose);margin-top:16px;font-style:italic">Tap any cell to explore that profile · 42 unique skin profiles · 7 dosha types × 6 skin tone types</p>
+    <p style="font-size:14px;font-weight:300;color:rgba(237,232,225,.45);margin-top:16px;font-style:italic">Tap any cell to explore that profile · 42 unique skin profiles · 7 dosha types × 6 skin tone types</p>
   </div>
 </section>
 
@@ -1012,7 +928,7 @@
     <div>
       <div class="footer-brand-name">AAHANA</div>
       <div class="footer-brand-sub">Medical Aesthetics</div>
-      <div style="font-size:11px;font-weight:300;color:rgba(237,232,225,.4);letter-spacing:.08em;margin-top:6px;font-style:italic">Aahana · आहान · first light of dawn</div>
+      <div style="font-size:13px;font-weight:300;color:rgba(237,232,225,.4);letter-spacing:.08em;margin-top:6px;font-style:italic">Aahana · आहान · first light of dawn</div>
       <p class="footer-tagline">Physician-led medical aesthetics at the forefront of clinical science and Ayurvedic constitutional medicine.</p>
     </div>
     <div class="footer-col" style="padding-top:40px">
@@ -1026,7 +942,7 @@
     <div class="footer-col" style="padding-top:40px">
       <h5>Contact</h5>
       <p>
-        <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="background:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:300;color:rgba(237,232,225,.75);padding:0;text-align:left;">Join the waitlist</button><br><br>
+        <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="background:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:300;color:rgba(237,232,225,.75);padding:0;text-align:left;">Join the waitlist</button><br><br>
         <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>
       </p>
     </div>
@@ -1159,15 +1075,15 @@
         <div class="result-cta">
           <p>This is a brief screening. A full Prakriti assessment is part of every Aahana consultation.</p>
           <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-            <button onclick="retakeQuiz()" style="font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);background:none;border:0.5px solid var(--border);padding:12px 28px;border-radius:2px;cursor:pointer;font-family:'Cairo',sans-serif;">↺ Retake quiz</button>
-            <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-quiz" style="font-size:11px;padding:12px 28px">Join the waitlist</button>
+            <button onclick="retakeQuiz()" style="font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);background:none;border:0.5px solid var(--border);padding:12px 28px;border-radius:2px;cursor:pointer;font-family:'Cairo',sans-serif;">↺ Retake quiz</button>
+            <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-quiz" style="font-size:13px;padding:12px 28px">Join the waitlist</button>
           </div>
         </div>
       </div>
 
       <div class="quiz-nav" id="quizNav">
         <button class="quiz-btn-back" id="backBtn" onclick="prevQuestion()" style="visibility:hidden">← Back</button>
-        <span style="font-size:11px;font-weight:300;color:var(--border);letter-spacing:.08em" id="qCounter">1 / 8</span>
+        <span style="font-size:13px;font-weight:300;color:var(--border);letter-spacing:.08em" id="qCounter">1 / 8</span>
       </div>
     </div>
   </div>
@@ -1359,7 +1275,7 @@ function showResult() {
     <div class="result-traits">
       ${data.traits.map(t => `<div class="result-trait ${data.cssClass}">${t}</div>`).join('')}
     </div>
-    <p style="font-size:13px;color:var(--rose);margin-top:16px;font-style:italic">This is a brief screening. A full Prakriti assessment is part of every Aahana consultation and goes considerably deeper.</p>
+    <p style="font-size:15px;color:var(--rose);margin-top:16px;font-style:italic">This is a brief screening. A full Prakriti assessment is part of every Aahana consultation and goes considerably deeper.</p>
   `;
 
   document.getElementById('quizResult').classList.add('show');
@@ -1470,7 +1386,7 @@ function showProfile(dosha, fitz, cssClass) {
   body.innerHTML = `
     <p>${data.base}</p>
     <p>${data.byFitz[fitz]}</p>
-    <p style="font-size:12px;color:var(--rose);font-style:italic;margin-top:16px;padding-top:12px;border-top:0.5px solid var(--border)">The 42 profiles define your constitutional and skin tone foundation. Your full Aahana consultation layers in your Visia data, health history, lifestyle, and goals to build something genuinely specific to you.</p>
+    <p style="font-size:14px;color:var(--rose);font-style:italic;margin-top:16px;padding-top:12px;border-top:0.5px solid var(--border)">The 42 profiles define your constitutional and skin tone foundation. Your full Aahana consultation layers in your Visia data, health history, lifestyle, and goals to build something genuinely specific to you.</p>
   `;
 
   document.getElementById('profileOverlay').classList.add('open');
