@@ -171,10 +171,15 @@
     .doshas-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 32px; margin-top: 48px;
+      align-items: stretch;
     }
     .dosha-card {
       border-radius: 3px; overflow: hidden;
       position: relative;
+      display: flex; flex-direction: column;
+    }
+    .dosha-card-body {
+      flex: 1;
     }
     .dosha-card-header {
       padding: 36px 32px 28px;
@@ -212,6 +217,7 @@
     .dosha-card-body {
       padding: 28px 32px 32px;
       background: var(--ivory);
+      flex: 1;
     }
     .dosha-skin-label {
       font-size: 12px; font-weight: 600; letter-spacing: .12em;
@@ -530,15 +536,17 @@
     .fitz-scale {
       display: grid; grid-template-columns: repeat(6, 1fr);
       gap: 8px; margin-bottom: 40px;
+      align-items: stretch;
     }
     .fitz-type {
       border-radius: 3px; overflow: hidden;
       cursor: default;
+      display: flex; flex-direction: column;
     }
     .fitz-swatch {
       height: 32px; border-radius: 2px 2px 0 0;
     }
-    .fitz-info { padding: 8px; background: rgba(237,232,225,.06); border-radius: 0 0 2px 2px; }
+    .fitz-info { padding: 8px; background: rgba(237,232,225,.06); border-radius: 0 0 2px 2px; flex: 1; }
     .fitz-num {
       font-size: 13px; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; color: var(--terra); margin-bottom: 3px;
