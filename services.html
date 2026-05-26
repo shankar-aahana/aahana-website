@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Aahana Medical Aesthetics</title>
+  <meta name="description" content="Physician-led medical aesthetics in San Francisco. Injectables, lasers, energy devices, skin treatments, and wellness — all beginning with a Visia skin analysis and Prakriti consultation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory:        #EDE8E1;
+      --espresso:     #4A3328;
+      --deep:         #4A3328;
+      --section-dark: #6B5147;
+      --clay:         #B48A7A;
+      --rose:         #9A6F63;
+      --terra:        #C07A5A;
+      --border:       #DDD8D0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivory); color: var(--deep); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px;
+      background: linear-gradient(to bottom, rgba(74,51,40,.5) 0%, transparent 100%);
+      transition: background .4s, padding .4s;
+    }
+    nav.scrolled { background: rgba(74,51,40,0.96); backdrop-filter: blur(12px); padding: calc(14px + env(safe-area-inset-top)) 48px 14px; }
+    .nav-brand { text-decoration: none; }
+    .nav-name { font-size: 26px; font-weight: 200; color: var(--ivory); letter-spacing: .22em; text-transform: uppercase; text-shadow: 0 1px 12px rgba(0,0,0,.5); }
+    .nav-sub { font-size: 12px; font-weight: 300; color: var(--terra); letter-spacing: .18em; text-transform: uppercase; margin-top: 3px; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 300; letter-spacing: .08em; text-transform: uppercase; color: rgba(237,232,225,.9); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ivory); }
+    .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ivory); border: 0.5px solid rgba(237,232,225,.8); padding: 8px 20px; border-radius: 2px; cursor: pointer; background: transparent; font-family: 'Cairo', sans-serif; transition: all .2s; }
+    .nav-cta:hover { background: var(--ivory); color: var(--deep); }
+
+    .hero-services {
+      min-height: 55vh; background: var(--section-dark);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 140px 48px 80px; position: relative; overflow: hidden;
+    }
+    .hero-services::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 80% 50%, rgba(192,122,90,.1) 0%, transparent 60%); }
+    .hero-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 20px; position: relative; z-index: 1; }
+    .hero-title { font-family: 'Spectral', serif; font-size: clamp(42px, 6vw, 80px); font-weight: 300; line-height: 1.05; color: var(--ivory); letter-spacing: .01em; margin-bottom: 24px; position: relative; z-index: 1; }
+    .hero-title em { font-style: italic; color: var(--clay); }
+    .hero-sub { font-size: clamp(16px, 1.6vw, 18px); font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.92); max-width: 600px; position: relative; z-index: 1; }
+
+    .section-label { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 28px; display: block; }
+
+    /* WHAT TO EXPECT */
+    .section-expect { background: var(--ivory); padding: 100px 48px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-heading { font-family: 'Spectral', serif; font-size: clamp(32px, 3.5vw, 48px); font-weight: 300; line-height: 1.2; letter-spacing: .01em; margin-bottom: 48px; }
+    .expect-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .expect-step { padding: 32px 28px; border: 0.5px solid var(--border); border-radius: 2px; }
+
+    .expect-step h4 { font-family: 'Spectral', serif; font-size: 17px; font-weight: 400; color: var(--deep); margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .expect-step p { font-size: 15px; font-weight: 400; line-height: 1.8; color: var(--rose); }
+
+    /* SERVICE CATEGORIES */
+    .service-category { padding: 80px 48px; }
+    .service-category.light { background: var(--ivory); }
+    .service-category.dark { background: var(--section-dark); }
+
+    .category-header { display: grid; grid-template-columns: 120px 1fr; gap: 48px; align-items: start; margin-bottom: 56px; }
+    .category-num { font-family: 'Spectral', serif; font-size: 56px; font-weight: 300; line-height: 1; color: #8B7355; }
+    .service-category.dark .category-num { color: rgba(237,232,225,.65); }
+    .category-title { font-family: 'Spectral', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 300; line-height: 1.15; margin-bottom: 16px; }
+    .service-category.light .category-title { color: var(--deep); }
+    .service-category.dark .category-title { color: var(--ivory); }
+    .category-title em { font-style: italic; }
+    .service-category.light .category-title em { color: var(--rose); }
+    .service-category.dark .category-title em { color: var(--clay); }
+    .category-intro { font-size: 16px; font-weight: 400; line-height: 1.85; }
+    .service-category.light .category-intro { color: var(--espresso); }
+    .service-category.dark .category-intro { color: rgba(237,232,225,.92); }
+
+    .services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 0.5px solid; }
+    .service-category.light .services-list { border-top-color: var(--border); }
+    .service-category.dark .services-list { border-top-color: rgba(237,232,225,.1); }
+    .service-item { padding: 36px 0; border-bottom: 0.5px solid; }
+    .service-category.light .service-item { border-bottom-color: var(--border); }
+    .service-category.dark .service-item { border-bottom-color: rgba(237,232,225,.1); }
+    .service-item:nth-child(odd) { padding-right: 48px; }
+    .service-item:nth-child(even) { padding-left: 48px; border-left: 0.5px solid; }
+    .service-category.light .service-item:nth-child(even) { border-left-color: var(--border); }
+    .service-category.dark .service-item:nth-child(even) { border-left-color: rgba(237,232,225,.1); }
+
+    .service-name { font-family: 'Spectral', serif; font-size: 22px; font-weight: 400; margin-bottom: 10px; }
+    .service-category.light .service-name { color: var(--deep); }
+    .service-category.dark .service-name { color: var(--ivory); }
+    .service-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--terra); border: 0.5px solid rgba(192,122,90,.3); padding: 3px 10px; border-radius: 2px; margin-bottom: 14px; }
+    .service-desc { font-size: 15px; font-weight: 400; line-height: 1.85; }
+    .service-category.light .service-desc { color: var(--espresso); }
+    .service-category.dark .service-desc { color: rgba(237,232,225,.92); }
+    .service-note { font-size: 13px; font-weight: 300; line-height: 1.7; margin-top: 12px; font-style: italic; }
+    .service-category.light .service-note { color: var(--rose); }
+    .service-category.dark .service-note { color: rgba(237,232,225,.55); }
+
+    .xerf-feature { margin-top: 40px; padding: 32px; background: rgba(74,51,40,.06); border-radius: 3px; border: 0.5px solid var(--border); }
+    .xerf-feature-label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+    .xerf-feature h4 { font-family: 'Spectral', serif; font-size: 22px; font-weight: 300; color: var(--deep); margin-bottom: 12px; }
+    .xerf-feature p { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--espresso); margin-bottom: 12px; }
+    .xerf-specs { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .xerf-spec { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--rose); border: 0.5px solid var(--border); padding: 5px 12px; border-radius: 2px; }
+    .xerf-link { font-size: 13px; font-weight: 300; color: var(--terra); text-decoration: none; border-bottom: 0.5px solid rgba(192,122,90,.4); }
+    .xerf-link:hover { color: var(--clay); }
+
+    .section-cta { background: var(--section-dark); text-align: center; padding: 100px 48px; }
+    .section-cta h2 { font-family: 'Spectral', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--ivory); margin-bottom: 16px; }
+    .section-cta h2 em { font-style: italic; color: var(--clay); }
+    .section-cta p { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.92); max-width: 520px; margin: 0 auto 40px; }
+    .btn-primary { font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--deep); background: var(--ivory); border: none; padding: 16px 48px; border-radius: 2px; cursor: pointer; font-family: 'Cairo', sans-serif; transition: all .25s; }
+    .btn-primary:hover { background: white; }
+
+    footer { background: #4A3328; padding: 60px 48px 32px; }
+    .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 0.5px solid rgba(237,232,225,.08); }
+    .footer-brand-name { font-size: 24px; font-weight: 200; color: var(--ivory); letter-spacing: .22em; margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 11px; font-weight: 300; letter-spacing: .18em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+    .footer-tagline { font-size: 14px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.6); max-width: 240px; margin-top: 12px; }
+    .footer-col h5 { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
+    .footer-col p, .footer-col address { font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(237,232,225,.75); font-style: normal; }
+    .footer-col a { color: rgba(237,232,225,.75); text-decoration: none; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; }
+    .footer-legal { font-size: 11px; font-weight: 300; color: rgba(237,232,225,.4); letter-spacing: .06em; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      nav.scrolled { padding: calc(12px + env(safe-area-inset-top)) 24px 12px; }
+      .nav-links { display: none; }
+      .service-category, .section-expect { padding: 60px 24px; }
+      .hero-services { padding: 100px 24px 60px; }
+      .category-header { grid-template-columns: 1fr; gap: 16px; }
+      .category-num { font-size: 40px; }
+      .services-list { grid-template-columns: 1fr; }
+      .service-item:nth-child(even) { padding-left: 0; border-left: none; }
+      .service-item:nth-child(odd) { padding-right: 0; }
+      .expect-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .section-cta { padding: 80px 24px; }
+    }
+    @media (max-width: 540px) { .expect-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-name">AAHANA</div>
+    <div class="nav-sub">Medical Aesthetics</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#how-we-work">Our process</a></li>
+    <li><a href="prakriti.html">Prakriti</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">Dr. Shankar</a></li>
+  </ul>
+  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>
+</nav>
+
+<!-- HERO — DARK -->
+<section class="hero-services">
+  <div class="hero-eyebrow">What we offer</div>
+  <h1 class="hero-title">Services built for<br><em>your skin, specifically</em></h1>
+  <p class="hero-sub">Every service at Aahana begins with a Visia skin analysis and a Prakriti constitutional assessment. What follows is a protocol built around your clinical data, your skin tone, and your goals.</p>
+</section>
+
+<!-- WHAT TO EXPECT — LIGHT -->
+<section class="section-expect">
+  <div class="section-inner">
+    <span class="section-label">What to expect</span>
+    <h2 class="section-heading" style="color:var(--deep)">Your first visit<br><em style="font-style:italic;color:var(--rose)">at Aahana</em></h2>
+    <div class="expect-grid">
+      <div class="expect-step reveal">
+        <h4>Intake & consultation</h4>
+        <p>A thorough review of your health history, skin concerns, goals, and lifestyle. Your Prakriti constitutional assessment is completed here.</p>
+      </div>
+      <div class="expect-step reveal">
+        <h4>Visia imaging</h4>
+        <p>Clinical skin analysis across eight metrics, benchmarked against a database matched to your age and skin tone. You see your skin the way Dr. Shankar sees it.</p>
+      </div>
+      <div class="expect-step reveal">
+        <h4>Additional testing</h4>
+        <p>Where indicated, labs, skin microbiome analysis, or skin DNA profiling may be recommended to complete your clinical picture.</p>
+      </div>
+      <div class="expect-step reveal">
+        <h4>Your personalized plan</h4>
+        <p>A sequenced protocol built from everything gathered. Treatment options, home care, and a clear timeline — all explained before anything begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 INJECTABLES — DARK -->
+<div class="service-category dark" id="injectables">
+  <div class="section-inner">
+    <div class="category-header reveal">
+      <div class="category-num">01</div>
+      <div>
+        <span class="section-label" style="color:var(--terra)">Injectables</span>
+        <h2 class="category-title">Precision placement.<br><em>Natural results.</em></h2>
+        <p class="category-intro">All injectable treatments are performed directly by Dr. Shankar. Placement, dosing, and sequencing are calibrated to your anatomy, your skin tone, and your goals.</p>
+      </div>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-item">
+        <div class="service-name">Neuromodulators</div>
+        <span class="service-tag">Botox · Dysport</span>
+        <p class="service-desc">Neuromodulators relax targeted muscles to smooth dynamic wrinkles, lift specific areas, and subtly contour the face. Used for the forehead, glabella, crow's feet, brow lifting, lip lines, neck bands, and more.</p>
+        <p class="service-note">Results visible in 3 to 14 days. Duration typically 3 to 4 months.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Dermal Fillers</div>
+        <span class="service-tag">Hyaluronic Acid</span>
+        <p class="service-desc">Hyaluronic acid fillers restore volume and define contours. Dr. Shankar approaches filler as a structural tool, with each placement considering facial balance, tissue depth, and long-term outcomes. Used for cheeks, lips, jawline, under-eye hollows, temples, and nasolabial folds.</p>
+        <p class="service-note">Results immediate, refined over 2 weeks. Duration 9 to 18 months depending on area.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Biostimulators</div>
+        <span class="service-tag">Sculptra · Radiesse</span>
+        <p class="service-desc">Rather than adding immediate volume, biostimulators signal your skin to produce its own collagen, creating gradual, lasting improvement in skin quality and structural support. Sculptra uses poly-L-lactic acid; Radiesse uses calcium hydroxylapatite. Both work best as part of a longer-term rejuvenation strategy.</p>
+        <p class="service-note">Results develop over 4 to 12 weeks. Duration 1 to 2 years or more.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">PRP</div>
+        <span class="service-tag">Platelet-Rich Plasma</span>
+        <p class="service-desc">PRP concentrates your own growth factors from a small blood draw to stimulate tissue renewal. It can be administered as injections into the skin or scalp for targeted repair and hair restoration, or applied topically alongside microneedling to amplify results.</p>
+        <p class="service-note">Series of treatments typically recommended. Hair restoration protocols available.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 LASERS & ENERGY — LIGHT -->
+<div class="service-category light" id="energy">
+  <div class="section-inner">
+    <div class="category-header reveal">
+      <div class="category-num">02</div>
+      <div>
+        <span class="section-label">Lasers & Energy Devices</span>
+        <h2 class="category-title">Technology chosen<br><em>for your skin.</em></h2>
+        <p class="category-intro">Every device at Aahana is selected for its precision, its safety record across all skin tones, and the strength of its clinical evidence. We expand this category only when the right devices are identified and vetted.</p>
+      </div>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-item">
+        <div class="service-name">XERF by Lutronic</div>
+        <span class="service-tag">Structural Skin Tightening · FDA Cleared</span>
+        <p class="service-desc">XERF delivers radiofrequency energy at two frequencies simultaneously, reaching every layer of the skin including the SMAS, the deep structural tissue responsible for lifting and firmness. Real-time impedance feedback adapts energy delivery to your skin continuously, ensuring precision and safety across all skin tones. Results build progressively as collagen remodels over weeks.</p>
+        <p class="service-note">Single sessions and series available. Results continue developing over 3 to 6 months.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Laser Treatments</div>
+        <span class="service-tag">Coming soon</span>
+        <p class="service-desc">Laser devices are being evaluated for pigmentation, texture, resurfacing, and vascular concerns, with particular attention to safety across all Fitzpatrick types. Details and availability will be announced when devices are confirmed.</p>
+      </div>
+    </div>
+    <div class="xerf-feature reveal">
+      <div class="xerf-feature-label">About XERF</div>
+      <h4>The world's first multifrequency monopolar RF treatment</h4>
+      <p>XERF is the only device that combines 6.78 MHz and 2 MHz frequencies, reaching the superficial, middle, and deep layers of the skin in a single session. Clinical studies confirm collagen remodeling at multiple depths, including histological evidence of changes at the SMAS layer — the same structural tissue addressed in surgical facelifts. FDA cleared and safe for all skin tones.</p>
+      <p><a href="https://www.cynosure.com/xerf/" target="_blank" rel="noopener" class="xerf-link">Learn more about XERF at Cynosure Lutronic →</a></p>
+      <div class="xerf-specs">
+        <span class="xerf-spec">FDA Cleared</span>
+        <span class="xerf-spec">All skin tones</span>
+        <span class="xerf-spec">No needles</span>
+        <span class="xerf-spec">No numbing</span>
+        <span class="xerf-spec">Reaches SMAS layer</span>
+        <span class="xerf-spec">Real-time feedback</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 SKIN TREATMENTS — DARK -->
+<div class="service-category dark" id="skin">
+  <div class="section-inner">
+    <div class="category-header reveal">
+      <div class="category-num">03</div>
+      <div>
+        <span class="section-label" style="color:var(--terra)">Skin Treatments</span>
+        <h2 class="category-title">Targeted. Layered.<br><em>Sequenced correctly.</em></h2>
+        <p class="category-intro">Each skin treatment is selected and sequenced as part of a broader protocol, based on your clinical data, your skin tone, and your goals. Nothing is standalone.</p>
+      </div>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-item">
+        <div class="service-name">Microneedling</div>
+        <span class="service-tag">Collagen Induction</span>
+        <p class="service-desc">Controlled micro-injuries stimulate the skin's natural repair cascade, producing new collagen and elastin. Effective for texture refinement, scar reduction, pore size, and overall skin quality. Needle depth and parameters are calibrated to your skin and goals.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Exosomes</div>
+        <span class="service-tag">Biostimulation</span>
+        <p class="service-desc">Exosomes carry growth factors and signaling proteins directly into skin cells, accelerating repair at the cellular level. Used post-microneedling to amplify results, or as a standalone treatment for patients seeking advanced biostimulation with minimal intervention.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Chemical Peels</div>
+        <span class="service-tag">VI Peel · Custom protocols</span>
+        <p class="service-desc">Chemical exfoliation accelerates cell turnover and addresses pigmentation, texture, and active acne. Peel selection is determined by your skin tone, sensitivity, and goals. Deeper skin tones require particular care in acid selection and post-procedure support.</p>
+        <p class="service-note">VI Peel performed by our licensed aesthetician under Dr. Shankar's direct oversight.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Hydrafacial</div>
+        <span class="service-tag">Deep Cleansing · Hydration</span>
+        <p class="service-desc">A multi-step treatment that simultaneously cleanses, exfoliates, extracts, and infuses the skin with hydrating serums. An ideal maintenance treatment and a strong entry point for patients new to medical aesthetics.</p>
+        <p class="service-note">Performed by our licensed aesthetician under Dr. Shankar's direct oversight.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 WELLNESS — LIGHT -->
+<div class="service-category light" id="wellness">
+  <div class="section-inner">
+    <div class="category-header reveal">
+      <div class="category-num">04</div>
+      <div>
+        <span class="section-label">Wellness</span>
+        <h2 class="category-title">Skin begins<br><em>within.</em></h2>
+        <p class="category-intro">The skin reflects systemic health. Aahana's wellness offerings address the internal factors that no topical treatment can reach: metabolic health, cellular energy, and the signals that shape how your skin ages.</p>
+      </div>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-item">
+        <div class="service-name">GLP-1 Therapy</div>
+        <span class="service-tag">Metabolic Health</span>
+        <p class="service-desc">For appropriate candidates, GLP-1 therapy is integrated into a comprehensive wellness and skin plan, with close attention to the skin changes that can accompany significant body composition shifts, including volume loss, laxity, and nutritional gaps that affect skin quality.</p>
+        <p class="service-note">Available following a full medical intake and assessment.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">NAD+</div>
+        <span class="service-tag">Cellular Energy</span>
+        <p class="service-desc">NAD+ is central to cellular energy production, DNA repair, and healthy aging. Its natural decline with age is linked to reduced skin repair capacity and slower cellular turnover. Protocols are targeted to patients whose clinical picture suggests meaningful benefit.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Peptide Therapy</div>
+        <span class="service-tag">Targeted Optimization</span>
+        <p class="service-desc">Peptides signal specific biological processes, from collagen synthesis to tissue repair. Selection is guided by your clinical picture and goals. Protocols are individualized and monitored over time.</p>
+        <p class="service-note">Assessment and lab work required prior to initiation.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA — DARK -->
+<section class="section-cta">
+  <span class="section-label" style="display:block;text-align:center;color:var(--terra)">Opening Winter 2026</span>
+  <h2>Ready to build<br><em>your skin protocol?</em></h2>
+  <p>Join the waitlist for early access and exclusive benefits for our first patients.</p>
+  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">AAHANA</div>
+      <div class="footer-brand-sub">Medical Aesthetics</div>
+      <div style="font-size:12px;font-weight:300;color:rgba(237,232,225,.4);letter-spacing:.08em;margin-top:6px;font-style:italic">Aahana · आहान · first light of dawn</div>
+      <p class="footer-tagline">Physician-led medical aesthetics at the forefront of clinical science and Ayurvedic constitutional medicine.</p>
+    </div>
+    <div class="footer-col" style="padding-top:40px">
+      <h5>Location</h5>
+      <address>2175 3rd Street, Unit C1<br>San Francisco, CA 94107<br><br>Hours: coming soon</address>
+    </div>
+    <div class="footer-col" style="padding-top:40px">
+      <h5>Contact</h5>
+      <p>
+        <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="background:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:300;color:rgba(237,232,225,.75);padding:0;text-align:left;">Join the waitlist</button><br><br>
+        <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA</div>
+    <div class="footer-legal">·</div>
+    <div class="footer-legal">aahanasf.com</div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); });
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
