@@ -246,11 +246,25 @@
     }
 
     /* CTA */
-    .section-cta { background: var(--section-dark); text-align: center; padding: 80px 48px; }
-    .section-cta h2 { font-family: 'Spectral', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; color: var(--ivory); margin-bottom: 12px; }
+    .section-cta {
+      background: var(--section-dark); text-align: center; padding: 100px 48px;
+      position: relative; overflow: hidden;
+    }
+    .section-cta::before {
+      content: 'AAHANA';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Spectral', serif;
+      font-size: 300px; font-weight: 300;
+      color: rgba(237,232,225,.06);
+      letter-spacing: .05em; white-space: nowrap;
+      pointer-events: none; user-select: none;
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+    .section-cta h2 { font-family: 'Spectral', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--ivory); margin-bottom: 16px; }
     .section-cta h2 em { font-style: italic; color: var(--clay); }
-    .section-cta p { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.85); max-width: 440px; margin: 0 auto 32px; }
-    .btn-primary { font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--deep); background: var(--ivory); border: none; padding: 14px 40px; border-radius: 2px; cursor: pointer; font-family: 'Cairo', sans-serif; transition: all .25s; }
+    .section-cta p { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.85); margin: 0 auto 40px; }
+    .btn-primary { font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--deep); background: var(--ivory); border: none; padding: 16px 48px; border-radius: 2px; cursor: pointer; font-family: 'Cairo', sans-serif; transition: all .25s; }
     .btn-primary:hover { background: white; }
 
     /* FOOTER */
@@ -272,7 +286,8 @@
       nav { padding: 16px 24px; }
       nav.scrolled { padding: calc(12px + env(safe-area-inset-top)) 24px 12px; }
       .nav-links { display: none; }
-      .hero, .journal-body, .section-cta { padding-left: 24px; padding-right: 24px; }
+      .hero, .journal-body { padding-left: 24px; padding-right: 24px; }
+      .section-cta { padding: 80px 24px; }
       .filters { padding: 20px 24px; top: 52px; }
       .featured-post { grid-template-columns: 1fr; }
       .featured-post-img { min-height: 200px; }
@@ -639,9 +654,11 @@
 
 <!-- CTA -->
 <section class="section-cta">
-  <h2>Get <em>Daybreak</em> first.</h2>
-  <p>Join the waitlist and be the first to receive new articles, clinical insights, and early access when Aahana opens.</p>
-  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
+  <div class="cta-inner">
+    <h2>Get <em>Daybreak</em> first.</h2>
+    <p>Join the waitlist and be the first to receive new articles, clinical insights, and early access when Aahana opens.</p>
+    <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
+  </div>
 </section>
 
 <footer>
