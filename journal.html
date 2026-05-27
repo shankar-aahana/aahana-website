@@ -297,6 +297,83 @@
     @media (max-width: 540px) {
       .small-posts { grid-template-columns: 1fr; }
     }
+  
+    /* Mobile menu */
+    .nav-hamburger {
+      display: none;
+      background: transparent; border: none; padding: 8px; cursor: pointer;
+      width: 40px; height: 40px;
+      flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 1.5px; background: var(--ivory);
+      transition: transform .25s, opacity .2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      position: fixed; inset: 0;
+      background: var(--deep);
+      z-index: 999;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+      display: flex; flex-direction: column;
+      padding: calc(80px + env(safe-area-inset-top)) 32px 32px;
+      overflow-y: auto;
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu-section { border-bottom: 0.5px solid rgba(237,232,225,.12); }
+    .mobile-menu-trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; padding: 22px 0;
+      background: transparent; border: none;
+      font-family: 'Cairo', sans-serif;
+      font-size: 18px; font-weight: 300; letter-spacing: .04em;
+      color: var(--ivory); cursor: pointer; text-align: left;
+      text-decoration: none;
+    }
+    .mobile-menu-trigger .arrow {
+      font-size: 18px; opacity: .6; transition: transform .25s;
+      display: inline-block;
+    }
+    .mobile-menu-section.open .mobile-menu-trigger .arrow { transform: rotate(90deg); }
+    .mobile-submenu {
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .mobile-menu-section.open .mobile-submenu { max-height: 400px; }
+    .mobile-submenu a {
+      display: block; padding: 14px 0 14px 20px;
+      font-size: 15px; font-weight: 300; letter-spacing: .02em;
+      color: rgba(237,232,225,.7); text-decoration: none;
+      border-left: 0.5px solid rgba(192,122,90,.3);
+      margin-left: 4px;
+    }
+    .mobile-submenu a:last-child { padding-bottom: 22px; }
+    .mobile-submenu .disabled { color: rgba(237,232,225,.3); cursor: default; padding: 14px 0 22px 20px; border-left: 0.5px solid rgba(192,122,90,.3); margin-left: 4px; display: block; font-size: 15px; }
+    .mobile-submenu-label {
+      display: block; padding: 8px 0 4px 20px;
+      font-size: 10px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--terra);
+      border-left: 0.5px solid rgba(192,122,90,.3);
+      margin-left: 4px;
+    }
+    .mobile-menu-cta {
+      margin-top: auto; padding-top: 32px;
+    }
+    .mobile-menu-cta button {
+      width: 100%;
+      font-size: 13px; font-weight: 500; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--deep);
+      background: var(--ivory); border: none;
+      padding: 18px; border-radius: 2px;
+      font-family: 'Cairo', sans-serif; cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      .nav-hamburger { display: flex; }
+      .nav-cta { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -329,7 +406,42 @@
     </li>
   </ul>
   <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-section">
+    <button class="mobile-menu-trigger" onclick="toggleMobileSection(this)">
+      The Practice <span class="arrow">›</span>
+    </button>
+    <div class="mobile-submenu">
+      <a href="about.html">Dr. Shankar</a>
+      <a href="precision.html">Precision medicine</a>
+      <a href="prakriti.html">Prakriti</a>
+    </div>
+  </div>
+  <div class="mobile-menu-section">
+    <button class="mobile-menu-trigger" onclick="toggleMobileSection(this)">
+      Services <span class="arrow">›</span>
+    </button>
+    <div class="mobile-submenu">
+      <a href="services.html">All services</a>
+      <span class="mobile-submenu-label">Coming soon</span>
+      <span class="disabled">Individual treatment pages</span>
+    </div>
+  </div>
+  <div class="mobile-menu-section">
+    <a class="mobile-menu-trigger" href="journal.html">
+      Daybreak <span class="arrow">›</span>
+    </a>
+  </div>
+  <div class="mobile-menu-cta">
+    <button data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -690,6 +802,23 @@
 </footer>
 
 <script>
+// Mobile menu
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const hamburger = document.getElementById('navHamburger');
+  const isOpen = menu.classList.contains('open');
+  menu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+function toggleMobileSection(btn) {
+  const section = btn.closest('.mobile-menu-section');
+  document.querySelectorAll('.mobile-menu-section').forEach(s => {
+    if (s !== section) s.classList.remove('open');
+  });
+  section.classList.toggle('open');
+}
+
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); });
 
