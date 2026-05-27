@@ -39,6 +39,33 @@
     .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ivory); border: 0.5px solid rgba(237,232,225,.8); padding: 8px 20px; border-radius: 2px; cursor: pointer; background: transparent; font-family: 'Cairo', sans-serif; transition: all .2s; }
     .nav-cta:hover { background: var(--ivory); color: var(--deep); }
 
+    /* Nav dropdowns */
+    .nav-item { position: relative; }
+    .nav-link { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+    .chevron { font-size: 9px; opacity: .65; transition: transform .2s; display: inline-block; text-shadow: none; }
+    .nav-item.open .chevron { transform: rotate(180deg); }
+    .dropdown {
+      position: absolute; top: calc(100% + 14px); left: -12px;
+      background: rgba(58, 40, 32, 0.98);
+      backdrop-filter: blur(12px);
+      border: 0.5px solid rgba(237,232,225,.1);
+      border-radius: 3px; min-width: 220px; padding: 8px 0;
+      opacity: 0; pointer-events: none; transform: translateY(-4px);
+      transition: opacity .15s, transform .15s;
+      z-index: 99;
+    }
+    .nav-item.open .dropdown { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .nav-links .dropdown-item {
+      display: block; padding: 10px 20px;
+      font-size: 12px; font-weight: 300; letter-spacing: .04em;
+      text-transform: none; color: rgba(237,232,225,.8);
+      text-decoration: none; text-shadow: none;
+      transition: background .1s, color .1s;
+    }
+    .nav-links .dropdown-item:hover { background: rgba(237,232,225,.06); color: var(--ivory); }
+    .dropdown-divider { height: 0.5px; background: rgba(237,232,225,.08); margin: 6px 0; }
+    .dropdown-label { padding: 8px 20px 4px; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); text-shadow: none; }
+
     .hero-services {
       min-height: 55vh; background: var(--section-dark);
       display: flex; flex-direction: column; justify-content: flex-end;
@@ -173,10 +200,26 @@
     <div class="nav-sub">Medical Aesthetics</div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html#how-we-work">Our process</a></li>
-    <li><a href="prakriti.html">Prakriti</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">Dr. Shankar</a></li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="toggleNav(event)">The Practice <span class="chevron">▼</span></a>
+      <div class="dropdown">
+        <a class="dropdown-item" href="about.html">Dr. Shankar</a>
+        <a class="dropdown-item" href="precision.html">Precision medicine</a>
+        <a class="dropdown-item" href="prakriti.html">Prakriti</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="toggleNav(event)">Services <span class="chevron">▼</span></a>
+      <div class="dropdown">
+        <a class="dropdown-item" href="services.html">All services</a>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-label">Coming soon</div>
+        <div class="dropdown-item" style="opacity:.45;cursor:default">Individual treatment pages</div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="journal.html">Daybreak</a>
+    </li>
   </ul>
   <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>
 </nav>
@@ -407,6 +450,21 @@
 <script>
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); });
+
+// Nav dropdowns
+function toggleNav(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  const item = e.currentTarget.closest('.nav-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-item')) {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open'));
+  }
+});
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
