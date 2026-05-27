@@ -286,19 +286,7 @@ nav.scrolled {
   color: var(--deep); margin-bottom: 18px;
 }
 
-/* ── SERVICES ── */
-.section-services--dark {
-  background: #6B5147;
-}
-.section-services--dark .section-label { color: var(--terra); }
-.section-services--dark .service-cat { color: var(--terra); }
-.section-services--dark .service-item { display: flex; flex-direction: column; }
-
-.section-services--dark h4 { color: var(--ivory); }
-.section-services--dark p { color: rgba(243,236,228,.92); }
-.section-services--dark .services-grid { border-top-color: rgba(180,138,122,.1); }
-.section-services--dark > div p { color: rgba(243,236,228,.92); }
-
+/* ── SERVICES (default light) ── */
 .section-services {
   padding: 80px 48px;
 }
@@ -311,8 +299,8 @@ nav.scrolled {
 }
 .service-item {
   padding: 32px 40px 32px 0;
-  border-right: 0.5px solid rgba(180,138,122,.15);
-  border-bottom: 0.5px solid rgba(180,138,122,.15);
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
   display: flex; flex-direction: column;
   gap: 10px;
 }
@@ -326,29 +314,37 @@ nav.scrolled {
 }
 .service-item h4 {
   font-family: 'Spectral', serif;
-  font-size: 24px; font-weight: 400; color: var(--ivory);
+  font-size: 24px; font-weight: 400; color: var(--deep);
   line-height: 1.2;
 }
 .service-item p {
   font-size: 14px; font-weight: 300; line-height: 1.85;
-  color: rgba(243,236,228,.92);
+  color: var(--deep);
 }
+
+/* Dark override (legacy / future use) */
+.section-services--dark { background: #6B5147; }
+.section-services--dark .service-item h4 { color: var(--ivory); }
+.section-services--dark .service-item p { color: rgba(243,236,228,.92); }
+.section-services--dark .services-grid { border-top-color: rgba(180,138,122,.1); }
+.section-services--dark .service-item { border-right-color: rgba(180,138,122,.15); border-bottom-color: rgba(180,138,122,.15); }
+
 
 .waitlist-tally-btn {
   font-family: 'Cairo', sans-serif;
   font-size: 11px; font-weight: 500; letter-spacing: .12em;
   text-transform: uppercase;
-  background: var(--ivory); color: var(--deep);
+  background: var(--deep); color: var(--ivory);
   border: none; padding: 14px 40px;
   border-radius: 2px; cursor: pointer;
   transition: background .2s; margin: 0 auto;
   display: block;
 }
-.waitlist-tally-btn:hover { background: var(--white); }
+.waitlist-tally-btn:hover { background: var(--espresso); }
 
 /* ── WAITLIST ── */
 .section-waitlist {
-  background: #6B5147;
+  background: var(--ivory);
   padding: 100px 48px; text-align: center;
   position: relative; overflow: hidden;
 }
@@ -358,7 +354,7 @@ nav.scrolled {
   transform: translate(-50%, -50%);
   font-family: 'Spectral', serif;
   font-size: 300px; font-weight: 300;
-  color: rgba(255,255,255,.02);
+  color: rgba(74,51,40,.04);
   letter-spacing: .05em; white-space: nowrap;
   pointer-events: none; user-select: none;
 }
@@ -367,39 +363,39 @@ nav.scrolled {
 .waitlist-inner h2 {
   font-family: 'Spectral', serif;
   font-size: clamp(32px, 4vw, 48px); font-weight: 300;
-  color: var(--ivory); margin-bottom: 16px; letter-spacing: .02em;
+  color: var(--deep); margin-bottom: 16px; letter-spacing: .02em;
 }
 .waitlist-inner p {
   font-size: 15px; font-weight: 300; line-height: 1.85;
-  color: rgba(243,236,228,.92); margin-bottom: 40px;
+  color: var(--espresso); margin-bottom: 40px;
 }
 .waitlist-form {
-  display: flex; gap: 0; border: 0.5px solid rgba(243,236,228,.2);
+  display: flex; gap: 0; border: 0.5px solid rgba(74,51,40,.2);
   border-radius: 2px; overflow: hidden;
 }
 .waitlist-input {
   flex: 1; padding: 16px 20px;
-  background: rgba(255,255,255,.05);
+  background: rgba(74,51,40,.04);
   border: none; outline: none;
   font-family: 'Cairo', sans-serif;
   font-size: 13px; font-weight: 300;
-  color: var(--ivory);
+  color: var(--deep);
 }
-.waitlist-input::placeholder { color: rgba(243,236,228,.3); }
+.waitlist-input::placeholder { color: rgba(74,51,40,.4); }
 .waitlist-btn {
   padding: 16px 28px;
-  background: var(--ivory); color: var(--deep);
+  background: var(--deep); color: var(--ivory);
   border: none; cursor: pointer;
   font-family: 'Cairo', sans-serif;
   font-size: 11px; font-weight: 500; letter-spacing: .1em;
   text-transform: uppercase; transition: background .2s;
   white-space: nowrap;
 }
-.waitlist-btn:hover { background: var(--white); }
+.waitlist-btn:hover { background: var(--espresso); }
 .waitlist-success {
   display: none; padding: 16px 20px;
   font-size: 13px; font-weight: 300;
-  color: rgba(243,236,228,.7);
+  color: var(--espresso);
 }
 
 /* ── ADDRESS / FOOTER ── */
@@ -571,10 +567,54 @@ nav.scrolled {
   font-size: 13px; font-weight: 300; line-height: 1.75;
   color: rgba(243,236,228,.92);
 }
+
+/* ── PROCESS STACK (right column of combined section) ── */
+.process-stack {
+  display: flex; flex-direction: column; gap: 0;
+  margin-top: 8px;
+}
+.process-step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 0.5px solid rgba(180,138,122,.15);
+  align-items: start;
+}
+.process-step:last-child { border-bottom: none; }
+.process-step:first-child { padding-top: 8px; }
+.process-num {
+  font-family: 'Spectral', serif;
+  font-size: 28px; font-weight: 300;
+  color: var(--clay);
+  line-height: 1;
+  padding-top: 4px;
+}
+.process-body h3 {
+  font-family: 'Spectral', serif;
+  font-size: 19px; font-weight: 400;
+  color: var(--ivory);
+  margin-bottom: 8px;
+  letter-spacing: .01em;
+}
+.process-body p {
+  font-size: 14px; font-weight: 300; line-height: 1.8;
+  color: rgba(243,236,228,.85);
+  margin-bottom: 0;
+}
+.process-body p a {
+  color: var(--clay); text-decoration: none;
+  border-bottom: 0.5px solid rgba(180,138,122,.45);
+  padding-bottom: 1px;
+}
+.process-body p a:hover { color: var(--terra); border-color: var(--terra); }
 @media (max-width: 900px) {
   .combined-inner { grid-template-columns: 1fr; gap: 48px; padding: 0; }
   .section-combined { padding: 80px 24px; }
   .dosha-row { grid-template-columns: 1fr; gap: 4px; }
+  .process-step { grid-template-columns: 48px 1fr; gap: 14px; padding: 18px 0; }
+  .process-num { font-size: 24px; }
+  .process-body h3 { font-size: 18px; }
 }
 
 
@@ -610,7 +650,6 @@ nav.scrolled {
   </div>
   <ul class="nav-links">
     <li><a href="#approach">Why Aahana</a></li>
-    <li><a href="#how-we-work">Our process</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#dr">Dr. Shankar</a></li>
   </ul>
@@ -632,7 +671,7 @@ nav.scrolled {
     <div class="hero-divider-dot"></div>
   </div>
   <p class="hero-sub">
-    A physician-led medical aesthetics practice at the forefront of clinical science and Ayurvedic constitutional medicine.
+    Physician-led medical aesthetics, grounded in precision medicine. We treat more than what we see.
   </p>
   <div class="hero-location">
     <span class="hero-location-dot"></span>
@@ -650,73 +689,51 @@ nav.scrolled {
 <section class="section-combined" id="approach">
   <div class="combined-inner">
 
-    <!-- Left: The Difference text -->
+    <!-- Left: What sets us apart (precision medicine focus) -->
     <div class="combined-left reveal">
       <div class="section-label" style="color:var(--terra);margin-bottom:28px">What sets us apart</div>
       <h2 style="font-family:'Spectral',serif;font-size:clamp(32px,3.5vw,48px);font-weight:300;color:var(--ivory);line-height:1.2;letter-spacing:.02em;margin-bottom:28px">
-        Where clinical science meets<br><em style="font-style:italic;color:var(--clay)">constitutional wisdom</em>
+        Beyond what the<br><em style="font-style:italic;color:var(--clay)">surface shows</em>
       </h2>
       <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.92);margin-bottom:18px">
-        Most clinics only treat what they see on the surface. We go further. We integrate Visia clinical imaging with Ayurvedic Prakriti typing to understand how your skin is built, not just how it looks today.
+        Most practices treat what they can see. We go deeper. Every plan at Aahana is grounded in precision medicine, anchored by Visia clinical imaging. When more insight is needed, we extend the picture with advanced diagnostics like skin DNA profiling, microbiome testing, and lab markers of inflammation and hormonal health. <a href="precision.html" style="color:var(--clay);text-decoration:none;border-bottom:0.5px solid rgba(180,138,122,.5);padding-bottom:1px">Explore precision medicine →</a>
       </p>
       <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.92);margin-bottom:18px">
-        We layer that with advanced skin analysis, like microbiome testing, skin DNA profiling, and lab markers of inflammation and hormonal health, to build a picture of your skin that goes deeper than any single scan.
+        Where it adds insight, we also incorporate Ayurvedic constitutional typing, a framework for understanding how your skin is built, not just how it behaves today. <a href="prakriti.html" style="color:var(--clay);text-decoration:none;border-bottom:0.5px solid rgba(180,138,122,.5);padding-bottom:1px">Explore Prakriti →</a>
       </p>
       <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.92)">
         Aahana is built for everyone, with particular expertise in skin of color, all gender identities, and patients who have historically felt underserved by conventional aesthetics.
       </p>
     </div>
 
-    <!-- Right: Prakriti + doshas -->
+    <!-- Right: Our process (3 steps stacked) -->
     <div class="combined-right reveal">
-      <div class="section-label" style="color:var(--terra);margin-bottom:28px">Prakriti · प्रकृति</div>
-      <h2 style="font-family:'Spectral',serif;font-size:clamp(24px,2.5vw,36px);font-weight:300;color:var(--ivory);line-height:1.25;letter-spacing:.02em;margin-bottom:20px">
-        Your constitution shapes<br><em style="font-style:italic;color:var(--clay)">everything about your skin</em>
-      </h2>
-      <p style="font-size:14px;font-weight:300;line-height:1.85;color:rgba(243,236,228,.92);margin-bottom:32px">
-        Prakriti maps three fundamental forces: Vata, Pitta, and Kapha. Each has a unique balance that shapes how your skin behaves, ages, and responds to treatment. Two patients with the same skin tone and the same concerns can need completely different protocols. Prakriti tells us why.
-      </p>
-      <div class="dosha-stack">
-        <div class="dosha-row">
-          <div class="dosha-name-sm">Vata</div>
-          <div class="dosha-principle-sm">Air · Movement</div>
-          <div class="dosha-desc-sm">Dry, sensitive, expressive. Reacts quickly. Ages early. Needs barrier protection above all.</div>
+      <div class="section-label" style="color:var(--terra);margin-bottom:28px">Our process</div>
+      <div class="process-stack">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-body">
+            <h3>Understand you</h3>
+            <p>Every plan begins with a thorough intake: health history, skin concerns, lifestyle, and goals. We also offer an Ayurvedic <a href="prakriti.html">Prakriti constitutional assessment</a> to tell us how your skin is built, not just how it looks today.</p>
+          </div>
         </div>
-        <div class="dosha-row">
-          <div class="dosha-name-sm">Pitta</div>
-          <div class="dosha-principle-sm">Fire · Transformation</div>
-          <div class="dosha-desc-sm">Reactive, photosensitive, pigmentation-prone. Bright when balanced, and flares with heat and stress.</div>
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-body">
+            <h3>Analyze your skin</h3>
+            <p>Visia clinical imaging anchors every analysis with eight clinical metrics matched to your age and skin tone. Where it adds insight, we layer in <a href="precision.html">precision diagnostics</a> like labs, skin DNA, or microbiome testing.</p>
+          </div>
         </div>
-        <div class="dosha-row">
-          <div class="dosha-name-sm">Kapha</div>
-          <div class="dosha-principle-sm">Earth · Structure</div>
-          <div class="dosha-desc-sm">Thick, resilient, naturally oily. Stays youthful longer, but prone to congestion and laxity.</div>
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-body">
+            <h3>Your personalized plan</h3>
+            <p>A treatment plan built from everything we've learned, including your clinical data, your constitution, your skin tone, your goals, and your life. Not a template borrowed from someone else's skin. Specific to you, sequenced correctly, explained clearly.</p>
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
-</section><section class="section-pillars" id="how-we-work">
-  <div class="section-label reveal" style="margin-top:40px">Our process</div>
-  <div class="pillars-grid">
-    <div class="pillar reveal">
-      
-      <div class="pillar-num">01</div>
-      <h3>Understand you</h3>
-      <p>Every plan begins with a thorough intake that includes your health history, skin concerns, lifestyle, and goals. We also offer a Prakriti constitutional assessment as part of this step: a brief Ayurvedic typing that tells us how your skin is built, not just how it looks today.</p>
-    </div>
-    <div class="pillar reveal">
-      
-      <div class="pillar-num">02</div>
-      <h3>Analyze your skin</h3>
-      <p>Visia clinical imaging anchors every analysis with eight clinical metrics against a database matched to your age and skin tone. Based on your unique goals and concerns, we may also suggest additional testing, such as labs, skin DNA analysis, or skin microbiome testing.</p>
-    </div>
-    <div class="pillar reveal">
-      
-      <div class="pillar-num">03</div>
-      <h3>Your personalized plan</h3>
-      <p>A treatment plan built from everything we've learned, including your clinical data, your constitution, your skin tone, your goals, and your life. Not a template borrowed from someone else's skin. Every recommendation is specific to you, sequenced correctly, and explained clearly.</p>
-    </div>
   </div>
 </section>
 
@@ -726,7 +743,7 @@ nav.scrolled {
 
 
 <!-- DR MUNDLURU -->
-<section class="section-services section-services--dark" id="services">
+<section class="section-services" id="services">
   <div class="section-label reveal">What we offer</div>
   <div class="services-grid">
     <div class="service-item reveal">
@@ -751,20 +768,20 @@ nav.scrolled {
     </div>
   </div>
   <div style="margin-top:48px;text-align:center" class="reveal">
-    <p style="font-size:13px;font-weight:300;color:rgba(243,236,228,.92);margin-bottom:24px">All treatment plans begin with a Visia skin analysis and consultation.</p>
-    <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary" style="display:inline-block;cursor:pointer;font-family:'Cairo',sans-serif;border:none;">Join the waitlist</button>
+    <p style="font-size:13px;font-weight:300;color:var(--espresso);margin-bottom:24px">All treatment plans begin with a Visia skin analysis and consultation.</p>
+    <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="display:inline-block;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);background:var(--deep);padding:14px 32px;border:none;border-radius:2px;transition:background .2s">Join the waitlist</button>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="section-dr" id="dr">
+<section class="section-dr section-dr--dark" id="dr">
   <div class="dr-left reveal">
     <div class="dr-card">
       <div class="dr-name">Dr. Shankar Mundluru</div>
       <div class="dr-creds">MD · MBA · Medical Aesthetics</div>
       <div class="dr-detail">Dr. Shankar Mundluru is the founder of Aahana Medical Aesthetics and a physician trained at Duke University, Boston University School of Medicine, and the Wharton School. He brings a rare combination of clinical depth, scientific rigor, and business acumen to the practice of medical aesthetics.</div>
       <div class="dr-detail">Before founding Aahana, he served as an executive at a luxury skincare brand and continues to advise healthcare innovation startups and venture capital investors, keeping him at the forefront of emerging technology and clinical innovations.</div>
-      <div class="dr-detail">His clinical focus is the intersection of Western medical aesthetics and Ayurvedic constitutional medicine, with particular expertise in skin of color and all gender identities.</div>
+      <div class="dr-detail">His clinical focus is precision medical aesthetics, drawing on advanced diagnostics, AI, and emerging clinical innovations, with particular expertise in skin of color and all gender identities.</div>
     </div>
   </div>
   <div class="dr-right reveal">
@@ -799,7 +816,7 @@ nav.scrolled {
     <div>
       <div class="footer-brand-name">AAHANA</div>
       <div class="footer-brand-sub">Medical Aesthetics</div>
-      <p class="footer-tagline">Physician-led medical aesthetics at the forefront of clinical science and Ayurvedic constitutional medicine. Opening San Francisco, 2026.</p>
+      <p class="footer-tagline">Physician-led medical aesthetics, grounded in precision medicine. We treat more than what we see. Opening San Francisco, 2026.</p>
     </div>
     <div class="footer-col">
       <h5>Location</h5>
