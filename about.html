@@ -156,31 +156,57 @@
       text-transform: uppercase; color: rgba(192,122,90,.5);
     }
 
-    /* ── PHILOSOPHY SECTION ── */
+    /* ── PHILOSOPHY / GAPS SECTION (one unified section) ── */
     .section-philosophy { background: var(--ivory); }
-    .philosophy-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 48px; align-items: start;
+    .philosophy-intro {
+      max-width: 760px; margin-bottom: 32px;
     }
-    .philosophy-left .section-heading { color: var(--deep); }
-    .philosophy-left .section-heading em { font-style: italic; color: var(--rose); }
-    .philosophy-left p {
+    .philosophy-intro .section-heading { color: var(--deep); }
+    .philosophy-intro .section-heading em { font-style: italic; color: var(--rose); }
+    .philosophy-intro p {
       font-size: 16px; font-weight: 400; line-height: 1.75;
-      color: var(--deep); margin-bottom: 14px;
+      color: var(--deep); margin-bottom: 20px;
     }
-    .philosophy-right { padding-top: 8px; }
     .pull-quote {
       font-family: 'Spectral', serif;
-      font-size: clamp(22px, 2.5vw, 30px);
+      font-size: clamp(20px, 2.2vw, 26px);
       font-weight: 300; font-style: italic;
-      color: var(--rose); line-height: 1.4;
+      color: var(--rose); line-height: 1.45;
       border-left: 2px solid var(--terra);
-      padding-left: 24px; margin-bottom: 24px;
+      padding-left: 22px; margin-bottom: 0;
     }
-    .philosophy-right p {
-      font-size: 16px; font-weight: 400; line-height: 1.75;
-      color: var(--deep); margin-bottom: 14px;
+    .gaps-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
+    .gap-card {
+      padding: 24px 26px;
+      border: 1px solid rgba(74,51,40,.18);
+      border-radius: 2px;
+      background: rgba(255,255,255,.4);
+    }
+    .gap-card-num {
+      font-family: 'Spectral', serif;
+      font-size: 36px; font-weight: 300;
+      color: var(--terra); line-height: 1;
+      margin-bottom: 12px;
+    }
+    .gap-card h3 {
+      font-family: 'Spectral', serif;
+      font-size: 20px; font-weight: 400;
+      color: var(--deep); margin-bottom: 10px;
+      letter-spacing: .01em;
+    }
+    .gap-card p {
+      font-size: 15px; font-weight: 400; line-height: 1.7;
+      color: var(--espresso); margin: 0;
+    }
+    .gap-card a {
+      color: var(--rose); text-decoration: none;
+      border-bottom: 0.5px solid rgba(154,111,99,.4);
+      padding-bottom: 1px;
+    }
+    .gap-card a:hover { color: var(--terra); border-color: var(--terra); }
 
     /* ── CREDENTIALS SECTION ── */
     .section-credentials { background: var(--section-dark); }
@@ -359,9 +385,10 @@
       .nav-links { display: none; }
       section { padding: 56px 24px; }
       .hero-about { padding: 100px 24px 48px; }
-      .philosophy-grid,
+      .philosophy-intro { margin-bottom: 24px; }
       .research-inner { grid-template-columns: 1fr; gap: 32px; }
       .credentials-grid { grid-template-columns: 1fr; gap: 16px; }
+      .gaps-grid { grid-template-columns: 1fr; gap: 12px; }
       .awards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
       .career-item { grid-template-columns: 1fr; gap: 8px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
@@ -409,23 +436,43 @@
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
+<!-- WHY HE BUILT AAHANA — UNIFIED PHILOSOPHY + GAPS -->
 <section class="section-philosophy">
   <div class="section-inner">
-    <div class="philosophy-grid">
-      <div class="philosophy-left reveal">
-        <span class="section-label">Why he built Aahana</span>
-        <h2 class="section-heading">
-          Precision medicine,<br>
-          <em>for your skin</em>
-        </h2>
-        <p>After years across clinical medicine, health technology, and the skincare industry, Dr. Shankar saw the same gap everywhere: aesthetics practices treating the surface, not the person.</p>
-        <p>Aahana was built to close it. Physician-led care, advanced diagnostics, and Ayurvedic constitutional insight, calibrated to one patient at a time.</p>
+    <div class="philosophy-intro reveal">
+      <span class="section-label">Why he built Aahana</span>
+      <h2 class="section-heading">
+        Five gaps.<br>
+        <em>One practice built to close them.</em>
+      </h2>
+      <p>After years across clinical medicine, health technology, and the skincare industry, Dr. Shankar saw the same failures everywhere in aesthetics — in physician oversight, in precision, and in who actually gets seen at the highest level. Aahana was built to close every one of them.</p>
+      <div class="pull-quote">"Most aesthetics practices treat what they can see. Precision medicine treats the person underneath."</div>
+    </div>
+    <div class="gaps-grid">
+      <div class="gap-card reveal">
+        <div class="gap-card-num">01</div>
+        <h3>The physician problem</h3>
+        <p>In most practices, the physician signs the plan and someone else delivers it — sometimes without ever meeting the patient. At Aahana, Dr. Shankar leads every consultation and treatment directly. Not as a selling point. As the baseline.</p>
       </div>
-      <div class="philosophy-right reveal">
-        <div class="pull-quote">"Most aesthetics practices treat what they can see. Precision medicine treats the person underneath."</div>
-        <p>His background spans internal medicine, executive leadership at a luxury skincare brand, microbiome-driven dermatology, and AI-enabled clinical tools — a cross-disciplinary lens few practices can offer.</p>
-        <p>Clinical focus: the intersection of Western medical aesthetics and Ayurvedic constitutional medicine, with particular expertise in skin of color and all gender identities.</p>
+      <div class="gap-card reveal">
+        <div class="gap-card-num">02</div>
+        <h3>Skin of color</h3>
+        <p>Most clinical research and device testing in medical aesthetics has been conducted on lighter skin tones. Patients with deeper skin too often receive care designed for someone else. Aahana built skin of color expertise into its clinical foundation from day one.</p>
+      </div>
+      <div class="gap-card reveal">
+        <div class="gap-card-num">03</div>
+        <h3>LGBTQ+ care</h3>
+        <p>Gay, queer, and transgender patients have specific clinical needs most practices are not trained to address. Aahana was built with this community as a primary audience, not a secondary one.</p>
+      </div>
+      <div class="gap-card reveal">
+        <div class="gap-card-num">04</div>
+        <h3>Gender and identity</h3>
+        <p>Medical aesthetics has historically been built around a narrow idea of who its patients are. Men are among the fastest-growing and most underserved segments. Aahana is built for patients across the gender spectrum, with care that meets each where they are.</p>
+      </div>
+      <div class="gap-card reveal">
+        <div class="gap-card-num">05</div>
+        <h3>Precision medicine</h3>
+        <p>The diagnostics available today are not being used in medical aesthetics at the level they should be. Most practices still operate on observation alone. Aahana applies the same diagnostic precision to aesthetic medicine that patients should expect from any branch of clinical care. <a href="precision.html">Explore precision medicine →</a></p>
       </div>
     </div>
   </div>
