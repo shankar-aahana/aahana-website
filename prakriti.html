@@ -1222,39 +1222,39 @@ function showResult() {
     V: {
       name: 'Vata', sanskrit: 'वात', elements: 'Air and Space', cssClass: 'vata',
       traits: [
-        'Your skin reacts quickly to environment, stress, and lifestyle changes — it tells you when something is off.',
+        'Your skin reacts quickly to environment, stress, and lifestyle changes. It tells you when something is off.',
         'Dryness and early fine lines are your primary concerns. Your barrier is your most important asset.',
         'When your skin is well-nourished and protected, it is delicate, luminous, and expressive.'
       ],
-      summary: 'You have a Vata constitution — the dosha of air and movement. Your skin tends toward dryness, sensitivity, and expressiveness. It reacts quickly to environment, stress, and lifestyle. When balanced, your skin is delicate and luminous. When depleted, it tightens, dulls, and becomes easily irritated.'
+      summary: 'You have a Vata constitution, the dosha of air and movement. Your skin tends toward dryness, sensitivity, and expressiveness. It reacts quickly to environment, stress, and lifestyle. When balanced, your skin is delicate and luminous. When depleted, it tightens, dulls, and becomes easily irritated.'
     },
     P: {
       name: 'Pitta', sanskrit: 'पित्त', elements: 'Fire and Light', cssClass: 'pitta',
       traits: [
-        'Post-inflammatory pigmentation — the marks left by breakouts or irritation — is a significant concern for Pitta skin.',
+        'Post-inflammatory pigmentation, the marks left by breakouts or irritation, is a significant concern for Pitta skin.',
         'Redness, flushing, and sun sensitivity are driven by your constitution, not just your skin tone.',
         'Your skin responds to internal changes: stress, hormones, heat, and diet all show on your face.'
       ],
-      summary: 'You have a Pitta constitution — the dosha of fire and transformation. Your skin is characterised by reactivity, photosensitivity, and intensity. When in balance, your skin is clear, bright, and luminous. When inflamed — from stress, hormones, heat, or diet — it shows immediately in redness, pigmentation, and breakouts.'
+      summary: 'You have a Pitta constitution, the dosha of fire and transformation. Your skin is characterised by reactivity, photosensitivity, and intensity. When in balance, your skin is clear, bright, and luminous. When inflamed by stress, hormones, heat, or diet, it shows immediately in redness, pigmentation, and breakouts.'
     },
     K: {
       name: 'Kapha', sanskrit: 'कफ', elements: 'Earth and Water', cssClass: 'kapha',
       traits: [
-        'Your skin holds its structure and youthfulness longer than other types — but needs consistent stimulation and clearing.',
+        'Your skin holds its structure and youthfulness longer than other types, but it needs consistent stimulation and clearing.',
         'Congestion, enlarged pores, and oiliness are your primary concerns. Surface treatments have limited impact without deeper clearing.',
-        'When Kapha skin ages, it does so structurally — significant laxity and sagging rather than fine lines.'
+        'When Kapha skin ages, it does so structurally, with significant laxity and sagging rather than fine lines.'
       ],
-      summary: 'You have a Kapha constitution — the dosha of earth and water. Your skin is characterised by thickness, resilience, and natural moisture. You age later than other types — your skin holds its structure and youthfulness longer. But Kapha skin tends toward oiliness, congestion, and enlarged pores, and needs stimulation and clearing more than nourishment.'
+      summary: 'You have a Kapha constitution, the dosha of earth and water. Your skin is characterised by thickness, resilience, and natural moisture. You age later than other types. Your skin holds its structure and youthfulness longer. But Kapha skin tends toward oiliness, congestion, and enlarged pores, and needs stimulation and clearing more than nourishment.'
     }
   };
 
   let data, label;
   if (ties.length === 3) {
     label = 'Tridosha'; data = { name: 'Tridosha', sanskrit: 'त्रिदोष', elements: 'Air · Fire · Earth', cssClass: 'mixed',
-      traits: ['You express all three doshas in relatively equal measure — a rare and complex constitution.',
+      traits: ['You express all three doshas in relatively equal measure, a rare and complex constitution.',
         'Your skin can shift between dry, reactive, and oily depending on season, stress, and lifestyle.',
         'Treatment planning requires particular attention to which dosha is currently dominant.'
-      ], summary: 'Tridoshic constitutions are adaptable and complex. Context matters — your skin\'s needs shift with your environment and life circumstances.'
+      ], summary: 'Tridoshic constitutions are adaptable and complex. Context matters. Your skin\'s needs shift with your environment and life circumstances.'
     };
   } else if (ties.length === 2) {
     const combo = ties.sort().join('-');
@@ -1263,10 +1263,10 @@ function showResult() {
     const elems = { 'P-V': 'Air · Fire', 'K-V': 'Air · Earth', 'K-P': 'Fire · Earth' };
     label = names[combo];
     data = { name: names[combo], sanskrit: sanskrit[combo], elements: elems[combo], cssClass: 'mixed',
-      traits: [`You have a dual constitution — both ${ties[0] === 'V' ? 'Vata' : ties[0] === 'P' ? 'Pitta' : 'Kapha'} and ${ties[1] === 'V' ? 'Vata' : ties[1] === 'P' ? 'Pitta' : 'Kapha'} qualities are prominent in your skin.`,
+      traits: [`You have a dual constitution: both ${ties[0] === 'V' ? 'Vata' : ties[0] === 'P' ? 'Pitta' : 'Kapha'} and ${ties[1] === 'V' ? 'Vata' : ties[1] === 'P' ? 'Pitta' : 'Kapha'} qualities are prominent in your skin.`,
         'Dual constitutions are common and require treatment approaches that balance both elemental influences.',
-        'Seasonal shifts may activate one dosha more than the other — monitoring this helps calibrate care over time.'
-      ], summary: 'Dual-dosha skin requires nuance — honoring both constitutional influences while watching which one is leading at any given time.'
+        'Seasonal shifts may activate one dosha more than the other. Monitoring this helps calibrate care over time.'
+      ], summary: 'Dual-dosha skin requires nuance: honoring both constitutional influences while watching which one is leading at any given time.'
     };
   } else {
     dominant = ties[0];
@@ -1296,28 +1296,28 @@ function showResult() {
 
 // Profile tooltip data
 const fitzDescriptions = {
-  'I':   'Fitzpatrick Type I — Very fair skin, always burns, never tans. Highest UV sensitivity.',
-  'II':  'Fitzpatrick Type II — Fair skin, usually burns, tans minimally. High UV sensitivity.',
-  'III': 'Fitzpatrick Type III — Medium skin, sometimes burns, tans gradually. Moderate UV sensitivity.',
-  'IV':  'Fitzpatrick Type IV — Olive to medium brown skin, rarely burns, tans easily. Lower UV sensitivity but higher PIH risk.',
-  'V':   'Fitzpatrick Type V — Brown to dark brown skin, very rarely burns, tans deeply. Significant PIH risk with energy devices.',
-  'VI':  'Fitzpatrick Type VI — Deep brown to ebony skin, never burns. Highest melanin concentration; requires greatest care with lasers and energy devices.'
+  'I':   'Fitzpatrick Type I: Very fair skin, always burns, never tans. Highest UV sensitivity.',
+  'II':  'Fitzpatrick Type II: Fair skin, usually burns, tans minimally. High UV sensitivity.',
+  'III': 'Fitzpatrick Type III: Medium skin, sometimes burns, tans gradually. Moderate UV sensitivity.',
+  'IV':  'Fitzpatrick Type IV: Olive to medium brown skin, rarely burns, tans easily. Lower UV sensitivity but higher PIH risk.',
+  'V':   'Fitzpatrick Type V: Brown to dark brown skin, very rarely burns, tans deeply. Significant PIH risk with energy devices.',
+  'VI':  'Fitzpatrick Type VI: Deep brown to ebony skin, never burns. Highest melanin concentration; requires greatest care with lasers and energy devices.'
 };
 
 const profileDescriptions = {
   'Vata': {
-    base: 'Vata skin is dry, thin, and sensitive — prone to dehydration, fine lines, and barrier compromise. Barrier protection and deep hydration are the clinical priority.',
+    base: 'Vata skin is dry, thin, and sensitive, prone to dehydration, fine lines, and barrier compromise. Barrier protection and deep hydration are the clinical priority.',
     byFitz: {
       'I':   'With Type I skin, there is minimal melanin protection. This profile is particularly vulnerable to UV damage, environmental stressors, and premature photoaging. Antioxidant protection and gentle resurfacing are key.',
       'II':  'Type II amplifies Vata\'s dryness and sensitivity. Redness and irritation occur easily. Nourishing protocols with minimal heat and careful peel selection work best.',
       'III': 'A more resilient melanin base helps, but Vata dryness remains dominant. Post-inflammatory hyperpigmentation is a moderate concern with aggressive treatments.',
-      'IV':  'The deeper melanin offers more UV protection, but Vata constitution still drives dryness and sensitivity. PIH risk is elevated — treatment protocols must account for both.',
+      'IV':  'The deeper melanin offers more UV protection, but Vata constitution still drives dryness and sensitivity. PIH risk is elevated. Treatment protocols must account for both.',
       'V':   'This is one of the most nuanced profiles. Vata dryness in deeply pigmented skin requires barrier-first approaches; laser selection requires significant care to avoid hypopigmentation or PIH.',
       'VI':  'Deep melanin concentration combined with Vata sensitivity demands the most conservative energy device settings. Hydration, barrier repair, and manual techniques take precedence over energy-based treatments.'
     }
   },
   'Pitta': {
-    base: 'Pitta skin is warm, reactive, and photosensitive — prone to redness, pigmentation, and inflammation. Cooling, anti-inflammatory approaches and careful UV and device management define this profile.',
+    base: 'Pitta skin is warm, reactive, and photosensitive, prone to redness, pigmentation, and inflammation. Cooling, anti-inflammatory approaches and careful UV and device management define this profile.',
     byFitz: {
       'I':   'The most photosensitive profile. Type I skin with Pitta constitution has virtually no UV buffer and high inflammatory reactivity. Sun protection is non-negotiable; laser treatments require extreme caution.',
       'II':  'High reactivity with limited melanin protection. Rosacea, flushing, and pigmentation are common. Anti-inflammatory topicals and carefully selected wavelengths are essential.',
@@ -1328,18 +1328,18 @@ const profileDescriptions = {
     }
   },
   'Kapha': {
-    base: 'Kapha skin is thick, oily, and resilient — ages slowly but prone to congestion, enlarged pores, and gradual laxity. Stimulating, lifting, and clarifying treatments are the clinical priority.',
+    base: 'Kapha skin is thick, oily, and resilient. It ages slowly but is prone to congestion, enlarged pores, and gradual laxity. Stimulating, lifting, and clarifying treatments are the clinical priority.',
     byFitz: {
-      'I':   'Unusual combination — Kapha oiliness with very fair skin. Acne and congestion are common, but the lack of melanin protection means energy treatments must still be applied carefully.',
+      'I':   'Unusual combination. Kapha oiliness with very fair skin. Acne and congestion are common, but the lack of melanin protection means energy treatments must still be applied carefully.',
       'II':  'Kapha resilience with fair skin. Tolerated well for stimulating treatments; acne and texture are primary concerns. Sun protection remains important despite better tolerance.',
       'III': 'A well-balanced profile for treatment. Kapha resilience and moderate melanin allow for a broader range of energy and resurfacing protocols with manageable risk.',
       'IV':  'Strong constitution with good treatment tolerance. PIH from aggressive treatments is a moderate concern. This profile generally responds very well to microneedling and RF.',
-      'V':   'Kapha resilience at this melanin depth means excellent aging trajectory — but congestion and hyperpigmentation from inflammation require careful management. Conservative energy settings.',
-      'VI':  'Deepest melanin with Kapha constitution means slow aging and resilient skin — but energy devices carry the highest risk of hypopigmentation. Manual stimulation techniques are often preferred.'
+      'V':   'Kapha resilience at this melanin depth means excellent aging trajectory. But congestion and hyperpigmentation from inflammation require careful management. Conservative energy settings.',
+      'VI':  'Deepest melanin with Kapha constitution means slow aging and resilient skin. But energy devices carry the highest risk of hypopigmentation. Manual stimulation techniques are often preferred.'
     }
   },
   'Vata-Pitta': {
-    base: 'This dual constitution combines Vata dryness with Pitta reactivity — a sensitive, expressive skin that is prone to both dehydration and inflammation. Gentle, anti-inflammatory, and barrier-supporting protocols work best.',
+    base: 'This dual constitution combines Vata dryness with Pitta reactivity, a sensitive, expressive skin that is prone to both dehydration and inflammation. Gentle, anti-inflammatory, and barrier-supporting protocols work best.',
     byFitz: {
       'I': 'Extremely sensitive. Minimal melanin, high reactivity, and dryness combine to create the most vulnerable fair-skin profile. Conservative approach to all treatments.',
       'II': 'High sensitivity with limited melanin buffer. Redness, irritation, and dryness appear quickly. Nourishing, calming treatments take priority.',
@@ -1350,9 +1350,9 @@ const profileDescriptions = {
     }
   },
   'Vata-Kapha': {
-    base: 'Vata-Kapha presents paradoxically: dry in some zones, oily in others — often with congestion in the T-zone and dryness on the cheeks. Treatment must address both without exacerbating either.',
+    base: 'Vata-Kapha presents paradoxically: dry in some zones, oily in others, often with congestion in the T-zone and dryness on the cheeks. Treatment must address both without exacerbating either.',
     byFitz: {
-      'I': 'Fair skin with mixed zone behavior. Congestion and fine lines coexist. Balanced protocols — neither overly stripping nor overly occlusive — are key.',
+      'I': 'Fair skin with mixed zone behavior. Congestion and fine lines coexist. Balanced protocols, neither overly stripping nor overly occlusive, are key.',
       'II': 'Combination skin with moderate sensitivity. Gentle clarifying treatments combined with targeted hydration work best.',
       'III': 'Manageable profile. Moderate melanin with combination skin responds well to zone-specific treatment approaches.',
       'IV': 'Zone-specific care is essential. PIH risk in the oily zones from overly aggressive treatments; dryness in cheeks worsens with excessive clarifying.',
@@ -1361,7 +1361,7 @@ const profileDescriptions = {
     }
   },
   'Pitta-Kapha': {
-    base: 'Pitta-Kapha combines inflammatory reactivity with oiliness — acne-prone, congestion-prone, and reactive. Anti-inflammatory and clarifying treatments work in tandem for this profile.',
+    base: 'Pitta-Kapha combines inflammatory reactivity with oiliness, acne-prone, congestion-prone, and reactive. Anti-inflammatory and clarifying treatments work in tandem for this profile.',
     byFitz: {
       'I': 'Reactive, oily, fair skin. Acne and redness are primary concerns. Moderate energy treatments are tolerated, but anti-inflammatory preparation is important.',
       'II': 'Congestion and reactivity with limited melanin. Hormonal acne is common. Balanced clarifying and calming protocols.',
@@ -1372,9 +1372,9 @@ const profileDescriptions = {
     }
   },
   'Tridosha': {
-    base: 'Tridoshic constitutions express all three doshas in relatively equal measure — adaptable, complex, and highly context-dependent. Skin needs shift with seasons, stress, and lifestyle more than any other profile.',
+    base: 'Tridoshic constitutions express all three doshas in relatively equal measure, adaptable, complex, and highly context-dependent. Skin needs shift with seasons, stress, and lifestyle more than any other profile.',
     byFitz: {
-      'I': 'All three constitutional tendencies in very fair skin. The skin is adaptable but unpredictable — careful monitoring and responsive treatment planning are essential.',
+      'I': 'All three constitutional tendencies in very fair skin. The skin is adaptable but unpredictable. Careful monitoring and responsive treatment planning are essential.',
       'II': 'Tridoshic variation in fair skin. Generally manageable, but requires attention to which dosha is leading at any given time.',
       'III': 'A versatile profile. Moderate melanin with constitutional flexibility. Treatment tolerance is generally good but context-dependent.',
       'IV': 'Adaptable constitution at a deeper tone. PIH risk is moderate and dosha-shift dependent. Responsive, individualized planning is key.',
@@ -1392,7 +1392,7 @@ function showProfile(dosha, fitz, cssClass) {
   header.className = 'tooltip-header ' + cssClass;
   document.getElementById('tooltipId').textContent = dosha + ' · Skin Tone Type ' + fitz;
   document.getElementById('tooltipName').textContent = dosha + ' · Type ' + fitz;
-  document.getElementById('tooltipFitz').textContent = fitzDescriptions[fitz].split('—')[0].trim();
+  document.getElementById('tooltipFitz').textContent = fitzDescriptions[fitz].split(':')[0].trim();
 
   const body = document.getElementById('tooltipBody');
   body.innerHTML = `
