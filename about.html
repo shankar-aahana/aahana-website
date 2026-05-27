@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Shankar Mundluru. Aahana Medical Aesthetics</title>
-  <meta name="description" content="Meet Dr. Shankar Mundluru, MD MBA. founder of Aahana Medical Aesthetics, physician-scientist, and pioneer at the intersection of clinical medicine, Ayurveda, and health technology.">
+  <meta name="description" content="Meet Dr. Shankar Mundluru, MD MBA. Board-certified physician and founder of Aahana Medical Aesthetics, practicing precision medicine at the intersection of clinical science, Ayurvedic wisdom, and health technology.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <style>
@@ -80,11 +80,11 @@
 
     /* ── HERO ── */
     .hero-about {
-      min-height: 60vh;
+      min-height: 52vh;
       background: #6B5147;
       display: flex; flex-direction: column;
       justify-content: flex-end;
-      padding: 120px 48px 80px;
+      padding: 110px 48px 56px;
       position: relative; overflow: hidden;
     }
     .hero-about::before {
@@ -95,7 +95,7 @@
     .hero-eyebrow {
       font-size: 13px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: var(--terra);
-      margin-bottom: 20px;
+      margin-bottom: 14px;
       text-shadow: 0 1px 10px rgba(0,0,0,.8);
     }
     .hero-title {
@@ -103,16 +103,16 @@
       font-size: clamp(42px, 6vw, 80px);
       font-weight: 300; line-height: 1.05;
       color: var(--ivory); letter-spacing: .01em;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
     .hero-title em { font-style: italic; color: var(--clay); }
     .hero-sub {
       font-size: clamp(16px, 1.6vw, 18px); font-weight: 300;
-      line-height: 1.8; color: rgba(237,232,225,.85);
+      line-height: 1.7; color: rgba(237,232,225,.85);
       max-width: 560px;
     }
     .hero-creds {
-      display: flex; gap: 20px; margin-top: 32px; flex-wrap: wrap;
+      display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap;
     }
     .cred-tag {
       font-size: 10px; font-weight: 500; letter-spacing: .14em;
@@ -122,18 +122,18 @@
     }
 
     /* ── SECTIONS ── */
-    section { padding: 100px 48px; }
+    section { padding: 64px 48px; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
     .section-label {
       font-size: 13px; font-weight: 500; letter-spacing: .14em;
       text-transform: uppercase; color: var(--terra);
-      margin-bottom: 28px; display: block;
+      margin-bottom: 18px; display: block;
     }
     .section-heading {
       font-family: 'Spectral', serif;
       font-size: clamp(32px, 3.5vw, 48px);
       font-weight: 300; line-height: 1.2;
-      letter-spacing: .01em; margin-bottom: 40px;
+      letter-spacing: .01em; margin-bottom: 24px;
     }
 
 
@@ -160,39 +160,44 @@
     .section-philosophy { background: var(--ivory); }
     .philosophy-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start;
+      gap: 48px; align-items: start;
     }
     .philosophy-left .section-heading { color: var(--deep); }
     .philosophy-left .section-heading em { font-style: italic; color: var(--rose); }
     .philosophy-left p {
-      font-size: 16px; font-weight: 400; line-height: 1.9;
-      color: var(--deep); margin-bottom: 20px;
+      font-size: 16px; font-weight: 400; line-height: 1.75;
+      color: var(--deep); margin-bottom: 14px;
     }
-    .philosophy-right { padding-top: 16px; }
+    .philosophy-right { padding-top: 8px; }
     .pull-quote {
       font-family: 'Spectral', serif;
       font-size: clamp(22px, 2.5vw, 30px);
       font-weight: 300; font-style: italic;
       color: var(--rose); line-height: 1.4;
       border-left: 2px solid var(--terra);
-      padding-left: 32px; margin-bottom: 40px;
+      padding-left: 24px; margin-bottom: 24px;
     }
     .philosophy-right p {
-      font-size: 15px; font-weight: 400; line-height: 1.9;
-      color: var(--espresso); margin-bottom: 18px;
+      font-size: 16px; font-weight: 400; line-height: 1.75;
+      color: var(--deep); margin-bottom: 14px;
     }
 
     /* ── CREDENTIALS SECTION ── */
     .section-credentials { background: var(--section-dark); }
     .credentials-grid {
       display: grid; grid-template-columns: 1fr 1fr 1fr;
-      gap: 48px; margin-top: 60px;
+      gap: 20px; margin-top: 28px;
     }
-    .credential-block { }
+    .credential-block {
+      padding: 24px 22px;
+      border: 1px solid rgba(237,232,225,.22);
+      border-radius: 2px;
+      background: rgba(74,51,40,.18);
+    }
     .credential-label {
       font-size: 10px; font-weight: 600; letter-spacing: .16em;
       text-transform: uppercase; color: var(--terra);
-      margin-bottom: 12px; display: block;
+      margin-bottom: 10px; display: block;
     }
     .credential-name {
       font-family: 'Spectral', serif;
@@ -200,30 +205,31 @@
       color: var(--ivory); margin-bottom: 4px;
     }
     .credential-detail {
-      font-size: 13px; font-weight: 300; line-height: 1.7;
+      font-size: 13px; font-weight: 300; line-height: 1.65;
       color: rgba(237,232,225,.92);
     }
     .credential-divider {
-      width: 40px; height: 1px;
+      width: 36px; height: 1px;
       background: var(--terra); opacity: .5;
-      margin: 20px 0;
+      margin: 14px 0;
     }
 
     /* ── AWARDS SECTION ── */
     .section-awards { background: #6B5147; }
     .awards-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 32px; margin-top: 48px;
+      gap: 16px; margin-top: 28px;
     }
     .award-item {
-      padding: 28px;
-      border: 0.5px solid var(--border);
+      padding: 20px 22px;
+      border: 1px solid rgba(74,51,40,.22);
       border-radius: 2px;
+      background: rgba(255,255,255,.35);
     }
     .award-org {
       font-size: 10px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: var(--rose);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .award-name {
       font-family: 'Spectral', serif;
@@ -243,18 +249,19 @@
     }
     .research-stat-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 16px;
     }
     .research-stat {
-      padding: 24px;
+      padding: 20px 22px;
       background: rgba(122,90,74,.08);
+      border: 1px solid rgba(74,51,40,.18);
       border-radius: 2px;
     }
     .research-stat-num {
       font-family: 'Spectral', serif;
       font-size: 36px; font-weight: 300;
       color: var(--terra); line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .research-stat-label {
       font-size: 12px; font-weight: 400; line-height: 1.5;
@@ -262,7 +269,21 @@
     }
 
     /* ── CTA SECTION ── */
-    .section-cta { background: #6B5147; text-align: center; padding: 100px 48px; }
+    .section-cta {
+      background: #6B5147; text-align: center; padding: 100px 48px;
+      position: relative; overflow: hidden;
+    }
+    .section-cta::before {
+      content: 'AAHANA';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Spectral', serif;
+      font-size: 300px; font-weight: 300;
+      color: rgba(237,232,225,.06);
+      letter-spacing: .05em; white-space: nowrap;
+      pointer-events: none; user-select: none;
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
     .section-cta h2 {
       font-family: 'Spectral', serif;
       font-size: clamp(32px, 4vw, 52px); font-weight: 300;
@@ -270,7 +291,7 @@
     }
     .section-cta p {
       font-size: 16px; font-weight: 300; line-height: 1.8;
-      color: rgba(237,232,225,.82); max-width: 520px;
+      color: rgba(237,232,225,.82);
       margin: 0 auto 40px;
     }
     .btn-primary {
@@ -336,12 +357,12 @@
       nav { padding: 16px 24px; }
       nav.scrolled { padding: calc(12px + env(safe-area-inset-top)) 24px 12px; }
       .nav-links { display: none; }
-      section { padding: 80px 24px; }
-      .hero-about { padding: 100px 24px 60px; }
+      section { padding: 56px 24px; }
+      .hero-about { padding: 100px 24px 48px; }
       .philosophy-grid,
-      .research-inner { grid-template-columns: 1fr; gap: 40px; }
-      .credentials-grid { grid-template-columns: 1fr; gap: 32px; }
-      .awards-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .research-inner { grid-template-columns: 1fr; gap: 32px; }
+      .credentials-grid { grid-template-columns: 1fr; gap: 16px; }
+      .awards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
       .career-item { grid-template-columns: 1fr; gap: 8px; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
     }
@@ -375,9 +396,9 @@
       </h1>
       <p class="hero-sub">Board-certified physician, MBA, and founder of Aahana Medical Aesthetics. at the intersection of clinical medicine, Ayurvedic wisdom, and health technology.</p>
       <div class="hero-creds">
+        <span class="cred-tag">BS · Duke University</span>
         <span class="cred-tag">MD · Boston University</span>
         <span class="cred-tag">MBA · The Wharton School</span>
-        <span class="cred-tag">BA · Duke University</span>
       </div>
     </div>
     <div class="hero-photo">
@@ -395,18 +416,16 @@
       <div class="philosophy-left reveal">
         <span class="section-label">Why he built Aahana</span>
         <h2 class="section-heading">
-          Skin care built on science,<br>
-          <em>not assumptions</em>
+          Precision medicine,<br>
+          <em>for your skin</em>
         </h2>
-        <p>Dr. Shankar Mundluru spent years at the forefront of clinical medicine, health technology, and the skincare industry, watching a persistent gap. Most aesthetics practices treated the surface. Few understood the person underneath it.</p>
-        <p>He built Aahana to close that gap. To bring physician-led care, advanced diagnostics, and Ayurvedic constitutional medicine together into a single practice, one that treats the whole person, not just the skin they walk in with.</p>
-        <p>Aahana means new beginnings and the first rays of sun. For patients who have felt overlooked, rushed, or reduced to a single concern, that is exactly what this practice is meant to be: a new beginning, with a physician who actually sees you.</p>
+        <p>After years across clinical medicine, health technology, and the skincare industry, Dr. Shankar saw the same gap everywhere: aesthetics practices treating the surface, not the person.</p>
+        <p>Aahana was built to close it. Physician-led care, advanced diagnostics, and Ayurvedic constitutional insight, calibrated to one patient at a time.</p>
       </div>
       <div class="philosophy-right reveal">
-        <div class="pull-quote">"Most aesthetics practices treat what they can see. I wanted to build something that goes deeper, clinically and constitutionally."</div>
-        <p>With a background spanning internal medicine, executive leadership at a luxury skincare brand, microbiome-driven dermatology, and AI-enabled clinical tools, Dr. Shankar brings a rare cross-disciplinary lens to the practice of medical aesthetics.</p>
-        <p>He is a published researcher in ethics and minority health, a peer reviewer for top-tier journals, and a formal clinical and product advisor to VC-backed healthcare AI startups, keeping Aahana at the forefront of what's next in skin science.</p>
-        <p>His clinical focus is the intersection of Western medical aesthetics and Ayurvedic constitutional medicine, with particular expertise in skin of color and all gender identities.</p>
+        <div class="pull-quote">"Most aesthetics practices treat what they can see. Precision medicine treats the person underneath."</div>
+        <p>His background spans internal medicine, executive leadership at a luxury skincare brand, microbiome-driven dermatology, and AI-enabled clinical tools — a cross-disciplinary lens few practices can offer.</p>
+        <p>Clinical focus: the intersection of Western medical aesthetics and Ayurvedic constitutional medicine, with particular expertise in skin of color and all gender identities.</p>
       </div>
     </div>
   </div>
@@ -446,7 +465,7 @@
 <section class="section-awards" style="background:var(--ivory)">
   <div class="section-inner">
     <span class="section-label">Recognition &amp; Research</span>
-    <p style="font-size:15px;font-weight:400;line-height:1.85;color:var(--espresso);max-width:680px;margin-bottom:48px">A published researcher and peer manuscript reviewer for top-tier journals, with work spanning skin science, digital health, and health equity. Recognized across medicine, clinical innovation, and entrepreneurship.</p>
+    <p style="font-size:15px;font-weight:400;line-height:1.75;color:var(--espresso);max-width:680px;margin-bottom:28px">A published researcher and peer manuscript reviewer for top-tier journals, with work spanning skin science, digital health, and health equity. Recognized across medicine, clinical innovation, and entrepreneurship.</p>
     <div class="awards-grid">
       <div class="award-item reveal">
         <div class="award-org">TechCrunch Disrupt</div>
@@ -473,7 +492,7 @@
         <div class="award-name">AI in Health Care: From Strategies to Implementation Certificate</div>
       </div>
     </div>
-    <div class="research-stat-grid" style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="research-stat-grid" style="margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
       <div class="research-stat">
         <div class="research-stat-num">10+</div>
         <div class="research-stat-label">Peer-reviewed articles across skin science, digital health, and health equity</div>
@@ -492,9 +511,11 @@
 
 <!-- CTA -->
 <section class="section-cta">
-  <h2>Ready to meet Dr. Shankar?</h2>
-  <p>Aahana opens in San Francisco in Winter 2026. Join the waitlist for early access and exclusive benefits for our first patients.</p>
-  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
+  <div class="cta-inner">
+    <h2>Ready to meet Dr. Shankar?</h2>
+    <p>Aahana opens in San Francisco in Winter 2026. Join the waitlist for early access and exclusive benefits for our first patients.</p>
+    <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
+  </div>
 </section>
 
 <!-- FOOTER -->
