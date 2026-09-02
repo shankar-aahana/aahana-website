@@ -7,6 +7,38 @@
 <meta name="description" content="Precision medical aesthetics at the forefront of clinical science and Ayurvedic constitutional medicine. San Francisco.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <!-- ── Contralto Big Black ───────────────────────────────────────────────
+       Contralto is a commercial typeface (Synthview). It is NOT on Google
+       Fonts, so naming it in CSS does nothing on its own — the browser needs
+       the actual files.
+
+         SELF-HOSTED (a MyFonts webfont kit):
+           1. put the .woff2 files in a  fonts/  folder beside these .html files
+           2. uncomment the @font-face block below
+
+         HOSTED (Monotype / Adobe): paste their <link> tag here and delete the
+         @font-face block.
+
+       The weight range is declared 100-900 deliberately: one Black file then
+       answers every weight the stylesheet asks for, so nothing needs its
+       font-weight changed. Until the font is installed, headings fall back to
+       Spectral and the wordmark to Cairo — which is exactly how the site
+       looks today. Nothing breaks in the meantime.
+  -->
+  <style>
+  /*
+  @font-face {
+    font-family: 'Contralto Big';
+    src: url('fonts/ContraltoBig-Black.woff2') format('woff2');
+    font-weight: 100 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Contralto Big';
+    src: url('fonts/ContraltoBig-BlackItalic.woff2') format('woff2');
+    font-weight: 100 900; font-style: italic; font-display: swap;
+  }
+  */
+  </style>
 <style>
 :root {
   --ivory:    #EDE8E1;
@@ -49,7 +81,7 @@ nav.scrolled {
   display: flex; flex-direction: column;
 }
 .nav-name {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Cairo', sans-serif;
   font-size: 26px; font-weight: 200;
   color: var(--ivory); letter-spacing: .22em;
   text-transform: uppercase;
@@ -161,7 +193,7 @@ nav.scrolled {
   opacity: 0; animation: fadeUp .8s ease .2s forwards;
 }
 .hero-title {
-  font-family: 'Spectral', serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
   font-size: clamp(52px, 8vw, 96px);
   font-weight: 300;
   letter-spacing: .01em; line-height: 1.0;
@@ -303,7 +335,7 @@ nav.scrolled {
 }
 .dr-right .section-label { margin-bottom: 14px; }
 .dr-right h2 {
-  font-family: 'Spectral', serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
   font-size: clamp(28px, 3vw, 40px); font-weight: 300;
   line-height: 1.3; color: var(--deep); margin-bottom: 18px;
   letter-spacing: .02em;
@@ -379,7 +411,7 @@ nav.scrolled {
   content: 'AAHANA';
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Spectral', serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
   font-size: 300px; font-weight: 300;
   color: rgba(74,51,40,.04);
   letter-spacing: .05em; white-space: nowrap;
@@ -388,7 +420,7 @@ nav.scrolled {
 .waitlist-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
 .waitlist-inner .section-label { color: var(--terra); margin-bottom: 14px; }
 .waitlist-inner h2 {
-  font-family: 'Spectral', serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
   font-size: clamp(32px, 4vw, 48px); font-weight: 300;
   color: var(--deep); margin-bottom: 16px; letter-spacing: .02em;
 }
@@ -440,7 +472,7 @@ nav.scrolled {
   padding-top: 40px;
 }
 .footer-brand-name {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Cairo', sans-serif;
   font-size: 28px; font-weight: 200; color: var(--ivory);
   letter-spacing: .22em; margin-bottom: 6px;
 }
@@ -741,7 +773,7 @@ nav.scrolled {
     }
     .mobile-panel-back .back-arrow { font-size: 18px; }
     .mobile-panel-title {
-      font-family: 'Spectral', serif;
+      font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
       font-size: 28px; font-weight: 300;
       color: var(--ivory);
       margin-bottom: 24px;
@@ -782,7 +814,34 @@ nav.scrolled {
         margin-right: 4px;
       }
     }
+  
+    /* ── Motion ──────────────────────────────────────────────────────────
+       When the motion layer is running it owns the reveal animation, so the
+       CSS transition steps aside. Without JS, or under reduced-motion, the
+       original CSS reveal still works and nothing is hidden. */
+    html.motion .reveal { transition: none; }
+
+    /* Hero video sits under the existing gradient overlay. If no video file is
+       present the poster shows, and behind that the original background image
+       still shows — so this degrades twice before it degrades badly. */
+    .hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+      z-index: 0; pointer-events: none;
+    }
+    .hero-bg { will-change: transform; }
+    .hero-bg::after { z-index: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html.motion .reveal { opacity: 1 !important; transform: none !important; }
+      .hero-video { display: none; }
+    }
+
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
 </head>
 <body>
 
@@ -866,7 +925,12 @@ nav.scrolled {
 
 <!-- HERO / COMING SOON -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="building.jpg">
+        <source src="hero.mp4" type="video/mp4">
+        <source src="hero.webm" type="video/webm">
+      </video>
+      </div>
   <div class="hero-rule"></div>
   <div class="hero-lines"></div>
   <div class="hero-eyebrow">San Francisco · Opening Soon · Physician-Led Medical Aesthetics</div>
@@ -1120,5 +1184,82 @@ reveals.forEach(el => observer.observe(el));
 // Waitlist handled by Tally embed
 </script>
 <script async src="https://tally.so/widgets/embed.js"></script>
+
+<script>
+/* ── Motion layer ──────────────────────────────────────────────────────────
+   Smooth scroll, scroll-driven hero, staggered reveals. Degrades to the
+   original CSS reveal if the libraries fail to load. */
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touch   = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+  function start() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+    document.documentElement.classList.add('motion');
+
+    /* Smooth scroll. Off on touch, where it fights native momentum, and off
+       under reduced-motion. */
+    if (!reduced && !touch && typeof Lenis !== 'undefined') {
+      var lenis = new Lenis({ duration: 1.05, lerp: 0.1, smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+      gsap.ticker.lagSmoothing(0);
+      /* in-page anchors need to go through Lenis to keep the easing */
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var el = document.querySelector(a.getAttribute('href'));
+          if (el) { e.preventDefault(); lenis.scrollTo(el, { offset: -70 }); }
+        });
+      });
+    }
+
+    if (reduced) {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+      return;
+    }
+
+    /* Reveals, staggered by row rather than one flat fade. ScrollTrigger.batch
+       groups elements that enter together so a grid animates as a grid. */
+    var reveals = gsap.utils.toArray('.reveal');
+    gsap.set(reveals, { opacity: 0, y: 26 });
+    ScrollTrigger.batch(reveals, {
+      start: 'top 88%',
+      onEnter: function (batch) {
+        gsap.to(batch, { opacity: 1, y: 0, duration: 0.9,
+                         ease: 'power3.out', stagger: 0.08, overwrite: true });
+      },
+      once: true
+    });
+
+    /* The hero lifts and scales away as you scroll past it — the one piece of
+       scroll-scrubbed motion, and the one that does the most work. */
+    var hero = document.querySelector('.hero, .hero-about, .hero-services, .hero-prakriti');
+    if (hero) {
+      var bg = hero.querySelector('.hero-bg');
+      if (bg) {
+        gsap.to(bg, { scale: 1.14, ease: 'none',
+          scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.6 } });
+      }
+      var content = hero.querySelectorAll(':scope > *:not(.hero-bg):not(.hero-lines):not(.hero-rule)');
+      if (content.length) {
+        gsap.to(content, { y: -70, opacity: 0.15, ease: 'none',
+          scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom 30%', scrub: 0.5 } });
+      }
+    }
+
+    /* Nav gets a hairline once you leave the hero rather than switching
+       abruptly on a 10px threshold. */
+    var nav = document.getElementById('nav');
+    if (nav) {
+      ScrollTrigger.create({ start: 'top -40',
+        onToggle: function (s) { nav.classList.toggle('scrolled', s.isActive); } });
+    }
+  }
+
+  if (document.readyState === 'complete') { start(); }
+  else { window.addEventListener('load', start); }
+})();
+</script>
 </body>
 </html>
