@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daybreak — Aahana Medical Aesthetics</title>
+  <title>Daybreak | Aahana Medical Aesthetics</title>
   <meta name="description" content="Daybreak by Aahana. Clinical insights, skin science, and perspectives on precision medicine, skin of color, Ayurveda, and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -131,13 +131,20 @@
       letter-spacing: .04em;
     }
 
-    /* FEATURED POST — large card */
+    /* FEATURED POST: large card */
     .featured-post {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 0; margin-bottom: 20px;
       border: 0.5px solid var(--border); border-radius: 2px;
       overflow: hidden; cursor: default;
     }
+    a.featured-post {
+      text-decoration: none; color: inherit; cursor: pointer;
+      transition: border-color .25s, box-shadow .25s;
+    }
+    a.featured-post:hover { border-color: var(--terra); box-shadow: 0 6px 28px rgba(74,51,40,.09); }
+    a.featured-post:hover .featured-post-title { color: var(--rose); }
+    .featured-post-title { transition: color .2s; }
     .featured-post-img {
       background: var(--section-dark);
       min-height: 320px;
@@ -553,7 +560,7 @@
           <div class="small-post-img alt3"><div class="small-img-label">SMAS</div></div>
           <div class="small-post-body">
             <span class="post-tag">Well aging</span>
-            <div class="small-post-title">Why structural aging matters more than surface aging — and how we address it</div>
+            <div class="small-post-title">Why structural aging matters more than surface aging, and how we address it</div>
             <p class="small-post-excerpt">Volume loss and laxity originate deep in the structural tissue of the face. Understanding this changes how we think about treatment sequencing.</p>
             <div class="post-meta">Coming soon</div>
           </div>
@@ -579,19 +586,19 @@
         <div class="category-name">Skin of color</div>
         <div class="category-count">4 articles</div>
       </div>
-      <div class="featured-post">
+      <a class="featured-post" href="laser-treatments-skin-of-color.html">
         <div class="featured-post-img">
           <div class="featured-img-label">Skin of color</div>
         </div>
         <div class="featured-post-body">
           <div>
             <span class="post-tag">Skin of color</span>
-            <div class="featured-post-title">Why most laser treatments weren't designed for your skin — and what that means for you</div>
+            <div class="featured-post-title">Why most laser treatments weren't designed for your skin, and what that means for you</div>
             <p class="featured-post-excerpt">The majority of clinical research and device testing in medical aesthetics has been conducted on Fitzpatrick Types I through III. Here is what that means for patients with deeper skin tones, and how to navigate treatment safely.</p>
           </div>
-          <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
+          <div class="post-meta">September 4, 2026 · Dr. Shankar Mundluru</div>
         </div>
-      </div>
+      </a>
       <div class="small-posts">
         <div class="small-post">
           <div class="small-post-img alt1"><div class="small-img-label">PIH</div></div>
@@ -615,7 +622,7 @@
           <div class="small-post-img alt3"><div class="small-img-label">Fitz</div></div>
           <div class="small-post-body">
             <span class="post-tag">Skin of color</span>
-            <div class="small-post-title">Understanding the Fitzpatrick scale — and why it's only part of the picture</div>
+            <div class="small-post-title">Understanding the Fitzpatrick scale, and why it's only part of the picture</div>
             <p class="small-post-excerpt">The Fitzpatrick scale is a useful clinical tool, but it was designed in 1975 for a narrow patient population. Here is what it captures and what it misses.</p>
             <div class="post-meta">Coming soon</div>
           </div>
@@ -639,7 +646,7 @@
         <div class="featured-post-body">
           <div>
             <span class="post-tag">LGBTQ+ health</span>
-            <div class="featured-post-title">How hormone therapy changes your skin — and how to care for it at every stage</div>
+            <div class="featured-post-title">How hormone therapy changes your skin, and how to care for it at every stage</div>
             <p class="featured-post-excerpt">For transgender and non-binary patients on hormone therapy, skin changes are among the most visible and meaningful physical shifts. Understanding them clinically makes care more precise and more affirming.</p>
           </div>
           <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
@@ -697,7 +704,7 @@
           <div class="small-post-img alt5"><div class="small-img-label">DNA</div></div>
           <div class="small-post-body">
             <span class="post-tag">Precision medicine</span>
-            <div class="small-post-title">What your skin DNA actually tells us — and what it doesn't</div>
+            <div class="small-post-title">What your skin DNA actually tells us, and what it doesn't</div>
             <p class="small-post-excerpt">Genetic testing in aesthetics is powerful but often misunderstood. Here is a clear-eyed look at what the five SkinDNA categories reveal about your skin's future.</p>
             <div class="post-meta">Coming soon</div>
           </div>
@@ -733,7 +740,7 @@
         <div class="featured-post-body">
           <div>
             <span class="post-tag">Ayurveda</span>
-            <div class="featured-post-title">Prakriti is not mysticism. It is constitutional medicine — and the research is catching up.</div>
+            <div class="featured-post-title">Prakriti is not mysticism. It is constitutional medicine, and the research is catching up.</div>
             <p class="featured-post-excerpt">Ayurvedic constitutional typing has been practiced for thousands of years. Modern genomic and microbiome research is beginning to validate what it has always described. Here is where the science stands.</p>
           </div>
           <div class="post-meta">Coming soon · Dr. Shankar Mundluru</div>
@@ -800,7 +807,7 @@
           <div class="small-post-img" style="background:#3A2A4A"><div class="small-img-label">Hormones</div></div>
           <div class="small-post-body">
             <span class="post-tag">Sexual health</span>
-            <div class="small-post-title">How testosterone and estrogen affect your skin — and what changes when they shift</div>
+            <div class="small-post-title">How testosterone and estrogen affect your skin, and what changes when they shift</div>
             <p class="small-post-excerpt">Sex hormones are among the most powerful drivers of skin behavior. Here is what the research shows about their role in aging, oiliness, pigmentation, and barrier function.</p>
             <div class="post-meta">Coming soon</div>
           </div>
@@ -864,7 +871,7 @@ function toggleMobileMenu() {
   hamburger.classList.toggle('open');
   document.body.style.overflow = isOpen ? '' : 'hidden';
   if (isOpen) {
-    // closing — reset to main panel
+    // closing, reset to main panel
     setTimeout(() => hideSubmenu(), 300);
   }
 }
