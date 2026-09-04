@@ -144,6 +144,10 @@
     }
     a.featured-post:hover { border-color: var(--terra); box-shadow: 0 6px 28px rgba(74,51,40,.09); }
     a.featured-post:hover .featured-post-title { color: var(--rose); }
+    a.small-post { text-decoration: none; color: inherit; cursor: pointer; display: block; transition: border-color .25s, box-shadow .25s; }
+    a.small-post:hover { border-color: var(--terra); box-shadow: 0 6px 24px rgba(74,51,40,.08); }
+    a.small-post:hover .small-post-title { color: var(--rose); }
+    .small-post-title { transition: color .2s; }
     .featured-post-title { transition: color .2s; }
     .featured-post-img {
       background: var(--section-dark);
@@ -600,15 +604,15 @@
         </div>
       </a>
       <div class="small-posts">
-        <div class="small-post">
+        <a class="small-post" href="post-inflammatory-hyperpigmentation.html">
           <div class="small-post-img alt1"><div class="small-img-label">PIH</div></div>
           <div class="small-post-body">
             <span class="post-tag">Skin of color</span>
             <div class="small-post-title">Post-inflammatory hyperpigmentation: what it is, why it happens, and how we treat it</div>
             <p class="small-post-excerpt">PIH affects patients of all skin tones but presents differently and requires different management depending on melanin concentration.</p>
-            <div class="post-meta">Coming soon</div>
+            <div class="post-meta">September 4, 2026</div>
           </div>
-        </div>
+        </a>
         <div class="small-post">
           <div class="small-post-img alt2"><div class="small-img-label">Melasma</div></div>
           <div class="small-post-body">
