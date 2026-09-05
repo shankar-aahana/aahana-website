@@ -85,6 +85,15 @@ nav.scrolled {
   text-shadow: none;
 }
 .dropdown-item:hover { background: rgba(243,236,228,.08); color: var(--ivory); }
+
+/* The section's own landing page, shown above the divider so it reads
+   as the parent rather than one more sibling category. */
+.dropdown-item.lead {
+  font-size: 13px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ivory);
+  padding-top: 4px; padding-bottom: 12px;
+}
 .dropdown-divider { height: 1px; margin: 8px 0; background: rgba(243,236,228,.12); }
 .dropdown-label {
   padding: 4px 22px 6px;
@@ -166,6 +175,10 @@ nav.scrolled {
   text-decoration: none;
 }
 .mobile-panel .disabled { opacity: .4; cursor: default; }
+.mobile-panel a.lead {
+  font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  font-size: 14px;
+}
 .mobile-panel-item .arrow {
   font-size: 18px; opacity: .6; display: inline-block;
 }

@@ -4,7 +4,7 @@
    This file is the ONLY place the site navigation is defined.
    Edit the two lists below and every page updates at once.
 
-   To add a Daybreak category, add one line to DAYBREAK_LINKS.
+   To add a Daybreak category, add one line to DAYBREAK_CATEGORIES.
    To add a Practice or Services link, edit those arrays.
    ============================================================ */
 
@@ -20,8 +20,12 @@
     { label: 'All services', href: 'services.html' }
   ];
 
-  var DAYBREAK_LINKS = [
-    { label: 'All articles',       href: 'journal.html' },
+  /* The Daybreak landing page. Sits at the top of the menu, above a
+     divider, so it reads as the section rather than one category in it. */
+  var DAYBREAK_MAIN = { label: 'All articles', href: 'journal.html' };
+
+  /* The categories below the divider. To add one, add a line here. */
+  var DAYBREAK_CATEGORIES = [
     { label: 'Well aging',         href: 'journal.html#well-aging' },
     { label: 'Skin of color',      href: 'journal.html#skin-of-color' },
     { label: 'LGBTQ+ health',      href: 'journal.html#lgbtq' },
@@ -65,7 +69,12 @@
         '</li>' +
         '<li class="nav-item">' +
           '<a class="nav-link" href="#" onclick="toggleNav(event)">Daybreak <span class="chevron">▼</span></a>' +
-          '<div class="dropdown">' + desktopItems(DAYBREAK_LINKS) + '</div>' +
+          '<div class="dropdown">' +
+            '<a class="dropdown-item lead" href="' + DAYBREAK_MAIN.href + '">' + DAYBREAK_MAIN.label + '</a>' +
+            '<div class="dropdown-divider"></div>' +
+            '<div class="dropdown-label">Browse by category</div>' +
+            desktopItems(DAYBREAK_CATEGORIES) +
+          '</div>' +
         '</li>' +
       '</ul>' +
       '<button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>' +
@@ -94,7 +103,10 @@
         '</div>' +
         '<div class="mobile-panel" id="mobilePanelJournal">' +
           '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">‹</span> Back</button>' +
-          '<div class="mobile-panel-title">Daybreak</div>' + panelItems(DAYBREAK_LINKS) +
+          '<div class="mobile-panel-title">Daybreak</div>' +
+          '<a class="lead" href="' + DAYBREAK_MAIN.href + '">' + DAYBREAK_MAIN.label + '</a>' +
+          '<span class="mobile-panel-label">Browse by category</span>' +
+          panelItems(DAYBREAK_CATEGORIES) +
         '</div>' +
       '</div>' +
       '<div class="mobile-menu-cta">' +
