@@ -25,6 +25,7 @@
        Spectral and the wordmark to Cairo — which is exactly how the site
        looks today. Nothing breaks in the meantime.
   -->
+  <link rel="stylesheet" href="footer.css">
   <style>
   /*
   @font-face {
@@ -367,6 +368,38 @@ nav.scrolled {
 .service-item:nth-child(3) { padding-top: 32px; border-bottom: none; }
 .service-item:nth-child(4) { padding-left: 40px; padding-right: 0; border-right: none; border-bottom: none; }
 .service-item:last-child { border-right: none; }
+
+/* ── DEVICES ── */
+.section-devices { padding: 64px 48px; border-top: 0.5px solid var(--border); }
+.devices-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  margin-top: 28px; border-top: 0.5px solid var(--border);
+}
+.device-item {
+  padding: 36px 44px 36px 0;
+  border-right: 0.5px solid var(--border);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.device-item:last-child { padding: 36px 0 36px 44px; border-right: none; }
+.device-maker { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--terra); }
+.device-item h4 { font-family: 'Spectral', serif; font-size: 24px; font-weight: 400; color: var(--deep); line-height: 1.2; }
+.device-spec { font-size: 12px; font-weight: 400; letter-spacing: .04em; color: var(--rose); }
+.device-item p { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--deep); }
+.device-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; padding: 0; }
+.device-facts li {
+  font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--rose); border: 0.5px solid var(--border);
+  padding: 5px 10px; border-radius: 2px;
+}
+.devices-note { margin-top: 36px; font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--deep); max-width: 660px; }
+.devices-note a { color: var(--terra); text-decoration: none; border-bottom: 0.5px solid var(--clay); }
+.devices-note a:hover { color: var(--deep); }
+@media (max-width: 900px) {
+  .section-devices { padding: 56px 24px; }
+  .devices-grid { grid-template-columns: 1fr; }
+  .device-item { padding: 28px 0; border-right: none; border-bottom: 0.5px solid var(--border); }
+  .device-item:last-child { padding: 28px 0 0; border-bottom: none; }
+}
 .service-cat {
   font-size: 11px; font-weight: 600; letter-spacing: .16em;
   text-transform: uppercase; color: var(--terra);
@@ -457,59 +490,6 @@ nav.scrolled {
   color: var(--espresso);
 }
 
-/* ── ADDRESS / FOOTER ── */
-.section-footer {
-  background: #4A3328;
-  padding: 80px 48px 40px;
-}
-.footer-top {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 60px;
-  border-bottom: 0.5px solid rgba(243,236,228,.08);
-  align-items: start;
-}
-.footer-top > div:not(:first-child) {
-  padding-top: 40px;
-}
-.footer-brand-name {
-  font-family: 'Contralto Big', 'Contralto Big Black', 'Cairo', sans-serif;
-  font-size: 28px; font-weight: 200; color: var(--ivory);
-  letter-spacing: .22em; margin-bottom: 6px;
-}
-.footer-brand-sub {
-  font-size: 9px; font-weight: 300; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--terra); margin-bottom: 20px;
-}
-.footer-tagline {
-  font-size: 13px; font-weight: 300; line-height: 1.8;
-  color: rgba(243,236,228,.7); max-width: 240px;
-}
-.footer-col h5 {
-  font-size: 12px; font-weight: 500; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--terra); margin-bottom: 16px;
-}
-.footer-col p,
-.footer-col address {
-  font-size: 13px; font-weight: 300; line-height: 1.9;
-  color: rgba(243,236,228,.8); font-style: normal;
-}
-.footer-col a {
-  color: rgba(243,236,228,.8); text-decoration: none;
-}
-.footer-col a:hover { color: var(--ivory); }
-.footer-bottom {
-  padding-top: 32px; display: flex;
-  justify-content: space-between; align-items: center;
-}
-.footer-legal {
-  font-size: 10px; font-weight: 300;
-  color: rgba(243,236,228,.5); letter-spacing: .06em;
-}
-.footer-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: var(--terra); opacity: .4;
-}
-
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -569,8 +549,6 @@ nav.scrolled {
   .service-item:not(:first-child) { padding-left: 0; }
   .service-item:nth-child(3) { border-bottom: 0.5px solid var(--border); }
   .service-item:last-child { border-bottom: none; }
-  .footer-top { grid-template-columns: 1fr; }
-  .section-footer { padding: 56px 24px 32px; }
   .waitlist-form { flex-direction: column; }
   .waitlist-btn { text-align: center; }
 }
@@ -952,9 +930,9 @@ nav.scrolled {
       <p>Neuromodulators for smoothing, lifting, and contouring. Hyaluronic acid fillers for volume and definition. PRP injections for tissue renewal and hair restoration.</p>
     </div>
     <div class="service-item reveal">
-      <div class="service-cat">Laser & Energy</div>
-      <h4>Stay tuned</h4>
-      <p>We're not revealing our energy and laser devices just yet. We can tell you that every device is chosen for its precision, its safety across all skin tones, and its clinical results. Worth the wait.</p>
+      <div class="service-cat">Laser &amp; Energy</div>
+      <h4>XERF · Aerolase Neo Elite</h4>
+      <p>Two platforms, both cleared across all six Fitzpatrick types. Monopolar radiofrequency for structural tightening, and a 1064&nbsp;nm Nd:YAG for pigment, redness, acne and skin quality.</p>
     </div>
     <div class="service-item reveal">
       <div class="service-cat">Skin Treatments</div>
@@ -971,6 +949,33 @@ nav.scrolled {
     <p style="font-size:13px;font-weight:300;color:var(--espresso);margin-bottom:24px">All treatment plans begin with a Visia skin analysis and consultation.</p>
     <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="display:inline-block;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);background:var(--deep);padding:14px 32px;border:none;border-radius:2px;transition:background .2s">Join the waitlist</button>
   </div>
+</section>
+
+<!-- DEVICES -->
+<section class="section-devices" id="devices">
+  <div class="section-label reveal">The device stack</div>
+  <h2 class="reveal">Two platforms, chosen for<br>every skin we expect to see</h2>
+  <div class="devices-grid">
+    <div class="device-item reveal">
+      <div class="device-maker">Lutronic</div>
+      <h4>XERF</h4>
+      <div class="device-spec">Multifrequency monopolar radiofrequency</div>
+      <p>The first device to deliver 6.78&nbsp;MHz and 2&nbsp;MHz together, reaching the superficial, middle and deep layers in a single session, including the SMAS, the structural tissue addressed in surgical facelifts. Real-time impedance feedback adapts energy delivery continuously. Radiofrequency is not light, so pigment plays no part in its mechanism and skin tone does not constrain it.</p>
+      <ul class="device-facts">
+        <li>FDA cleared</li><li>All skin tones</li><li>No needles</li><li>Reaches SMAS</li><li>Builds over 3 to 6 months</li>
+      </ul>
+    </div>
+    <div class="device-item reveal">
+      <div class="device-maker">Aerolase</div>
+      <h4>Neo Elite</h4>
+      <div class="device-spec">1064&nbsp;nm Nd:YAG · 650-microsecond pulse</div>
+      <p>At 1064&nbsp;nm the light penetrates more deeply and is far less readily absorbed by melanin in the epidermis, which is what makes it appropriate across the full range of skin. The very short pulse delivers energy before much heat accumulates at the surface. Used here for acne, rosacea and persistent redness, melasma and post-inflammatory pigmentation, vascular lesions, scarring and overall skin quality.</p>
+      <ul class="device-facts">
+        <li>FDA cleared</li><li>Fitzpatrick I to VI</li><li>No numbing</li><li>No cooling</li><li>No social downtime</li>
+      </ul>
+    </div>
+  </div>
+  <p class="devices-note reveal">Two is deliberate. Every platform here has to be appropriate for everyone who walks in, which rules a great deal out. Additional devices are under evaluation against the same standard: demonstrated safety across all six Fitzpatrick types, not only the lighter three. <a href="laser-treatments-skin-of-color.html">Why that standard matters &rarr;</a></p>
 </section>
 
 <!-- SERVICES -->
@@ -1011,35 +1016,7 @@ nav.scrolled {
 </section>
 
 <!-- FOOTER -->
-<footer class="section-footer">
-  <div class="footer-top">
-    <div>
-      <div class="footer-brand-name">AAHANA</div>
-      <div class="footer-brand-sub">Medical Aesthetics</div>
-      <p class="footer-tagline">Physician-led medical aesthetics, grounded in precision medicine. We treat more than what we see. Opening San Francisco, 2026.</p>
-    </div>
-    <div class="footer-col">
-      <h5>Location</h5>
-      <address>
-        2175 3rd Street, Unit C1<br>
-        San Francisco, CA 94107<br><br>
-        Hours: coming soon
-      </address>
-    </div>
-    <div class="footer-col">
-      <h5>Contact</h5>
-      <p>
-        <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="background:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:300;color:rgba(243,236,228,.8);padding:0;text-align:left;">Join the waitlist</button><br><br>
-        <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>
-      </p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-legal">© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA</div>
-    <div class="footer-dot"></div>
-    <div class="footer-legal">aahanasf.com</div>
-  </div>
-</footer>
+<script src="footer.js"></script>
 
 <script>
 
