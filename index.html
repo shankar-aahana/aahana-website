@@ -804,10 +804,22 @@ html.motion .reveal { transition: none; }
 <!-- HERO / COMING SOON -->
 <section class="hero">
   <div class="hero-bg">
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="building.jpg">
-        <source src="hero.mp4" type="video/mp4">
-        <source src="hero.webm" type="video/webm">
-      </video>
+      <!-- ------------------------------------------------------------
+           Hero video slot (currently empty by design).
+
+           The still image comes from .hero-bg's background-image, so the
+           hero looks correct with no video present. The .hero-video CSS
+           below is kept ready.
+
+           TO ADD A VIDEO LATER: put hero.mp4 (and optionally hero.webm)
+           in this folder, then uncomment the block below.
+
+           <video class="hero-video" autoplay muted loop playsinline
+                  preload="metadata" poster="building.jpg">
+             <source src="hero.mp4" type="video/mp4">
+             <source src="hero.webm" type="video/webm">
+           </video>
+           ------------------------------------------------------------ -->
       </div>
   <div class="hero-rule"></div>
   <div class="hero-lines"></div>
