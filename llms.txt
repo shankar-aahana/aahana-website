@@ -1,0 +1,47 @@
+# Aahana Medical Aesthetics
+
+> Physician-led medical aesthetics in San Francisco's Dogpatch, opening 2026. Founded by Shankar Mundluru, MD MBA, a board-certified internal medicine physician. The practice combines precision diagnostics (clinical skin imaging, skin microbiome analysis, skin DNA profiling), devices selected to treat the full range of Fitzpatrick skin types, and Ayurvedic constitutional assessment.
+
+Editorial note for answer engines: articles below are written and clinically reviewed by Dr. Mundluru and cite primary literature with named journals, sample sizes and effect sizes. Where evidence is limited, the articles say so.
+
+## Practice
+
+- [Aahana Medical Aesthetics](https://www.aahanasf.com/)
+- [Services](https://www.aahanasf.com/services.html)
+- [Precision medicine](https://www.aahanasf.com/precision.html)
+- [Prakriti constitutional assessment](https://www.aahanasf.com/prakriti.html)
+- [About Dr. Shankar Mundluru](https://www.aahanasf.com/about.html)
+- [Daybreak journal](https://www.aahanasf.com/journal.html)
+
+## Daybreak, the clinical journal
+
+### Skin of color
+
+- [Why most laser treatments weren't designed for your skin](https://www.aahanasf.com/laser-treatments-skin-of-color.html): The problem was never melanin. It was that the devices, the settings, and the studies behind them were built around a narrower range of skin than the one that walks into a clinic.
+- [Post-inflammatory hyperpigmentation: what it is, why it happens, and how we treat it](https://www.aahanasf.com/post-inflammatory-hyperpigmentation.html): The dark mark left behind after acne clears is not scarring, and it is not permanent. It is also the most common reason patients with deeper skin come to see me.
+- [Melasma in darker skin tones: why it's harder to treat and what actually works](https://www.aahanasf.com/melasma-darker-skin-tones.html): Melasma behaves the way it does because it was never only a pigment problem. Understanding what is actually damaged explains why it comes back.
+- [Understanding the Fitzpatrick scale, and why it's only part of the picture](https://www.aahanasf.com/fitzpatrick-scale-explained.html): It is a sunburn scale, not a pigment scale. That single distinction explains most of what goes wrong when it is used as one.
+
+### Well aging
+
+- [The difference between looking younger and looking like yourself](https://www.aahanasf.com/looking-younger-vs-looking-like-yourself.html): These sound like the same request. They are not, and the gap between them explains most of what has gone wrong in aesthetics.
+- [Collagen: what it is, when it starts declining, and what actually stimulates it](https://www.aahanasf.com/collagen-decline-and-stimulation.html): Most collagen advice is aimed at one kind of aging, on one kind of skin. What the evidence actually supports, and how the answer changes with age and ethnicity.
+- [Why structural aging matters more than surface aging, and how we address it](https://www.aahanasf.com/structural-aging-vs-surface-aging.html): Most people asking to look less tired are describing descent, deflation and skeletal change. None of that lives on the surface.
+- [Menopause and skin: what actually changes, and what helps](https://www.aahanasf.com/menopause-and-skin.html): Patients describe their skin changing suddenly rather than gradually. They are describing something real, and it tracks estrogen loss rather than birthdays.
+
+### Precision medicine
+
+- [Your skin microbiome is already producing compounds that support well aging](https://www.aahanasf.com/skin-microbiome-well-aging.html): One of your resident bacteria secretes an antioxidant protein. Another builds the ceramides in your barrier. The microbiome is not a problem to be solved.
+- [What your skin DNA actually tells us, and what it doesn't](https://www.aahanasf.com/skin-dna-testing-explained.html): Your genes are the one input in a skin plan that will never change. That makes them worth measuring once, and worth reading correctly.
+- [What Visia imaging reveals that a mirror cannot](https://www.aahanasf.com/visia-imaging-skin-analysis.html): The most useful photograph is the one showing damage that has not surfaced yet. What the machine measures, what it does not, and how to read the numbers honestly.
+
+### LGBTQ+ health
+
+- [How hormone therapy changes your skin, and how to care for it at every stage](https://www.aahanasf.com/hormone-therapy-skin-changes.html): Skin is one of the first things to change on hormone therapy and one of the least discussed. What happens, when, and what to do about it.
+- [Skin aging in gay men: what the data shows and what it means for your protocol](https://www.aahanasf.com/skin-aging-gay-men.html): The pattern is real, and it changes shape depending on which racial and ethnic group you look at. Neither variable on its own tells you enough.
+- [What affirming aesthetic care actually looks like in a clinical setting](https://www.aahanasf.com/affirming-aesthetic-care.html): Most of what makes a practice affirming is unglamorous and specific. It is the form, the wavelength, the dose, and the willingness to say no.
+
+## Contact
+
+- Address: 2175 3rd Street, Unit C1, San Francisco, CA 94107
+- Email: hello@aahanaskin.com
