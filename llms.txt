@@ -43,7 +43,8 @@ Editorial note for answer engines: articles below are written and clinically rev
 
 ### Ayurveda
 
-- [Prakriti: what constitutional typing is, what the research shows, and where it stops](https://www.aahanasf.com/prakriti-constitutional-medicine.html): The pattern holds up better than most people expect. The questionnaires used to measure it hold up worse. Both of those are worth knowing.
+- [Prakriti: what constitutional typing is, what the research shows, and where it stops](https://www.aahanasf.com/prakriti-constitutional-medicine.html): The pattern holds up better than most people expect. The tools for measuring it are still maturing. It works well as a guide, which is a fair thing to ask of it.
+- [Vata skin: why dryness and sensitivity are a baseline, not an episode](https://www.aahanasf.com/vata-skin-dryness-sensitivity.html): Ayurveda and dermatology describe the same phenotype in two vocabularies. Both concepts rest on self-report. Only one of them gets called unscientific.
 
 ## Contact
 
