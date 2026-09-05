@@ -517,107 +517,8 @@
   </style>
 </head>
 <body>
+<script src="nav.js"></script>
 
-<nav id="nav">
-  <a href="index.html" class="nav-brand">
-    <div class="nav-name">AAHANA</div>
-    <div class="nav-sub">Medical Aesthetics</div>
-  </a>
-  <ul class="nav-links">
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="toggleNav(event)">The Practice <span class="chevron">▼</span></a>
-      <div class="dropdown">
-        <a class="dropdown-item" href="about.html">Dr. Shankar</a>
-        <a class="dropdown-item" href="precision.html">Precision medicine</a>
-        <a class="dropdown-item" href="prakriti.html">Prakriti</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="toggleNav(event)">Services <span class="chevron">▼</span></a>
-      <div class="dropdown">
-        <a class="dropdown-item" href="services.html">All services</a>
-        <div class="dropdown-divider"></div>
-        <div class="dropdown-label">Coming soon</div>
-        <div class="dropdown-item" style="opacity:.45;cursor:default">Individual treatment pages</div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="toggleNav(event)">Daybreak <span class="chevron">▼</span></a>
-      <div class="dropdown">
-        <a class="dropdown-item" href="journal.html">All articles</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="journal.html#well-aging">Well aging</a>
-        <a class="dropdown-item" href="journal.html#skin-of-color">Skin of color</a>
-        <a class="dropdown-item" href="journal.html#lgbtq">LGBTQ+ health</a>
-        <a class="dropdown-item" href="journal.html#precision">Precision medicine</a>
-        <a class="dropdown-item" href="journal.html#ayurveda">Ayurveda</a>
-        <a class="dropdown-item" href="journal.html#sexual-health">Sexual health</a>
-      </div>
-    </li>
-  </ul>
-  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-panels">
-    <!-- Main panel: top-level items -->
-    <div class="mobile-panel main" id="mobilePanelMain">
-      <button class="mobile-panel-item" onclick="showSubmenu('practice')">
-        The Practice <span class="arrow">›</span>
-      </button>
-      <button class="mobile-panel-item" onclick="showSubmenu('services')">
-        Services <span class="arrow">›</span>
-      </button>
-      <button class="mobile-panel-item" onclick="showSubmenu('journal')">
-        Daybreak <span class="arrow">›</span>
-      </button>
-    </div>
-
-    <!-- The Practice submenu -->
-    <div class="mobile-panel" id="mobilePanelPractice">
-      <button class="mobile-panel-back" onclick="hideSubmenu()">
-        <span class="back-arrow">‹</span> Back
-      </button>
-      <div class="mobile-panel-title">The Practice</div>
-      <a href="about.html">Dr. Shankar</a>
-      <a href="precision.html">Precision medicine</a>
-      <a href="prakriti.html">Prakriti</a>
-    </div>
-
-    <!-- Services submenu -->
-    <div class="mobile-panel" id="mobilePanelServices">
-      <button class="mobile-panel-back" onclick="hideSubmenu()">
-        <span class="back-arrow">‹</span> Back
-      </button>
-      <div class="mobile-panel-title">Services</div>
-      <a href="services.html">All services</a>
-      <span class="mobile-panel-label">Coming soon</span>
-      <span class="disabled">Individual treatment pages</span>
-    </div>
-
-    <!-- Daybreak submenu -->
-    <div class="mobile-panel" id="mobilePanelJournal">
-      <button class="mobile-panel-back" onclick="hideSubmenu()">
-        <span class="back-arrow">‹</span> Back
-      </button>
-      <div class="mobile-panel-title">Daybreak</div>
-      <a href="journal.html">All articles</a>
-      <a href="journal.html#well-aging">Well aging</a>
-      <a href="journal.html#skin-of-color">Skin of color</a>
-      <a href="journal.html#lgbtq">LGBTQ+ health</a>
-      <a href="journal.html#precision">Precision medicine</a>
-      <a href="journal.html#ayurveda">Ayurveda</a>
-      <a href="journal.html#sexual-health">Sexual health</a>
-    </div>
-  </div>
-
-  <div class="mobile-menu-cta">
-    <button data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
-  </div>
-</div>
 
 <!-- ARTICLE HERO -->
 <section class="article-hero">
@@ -769,54 +670,7 @@
 </footer>
 
 <script>
-// Mobile menu
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  const hamburger = document.getElementById('navHamburger');
-  const isOpen = menu.classList.contains('open');
-  menu.classList.toggle('open');
-  hamburger.classList.toggle('open');
-  document.body.style.overflow = isOpen ? '' : 'hidden';
-  if (isOpen) { setTimeout(() => hideSubmenu(), 300); }
-}
-function showSubmenu(name) {
-  const menu = document.getElementById('mobileMenu');
-  const ids = { practice: 'mobilePanelPractice', services: 'mobilePanelServices', journal: 'mobilePanelJournal' };
-  document.querySelectorAll('.mobile-panel').forEach(p => {
-    if (!p.classList.contains('main')) p.classList.remove('active');
-  });
-  const panel = document.getElementById(ids[name]);
-  if (panel) {
-    panel.classList.add('active');
-    menu.classList.add('subactive');
-    panel.scrollTop = 0;
-  }
-}
-function hideSubmenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.remove('subactive');
-  document.querySelectorAll('.mobile-panel').forEach(p => {
-    if (!p.classList.contains('main')) p.classList.remove('active');
-  });
-}
 
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); });
-
-// Nav dropdowns
-function toggleNav(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  const item = e.currentTarget.closest('.nav-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-document.addEventListener('click', e => {
-  if (!e.target.closest('.nav-item')) {
-    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open'));
-  }
-});
 
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
