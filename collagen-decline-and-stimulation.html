@@ -567,7 +567,17 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="journal.html">Daybreak</a>
+      <a class="nav-link" href="#" onclick="toggleNav(event)">Daybreak <span class="chevron">▼</span></a>
+      <div class="dropdown">
+        <a class="dropdown-item" href="journal.html">All articles</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="journal.html#well-aging">Well aging</a>
+        <a class="dropdown-item" href="journal.html#skin-of-color">Skin of color</a>
+        <a class="dropdown-item" href="journal.html#lgbtq">LGBTQ+ health</a>
+        <a class="dropdown-item" href="journal.html#precision">Precision medicine</a>
+        <a class="dropdown-item" href="journal.html#ayurveda">Ayurveda</a>
+        <a class="dropdown-item" href="journal.html#sexual-health">Sexual health</a>
+      </div>
     </li>
   </ul>
   <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>
@@ -578,6 +588,7 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-panels">
+    <!-- Main panel: top-level items -->
     <div class="mobile-panel main" id="mobilePanelMain">
       <button class="mobile-panel-item" onclick="showSubmenu('practice')">
         The Practice <span class="arrow">›</span>
@@ -585,10 +596,12 @@
       <button class="mobile-panel-item" onclick="showSubmenu('services')">
         Services <span class="arrow">›</span>
       </button>
-      <a class="mobile-panel-item" href="journal.html">
+      <button class="mobile-panel-item" onclick="showSubmenu('journal')">
         Daybreak <span class="arrow">›</span>
-      </a>
+      </button>
     </div>
+
+    <!-- The Practice submenu -->
     <div class="mobile-panel" id="mobilePanelPractice">
       <button class="mobile-panel-back" onclick="hideSubmenu()">
         <span class="back-arrow">‹</span> Back
@@ -598,6 +611,8 @@
       <a href="precision.html">Precision medicine</a>
       <a href="prakriti.html">Prakriti</a>
     </div>
+
+    <!-- Services submenu -->
     <div class="mobile-panel" id="mobilePanelServices">
       <button class="mobile-panel-back" onclick="hideSubmenu()">
         <span class="back-arrow">‹</span> Back
@@ -607,7 +622,23 @@
       <span class="mobile-panel-label">Coming soon</span>
       <span class="disabled">Individual treatment pages</span>
     </div>
+
+    <!-- Daybreak submenu -->
+    <div class="mobile-panel" id="mobilePanelJournal">
+      <button class="mobile-panel-back" onclick="hideSubmenu()">
+        <span class="back-arrow">‹</span> Back
+      </button>
+      <div class="mobile-panel-title">Daybreak</div>
+      <a href="journal.html">All articles</a>
+      <a href="journal.html#well-aging">Well aging</a>
+      <a href="journal.html#skin-of-color">Skin of color</a>
+      <a href="journal.html#lgbtq">LGBTQ+ health</a>
+      <a href="journal.html#precision">Precision medicine</a>
+      <a href="journal.html#ayurveda">Ayurveda</a>
+      <a href="journal.html#sexual-health">Sexual health</a>
+    </div>
   </div>
+
   <div class="mobile-menu-cta">
     <button data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
   </div>
@@ -832,7 +863,7 @@ function toggleMobileMenu() {
 }
 function showSubmenu(name) {
   const menu = document.getElementById('mobileMenu');
-  const ids = { practice: 'mobilePanelPractice', services: 'mobilePanelServices' };
+  const ids = { practice: 'mobilePanelPractice', services: 'mobilePanelServices', journal: 'mobilePanelJournal' };
   document.querySelectorAll('.mobile-panel').forEach(p => {
     if (!p.classList.contains('main')) p.classList.remove('active');
   });
