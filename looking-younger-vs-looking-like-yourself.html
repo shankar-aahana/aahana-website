@@ -563,6 +563,7 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-panels">
+    <!-- Main panel: top-level items -->
     <div class="mobile-panel main" id="mobilePanelMain">
       <button class="mobile-panel-item" onclick="showSubmenu('practice')">
         The Practice <span class="arrow">›</span>
@@ -574,6 +575,8 @@
         Daybreak <span class="arrow">›</span>
       </button>
     </div>
+
+    <!-- The Practice submenu -->
     <div class="mobile-panel" id="mobilePanelPractice">
       <button class="mobile-panel-back" onclick="hideSubmenu()">
         <span class="back-arrow">‹</span> Back
@@ -583,11 +586,17 @@
       <a href="precision.html">Precision medicine</a>
       <a href="prakriti.html">Prakriti</a>
     </div>
+
+    <!-- Services submenu -->
     <div class="mobile-panel" id="mobilePanelServices">
       <button class="mobile-panel-back" onclick="hideSubmenu()">
         <span class="back-arrow">‹</span> Back
       </button>
       <div class="mobile-panel-title">Services</div>
+      <a href="services.html">All services</a>
+      <span class="mobile-panel-label">Coming soon</span>
+      <span class="disabled">Individual treatment pages</span>
+    </div>
 
     <!-- Daybreak submenu -->
     <div class="mobile-panel" id="mobilePanelJournal">
@@ -603,11 +612,8 @@
       <a href="journal.html#ayurveda">Ayurveda</a>
       <a href="journal.html#sexual-health">Sexual health</a>
     </div>
-      <a href="services.html">All services</a>
-      <span class="mobile-panel-label">Coming soon</span>
-      <span class="disabled">Individual treatment pages</span>
-    </div>
   </div>
+
   <div class="mobile-menu-cta">
     <button data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
   </div>
