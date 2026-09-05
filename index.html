@@ -25,6 +25,7 @@
        Spectral and the wordmark to Cairo — which is exactly how the site
        looks today. Nothing breaks in the meantime.
   -->
+  <link rel="stylesheet" href="footer.css">
   <style>
   /*
   @font-face {
@@ -367,6 +368,9 @@ nav.scrolled {
 .service-item:nth-child(3) { padding-top: 32px; border-bottom: none; }
 .service-item:nth-child(4) { padding-left: 40px; padding-right: 0; border-right: none; border-bottom: none; }
 .service-item:last-child { border-right: none; }
+@media (max-width: 900px) {
+  .section-devices { padding: 56px 24px; }
+}
 .service-cat {
   font-size: 11px; font-weight: 600; letter-spacing: .16em;
   text-transform: uppercase; color: var(--terra);
@@ -457,59 +461,6 @@ nav.scrolled {
   color: var(--espresso);
 }
 
-/* ── ADDRESS / FOOTER ── */
-.section-footer {
-  background: #4A3328;
-  padding: 80px 48px 40px;
-}
-.footer-top {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 60px;
-  border-bottom: 0.5px solid rgba(243,236,228,.08);
-  align-items: start;
-}
-.footer-top > div:not(:first-child) {
-  padding-top: 40px;
-}
-.footer-brand-name {
-  font-family: 'Contralto Big', 'Contralto Big Black', 'Cairo', sans-serif;
-  font-size: 28px; font-weight: 200; color: var(--ivory);
-  letter-spacing: .22em; margin-bottom: 6px;
-}
-.footer-brand-sub {
-  font-size: 9px; font-weight: 300; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--terra); margin-bottom: 20px;
-}
-.footer-tagline {
-  font-size: 13px; font-weight: 300; line-height: 1.8;
-  color: rgba(243,236,228,.7); max-width: 240px;
-}
-.footer-col h5 {
-  font-size: 12px; font-weight: 500; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--terra); margin-bottom: 16px;
-}
-.footer-col p,
-.footer-col address {
-  font-size: 13px; font-weight: 300; line-height: 1.9;
-  color: rgba(243,236,228,.8); font-style: normal;
-}
-.footer-col a {
-  color: rgba(243,236,228,.8); text-decoration: none;
-}
-.footer-col a:hover { color: var(--ivory); }
-.footer-bottom {
-  padding-top: 32px; display: flex;
-  justify-content: space-between; align-items: center;
-}
-.footer-legal {
-  font-size: 10px; font-weight: 300;
-  color: rgba(243,236,228,.5); letter-spacing: .06em;
-}
-.footer-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: var(--terra); opacity: .4;
-}
-
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -569,8 +520,6 @@ nav.scrolled {
   .service-item:not(:first-child) { padding-left: 0; }
   .service-item:nth-child(3) { border-bottom: 0.5px solid var(--border); }
   .service-item:last-child { border-bottom: none; }
-  .footer-top { grid-template-columns: 1fr; }
-  .section-footer { padding: 56px 24px 32px; }
   .waitlist-form { flex-direction: column; }
   .waitlist-btn { text-align: center; }
 }
@@ -844,109 +793,13 @@ nav.scrolled {
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
 </head>
 <body>
+<script src="nav.js"></script>
 
 <!-- NAV -->
-<nav id="nav">
-  <div class="nav-brand">
-    <div class="nav-name">AAHANA</div>
-    <div class="nav-sub">Medical Aesthetics</div>
-  </div>
-  <ul class="nav-links">
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="toggleNav(event)">The Practice <span class="chevron">▼</span></a>
-      <div class="dropdown">
-        <a class="dropdown-item" href="about.html">Dr. Shankar</a>
-        <a class="dropdown-item" href="precision.html">Precision medicine</a>
-        <a class="dropdown-item" href="prakriti.html">Prakriti</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="toggleNav(event)">Services <span class="chevron">▼</span></a>
-      <div class="dropdown">
-        <a class="dropdown-item" href="services.html">All services</a>
-        <div class="dropdown-divider"></div>
-        <div class="dropdown-label">Coming soon</div>
-        <div class="dropdown-item" style="opacity:.45;cursor:default">Individual treatment pages</div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="toggleNav(event)">Daybreak <span class="chevron">▼</span></a>
-      <div class="dropdown">
-        <a class="dropdown-item" href="journal.html">All articles</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="journal.html#well-aging">Well aging</a>
-        <a class="dropdown-item" href="journal.html#skin-of-color">Skin of color</a>
-        <a class="dropdown-item" href="journal.html#lgbtq">LGBTQ+ health</a>
-        <a class="dropdown-item" href="journal.html#precision">Precision medicine</a>
-        <a class="dropdown-item" href="journal.html#ayurveda">Ayurveda</a>
-        <a class="dropdown-item" href="journal.html#sexual-health">Sexual health</a>
-      </div>
-    </li>
-  </ul>
-  <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta" style="background:transparent;cursor:pointer;font-family:'Cairo',sans-serif;border:1px solid rgba(243,236,228,.9);text-shadow:0 1px 8px rgba(0,0,0,.5);">Join the waitlist</button>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-panels">
-    <!-- Main panel: top-level items -->
-    <div class="mobile-panel main" id="mobilePanelMain">
-      <button class="mobile-panel-item" onclick="showSubmenu('practice')">
-        The Practice <span class="arrow">›</span>
-      </button>
-      <button class="mobile-panel-item" onclick="showSubmenu('services')">
-        Services <span class="arrow">›</span>
-      </button>
-      <button class="mobile-panel-item" onclick="showSubmenu('journal')">
-        Daybreak <span class="arrow">›</span>
-      </button>
-    </div>
 
-    <!-- The Practice submenu -->
-    <div class="mobile-panel" id="mobilePanelPractice">
-      <button class="mobile-panel-back" onclick="hideSubmenu()">
-        <span class="back-arrow">‹</span> Back
-      </button>
-      <div class="mobile-panel-title">The Practice</div>
-      <a href="about.html">Dr. Shankar</a>
-      <a href="precision.html">Precision medicine</a>
-      <a href="prakriti.html">Prakriti</a>
-    </div>
-
-    <!-- Services submenu -->
-    <div class="mobile-panel" id="mobilePanelServices">
-      <button class="mobile-panel-back" onclick="hideSubmenu()">
-        <span class="back-arrow">‹</span> Back
-      </button>
-      <div class="mobile-panel-title">Services</div>
-      <a href="services.html">All services</a>
-      <span class="mobile-panel-label">Coming soon</span>
-      <span class="disabled">Individual treatment pages</span>
-    </div>
-
-    <!-- Daybreak submenu -->
-    <div class="mobile-panel" id="mobilePanelJournal">
-      <button class="mobile-panel-back" onclick="hideSubmenu()">
-        <span class="back-arrow">‹</span> Back
-      </button>
-      <div class="mobile-panel-title">Daybreak</div>
-      <a href="journal.html">All articles</a>
-      <a href="journal.html#well-aging">Well aging</a>
-      <a href="journal.html#skin-of-color">Skin of color</a>
-      <a href="journal.html#lgbtq">LGBTQ+ health</a>
-      <a href="journal.html#precision">Precision medicine</a>
-      <a href="journal.html#ayurveda">Ayurveda</a>
-      <a href="journal.html#sexual-health">Sexual health</a>
-    </div>
-  </div>
-
-  <div class="mobile-menu-cta">
-    <button data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
-  </div>
-</div>
 
 <!-- HERO / COMING SOON -->
 <section class="hero">
@@ -1035,7 +888,6 @@ nav.scrolled {
 </section>
 
 
-
 <!-- AYURVEDA -->
 
 
@@ -1049,9 +901,9 @@ nav.scrolled {
       <p>Neuromodulators for smoothing, lifting, and contouring. Hyaluronic acid fillers for volume and definition. PRP injections for tissue renewal and hair restoration.</p>
     </div>
     <div class="service-item reveal">
-      <div class="service-cat">Laser & Energy</div>
-      <h4>Stay tuned</h4>
-      <p>We're not revealing our energy and laser devices just yet. We can tell you that every device is chosen for its precision, its safety across all skin tones, and its clinical results. Worth the wait.</p>
+      <div class="service-cat">Laser &amp; Energy</div>
+      <h4>XERF · Aerolase Neo Elite</h4>
+      <p>Two platforms, both cleared across all six Fitzpatrick types. Monopolar radiofrequency for structural tightening, and a 1064&nbsp;nm Nd:YAG for pigment, redness, acne and skin quality.</p>
     </div>
     <div class="service-item reveal">
       <div class="service-cat">Skin Treatments</div>
@@ -1069,6 +921,7 @@ nav.scrolled {
     <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="display:inline-block;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);background:var(--deep);padding:14px 32px;border:none;border-radius:2px;transition:background .2s">Join the waitlist</button>
   </div>
 </section>
+
 
 <!-- SERVICES -->
 <section class="section-dr section-dr--dark" id="dr">
@@ -1108,91 +961,10 @@ nav.scrolled {
 </section>
 
 <!-- FOOTER -->
-<footer class="section-footer">
-  <div class="footer-top">
-    <div>
-      <div class="footer-brand-name">AAHANA</div>
-      <div class="footer-brand-sub">Medical Aesthetics</div>
-      <p class="footer-tagline">Physician-led medical aesthetics, grounded in precision medicine. We treat more than what we see. Opening San Francisco, 2026.</p>
-    </div>
-    <div class="footer-col">
-      <h5>Location</h5>
-      <address>
-        2175 3rd Street, Unit C1<br>
-        San Francisco, CA 94107<br><br>
-        Hours: coming soon
-      </address>
-    </div>
-    <div class="footer-col">
-      <h5>Contact</h5>
-      <p>
-        <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="background:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:300;color:rgba(243,236,228,.8);padding:0;text-align:left;">Join the waitlist</button><br><br>
-        <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>
-      </p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-legal">© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA</div>
-    <div class="footer-dot"></div>
-    <div class="footer-legal">aahanasf.com</div>
-  </div>
-</footer>
+<script src="footer.js"></script>
 
 <script>
-// Mobile menu
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  const hamburger = document.getElementById('navHamburger');
-  const isOpen = menu.classList.contains('open');
-  menu.classList.toggle('open');
-  hamburger.classList.toggle('open');
-  document.body.style.overflow = isOpen ? '' : 'hidden';
-  if (isOpen) {
-    // closing — reset to main panel
-    setTimeout(() => hideSubmenu(), 300);
-  }
-}
-function showSubmenu(name) {
-  const menu = document.getElementById('mobileMenu');
-  const ids = { practice: 'mobilePanelPractice', services: 'mobilePanelServices', journal: 'mobilePanelJournal' };
-  document.querySelectorAll('.mobile-panel').forEach(p => {
-    if (!p.classList.contains('main')) p.classList.remove('active');
-  });
-  const panel = document.getElementById(ids[name]);
-  if (panel) {
-    panel.classList.add('active');
-    menu.classList.add('subactive');
-    panel.scrollTop = 0;
-  }
-}
-function hideSubmenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.remove('subactive');
-  document.querySelectorAll('.mobile-panel').forEach(p => {
-    if (!p.classList.contains('main')) p.classList.remove('active');
-  });
-}
 
-// Nav scroll effect
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 10);
-});
-
-// Nav dropdowns
-function toggleNav(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  const item = e.currentTarget.closest('.nav-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-document.addEventListener('click', e => {
-  if (!e.target.closest('.nav-item')) {
-    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open'));
-  }
-});
 
 // Reveal on scroll
 const reveals = document.querySelectorAll('.reveal');

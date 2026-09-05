@@ -186,6 +186,7 @@
   }
   </script>
 
+  <link rel="stylesheet" href="footer.css">
   <style>
     :root {
       --ivory: #EDE8E1; --espresso: #4A3328; --deep: #4A3328;
@@ -393,18 +394,6 @@
     .cta-btn { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--deep); background: var(--ivory); border: none; padding: 16px 40px; border-radius: 2px; font-family: 'Cairo', sans-serif; cursor: pointer; transition: opacity .2s; }
     .cta-btn:hover { opacity: .85; }
 
-    /* FOOTER */
-    footer { background: #4A3328; padding: 60px 48px 32px; }
-    .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 0.5px solid rgba(237,232,225,.08); }
-    .footer-brand-name { font-size: 24px; font-weight: 200; color: var(--ivory); letter-spacing: .22em; margin-bottom: 4px; }
-    .footer-brand-sub { font-size: 11px; font-weight: 300; letter-spacing: .18em; text-transform: uppercase; color: var(--terra); }
-    .footer-tagline { font-size: 14px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.6); max-width: 240px; margin-top: 12px; }
-    .footer-col h5 { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
-    .footer-col p, .footer-col address { font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(237,232,225,.75); font-style: normal; }
-    .footer-col a { color: rgba(237,232,225,.75); text-decoration: none; }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; }
-    .footer-legal { font-size: 11px; font-weight: 300; color: rgba(237,232,225,.4); letter-spacing: .06em; }
-
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -416,8 +405,6 @@
       .article-body { padding: 56px 24px 72px; }
       .section-cta { padding: 80px 24px; }
       .related-links { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 8px; }
     }
 
     /* Mobile menu */
@@ -642,32 +629,7 @@
   </div>
 </section>
 
-<footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-brand-name">AAHANA</div>
-      <div class="footer-brand-sub">Medical Aesthetics</div>
-      <div style="font-size:12px;font-weight:300;color:rgba(237,232,225,.4);letter-spacing:.08em;margin-top:6px;font-style:italic">Aahana · आहान · first light of dawn</div>
-      <p class="footer-tagline">Physician-led medical aesthetics at the forefront of clinical science and Ayurvedic constitutional medicine.</p>
-    </div>
-    <div class="footer-col" style="padding-top:40px">
-      <h5>Location</h5>
-      <address>2175 3rd Street, Unit C1<br>San Francisco, CA 94107<br><br>Hours: coming soon</address>
-    </div>
-    <div class="footer-col" style="padding-top:40px">
-      <h5>Contact</h5>
-      <p>
-        <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="background:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:300;color:rgba(237,232,225,.75);padding:0;text-align:left;">Join the waitlist</button><br><br>
-        <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>
-      </p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-legal">© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA</div>
-    <div class="footer-legal">·</div>
-    <div class="footer-legal">aahanasf.com</div>
-  </div>
-</footer>
+<script src="footer.js"></script>
 
 <script>
 

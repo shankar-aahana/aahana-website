@@ -2,13 +2,16 @@
    Aahana shared navigation
    ------------------------------------------------------------
    This file is the ONLY place the site navigation is defined.
-   Edit the three lists below and every page updates at once.
+   Edit the two lists below and every page updates at once.
+
+   To add a Daybreak category, add one line to DAYBREAK_LINKS.
+   To add a Practice or Services link, edit those arrays.
    ============================================================ */
 
 (function () {
 
   var PRACTICE_LINKS = [
-    { label: 'Dr. Shankar',        href: 'about.html' },
+    { label: 'Dr. Shankar',       href: 'about.html' },
     { label: 'Precision medicine', href: 'precision.html' },
     { label: 'Prakriti',           href: 'prakriti.html' }
   ];
@@ -27,16 +30,18 @@
     { label: 'Sexual health',      href: 'journal.html#sexual-health' }
   ];
 
+  /* ---------- markup ---------- */
+
   function desktopItems(links) {
     return links.map(function (l) {
       return '<a class="dropdown-item" href="' + l.href + '">' + l.label + '</a>';
-    }).join('');
+    }).join('\n        ');
   }
 
   function panelItems(links) {
     return links.map(function (l) {
       return '<a href="' + l.href + '">' + l.label + '</a>';
-    }).join('');
+    }).join('\n      ');
   }
 
   var NAV_HTML =
@@ -47,11 +52,11 @@
       '</a>' +
       '<ul class="nav-links">' +
         '<li class="nav-item">' +
-          '<a class="nav-link" href="#" onclick="toggleNav(event)">The Practice <span class="chevron">&#9660;</span></a>' +
+          '<a class="nav-link" href="#" onclick="toggleNav(event)">The Practice <span class="chevron">▼</span></a>' +
           '<div class="dropdown">' + desktopItems(PRACTICE_LINKS) + '</div>' +
         '</li>' +
         '<li class="nav-item">' +
-          '<a class="nav-link" href="#" onclick="toggleNav(event)">Services <span class="chevron">&#9660;</span></a>' +
+          '<a class="nav-link" href="#" onclick="toggleNav(event)">Services <span class="chevron">▼</span></a>' +
           '<div class="dropdown">' + desktopItems(SERVICES_LINKS) +
             '<div class="dropdown-divider"></div>' +
             '<div class="dropdown-label">Coming soon</div>' +
@@ -59,7 +64,7 @@
           '</div>' +
         '</li>' +
         '<li class="nav-item">' +
-          '<a class="nav-link" href="#" onclick="toggleNav(event)">Daybreak <span class="chevron">&#9660;</span></a>' +
+          '<a class="nav-link" href="#" onclick="toggleNav(event)">Daybreak <span class="chevron">▼</span></a>' +
           '<div class="dropdown">' + desktopItems(DAYBREAK_LINKS) + '</div>' +
         '</li>' +
       '</ul>' +
@@ -73,22 +78,22 @@
     '<div class="mobile-menu" id="mobileMenu">' +
       '<div class="mobile-menu-panels">' +
         '<div class="mobile-panel main" id="mobilePanelMain">' +
-          '<button class="mobile-panel-item" onclick="showSubmenu(\'practice\')">The Practice <span class="arrow">&rsaquo;</span></button>' +
-          '<button class="mobile-panel-item" onclick="showSubmenu(\'services\')">Services <span class="arrow">&rsaquo;</span></button>' +
-          '<button class="mobile-panel-item" onclick="showSubmenu(\'journal\')">Daybreak <span class="arrow">&rsaquo;</span></button>' +
+          '<button class="mobile-panel-item" onclick="showSubmenu(\'practice\')">The Practice <span class="arrow">›</span></button>' +
+          '<button class="mobile-panel-item" onclick="showSubmenu(\'services\')">Services <span class="arrow">›</span></button>' +
+          '<button class="mobile-panel-item" onclick="showSubmenu(\'journal\')">Daybreak <span class="arrow">›</span></button>' +
         '</div>' +
         '<div class="mobile-panel" id="mobilePanelPractice">' +
-          '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">&lsaquo;</span> Back</button>' +
+          '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">‹</span> Back</button>' +
           '<div class="mobile-panel-title">The Practice</div>' + panelItems(PRACTICE_LINKS) +
         '</div>' +
         '<div class="mobile-panel" id="mobilePanelServices">' +
-          '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">&lsaquo;</span> Back</button>' +
+          '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">‹</span> Back</button>' +
           '<div class="mobile-panel-title">Services</div>' + panelItems(SERVICES_LINKS) +
           '<span class="mobile-panel-label">Coming soon</span>' +
           '<span class="disabled">Individual treatment pages</span>' +
         '</div>' +
         '<div class="mobile-panel" id="mobilePanelJournal">' +
-          '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">&lsaquo;</span> Back</button>' +
+          '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">‹</span> Back</button>' +
           '<div class="mobile-panel-title">Daybreak</div>' + panelItems(DAYBREAK_LINKS) +
         '</div>' +
       '</div>' +
@@ -97,7 +102,11 @@
       '</div>' +
     '</div>';
 
+  /* ---------- inject ---------- */
+
   document.write(NAV_HTML + MOBILE_HTML);
+
+  /* ---------- behaviour ---------- */
 
   window.toggleMobileMenu = function () {
     var menu = document.getElementById('mobileMenu');
@@ -153,19 +162,22 @@
       });
     }
 
+    // Close any open dropdown when clicking outside the nav
     document.addEventListener('click', function (e) {
       if (!e.target.closest('.nav-item')) {
         document.querySelectorAll('.nav-item').forEach(function (i) { i.classList.remove('open'); });
       }
     });
 
+    // Close menus when a nav link is followed. Same-page hash links
+    // (journal.html#skin-of-color from journal.html) do not reload the
+    // document, so nothing else would close them.
     document.querySelectorAll('.mobile-menu a').forEach(function (a) {
       a.addEventListener('click', function () {
         var menu = document.getElementById('mobileMenu');
         if (menu && menu.classList.contains('open')) toggleMobileMenu();
       });
     });
-
     document.querySelectorAll('.nav-links .dropdown-item').forEach(function (a) {
       a.addEventListener('click', function () {
         document.querySelectorAll('.nav-item').forEach(function (i) { i.classList.remove('open'); });
