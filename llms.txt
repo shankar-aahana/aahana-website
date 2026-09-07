@@ -54,7 +54,7 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [PrEP, doxy-PEP and your skin: the medication nobody asks you about](https://www.aahanasf.com/prep-and-skin.html): Taken after sex rather than every morning, doxycycline does not feel like a medication. Before a laser treatment, it is one.
 - [How testosterone and estrogen affect your skin, and what changes when they shift](https://www.aahanasf.com/testosterone-estrogen-skin.html): Two hormones with two different jobs. Most of what people experience as unexplained skin behavior is one of them moving.
 
-### Choosing between treatments
+### Comparing treatments
 
 Decision pages that put two overlapping treatments side by side for people who have been told to pick one. Each concludes with what the practice actually recommends, which in every case is a sequenced combination rather than one or the other.
 

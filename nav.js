@@ -78,7 +78,7 @@
     { label: 'Precision medicine', href: 'journal.html#precision' },
     { label: 'Ayurveda',           href: 'journal.html#ayurveda' },
     { label: 'Sexual health',      href: 'journal.html#sexual-health' },
-    { label: 'Choosing',           href: 'journal.html#choosing' }
+    { label: 'Comparing treatments', href: 'journal.html#comparing' }
   ];
 
   /* ---------- markup ---------- */
