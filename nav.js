@@ -39,14 +39,16 @@
     { group: 'Injectables',     links: [
         { label: 'Botox & Dysport', href: 'botox-dysport.html' },
         { label: 'Dermal fillers',  href: 'dermal-fillers.html' },
-        { label: 'Biostimulators',  href: 'biostimulators.html' }
+        { label: 'Biostimulators',  href: 'biostimulators.html' },
+        { label: 'PRP',             href: 'prp.html' }
       ] },
     { group: 'Lasers & energy', links: [
         { label: 'Aerolase Neo Elite', href: 'aerolase-neo-elite.html' },
         { label: 'XERF',               href: 'xerf.html' }
       ] },
     { group: 'Skin treatments', links: [
-        { label: 'Microneedling', href: 'microneedling.html' }
+        { label: 'Microneedling', href: 'microneedling.html' },
+        { label: 'VI Peel',      href: 'vi-peel.html' }
       ] },
     { group: 'Wellness',        links: [] }
   ];
