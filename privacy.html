@@ -142,7 +142,7 @@
 
     <ul class="reveal">
       <li><strong>Vercel</strong> hosts the site and records server logs.</li>
-      <li><strong>Tally</strong> hosts the waitlist form and stores what you submit to it.</li>
+      <li><strong>Tally</strong> hosts the waitlist form and stores what you submit to it. Tally's code is not loaded while you are reading. It is fetched only at the moment you click to open the waitlist, so Tally is not told which pages you looked at.</li>
       <li><strong>Google Fonts</strong> serves the typefaces. Loading a font transmits your IP address to Google.</li>
       <li><strong>cdnjs and jsDelivr</strong> serve two animation libraries, which likewise means your IP address reaches those networks.</li>
     </ul>
@@ -211,6 +211,5 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
-<script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>

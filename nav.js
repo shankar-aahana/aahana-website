@@ -233,6 +233,57 @@
       });
     }
 
+    /* ------------------------------------------------------------
+       WAITLIST FORM, LOADED ON DEMAND
+       ------------------------------------------------------------
+       Tally's embed script used to load on all 42 pages, which meant
+       Tally received the URL of every page a visitor read, including
+       the clinical ones, whether or not they ever opened the form.
+
+       Now nothing loads until someone actually clicks a waitlist
+       button. The first click fetches the script and opens the form;
+       after that Tally has bound its own handlers and we step aside.
+       If the script cannot be fetched, the click falls back to the
+       form's own page so the visitor is never stuck.
+       ------------------------------------------------------------ */
+    var tallyLoading = false;
+
+    function openWaitlist(formId) {
+      window.Tally.openPopup(formId, {
+        layout: 'modal',
+        width: 700,
+        overlay: true,
+        emoji: undefined
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('[data-tally-open]') : null;
+      if (!btn) return;
+
+      /* Script already here: let Tally's own handler do the work. */
+      if (window.Tally && window.Tally.openPopup) return;
+
+      e.preventDefault();
+      if (tallyLoading) return;
+      tallyLoading = true;
+
+      var formId = btn.getAttribute('data-tally-open');
+      var s = document.createElement('script');
+      s.src = 'https://tally.so/widgets/embed.js';
+      s.onload = function () {
+        tallyLoading = false;
+        if (window.Tally && window.Tally.openPopup) openWaitlist(formId);
+        else window.location.href = 'https://tally.so/r/' + formId;
+      };
+      s.onerror = function () {
+        tallyLoading = false;
+        window.location.href = 'https://tally.so/r/' + formId;
+      };
+      document.body.appendChild(s);
+    });
+
+
     /* Care protocol modals. A button with data-modal="x" opens the
        <dialog id="x"> on that page. Escape closes it, so does clicking
        the backdrop or the close button. */
