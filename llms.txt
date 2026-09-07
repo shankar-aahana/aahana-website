@@ -54,6 +54,15 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [PrEP, doxy-PEP and your skin: the medication nobody asks you about](https://www.aahanasf.com/prep-and-skin.html): Taken after sex rather than every morning, doxycycline does not feel like a medication. Before a laser treatment, it is one.
 - [How testosterone and estrogen affect your skin, and what changes when they shift](https://www.aahanasf.com/testosterone-estrogen-skin.html): Two hormones with two different jobs. Most of what people experience as unexplained skin behavior is one of them moving.
 
+### Choosing between treatments
+
+Decision pages that put two overlapping treatments side by side for people who have been told to pick one. Each concludes with what the practice actually recommends, which in every case is a sequenced combination rather than one or the other.
+
+- [PRP or microneedling](https://www.aahanasf.com/prp-or-microneedling.html): One creates the stimulus, the other supplies growth factors. For atrophic acne scarring the combination beats microneedling alone across 17 studies and 1,111 participants. For general facial texture no head to head trial exists, and the page says so.
+- [SkinVive or filler](https://www.aahanasf.com/skinvive-or-filler.html): Both hyaluronic acid, placed at different depths. SkinVive treats skin quality intradermally; filler is placed beneath the skin to change shape. Neither substitutes for the other.
+- [Biostimulators or filler](https://www.aahanasf.com/biostimulators-or-filler.html): Filler is the material you see and can be dissolved. Sculptra and Radiesse provoke your own collagen over months and cannot be reversed. The trade-off is control against longevity.
+- [Laser or peel for pigmentation](https://www.aahanasf.com/laser-or-peel-for-pigmentation.html): Post-inflammatory hyperpigmentation, melasma and sun damage are three different problems. In richly pigmented skin the main risk of both treatments is causing the pigmentation they were meant to treat.
+
 ## Treatments
 
 - [Aerolase Neo Elite](https://www.aahanasf.com/aerolase-neo-elite.html): 1064 nm Nd:YAG laser cleared for all six Fitzpatrick types, with the full pre and post treatment protocol including the skin of color preparation.
@@ -74,15 +83,6 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [Medical weight loss](https://www.aahanasf.com/medical-weight-loss.html): Physician-managed GLP-1 treatment using branded FDA-approved medication only, not compounded. Baseline and repeat labs, scheduled visits for titration and side effect management, and assessment of the facial volume loss that comes with rapid weight loss. Explains why compounded GLP-1 lost its legal basis when the shortages ended in 2025.
 - [Sexual wellness](https://www.aahanasf.com/sexual-wellness.html): Platelet-rich plasma injected into the erectile tissue for mild to moderate erectile dysfunction, and botulinum toxin for the dartos muscle of the scrotum and for the internal anal sphincter, including chronic anal fissure and pain with receptive anal intercourse. States plainly that all of these uses are off-label, and separates the indications with controlled-trial evidence from those supported only by case series.
 - [Pain with receptive anal sex](https://www.aahanasf.com/painful-anal-sex.html): Anodyspareunia, the clinical term for painful receptive anal intercourse, reported by roughly 14 to 18 percent of men who have receptive anal sex. Covers the structural causes worth excluding on examination including fissure, hemorrhoids, proctitis and inflammatory bowel disease, the role of an overactive pelvic floor, what the evidence supports, where off-label botulinum toxin fits and on what reasoning, and the fecal continence question that should be settled before any treatment that lowers sphincter tone. Notes that a 2022 systematic review found only seven studies since 1998 and no evaluated treatments.
-
-## Choosing between treatments
-
-Decision pages that put two overlapping treatments side by side, for people who have been told to pick one.
-
-- [PRP or microneedling](https://www.aahanasf.com/prp-or-microneedling.html): One creates the stimulus, the other supplies growth factors. For atrophic acne scarring the combination beats microneedling alone across 17 studies and 1,111 participants. For general facial texture no head to head trial exists, and the page says so.
-- [SkinVive or filler](https://www.aahanasf.com/skinvive-or-filler.html): Both hyaluronic acid, placed at different depths. SkinVive treats skin quality intradermally; filler is placed beneath the skin to change shape. Neither substitutes for the other.
-- [Biostimulators or filler](https://www.aahanasf.com/biostimulators-or-filler.html): Filler is the material you see and can be dissolved. Sculptra and Radiesse provoke your own collagen over months and cannot be reversed. The trade-off is control against longevity.
-- [Laser or peel for pigmentation](https://www.aahanasf.com/laser-or-peel-for-pigmentation.html): Post-inflammatory hyperpigmentation, melasma and sun damage are three different problems. In richly pigmented skin the main risk of both treatments is causing the pigmentation they were meant to treat.
 
 ## Policies
 

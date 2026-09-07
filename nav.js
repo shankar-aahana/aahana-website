@@ -63,12 +63,6 @@
     { group: 'Wellness',        links: [
         { label: 'Medical weight loss', href: 'medical-weight-loss.html' },
         { label: 'Sexual wellness',    href: 'sexual-wellness.html' }
-      ] },
-    { group: 'Choosing',        links: [
-        { label: 'PRP or microneedling',    href: 'prp-or-microneedling.html' },
-        { label: 'SkinVive or filler',      href: 'skinvive-or-filler.html' },
-        { label: 'Biostimulators or filler', href: 'biostimulators-or-filler.html' },
-        { label: 'Laser or peel for pigment', href: 'laser-or-peel-for-pigmentation.html' }
       ] }
   ];
 
@@ -83,7 +77,8 @@
     { label: 'LGBTQ+ health',      href: 'journal.html#lgbtq' },
     { label: 'Precision medicine', href: 'journal.html#precision' },
     { label: 'Ayurveda',           href: 'journal.html#ayurveda' },
-    { label: 'Sexual health',      href: 'journal.html#sexual-health' }
+    { label: 'Sexual health',      href: 'journal.html#sexual-health' },
+    { label: 'Choosing',           href: 'journal.html#choosing' }
   ];
 
   /* ---------- markup ---------- */
