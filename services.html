@@ -123,8 +123,21 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .xerf-feature p { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--espresso); margin-bottom: 12px; }
 .xerf-specs { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
 .xerf-spec { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--rose); border: 0.5px solid var(--border); padding: 5px 12px; border-radius: 2px; }
-.xerf-link { font-size: 13px; font-weight: 300; color: var(--terra); text-decoration: none; border-bottom: 0.5px solid rgba(192,122,90,.4); }
-.xerf-link:hover { color: var(--clay); }
+.xerf-link { font-size: 13px; font-weight: 300; color: #8C4426; text-decoration: none; border-bottom: 0.5px solid rgba(140,68,38,.45); }
+.xerf-link:hover { color: var(--espresso); }
+/* LINK FROM A SERVICE ITEM TO ITS OWN PAGE */
+.service-link {
+      display: inline-block; margin-top: 14px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; padding-bottom: 3px;
+      transition: color .2s, border-color .2s;
+    }
+.service-category.light .service-link { color: #8C4426; border-bottom: 0.5px solid rgba(140,68,38,.45); }
+.service-category.light .service-link:hover { color: var(--espresso); border-color: var(--espresso); }
+.service-category.dark .service-link { color: var(--ivory); border-bottom: 0.5px solid rgba(237,232,225,.45); }
+.service-category.dark .service-link:hover { color: #fff; border-color: rgba(237,232,225,.9); }
 .section-cta {
       background: var(--section-dark); text-align: center; padding: 100px 48px;
       position: relative; overflow: hidden;
@@ -448,18 +461,21 @@ html.motion .reveal { transition: none; }
         <span class="service-tag">Botox · Dysport</span>
         <p class="service-desc">Neuromodulators relax targeted muscles to smooth dynamic wrinkles, lift specific areas, and subtly contour the face. Used for the forehead, glabella, crow's feet, brow lifting, lip lines, neck bands, and more.</p>
         <p class="service-note">Results visible in 3 to 14 days. Duration typically 3 to 4 months.</p>
+        <a class="service-link" href="botox-dysport.html">Botox and Dysport &rarr;</a>
       </div>
       <div class="service-item">
         <div class="service-name">Dermal Fillers</div>
         <span class="service-tag">Hyaluronic Acid</span>
         <p class="service-desc">Hyaluronic acid fillers restore volume and define contours. Dr. Shankar approaches filler as a structural tool, with each placement considering facial balance, tissue depth, and long-term outcomes. Used for cheeks, lips, jawline, under-eye hollows, temples, and nasolabial folds.</p>
         <p class="service-note">Results immediate, refined over 2 weeks. Duration 9 to 18 months depending on area.</p>
+        <a class="service-link" href="dermal-fillers.html">Dermal fillers &rarr;</a>
       </div>
       <div class="service-item">
         <div class="service-name">Biostimulators</div>
         <span class="service-tag">Sculptra · Radiesse</span>
         <p class="service-desc">Rather than adding immediate volume, biostimulators signal your skin to produce its own collagen, creating gradual, lasting improvement in skin quality and structural support. Sculptra uses poly-L-lactic acid; Radiesse uses calcium hydroxylapatite. Both work best as part of a longer-term rejuvenation strategy.</p>
         <p class="service-note">Results develop over 4 to 12 weeks. Duration 1 to 2 years or more.</p>
+        <a class="service-link" href="biostimulators.html">Sculptra and Radiesse &rarr;</a>
       </div>
       <div class="service-item">
         <div class="service-name">PRP</div>
@@ -488,12 +504,14 @@ html.motion .reveal { transition: none; }
         <span class="service-tag">Structural Skin Tightening · FDA Cleared</span>
         <p class="service-desc">XERF delivers radiofrequency energy at two frequencies simultaneously, reaching every layer of the skin including the SMAS, the deep structural tissue responsible for lifting and firmness. Real-time impedance feedback adapts energy delivery to your skin continuously, ensuring precision and safety across all skin tones. Results build progressively as collagen remodels over weeks.</p>
         <p class="service-note">Single sessions and series available. Results continue developing over 3 to 6 months.</p>
+        <a class="service-link" href="xerf.html">XERF skin tightening &rarr;</a>
       </div>
       <div class="service-item">
         <div class="service-name">Aerolase Neo Elite</div>
         <span class="service-tag">1064 nm Nd:YAG · FDA Cleared · All Skin Tones</span>
         <p class="service-desc">A 1064 nm Nd:YAG laser that delivers energy in 650-microsecond pulses with no contact, no cooling, and no numbing. It is cleared for more than thirty indications, and at Aahana it is used primarily for acne, rosacea and persistent redness, melasma and post-inflammatory pigmentation, vascular lesions, scarring, and overall skin quality.</p>
         <p class="service-note">Typically a series, spaced two to four weeks apart. No numbing, no cooling, and no social downtime.</p>
+        <a class="service-link" href="aerolase-neo-elite.html">Aerolase Neo Elite &rarr;</a>
       </div>
       <div class="service-item">
         <div class="service-name">Additional Laser Platforms</div>
@@ -550,6 +568,7 @@ html.motion .reveal { transition: none; }
         <div class="service-name">Microneedling</div>
         <span class="service-tag">Collagen Induction</span>
         <p class="service-desc">Controlled micro-injuries stimulate the skin's natural repair cascade, producing new collagen and elastin. Effective for texture refinement, scar reduction, pore size, and overall skin quality. Needle depth and parameters are calibrated to your skin and goals.</p>
+        <a class="service-link" href="microneedling.html">Microneedling &rarr;</a>
       </div>
       <div class="service-item">
         <div class="service-name">Exosomes</div>

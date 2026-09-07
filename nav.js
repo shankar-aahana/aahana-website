@@ -38,7 +38,8 @@
   var SERVICES_GROUPS = [
     { group: 'Injectables',     links: [
         { label: 'Botox & Dysport', href: 'botox-dysport.html' },
-        { label: 'Dermal fillers',  href: 'dermal-fillers.html' }
+        { label: 'Dermal fillers',  href: 'dermal-fillers.html' },
+        { label: 'Biostimulators',  href: 'biostimulators.html' }
       ] },
     { group: 'Lasers & energy', links: [
         { label: 'Aerolase Neo Elite', href: 'aerolase-neo-elite.html' },
