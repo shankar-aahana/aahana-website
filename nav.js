@@ -51,7 +51,9 @@
         { label: 'VI Peel',      href: 'vi-peel.html' },
         { label: 'Hydrafacial',  href: 'hydrafacial.html' }
       ] },
-    { group: 'Wellness',        links: [] }
+    { group: 'Wellness',        links: [
+        { label: 'Medical weight loss', href: 'medical-weight-loss.html' }
+      ] }
   ];
 
   /* The Daybreak landing page. Sits at the top of the menu, above a
