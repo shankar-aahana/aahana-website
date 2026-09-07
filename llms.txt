@@ -12,12 +12,6 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [Prakriti constitutional assessment](https://www.aahanasf.com/prakriti.html)
 - [About Dr. Shankar Mundluru](https://www.aahanasf.com/about.html)
 - [Daybreak journal](https://www.aahanasf.com/journal.html)
-- [PRP, all indications](https://www.aahanasf.com/prp.html): Platelet-rich plasma, split by indication because the evidence differs by site.
-- [PRP for skin quality](https://www.aahanasf.com/prp-skin.html): Facial texture, fine lines and tone. Nine randomized trials, 358 patients.
-- [PRP under the eye](https://www.aahanasf.com/prp-under-eye.html): Crepey texture and thinness in periorbital skin. An emerging use with a newer, smaller literature.
-- [PRP for hair restoration](https://www.aahanasf.com/prp-hair.html): Pattern hair loss. 43 randomized trials, 1,877 participants. Activated PRP increases density; it does not significantly change the thickness of individual hairs.
-- [Topical exosomes](https://www.aahanasf.com/exosomes.html): Applied topically after microneedling, never injected. No exosome product has FDA approval for aesthetic use, and the page says so first. Evidence is eight studies covering 171 patients, no follow-up beyond six months.
-- [PRP with microneedling](https://www.aahanasf.com/prp-microneedling.html): Atrophic acne scarring. 17 studies, 1,111 participants, with trial sequential analysis reaching required information size.
 - [Visit: address, getting here, how to reach us](https://www.aahanasf.com/contact.html): 2175 3rd Street, Unit C1, San Francisco CA 94107, in Dogpatch. Opening Winter 2026. Hours are not set and are deliberately not published yet.
 
 ## Daybreak, the clinical journal
@@ -66,7 +60,13 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [Botox and Dysport](https://www.aahanasf.com/botox-dysport.html): Neuromodulators for cosmetic areas, masseter and TMJ, and migraine prevention. Every injectable performed by the physician.
 - [Dermal fillers](https://www.aahanasf.com/dermal-fillers.html): Hyaluronic acid filler for lips, chin, jaw and temples, placed as a structural decision rather than added volume.
 - [Biostimulators: Sculptra and Radiesse](https://www.aahanasf.com/biostimulators.html): Poly-L-lactic acid for the face and calcium hydroxylapatite for the hands and decolletage. These stimulate the patient's own collagen rather than adding volume, so the result appears over months and cannot be dissolved. Includes the full pre and post treatment protocol and the 5-5-5 massage.
-- [PRP injections](https://www.aahanasf.com/prp.html): Platelet-rich plasma drawn from the patient's own blood and injected into the face, the under-eye or the scalp. Covers why anti-inflammatories must be stopped before and after treatment because they suppress the response the treatment depends on, what under-eye PRP does for skin quality and hollowing, and the hair restoration timeline including the normal shedding phase at two to four weeks.
+- [SkinVive](https://www.aahanasf.com/skinvive.html): Hyaluronic acid microdroplets placed intradermally to treat skin smoothness rather than volume. FDA approved for the cheeks in May 2023 and for neck wrinkles in June 2026, the first hyaluronic acid injectable approved for the neck. Cheek trial n=125, 58 percent reaching a one-point improvement at one month and 56 percent at six. Neck trial n=105, 74.8 percent at one month.
+- [PRP, all indications](https://www.aahanasf.com/prp.html): Platelet-rich plasma drawn from the patient's own blood. Split by indication because the evidence differs by site. Covers why anti-inflammatories must stop three days before and after, since they suppress the inflammatory response the treatment depends on.
+- [PRP for skin quality](https://www.aahanasf.com/prp-skin.html): Facial texture, fine lines and tone. Nine randomized trials, 358 patients.
+- [PRP under the eye](https://www.aahanasf.com/prp-under-eye.html): Crepey texture and thinness in periorbital skin. An emerging use with a newer, smaller literature, described as the physician's clinical experience rather than trial data.
+- [PRP for hair restoration](https://www.aahanasf.com/prp-hair.html): Pattern hair loss. 43 randomized trials, 1,877 participants. Activated PRP increases density; the same review found it does not significantly change the thickness of individual hairs.
+- [PRP with microneedling](https://www.aahanasf.com/prp-microneedling.html): Atrophic acne scarring. 17 studies, 1,111 participants, with trial sequential analysis reaching required information size.
+- [Topical exosomes](https://www.aahanasf.com/exosomes.html): Applied topically after microneedling, never injected. Not FDA approved for any aesthetic use. Evidence is eight studies covering 171 patients with no follow-up beyond six months.
 - [XERF](https://www.aahanasf.com/xerf.html): Multifrequency monopolar radiofrequency at 6.78 MHz and 2 MHz, reaching the SMAS layer. No needles, no numbing, safe on every skin tone.
 - [Microneedling](https://www.aahanasf.com/microneedling.html): Collagen induction with PRP or targeted serum infusion, with a deliberately conservative protocol for deeper skin tones.
 - [VI Peel](https://www.aahanasf.com/vi-peel.html): Medium-depth chemical peel for hyperpigmentation, melasma, acne and texture. Formulated for all six Fitzpatrick types. Covers the four weeks of preparation that determine the outcome in deeper skin, why the peel is washed off at home four to six hours later, and why peeling skin must not be picked.
@@ -74,6 +74,12 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [Medical weight loss](https://www.aahanasf.com/medical-weight-loss.html): Physician-managed GLP-1 treatment using branded FDA-approved medication only, not compounded. Baseline and repeat labs, scheduled visits for titration and side effect management, and assessment of the facial volume loss that comes with rapid weight loss. Explains why compounded GLP-1 lost its legal basis when the shortages ended in 2025.
 - [Sexual wellness](https://www.aahanasf.com/sexual-wellness.html): Platelet-rich plasma injected into the erectile tissue for mild to moderate erectile dysfunction, and botulinum toxin for the dartos muscle of the scrotum and for the internal anal sphincter, including chronic anal fissure and pain with receptive anal intercourse. States plainly that all of these uses are off-label, and separates the indications with controlled-trial evidence from those supported only by case series.
 - [Pain with receptive anal sex](https://www.aahanasf.com/painful-anal-sex.html): Anodyspareunia, the clinical term for painful receptive anal intercourse, reported by roughly 14 to 18 percent of men who have receptive anal sex. Covers the structural causes worth excluding on examination including fissure, hemorrhoids, proctitis and inflammatory bowel disease, the role of an overactive pelvic floor, what the evidence supports, where off-label botulinum toxin fits and on what reasoning, and the fecal continence question that should be settled before any treatment that lowers sphincter tone. Notes that a 2022 systematic review found only seven studies since 1998 and no evaluated treatments.
+
+## Policies
+
+- [Privacy policy](https://www.aahanasf.com/privacy.html)
+- [Notice of Privacy Practices](https://www.aahanasf.com/notice-of-privacy-practices.html): The practice is a HIPAA covered entity.
+- [Accessibility statement](https://www.aahanasf.com/accessibility.html): The site is built to WCAG 2.2 AA.
 
 ## Contact
 
