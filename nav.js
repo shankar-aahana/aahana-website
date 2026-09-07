@@ -52,7 +52,8 @@
         { label: 'Hydrafacial',  href: 'hydrafacial.html' }
       ] },
     { group: 'Wellness',        links: [
-        { label: 'Medical weight loss', href: 'medical-weight-loss.html' }
+        { label: 'Medical weight loss', href: 'medical-weight-loss.html' },
+        { label: 'Sexual wellness',    href: 'sexual-wellness.html' }
       ] }
   ];
 
