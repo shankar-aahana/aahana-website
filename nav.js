@@ -40,7 +40,8 @@
     { group: 'Injectables',     links: [
         { label: 'Botox & Dysport', href: 'botox-dysport.html' },
         { label: 'Dermal fillers',  href: 'dermal-fillers.html' },
-        { label: 'Biostimulators',  href: 'biostimulators.html' }
+        { label: 'Biostimulators',  href: 'biostimulators.html' },
+        { label: 'SkinVive',        href: 'skinvive.html' }
       ] },
     { group: 'PRP',             links: [
         { label: 'All PRP',           href: 'prp.html' },
