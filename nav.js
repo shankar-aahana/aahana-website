@@ -48,7 +48,8 @@
       ] },
     { group: 'Skin treatments', links: [
         { label: 'Microneedling', href: 'microneedling.html' },
-        { label: 'VI Peel',      href: 'vi-peel.html' }
+        { label: 'VI Peel',      href: 'vi-peel.html' },
+        { label: 'Hydrafacial',  href: 'hydrafacial.html' }
       ] },
     { group: 'Wellness',        links: [] }
   ];
