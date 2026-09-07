@@ -28,7 +28,8 @@
   var PRACTICE_LINKS = [
     { label: 'Dr. Shankar',       href: 'about.html' },
     { label: 'Precision medicine', href: 'precision.html' },
-    { label: 'Prakriti',           href: 'prakriti.html' }
+    { label: 'Prakriti',           href: 'prakriti.html' },
+    { label: 'Visit',              href: 'contact.html' }
   ];
 
   /* The services landing page, shown above the divider. */
