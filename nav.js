@@ -63,6 +63,12 @@
     { group: 'Wellness',        links: [
         { label: 'Medical weight loss', href: 'medical-weight-loss.html' },
         { label: 'Sexual wellness',    href: 'sexual-wellness.html' }
+      ] },
+    { group: 'Choosing',        links: [
+        { label: 'PRP or microneedling',    href: 'prp-or-microneedling.html' },
+        { label: 'SkinVive or filler',      href: 'skinvive-or-filler.html' },
+        { label: 'Biostimulators or filler', href: 'biostimulators-or-filler.html' },
+        { label: 'Laser or peel for pigment', href: 'laser-or-peel-for-pigmentation.html' }
       ] }
   ];
 

@@ -614,3 +614,58 @@ dialog.care::backdrop { background: rgba(40,26,20,.66); backdrop-filter: blur(2p
       color: var(--deep);
       margin: 34px 0 10px;
     }
+
+/* SIDE BY SIDE COMPARISON TABLE
+   Used on the "or" pages. The wrapper scrolls rather than letting the
+   table push the page wide on a phone. */
+.vs-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 34px 0 8px;
+    }
+.vs {
+      width: 100%; min-width: 540px;
+      border-collapse: collapse;
+      font-size: 15px; font-weight: 400;
+    }
+.vs th, .vs td {
+      text-align: left; vertical-align: top;
+      padding: 15px 18px 15px 0;
+      line-height: 1.75;
+      border-bottom: 0.5px solid var(--border);
+    }
+.vs thead th {
+      font-family: 'Spectral', serif;
+      font-size: 18px; font-weight: 400;
+      color: var(--deep);
+      padding-bottom: 12px;
+      border-bottom: 0.5px solid #8B7355;
+    }
+.vs tbody th {
+      width: 24%;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: .09em; text-transform: uppercase;
+      color: rgba(74,51,40,.80);
+      padding-right: 24px;
+    }
+.vs td { color: var(--espresso); }
+.vs tbody tr:last-child th, .vs tbody tr:last-child td { border-bottom: none; }
+.vs caption { text-align: left; font-size: 13px; color: rgba(74,51,40,.80); padding-bottom: 10px; }
+
+@media (max-width: 640px) {
+  .vs { font-size: 14px; }
+  .vs th, .vs td { padding: 13px 14px 13px 0; }
+}
+
+/* The comparison table scrolls inside its wrapper on a phone. Without a
+   cue, the second column just looks cut off. */
+.vs-hint { display: none; }
+@media (max-width: 700px) {
+  .vs-hint {
+    display: block;
+    font-size: 13px; font-weight: 400;
+    color: rgba(74,51,40,.80);
+    margin: 0 0 4px;
+  }
+  .vs-hint::after { content: ' \2192'; }
+}
