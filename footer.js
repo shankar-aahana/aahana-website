@@ -18,6 +18,12 @@
   var DOMAIN   = 'aahanasf.com';
   var INSTAGRAM = 'https://www.instagram.com/aahanaskin/';
   var IG_HANDLE = '@aahanaskin';
+  /* Inline so the footer pulls in no icon font and no third-party asset. */
+  var IG_GLYPH = '<svg class="ig-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+      '<rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/>' +
+      '<circle cx="12" cy="12" r="4.3"/>' +
+      '<circle cx="17.5" cy="6.5" r="1.25" class="ig-dot"/>' +
+    '</svg>';
   var TALLY_ID = 'kdJBYJ';
 
   document.write(
@@ -41,7 +47,7 @@
             '<br><br>' +
             '<a href="mailto:' + EMAIL + '">' + EMAIL + '</a>' +
             '<br><br>' +
-            '<a href="' + INSTAGRAM + '" rel="me noopener" aria-label="Aahana on Instagram">' + IG_HANDLE + '</a>' +
+            '<a class="footer-ig" href="' + INSTAGRAM + '" rel="me noopener" aria-label="Aahana on Instagram">' + IG_GLYPH + '<span>' + IG_HANDLE + '</span></a>' +
           '</p>' +
         '</div>' +
       '</div>' +
