@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#4A3328">
   <title>Structural Aging: Why It Matters More Than Surface Aging | Aahana</title>
   <meta name="description" content="The face ages in four layers: skin, fat, muscle and bone. Why treating only the surface misses what people actually notice, and what does not.">
   <link rel="canonical" href="https://www.aahanasf.com/structural-aging-vs-surface-aging.html">
@@ -232,9 +237,9 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
     }
 .article-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 80% 40%, rgba(192,122,90,.12) 0%, transparent 60%); }
 .article-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
-.breadcrumb { font-size: 11px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: var(--clay); margin-bottom: 24px; }
-.breadcrumb a { color: var(--clay); text-decoration: none; }
-.breadcrumb a:hover { color: var(--ivory); }
+.breadcrumb { font-size: 11px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: rgba(237,232,225,.86); margin-bottom: 24px; }
+.breadcrumb a { color: rgba(237,232,225,.86); text-decoration: none; border-bottom: 0.5px solid rgba(237,232,225,.35); }
+.breadcrumb a:hover { color: var(--ivory); border-bottom-color: var(--ivory); }
 .article-title {
       font-family: 'Spectral', serif;
       font-size: clamp(34px, 5.4vw, 60px);
@@ -243,13 +248,13 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
     }
 .article-dek {
       font-size: 18px; font-weight: 300; line-height: 1.7;
-      color: rgba(237,232,225,.78); max-width: 620px;
+      color: rgba(237,232,225,.86); max-width: 620px;
     }
 .article-byline {
       margin-top: 36px; padding-top: 24px;
       border-top: 0.5px solid rgba(237,232,225,.15);
       font-size: 13px; font-weight: 300; line-height: 1.9;
-      color: rgba(237,232,225,.62); letter-spacing: .04em;
+      color: rgba(237,232,225,.86); letter-spacing: .04em;
     }
 .article-byline strong { font-weight: 500; color: var(--ivory); }
 /* ARTICLE BODY */
@@ -268,7 +273,8 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .article-inner h2:first-of-type { margin-top: 0; }
 .article-inner strong { font-weight: 600; }
 .article-inner em { font-style: italic; }
-.article-inner a { color: var(--terra); }
+.article-inner a { color: #8C4426; border-bottom: 0.5px solid rgba(140,68,38,.4); text-decoration: none; }
+    .article-inner a:hover { color: var(--espresso); border-bottom-color: var(--espresso); }
 .takeaways {
       background: rgba(192,122,90,.07);
       border-left: 2px solid var(--terra);
@@ -277,7 +283,7 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .takeaways h2 {
       font-family: 'Cairo', sans-serif !important;
       font-size: 11px !important; font-weight: 600; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--terra);
+      text-transform: uppercase; color: #8C4426;
       margin: 0 0 18px !important;
     }
 .takeaways ul { list-style: none; }
@@ -300,7 +306,7 @@ blockquote {
       font-family: 'Spectral', serif; font-style: italic;
       font-size: 20px; font-weight: 300; line-height: 1.55; color: var(--rose);
     }
-sup a { font-size: 10px; text-decoration: none; color: var(--terra); padding: 0 1px; }
+sup a { font-size: 10px; text-decoration: none; color: #8C4426; border-bottom: 0; padding: 0 1px; }
 .asks { counter-reset: ask; list-style: none; margin: 36px 0 26px; }
 .asks li { counter-increment: ask; position: relative; padding-left: 46px; margin-bottom: 26px; }
 .asks li::before {
@@ -321,12 +327,12 @@ sup a { font-size: 10px; text-decoration: none; color: var(--terra); padding: 0 
 .refs { margin-top: 64px; padding-top: 36px; border-top: 0.5px solid var(--border); }
 .refs h3 {
       font-size: 11px; font-weight: 600; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--terra); margin-bottom: 20px;
+      text-transform: uppercase; color: #8C4426; margin-bottom: 20px;
     }
 .refs ol { padding-left: 20px; }
 .refs li {
       font-size: 13px; font-weight: 300; line-height: 1.75;
-      color: rgba(74,51,40,.72); margin-bottom: 12px;
+      color: rgba(74, 51, 40, 0.73); margin-bottom: 12px;
     }
 .refs a { color: var(--rose); }
 .disclaimer {
@@ -344,7 +350,7 @@ sup a { font-size: 10px; text-decoration: none; color: var(--terra); padding: 0 
 .related { margin-top: 64px; padding-top: 36px; border-top: 0.5px solid var(--border); }
 .related h3 {
       font-size: 11px; font-weight: 600; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--terra); margin-bottom: 20px;
+      text-transform: uppercase; color: #8C4426; margin-bottom: 20px;
     }
 .related-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .related-links a {
@@ -354,7 +360,7 @@ sup a { font-size: 10px; text-decoration: none; color: var(--terra); padding: 0 
       transition: border-color .2s, background .2s;
     }
 .related-links a:hover { border-color: var(--terra); background: rgba(192,122,90,.05); }
-.related-links .rl-tag { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rose); display: block; margin-bottom: 7px; }
+.related-links .rl-tag { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #8C4426; display: block; margin-bottom: 7px; }
 .related-links .rl-title { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; line-height: 1.35; }
 /* CTA */
 .section-cta {
@@ -373,7 +379,7 @@ sup a { font-size: 10px; text-decoration: none; color: var(--terra); padding: 0 
     }
 .cta-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
 .cta-title { font-family: 'Spectral', serif; font-size: clamp(30px, 4vw, 42px); font-weight: 300; color: var(--ivory); line-height: 1.2; margin-bottom: 18px; }
-.cta-desc { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.7); margin-bottom: 32px; }
+.cta-desc { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.86); margin-bottom: 32px; }
 .cta-btn { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--deep); background: var(--ivory); border: none; padding: 16px 40px; border-radius: 2px; font-family: 'Cairo', sans-serif; cursor: pointer; transition: opacity .2s; }
 .cta-btn:hover { opacity: .85; }
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }

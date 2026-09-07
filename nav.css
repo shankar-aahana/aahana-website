@@ -28,6 +28,7 @@ nav.scrolled {
 .nav-brand {
   display: flex; flex-direction: column;
   text-decoration: none;
+  color: inherit;
 }
 .nav-name {
   font-family: 'Contralto Big', 'Contralto Big Black', 'Cairo', sans-serif;
@@ -38,7 +39,7 @@ nav.scrolled {
 }
 .nav-sub {
   font-size: 11px; font-weight: 300;
-  color: var(--terra); letter-spacing: .18em;
+  color: #F2DACE; letter-spacing: .18em;
   text-transform: uppercase; margin-top: 3px;
   text-shadow: 0 1px 8px rgba(0,0,0,.7);
 }
@@ -98,7 +99,7 @@ nav.scrolled {
 .dropdown-label {
   padding: 4px 22px 6px;
   font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
-  color: rgba(243,236,228,.4);
+  color: rgba(243,236,228,.66);
 }
 
 /* ---------- wide grouped dropdown (Services) ---------- */
@@ -204,7 +205,7 @@ nav.scrolled {
   font-family: 'Cairo', sans-serif;
   font-size: 13px; font-weight: 300;
   letter-spacing: .12em; text-transform: uppercase;
-  color: var(--terra); cursor: pointer;
+  color: #D29B80; cursor: pointer;
   padding: 0 0 18px;
   margin-bottom: 8px;
 }
@@ -219,7 +220,7 @@ nav.scrolled {
 .mobile-panel-label {
   display: block; padding: 22px 0 8px;
   font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(243,236,228,.4);
+  color: rgba(243,236,228,.66);
 }
 .mobile-menu-cta {
   padding: 24px 32px calc(32px + env(safe-area-inset-bottom));

@@ -43,6 +43,12 @@
       '<div class="footer-bottom">' +
         '<div class="footer-legal">' + LEGAL + '</div>' +
         '<div class="footer-dot"></div>' +
+        '<a class="footer-legal footer-legal-link" href="privacy.html">Privacy</a>' +
+        '<div class="footer-dot"></div>' +
+        '<a class="footer-legal footer-legal-link" href="notice-of-privacy-practices.html">Notice of Privacy Practices</a>' +
+        '<div class="footer-dot"></div>' +
+        '<a class="footer-legal footer-legal-link" href="accessibility.html">Accessibility</a>' +
+        '<div class="footer-dot"></div>' +
         '<div class="footer-legal">' + DOMAIN + '</div>' +
       '</div>' +
     '</footer>'

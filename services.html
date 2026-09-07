@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#4A3328">
   <title>Services. Aahana Medical Aesthetics</title>
   <meta name="description" content="Injectables, lasers and energy devices, skin treatments and wellness. Every service begins with Visia imaging and a Prakriti assessment.">
   <meta property="og:type" content="website">
@@ -47,7 +52,10 @@
     src: url('fonts/ContraltoBig-BlackItalic.woff2') format('woff2');
     font-weight: 100 900; font-style: italic; font-display: swap;
   }
-  */</style>
+  */
+.service-category.dark .service-tag { color: #F2DACE; }
+.service-category.light .service-tag { color: #8C4426; }
+</style>
   <style>:root {
       --ivory:        #EDE8E1;
       --espresso:     #4A3328;
@@ -68,11 +76,11 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
       padding: 140px 48px 56px; position: relative; overflow: hidden;
     }
 .hero-services::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 80% 50%, rgba(192,122,90,.1) 0%, transparent 60%); }
-.hero-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; position: relative; z-index: 1; }
+.hero-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #F2DACE; margin-bottom: 14px; position: relative; z-index: 1; }
 .hero-title { font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif; font-size: clamp(42px, 6vw, 80px); font-weight: 300; line-height: 1.05; color: var(--ivory); letter-spacing: .01em; margin-bottom: 18px; position: relative; z-index: 1; }
-.hero-title em { font-style: italic; color: var(--clay); }
+.hero-title em { font-style: italic; color: #F2DACE; }
 .hero-sub { font-size: clamp(16px, 1.6vw, 18px); font-weight: 300; line-height: 1.7; color: rgba(237,232,225,.92); max-width: 600px; position: relative; z-index: 1; }
-.section-label { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; display: block; }
+.section-label { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #8C4426; margin-bottom: 14px; display: block; }
 /* WHAT TO EXPECT */
 .section-expect { background: var(--ivory); padding: 64px 48px; }
 .section-inner { max-width: 1100px; margin: 0 auto; }
@@ -80,7 +88,7 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .expect-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
 .expect-step { padding: 24px 22px; border: 0.5px solid var(--border); border-radius: 2px; }
 .expect-step h4 { font-family: 'Spectral', serif; font-size: 17px; font-weight: 400; color: var(--deep); margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.expect-step p { font-size: 15px; font-weight: 400; line-height: 1.8; color: var(--rose); }
+.expect-step p { font-size: 15px; font-weight: 400; line-height: 1.8; color: rgba(74,51,40,.80); }
 /* SERVICE CATEGORIES */
 .service-category { padding: 56px 48px; }
 .service-category.light { background: var(--ivory); }
@@ -93,7 +101,7 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .service-category.dark .category-title { color: var(--ivory); }
 .category-title em { font-style: italic; }
 .service-category.light .category-title em { color: var(--rose); }
-.service-category.dark .category-title em { color: var(--clay); }
+.service-category.dark .category-title em { color: #F2DACE; }
 .category-intro { font-size: 16px; font-weight: 400; line-height: 1.7; }
 .service-category.light .category-intro { color: var(--espresso); }
 .service-category.dark .category-intro { color: rgba(237,232,225,.92); }
@@ -115,14 +123,14 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .service-category.light .service-desc { color: var(--espresso); }
 .service-category.dark .service-desc { color: rgba(237,232,225,.92); }
 .service-note { font-size: 13px; font-weight: 300; line-height: 1.65; margin-top: 10px; font-style: italic; }
-.service-category.light .service-note { color: var(--rose); }
-.service-category.dark .service-note { color: rgba(237,232,225,.55); }
+.service-category.light .service-note { color: rgba(74,51,40,.80); }
+.service-category.dark .service-note { color: rgba(237, 232, 225, 0.81); }
 .xerf-feature { margin-top: 24px; padding: 24px; background: rgba(74,51,40,.06); border-radius: 3px; border: 0.5px solid var(--border); }
-.xerf-feature-label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+.xerf-feature-label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #8C4426; margin-bottom: 10px; }
 .xerf-feature h4 { font-family: 'Spectral', serif; font-size: 22px; font-weight: 300; color: var(--deep); margin-bottom: 12px; }
 .xerf-feature p { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--espresso); margin-bottom: 12px; }
 .xerf-specs { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
-.xerf-spec { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--rose); border: 0.5px solid var(--border); padding: 5px 12px; border-radius: 2px; }
+.xerf-spec { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #8C4426; border: 0.5px solid var(--border); padding: 5px 12px; border-radius: 2px; }
 .xerf-link { font-size: 13px; font-weight: 300; color: #8C4426; text-decoration: none; border-bottom: 0.5px solid rgba(140,68,38,.45); }
 .xerf-link:hover { color: var(--espresso); }
 /* LINK FROM A SERVICE ITEM TO ITS OWN PAGE */
@@ -154,7 +162,7 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
     }
 .cta-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
 .section-cta h2 { font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--ivory); margin-bottom: 16px; }
-.section-cta h2 em { font-style: italic; color: var(--clay); }
+.section-cta h2 em { font-style: italic; color: #F2DACE; }
 .section-cta p { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.92); margin: 0 auto 40px; }
 .btn-primary { font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--deep); background: var(--ivory); border: none; padding: 16px 48px; border-radius: 2px; cursor: pointer; font-family: 'Cairo', sans-serif; transition: all .25s; }
 .btn-primary:hover { background: white; }
@@ -445,7 +453,7 @@ html.motion .reveal { transition: none; }
     <div class="category-header reveal">
       <div class="category-num">01</div>
       <div>
-        <span class="section-label" style="color:var(--terra)">Injectables</span>
+        <span class="section-label" style="color:#F2DACE">Injectables</span>
         <h2 class="category-title">Precision placement.<br><em>Natural results.</em></h2>
         <p class="category-intro">All injectable treatments are performed directly by Dr. Shankar. Placement, dosing, and sequencing are calibrated to your anatomy, your skin tone, and your goals.</p>
       </div>
@@ -554,7 +562,7 @@ html.motion .reveal { transition: none; }
     <div class="category-header reveal">
       <div class="category-num">03</div>
       <div>
-        <span class="section-label" style="color:var(--terra)">Skin Treatments</span>
+        <span class="section-label" style="color:#F2DACE">Skin Treatments</span>
         <h2 class="category-title">Targeted. Layered.<br><em>Sequenced correctly.</em></h2>
         <p class="category-intro">Each skin treatment is selected and sequenced as part of a broader protocol, based on your clinical data, your skin tone, and your goals. Nothing is standalone.</p>
       </div>
@@ -633,7 +641,7 @@ html.motion .reveal { transition: none; }
 <!-- CTA. DARK -->
 <section class="section-cta">
   <div class="cta-inner">
-    <span class="section-label" style="display:block;text-align:center;color:var(--terra)">Opening Winter 2026</span>
+    <span class="section-label" style="display:block;text-align:center;color:#F2DACE">Opening Winter 2026</span>
     <h2>Ready to build<br><em>your skin protocol?</em></h2>
     <p>Join the waitlist for early access and exclusive benefits for our first patients.</p>
     <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
