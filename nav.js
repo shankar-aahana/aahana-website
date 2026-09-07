@@ -105,7 +105,7 @@
 
   var NAV_HTML =
     '<nav id="nav">' +
-      '<a href="index.html" class="nav-brand">' +
+      '<a href="/" class="nav-brand">' +
         '<div class="nav-name">AAHANA</div>' +
         '<div class="nav-sub">Medical Aesthetics</div>' +
       '</a>' +
