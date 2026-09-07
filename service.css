@@ -1,0 +1,596 @@
+/* ============================================================
+   Aahana service page styles
+   ------------------------------------------------------------
+   Shared by every individual treatment page. nav.css handles the
+   navigation, footer.css the footer, this file everything else.
+
+   Change a service page's look here and all of them update.
+
+   The accordions use native <details>/<summary>, so they need no
+   JavaScript, print correctly, are keyboard accessible, and their
+   contents are fully indexed by search engines.
+   ============================================================ */
+
+:root {
+      --ivory: #EDE8E1; --espresso: #4A3328; --deep: #4A3328;
+      --section-dark: #6B5147; --clay: #B48A7A; --rose: #9A6F63;
+      --terra: #C07A5A; --border: #DDD8D0;
+    }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivory); color: var(--deep); overflow-x: hidden; }
+.article-hero {
+      background: var(--section-dark);
+      padding: 160px 48px 72px;
+      position: relative; overflow: hidden;
+    }
+.article-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 80% 40%, rgba(192,122,90,.12) 0%, transparent 60%); }
+.article-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+.breadcrumb { font-size: 11px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: var(--clay); margin-bottom: 24px; }
+.breadcrumb a { color: var(--clay); text-decoration: none; }
+.breadcrumb a:hover { color: var(--ivory); }
+.article-title {
+      font-family: 'Spectral', serif;
+      font-size: clamp(34px, 5.4vw, 60px);
+      font-weight: 300; line-height: 1.08; color: var(--ivory);
+      letter-spacing: .01em; margin-bottom: 24px; text-wrap: balance;
+    }
+.article-dek {
+      font-size: 18px; font-weight: 300; line-height: 1.7;
+      color: rgba(237,232,225,.78); max-width: 620px;
+    }
+.article-byline {
+      margin-top: 36px; padding-top: 24px;
+      border-top: 0.5px solid rgba(237,232,225,.15);
+      font-size: 13px; font-weight: 300; line-height: 1.9;
+      color: rgba(237,232,225,.62); letter-spacing: .04em;
+    }
+.article-byline strong { font-weight: 500; color: var(--ivory); }
+.article-body { background: var(--ivory); padding: 72px 48px 90px; }
+.article-inner { max-width: 720px; margin: 0 auto; }
+.article-inner p {
+      font-size: 17px; font-weight: 300; line-height: 1.95;
+      color: var(--deep); margin-bottom: 26px;
+    }
+.article-inner h2 {
+      font-family: 'Spectral', serif;
+      font-size: clamp(26px, 3.4vw, 34px);
+      font-weight: 300; line-height: 1.22; letter-spacing: .01em;
+      margin: 64px 0 22px; text-wrap: balance;
+    }
+.article-inner h2:first-of-type { margin-top: 0; }
+.article-inner strong { font-weight: 600; }
+.article-inner em { font-style: italic; }
+.article-inner a { color: var(--terra); }
+.takeaways {
+      background: rgba(192,122,90,.07);
+      border-left: 2px solid var(--terra);
+      padding: 30px 32px 26px; margin-bottom: 56px;
+    }
+.takeaways h2 {
+      font-family: 'Cairo', sans-serif !important;
+      font-size: 11px !important; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--terra);
+      margin: 0 0 18px !important;
+    }
+.takeaways ul { list-style: none; }
+.takeaways li {
+      font-size: 15px; font-weight: 300; line-height: 1.75;
+      margin-bottom: 12px; padding-left: 20px; position: relative;
+    }
+.takeaways li::before { content: ''; position: absolute; left: 1px; top: 11px; width: 4px; height: 4px; background: var(--terra); }
+.takeaways li:last-child { margin-bottom: 0; }
+.pull {
+      margin: 56px 0; padding: 32px 0;
+      border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);
+      font-family: 'Spectral', serif;
+      font-size: clamp(21px, 2.8vw, 27px); font-weight: 300; line-height: 1.42;
+      text-align: center; color: var(--rose); text-wrap: balance;
+    }
+.faq { margin-top: 72px; padding-top: 44px; border-top: 0.5px solid var(--border); }
+.faq h2 { margin-top: 0 !important; }
+.faq h3 {
+      font-size: 17px; font-weight: 600; line-height: 1.5;
+      margin: 34px 0 10px; color: var(--espresso);
+    }
+.faq h3:first-of-type { margin-top: 26px; }
+.faq p { font-size: 16px !important; }
+.refs { margin-top: 64px; padding-top: 36px; border-top: 0.5px solid var(--border); }
+.refs h3 {
+      font-size: 11px; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--terra); margin-bottom: 20px;
+    }
+.refs ol { padding-left: 20px; }
+.refs li {
+      font-size: 13px; font-weight: 300; line-height: 1.75;
+      color: rgba(74,51,40,.72); margin-bottom: 12px;
+    }
+.refs a { color: var(--rose); }
+.disclaimer {
+      margin-top: 32px; font-size: 12px; font-weight: 300; line-height: 1.8;
+      color: rgba(74,51,40,.75);
+    }
+    .disclaimer::before {
+      content: 'Disclaimer';
+      display: block; margin-bottom: 9px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: #7D5548;
+    }
+.related { margin-top: 64px; padding-top: 36px; border-top: 0.5px solid var(--border); }
+.related h3 {
+      font-size: 11px; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--terra); margin-bottom: 20px;
+    }
+.related-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.related-links a {
+      display: block; padding: 20px 22px;
+      border: 0.5px solid var(--border); border-radius: 2px;
+      text-decoration: none; color: var(--deep);
+      transition: border-color .2s, background .2s;
+    }
+.related-links a:hover { border-color: var(--terra); background: rgba(192,122,90,.05); }
+.related-links .rl-tag { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rose); display: block; margin-bottom: 7px; }
+.related-links .rl-title { font-family: 'Spectral', serif; font-size: 17px; font-weight: 300; line-height: 1.35; }
+.section-cta {
+      background: var(--section-dark); text-align: center; padding: 100px 48px;
+      position: relative; overflow: hidden;
+    }
+.section-cta::before {
+      content: 'AAHANA';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Spectral', serif;
+      font-size: 300px; font-weight: 300;
+      color: rgba(237,232,225,.06);
+      letter-spacing: .05em; white-space: nowrap;
+      pointer-events: none; user-select: none;
+    }
+.cta-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+.cta-title { font-family: 'Spectral', serif; font-size: clamp(30px, 4vw, 42px); font-weight: 300; color: var(--ivory); line-height: 1.2; margin-bottom: 18px; }
+.cta-desc { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(237,232,225,.7); margin-bottom: 32px; }
+.cta-btn { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--deep); background: var(--ivory); border: none; padding: 16px 40px; border-radius: 2px; font-family: 'Cairo', sans-serif; cursor: pointer; transition: opacity .2s; }
+.cta-btn:hover { opacity: .85; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 900px) {
+  .article-hero { padding: 130px 24px 56px; }
+  .article-body { padding: 56px 24px 72px; }
+  .section-cta { padding: 80px 24px; }
+  .related-links { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Service page specifics
+   ============================================================ */
+
+/* ---------- what it treats ---------- */
+.treats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0;
+  margin: 40px 0 48px;
+  border-top: 1px solid var(--border);
+}
+.treats div {
+  padding: 18px 20px 18px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px; font-weight: 400;
+  color: var(--espresso);
+}
+.treats div span {
+  display: block; margin-top: 4px;
+  font-size: 13px; font-weight: 300;
+  color: var(--rose); line-height: 1.5;
+}
+
+/* ---------- at a glance ---------- */
+.glance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 28px;
+  margin: 44px 0;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.glance div { }
+.glance dt {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--clay); margin-bottom: 8px;
+}
+.glance dd {
+  font-size: 16px; font-weight: 300;
+  color: var(--espresso); line-height: 1.5;
+}
+
+/* ---------- accordions ---------- */
+.detail-group { margin: 48px 0; }
+.detail-group > h2 { margin-bottom: 4px !important; }
+
+details.acc {
+  border-bottom: 1px solid var(--border);
+}
+details.acc:first-of-type { border-top: 1px solid var(--border); }
+
+details.acc > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 40px 22px 0;
+  position: relative;
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 20px; font-weight: 400;
+  color: var(--deep);
+  line-height: 1.35;
+  transition: color .2s;
+}
+details.acc > summary::-webkit-details-marker { display: none; }
+details.acc > summary:hover { color: var(--terra); }
+details.acc > summary::after {
+  content: '';
+  position: absolute; right: 6px; top: 50%;
+  width: 9px; height: 9px;
+  margin-top: -6px;
+  border-right: 1.5px solid var(--clay);
+  border-bottom: 1.5px solid var(--clay);
+  transform: rotate(45deg);
+  transition: transform .25s;
+}
+details.acc[open] > summary::after {
+  transform: rotate(-135deg);
+  margin-top: -2px;
+}
+details.acc > summary:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 3px;
+}
+
+.acc-body { padding: 0 0 30px; }
+.acc-body p {
+  font-size: 16px !important;
+  margin-bottom: 16px !important;
+}
+.acc-body p:last-child { margin-bottom: 0 !important; }
+.acc-body h4 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--terra);
+  margin: 26px 0 12px;
+}
+.acc-body h4:first-child { margin-top: 0; }
+.acc-body ul { list-style: none; margin: 0 0 18px; }
+.acc-body ul:last-child { margin-bottom: 0; }
+.acc-body li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 16px; font-weight: 300;
+  line-height: 1.65;
+  color: var(--espresso);
+}
+.acc-body li::before {
+  content: '';
+  position: absolute; left: 2px; top: 11px;
+  width: 5px; height: 1px;
+  background: var(--clay);
+}
+.acc-body li strong { font-weight: 500; color: var(--deep); }
+
+/* urgent block inside an accordion */
+.acc-body ul.urgent li::before { background: var(--terra); width: 7px; }
+
+/* ---------- deeper skin callout ---------- */
+details.acc.tone > summary { color: var(--terra); }
+details.acc.tone > summary::after {
+  border-right-color: var(--terra);
+  border-bottom-color: var(--terra);
+}
+
+/* ---------- print ---------- */
+@media print {
+  nav, .mobile-menu, .section-cta, .section-footer, .related { display: none !important; }
+  details.acc { border-color: #ccc; }
+  details.acc[open] > summary::after, details.acc > summary::after { display: none; }
+  details.acc > summary { font-weight: 600; }
+  .acc-body { display: block !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 640px) {
+  .glance { gap: 22px; }
+  details.acc > summary { font-size: 18px; padding-right: 34px; }
+}
+
+
+/* ============================================================
+   Care protocol modals
+   ------------------------------------------------------------
+   Native <dialog>. Escape closes, clicking the backdrop closes,
+   and the content still lives in the page HTML so search engines
+   and answer engines read it.
+   ============================================================ */
+
+.care-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 10px;
+  margin: 28px 0 8px;
+}
+.care-btn {
+  appearance: none;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 18px 42px 18px 18px;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Cairo', sans-serif;
+  font-size: 15px; font-weight: 400;
+  color: var(--deep);
+  line-height: 1.4;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.care-btn:hover {
+  border-color: var(--clay);
+  box-shadow: 0 6px 18px rgba(74,51,40,.07);
+  transform: translateY(-1px);
+}
+.care-btn span {
+  display: block; margin-top: 5px;
+  font-size: 12px; font-weight: 300;
+  color: var(--rose);
+}
+.care-btn::after {
+  content: '';
+  position: absolute; right: 18px; top: 50%;
+  width: 7px; height: 7px; margin-top: -4px;
+  border-top: 1.5px solid var(--clay);
+  border-right: 1.5px solid var(--clay);
+  transform: rotate(45deg);
+}
+.care-btn.tone { border-color: rgba(192,122,90,.45); }
+.care-btn.tone::after { border-color: var(--terra); }
+
+dialog.care {
+  width: min(680px, calc(100vw - 32px));
+  max-height: min(82vh, 900px);
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: var(--ivory);
+  color: var(--espresso);
+  box-shadow: 0 30px 80px rgba(40,26,20,.34);
+  overflow: hidden;
+}
+dialog.care::backdrop { background: rgba(40,26,20,.66); backdrop-filter: blur(2px); }
+
+.care-head {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 20px;
+  padding: 26px 28px 18px;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--border);
+}
+.care-head h3 {
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 23px; font-weight: 400;
+  color: var(--deep); line-height: 1.25;
+}
+.care-close {
+  flex: none;
+  width: 32px; height: 32px;
+  background: none; border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer; position: relative;
+  transition: border-color .2s, background .2s;
+}
+.care-close:hover { border-color: var(--clay); background: rgba(180,138,122,.08); }
+.care-close::before, .care-close::after {
+  content: '';
+  position: absolute; left: 9px; top: 15px;
+  width: 12px; height: 1.5px;
+  background: var(--espresso);
+}
+.care-close::before { transform: rotate(45deg); }
+.care-close::after  { transform: rotate(-45deg); }
+
+.care-scroll {
+  overflow-y: auto;
+  max-height: calc(min(82vh, 900px) - 86px);
+  padding: 24px 28px 30px;
+  -webkit-overflow-scrolling: touch;
+}
+.care-scroll h4 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--terra);
+  margin: 26px 0 12px;
+}
+.care-scroll h4:first-child { margin-top: 0; }
+.care-scroll p {
+  font-size: 15px; font-weight: 300;
+  line-height: 1.7; margin-bottom: 16px;
+  color: var(--espresso);
+}
+.care-scroll ul { list-style: none; margin: 0 0 18px; }
+.care-scroll ul:last-child { margin-bottom: 0; }
+.care-scroll li {
+  position: relative; padding-left: 20px; margin-bottom: 11px;
+  font-size: 15px; font-weight: 300; line-height: 1.65;
+}
+.care-scroll li::before {
+  content: '';
+  position: absolute; left: 2px; top: 10px;
+  width: 5px; height: 1px; background: var(--clay);
+}
+.care-scroll ul.urgent li::before { background: var(--terra); width: 7px; }
+.care-scroll li strong { font-weight: 500; color: var(--deep); }
+
+@media (max-width: 640px) {
+  dialog.care {
+    width: 100vw; max-width: 100vw; max-height: 92vh;
+    border-radius: 0;
+    inset: auto 0 0 0; margin: 0;
+  }
+  .care-head { padding: 20px 20px 14px; }
+  .care-head h3 { font-size: 20px; }
+  .care-scroll { padding: 20px 20px 28px; max-height: calc(92vh - 78px); }
+}
+
+/* ============================================================
+   Image slots
+   ------------------------------------------------------------
+   TO ADD A PHOTO: drop the file in this folder and set the src.
+   Until then the slot renders as a labelled placeholder so the
+   layout is already correct.
+   ============================================================ */
+.shot { margin: 44px 0; }
+.shot img {
+  display: block; width: 100%; height: auto;
+  border-radius: 3px;
+}
+.shot figcaption {
+  margin-top: 10px;
+  font-size: 12px; font-weight: 300;
+  letter-spacing: .04em;
+  color: var(--rose);
+}
+.shot.placeholder {
+  aspect-ratio: 16 / 9;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(180,138,122,.10);
+  border: 1px dashed rgba(180,138,122,.5);
+  border-radius: 3px;
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--clay);
+}
+
+/* ---------- print ---------- */
+@media print {
+  .care-buttons { display: none !important; }
+  dialog.care {
+    display: block !important; position: static !important;
+    max-height: none !important; box-shadow: none; border: 1px solid #ccc;
+    margin: 18px 0; width: 100% !important;
+  }
+  .care-scroll { max-height: none !important; overflow: visible !important; }
+  .care-close { display: none !important; }
+  .shot.placeholder { display: none !important; }
+}
+
+
+/* ============================================================
+   Key sections
+   ------------------------------------------------------------
+   The three things a patient most needs: what it treats, what a
+   session is like, and the care protocol. Each sits in a
+   full-width tinted band so it reads as a landmark rather than
+   more prose. The band breaks out of the text column while its
+   contents stay aligned to it.
+   ============================================================ */
+
+.keyband {
+  margin: 68px calc(50% - 50vw) 68px;
+  padding: 52px calc(50vw - 50%) 58px;
+  background: #E3D9CA;
+  border-top: 1px solid rgba(154,111,99,.34);
+  border-bottom: 1px solid rgba(154,111,99,.34);
+}
+.keyband + .keyband { margin-top: -68px; }
+
+.keyband .keylabel {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 10px;
+}
+.keyband .keynum {
+  font-family: 'Cairo', sans-serif;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .2em;
+  color: var(--rose);
+}
+.keyband .keylabel::after {
+  content: '';
+  flex: 1; height: 1px;
+  background: rgba(154,111,99,.30);
+}
+.keyband h2 {
+  margin-top: 0 !important;
+  font-size: 33px !important;
+}
+.keyband > p:first-of-type { margin-top: 0; }
+
+/* elements sitting inside a band need to read against the tint */
+.keyband .treats { border-top-color: rgba(154,111,99,.34); margin-top: 32px; margin-bottom: 0; }
+.keyband .treats div { border-bottom-color: rgba(154,111,99,.26); }
+.keyband .glance {
+  border-top-color: rgba(154,111,99,.34);
+  border-bottom-color: rgba(154,111,99,.34);
+  margin-top: 32px;
+}
+.keyband .care-btn { background: #FAF7F2; border-color: rgba(154,111,99,.30); }
+.keyband .care-btn:hover { border-color: var(--clay); }
+.keyband .detail-group { margin: 0; }
+
+@media (max-width: 900px) {
+  .keyband { margin: 52px calc(50% - 50vw) 52px; padding: 40px calc(50vw - 50%) 44px; }
+  .keyband + .keyband { margin-top: -52px; }
+  .keyband h2 { font-size: 27px !important; }
+}
+
+@media print {
+  .keyband { background: none; margin: 24px 0; padding: 0; }
+}
+
+
+/* ---------- optional: a band inverted to the deep brand tone ----------
+   Add class "dark" to any .keyband to use it. Nothing else changes. */
+.keyband.dark {
+  background: var(--section-dark);
+  border-color: rgba(243,236,228,.16);
+}
+.keyband.dark h2,
+.keyband.dark p,
+.keyband.dark .glance dd,
+.keyband.dark .treats div { color: var(--ivory); }
+.keyband.dark .keynum { color: rgba(243,236,228,.82); }
+.keyband.dark .keylabel::after { background: rgba(243,236,228,.24); }
+.keyband.dark .treats,
+.keyband.dark .glance { border-color: rgba(243,236,228,.20); }
+.keyband.dark .treats div { border-bottom-color: rgba(243,236,228,.16); }
+.keyband.dark .treats div span,
+.keyband.dark .glance dt { color: rgba(243,236,228,.82); }
+.keyband.dark .care-btn { background: rgba(243,236,228,.06); border-color: rgba(243,236,228,.22); color: var(--ivory); }
+.keyband.dark .care-btn span { color: rgba(243,236,228,.82); }
+.keyband.dark .care-btn:hover { background: rgba(243,236,228,.11); border-color: rgba(243,236,228,.4); }
+.keyband.dark .care-btn::after { border-color: var(--clay); }
+
+
+/* ---------- read-more inside a key band ---------- */
+.keyband details.acc.more { border: 0; margin-top: 26px; }
+.keyband details.acc.more:first-of-type { border-top: 0; }
+.keyband details.acc.more > summary {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 0; font-family: 'Cairo', sans-serif;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--rose);
+}
+.keyband details.acc.more > summary::after {
+  position: static; margin: 0 0 2px 0;
+  width: 7px; height: 7px;
+  border-right-width: 1.5px; border-bottom-width: 1.5px;
+  border-color: var(--rose);
+}
+.keyband details.acc.more[open] > summary::after { margin: 2px 0 0 0; }
+.keyband details.acc.more > summary:hover { color: var(--terra); }
+.keyband details.acc.more .acc-body { padding: 22px 0 0; }
+.keyband details.acc.more .acc-body p { max-width: 62ch; }

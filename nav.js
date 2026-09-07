@@ -5,10 +5,25 @@
    Edit the two lists below and every page updates at once.
 
    To add a Daybreak category, add one line to DAYBREAK_CATEGORIES.
-   To add a Practice or Services link, edit those arrays.
+   To add a treatment page, add one line to the right group below.
    ============================================================ */
 
 (function () {
+
+  /* ============================================================
+     BOOKING
+     ------------------------------------------------------------
+     Leave this empty and every button on the site says
+     "Join the waitlist" and opens the waitlist form.
+
+     When online booking is live, paste the booking link between
+     the quotes below. Every button on every page then switches to
+     "Book a visit" and points at it. Nothing else changes.
+     ============================================================ */
+  var BOOKING_URL = '';
+
+  var CTA_LABEL = BOOKING_URL ? 'Book a visit' : 'Join the waitlist';
+
 
   var PRACTICE_LINKS = [
     { label: 'Dr. Shankar',       href: 'about.html' },
@@ -16,8 +31,23 @@
     { label: 'Prakriti',           href: 'prakriti.html' }
   ];
 
-  var SERVICES_LINKS = [
-    { label: 'All services', href: 'services.html' }
+  /* The services landing page, shown above the divider. */
+  var SERVICES_MAIN = { label: 'All services', href: 'services.html' };
+
+  /* Individual treatment pages. Add one line here as each ships. */
+  var SERVICES_GROUPS = [
+    { group: 'Injectables',     links: [
+        { label: 'Botox & Dysport', href: 'botox-dysport.html' },
+        { label: 'Dermal fillers',  href: 'dermal-fillers.html' }
+      ] },
+    { group: 'Lasers & energy', links: [
+        { label: 'Aerolase Neo Elite', href: 'aerolase-neo-elite.html' },
+        { label: 'XERF',               href: 'xerf.html' }
+      ] },
+    { group: 'Skin treatments', links: [
+        { label: 'Microneedling', href: 'microneedling.html' }
+      ] },
+    { group: 'Wellness',        links: [] }
   ];
 
   /* The Daybreak landing page. Sits at the top of the menu, above a
@@ -42,6 +72,23 @@
     }).join('\n        ');
   }
 
+  function serviceColumns() {
+    return SERVICES_GROUPS.map(function (g) {
+      var items = g.links.length
+        ? desktopItems(g.links)
+        : '<div class="dropdown-item" style="opacity:.4;cursor:default">Coming soon</div>';
+      return '<div class="dropdown-col"><div class="dropdown-label">' + g.group + '</div>' + items + '</div>';
+    }).join('');
+  }
+
+  function serviceGroupsMobile() {
+    return SERVICES_GROUPS.map(function (g) {
+      var items = g.links.length ? panelItems(g.links)
+                                 : '<span class="disabled">Coming soon</span>';
+      return '<span class="mobile-panel-label">' + g.group + '</span>' + items;
+    }).join('');
+  }
+
   function panelItems(links) {
     return links.map(function (l) {
       return '<a href="' + l.href + '">' + l.label + '</a>';
@@ -61,10 +108,10 @@
         '</li>' +
         '<li class="nav-item">' +
           '<a class="nav-link" href="#" onclick="toggleNav(event)">Services <span class="chevron">▼</span></a>' +
-          '<div class="dropdown">' + desktopItems(SERVICES_LINKS) +
+          '<div class="dropdown dropdown-wide">' +
+            '<a class="dropdown-item lead" href="' + SERVICES_MAIN.href + '">' + SERVICES_MAIN.label + '</a>' +
             '<div class="dropdown-divider"></div>' +
-            '<div class="dropdown-label">Coming soon</div>' +
-            '<div class="dropdown-item" style="opacity:.45;cursor:default">Individual treatment pages</div>' +
+            '<div class="dropdown-cols">' + serviceColumns() + '</div>' +
           '</div>' +
         '</li>' +
         '<li class="nav-item">' +
@@ -77,7 +124,7 @@
           '</div>' +
         '</li>' +
       '</ul>' +
-      '<button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">Join the waitlist</button>' +
+      '<button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">' + CTA_LABEL + '</button>' +
       '<button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileMenu()">' +
         '<span></span><span></span><span></span>' +
       '</button>' +
@@ -97,9 +144,9 @@
         '</div>' +
         '<div class="mobile-panel" id="mobilePanelServices">' +
           '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">‹</span> Back</button>' +
-          '<div class="mobile-panel-title">Services</div>' + panelItems(SERVICES_LINKS) +
-          '<span class="mobile-panel-label">Coming soon</span>' +
-          '<span class="disabled">Individual treatment pages</span>' +
+          '<div class="mobile-panel-title">Services</div>' +
+          '<a class="lead" href="' + SERVICES_MAIN.href + '">' + SERVICES_MAIN.label + '</a>' +
+          serviceGroupsMobile() +
         '</div>' +
         '<div class="mobile-panel" id="mobilePanelJournal">' +
           '<button class="mobile-panel-back" onclick="hideSubmenu()"><span class="back-arrow">‹</span> Back</button>' +
@@ -110,7 +157,7 @@
         '</div>' +
       '</div>' +
       '<div class="mobile-menu-cta">' +
-        '<button data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>' +
+        '<button data-tally-open="kdJBYJ" data-tally-overlay="1">' + CTA_LABEL + '</button>' +
       '</div>' +
     '</div>';
 
@@ -167,6 +214,33 @@
   };
 
   document.addEventListener('DOMContentLoaded', function () {
+
+    /* If BOOKING_URL is set, retarget and relabel every waitlist button
+       on the page, including the one at the bottom. */
+    if (BOOKING_URL) {
+      document.querySelectorAll('[data-tally-open], .cta-btn').forEach(function (b) {
+        b.removeAttribute('data-tally-open');
+        b.removeAttribute('data-tally-overlay');
+        b.textContent = CTA_LABEL;
+        b.addEventListener('click', function () { window.location.href = BOOKING_URL; });
+      });
+    }
+
+    /* Care protocol modals. A button with data-modal="x" opens the
+       <dialog id="x"> on that page. Escape closes it, so does clicking
+       the backdrop or the close button. */
+    document.querySelectorAll('[data-modal]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var dlg = document.getElementById(btn.getAttribute('data-modal'));
+        if (dlg && dlg.showModal) dlg.showModal();
+      });
+    });
+    document.querySelectorAll('dialog.care').forEach(function (dlg) {
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+      var x = dlg.querySelector('.care-close');
+      if (x) x.addEventListener('click', function () { dlg.close(); });
+    });
+
     var nav = document.getElementById('nav');
     if (nav) {
       window.addEventListener('scroll', function () {
