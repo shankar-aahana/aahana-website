@@ -246,6 +246,27 @@
        If the script cannot be fetched, the click falls back to the
        form's own page so the visitor is never stuck.
        ------------------------------------------------------------ */
+
+    /* ------------------------------------------------------------
+       VERCEL WEB ANALYTICS
+       ------------------------------------------------------------
+       Counts page views only. No cookies, no cross-site tracking, no
+       advertising network, and no IP address is stored. It lives here
+       rather than in each page so there is one place to remove it.
+
+       Deliberately NOT Google Analytics or a Meta pixel: this site has
+       pages on sexual health and weight loss, and sending those URLs to
+       an ad network alongside a visitor identifier is the exact pattern
+       behind the health-tracker lawsuits.
+       ------------------------------------------------------------ */
+    window.va = window.va || function () {
+      (window.vaq = window.vaq || []).push(arguments);
+    };
+    var vs = document.createElement('script');
+    vs.defer = true;
+    vs.src = '/_vercel/insights/script.js';
+    document.head.appendChild(vs);
+
     var tallyLoading = false;
 
     function openWaitlist(formId) {
