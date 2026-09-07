@@ -16,6 +16,7 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [PRP for skin quality](https://www.aahanasf.com/prp-skin.html): Facial texture, fine lines and tone. Nine randomized trials, 358 patients.
 - [PRP under the eye](https://www.aahanasf.com/prp-under-eye.html): Crepey texture and thinness in periorbital skin. An emerging use with a newer, smaller literature.
 - [PRP for hair restoration](https://www.aahanasf.com/prp-hair.html): Pattern hair loss. 43 randomized trials, 1,877 participants. Activated PRP increases density; it does not significantly change the thickness of individual hairs.
+- [Topical exosomes](https://www.aahanasf.com/exosomes.html): Applied topically after microneedling, never injected. No exosome product has FDA approval for aesthetic use, and the page says so first. Evidence is eight studies covering 171 patients, no follow-up beyond six months.
 - [PRP with microneedling](https://www.aahanasf.com/prp-microneedling.html): Atrophic acne scarring. 17 studies, 1,111 participants, with trial sequential analysis reaching required information size.
 - [Visit: address, getting here, how to reach us](https://www.aahanasf.com/contact.html): 2175 3rd Street, Unit C1, San Francisco CA 94107, in Dogpatch. Opening Winter 2026. Hours are not set and are deliberately not published yet.
 

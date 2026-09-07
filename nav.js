@@ -56,7 +56,8 @@
     { group: 'Skin treatments', links: [
         { label: 'Microneedling', href: 'microneedling.html' },
         { label: 'VI Peel',      href: 'vi-peel.html' },
-        { label: 'Hydrafacial',  href: 'hydrafacial.html' }
+        { label: 'Hydrafacial',  href: 'hydrafacial.html' },
+        { label: 'Topical exosomes', href: 'exosomes.html' }
       ] },
     { group: 'Wellness',        links: [
         { label: 'Medical weight loss', href: 'medical-weight-loss.html' },
