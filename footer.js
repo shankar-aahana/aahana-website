@@ -16,6 +16,8 @@
   var EMAIL    = 'hello@aahanaskin.com';
   var LEGAL    = '© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA';
   var DOMAIN   = 'aahanasf.com';
+  var INSTAGRAM = 'https://www.instagram.com/aahanaskin/';
+  var IG_HANDLE = '@aahanaskin';
   var TALLY_ID = 'kdJBYJ';
 
   document.write(
@@ -30,6 +32,7 @@
         '<div class="footer-col">' +
           '<h5>Location</h5>' +
           '<address>' + ADDRESS + '<br><br>' + HOURS + '</address>' +
+          '<p><a href="contact.html">Getting here</a></p>' +
         '</div>' +
         '<div class="footer-col">' +
           '<h5>Contact</h5>' +
@@ -37,6 +40,8 @@
             '<button class="footer-waitlist" data-tally-open="' + TALLY_ID + '" data-tally-overlay="1">Join the waitlist</button>' +
             '<br><br>' +
             '<a href="mailto:' + EMAIL + '">' + EMAIL + '</a>' +
+            '<br><br>' +
+            '<a href="' + INSTAGRAM + '" rel="me noopener" aria-label="Aahana on Instagram">' + IG_HANDLE + '</a>' +
           '</p>' +
         '</div>' +
       '</div>' +
