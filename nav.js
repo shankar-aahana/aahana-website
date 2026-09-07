@@ -40,8 +40,14 @@
     { group: 'Injectables',     links: [
         { label: 'Botox & Dysport', href: 'botox-dysport.html' },
         { label: 'Dermal fillers',  href: 'dermal-fillers.html' },
-        { label: 'Biostimulators',  href: 'biostimulators.html' },
-        { label: 'PRP',             href: 'prp.html' }
+        { label: 'Biostimulators',  href: 'biostimulators.html' }
+      ] },
+    { group: 'PRP',             links: [
+        { label: 'All PRP',           href: 'prp.html' },
+        { label: 'Skin quality',      href: 'prp-skin.html' },
+        { label: 'Under the eye',     href: 'prp-under-eye.html' },
+        { label: 'Hair restoration',  href: 'prp-hair.html' },
+        { label: 'With microneedling', href: 'prp-microneedling.html' }
       ] },
     { group: 'Lasers & energy', links: [
         { label: 'Aerolase Neo Elite', href: 'aerolase-neo-elite.html' },

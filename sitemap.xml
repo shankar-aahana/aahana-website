@@ -198,6 +198,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aahanasf.com/prp-skin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aahanasf.com/prp-under-eye.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aahanasf.com/prp-hair.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.aahanasf.com/prp-microneedling.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.aahanasf.com/vi-peel.html</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>

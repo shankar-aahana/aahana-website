@@ -12,6 +12,11 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [Prakriti constitutional assessment](https://www.aahanasf.com/prakriti.html)
 - [About Dr. Shankar Mundluru](https://www.aahanasf.com/about.html)
 - [Daybreak journal](https://www.aahanasf.com/journal.html)
+- [PRP, all indications](https://www.aahanasf.com/prp.html): Platelet-rich plasma, split by indication because the evidence differs by site.
+- [PRP for skin quality](https://www.aahanasf.com/prp-skin.html): Facial texture, fine lines and tone. Nine randomized trials, 358 patients.
+- [PRP under the eye](https://www.aahanasf.com/prp-under-eye.html): Crepey texture and thinness in periorbital skin. An emerging use with a newer, smaller literature.
+- [PRP for hair restoration](https://www.aahanasf.com/prp-hair.html): Pattern hair loss. 43 randomized trials, 1,877 participants. Activated PRP increases density; it does not significantly change the thickness of individual hairs.
+- [PRP with microneedling](https://www.aahanasf.com/prp-microneedling.html): Atrophic acne scarring. 17 studies, 1,111 participants, with trial sequential analysis reaching required information size.
 - [Visit: address, getting here, how to reach us](https://www.aahanasf.com/contact.html): 2175 3rd Street, Unit C1, San Francisco CA 94107, in Dogpatch. Opening Winter 2026. Hours are not set and are deliberately not published yet.
 
 ## Daybreak, the clinical journal
