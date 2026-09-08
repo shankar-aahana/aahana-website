@@ -9,10 +9,10 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#4A3328">
   <title>Dr. Shankar Mundluru. Aahana Medical Aesthetics</title>
-  <meta name="description" content="Shankar Mundluru, MD MBA. Board-certified physician and founder of Aahana Medical Aesthetics, San Francisco. Duke, Boston University, Wharton.">
+  <meta name="description" content="Shankar Mundluru, MD MBA. Board-certified physician and founder of Aahana Medical Aesthetics, San Francisco. Published in dermatology, including skin of color. Duke, BU, Wharton.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dr. Shankar Mundluru. Aahana Medical Aesthetics">
-  <meta property="og:description" content="Shankar Mundluru, MD MBA. Board-certified physician and founder of Aahana Medical Aesthetics, San Francisco. Duke, Boston University, Wharton.">
+  <meta property="og:description" content="Shankar Mundluru, MD MBA. Board-certified physician and founder of Aahana Medical Aesthetics, San Francisco. Published in dermatology, including skin of color. Duke, BU, Wharton.">
   <meta property="og:url" content="https://www.aahanasf.com/about.html">
   <meta property="og:site_name" content="Aahana Medical Aesthetics">
   <meta property="og:image" content="https://www.aahanasf.com/og-about.png">
@@ -258,6 +258,41 @@ section { padding: 64px 48px; }
       font-size: 12px; font-weight: 400; line-height: 1.5;
       color: var(--deep);
     }
+/* ── PUBLICATIONS ── */
+.pubs { margin-top: 34px; padding-top: 30px; border-top: 1px solid rgba(74,51,40,.18); }
+.pubs-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+.pubs-head h3 {
+      font-size: 11px; font-weight: 600; letter-spacing: .16em;
+      text-transform: uppercase; color: #8C4426; margin: 0;
+    }
+.pubs-head a {
+      font-size: 12px; font-weight: 500; color: #8C4426;
+      text-decoration: none; border-bottom: 0.5px solid rgba(140,68,38,.45);
+      display: inline-block; padding-block: 4px; min-height: 24px;
+    }
+.pubs-head a:hover { color: var(--deep); border-bottom-color: var(--deep); }
+.pubs ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.pubs li {
+      padding: 15px 0; border-bottom: 1px solid rgba(74,51,40,.14);
+      display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: baseline;
+    }
+.pubs li:last-child { border-bottom: none; }
+.pub-title {
+      font-family: 'Spectral', serif; font-size: 16px; font-weight: 400;
+      line-height: 1.4; color: var(--deep);
+    }
+.pub-venue {
+      font-size: 12px; font-weight: 500; letter-spacing: .04em;
+      color: rgba(74,51,40,.80); white-space: nowrap; text-align: right;
+    }
+@media (max-width: 700px) {
+  .pubs li { grid-template-columns: 1fr; }
+  .pub-venue { text-align: left; white-space: normal; }
+}
+
 /* ── CTA SECTION ── */
 .section-cta {
       background: #6B5147; text-align: center; padding: 100px 48px;
@@ -491,8 +526,122 @@ section { padding: 64px 48px; }
           "Precision medicine",
           "Ayurvedic constitutional medicine",
           "Skin microbiome",
-          "Gender-affirming aesthetic care"
+          "Gender-affirming aesthetic care",
+          "Dermatology in skin of color",
+          "Gender-affirming dermatologic care",
+          "Medical education"
+        ],
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Boston University School of Medicine, Department of Dermatology"
+        },
+        "sameAs": [
+          "https://scholar.google.com/citations?user=HSnK1V0AAAAJ"
+        ],
+        "subjectOf": [
+          {
+            "@id": "https://www.aahanasf.com/about.html#pub-1"
+          },
+          {
+            "@id": "https://www.aahanasf.com/about.html#pub-2"
+          },
+          {
+            "@id": "https://www.aahanasf.com/about.html#pub-3"
+          },
+          {
+            "@id": "https://www.aahanasf.com/about.html#pub-4"
+          },
+          {
+            "@id": "https://www.aahanasf.com/about.html#pub-5"
+          },
+          {
+            "@id": "https://www.aahanasf.com/about.html#pub-6"
+          }
         ]
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.aahanasf.com/about.html#pub-1",
+        "headline": "Skin in the Game: Taking Skin of Color Dermatology to the Classroom",
+        "name": "Skin in the Game: Taking Skin of Color Dermatology to the Classroom",
+        "datePublished": "2019",
+        "author": {
+          "@id": "https://www.aahanasf.com/about.html#shankar"
+        },
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Journal of Graduate Medical Education"
+        }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.aahanasf.com/about.html#pub-2",
+        "headline": "Addressing Internal Medicine Residents' Discomfort With Basic Dermatology in Persons of Color in the Primary Care Clinic",
+        "name": "Addressing Internal Medicine Residents' Discomfort With Basic Dermatology in Persons of Color in the Primary Care Clinic",
+        "datePublished": "2019",
+        "author": {
+          "@id": "https://www.aahanasf.com/about.html#shankar"
+        },
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "American Journal of Medical Quality"
+        }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.aahanasf.com/about.html#pub-3",
+        "headline": "Creating a Partnership Between Dermatologists and Geriatricians",
+        "name": "Creating a Partnership Between Dermatologists and Geriatricians",
+        "datePublished": "2019",
+        "author": {
+          "@id": "https://www.aahanasf.com/about.html#shankar"
+        },
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "JAMA Dermatology"
+        }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.aahanasf.com/about.html#pub-4",
+        "headline": "“But doctor, I Googled it!” The three R's of managing patients in the age of information overload",
+        "name": "“But doctor, I Googled it!” The three R's of managing patients in the age of information overload",
+        "datePublished": "2018",
+        "author": {
+          "@id": "https://www.aahanasf.com/about.html#shankar"
+        },
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Clinics in Dermatology"
+        }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.aahanasf.com/about.html#pub-5",
+        "headline": "Unforeseen ethical challenges for isotretinoin treatment in transgender patients",
+        "name": "Unforeseen ethical challenges for isotretinoin treatment in transgender patients",
+        "datePublished": "2016",
+        "author": {
+          "@id": "https://www.aahanasf.com/about.html#shankar"
+        },
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "International Journal of Women's Dermatology"
+        }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://www.aahanasf.com/about.html#pub-6",
+        "headline": "Decreased prevalence of digital ulcers in patients with systemic sclerosis treated with SSRIs",
+        "name": "Decreased prevalence of digital ulcers in patients with systemic sclerosis treated with SSRIs",
+        "datePublished": "2016",
+        "author": {
+          "@id": "https://www.aahanasf.com/about.html#shankar"
+        },
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Journal of Investigative Dermatology"
+        }
       },
       {
         "@type": [
@@ -641,7 +790,7 @@ section { padding: 64px 48px; }
 <section class="section-awards" style="background:var(--ivory)">
   <div class="section-inner">
     <span class="section-label">Recognition &amp; Research</span>
-    <p style="font-size:15px;font-weight:400;line-height:1.75;color:var(--espresso);max-width:680px;margin-bottom:28px">A published researcher and peer manuscript reviewer for top-tier journals, with work spanning skin science, digital health, and health equity. Recognized across medicine, clinical innovation, and entrepreneurship.</p>
+    <p style="font-size:15px;font-weight:400;line-height:1.75;color:var(--espresso);max-width:680px;margin-bottom:28px">Dr. Shankar published in dermatology during his medical training at Boston University, including two papers on teaching dermatology in skin of color and one on the ethics of isotretinoin treatment in transgender patients. That research is why this practice was built around the skin it was built around. He is also a peer manuscript reviewer, and his work spans skin science, digital health and health equity.</p>
     <div class="awards-grid">
       <div class="award-item reveal">
         <div class="award-org">TechCrunch Disrupt</div>
@@ -670,8 +819,8 @@ section { padding: 64px 48px; }
     </div>
     <div class="research-stat-grid" style="margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
       <div class="research-stat">
-        <div class="research-stat-num">10+</div>
-        <div class="research-stat-label">Peer-reviewed articles across skin science, digital health, and health equity</div>
+        <div class="research-stat-num">6</div>
+        <div class="research-stat-label">Peer-reviewed dermatology papers, listed below with journal and year</div>
       </div>
       <div class="research-stat">
         <div class="research-stat-num">6</div>
@@ -681,6 +830,39 @@ section { padding: 64px 48px; }
         <div class="research-stat-num">15+</div>
         <div class="research-stat-label">Years at the intersection of clinical medicine and skincare innovation</div>
       </div>
+    </div>
+
+    <div class="pubs reveal">
+      <div class="pubs-head">
+        <h3>Selected dermatology publications</h3>
+        <a href="https://scholar.google.com/citations?user=HSnK1V0AAAAJ" rel="noopener nofollow">Full publication list on Google Scholar &rarr;</a>
+      </div>
+      <ol>
+        <li>
+          <span class="pub-title">Skin in the Game: Taking Skin of Color Dermatology to the Classroom</span>
+          <span class="pub-venue">Journal of Graduate Medical Education, 2019</span>
+        </li>
+        <li>
+          <span class="pub-title">Addressing Internal Medicine Residents' Discomfort With Basic Dermatology in Persons of Color in the Primary Care Clinic</span>
+          <span class="pub-venue">American Journal of Medical Quality, 2019</span>
+        </li>
+        <li>
+          <span class="pub-title">Creating a Partnership Between Dermatologists and Geriatricians</span>
+          <span class="pub-venue">JAMA Dermatology, 2019</span>
+        </li>
+        <li>
+          <span class="pub-title">&ldquo;But doctor, I Googled it!&rdquo; The three R's of managing patients in the age of information overload</span>
+          <span class="pub-venue">Clinics in Dermatology, 2018</span>
+        </li>
+        <li>
+          <span class="pub-title">Unforeseen ethical challenges for isotretinoin treatment in transgender patients</span>
+          <span class="pub-venue">International Journal of Women's Dermatology, 2016</span>
+        </li>
+        <li>
+          <span class="pub-title">Decreased prevalence of digital ulcers in patients with systemic sclerosis treated with SSRIs</span>
+          <span class="pub-venue">Journal of Investigative Dermatology, 2016</span>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
