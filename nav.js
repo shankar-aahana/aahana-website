@@ -10,6 +10,17 @@
 
 (function () {
 
+  /* Motion gate. The reveal animation only runs when the visitor has not
+     asked their system for reduced motion. Without this class the CSS in
+     nav.css keeps every .reveal block visible, which also means the page
+     body still renders if this script never runs at all. */
+  try {
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.className += ' reveal-anim';
+    }
+  } catch (e) { /* leave content visible */ }
+
+
   /* ============================================================
      BOOKING
      ------------------------------------------------------------
@@ -113,6 +124,7 @@
   }
 
   var NAV_HTML =
+    '<a class="skip-link" href="#main">Skip to content</a>' +
     '<nav id="nav">' +
       '<a href="/" class="nav-brand">' +
         '<div class="nav-name">AAHANA</div>' +

@@ -91,7 +91,7 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .section-heading { font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif; font-size: clamp(32px, 3.5vw, 48px); font-weight: 300; line-height: 1.2; letter-spacing: .01em; margin-bottom: 28px; }
 .expect-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
 .expect-step { padding: 24px 22px; border: 0.5px solid var(--border); border-radius: 2px; }
-.expect-step h4 { font-family: 'Spectral', serif; font-size: 17px; font-weight: 400; color: var(--deep); margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.expect-step h3 { font-family: 'Spectral', serif; font-size: 17px; font-weight: 400; color: var(--deep); margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .expect-step p { font-size: 15px; font-weight: 400; line-height: 1.8; color: rgba(74,51,40,.80); }
 /* SERVICE CATEGORIES */
 .service-category { padding: 56px 48px; }
@@ -131,7 +131,7 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .service-category.dark .service-note { color: rgba(237, 232, 225, 0.81); }
 .xerf-feature { margin-top: 24px; padding: 24px; background: rgba(74,51,40,.06); border-radius: 3px; border: 0.5px solid var(--border); }
 .xerf-feature-label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #8C4426; margin-bottom: 10px; }
-.xerf-feature h4 { font-family: 'Spectral', serif; font-size: 22px; font-weight: 300; color: var(--deep); margin-bottom: 12px; }
+.xerf-feature h3 { font-family: 'Spectral', serif; font-size: 22px; font-weight: 300; color: var(--deep); margin-bottom: 12px; }
 .xerf-feature p { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--espresso); margin-bottom: 12px; }
 .xerf-specs { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
 .xerf-spec { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #8C4426; border: 0.5px solid var(--border); padding: 5px 12px; border-radius: 2px; }
@@ -326,6 +326,16 @@ html.motion .reveal { transition: none; }
         ]
       },
       {
+        "@type": "WebSite",
+        "@id": "https://www.aahanasf.com/#website",
+        "url": "https://www.aahanasf.com/",
+        "name": "Aahana Medical Aesthetics",
+        "publisher": {
+          "@id": "https://www.aahanasf.com/#organization"
+        },
+        "inLanguage": "en-US"
+      },
+      {
         "@type": "Person",
         "@id": "https://www.aahanasf.com/about.html#shankar",
         "name": "Shankar Mundluru, MD MBA",
@@ -423,6 +433,7 @@ html.motion .reveal { transition: none; }
 
 
 <!-- HERO. DARK -->
+<main id="main">
 <section class="hero-services">
   <div class="hero-eyebrow">What we offer</div>
   <h1 class="hero-title">Services built for<br><em>your skin, specifically</em></h1>
@@ -436,19 +447,19 @@ html.motion .reveal { transition: none; }
     <h2 class="section-heading" style="color:var(--deep)">Your first visit<br><em style="font-style:italic;color:var(--rose)">at Aahana</em></h2>
     <div class="expect-grid">
       <div class="expect-step reveal">
-        <h4>Intake & consultation</h4>
+        <h3>Intake & consultation</h3>
         <p>A thorough review of your health history, skin concerns, goals, and lifestyle. Your Prakriti constitutional assessment is completed here.</p>
       </div>
       <div class="expect-step reveal">
-        <h4>Visia imaging</h4>
+        <h3>Visia imaging</h3>
         <p>Clinical skin analysis across eight metrics, benchmarked against a database matched to your age and skin tone. You see your skin the way Dr. Shankar sees it.</p>
       </div>
       <div class="expect-step reveal">
-        <h4>Additional testing</h4>
+        <h3>Additional testing</h3>
         <p>Where indicated, labs, skin microbiome analysis, or skin DNA profiling may be recommended to complete your clinical picture.</p>
       </div>
       <div class="expect-step reveal">
-        <h4>Your personalized plan</h4>
+        <h3>Your personalized plan</h3>
         <p>A sequenced protocol built from everything gathered. Treatment options, home care, and a clear timeline, all explained before anything begins.</p>
       </div>
     </div>
@@ -544,7 +555,7 @@ html.motion .reveal { transition: none; }
     </div>
     <div class="xerf-feature reveal">
       <div class="xerf-feature-label">About XERF</div>
-      <h4>The world's first multifrequency monopolar RF treatment</h4>
+      <h3>The world's first multifrequency monopolar RF treatment</h3>
       <p>XERF is the only device that combines 6.78 MHz and 2 MHz frequencies, reaching the superficial, middle, and deep layers of the skin in a single session. Clinical studies confirm collagen remodeling at multiple depths, including histological evidence of changes at the SMAS layer, the same structural tissue addressed in surgical facelifts. FDA cleared and safe for all skin tones.</p>
       <p><a href="https://www.cynosure.com/xerf/" target="_blank" rel="noopener" class="xerf-link">Learn more about XERF at Cynosure Lutronic →</a></p>
       <div class="xerf-specs">
@@ -558,7 +569,7 @@ html.motion .reveal { transition: none; }
     </div>
     <div class="xerf-feature reveal">
       <div class="xerf-feature-label">About the Neo Elite</div>
-      <h4>Why the first laser here is a 1064 nm one</h4>
+      <h3>Why the first laser here is a 1064 nm one</h3>
       <p>Most laser injury in deeper skin comes from wavelengths that melanin absorbs strongly: the epidermis competes with the intended target for the energy, and the result is a burn or a patch of hyperpigmentation. At 1064 nm the Neo Elite sits at the longest wavelength in common aesthetic use and the one melanin absorbs least, which is why Nd:YAG is the platform most often chosen for Fitzpatrick types IV through VI.</p>
       <p>Aerolase pairs that wavelength with a 650-microsecond pulse, placed deliberately between the nanosecond and millisecond ranges, which the manufacturer credits for limiting thermal spread into surrounding tissue. In practice it means treatment without contact, without cryogen or contact cooling, and without topical anesthetic.</p>
       <p>Choosing this device first, rather than a resurfacing laser, is a deliberate decision about who this practice is built for.</p>
@@ -655,6 +666,8 @@ html.motion .reveal { transition: none; }
     <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <script src="footer.js"></script>

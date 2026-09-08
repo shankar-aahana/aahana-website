@@ -65,6 +65,14 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .article-inner em { font-style: italic; }
 .article-inner a { color: #8C4426; border-bottom: 0.5px solid rgba(140,68,38,.4); text-decoration: none; }
 .article-inner a:hover { color: var(--espresso); border-bottom-color: var(--espresso); }
+
+/* Links inside a dark keyband need the light-ground accent, not the dark one.
+   #8C4426 on #6B5147 is 1.03:1, effectively invisible. */
+.keyband.dark a, .keyband.dark .article-inner a {
+      color: #F2DACE;
+      border-bottom-color: rgba(242,218,206,.45);
+    }
+.keyband.dark a:hover { color: #FFFFFF; border-bottom-color: #FFFFFF; }
 .takeaways {
       background: rgba(192,122,90,.07);
       border-left: 2px solid var(--terra);
@@ -256,14 +264,14 @@ details.acc > summary:focus-visible {
   margin-bottom: 16px !important;
 }
 .acc-body p:last-child { margin-bottom: 0 !important; }
-.acc-body h4 {
+.acc-body h4, .acc-body h3 {
   font-family: 'Cairo', sans-serif;
   font-size: 11px; font-weight: 500;
   letter-spacing: .14em; text-transform: uppercase;
   color: #8C4426;
   margin: 26px 0 12px;
 }
-.acc-body h4:first-child { margin-top: 0; }
+.acc-body h4:first-child, .acc-body h3:first-child { margin-top: 0; }
 .acc-body ul { list-style: none; margin: 0 0 18px; }
 .acc-body ul:last-child { margin-bottom: 0; }
 .acc-body li {
@@ -601,6 +609,7 @@ dialog.care::backdrop { background: rgba(40,26,20,.66); backdrop-filter: blur(2p
 /* LINKS USED AS THE TITLE OF A .treats ITEM */
 .treats a {
       color: inherit; text-decoration: none;
+      display: inline-block; padding-block: 4px; min-height: 24px;
       border-bottom: 0.5px solid rgba(192,122,90,.45);
       transition: color .2s, border-color .2s;
     }

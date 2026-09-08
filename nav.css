@@ -251,3 +251,68 @@ nav.scrolled {
     margin-right: 4px;
   }
 }
+
+/* ── CONTENT VISIBILITY AND MOTION ────────────────────────────────────
+   Scroll-reveal blocks used to start at opacity 0 and were only shown by
+   JavaScript. If the script never ran, the page body stayed blank. They
+   are now visible by default, and the animation only runs when nav.js has
+   added .reveal-anim to <html>, which it does only when the visitor has
+   not asked their system for reduced motion. */
+html:not(.reveal-anim) .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  html .hero-video { display: none; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── SKIP LINK ───────────────────────────────────────────────────────
+   First thing in the tab order, invisible until focused. */
+.skip-link {
+  position: absolute; left: 12px; top: -60px;
+  z-index: 2000;
+  padding: 12px 20px;
+  background: var(--ivory, #EDE8E1);
+  color: #4A3328;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px; font-weight: 500;
+  text-decoration: none;
+  border-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 12px; }
+
+/* ── KEYBOARD FOCUS ──────────────────────────────────────────────────
+   Visible for keyboard users, absent for mouse clicks. */
+:focus-visible {
+  outline: 2px solid #C07A5A;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+#nav :focus-visible, .section-footer :focus-visible, .hero :focus-visible {
+  outline-color: #F2DACE;
+}
+
+/* ── TARGET SIZE (WCAG 2.2 AA, 2.5.8) ────────────────────────────────
+   Standalone links need a 24px pointer target. Padding grows the hit box
+   without changing where the text sits. Links inline in prose are exempt
+   and are left alone. */
+.service-link, .view-all-btn, .footer-legal a, .footer-ig,
+.footer-waitlist, .breadcrumb a, .rl-title, .related-links a,
+.cta-btn, .care-btn, .filter-btn, .nav-cta, .dropdown-item {
+  min-height: 24px;
+}
+.service-link, .footer-legal a, .footer-waitlist, .breadcrumb a {
+  display: inline-block;
+  padding-block: 4px;
+}
+.view-all-btn { padding: 6px 2px; }

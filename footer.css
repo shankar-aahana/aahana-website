@@ -106,3 +106,15 @@
       overflow: visible;
     }
 .section-footer .ig-glyph .ig-dot { fill: currentColor; stroke: none; }
+
+/* Target size (WCAG 2.2 AA, 2.5.8). The legal links sit at 10px type in the
+   footer bar; padding grows the pointer target to 24px without moving the
+   text or changing the bar's height. */
+.section-footer .footer-legal-link,
+.section-footer .footer-waitlist,
+.section-footer .footer-ig {
+  display: inline-block;
+  padding-block: 6px;
+  min-height: 24px;
+}
+.section-footer .footer-ig { display: inline-flex; align-items: center; }
