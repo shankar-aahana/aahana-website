@@ -44,7 +44,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 /* ---------- masthead ---------- */
 .sheet-head { padding: 40px 0 30px; border-bottom: 2px solid var(--ink); }
-.brand { margin-bottom: 26px; }
+/* The wordmark links home. It is the only route back to the public site
+   from a care sheet, and a logo that does not click reads as broken. */
+.brand {
+  display: inline-block;
+  margin-bottom: 26px;
+  text-decoration: none;
+  color: inherit;
+  padding-block: 2px;
+  min-height: 24px;
+}
+.brand:hover .brand-name { color: var(--accent); }
+.brand:hover .brand-sub { color: var(--accent); }
 .brand-name {
   display: block;
   font-size: 17px; font-weight: 500;
