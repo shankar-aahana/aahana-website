@@ -36,12 +36,12 @@
           '<p class="footer-tagline">' + TAGLINE + '</p>' +
         '</div>' +
         '<div class="footer-col">' +
-          '<h5>Location</h5>' +
+          '<h2>Location</h2>' +
           '<address>' + ADDRESS + '<br><br>' + HOURS + '</address>' +
           '<p><a href="contact.html">Getting here</a></p>' +
         '</div>' +
         '<div class="footer-col">' +
-          '<h5>Contact</h5>' +
+          '<h2>Contact</h2>' +
           '<p>' +
             '<button class="footer-waitlist" data-tally-open="' + TALLY_ID + '" data-tally-overlay="1">Join the waitlist</button>' +
             '<br><br>' +

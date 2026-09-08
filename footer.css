@@ -45,7 +45,7 @@
   max-width: 240px;
 }
 
-.section-footer .footer-col h5 {
+.section-footer .footer-col h2, .section-footer .footer-col h5 {
   font-size: 12px; font-weight: 500;
   letter-spacing: .14em; text-transform: uppercase;
   color: #F2DACE;
