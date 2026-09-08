@@ -316,3 +316,13 @@ html:not(.reveal-anim) .reveal {
   padding-block: 4px;
 }
 .view-all-btn { padding: 6px 2px; }
+
+/* Top-level nav items. The label is 13px, so without padding the pointer
+   target is 15px tall. The bar centers its children, so the padding grows
+   the hit box symmetrically and the text does not move. */
+.nav-links { align-items: center; }
+.nav-links a {
+  padding-block: 5px;
+  min-height: 24px;
+  box-sizing: border-box;
+}

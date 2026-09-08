@@ -216,6 +216,13 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
   font-size: 16px; font-weight: 300;
   color: var(--espresso); line-height: 1.5;
 }
+/* Standalone link in a definition list is not inline prose, so it needs
+   the 24px target (WCAG 2.2 AA, 2.5.8). */
+.glance dd > a:only-child {
+  display: inline-block;
+  padding-block: 3px;
+  min-height: 24px;
+}
 
 /* ---------- accordions ---------- */
 .detail-group { margin: 48px 0; }
@@ -603,6 +610,9 @@ dialog.care::backdrop { background: rgba(40,26,20,.66); backdrop-filter: blur(2p
 }
 .keyband details.acc.more[open] > summary::after { margin: 2px 0 0 0; }
 .keyband details.acc.more > summary:hover { color: var(--terra); }
+/* The compact disclosure label is 13px, so it needs padding to reach the
+   24px pointer target (WCAG 2.2 AA, 2.5.8). */
+.keyband details.acc.more > summary { padding-block: 4px; min-height: 24px; }
 .keyband details.acc.more .acc-body { padding: 22px 0 0; }
 .keyband details.acc.more .acc-body p { max-width: 62ch; }
 

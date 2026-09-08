@@ -40,6 +40,7 @@
     { label: 'Dr. Shankar',       href: 'about.html' },
     { label: 'Precision medicine', href: 'precision.html' },
     { label: 'Prakriti',           href: 'prakriti.html' },
+    { label: 'Your first visit',   href: 'first-visit.html' },
     { label: 'Visit',              href: 'contact.html' }
   ];
 

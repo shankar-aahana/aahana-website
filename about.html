@@ -239,10 +239,12 @@ section { padding: 64px 48px; }
       color: var(--deep); margin-bottom: 18px;
     }
 .research-stat-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px; margin-top: 28px;
     }
 .research-stat {
+      min-width: 0;
       padding: 20px 22px;
       background: rgba(122,90,74,.08);
       border: 1px solid rgba(74,51,40,.18);
@@ -819,7 +821,7 @@ section { padding: 64px 48px; }
         <div class="award-name">AI in Health Care: From Strategies to Implementation Certificate</div>
       </div>
     </div>
-    <div class="research-stat-grid" style="margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+    <div class="research-stat-grid">
       <div class="research-stat">
         <div class="research-stat-num">6</div>
         <div class="research-stat-label">Peer-reviewed dermatology papers, listed below with journal and year</div>

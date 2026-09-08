@@ -112,6 +112,7 @@
    text or changing the bar's height. */
 .section-footer .footer-legal-link,
 .section-footer .footer-waitlist,
+.section-footer .footer-col a,
 .section-footer .footer-ig {
   display: inline-block;
   padding-block: 6px;
