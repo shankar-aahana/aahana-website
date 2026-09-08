@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Seven days before</h3>
       <ul>
@@ -66,10 +66,10 @@
         <li>If you are having lip filler and have a cold sore history, confirm you have taken the antiviral as prescribed.</li>
         <li>For temples, remove glasses or anything pressing on the area.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The first 24 hours</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The first 24 hours</h2></summary>
       <div class="secbody">
       <ul>
         <li><strong>Swelling is expected</strong>, especially with lips. Day one swelling is not your result.</li>
@@ -80,10 +80,10 @@
         <li>Avoid heat: hot showers, saunas, steam rooms, hot yoga.</li>
         <li>No alcohol, no strenuous exercise, no makeup on the area.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Days 2 to 14</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Days 2 to 14</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Days 2 to 7</h3>
       <ul>
@@ -100,10 +100,10 @@
         <li>If you have any concern about symmetry or volume at the two-week mark, contact us.</li>
         <li>Retinoids and actives can resume from day seven.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">By area</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">By area</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Lips</h3>
       <ul>
@@ -134,10 +134,10 @@
         <li>Avoid anything pressing on the temples, including sunglasses and headbands, for 48 hours.</li>
         <li>Visible immediately, refines over one to two weeks.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li><strong>Skin that looks white, pale or mottled anywhere near the treated area.</strong> This can indicate a blocked blood vessel and needs immediate attention. Call us or go to the nearest emergency room.</li>
@@ -149,12 +149,14 @@
         <li>Any unusual lump or nodule appearing after day 14.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -171,9 +173,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

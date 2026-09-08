@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Before a PRP appointment, three days ahead</h3>
       <ul>
@@ -67,10 +67,10 @@
         <li>Wear loose, comfortable clothing. Supportive underwear is useful after scrotal treatment.</li>
         <li>Plan for a quiet evening rather than the gym.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">After PRP</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">After PRP</h2></summary>
       <div class="secbody">
       <h3 class="subhead">The first 48 hours</h3>
       <ul>
@@ -94,10 +94,10 @@
         <li>A series of three sessions is the usual protocol, spaced four to six weeks apart.</li>
         <li>Anything else being treated for erectile function continues unless you are told otherwise. This is not a replacement for it.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">After scrotal treatment</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">After scrotal treatment</h2></summary>
       <div class="secbody">
       <h3 class="subhead">The first 48 hours</h3>
       <ul>
@@ -115,10 +115,10 @@
         <li>Cold, exercise and anxiety will still cause some contraction. The muscle is relaxed, not disabled.</li>
         <li>Repeat treatment is scheduled once the effect has clearly worn off rather than on a fixed date.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">After anal sphincter treatment</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">After anal sphincter treatment</h2></summary>
       <div class="secbody">
       <h3 class="subhead">The first week</h3>
       <ul>
@@ -135,10 +135,10 @@
         <li>Where this is being used for a fissure, healing is assessed at follow-up. Keeping stool soft over the following weeks is what determines whether it stays healed.</li>
         <li>Repeat treatment is possible where the benefit was clear and has worn off.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li><strong>An erection lasting more than four hours.</strong> This is a medical emergency. Go to the nearest emergency department immediately.</li>
@@ -151,12 +151,14 @@
         <li>Loss of bowel control that is not improving, or that concerns you at any point.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru. For anything above marked as emergency care, go to the nearest emergency department first.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -173,9 +175,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

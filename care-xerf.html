@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <p>XERF has the lightest pre-treatment requirements on the menu. No numbing, no needles, and nothing to stop beforehand.</p>
 
@@ -52,10 +52,10 @@
         <li>Clean skin on the area, no thick creams, oils or makeup.</li>
         <li>Loose comfortable clothing, particularly for body treatment.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The day of treatment</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The day of treatment</h2></summary>
       <div class="secbody">
       <ul>
         <li>Mild redness and warmth immediately afterwards is expected and settles within a few hours.</li>
@@ -64,10 +64,10 @@
         <li>Gentle fragrance-free moisturizer. SPF 50 if you are going outside.</li>
         <li><strong>Normal skincare is fine from that evening.</strong> There are no restrictions on retinoids or actives after XERF.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The first week</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The first week</h2></summary>
       <div class="secbody">
       <ul>
         <li>Skin should look and feel close to normal by day one or two, though some warmth and slight sensitivity can persist.</li>
@@ -76,10 +76,10 @@
         <li>Continue daily SPF 50. It protects collagen and sustains the result.</li>
         <li><strong>No conflict with other treatments.</strong> XERF has no post-treatment window that rules out other services.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Weeks 2 to 12 and beyond</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Weeks 2 to 12 and beyond</h2></summary>
       <div class="secbody">
       <ul>
         <li>Results build gradually as new collagen is produced and existing collagen contracts.</li>
@@ -96,20 +96,20 @@
         <li>Normal exercise from day two.</li>
         <li>Firmness and texture improvement at four to eight weeks, full results at three to six months.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">If you have deeper skin</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">If you have deeper skin</h2></summary>
       <div class="secbody">
       <p>XERF is among the most skin-tone-agnostic treatments available. Radiofrequency energy is not absorbed by melanin, so there is no mechanism here equivalent to the pigmentation risk that exists with laser and peel treatments.</p>
       <ul>
         <li><strong>No extended pre-conditioning is required</strong> specifically for XERF, at any Fitzpatrick type.</li>
         <li>If you are also in a laser or microneedling series, the preparation protocol for those treatments still applies. XERF does not affect or override it.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li>Significant swelling that worsens after 48 hours.</li>
@@ -118,12 +118,14 @@
         <li>Any unusual reaction that concerns you.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -140,9 +142,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

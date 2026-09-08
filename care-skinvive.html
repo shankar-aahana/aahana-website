@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Seven days before</h3>
       <ul>
@@ -63,10 +63,10 @@
         <li>Eat something beforehand.</li>
         <li>Allow time for numbing before the injections start.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The first 24 hours</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The first 24 hours</h2></summary>
       <div class="secbody">
       <ul>
         <li><strong>Small raised points at each injection site are expected.</strong> They settle over a day or two as the gel disperses.</li>
@@ -77,10 +77,10 @@
         <li>No alcohol, no strenuous exercise, no makeup on the area.</li>
         <li>For the neck, avoid anything tight against it, including high collars and scarves.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Days 2 to 14</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Days 2 to 14</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Days 2 to 7</h3>
       <ul>
@@ -97,10 +97,10 @@
         <li>Change in smoothness and hydration is usually visible by now and continues to settle.</li>
         <li><strong>The result is assessed at one month</strong>, not in the first fortnight.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li><strong>Skin that looks white, pale or mottled anywhere near the treated area.</strong> This can indicate a blocked blood vessel and needs immediate attention. Call us or go to the nearest emergency room.</li>
@@ -111,12 +111,14 @@
         <li>Any lump or nodule appearing after day 14.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -133,9 +135,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

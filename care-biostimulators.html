@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Seven days before</h3>
       <ul>
@@ -64,10 +64,10 @@
         <li>Eat something beforehand.</li>
         <li>For Radiesse on the hands, remove rings and jewelry before you arrive.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The 5-5-5 massage</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The 5-5-5 massage</h2></summary>
       <div class="secbody">
       <p>After every Sculptra session: <strong>five minutes, five times a day, for five days.</strong></p>
       <ul>
@@ -78,10 +78,10 @@
         <li>Massage only the areas that were treated with Sculptra. If anything else was done at the same visit, you will be told exactly which areas to leave alone.</li>
       </ul>
       <p>This applies to Sculptra. Radiesse does not require it.</p></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Sculptra, the first two weeks</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Sculptra, the first two weeks</h2></summary>
       <div class="secbody">
       <h3 class="subhead">The first 24 to 48 hours</h3>
       <ul>
@@ -99,10 +99,10 @@
         <li>Gentle skincare is fine. Avoid active treatments on the area for two weeks.</li>
         <li>Retinoids and other actives can resume after day seven. They support collagen production rather than interfering with it.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Radiesse, hands and décolletage</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Radiesse, hands and décolletage</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Hands</h3>
       <ul>
@@ -121,10 +121,10 @@
         <li>SPF 50 on the chest every day from here on. This area takes more UV than people expect, and sun exposure is what undoes the result.</li>
         <li>The result builds over three to four months as collagen is produced.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Weeks 4 to 24</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Weeks 4 to 24</h2></summary>
       <div class="secbody">
       <ul>
         <li>Collagen building starts at around four weeks. Most people notice change between four and eight weeks, in the mirror rather than in photographs.</li>
@@ -134,10 +134,10 @@
         <li>Sculptra sessions are spaced four to six weeks apart, three in the initial series, then annual maintenance.</li>
         <li>Radiesse is repeated every 12 to 18 months.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li><strong>Skin that turns white, pale or mottled near the treated area.</strong> This can indicate a blocked vessel. Call the clinic immediately or go to the nearest emergency room.</li>
@@ -148,12 +148,14 @@
         <li>Firm lumps or nodules appearing after day 14, particularly if the massage was not completed.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -170,9 +172,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

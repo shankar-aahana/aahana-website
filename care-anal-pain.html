@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">Coming in for this</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Coming in for this</h2></summary>
       <div class="secbody">
       <h3 class="subhead">What you will be asked</h3>
       <ul>
@@ -60,10 +60,10 @@
         <li>Bring a list of your medications.</li>
         <li>If you have had a recent flare of pain or bleeding, note when.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Before anything is treated</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Before anything is treated</h2></summary>
       <div class="secbody">
       <p>These are the factors the research identifies most consistently. For a meaningful number of people, addressing them is enough, and none of them requires a prescription.</p>
       <ul>
@@ -75,10 +75,10 @@
         <li><strong>Keep stool soft.</strong> Constipation and straining are behind a great deal of pain in this area, fissures above all.</li>
         <li><strong>Pelvic floor rehabilitation.</strong> For an overactive pelvic floor this is the most evidence-supported approach there is, and it is worth doing whether or not anything else is added.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">If botulinum toxin is used</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">If botulinum toxin is used</h2></summary>
       <div class="secbody">
       <h3 class="subhead">The first week</h3>
       <ul>
@@ -96,10 +96,10 @@
         <li>The window is the point. It is time in which penetration can be reintroduced gradually without the spasm, which is what may break the cycle. Using the window is what determines whether the benefit outlasts the medication.</li>
         <li>Everything in the previous panel still applies. This does not replace lubrication, preparation or pelvic floor work.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The continence question</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The continence question</h2></summary>
       <div class="secbody">
       <p>This is worth settling before any treatment that lowers sphincter tone.</p>
       <ul>
@@ -109,10 +109,10 @@
         <li><strong>If your baseline is already marginal,</strong> lowering tone further may not be the right move, and other approaches take priority.</li>
         <li><strong>Dosing here is conservative</strong> for this reason, and it can be increased at a later session more easily than it can be taken back.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to be seen sooner</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to be seen sooner</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li><strong>Heavy bleeding, or bleeding that does not stop with gentle pressure.</strong> Seek emergency care.</li>
@@ -125,12 +125,14 @@
         <li>After an injection: spreading redness, warmth, discharge or fever.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru. For anything above marked as emergency care, go to the nearest emergency department first.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -147,9 +149,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

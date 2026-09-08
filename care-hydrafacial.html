@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <p>There is genuinely very little to do for this one.</p>
 
@@ -57,10 +57,10 @@
         <li>Arrive with a clean face. No makeup, no heavy moisturizer, no SPF.</li>
         <li>Nothing else.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The four steps</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The four steps</h2></summary>
       <div class="secbody">
       <h3 class="subhead">1. Cleanse and exfoliate</h3>
       <p>A vortex tip lifts surface dead cells and sebum, using a mild glycolic and salicylic blend that is far gentler than a standalone peel. Most people feel a light tingle or nothing.</p>
@@ -73,10 +73,10 @@
 
       <h3 class="subhead">4. Boost</h3>
       <p>A targeted booster chosen for your skin. Brightening where pigmentation is a concern, or calming peptides and growth factors for reactive skin and rosacea.</p></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The rest of the day</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The rest of the day</h2></summary>
       <div class="secbody">
       <p>Your pores have just been cleared. The aim for the rest of the day is to keep them that way.</p>
       <ul>
@@ -86,10 +86,10 @@
         <li>SPF 50 if you are going outside, which applies always but particularly now.</li>
         <li>This is the best window of the month for a good serum. Skin absorbs more right after treatment than at any other time.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The following week</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The following week</h2></summary>
       <div class="secbody">
       <ul>
         <li>Back to your normal routine from the next morning. Cleanser, moisturizer, SPF.</li>
@@ -98,10 +98,10 @@
         <li><strong>A mild purge is common.</strong> Small breakouts in the days after extraction are congestion coming to the surface. It is temporary and resolves on its own within about a week.</li>
         <li>As maintenance, sessions every four to six weeks hold the result.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us</h2></summary>
       <div class="secbody">
       <p>This treatment has essentially no serious complication profile. Contact us if:</p>
       <ul class="urgent">
@@ -110,12 +110,14 @@
         <li>Anything at all concerns you. There is no threshold too low here.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -132,9 +134,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

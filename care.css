@@ -85,6 +85,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
    after the masthead. */
 .sheet.single { margin-top: 8px; }
 .sheet.single .sec:first-child { margin-top: 26px; }
+/* On a single page the sections are the whole document, so give them a
+   little more air than they get nested inside the index. */
+.sheet.single .sec { margin-top: 12px; }
 
 .backnav {
   display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
@@ -210,22 +213,44 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   word-break: break-all;
 }
 
-/* ---------- one care section ---------- */
+/* ---------- one care section ----------
+   Each section is a disclosure. Closed, a page reads as a short list of
+   headings, which is what someone scanning for one answer needs. The
+   heading sits inside the summary so the document outline stays intact. */
 .sec {
-  margin-top: 22px;
+  margin-top: 14px;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 3px;
-  padding: 22px 24px;
 }
+.sec > summary {
+  list-style: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 16px 46px 16px 22px;
+  min-height: 24px;
+}
+.sec > summary::-webkit-details-marker { display: none; }
+.sec > summary::after {
+  content: '';
+  position: absolute; right: 22px; top: 24px;
+  width: 8px; height: 8px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  transition: transform .2s;
+}
+.sec[open] > summary::after { transform: rotate(-135deg); top: 28px; }
+.sec[open] > summary { border-bottom: 1px solid var(--line); }
+.sec > summary:hover .sectitle { color: var(--accent); }
 .sec .sectitle {
   font-family: var(--serif);
   font-size: 19px; font-weight: 500;
   line-height: 1.3;
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line);
+  margin: 0;
 }
+.sec .secbody { padding: 18px 22px 22px; }
 .secbody > * + * { margin-top: 14px; }
 .secbody .subhead {
   font-family: var(--sans);
@@ -249,7 +274,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   border-color: var(--alarm-line);
   border-left: 4px solid var(--alarm);
 }
-.sec.urgent h4 { color: var(--alarm); border-bottom-color: var(--alarm-line); }
+.sec.urgent .sectitle { color: var(--alarm); }
+.sec.urgent[open] > summary { border-bottom-color: var(--alarm-line); }
+.sec.urgent > summary::after { border-color: var(--alarm); }
+.sec.urgent > summary:hover .sectitle { color: var(--alarm); }
 .sec.urgent .secbody .subhead { color: var(--alarm); }
 
 /* ---------- footer ---------- */
@@ -289,11 +317,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .sec {
     border: 1px solid #BBB;
     break-inside: avoid;
-    padding: 12px 14px;
     margin-top: 12px;
   }
+  .sec > summary { padding: 10px 14px 6px; border-bottom: 0 !important; }
+  .sec > summary::after { display: none; }
+  .sec .secbody { padding: 0 14px 12px; }
   .sec.urgent { border-left: 3pt solid #000; background: #FFF; }
-  .sec.urgent h4, .sec.urgent .secbody .subhead { color: #000; }
+  .sec.urgent .sectitle, .sec.urgent .secbody .subhead { color: #000; }
   .secbody li, .secbody p { font-size: 10.5pt; }
   a { color: #000; text-decoration: underline; }
   .urgentnote { background: #FFF; border-left: 3pt solid #000; }

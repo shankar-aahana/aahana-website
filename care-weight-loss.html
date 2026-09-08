@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">Before you start</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Before you start</h2></summary>
       <div class="secbody">
       <h3 class="subhead">What we check</h3>
       <ul>
@@ -58,10 +58,10 @@
         <li>Any recent lab work you already have.</li>
         <li>Your insurance information, so coverage can be checked before you are surprised at the pharmacy.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The first eight weeks</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The first eight weeks</h2></summary>
       <div class="secbody">
       <p>Dosing starts low deliberately. The starting dose is not a treatment dose, it is there to let your body adjust, and going up faster than the schedule is the usual reason people have a bad time.</p>
 
@@ -86,10 +86,10 @@
         <li>Nausea is not settling between doses.</li>
         <li>You are losing weight faster than about one to two percent of your body weight a week.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Eating on a GLP-1</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Eating on a GLP-1</h2></summary>
       <div class="secbody">
       <p>Appetite falls, which is the point. What you do with the smaller amount you eat is what determines how you feel and what you lose.</p>
       <ul>
@@ -100,10 +100,10 @@
         <li><strong>Go easy on very fatty and very large meals,</strong> particularly in the first day or two after a dose. They sit heavily.</li>
         <li><strong>Alcohol hits differently.</strong> Less food, slower stomach emptying, and many people find their tolerance has changed.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Your face on treatment</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Your face on treatment</h2></summary>
       <div class="secbody">
       <p>Fat is lost from the face along with everywhere else. Nobody chooses where it comes off, and the face is where it shows first.</p>
       <ul>
@@ -113,10 +113,10 @@
         <li><strong>If it needs treating,</strong> the useful approach is rebuilding structure rather than filling the hollow that shows. Collagen stimulation works on the underlying support, and it takes months, which is why raising it early matters.</li>
         <li><strong>Timing matters.</strong> Treating while weight is still changing quickly means treating a moving target. When in the course of your weight loss to do anything is part of the conversation.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Longer term</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Longer term</h2></summary>
       <div class="secbody">
       <ul>
         <li><strong>These medications work while they are taken.</strong> Appetite returns when they stop, and for most people so does weight. Plan for this rather than being surprised by it.</li>
@@ -125,10 +125,10 @@
         <li><strong>If you need to pause,</strong> for surgery, for pregnancy planning, or for cost, tell us and we will plan it. Stopping abruptly and restarting at your old dose is not safe.</li>
         <li><strong>Before any procedure requiring sedation or general anesthesia,</strong> tell the anesthesia team you are on a GLP-1. These medications slow stomach emptying and that changes fasting instructions.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li><strong>Severe abdominal pain, particularly pain boring through to your back, with or without vomiting.</strong> This can indicate pancreatitis. Seek emergency care.</li>
@@ -140,12 +140,14 @@
         <li>Vision changes, if you have diabetes.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru. For anything above marked as emergency care, call 911 or go to the nearest emergency department first.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -162,9 +164,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

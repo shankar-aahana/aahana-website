@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Five to seven days before</h3>
       <ul>
@@ -64,10 +64,10 @@
         <li>Skip caffeine that morning if you flush easily.</li>
         <li>Wear a button-front top so nothing has to come over your face afterwards.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Preparing deeper skin</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Preparing deeper skin</h2></summary>
       <div class="secbody">
       <p>For Fitzpatrick III and above, preparation starts about four weeks before the peel. Arriving with calm, well conditioned skin is what decides both how well the peel works and how safely it heals.</p>
 
@@ -96,10 +96,10 @@
         <li><strong>Any active inflammatory acne is treated first.</strong> Peeling over inflamed acne is one of the most reliable ways to produce pigmentation in deeper skin.</li>
         <li>Any history of cold sores means a preventive antiviral. An outbreak during healing can leave pigmentation far out of proportion to the flare.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The day of your peel</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The day of your peel</h2></summary>
       <div class="secbody">
       <p>The peel stays on after you leave and keeps working. You remove it at home, at the time you are given in the clinic, usually four to six hours later.</p>
       <ul>
@@ -111,10 +111,10 @@
         <li>Then apply the post-peel protectant from your kit. It is formulated for the barrier at this stage.</li>
       </ul>
       <p>Pink, red and tight-feeling skin at this point is expected.</p></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Days 1 to 5, the peeling</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Days 1 to 5, the peeling</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Days 1 to 2, before anything visible happens</h3>
       <ul>
@@ -136,10 +136,10 @@
         <li>No facial treatments, no exfoliants, no actives.</li>
         <li>Drink water. Hydration helps the shedding process.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Day 6 onwards</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Day 6 onwards</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Days 6 to 7</h3>
       <ul>
@@ -157,10 +157,10 @@
         <li>Daily SPF 50 from here on is not aftercare, it is what protects the result long term.</li>
         <li>In a series, the next session is scheduled four to six weeks after peeling finishes, and six weeks minimum for Fitzpatrick V and VI.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li><strong>Blistering, or open skin beyond normal peeling.</strong></li>
@@ -171,12 +171,14 @@
         <li>Any reaction that feels wrong or out of proportion to what was described here.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -193,9 +195,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

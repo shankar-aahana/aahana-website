@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Five days before</h3>
       <ul>
@@ -71,10 +71,10 @@
         <li>Eat beforehand, particularly for PRP, since blood is drawn first.</li>
         <li>Be well hydrated. It improves PRP quality and supports healing.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The first 24 hours</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The first 24 hours</h2></summary>
       <div class="secbody">
       <p>The micro-channels created by needling are open. That is why the infusion works, and it is also why what touches your skin in this window matters more than usual.</p>
       <ul>
@@ -87,10 +87,10 @@
         <li>Avoid direct sun. In the first 24 hours a hat or scarf is better than putting SPF over open channels.</li>
         <li><strong>Sleep on a clean pillowcase.</strong> Bacteria on fabric cause breakouts when the channels are open.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Days 2 to 7</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Days 2 to 7</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Days 2 to 3</h3>
       <ul>
@@ -115,10 +115,10 @@
         <li>Most people see texture and pore improvement at four to six weeks. Acne scarring generally needs a series of three before the change is clear.</li>
         <li>Daily SPF 50 throughout the series and afterwards.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">PRP or serum</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">PRP or serum</h2></summary>
       <div class="secbody">
       <h3 class="subhead">PRP</h3>
       <p>Platelet-rich plasma concentrates your own growth factors from a small blood draw. Because it comes from your own blood, allergic reaction is not possible.</p>
@@ -142,10 +142,10 @@
         <li>Immediate glow from hydrating serums. Brightening and texture at two to four weeks. Full results from a series at six to eight weeks.</li>
         <li>Reactions are rare. If you get unusual burning, itching or a rash after the initial redness has settled, contact us.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">If you have deeper skin: the full protocol</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">If you have deeper skin: the full protocol</h2></summary>
       <div class="secbody">
       <p>For deeper skin tones the single biggest factor in the outcome is not the treatment, it is what happens before it. Inflammation going into the session is the main driver of pigmentation afterwards. The goal is calm, well-prepared skin on the day.</p>
 
@@ -165,10 +165,10 @@
         <li><strong>No chasing pinpoint bleeding.</strong> Bleeding as an endpoint indicates more inflammation than is needed and raises pigmentation risk.</li>
         <li><strong>Longer intervals</strong>, at least six weeks between sessions for Fitzpatrick V and VI, so healing and inflammation resolve completely.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li>Swelling that worsens after 48 hours rather than improving.</li>
@@ -179,12 +179,14 @@
         <li>Anything that feels wrong or worries you.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -201,9 +203,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

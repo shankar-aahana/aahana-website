@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare for a session</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare for a session</h2></summary>
       <div class="secbody">
           <h3 class="subhead">Two weeks before each session</h3>
           <ul>
@@ -66,10 +66,10 @@
             <li>Arrive with clean skin and nothing on the treatment area. No moisturizer, SPF or makeup.</li>
             <li>Skip caffeine that morning if you flush easily.</li>
           </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The first 24 hours</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The first 24 hours</h2></summary>
       <div class="secbody">
           <ul>
             <li><strong>Expect</strong> mild to moderate redness, warmth and slight swelling. This usually peaks around four to six hours afterwards and then settles.</li>
@@ -79,10 +79,10 @@
             <li><strong>No makeup</strong> on the treated area for 24 hours.</li>
             <li><strong>No retinoids or acids</strong> for five days.</li>
           </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Days 2 to 7</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Days 2 to 7</h2></summary>
       <div class="secbody">
           <ul>
             <li>Redness should be visibly improving by day two or three.</li>
@@ -91,10 +91,10 @@
             <li>Gentle moisturizer morning and evening. SPF 50 every morning without exception.</li>
             <li>By day seven the skin should look and feel close to normal, with pigmentation starting to fade.</li>
           </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">Between sessions</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">Between sessions</h2></summary>
       <div class="secbody">
           <ul>
             <li>Resume retinoids and actives after day seven. Between sessions they improve the result rather than interfere with it.</li>
@@ -102,10 +102,10 @@
             <li>Avoid sun exposure on the treated area. Even brief unprotected exposure during a course can undo progress on pigmentation.</li>
             <li>Avoid other lasers, peels or microneedling between sessions unless we have discussed it.</li>
           </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">If you have deeper skin: the full protocol</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">If you have deeper skin: the full protocol</h2></summary>
       <div class="secbody">
           <p>Skin of color responds well to this laser. It is designed for deeper tones, and the 650-microsecond pulse makes it meaningfully safer than other systems for Fitzpatrick III to VI. What matters more here than in any other patient group is the preparation. The work done before a session largely determines the outcome.</p>
 
@@ -135,10 +135,10 @@
           <h3 class="subhead">Treating pigment from more than one direction</h3>
           <p>For deeper skin tones targeting hyperpigmentation, the laser is one layer rather than the whole plan. The second is topical: a tyrosinase inhibitor slowing new pigment production at skin level, preventing recurrence and protecting the result between sessions. Daily SPF 50 ties the layers together, because without it ultraviolet exposure continuously re-triggers pigment production and undermines everything else at once.</p>
           <p>How the layers are timed and sequenced is decided at consultation, based on your imaging, your history and what you are already using.</p></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
           <ul class="urgent">
             <li>Blistering, open skin or crusting beyond a few small spots.</li>
@@ -149,12 +149,14 @@
             <li>Anything that feels wrong or that worries you. Trust your instincts and get in touch.</li>
           </ul>
           <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -171,9 +173,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>

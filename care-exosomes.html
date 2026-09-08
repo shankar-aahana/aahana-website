@@ -32,8 +32,8 @@
   </header>
 
   <div class="sheet single">
-    <section class="sec">
-      <h2 class="sectitle">How to prepare</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">How to prepare</h2></summary>
       <div class="secbody">
       <h3 class="subhead">Three days before</h3>
       <ul>
@@ -61,10 +61,10 @@
         <li>For scalp treatment, wash your hair that morning with a gentle shampoo and use no styling product.</li>
         <li>Wear something comfortable. A button-front top is easier for facial treatment.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec">
-      <h2 class="sectitle">The first 24 hours</h2>
+    <details class="sec">
+      <summary><h2 class="sectitle">The first 24 hours</h2></summary>
       <div class="secbody">
       <ul>
         <li><strong>No anti-inflammatories for three days.</strong> No ibuprofen, no naproxen. The inflammatory response after treatment is part of how PRP works, and suppressing it reduces the result. If you need something for discomfort, ask us what to take instead.</li>
@@ -76,10 +76,10 @@
         <li>No alcohol for 24 hours.</li>
         <li>Gentle skincare is fine on the face from the evening: cleanser and a fragrance-free moisturizer. SPF 50 the next morning.</li>
       </ul></div>
-    </section>
+    </details>
 
-    <section class="sec urgent">
-      <h2 class="sectitle">When to contact us straight away</h2>
+    <details class="sec urgent" open>
+      <summary><h2 class="sectitle">When to contact us straight away</h2></summary>
       <div class="secbody">
       <ul class="urgent">
         <li><strong>Any change in vision after facial or under-eye treatment.</strong> Seek emergency care immediately.</li>
@@ -89,12 +89,14 @@
         <li>On the scalp, significant pain or swelling, or any sign of infection.</li>
       </ul>
       <p>Email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>. Urgent messages are reviewed by Dr. Mundluru.</p></div>
-    </section>
+    </details>
   </div>
 
   <nav class="backnav">
-    <a href="care.html">All care instructions</a>
+    <button type="button" id="openall">Open all</button>
+    <button type="button" id="closeall">Close all</button>
     <button type="button" id="printme">Print this page</button>
+    <a href="care.html">All care instructions</a>
   </nav>
 
   <footer class="sheet-foot">
@@ -111,9 +113,16 @@
   </footer>
 </main>
 <script>
-document.getElementById('printme').addEventListener('click', function () {
-  window.print();
-});
+(function () {
+  function setAll(open) {
+    document.querySelectorAll('details.sec').forEach(function (d) { d.open = open; });
+  }
+  document.getElementById('openall').addEventListener('click', function () { setAll(true); });
+  document.getElementById('closeall').addEventListener('click', function () { setAll(false); });
+  document.getElementById('printme').addEventListener('click', function () { window.print(); });
+  /* A printed sheet shows everything, whatever is open on screen. */
+  window.addEventListener('beforeprint', function () { setAll(true); });
+})();
 </script>
 </body>
 </html>
