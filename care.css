@@ -1,0 +1,289 @@
+/* care.css
+   Stylesheet for care.html, the patient care sheet.
+
+   Deliberately not the marketing stylesheet. This page gets opened on a
+   phone, at night, by someone who has just had a needle in their face and
+   wants to know whether what they are seeing is normal. So: high contrast,
+   large type, generous tap targets, a print stylesheet that produces
+   something worth putting on a fridge, and no navigation to get lost in. */
+
+:root {
+  --paper:     #FBFAF8;
+  --card:      #FFFFFF;
+  --ink:       #241A14;
+  --soft:      #5E5048;
+  --line:      #E2DCD4;
+  --accent:    #8C4426;
+  --accent-bg: #F7EDE7;
+  --alarm:     #8E2F22;
+  --alarm-bg:  #FBEEEB;
+  --alarm-line:#E3B9B0;
+  --sans: 'Cairo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --serif: 'Spectral', Georgia, 'Times New Roman', serif;
+}
+
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+#main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; }
+
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- masthead ---------- */
+.sheet-head { padding: 40px 0 30px; border-bottom: 2px solid var(--ink); }
+.brand { margin-bottom: 26px; }
+.brand-name {
+  display: block;
+  font-size: 17px; font-weight: 500;
+  letter-spacing: .34em; text-transform: uppercase;
+}
+.brand-sub {
+  display: block;
+  font-size: 10px; font-weight: 400;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--soft); margin-top: 3px;
+}
+.sheet-head h1 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 7vw, 44px);
+  font-weight: 300; line-height: 1.1;
+  letter-spacing: .01em;
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+.dek { font-size: 17px; color: var(--soft); max-width: 60ch; }
+.forpatients {
+  margin-top: 18px; padding: 14px 16px;
+  background: var(--accent-bg);
+  border-left: 3px solid var(--accent);
+  font-size: 15.5px; line-height: 1.6;
+  max-width: 60ch;
+}
+
+/* ---------- jump list ---------- */
+.jump { padding: 30px 0 8px; }
+.jump h2 {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 18px;
+}
+.jgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 22px 30px;
+}
+.jgroup { min-width: 0; }
+.jgroup h3 {
+  font-family: var(--serif);
+  font-size: 16px; font-weight: 400;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.jlinks { display: flex; flex-direction: column; }
+.jlinks a {
+  display: block;
+  padding: 7px 0;
+  min-height: 24px;
+  font-size: 15.5px;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.jlinks a:hover { border-bottom-color: var(--accent); }
+
+.jtools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.jtools button {
+  font-family: var(--sans);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--soft);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 10px 16px;
+  min-height: 24px;
+  cursor: pointer;
+}
+.jtools button:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- treatments ---------- */
+.grouphead {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent);
+  margin: 46px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.grouphead:first-child { margin-top: 34px; }
+
+.tx { scroll-margin-top: 16px; }
+.txwrap { border-bottom: 1px solid var(--line); }
+.txwrap > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 18px 34px 18px 0;
+  position: relative;
+  min-height: 24px;
+}
+.txwrap > summary::-webkit-details-marker { display: none; }
+.txwrap > summary::after {
+  content: '';
+  position: absolute; right: 6px; top: 26px;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  transition: transform .2s;
+}
+.txwrap[open] > summary::after { transform: rotate(-135deg); top: 30px; }
+.txname {
+  font-family: var(--serif);
+  font-size: 22px; font-weight: 400;
+  line-height: 1.25; flex: 1;
+  margin: 0;
+}
+.txmeta {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--soft); white-space: nowrap;
+}
+.txwrap[open] > summary { border-bottom: 1px solid var(--line); }
+
+.txbody { padding: 4px 0 34px; }
+.txlink {
+  font-size: 13px; color: var(--soft);
+  margin: 18px 0 6px;
+}
+.txlink code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 12.5px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  padding: 2px 6px; border-radius: 2px;
+  word-break: break-all;
+}
+
+/* ---------- one care section ---------- */
+.sec {
+  margin-top: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 22px 24px;
+}
+.sec h4 {
+  font-family: var(--serif);
+  font-size: 19px; font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.secbody > * + * { margin-top: 14px; }
+.secbody h5 {
+  font-family: var(--sans);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent);
+  border: 0; padding: 0;
+  margin-top: 22px; margin-bottom: 8px;
+}
+.secbody h5:first-child { margin-top: 4px; }
+.secbody p { font-size: 16px; line-height: 1.65; }
+.secbody ul, .secbody ol { padding-left: 22px; }
+.secbody li { font-size: 16px; line-height: 1.6; margin-bottom: 9px; }
+.secbody li:last-child { margin-bottom: 0; }
+.secbody strong { font-weight: 600; }
+.secbody a { word-break: break-word; }
+
+/* The "contact us straight away" block is not one more accordion row. */
+.sec.urgent {
+  background: var(--alarm-bg);
+  border-color: var(--alarm-line);
+  border-left: 4px solid var(--alarm);
+}
+.sec.urgent h4 { color: var(--alarm); border-bottom-color: var(--alarm-line); }
+.sec.urgent .secbody h5 { color: var(--alarm); }
+
+/* ---------- footer ---------- */
+.sheet-foot {
+  margin-top: 56px;
+  padding-top: 26px;
+  border-top: 2px solid var(--ink);
+}
+.sheet-foot h2 {
+  font-family: var(--serif);
+  font-size: 22px; font-weight: 400;
+  margin-bottom: 12px;
+}
+.sheet-foot p { font-size: 16px; margin-bottom: 14px; }
+.sheet-foot a { display: inline-block; padding-block: 3px; min-height: 24px; }
+.urgentnote {
+  background: var(--alarm-bg);
+  border-left: 4px solid var(--alarm);
+  padding: 16px 18px;
+  font-size: 16px;
+}
+.meta { font-size: 13.5px; color: var(--soft); line-height: 1.6; }
+
+/* ---------- print ---------- */
+@media print {
+  @page { margin: 16mm 14mm; }
+  body { background: #FFF; font-size: 11pt; line-height: 1.45; }
+  #main { max-width: none; padding: 0; }
+  .jump, .jtools, .txlink { display: none; }
+  .sheet-head { padding-top: 0; }
+  .sheet-head h1 { font-size: 24pt; }
+  .dek { font-size: 11pt; }
+  .txwrap > summary::after { display: none; }
+  .txwrap > summary { padding-right: 0; break-after: avoid; }
+  .tx { break-inside: avoid-page; }
+  .txname { font-size: 15pt; }
+  .sec {
+    border: 1px solid #BBB;
+    break-inside: avoid;
+    padding: 12px 14px;
+    margin-top: 12px;
+  }
+  .sec.urgent { border-left: 3pt solid #000; background: #FFF; }
+  .sec.urgent h4, .sec.urgent .secbody h5 { color: #000; }
+  .secbody li, .secbody p { font-size: 10.5pt; }
+  a { color: #000; text-decoration: underline; }
+  .urgentnote { background: #FFF; border-left: 3pt solid #000; }
+}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .001ms !important; }
+}
+
+/* ---------- dark ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:     #16110E;
+    --card:      #1E1815;
+    --ink:       #EFE7E0;
+    --soft:      #A2938A;
+    --line:      #302823;
+    --accent:    #E09468;
+    --accent-bg: #2A1C14;
+    --alarm:     #F0938A;
+    --alarm-bg:  #2C1714;
+    --alarm-line:#5A2E28;
+  }
+}
