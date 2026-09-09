@@ -93,6 +93,14 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .expect-step { padding: 24px 22px; border: 0.5px solid var(--border); border-radius: 2px; }
 .expect-step h3 { font-family: 'Spectral', serif; font-size: 17px; font-weight: 400; color: var(--deep); margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .expect-step p { font-size: 15px; font-weight: 400; line-height: 1.8; color: rgba(74,51,40,.80); }
+/* The detail lives on first-visit.html now. This section says enough to
+   reassure someone deciding, then hands them off rather than keeping a
+   second copy that drifts. */
+.expect-lede { font-size: 17px; font-weight: 300; line-height: 1.8; color: var(--deep); max-width: 62ch; margin-top: 22px; }
+.expect-link { display: inline-block; margin-top: 18px; min-height: 24px; padding-block: 4px;
+  font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  color: #8C4426; text-decoration: none; border-bottom: 1px solid rgba(140,68,38,.35); }
+.expect-link:hover { color: var(--deep); border-bottom-color: var(--deep); }
 /* SERVICE CATEGORIES */
 .service-category { padding: 56px 48px; }
 .service-category.light { background: var(--ivory); }
@@ -445,24 +453,8 @@ html.motion .reveal { transition: none; }
   <div class="section-inner">
     <span class="section-label">What to expect</span>
     <h2 class="section-heading" style="color:var(--deep)">Your first visit<br><em style="font-style:italic;color:var(--rose)">at Aahana</em></h2>
-    <div class="expect-grid">
-      <div class="expect-step reveal">
-        <h3>Intake & consultation</h3>
-        <p>A thorough review of your health history, skin concerns, goals, and lifestyle. Your Prakriti constitutional assessment is completed here.</p>
-      </div>
-      <div class="expect-step reveal">
-        <h3>Visia imaging</h3>
-        <p>Clinical skin analysis across eight metrics, benchmarked against a database matched to your age and skin tone. You see your skin the way Dr. Shankar sees it.</p>
-      </div>
-      <div class="expect-step reveal">
-        <h3>Additional testing</h3>
-        <p>Where indicated, labs, skin microbiome analysis, or skin DNA profiling may be recommended to complete your clinical picture.</p>
-      </div>
-      <div class="expect-step reveal">
-        <h3>Your personalized plan</h3>
-        <p>A sequenced protocol built from everything gathered. Treatment options, home care, and a clear timeline, all explained before anything begins.</p>
-      </div>
-    </div>
+    <p class="expect-lede reveal">Forty five minutes. Visia imaging measures your skin, Dr. Mundluru examines it, and you leave with a sequenced treatment plan: which procedures, in what order, and how far apart.</p>
+    <p class="reveal"><a class="expect-link" href="first-visit.html">What your first visit involves, in order &rarr;</a></p>
   </div>
 </section>
 

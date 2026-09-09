@@ -41,7 +41,7 @@
     { label: 'Precision medicine', href: 'precision.html' },
     { label: 'Prakriti',           href: 'prakriti.html' },
     { label: 'Your first visit',   href: 'first-visit.html' },
-    { label: 'Visit',              href: 'contact.html' }
+    { label: 'Location & hours',   href: 'contact.html' }
   ];
 
   /* The services landing page, shown above the divider. */
