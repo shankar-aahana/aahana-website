@@ -309,6 +309,26 @@ body {
   font-size: 24px; font-weight: 400; color: var(--deep);
   line-height: 1.2;
 }
+/* Each treatment in the heading goes to its own page. The underline is
+   faint so the line still reads as a heading rather than a row of links,
+   and firms up on hover. */
+.service-item h4 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(140, 68, 38, .28);
+  transition: color .2s, border-color .2s;
+}
+.service-item h4 a:hover { color: #8C4426; border-bottom-color: #8C4426; }
+.service-all {
+  display: inline-block;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: #8C4426; text-decoration: none;
+  padding: 8px 2px; min-height: 24px;
+  border-bottom: 1px solid rgba(140, 68, 38, .35);
+  margin-bottom: 26px;
+}
+.service-all:hover { color: var(--deep); border-bottom-color: var(--deep); }
 .service-item p {
   font-size: 14px; font-weight: 300; line-height: 1.85;
   color: var(--deep);
@@ -915,27 +935,28 @@ html.motion .reveal { transition: none; }
   <div class="services-grid">
     <div class="service-item reveal">
       <div class="service-cat">Injectables</div>
-      <h4>Botox · Fillers · PRP</h4>
+      <h4><a href="botox-dysport.html">Botox</a> · <a href="dermal-fillers.html">Fillers</a> · <a href="prp.html">PRP</a></h4>
       <p>Neuromodulators for smoothing, lifting, and contouring. Hyaluronic acid fillers for volume and definition. PRP injections for tissue renewal and hair restoration.</p>
     </div>
     <div class="service-item reveal">
       <div class="service-cat">Laser &amp; Energy</div>
-      <h4>XERF · Aerolase Neo Elite</h4>
+      <h4><a href="xerf.html">XERF</a> · <a href="aerolase-neo-elite.html">Aerolase Neo Elite</a></h4>
       <p>Two platforms, both cleared across all six Fitzpatrick types. Monopolar radiofrequency for structural tightening, and a 1064&nbsp;nm Nd:YAG for pigment, redness, acne and skin quality.</p>
     </div>
     <div class="service-item reveal">
       <div class="service-cat">Skin Treatments</div>
-      <h4>Microneedling · Exosomes · Peels · Hydrafacial</h4>
+      <h4><a href="microneedling.html">Microneedling</a> · <a href="exosomes.html">Exosomes</a> · <a href="vi-peel.html">Peels</a> · <a href="hydrafacial.html">Hydrafacial</a></h4>
       <p>Collagen stimulation, exosomes, chemical exfoliation, deep cleansing, and more, all calibrated to your skin type and constitution.</p>
     </div>
     <div class="service-item reveal">
       <div class="service-cat">Wellness</div>
-      <h4>GLP-1 · Sexual Health</h4>
+      <h4><a href="medical-weight-loss.html">GLP-1</a> · <a href="sexual-wellness.html">Sexual Health</a></h4>
       <p>Medically supervised weight loss and sexual health services. Evidence-based, clinically overseen.</p>
     </div>
   </div>
   <div style="margin-top:48px;text-align:center" class="reveal">
-    <p style="font-size:13px;font-weight:300;color:var(--espresso);margin-bottom:24px">All treatment plans begin with a Visia skin analysis and consultation.</p>
+    <p style="font-size:13px;font-weight:300;color:var(--espresso);margin-bottom:20px">All treatment plans begin with a Visia skin analysis and consultation, set out on <a href="first-visit.html" style="color:#8C4426">your first visit</a>.</p>
+    <div><a class="service-all" href="services.html">All services &rarr;</a></div>
     <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="display:inline-block;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);background:var(--deep);padding:14px 32px;border:none;border-radius:2px;transition:background .2s">Join the waitlist</button>
   </div>
 </section>
