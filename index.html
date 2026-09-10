@@ -390,6 +390,18 @@ body {
   color: var(--deep);
 }
 .waitlist-input::placeholder { color: rgba(74,51,40,.4); }
+/* SMS consent notice under the waitlist button. Small, but it has to be
+   readable: 13px at 4.5:1 on the ivory ground, and the link is a real
+   24px target rather than a hairline. */
+.waitlist-inner p.waitlist-consent {
+  max-width: 520px; margin: 26px auto 0;
+  font-size: 13px; font-weight: 300; line-height: 1.65;
+  color: #5C4438;
+}
+.waitlist-consent a {
+  color: #8C4426; text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .waitlist-btn {
   padding: 16px 28px;
   background: var(--deep); color: var(--ivory);
@@ -826,7 +838,7 @@ html.motion .reveal { transition: none; }
 <!-- MOBILE MENU -->
 
 
-<!-- HERO / COMING SOON -->
+<!-- HERO -->
 <main id="main">
 <section class="hero">
   <div class="hero-bg">
@@ -849,17 +861,17 @@ html.motion .reveal { transition: none; }
       </div>
   <div class="hero-rule"></div>
   <div class="hero-lines"></div>
-  <div class="hero-eyebrow">San Francisco · Opening Soon · Physician-Led Medical Aesthetics</div>
+  <div class="hero-eyebrow">San Francisco · Physician-Led Medical Aesthetics</div>
   <h1 class="hero-title">
-    Coming<br>
-    <em>soon.</em>
+    We treat<br>
+    <em>more than what we see.</em>
   </h1>
   <div class="hero-divider">
     <div class="hero-divider-line"></div>
     <div class="hero-divider-dot"></div>
   </div>
   <p class="hero-sub">
-    Physician-led medical aesthetics, grounded in precision medicine. We treat more than what we see.
+    Physician-led medical aesthetics in San Francisco, grounded in precision medicine.
   </p>
   <div class="hero-location">
     <span class="hero-location-dot"></span>
@@ -991,11 +1003,13 @@ html.motion .reveal { transition: none; }
 <!-- WAITLIST -->
 <section class="section-waitlist" id="waitlist">
   <div class="waitlist-inner">
-    <div class="section-label">Opening soon</div>
+    <div class="section-label">Waitlist</div>
     <h2>Opening Winter 2026.<br>Be the first to know.</h2>
     <p>Aahana Medical Aesthetics opens in San Francisco in Winter 2026. Join the waitlist for early access and exclusive benefits for our first patients.</p>
     <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="waitlist-tally-btn">Join the waitlist</button>
-    
+
+    <p class="waitlist-consent">The mobile number on that form is optional. By entering your phone number, you are agreeing to receive text messages from us. Message and data rates may apply. Message frequency may vary. Reply HELP for more information. You can reply STOP or UNSUBSCRIBE to opt-out. We will not share mobile information or personally identifiable information with third parties for marketing or promotional purposes. See our <a href="privacy.html#text-messages">Privacy Policy</a>.</p>
+
   </div>
 </section>
 

@@ -105,7 +105,7 @@
     return SERVICES_GROUPS.map(function (g) {
       var items = g.links.length
         ? desktopItems(g.links)
-        : '<div class="dropdown-item" style="opacity:.4;cursor:default">Coming soon</div>';
+        : '<a class="dropdown-item" href="services.html">See all services</a>';
       return '<div class="dropdown-col"><div class="dropdown-label">' + g.group + '</div>' + items + '</div>';
     }).join('');
   }
@@ -113,7 +113,7 @@
   function serviceGroupsMobile() {
     return SERVICES_GROUPS.map(function (g) {
       var items = g.links.length ? panelItems(g.links)
-                                 : '<span class="disabled">Coming soon</span>';
+                                 : '<a href="services.html">See all services</a>';
       return '<span class="mobile-panel-label">' + g.group + '</span>' + items;
     }).join('');
   }

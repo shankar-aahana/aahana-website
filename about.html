@@ -107,11 +107,22 @@ section { padding: 64px 48px; }
       letter-spacing: .01em; margin-bottom: 24px;
     }
 .hero-inner {
-      display: grid; grid-template-columns: 1fr 380px;
+      display: grid; grid-template-columns: 1fr;
       gap: 80px; align-items: end; position: relative; z-index: 1;
     }
+/* ------------------------------------------------------------
+   Headshot slot. Hidden until there is a real photograph: an empty
+   dashed box reads as an unfinished site to both people and to the
+   automated site reviews carriers run before approving text messaging.
+
+   TO ADD THE PHOTO: drop the file in this folder, replace the
+   .photo-placeholder div below with <img src="shankar.jpg" alt="...">,
+   then delete the display:none here and restore .hero-inner to
+   grid-template-columns: 1fr 380px.
+   ------------------------------------------------------------ */
 .hero-photo {
-      display: flex; justify-content: flex-end; align-items: flex-end;
+      display: none;
+      justify-content: flex-end; align-items: flex-end;
     }
 .photo-placeholder {
       width: 100%; max-width: 360px; height: 460px;
@@ -703,7 +714,7 @@ section { padding: 64px 48px; }
         Physician. Scientist.<br>
         <em>Innovator.</em>
       </h1>
-      <p class="hero-sub">Board-certified physician, MBA, and founder of Aahana Medical Aesthetics. at the intersection of clinical medicine, Ayurvedic wisdom, and health technology.</p>
+      <p class="hero-sub">Board-certified physician, MBA, and founder of Aahana Medical Aesthetics, practicing at the intersection of clinical medicine, Ayurvedic wisdom, and health technology.</p>
       <div class="hero-creds">
         <span class="cred-tag">BS · Duke University</span>
         <span class="cred-tag">MD · Boston University</span>

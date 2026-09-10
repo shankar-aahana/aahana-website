@@ -12,7 +12,7 @@
                  'We treat more than what we see. Opening San Francisco, 2026.';
   var MEANING  = 'Aahana · आहान · first light of dawn';
   var ADDRESS  = '2175 3rd Street, Unit C1<br>San Francisco, CA 94107';
-  var HOURS    = 'Hours: coming soon';
+  var HOURS    = 'Hours: by appointment';
   var EMAIL    = 'hello@aahanaskin.com';
   var LEGAL    = '© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA';
   var DOMAIN   = 'aahanasf.com';
@@ -54,7 +54,7 @@
       '<div class="footer-bottom">' +
         '<div class="footer-legal">' + LEGAL + '</div>' +
         '<div class="footer-dot"></div>' +
-        '<a class="footer-legal footer-legal-link" href="privacy.html">Privacy</a>' +
+        '<a class="footer-legal footer-legal-link" href="privacy.html">Privacy Policy</a>' +
         '<div class="footer-dot"></div>' +
         '<a class="footer-legal footer-legal-link" href="notice-of-privacy-practices.html">Notice of Privacy Practices</a>' +
         '<div class="footer-dot"></div>' +
