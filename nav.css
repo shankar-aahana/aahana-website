@@ -273,16 +273,11 @@ nav.scrolled {
 /* Below this width the rule and the full-size mark push "Medical Aesthetics"
    and the waitlist button onto extra lines, so the mark shrinks and the rule
    drops out. The lockup still reads as mark plus wordmark. */
-@media (max-width: 560px) {
-  .nav-brand { gap: 8px; }
-  .nav-mark { width: 22px; height: 23px; }
+/* Phones get the mark on its own. Phone widths run from about 320px to
+   440px, so the cut has to sit above the widest of them or two people on
+   two handsets see two different navs. Tablets keep the full lockup. */
+@media (max-width: 600px) {
   .nav-rule { display: none; }
-}
-/* Narrower than this the wordmark, the mark and the waitlist button cannot
-   all fit on one line, so the brand becomes the mark alone. The words stay
-   in the DOM for screen readers and for anyone whose browser has no mask
-   support, where .nav-mark is display:none and the wordmark shows instead. */
-@media (max-width: 400px) {
   @supports ((-webkit-mask-image: url(aahana-mark.svg)) or (mask-image: url(aahana-mark.svg))) {
     .nav-brand { gap: 0; }
     .nav-mark { width: 32px; height: 34px; }
@@ -291,6 +286,12 @@ nav.scrolled {
       overflow: hidden; clip-path: inset(50%); white-space: nowrap;
     }
   }
+}
+/* Narrower than this the wordmark, the mark and the waitlist button cannot
+   all fit on one line, so the brand becomes the mark alone. The words stay
+   in the DOM for screen readers and for anyone whose browser has no mask
+   support, where .nav-mark is display:none and the wordmark shows instead. */
+@media (max-width: 400px) {
   .nav-cta {
     font-size: 10px !important;
     letter-spacing: .1em !important;
