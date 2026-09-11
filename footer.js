@@ -30,8 +30,14 @@
     '<footer class="section-footer">' +
       '<div class="footer-top">' +
         '<div>' +
-          '<div class="footer-brand-name">AAHANA</div>' +
-          '<div class="footer-brand-sub">Medical Aesthetics</div>' +
+          '<div class="footer-brand-lockup">' +
+            '<span class="footer-mark" aria-hidden="true"></span>' +
+            '<span class="footer-rule" aria-hidden="true"></span>' +
+            '<div class="footer-brand-words">' +
+              '<div class="footer-brand-name">AAHANA</div>' +
+              '<div class="footer-brand-sub">Medical Aesthetics</div>' +
+            '</div>' +
+          '</div>' +
           '<div class="footer-name-meaning">' + MEANING + '</div>' +
           '<p class="footer-tagline">' + TAGLINE + '</p>' +
         '</div>' +

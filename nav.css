@@ -24,11 +24,33 @@ nav.scrolled {
   padding: calc(14px + env(safe-area-inset-top)) 48px 14px;
 }
 
-/* ---------- brand ---------- */
+/* ---------- brand ----------
+   The mark is painted as a CSS mask rather than an inline <svg> or an <img>.
+   That keeps aahana-mark.svg a single cacheable file while still letting the
+   colour come from the surrounding text colour, so one asset serves the dark
+   nav, the footer and any light ground. Browsers without mask support fall
+   back to the wordmark alone rather than to a solid rectangle. */
 .nav-brand {
-  display: flex; flex-direction: column;
+  display: flex; flex-direction: row; align-items: center; gap: 14px;
   text-decoration: none;
   color: inherit;
+}
+.nav-words { display: flex; flex-direction: column; }
+.nav-mark, .nav-rule { display: none; }
+@supports ((-webkit-mask-image: url(aahana-mark.svg)) or (mask-image: url(aahana-mark.svg))) {
+  .nav-mark {
+    display: block;
+    width: 36px; height: 38px; flex: 0 0 auto;
+    background-color: var(--ivory);
+    -webkit-mask: url(aahana-mark.svg) no-repeat center / contain;
+            mask: url(aahana-mark.svg) no-repeat center / contain;
+    filter: drop-shadow(0 1px 10px rgba(0,0,0,.45));
+  }
+  .nav-rule {
+    display: block;
+    width: 0.5px; height: 34px; flex: 0 0 auto;
+    background: rgba(243,236,228,.34);
+  }
 }
 .nav-name {
   font-family: 'Contralto Big', 'Contralto Big Black', 'Cairo', sans-serif;
@@ -244,6 +266,31 @@ nav.scrolled {
   .nav-hamburger { display: flex; }
   .nav-name { font-size: 20px; letter-spacing: .18em; }
   .nav-sub { font-size: 9px; }
+  .nav-brand { gap: 10px; }
+  .nav-mark { width: 27px; height: 29px; }
+  .nav-rule { height: 26px; }
+}
+/* Below this width the rule and the full-size mark push "Medical Aesthetics"
+   and the waitlist button onto extra lines, so the mark shrinks and the rule
+   drops out. The lockup still reads as mark plus wordmark. */
+@media (max-width: 560px) {
+  .nav-brand { gap: 8px; }
+  .nav-mark { width: 22px; height: 23px; }
+  .nav-rule { display: none; }
+}
+/* Narrower than this the wordmark, the mark and the waitlist button cannot
+   all fit on one line, so the brand becomes the mark alone. The words stay
+   in the DOM for screen readers and for anyone whose browser has no mask
+   support, where .nav-mark is display:none and the wordmark shows instead. */
+@media (max-width: 400px) {
+  @supports ((-webkit-mask-image: url(aahana-mark.svg)) or (mask-image: url(aahana-mark.svg))) {
+    .nav-brand { gap: 0; }
+    .nav-mark { width: 32px; height: 34px; }
+    .nav-words {
+      position: absolute; width: 1px; height: 1px;
+      overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+    }
+  }
   .nav-cta {
     font-size: 10px !important;
     letter-spacing: .1em !important;

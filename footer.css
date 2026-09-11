@@ -19,18 +19,40 @@
 }
 .section-footer .footer-top > div:not(:first-child) { padding-top: 40px; }
 
+/* Same masked-mark technique as the nav, so both share one cached
+   aahana-mark.svg and both take their colour from the surrounding text. */
+.section-footer .footer-brand-lockup {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 20px;
+}
+.section-footer .footer-brand-words { display: flex; flex-direction: column; }
+.section-footer .footer-mark,
+.section-footer .footer-rule { display: none; }
+@supports ((-webkit-mask-image: url(aahana-mark.svg)) or (mask-image: url(aahana-mark.svg))) {
+  .section-footer .footer-mark {
+    display: block;
+    width: 38px; height: 40px; flex: 0 0 auto;
+    background-color: var(--ivory);
+    -webkit-mask: url(aahana-mark.svg) no-repeat center / contain;
+            mask: url(aahana-mark.svg) no-repeat center / contain;
+  }
+  .section-footer .footer-rule {
+    display: block;
+    width: 0.5px; height: 34px; flex: 0 0 auto;
+    background: rgba(243,236,228,.28);
+  }
+}
 .section-footer .footer-brand-name {
   font-family: 'Contralto Big', 'Contralto Big Black', 'Cairo', sans-serif;
   font-size: 28px; font-weight: 200;
   color: var(--ivory);
   letter-spacing: .22em;
-  margin-bottom: 6px;
 }
 .section-footer .footer-brand-sub {
   font-size: 9px; font-weight: 300;
   letter-spacing: .2em; text-transform: uppercase;
   color: #F2DACE;
-  margin-bottom: 20px;
+  margin-top: 4px;
 }
 .section-footer .footer-name-meaning {
   font-size: 12px; font-weight: 300;

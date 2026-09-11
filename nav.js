@@ -128,8 +128,12 @@
     '<a class="skip-link" href="#main">Skip to content</a>' +
     '<nav id="nav">' +
       '<a href="/" class="nav-brand">' +
-        '<div class="nav-name">AAHANA</div>' +
-        '<div class="nav-sub">Medical Aesthetics</div>' +
+        '<span class="nav-mark" aria-hidden="true"></span>' +
+        '<span class="nav-rule" aria-hidden="true"></span>' +
+        '<span class="nav-words">' +
+          '<span class="nav-name">AAHANA</span>' +
+          '<span class="nav-sub">Medical Aesthetics</span>' +
+        '</span>' +
       '</a>' +
       '<ul class="nav-links">' +
         '<li class="nav-item">' +
