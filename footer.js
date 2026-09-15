@@ -56,6 +56,17 @@
             '<a class="footer-ig" href="' + INSTAGRAM + '" rel="me noopener" aria-label="Aahana on Instagram">' + IG_GLYPH + '<span>' + IG_HANDLE + '</span></a>' +
           '</p>' +
         '</div>' +
+        /* Patients. The care pages sit behind a password, so this link is
+           useful to people we have treated and a closed door to everyone
+           else. rel=nofollow because there is nothing there for a crawler. */
+        '<div class="footer-col">' +
+          '<h2>Patients</h2>' +
+          '<p>' +
+            '<a href="care.html" rel="nofollow">Care instructions</a>' +
+            '<br><br>' +
+            '<span class="footer-note">Before and after care for every treatment. Password protected.</span>' +
+          '</p>' +
+        '</div>' +
       '</div>' +
       '<div class="footer-bottom">' +
         '<div class="footer-legal">' + LEGAL + '</div>' +

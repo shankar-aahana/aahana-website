@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "name": "aahana-website",
+  "description": "Static site for Aahana Medical Aesthetics. No build step: the HTML at the repo root is what ships. This file exists only because Vercel requires type:module to run middleware.js on a project with no framework.",
+  "type": "module"
+}

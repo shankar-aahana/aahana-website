@@ -11,8 +11,8 @@
 
 .section-footer .footer-top {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 44px;
   padding-bottom: 60px;
   border-bottom: 0.5px solid rgba(243,236,228,.08);
   align-items: start;
@@ -81,6 +81,12 @@
 }
 .section-footer .footer-col a { color: rgba(243,236,228,.8); text-decoration: none; }
 .section-footer .footer-col a:hover { color: var(--ivory); }
+/* Says what is behind the Care instructions link before anyone
+   clicks it, so the password page is not a surprise. */
+.section-footer .footer-note {
+  display: block; font-size: 12px; line-height: 1.7;
+  color: rgba(243,236,228,.68);   /* 5.5:1 on the footer ground. At .55 it was 4.2:1 and failed AA. */
+}
 
 .section-footer .footer-waitlist {
   background: none; border: none; cursor: pointer;
@@ -105,6 +111,9 @@
   background: var(--terra); opacity: .4;
 }
 
+@media (max-width: 1180px) {
+  .section-footer .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
 @media (max-width: 900px) {
   .section-footer { padding: 56px 24px 32px; }
   .section-footer .footer-top { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
