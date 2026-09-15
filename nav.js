@@ -42,10 +42,11 @@
     { label: 'Prakriti',           href: 'prakriti.html' },
     { label: 'Your first visit',   href: 'first-visit.html' },
     { label: 'Location & hours',   href: 'contact.html' },
-    /* Behind the password gate in middleware.js. Labelled "Patient" so a
-       visitor who is not one knows before clicking, rather than meeting a
-       password box with no explanation. nofollow because a crawler that
-       follows it only ever reaches the login page. */
+    /* Open to anyone with the link, but noindex: the same instructions live
+       on the treatment pages, which is where they should rank. Labelled
+       "Patient" because that is who the standalone sheets are for; the
+       treatment pages are where a prospect reads the same material in
+       context. nofollow so a crawler does not chase the duplicate. */
     { label: 'Patient care instructions', href: 'care.html', rel: 'nofollow' }
   ];
 

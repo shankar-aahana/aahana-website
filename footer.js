@@ -56,15 +56,16 @@
             '<a class="footer-ig" href="' + INSTAGRAM + '" rel="me noopener" aria-label="Aahana on Instagram">' + IG_GLYPH + '<span>' + IG_HANDLE + '</span></a>' +
           '</p>' +
         '</div>' +
-        /* Patients. The care pages sit behind a password, so this link is
-           useful to people we have treated and a closed door to everyone
-           else. rel=nofollow because there is nothing there for a crawler. */
+        /* Patients. The care sheets are open to anyone with the link but stay
+           noindex: the same instructions are already on the treatment pages,
+           where they earn their search traffic, and two indexed copies would
+           compete with each other. rel=nofollow for the same reason. */
         '<div class="footer-col">' +
           '<h2>Patients</h2>' +
           '<p>' +
             '<a href="care.html" rel="nofollow">Care instructions</a>' +
             '<br><br>' +
-            '<span class="footer-note">Before and after care for every treatment. Password protected.</span>' +
+            '<span class="footer-note">Before and after care for every treatment, on one page.</span>' +
           '</p>' +
         '</div>' +
       '</div>' +

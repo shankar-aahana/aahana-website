@@ -347,6 +347,16 @@ details.acc.tone > summary::after {
   gap: 10px;
   margin: 28px 0 8px;
 }
+/* Link out to this treatment's own printable care sheet. Colour comes from
+   the .keyband.dark a rule near the top of this file; the padding is here to
+   reach the 24px WCAG 2.2 target size, since it is a standalone link. */
+.care-sheet { margin: 18px 0 0; font-size: 14px; font-weight: 300; }
+.care-sheet a {
+  display: inline-block;
+  padding-block: 4px; min-height: 24px; box-sizing: border-box;
+  text-underline-offset: 3px;
+}
+@media print { .care-sheet { display: none !important; } }
 .care-btn {
   appearance: none;
   text-align: left;
