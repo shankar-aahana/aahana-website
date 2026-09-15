@@ -41,7 +41,12 @@
     { label: 'Precision medicine', href: 'precision.html' },
     { label: 'Prakriti',           href: 'prakriti.html' },
     { label: 'Your first visit',   href: 'first-visit.html' },
-    { label: 'Location & hours',   href: 'contact.html' }
+    { label: 'Location & hours',   href: 'contact.html' },
+    /* Behind the password gate in middleware.js. Labelled "Patient" so a
+       visitor who is not one knows before clicking, rather than meeting a
+       password box with no explanation. nofollow because a crawler that
+       follows it only ever reaches the login page. */
+    { label: 'Patient care instructions', href: 'care.html', rel: 'nofollow' }
   ];
 
   /* The services landing page, shown above the divider. */
@@ -97,7 +102,8 @@
 
   function desktopItems(links) {
     return links.map(function (l) {
-      return '<a class="dropdown-item" href="' + l.href + '">' + l.label + '</a>';
+      return '<a class="dropdown-item" href="' + l.href + '"' +
+             (l.rel ? ' rel="' + l.rel + '"' : '') + '>' + l.label + '</a>';
     }).join('\n        ');
   }
 
@@ -120,7 +126,8 @@
 
   function panelItems(links) {
     return links.map(function (l) {
-      return '<a href="' + l.href + '">' + l.label + '</a>';
+      return '<a href="' + l.href + '"' +
+             (l.rel ? ' rel="' + l.rel + '"' : '') + '>' + l.label + '</a>';
     }).join('\n      ');
   }
 
