@@ -8,13 +8,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#4A3328">
-  <title>How Many Units of Botox by Area, San Francisco | Aahana</title>
+  <title>How Many Botox Units by Area, San Francisco | Aahana</title>
   <meta name="description" content="Every area takes a different amount. The unit range for each area of the face and neck, in Botox-equivalent units, what each one treats, and how to compare a Dysport quote.">
   <link rel="canonical" href="https://www.aahanasf.com/botox-units.html">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="How many units, by area">
+  <meta property="og:title" content="How many Botox units, by area">
   <meta property="og:description" content="A map of every area botulinum toxin treats, the unit range for each in Botox-equivalent units, and what treating it actually does.">
   <meta property="og:url" content="https://www.aahanasf.com/botox-units.html">
   <meta property="og:site_name" content="Aahana Medical Aesthetics">
@@ -24,7 +24,7 @@
   <meta property="og:image" content="https://www.aahanasf.com/og-botox-units.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Treatments explained: How many units, by area">
+  <meta property="og:image:alt" content="Treatments explained: How many Botox units, by area">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
       {
         "@type": "Article",
         "@id": "https://www.aahanasf.com/botox-units.html#article",
-        "headline": "How many units of botulinum toxin, by area",
+        "headline": "How many Botox units, by area",
         "description": "The range of botulinum toxin units for each treatment area of the face and neck, in Botox-equivalent units, and what each area does.",
         "datePublished": "2026-10-02",
         "dateModified": "2026-10-02",
@@ -58,7 +58,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Daybreak", "item": "https://www.aahanasf.com/journal.html" },
-          { "@type": "ListItem", "position": 2, "name": "How many units, by area", "item": "https://www.aahanasf.com/botox-units.html" }
+          { "@type": "ListItem", "position": 2, "name": "How many Botox units, by area", "item": "https://www.aahanasf.com/botox-units.html" }
         ]
       },
       {
@@ -141,9 +141,40 @@
     }
     .area-note { font-size: 13.5px; line-height: 1.7; color: #5A463C; }
     @media (max-width: 860px) {
-      .map-wrap { grid-template-columns: 1fr; gap: 24px; }
+      .map-wrap { grid-template-columns: 1fr; gap: 22px; }
       .map-figure { position: static; max-width: 320px; margin: 0 auto; }
     }
+
+    /* Compact rows on a phone. Switched on by JS only, so with scripting off
+       the full cards render exactly as they do on a desktop and nothing is
+       unreachable. */
+    .hint-narrow { display: none; }
+    .map-wrap[data-compact="on"] .hint-wide   { display: none; }
+    .map-wrap[data-compact="on"] .hint-narrow { display: inline; }
+    .map-wrap[data-compact="on"] .area { position: relative; padding: 13px 38px 13px 16px; }
+    .map-wrap[data-compact="on"] .area-top { margin-bottom: 2px; }
+    .map-wrap[data-compact="on"] .area-note { display: none; }
+    .map-wrap[data-compact="on"] .area-dose { margin: 2px 0 0; font-size: 14px; }
+    .map-wrap[data-compact="on"] .area h3 { font-size: 16.5px; }
+    .map-wrap[data-compact="on"] .area::after {
+      content: ''; position: absolute; right: 17px; top: 50%;
+      width: 7px; height: 7px; margin-top: -4px;
+      border-right: 1.5px solid var(--clay); border-bottom: 1.5px solid var(--clay);
+      transform: rotate(-45deg); pointer-events: none;
+    }
+    .area-more { display: none; }
+    .map-wrap[data-compact="on"] .area-more {
+      display: block; position: absolute; inset: 0;
+      width: 100%; background: none; border: 0; padding: 0;
+      font: inherit; color: transparent; cursor: pointer;
+      border-radius: 3px;
+    }
+    .map-wrap[data-compact="on"] .area-more:focus-visible {
+      outline: 2px solid #8C4426; outline-offset: 2px;
+    }
+    .area-dialog .care-scroll .area-muscle { display: block; margin-bottom: 10px; }
+    .area-dialog .care-scroll .area-dose { font-size: 16px; margin: 0 0 12px; }
+    .area-dialog .care-scroll .area-note { font-size: 15px; line-height: 1.75; }
     @media (prefers-reduced-motion: reduce) {
       .zone, .area { transition: none; }
     }
@@ -161,8 +192,8 @@
 <main id="main">
 <section class="article-hero">
   <div class="article-hero-inner">
-    <div class="breadcrumb"><a href="journal.html">Daybreak</a> &middot; How many units, by area</div>
-    <h1 class="article-title">How many units, by area</h1>
+    <div class="breadcrumb"><a href="journal.html">Daybreak</a> &middot; How many Botox units, by area</div>
+    <h1 class="article-title">How many Botox units, by area</h1>
     <p class="article-dek">Every area takes a different amount, and the range for each is wide. Here is what each part of the face takes, what treating it actually does, and what moves an individual number within the range.</p>
     <div class="article-byline">
       Written by <strong>Dr. Shankar Mundluru, MD MBA</strong><br>
@@ -225,7 +256,7 @@
             <path    class="zone" data-area="neck" d="M166,372 C180,382 220,382 234,372 C240,390 246,402 253,414 L147,414 C154,402 160,390 166,372 Z" tabindex="0" role="button" aria-label="Neck bands"><title>Neck bands</title></path>
           </g>
         </svg>
-        <p class="map-hint">Select an area to highlight it. Every area is listed in full alongside.</p>
+        <p class="map-hint"><span class="hint-wide">Select an area to highlight it. Every area is listed in full alongside.</span><span class="hint-narrow">Tap an area for what it treats and what it takes. Every area is listed below.</span></p>
       </div>
 
       <div class="area-list">
@@ -382,22 +413,48 @@
 /* Links the diagram to the list. Everything the diagram does is a
    convenience: the cards are in the markup and readable without this. */
 (function () {
+  var wrap  = document.querySelector('.map-wrap');
   var zones = document.querySelectorAll('.zone');
   var cards = document.querySelectorAll('.area[data-area]');
-  if (!zones.length) return;
+  if (!wrap || !zones.length) return;
 
-  function setActive(key, scroll) {
+  /* Phones get compact rows plus a dialog; wide screens keep the full cards
+     beside the diagram. The switch is made here rather than in a media query
+     so that with scripting off every card stays fully readable. */
+  var narrow = window.matchMedia('(max-width: 860px)');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  var dlg = document.createElement('dialog');
+  dlg.className = 'care area-dialog';
+  dlg.innerHTML =
+    '<div class="care-head"><h3></h3>' +
+    '<button class="care-close" aria-label="Close"></button></div>' +
+    '<div class="care-scroll"></div>';
+  document.body.appendChild(dlg);
+  var dlgTitle = dlg.querySelector('h3');
+  var dlgBody  = dlg.querySelector('.care-scroll');
+  dlg.querySelector('.care-close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+
+  function open(key) {
+    var card = document.getElementById('area-' + key);
+    if (!card) return;
+    dlgTitle.textContent = card.querySelector('h3').textContent;
+    dlgBody.innerHTML = '';
+    ['.area-muscle', '.area-dose', '.area-note'].forEach(function (sel) {
+      var el = card.querySelector(sel);
+      if (el) dlgBody.appendChild(el.cloneNode(true));
+    });
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+  }
+
+  function setActive(key, act) {
     zones.forEach(function (z) { z.classList.toggle('is-active', z.dataset.area === key); });
     cards.forEach(function (c) { c.classList.toggle('is-active', c.dataset.area === key); });
-    if (scroll) {
-      var card = document.getElementById('area-' + key);
-      if (card) {
-        card.scrollIntoView({
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-          block: 'start'
-        });
-      }
-    }
+    if (!act) return;
+    if (narrow.matches) { open(key); return; }
+    var card = document.getElementById('area-' + key);
+    if (card) card.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth', block: 'start' });
   }
 
   zones.forEach(function (z) {
@@ -410,8 +467,24 @@
   });
 
   cards.forEach(function (c) {
-    c.addEventListener('mouseenter', function () { setActive(c.dataset.area, false); });
+    c.addEventListener('mouseenter', function () {
+      if (!narrow.matches) setActive(c.dataset.area, false);
+    });
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'area-more';
+    b.textContent = 'More';
+    b.setAttribute('aria-label',
+      c.querySelector('h3').textContent + ', ' +
+      c.querySelector('.area-dose').textContent + '. Read more');
+    b.addEventListener('click', function () { open(c.dataset.area); });
+    c.appendChild(b);
   });
+
+  function mode() { wrap.setAttribute('data-compact', narrow.matches ? 'on' : 'off'); }
+  if (narrow.addEventListener) narrow.addEventListener('change', mode);
+  else if (narrow.addListener) narrow.addListener(mode);
+  mode();
 })();
 
 const reveals = document.querySelectorAll('.reveal');
