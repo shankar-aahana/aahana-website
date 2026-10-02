@@ -389,8 +389,11 @@
     cards.forEach(function (c) { c.classList.toggle('is-active', c.dataset.area === key); });
     if (scroll) {
       var card = document.getElementById('area-' + key);
-      if (card && window.matchMedia('(max-width: 860px)').matches) {
-        card.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      if (card) {
+        card.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          block: 'start'
+        });
       }
     }
   }
