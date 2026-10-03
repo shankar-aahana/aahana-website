@@ -615,6 +615,11 @@ body {
       object-fit: cover; object-position: center 30%;
       z-index: 0; pointer-events: none;
     }
+/* The gradient overlay must stay inside .hero-bg, or it paints over the
+   hero text. This used to be held up by a will-change on .hero-bg, which
+   created a stacking context as a side effect of the parallax. The
+   parallax is gone, so the containment is stated outright. */
+.hero-bg { isolation: isolate; }
 .hero-bg::after { z-index: 1; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }

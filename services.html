@@ -211,6 +211,9 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
       object-fit: cover; object-position: center 30%;
       z-index: 0; pointer-events: none;
     }
+/* Keep the overlay inside .hero-bg so it cannot paint over hero text.
+   A will-change on .hero-bg used to do this as a side effect. */
+.hero-bg { isolation: isolate; }
 .hero-bg::after { z-index: 1; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
