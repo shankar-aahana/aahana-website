@@ -22,9 +22,9 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="canonical" href="https://www.aahanasf.com/services.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" href="cairo-latin-400-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="spectral-latin-300-normal.woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
   <!-- ── Contralto Big Black ───────────────────────────────────────────────
        Contralto is a commercial typeface (Synthview). It is NOT on Google
        Fonts, so naming it in CSS does nothing on its own — the browser needs
@@ -202,7 +202,6 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
        When the motion layer is running it owns the reveal animation, so the
        CSS transition steps aside. Without JS, or under reduced-motion, the
        original CSS reveal still works and nothing is hidden. */
-html.motion .reveal { transition: none; }
 /* Hero video sits under the existing gradient overlay. If no video file is
        present the poster shows, and behind that the original background image
        still shows — so this degrades twice before it degrades badly. */
@@ -212,15 +211,11 @@ html.motion .reveal { transition: none; }
       object-fit: cover; object-position: center 30%;
       z-index: 0; pointer-events: none;
     }
-.hero-bg { will-change: transform; }
 .hero-bg::after { z-index: 1; }
 @media (prefers-reduced-motion: reduce) {
-  html.motion .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal { opacity: 1; transform: none; transition: none; }
   .hero-video { display: none; }
 }</style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -679,81 +674,5 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 
-<script>
-/* ── Motion layer ──────────────────────────────────────────────────────────
-   Smooth scroll, scroll-driven hero, staggered reveals. Degrades to the
-   original CSS reveal if the libraries fail to load. */
-(function () {
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var touch   = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-
-  function start() {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-    gsap.registerPlugin(ScrollTrigger);
-    document.documentElement.classList.add('motion');
-
-    /* Smooth scroll. Off on touch, where it fights native momentum, and off
-       under reduced-motion. */
-    if (!reduced && !touch && typeof Lenis !== 'undefined') {
-      var lenis = new Lenis({ duration: 1.05, lerp: 0.1, smoothWheel: true });
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
-      gsap.ticker.lagSmoothing(0);
-      /* in-page anchors need to go through Lenis to keep the easing */
-      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-        a.addEventListener('click', function (e) {
-          var el = document.querySelector(a.getAttribute('href'));
-          if (el) { e.preventDefault(); lenis.scrollTo(el, { offset: -70 }); }
-        });
-      });
-    }
-
-    if (reduced) {
-      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
-      return;
-    }
-
-    /* Reveals, staggered by row rather than one flat fade. ScrollTrigger.batch
-       groups elements that enter together so a grid animates as a grid. */
-    var reveals = gsap.utils.toArray('.reveal');
-    gsap.set(reveals, { opacity: 0, y: 26 });
-    ScrollTrigger.batch(reveals, {
-      start: 'top 88%',
-      onEnter: function (batch) {
-        gsap.to(batch, { opacity: 1, y: 0, duration: 0.9,
-                         ease: 'power3.out', stagger: 0.08, overwrite: true });
-      },
-      once: true
-    });
-
-    /* The hero lifts and scales away as you scroll past it — the one piece of
-       scroll-scrubbed motion, and the one that does the most work. */
-    var hero = document.querySelector('.hero, .hero-about, .hero-services, .hero-prakriti');
-    if (hero) {
-      var bg = hero.querySelector('.hero-bg');
-      if (bg) {
-        gsap.to(bg, { scale: 1.14, ease: 'none',
-          scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.6 } });
-      }
-      var content = hero.querySelectorAll(':scope > *:not(.hero-bg):not(.hero-lines):not(.hero-rule)');
-      if (content.length) {
-        gsap.to(content, { y: -70, opacity: 0.15, ease: 'none',
-          scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom 30%', scrub: 0.5 } });
-      }
-    }
-
-    /* Nav gets a hairline once you leave the hero rather than switching
-       abruptly on a 10px threshold. */
-    var nav = document.getElementById('nav');
-    if (nav) {
-      ScrollTrigger.create({ start: 'top -40',
-        onToggle: function (s) { nav.classList.toggle('scrolled', s.isActive); } });
-    }
-  }
-
-  if (document.readyState === 'complete') { start(); }
-  else { window.addEventListener('load', start); }
-})();
-</script>
 </body>
 </html>

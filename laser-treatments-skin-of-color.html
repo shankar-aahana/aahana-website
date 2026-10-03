@@ -26,9 +26,9 @@
   <meta property="article:author" content="Shankar Mundluru, MD MBA">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" href="cairo-latin-400-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="spectral-latin-300-normal.woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
 
   <script type="application/ld+json">
   {
@@ -287,7 +287,7 @@
     .fm-note {
       border-left: 2px solid #B48A7A; padding: 2px 0 2px 16px; margin: 16px 0;
     }
-    .fm-note h4 {
+    .fm-note h3 {
       font-family: 'Spectral', Georgia, serif; font-weight: 400;
       font-size: 16px; color: #4A3328; margin-bottom: 5px;
     }
@@ -503,15 +503,15 @@
       </table>
       <p class="fm-hint">Every verdict is written out, not shown by color alone. The reasoning for each row follows below.</p>
       <div class="fm-notes">
-        <div class="fm-note" id="fmn-r0"><h4>1064 nm Nd:YAG, long pulse</h4><p>The backbone of laser work in deeper skin. Melanin absorbs this wavelength roughly an order of magnitude less than it absorbs the greens and yellows, so most of the energy reaches its target instead of being intercepted in the epidermis on the way down. The trade is efficiency: a wavelength melanin barely sees is also less efficient against melanin, so results come as a series rather than a single visit. This is the primary laser here.</p></div>
-        <div class="fm-note" id="fmn-r1"><h4>Radiofrequency and RF microneedling</h4><p>Energy is delivered by electrical resistance in the tissue rather than by light, so there is no chromophore and melanin is simply not part of the equation. That makes radiofrequency one of the few energy treatments whose settings do not change with skin tone at all. Used here for tightening and structural work.</p></div>
-        <div class="fm-note" id="fmn-r2"><h4>Microneedling, mechanical</h4><p>No light and no heat, so nothing is absorbed by pigment. The risk in deeper skin is downstream rather than at the point of treatment: the inflammation of healing can trigger pigment, so depth and aggressiveness are moderated and priming the skin beforehand is worth more here than almost anywhere else.</p></div>
-        <div class="fm-note" id="fmn-r3"><h4>Superficial chemical peel</h4><p>Works above the level where pigment trouble usually starts. Safe across the range with agent and concentration chosen for the skin, which in practice means a gentler agent and a shorter contact time at the deeper end, plus priming beforehand.</p></div>
-        <div class="fm-note" id="fmn-r4"><h4>Medium and deep chemical peel</h4><p>Depth is the whole question. Injury extending into the dermis provokes exactly the inflammatory cascade that produces post-inflammatory hyperpigmentation, and in deeper skin that response is both more likely and more durable than the problem being treated. Rarely the right trade.</p></div>
-        <div class="fm-note" id="fmn-r5"><h4>IPL and broadband light</h4><p>Not a laser. It emits a broad band of wavelengths at once, including the greens and yellows that epidermal melanin absorbs intensely, and filters narrow that band rather than eliminating it. In deeper skin the pigment in the epidermis competes for energy meant for the target below, which is how IPL causes burns and pigment loss in skin it was never built for. The single most common source of laser injury in skin of color.</p></div>
-        <div class="fm-note" id="fmn-r6"><h4>532 nm KTP and 755 nm alexandrite</h4><p>Chosen precisely because melanin absorbs them well, which is what makes them effective on pigment and hair in lighter skin and hazardous in deeper skin. The same absorption that lifts a sunspot off fair skin takes energy into the epidermis of someone with more of it.</p></div>
-        <div class="fm-note" id="fmn-r7"><h4>Ablative CO2 and Er:YAG resurfacing</h4><p>These target water rather than pigment, so the risk is not absorption. It is the healing. Removing the epidermis across an area provokes a long inflammatory response, and in deeper skin that is a reliable route to hyperpigmentation that outlasts the result. Fractional delivery reduces but does not remove the problem.</p></div>
-        <div class="fm-note" id="fmn-r8"><h4>Non-ablative fractional, 1550 and 1927 nm</h4><p>Also water-targeting, with columns of treated tissue separated by untreated skin, which is what shortened the recovery and widened the range of skin these can be used on. Still heat into the dermis, so density and energy come down as tone deepens and the interval between sessions lengthens.</p></div>
+        <div class="fm-note" id="fmn-r0"><h3>1064 nm Nd:YAG, long pulse</h3><p>The backbone of laser work in deeper skin. Melanin absorbs this wavelength roughly an order of magnitude less than it absorbs the greens and yellows, so most of the energy reaches its target instead of being intercepted in the epidermis on the way down. The trade is efficiency: a wavelength melanin barely sees is also less efficient against melanin, so results come as a series rather than a single visit. This is the primary laser here.</p></div>
+        <div class="fm-note" id="fmn-r1"><h3>Radiofrequency and RF microneedling</h3><p>Energy is delivered by electrical resistance in the tissue rather than by light, so there is no chromophore and melanin is simply not part of the equation. That makes radiofrequency one of the few energy treatments whose settings do not change with skin tone at all. Used here for tightening and structural work.</p></div>
+        <div class="fm-note" id="fmn-r2"><h3>Microneedling, mechanical</h3><p>No light and no heat, so nothing is absorbed by pigment. The risk in deeper skin is downstream rather than at the point of treatment: the inflammation of healing can trigger pigment, so depth and aggressiveness are moderated and priming the skin beforehand is worth more here than almost anywhere else.</p></div>
+        <div class="fm-note" id="fmn-r3"><h3>Superficial chemical peel</h3><p>Works above the level where pigment trouble usually starts. Safe across the range with agent and concentration chosen for the skin, which in practice means a gentler agent and a shorter contact time at the deeper end, plus priming beforehand.</p></div>
+        <div class="fm-note" id="fmn-r4"><h3>Medium and deep chemical peel</h3><p>Depth is the whole question. Injury extending into the dermis provokes exactly the inflammatory cascade that produces post-inflammatory hyperpigmentation, and in deeper skin that response is both more likely and more durable than the problem being treated. Rarely the right trade.</p></div>
+        <div class="fm-note" id="fmn-r5"><h3>IPL and broadband light</h3><p>Not a laser. It emits a broad band of wavelengths at once, including the greens and yellows that epidermal melanin absorbs intensely, and filters narrow that band rather than eliminating it. In deeper skin the pigment in the epidermis competes for energy meant for the target below, which is how IPL causes burns and pigment loss in skin it was never built for. The single most common source of laser injury in skin of color.</p></div>
+        <div class="fm-note" id="fmn-r6"><h3>532 nm KTP and 755 nm alexandrite</h3><p>Chosen precisely because melanin absorbs them well, which is what makes them effective on pigment and hair in lighter skin and hazardous in deeper skin. The same absorption that lifts a sunspot off fair skin takes energy into the epidermis of someone with more of it.</p></div>
+        <div class="fm-note" id="fmn-r7"><h3>Ablative CO2 and Er:YAG resurfacing</h3><p>These target water rather than pigment, so the risk is not absorption. It is the healing. Removing the epidermis across an area provokes a long inflammatory response, and in deeper skin that is a reliable route to hyperpigmentation that outlasts the result. Fractional delivery reduces but does not remove the problem.</p></div>
+        <div class="fm-note" id="fmn-r8"><h3>Non-ablative fractional, 1550 and 1927 nm</h3><p>Also water-targeting, with columns of treated tissue separated by untreated skin, which is what shortened the recovery and widened the range of skin these can be used on. Still heat into the dermis, so density and energy come down as tone deepens and the interval between sessions lengthens.</p></div>
       </div>
     </div>
 
