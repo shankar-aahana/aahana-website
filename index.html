@@ -619,7 +619,7 @@ body {
    hero text. This used to be held up by a will-change on .hero-bg, which
    created a stacking context as a side effect of the parallax. The
    parallax is gone, so the containment is stated outright. */
-.hero-bg { isolation: isolate; }
+.hero-bg { isolation: isolate; will-change: transform; }
 .hero-bg::after { z-index: 1; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
@@ -1042,6 +1042,79 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 
 // Waitlist handled by Tally embed
+
+/* ── Hero parallax ─────────────────────────────────────────────────────────
+   The background scales up and the copy lifts and fades as you scroll past
+   the hero, the same motion GSAP used to drive. This is the only thing that
+   was worth keeping from the 133 KB of libraries, so it is rebuilt here in
+   about twenty lines against a passive scroll listener and one rAF per frame.
+   Nothing is hidden by it: with scripting off, or under reduced motion, the
+   hero simply renders and scrolls like any other section.              */
+(function () {
+  var hero = document.querySelector('.hero, .hero-about, .hero-services, .hero-prakriti');
+  if (!hero) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var bg = hero.querySelector('.hero-bg');
+  /* Skip anything already running a filled CSS entrance animation. Those
+     keyframes keep asserting transform and opacity after they finish, so an
+     inline style here would be silently overridden every frame. On the
+     homepage that is the whole staggered hero stack, which is why the
+     homepage gets the background zoom and nothing else. */
+  var copy = [].filter.call(
+    hero.querySelectorAll(':scope > *:not(.hero-bg):not(.hero-lines):not(.hero-rule)'),
+    function (el) { return getComputedStyle(el).animationName === 'none'; });
+  if (!bg && !copy.length) return;
+
+  var h = 1, vh = 1, queued = false;
+
+  function measure() {
+    h = hero.offsetHeight || 1;
+    vh = window.innerHeight || 1;
+  }
+
+  function clear() {
+    if (bg) bg.style.transform = '';
+    for (var i = 0; i < copy.length; i++) {
+      copy[i].style.transform = '';
+      copy[i].style.opacity = '';
+    }
+  }
+
+  function frame() {
+    queued = false;
+    if (reduce.matches) return;
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    /* the background runs the full height of the hero */
+    if (bg) {
+      var p = Math.min(Math.max(y / h, 0), 1);
+      bg.style.transform = 'scale(' + (1 + 0.14 * p) + ')';
+    }
+    /* the copy finishes earlier, once the hero bottom is 30% down the viewport */
+    var span = Math.max(h - vh * 0.3, 1);
+    var q = Math.min(Math.max(y / span, 0), 1);
+    for (var i = 0; i < copy.length; i++) {
+      copy[i].style.transform = 'translate3d(0,' + (-70 * q).toFixed(2) + 'px,0)';
+      copy[i].style.opacity = (1 - 0.85 * q).toFixed(3);
+    }
+  }
+
+  function onScroll() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(frame);
+  }
+
+  function apply() {
+    if (reduce.matches) { clear(); return; }
+    measure();
+    frame();
+  }
+
+  apply();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', apply, { passive: true });
+  if (reduce.addEventListener) reduce.addEventListener('change', apply);
+})();
 </script>
 
 </body>
