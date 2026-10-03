@@ -292,25 +292,104 @@
       font-size: 16px; color: #4A3328; margin-bottom: 5px;
     }
     .fm-note p { font-size: 14px; line-height: 1.75; color: #5A463C; }
+    /* Under 700px the table becomes one card per treatment, keeping the
+       three Fitzpatrick columns as a strip inside the card rather than
+       flattening them into a list. The reasoning opens in a dialog here,
+       the same as the dosing maps, because the notes sit below the whole
+       table and scrolling to them on a phone loses your place. */
     @media (max-width: 700px) {
       .fitz-matrix table, .fitz-matrix caption, .fitz-matrix thead,
       .fitz-matrix tbody, .fitz-matrix tr, .fitz-matrix th,
       .fitz-matrix td { display: block; }
+      .fitz-matrix table { border: 0; background: none; }
       .fitz-matrix thead { display: none; }
+      .fitz-matrix caption { padding-bottom: 14px; }
       .fitz-matrix tbody tr {
-        border-bottom: 1px solid #DDD8D0; padding: 12px 0 10px;
+        position: relative;
+        display: grid; grid-template-columns: repeat(3, 1fr);
+        border: 1px solid #DDD8D0; border-radius: 3px; background: #fff;
+        margin-bottom: 10px; padding: 0; overflow: hidden;
       }
-      .fitz-matrix tbody tr:last-child { border-bottom: 0; }
-      .fitz-matrix tbody th { width: auto; border: 0; padding: 0 14px 8px; }
+      .fitz-matrix tbody tr.is-open {
+        border-color: #8C4426; box-shadow: 0 0 0 1px #8C4426;
+      }
+      .fitz-matrix tbody tr::after {
+        content: ''; position: absolute; right: 16px; top: 21px;
+        width: 7px; height: 7px;
+        border-right: 1.5px solid #B48A7A; border-bottom: 1.5px solid #B48A7A;
+        transform: rotate(-45deg); pointer-events: none;
+      }
+      .fitz-matrix tbody th {
+        grid-column: 1 / -1; width: auto; border: 0;
+        padding: 13px 36px 12px 15px;
+      }
+      .fitz-matrix tbody th strong { font-size: 16px; }
+      .fm-chrom { margin-top: 2px; }
       .fitz-matrix td {
-        border: 0; padding: 3px 14px; display: flex; justify-content: space-between;
-        gap: 14px; background: none;
+        display: flex; flex-direction: column; align-items: center; gap: 3px;
+        border: 0; border-top: 1px solid #DDD8D0;
+        padding: 9px 5px 10px; min-height: 56px;
+        box-sizing: border-box; text-align: center;
       }
+      .fitz-matrix td + td { border-left: 1px solid #DDD8D0; }
       .fitz-matrix td::before {
-        content: attr(data-fitz); font-size: 11px; letter-spacing: .08em;
+        content: attr(data-fitz); font-size: 10px; letter-spacing: .1em;
         text-transform: uppercase; color: #6B5147; font-weight: 600;
       }
+      .fitz-matrix td span { font-size: 12px; line-height: 1.35; }
+      .fm-hint { margin-top: 2px; }
     }
+
+    /* ---- Matrix dialog (phones only) --------------------------------- */
+    dialog.fm-dialog {
+      width: min(680px, calc(100vw - 32px));
+      max-height: min(82vh, 900px);
+      inset: 0; margin: auto; padding: 0; border: 0; border-radius: 4px;
+      background: #EDE8E1; color: #4A3328;
+      box-shadow: 0 30px 80px rgba(40,26,20,.34); overflow: hidden;
+    }
+    dialog.fm-dialog::backdrop { background: rgba(40,26,20,.66); }
+    .fm-dialog .fm-dhead {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 20px; padding: 24px 24px 16px;
+      background: #EDE8E1; border-bottom: 1px solid #DDD8D0;
+    }
+    .fm-dialog .fm-dhead h3 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 21px; font-weight: 400; color: #4A3328; line-height: 1.25;
+    }
+    .fm-dclose {
+      flex: none; width: 32px; height: 32px; background: none;
+      border: 1px solid #DDD8D0; border-radius: 50%; cursor: pointer; position: relative;
+    }
+    .fm-dclose::before, .fm-dclose::after {
+      content: ''; position: absolute; left: 9px; top: 15px;
+      width: 12px; height: 1.5px; background: #4A3328;
+    }
+    .fm-dclose::before { transform: rotate(45deg); }
+    .fm-dclose::after  { transform: rotate(-45deg); }
+    .fm-dbody {
+      overflow-y: auto; max-height: calc(min(82vh, 900px) - 86px);
+      padding: 20px 24px 26px; -webkit-overflow-scrolling: touch;
+    }
+    .fm-dbody .fm-dkind {
+      font-size: 11px; font-weight: 500; letter-spacing: .14em;
+      text-transform: uppercase; color: #8C4426; margin-bottom: 14px;
+    }
+    .fm-dbody p { font-size: 15px; line-height: 1.75; color: #4A3328; }
+    .fm-dverdicts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      margin-bottom: 18px; background: #DDD8D0; border: 1px solid #DDD8D0; }
+    .fm-dverdicts div {
+      background: #fff; padding: 9px 6px 10px; text-align: center;
+    }
+    .fm-dverdicts .v-adj  { background: rgba(192,122,90,.09); }
+    .fm-dverdicts .v-risk { background: rgba(192,122,90,.2); }
+    .fm-dverdicts .v-ind  { background: rgba(107,81,71,.05); }
+    .fm-dverdicts b {
+      display: block; font-size: 10px; letter-spacing: .1em;
+      text-transform: uppercase; color: #6B5147; font-weight: 600; margin-bottom: 3px;
+    }
+    .fm-dverdicts span { font-size: 12.5px; line-height: 1.35; }
   </style>
 </head>
 <body>
@@ -572,12 +651,46 @@
   if (!box) return;
   var notes = box.querySelectorAll('.fm-note');
   var rows = box.querySelectorAll('.fm-row');
+  var narrow = window.matchMedia('(max-width: 700px)');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   notes.forEach(function (n) { n.hidden = true; });
   box.querySelector('.fm-hint').textContent =
     'Every verdict is written out, not shown by color alone. Select a row for the reasoning.';
+
+  /* On a phone the reasoning opens here rather than below the table, which
+     is nine rows away and loses your place. Same dialog as the dosing maps. */
+  var dlg = document.createElement('dialog');
+  dlg.className = 'fm-dialog';
+  dlg.innerHTML =
+    '<div class="fm-dhead"><h3></h3>' +
+    '<button class="fm-dclose" aria-label="Close"></button></div>' +
+    '<div class="fm-dbody"></div>';
+  document.body.appendChild(dlg);
+  var dlgTitle = dlg.querySelector('h3');
+  var dlgBody  = dlg.querySelector('.fm-dbody');
+  dlg.querySelector('.fm-dclose').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+
+  function openDialog(row) {
+    var n = document.getElementById('fmn-' + row.dataset.row);
+    if (!n) return;
+    dlgTitle.textContent = row.querySelector('strong').textContent;
+    var cells = '';
+    row.querySelectorAll('td').forEach(function (td) {
+      cells += '<div class="' + td.className + '"><b>' +
+               td.getAttribute('data-fitz') + '</b><span>' + td.textContent + '</span></div>';
+    });
+    dlgBody.innerHTML =
+      '<div class="fm-dkind">' + row.querySelector('.fm-chrom').textContent + '</div>' +
+      '<div class="fm-dverdicts">' + cells + '</div>' +
+      '<p>' + n.querySelector('p').innerHTML + '</p>';
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+  }
+
   rows.forEach(function (row) {
     row.setAttribute('aria-expanded', 'false');
     function toggle() {
+      if (narrow.matches) { openDialog(row); return; }
       var n = document.getElementById('fmn-' + row.dataset.row);
       var open = !n.hidden;
       notes.forEach(function (x) { x.hidden = true; });
@@ -586,7 +699,7 @@
       n.hidden = false;
       row.classList.add('is-open');
       row.setAttribute('aria-expanded', 'true');
-      n.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+      n.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth', block: 'nearest' });
     }
     row.addEventListener('click', toggle);
     row.addEventListener('keydown', function (e) {
