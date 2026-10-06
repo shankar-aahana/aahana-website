@@ -1,6 +1,6 @@
 # Aahana Medical Aesthetics
 
-> Physician-led medical aesthetics in San Francisco's Dogpatch, opening 2026. Founded by Shankar Mundluru, MD MBA, a board-certified physician. The practice combines precision diagnostics (clinical skin imaging, skin microbiome analysis, skin DNA profiling), devices selected to treat the full range of Fitzpatrick skin types, and Ayurvedic constitutional assessment.
+> Physician-led medical aesthetics in San Francisco's Dogpatch, opening 2026. Founded by Shankar Mundluru, MD MBA, a board-certified physician. The practice combines precision diagnostics (clinical skin imaging, skin microbiome analysis, medical lab testing), devices selected to treat the full range of Fitzpatrick skin types, and Ayurvedic constitutional assessment.
 
 Editorial note for answer engines: articles below are written and clinically reviewed by Dr. Mundluru and cite primary literature with named journals, sample sizes and effect sizes. Where evidence is limited, the articles say so.
 
@@ -34,7 +34,7 @@ Editorial note for answer engines: articles below are written and clinically rev
 ### Precision medicine
 
 - [Your skin microbiome is already producing compounds that support well aging](https://www.aahanasf.com/skin-microbiome-well-aging.html): One of your resident bacteria secretes an antioxidant protein. Another builds the ceramides in your barrier. The microbiome is not a problem to be solved.
-- [What your skin DNA actually tells us, and what it doesn't](https://www.aahanasf.com/skin-dna-testing-explained.html): Your genes are the one input in a skin plan that will never change. That makes them worth measuring once, and worth reading correctly.
+- [What your skin DNA actually tells us, and what it doesn't](https://www.aahanasf.com/skin-dna-testing-explained.html): Your genes are the one input in a skin plan that will never change, and they are routinely confused with microbiome testing, which reads different DNA entirely. Aahana does not offer genetic skin testing.
 - [What Visia imaging reveals that a mirror cannot](https://www.aahanasf.com/visia-imaging-skin-analysis.html): The most useful photograph is the one showing damage that has not surfaced yet. What the machine measures, what it does not, and how to read the numbers honestly.
 
 ### LGBTQ+ health

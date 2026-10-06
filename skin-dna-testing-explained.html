@@ -204,6 +204,14 @@
               "@type": "Answer",
               "text": "Earlier rather than later. It is available before anything has visibly changed, which makes it most valuable in the twenties and thirties when the question is what to protect rather than what to correct. It also pairs well with imaging, since one describes what your skin has done so far and the other describes what it is inclined to do."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Is skin DNA testing the same as skin microbiome testing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Both involve DNA sequencing, which is why they get confused, but they read different DNA. A genetic skin test reads your own genome, which never changes and tells you about tendency. Microbiome testing reads the genes of the bacteria living on your skin, which shift week to week and tell you what is present right now and what it is producing. One is a fixed background fact; the other is a current measurement you can act on and then re-measure. Aahana offers microbiome testing and does not offer genetic skin testing."
+            }
           }
         ]
       }
@@ -214,6 +222,40 @@
   <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="article.css">
+  <style>
+    .compare {
+      width: 100%; border-collapse: collapse; font-size: 14px;
+      background: #fff; border: 1px solid #DDD8D0;
+    }
+    .compare th, .compare td {
+      border: 1px solid #DDD8D0; padding: 9px 12px; text-align: left; vertical-align: top;
+    }
+    .compare thead th {
+      font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 600; color: #4A3328; background: rgba(107,81,71,.07);
+    }
+    .compare tbody th {
+      font-weight: 500; color: #6B5147; font-size: 12.5px; width: 30%;
+      background: rgba(107,81,71,.03);
+    }
+    .compare td { color: #5A463C; }
+    @media (max-width: 640px) {
+      .compare, .compare thead, .compare tbody, .compare tr,
+      .compare th, .compare td { display: block; }
+      .compare { border: 0; background: none; }
+      .compare thead { display: none; }
+      .compare tbody tr {
+        border: 1px solid #DDD8D0; background: #fff; margin-bottom: 8px;
+      }
+      .compare tbody th { width: auto; border: 0; border-bottom: 1px solid #DDD8D0; }
+      .compare td { border: 0; padding: 7px 12px; }
+      .compare td::before {
+        content: attr(data-col); display: block;
+        font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+        color: #6B5147; font-weight: 600; margin-bottom: 2px;
+      }
+    }
+  </style>
 </head>
 <body>
 <script src="nav.js"></script>
@@ -225,7 +267,7 @@
   <div class="article-hero-inner">
     <div class="breadcrumb"><a href="journal.html">Daybreak</a> &middot; Precision medicine</div>
     <h1 class="article-title">What your skin DNA actually tells us, and what it doesn't</h1>
-    <p class="article-dek">Your genes are the one input in a skin plan that will never change. That makes them worth measuring once, and worth reading correctly.</p>
+    <p class="article-dek">Your genes are the one input in a skin plan that will never change. They are also routinely confused with a different test that reads DNA too, and the two are not close.</p>
     <div class="article-byline">
       By <strong>Dr. Shankar Mundluru, MD MBA</strong><br>
       Board-certified physician &middot; Founder, Aahana Medical Aesthetics<br>
@@ -279,13 +321,38 @@
 
     <p class="reveal">That is not a limitation so much as the correct shape of the information. A result telling you that your antioxidant defenses sit on the lower end is telling you where to concentrate effort, not what your face will look like in twenty years.</p>
 
-    <p class="reveal">Read that way, the value is prioritisation. Everyone should be using sun protection. Someone whose report shows lower genetic capacity in the sun damage and pigmentation category has a concrete reason to be rigorous about it rather than approximate, and in practice that reason changes behavior in a way that general advice often does not.</p>
+    <p class="reveal">Read that way, the value is prioritization. Everyone should be using sun protection. Someone whose report shows lower genetic capacity in the sun damage and pigmentation category has a concrete reason to be rigorous about it rather than approximate, and in practice that reason changes behavior in a way that general advice often does not.</p>
 
     <h2 class="reveal">One thing worth knowing about the research base</h2>
 
-    <p class="reveal">Genetic research on skin has been concentrated in populations of European ancestry, as much of human genetics has. Efforts to broaden that are underway and the picture is improving, but it means the variants best characterised today are the ones best characterised in those groups.<sup><a href="#ref3">3</a></sup></p>
+    <p class="reveal">Genetic research on skin has been concentrated in populations of European ancestry, as much of human genetics has. Efforts to broaden that are underway and the picture is improving, but it means the variants best characterized today are the ones best characterized in those groups.<sup><a href="#ref3">3</a></sup></p>
 
     <p class="reveal">Practically, this argues for reading a genetic report alongside things measured directly on your own skin rather than in isolation. It is the same reason we <a href="visia-imaging-skin-analysis.html">image before treating</a> and the same reason <a href="fitzpatrick-scale-explained.html">a single skin type number is a starting point</a>. Direct measurement of you is always stronger evidence than a population average, whatever the population.</p>
+
+    <h2 class="reveal">This is not microbiome testing</h2>
+
+    <p class="reveal">The two get conflated constantly, and the reason is fair: both are DNA sequencing. The difference is whose DNA.</p>
+
+    <p class="reveal">A skin DNA test reads <em>your</em> genome from a cheek swab. A skin microbiome test sequences the genomes of the organisms living on your skin. Same technology, different subject, and almost nothing else in common.</p>
+
+    <div class="reveal" style="margin: 22px 0 8px">
+      <table class="compare">
+        <thead><tr><th>&nbsp;</th><th>Skin DNA</th><th>Skin microbiome</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Whose DNA</th><td data-col="Skin DNA">Yours</td><td data-col="Skin microbiome">The bacteria living on you</td></tr>
+          <tr><th scope="row">Does it change</th><td data-col="Skin DNA">Never</td><td data-col="Skin microbiome">Week to week</td></tr>
+          <tr><th scope="row">Can you act on it</th><td data-col="Skin DNA">Not directly</td><td data-col="Skin microbiome">Yes, that is the point</td></tr>
+          <tr><th scope="row">What the result is</th><td data-col="Skin DNA">A tendency</td><td data-col="Skin microbiome">What is present and what it is producing</td></tr>
+          <tr><th scope="row">How often</th><td data-col="Skin DNA">Once, ever</td><td data-col="Skin microbiome">Repeated, to see whether something worked</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="reveal">The evidence behind them is not comparable either, and it is worth being direct about that. Genetic association studies on skin aging rest on many variants of individually modest effect, concentrated in populations of European ancestry, and a result changes the emphasis of a plan rather than its content.<sup><a href="#ref3">3</a></sup> Microbiome work is further along in a way that matters clinically: the molecules are named and measured. <em>Cutibacterium acnes</em> secretes an antioxidant protein that measurably protects skin cells under oxidative stress. <em>Staphylococcus epidermidis</em> produces ceramides that hold the barrier together. Those are mechanisms you can act on, with an organism you can change, and a repeat test that tells you whether you did.</p>
+
+    <p class="reveal">So if you are choosing between them, they are not really alternatives. One tells you what you were dealt. The other tells you what is happening on your face this month. <a href="skin-microbiome-well-aging.html">The microbiome piece is here</a>, and it is the one we actually use.</p>
+
+    <p class="reveal"><strong>Aahana does not offer genetic skin testing.</strong> This article stays up because the question comes up and the honest answer is useful, not because there is something to sell at the end of it.</p>
 
     <h2 class="reveal">Where it fits</h2>
 
@@ -315,6 +382,9 @@
 
       <h3>When is skin DNA testing most useful?</h3>
       <p>Earlier rather than later. It is available before anything has visibly changed, which makes it most valuable in the twenties and thirties when the question is what to protect rather than what to correct. It also pairs well with imaging, since one describes what your skin has done so far and the other describes what it is inclined to do.</p>
+
+      <h3>Is skin DNA testing the same as skin microbiome testing?</h3>
+      <p>No. Both involve DNA sequencing, which is why they get confused, but they read different DNA. A genetic skin test reads your own genome, which never changes and tells you about tendency. Microbiome testing reads the genes of the bacteria living on your skin, which shift week to week and tell you what is present right now and what it is producing. One is a fixed background fact; the other is a current measurement you can act on and then re-measure. Aahana offers microbiome testing and does not offer genetic skin testing.</p>
     </div>
 
     <!-- RELATED -->
