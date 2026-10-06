@@ -36,7 +36,7 @@
         "@type": "MedicalTest",
         "name": "Skin microbiome sequencing",
         "alternateName": "Skin microbiome analysis",
-        "howPerformed": "A sterile swab is taken from the affected area of skin in the clinic. The sample is sequenced to identify which organisms are present, in what proportion, and what compounds they are producing. Results are reviewed with the physician at a follow-up visit and translated into changes to the skin plan.",
+        "howPerformed": "An intake questionnaire is completed through Parallel Health first. A sterile swab is then taken from the affected area of skin, preferably in the clinic for the first test, and sent to Parallel Health for sequencing. The report identifies which organisms are present, in what proportion, and what they are producing. Results are reviewed with the physician at a follow-up visit and translated into changes to the skin plan, which may include a serum formulated to the patient's microbiome type. Later swabs can be collected by the patient at home using a kit obtained through the practice, so repeat results sit alongside the first.",
         "preparation": "Do not wash the area or apply any product on the morning of the swab, and avoid topical or oral antibacterials in the days beforehand unless they were prescribed. Recent cleansing and antibacterial use change what the swab reads.",
         "status": "https://schema.org/ActiveActionStatus",
         "@id": "https://www.aahanasf.com/skin-microbiome-testing.html#test",
@@ -190,6 +190,14 @@
           },
           {
             "@type": "Question",
+            "name": "Can I collect the swab myself at home?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Repeat swabs, yes. The kit comes through us so the result lands in the same record as the first one and the two can be compared. The first one we would rather take here. Where a swab is collected and how it is collected decide what the lab reads, and the baseline is what every later test gets measured against, so it is the one worth getting right under supervision."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Does the result change over time?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -270,18 +278,37 @@
 
     <p class="reveal">A protocol built on what is normal for one population can be aiming at the wrong target for another. It is the same problem that runs through device selection and skin typing, showing up one layer down. Your own baseline is more useful than someone else's reference range.</p>
 
+    <h2 class="reveal">How it works, start to finish</h2>
+
+    <div class="treats reveal">
+      <div>Intake, through Parallel Health<span>A questionnaire about your skin, your routine and your history, completed on their system. It is what your sequencing result gets read against, so it is worth answering slowly</span></div>
+      <div>The swab<span>A sterile swab across the area in question. Nothing is injected and nothing breaks the skin</span></div>
+      <div>Off to the lab<span>The sample goes to Parallel Health for sequencing. Nothing is processed in the clinic</span></div>
+      <div>Results, read together<span>The report comes back and we go through it at a follow-up, rather than it arriving in your inbox for you to interpret alone</span></div>
+      <div>What changes<span>Often the plan gets shorter. Sometimes the result points at a serum formulated to your microbiome type, or at a preparation built from what is actually growing on you</span></div>
+      <div>Testing again<span>At a later point, after something has deliberately changed. That second reading is where most of the value sits</span></div>
+    </div>
+
+    <h2 class="reveal">Collecting it yourself</h2>
+
+    <p class="reveal">Repeat swabs can be collected at home. The kit comes through us either way, so every result lands in the same record and can be compared against the one before it instead of starting a separate history somewhere else.</p>
+
+    <p class="reveal">We would rather take the first one here. Not because it is difficult, but because where a swab is taken and how it is taken decide what the lab reads, and the baseline is the thing every later test gets measured against. A first result collected from slightly the wrong place makes every comparison after it harder to trust.</p>
+
     <div class="keyband reveal">
       <div class="keylabel"><span class="keynum">02</span></div>
       <h2>What the appointment involves</h2>
 
       <dl class="glance">
+        <div><dt>Before the swab</dt><dd>An intake questionnaire through Parallel Health, completed before the sample is taken.</dd></div>
         <div><dt>How to arrive</dt><dd>Do not wash the area or apply anything to it that morning. Avoid antibacterial cleansers in the days before unless they were prescribed.</dd></div>
-        <div><dt>What happens</dt><dd>A sterile swab across the affected area, in the clinic.</dd></div>
+        <div><dt>What happens</dt><dd>A sterile swab across the area in question, in the clinic. A few minutes, usually at the end of a consultation.</dd></div>
         <div><dt>Sensation</dt><dd>None. Nothing is injected and nothing breaks the skin.</dd></div>
-        <div><dt>Collection time</dt><dd>A few minutes, usually at the end of a consultation.</dd></div>
+        <div><dt>Where it goes</dt><dd>To Parallel Health for sequencing. Nothing is processed in the clinic.</dd></div>
         <div><dt>Downtime</dt><dd>None.</dd></div>
         <div><dt>When you get results</dt><dd>At a follow-up visit, read through with your physician rather than emailed as a report to interpret alone.</dd></div>
-        <div><dt>Repeating it</dt><dd>After something has been changed deliberately, which is where the useful pattern shows up.</dd></div>
+        <div><dt>Later swabs</dt><dd>Can be collected at home with a kit obtained through us. We would rather do the first one here.</dd></div>
+        <div><dt>Repeating it</dt><dd>At a later time point, after something has deliberately changed.</dd></div>
         <div><dt>Cost</dt><dd>Optional, for an additional fee.</dd></div>
       </dl>
     </div>
@@ -298,6 +325,8 @@
     <h2 class="reveal">What usually comes out of it</h2>
 
     <p class="reveal">Often the most useful output is subtraction. When someone learns their skin is doing more for them than their cabinet of products is, the plan gets shorter rather than longer.</p>
+
+    <p class="reveal">Where the result points somewhere, the most common destination is a serum formulated to your microbiome type through Parallel Health, rather than a product chosen from a shelf because of what it says on the front. That is a recommendation made from a reading, which is a different thing from a recommendation made from a guess, and it is still only as good as the reading behind it.</p>
 
     <p class="reveal">Where the result points at specific strains, it can inform a targeted approach rather than a broad one. Anything that clears bacteria indiscriminately costs you the organisms making your antioxidant and part of your barrier lipid along with the ones causing trouble. Bacteriophages are strain-specific by nature, which is what makes the distinction possible; the human literature there is still building, and much of what exists is animal and in vitro work.<sup><a href="#ref4">4</a></sup> That is said plainly rather than skipped.</p>
 
@@ -329,6 +358,11 @@
       <details class="acc">
         <summary>How do I prepare for the swab?</summary>
         <div class="acc-body"><p>Do not wash the area or apply anything to it on the morning of the appointment, and avoid antibacterial cleansers and topical antibacterials in the days before unless they were prescribed to you. A swab taken off freshly scrubbed skin reads the cleanser rather than the skin. Prescribed medication is never stopped for a test without instruction from whoever prescribed it.</p></div>
+      </details>
+
+      <details class="acc">
+        <summary>Can I collect the swab myself at home?</summary>
+        <div class="acc-body"><p>Repeat swabs, yes. The kit comes through us so the result lands in the same record as the first one and the two can be compared. The first one we would rather take here. Where a swab is collected and how it is collected decide what the lab reads, and the baseline is what every later test gets measured against, so it is the one worth getting right under supervision.</p></div>
       </details>
 
       <details class="acc">
