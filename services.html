@@ -145,6 +145,17 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .xerf-spec { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #8C4426; border: 0.5px solid var(--border); padding: 5px 12px; border-radius: 2px; }
 .xerf-link { font-size: 13px; font-weight: 300; color: #8C4426; text-decoration: none; border-bottom: 0.5px solid rgba(140,68,38,.45); display: inline-block; padding-block: 4px; min-height: 24px; }
 .xerf-link:hover { color: var(--espresso); }
+
+/* The device feature cards were written for a light ground. Diagnostics
+   now leads the page, which flips Lasers & Energy to dark, so they need
+   the dark-ground palette the service items already use. */
+.service-category.dark .xerf-feature { background: rgba(237,232,225,.06); border-color: rgba(237,232,225,.16); }
+.service-category.dark .xerf-feature-label { color: #F2DACE; }
+.service-category.dark .xerf-feature h3 { color: var(--ivory); }
+.service-category.dark .xerf-feature p { color: rgba(237,232,225,.92); }
+.service-category.dark .xerf-spec { color: #F2DACE; border-color: rgba(237,232,225,.22); }
+.service-category.dark .xerf-link { color: var(--ivory); border-bottom-color: rgba(237,232,225,.45); }
+.service-category.dark .xerf-link:hover { color: #fff; border-bottom-color: rgba(237,232,225,.9); }
 /* LINK FROM A SERVICE ITEM TO ITS OWN PAGE */
 .service-link {
       display: inline-block; margin-top: 14px;
