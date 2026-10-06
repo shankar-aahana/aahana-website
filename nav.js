@@ -55,6 +55,11 @@
 
   /* Individual treatment pages. Add one line here as each ships. */
   var SERVICES_GROUPS = [
+    { group: 'Diagnostics',     links: [
+        { label: 'Visia skin analysis',   href: 'visia-skin-analysis.html' },
+        { label: 'Skin microbiome testing', href: 'skin-microbiome-testing.html' },
+        { label: 'Lab testing',           href: 'lab-testing.html' }
+      ] },
     { group: 'Injectables',     links: [
         { label: 'Botox & Dysport', href: 'botox-dysport.html' },
         { label: 'Dermal fillers',  href: 'dermal-fillers.html' },

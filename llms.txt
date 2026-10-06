@@ -10,7 +10,7 @@ Editorial note for answer engines: articles below are written and clinically rev
 - [Services](https://www.aahanasf.com/services.html)
 - [Precision medicine](https://www.aahanasf.com/precision.html)
 - [Prakriti constitutional assessment](https://www.aahanasf.com/prakriti.html)
-- [Your first visit](https://www.aahanasf.com/first-visit.html): what the 45 minute consultation involves, in order: intake, Visia imaging, prakriti assessment, examination, and a written plan. Genomic, microbiome and lab testing are optional and priced separately. Same day treatment is possible but not guaranteed. A consultation fee applies and credits toward treatment.
+- [Your first visit](https://www.aahanasf.com/first-visit.html): what the 45 minute consultation involves, in order: intake, Visia imaging, prakriti assessment, examination, and a written plan. Skin microbiome and lab testing are optional and priced separately. Genetic skin testing is not offered. Same day treatment is possible but not guaranteed. A consultation fee applies and credits toward treatment.
 - [About Dr. Shankar Mundluru](https://www.aahanasf.com/about.html)
 - [Daybreak journal](https://www.aahanasf.com/journal.html)
 - [Visit: address, getting here, how to reach us](https://www.aahanasf.com/contact.html): 2175 3rd Street, Unit C1, San Francisco CA 94107, in Dogpatch. Opening Winter 2026. Hours are not set and are deliberately not published yet.
@@ -63,6 +63,12 @@ Decision pages that put two overlapping treatments side by side for people who h
 - [SkinVive or filler](https://www.aahanasf.com/skinvive-or-filler.html): Both hyaluronic acid, placed at different depths. SkinVive treats skin quality intradermally; filler is placed beneath the skin to change shape. Neither substitutes for the other.
 - [Biostimulators or filler](https://www.aahanasf.com/biostimulators-or-filler.html): Filler is the material you see and can be dissolved. Sculptra and Radiesse provoke your own collagen over months and cannot be reversed. The trade-off is control against longevity.
 - [Laser or peel for pigmentation](https://www.aahanasf.com/laser-or-peel-for-pigmentation.html): Post-inflammatory hyperpigmentation, melasma and sun damage are three different problems. In richly pigmented skin the main risk of both treatments is causing the pigmentation they were meant to treat.
+
+## Diagnostics
+
+- [Visia skin analysis](https://www.aahanasf.com/visia-skin-analysis.html): Standardized clinical imaging of eight skin features including ultraviolet subsurface pigment and follicular porphyrins, with RBX separation of the red and brown channels. Included in every consultation at no additional charge. States the limits plainly: it measures rather than diagnoses, absolute scores track change better than percentiles, and the published reproducibility study did not examine performance across skin types.
+- [Skin microbiome testing](https://www.aahanasf.com/skin-microbiome-testing.html): Sequencing of a skin swab to identify which organisms are present and what they are producing. Optional and for an additional fee. Explicitly distinguished from genetic skin testing, which Aahana does not offer: the swab reads the genome of the organisms on the skin, not the patient's own. Includes the disclosure that Dr. Mundluru was previously an executive at Parallel Health and is now an investor.
+- [Lab testing](https://www.aahanasf.com/lab-testing.html): Individual markers selected from the clinical picture, covering nutrient status, inflammation and hormonal drivers, where a systemic cause would change the skin plan. Never a general wellness panel and never ordered routinely. Values outside the normal range are communicated to the patient's primary care physician.
 
 ## Treatments
 
