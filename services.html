@@ -158,6 +158,7 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
 .service-category.light .service-link:hover { color: var(--espresso); border-color: var(--espresso); }
 .service-category.dark .service-link { color: var(--ivory); border-bottom: 0.5px solid rgba(237,232,225,.45); }
 .service-category.dark .service-link:hover { color: #fff; border-color: rgba(237,232,225,.9); }
+.service-category.dark + .section-cta { border-top: 0.5px solid rgba(237,232,225,.15); }
 .section-cta {
       background: var(--section-dark); text-align: center; padding: 100px 48px;
       position: relative; overflow: hidden;
@@ -452,13 +453,50 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
   </div>
 </section>
 
-<!-- 01 INJECTABLES. DARK -->
-<div class="service-category dark" id="injectables">
+<!-- 01 DIAGNOSTICS. DARK -->
+<div class="service-category dark" id="diagnostics">
   <div class="section-inner">
     <div class="category-header reveal">
       <div class="category-num">01</div>
       <div>
-        <span class="section-label" style="color:#F2DACE">Injectables</span>
+        <span class="section-label" style="color:#F2DACE">Diagnostics</span>
+        <h2 class="category-title">Measure first.<br><em>Then treat.</em></h2>
+        <p class="category-intro">Imaging comes before any treatment is recommended, for everyone. The other two are optional, carry their own cost, and are suggested only where the result would change what the plan says.</p>
+      </div>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-item">
+        <div class="service-name">Visia Skin Analysis</div>
+        <span class="service-tag">Clinical Imaging</span>
+        <p class="service-desc">Eight features of the skin photographed under standardized light, including ultraviolet imaging that shows pigment damage sitting below the surface before it emerges. Separating the red channel from the brown is what distinguishes pigment from inflammation in deeper skin, where the two look identical to the eye.</p>
+        <p class="service-note">Included in every consultation. Repeated at around six months to measure change.</p>
+        <a class="service-link" href="visia-skin-analysis.html">Visia skin analysis &rarr;</a>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Skin Microbiome Testing</div>
+        <span class="service-tag">Sequencing &middot; Parallel Health</span>
+        <p class="service-desc">A swab that reads which organisms live on your skin, in what proportion, and what they are producing. It is a measurement of the present rather than a diagnosis, and its value shows up on the repeat test, after something has been changed deliberately. It is not a genetic test and reads none of your own DNA.</p>
+        <p class="service-note">Optional, for an additional fee. Recommended where straightforward treatment has already failed.</p>
+        <a class="service-link" href="skin-microbiome-testing.html">Skin microbiome testing &rarr;</a>
+      </div>
+      <div class="service-item">
+        <div class="service-name">Lab Testing</div>
+        <span class="service-tag">Nutrient &middot; Inflammatory &middot; Hormonal</span>
+        <p class="service-desc">Individual markers chosen from the clinical picture rather than a fixed panel, where something systemic appears to be driving a skin problem. Never a general wellness screen. Any value outside the normal range is communicated to your primary care physician.</p>
+        <p class="service-note">Optional, for an additional fee. Not ordered routinely. Recent results from your own physician are often enough.</p>
+        <a class="service-link" href="lab-testing.html">Lab testing &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 INJECTABLES. LIGHT -->
+<div class="service-category light" id="injectables">
+  <div class="section-inner">
+    <div class="category-header reveal">
+      <div class="category-num">02</div>
+      <div>
+        <span class="section-label">Injectables</span>
         <h2 class="category-title">Precision placement.<br><em>Natural results.</em></h2>
         <p class="category-intro">All injectable treatments are performed directly by Dr. Shankar. Placement, dosing, and sequencing are calibrated to your anatomy, your skin tone, and your goals.</p>
       </div>
@@ -507,13 +545,13 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
   </div>
 </div>
 
-<!-- 02 LASERS & ENERGY. LIGHT -->
-<div class="service-category light" id="energy">
+<!-- 03 LASERS & ENERGY. DARK -->
+<div class="service-category dark" id="energy">
   <div class="section-inner">
     <div class="category-header reveal">
-      <div class="category-num">02</div>
+      <div class="category-num">03</div>
       <div>
-        <span class="section-label">Lasers & Energy Devices</span>
+        <span class="section-label" style="color:#F2DACE">Lasers & Energy Devices</span>
         <h2 class="category-title">Technology chosen<br><em>for your skin.</em></h2>
         <p class="category-intro">Every device at Aahana is selected for its precision, its safety record across all skin tones, and the strength of its clinical evidence. We expand this category only when the right devices are identified and vetted.</p>
       </div>
@@ -572,13 +610,13 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
   </div>
 </div>
 
-<!-- 03 SKIN TREATMENTS. DARK -->
-<div class="service-category dark" id="skin">
+<!-- 04 SKIN TREATMENTS. LIGHT -->
+<div class="service-category light" id="skin">
   <div class="section-inner">
     <div class="category-header reveal">
-      <div class="category-num">03</div>
+      <div class="category-num">04</div>
       <div>
-        <span class="section-label" style="color:#F2DACE">Skin Treatments</span>
+        <span class="section-label">Skin Treatments</span>
         <h2 class="category-title">Targeted. Layered.<br><em>Sequenced correctly.</em></h2>
         <p class="category-intro">Each skin treatment is selected and sequenced as part of a broader protocol, based on your clinical data, your skin tone, and your goals. Nothing is standalone.</p>
       </div>
@@ -614,13 +652,13 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
   </div>
 </div>
 
-<!-- 04 WELLNESS. LIGHT -->
-<div class="service-category light" id="wellness">
+<!-- 05 WELLNESS. DARK -->
+<div class="service-category dark" id="wellness">
   <div class="section-inner">
     <div class="category-header reveal">
-      <div class="category-num">04</div>
+      <div class="category-num">05</div>
       <div>
-        <span class="section-label">Wellness</span>
+        <span class="section-label" style="color:#F2DACE">Wellness</span>
         <h2 class="category-title">Skin begins<br><em>within.</em></h2>
         <p class="category-intro">The skin reflects systemic health. Aahana's wellness offerings address the internal factors that no topical treatment can reach: metabolic health, cellular energy, and the signals that shape how your skin ages.</p>
       </div>
@@ -636,46 +674,9 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
       <div class="service-item">
         <div class="service-name">Sexual Wellness</div>
         <span class="service-tag">PRP &middot; Botulinum Toxin</span>
-        <p class="service-desc">Platelet-rich plasma for erectile function, and botulinum toxin for the dartos muscle of the scrotum and for the internal anal sphincter, including chronic anal fissure. Every use in this category is off-label, and the evidence behind each is discussed openly at consultation rather than assumed.</p>
+        <p class="service-desc">Platelet-rich plasma for erectile function, and botulinum toxin for the dartos muscle of the scrotum and for the internal anal sphincter, including chronic anal fissure. The evidence behind each one differs a great deal, and it is discussed openly at consultation rather than assumed.</p>
         <p class="service-note">Assessment and examination precede any treatment in this category.</p>
         <a class="service-link" href="sexual-wellness.html">Sexual wellness &rarr;</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 05 DIAGNOSTICS. DARK -->
-<div class="service-category dark" id="diagnostics">
-  <div class="section-inner">
-    <div class="category-header reveal">
-      <div class="category-num">05</div>
-      <div>
-        <span class="section-label" style="color:#F2DACE">Diagnostics</span>
-        <h2 class="category-title">Measure first.<br><em>Then treat.</em></h2>
-        <p class="category-intro">Imaging comes before any treatment is recommended, for everyone. The other two are optional, carry their own cost, and are suggested only where the result would change what the plan says.</p>
-      </div>
-    </div>
-    <div class="services-list reveal">
-      <div class="service-item">
-        <div class="service-name">Visia Skin Analysis</div>
-        <span class="service-tag">Clinical Imaging</span>
-        <p class="service-desc">Eight features of the skin photographed under standardized light, including ultraviolet imaging that shows pigment damage sitting below the surface before it emerges. Separating the red channel from the brown is what distinguishes pigment from inflammation in deeper skin, where the two look identical to the eye.</p>
-        <p class="service-note">Included in every consultation. Repeated at around six months to measure change.</p>
-        <a class="service-link" href="visia-skin-analysis.html">Visia skin analysis &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Skin Microbiome Testing</div>
-        <span class="service-tag">Sequencing &middot; Parallel Health</span>
-        <p class="service-desc">A swab that reads which organisms live on your skin, in what proportion, and what they are producing. It is a measurement of the present rather than a diagnosis, and its value shows up on the repeat test, after something has been changed deliberately. It is not a genetic test and reads none of your own DNA.</p>
-        <p class="service-note">Optional, for an additional fee. Recommended where straightforward treatment has already failed.</p>
-        <a class="service-link" href="skin-microbiome-testing.html">Skin microbiome testing &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Lab Testing</div>
-        <span class="service-tag">Nutrient &middot; Inflammatory &middot; Hormonal</span>
-        <p class="service-desc">Individual markers chosen from the clinical picture rather than a fixed panel, where something systemic appears to be driving a skin problem. Never a general wellness screen. Any value outside the normal range is communicated to your primary care physician.</p>
-        <p class="service-note">Optional, for an additional fee. Not ordered routinely. Recent results from your own physician are often enough.</p>
-        <a class="service-link" href="lab-testing.html">Lab testing &rarr;</a>
       </div>
     </div>
   </div>
