@@ -71,8 +71,11 @@ h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
 .note p { font-family:'Spectral', serif; font-weight:300; font-size:16px; line-height:1.5; margin-top:4px; }
 
 /* ---------- footnotes and footer ---------- */
+.foot p:target { background:var(--blush); color:var(--deep); padding:4px 8px; }
 .foot { margin-top:30px; padding-top:18px; border-top:1px solid var(--border); }
-.foot p { font-family:'Spectral', serif; font-style:italic; font-weight:300; font-size:15px; line-height:1.5; color:var(--brown); margin-bottom:6px; }
+.fn { display:inline-block; min-width:24px; min-height:24px; padding:0 4px; text-align:center; color:var(--accent); text-decoration:none; font-family:'Cairo', sans-serif; font-weight:600; }
+.fn:hover { text-decoration:underline; }
+.foot p { scroll-margin-top:24px; border-radius:4px; transition:background .3s;  font-family:'Spectral', serif; font-style:italic; font-weight:300; font-size:15px; line-height:1.5; color:var(--brown); margin-bottom:6px; }
 .book { margin-top:28px; text-align:center; font-family:'Spectral', serif; font-weight:300; font-size:18px; line-height:1.55; }
 .links { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 18px; margin-top:22px; }
 .links a { display:inline-block; padding:8px 4px; font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); text-decoration:none; }
@@ -105,15 +108,15 @@ h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
   <section aria-labelledby="h-neuro">
     <h2 id="h-neuro">Neuromodulators</h2>
     <div class="row"><div class="svc"><a href="botox-dysport.html">Botox</a><em>per unit</em></div><div class="std">$18</div><div class="loft">$13.50</div></div>
-    <div class="row"><div class="svc"><a href="botox-dysport.html">Dysport</a>§<em>per Botox-equivalent unit</em></div><div class="std">$16</div><div class="loft">$12</div></div>
-    <div class="row"><div class="svc"><a href="botox-dysport.html">Migraine Botox</a>†<em>per treatment</em></div><div class="std">$1,200</div><div class="loft">$900</div></div>
+    <div class="row"><div class="svc"><a href="botox-dysport.html">Dysport</a><a class="fn" href="#fn-dysport" aria-label="Note on Dysport units">§</a><em>per Botox-equivalent unit</em></div><div class="std">$16</div><div class="loft">$12</div></div>
+    <div class="row"><div class="svc"><a href="botox-dysport.html">Migraine Botox</a><a class="fn" href="#fn-migraine" aria-label="Note on Migraine Botox pricing">†</a><em>per treatment</em></div><div class="std">$1,200</div><div class="loft">$900</div></div>
   </section>
 
   <section aria-labelledby="h-xerf">
-    <h2 id="h-xerf">Xerf Skin Tightening <span>· Danville*</span></h2>
+    <h2 id="h-xerf">Xerf Skin Tightening <span>· Danville<a class="fn" href="#fn-xerf" aria-label="Note on Xerf location">*</a></span></h2>
     <div class="row"><div class="svc"><a href="xerf.html">Xerf Face + Neck</a><em>per session</em></div><div class="std">$3,200</div><div class="loft">$2,400</div></div>
     <div class="row"><div class="svc"><a href="xerf.html">Xerf Face</a><em>per session</em></div><div class="std">$2,500</div><div class="loft">$1,875</div></div>
-    <div class="row"><div class="svc"><a href="xerf.html">Xerf Body Area</a>‡<em>per session</em></div><div></div><div></div><div class="range">Clinic approx. $2,400 to $4,500 · Loft <b>approx. $1,800 to $3,375</b></div></div>
+    <div class="row"><div class="svc"><a href="xerf.html">Xerf Body Area</a><a class="fn" href="#fn-body" aria-label="Note on Xerf body pricing">‡</a><em>per session</em></div><div></div><div></div><div class="range">Clinic approx. $2,400 to $4,500 · Loft <b>approx. $1,800 to $3,375</b></div></div>
   </section>
 
   <section aria-labelledby="h-series">
@@ -134,10 +137,10 @@ h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
 
   <div class="foot">
     <p>Crossed-out prices are clinic pricing. Bold prices are loft pricing.</p>
-    <p>*Xerf treatments are performed at our satellite location in Danville, CA.</p>
-    <p>†Migraine Botox is priced lower per unit because it is a medical treatment.</p>
-    <p>‡Xerf body pricing is based on pulses used, so it varies by area.</p>
-    <p>§Dysport is priced in Botox-equivalent units for easy comparison. About 2.5 to 3 Dysport units equal one Botox unit, so if your Dysport unit count looks high, divide it by 2.5 to 3.</p>
+    <p id="fn-xerf">*Xerf treatments are performed at our satellite location in Danville, CA.</p>
+    <p id="fn-migraine">†Migraine Botox is priced lower per unit because it is a medical treatment.</p>
+    <p id="fn-body">‡Xerf body pricing is based on pulses used, so it varies by area.</p>
+    <p id="fn-dysport">§Dysport is priced in Botox-equivalent units for easy comparison. About 2.5 to 3 Dysport units equal one Botox unit, so if your Dysport unit count looks high, divide it by 2.5 to 3.</p>
   </div>
 
   <p class="book">To book, reply to our text. We will send the loft address once your appointment is confirmed.</p>
