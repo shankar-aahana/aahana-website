@@ -13,6 +13,8 @@
   var MEANING  = 'Aahana · आहान · first light of dawn';
   var ADDRESS  = '2175 3rd Street, Unit C1<br>San Francisco, CA 94107';
   var HOURS    = 'Hours: by appointment';
+  var PHONE    = '415-691-7603';
+  var PHONE_E164 = '+14156917603';
   var EMAIL    = 'hello@aahanaskin.com';
   var LEGAL    = '© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA';
   var DOMAIN   = 'aahanasf.com';
@@ -50,6 +52,8 @@
           '<h2>Contact</h2>' +
           '<p>' +
             '<button class="footer-waitlist" data-tally-open="' + TALLY_ID + '" data-tally-overlay="1">Join the waitlist</button>' +
+            '<br><br>' +
+            '<a href="tel:' + PHONE_E164 + '">' + PHONE + '</a>' +
             '<br><br>' +
             '<a href="mailto:' + EMAIL + '">' + EMAIL + '</a>' +
             '<br><br>' +
