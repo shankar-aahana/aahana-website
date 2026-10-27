@@ -277,6 +277,53 @@
   <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="service.css">
   <link rel="stylesheet" href="footer.css">
+
+  <!-- TEMPORARY: Danville booking. Boulevard's self-booking overlay loads on
+       this page only, never from nav.js or footer.js, so no other page on the
+       site pulls third-party booking code. Remove this script, the <style>
+       block below and the #book band together when San Francisco opens. -->
+  <!-- Boulevard Self-Booking overlay -->
+  <script>
+    (function (a) {
+      var b = {
+        businessId: '38a32e8c-24a6-4e5e-acac-6795a1ffc0d6',
+      };
+
+      var c = a.createElement('script');
+      var d = a.querySelector('script');
+
+      c.src = 'https://static.joinboulevard.com/injector.min.js';
+      c.async = true;
+      c.onload = function () {
+        blvd.init(b);
+      };
+
+      d.parentNode.insertBefore(c, d);
+    })(document);
+  </script>
+  <!-- End Boulevard Self-Booking overlay -->
+
+  <style>
+    .book-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin: 32px 0 0; }
+    .book-btn {
+      font-family: 'Cairo', sans-serif;
+      font-size: 13px; font-weight: 500; letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 16px 32px; border-radius: 2px;
+      border: 1px solid var(--ivory);
+      background: var(--ivory); color: var(--deep);
+      cursor: pointer; transition: opacity .2s, background .2s;
+    }
+    .book-btn:hover { opacity: .85; }
+    .book-btn.ghost { background: transparent; color: var(--ivory); }
+    .book-btn.ghost:hover { background: rgba(237,232,225,.12); opacity: 1; }
+    .keyband.dark .book-note { font-size: 16px; margin-top: 28px; }
+    .keyband.dark .book-fallback {
+      font-size: 13px; margin-top: 18px; color: rgba(237,232,225,.86);
+    }
+    .keyband.dark .book-fallback a { color: #F2DACE; }
+    @media (max-width: 560px) { .book-btn { width: 100%; } }
+  </style>
 </head>
 <body>
 <script src="nav.js"></script>
@@ -350,6 +397,22 @@
       </dl>
 
       <p>Skin may look slightly flushed and feel warm afterwards, similar to mild sun exposure, and that resolves within one to two hours.</p>
+    </div>
+
+    <div class="keyband dark reveal" id="book">
+      <div class="keylabel"><span class="keynum">BOOKING NOW &middot; DANVILLE</span></div>
+      <h2>Book XERF in Danville</h2>
+
+      <p>The San Francisco clinic is still being built. XERF is running now at our satellite location in Danville, in the East Bay, and you can book it here.</p>
+
+      <div class="book-buttons">
+        <button type="button" class="book-btn" onclick="if(window.blvd){blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Skin%20Tightening', visitType: 'SELF_VISIT' }});}">Book a single treatment</button>
+        <button type="button" class="book-btn ghost" onclick="if(window.blvd){blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Packages', visitType: 'PACKAGE' }});}">Book a course of two</button>
+      </div>
+
+      <p class="book-note">A course of two is where most people start, and it is the better value of the two options. Whether you go beyond two is decided by how your skin responds at four to eight weeks rather than booked in advance, which is why the course of three to four described above is a range and not a package. Face and neck, or face alone, are both offered and the difference is shown at booking.</p>
+
+      <p class="book-fallback">If the booking window does not open, call <a href="tel:+14156917603">415-691-7603</a> and we will book it for you.</p>
     </div>
 
     <h2 class="reveal">Color blind is not the same as skin type blind</h2>
