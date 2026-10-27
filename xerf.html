@@ -303,6 +303,21 @@
   </script>
   <!-- End Boulevard Self-Booking overlay -->
 
+  <!-- Every booking control on this page calls one of these two. If a path
+       ever needs changing, it changes here and nowhere else. -->
+  <script>
+    function bookXerfSingle() {
+      if (window.blvd) {
+        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Skin%20Tightening', visitType: 'SELF_VISIT' }});
+      }
+    }
+    function bookXerfCourse() {
+      if (window.blvd) {
+        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Packages', visitType: 'PACKAGE' }});
+      }
+    }
+  </script>
+
   <style>
     .book-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin: 32px 0 0; }
     .book-btn {
@@ -322,6 +337,25 @@
       font-size: 13px; margin-top: 18px; color: rgba(237,232,225,.86);
     }
     .keyband.dark .book-fallback a { color: #F2DACE; }
+    .hero-book { margin-top: 34px; }
+    .hero-book-note { font-size: 14px; line-height: 1.6; color: rgba(237,232,225,.86); margin: 14px 0 0; }
+    .hero-book-note a { color: #F2DACE; text-decoration: underline; text-underline-offset: 3px; }
+    .book-inline { font-size: 16px; }
+    .book-link {
+      background: none; border: 0; padding: 0; font: inherit;
+      color: #8C4426; cursor: pointer;
+      border-bottom: 1px solid rgba(140,68,38,.45);
+    }
+    .book-link:hover { border-bottom-color: #8C4426; }
+    .cta-book { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 10px; }
+    .cta-waitlist { margin: 28px 0 0; }
+    .cta-waitlist button {
+      background: none; border: 0; padding: 0;
+      font-family: 'Cairo', sans-serif; font-size: 13px;
+      color: rgba(237,232,225,.86); cursor: pointer;
+      border-bottom: 1px solid rgba(237,232,225,.40);
+    }
+    .cta-waitlist button:hover { color: var(--ivory); border-bottom-color: var(--ivory); }
     @media (max-width: 560px) { .book-btn { width: 100%; } }
   </style>
 </head>
@@ -341,6 +375,11 @@
       Board-certified physician &middot; Founder, Aahana Medical Aesthetics<br>
       San Francisco &middot; Dogpatch<br>
       Reviewed <time datetime="2026-09-19">September 2026</time>
+    </div>
+
+    <div class="hero-book">
+      <button type="button" class="book-btn" onclick="bookXerfSingle()">Book XERF in Danville</button>
+      <p class="hero-book-note">Running now at our Danville satellite in the East Bay while the San Francisco clinic is built. <a href="#book">What is on offer and how the course works</a>.</p>
     </div>
   </div>
 </section>
@@ -406,8 +445,8 @@
       <p>The San Francisco clinic is still being built. XERF is running now at our satellite location in Danville, in the East Bay, and you can book it here.</p>
 
       <div class="book-buttons">
-        <button type="button" class="book-btn" onclick="if(window.blvd){blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Skin%20Tightening', visitType: 'SELF_VISIT' }});}">Book a single treatment</button>
-        <button type="button" class="book-btn ghost" onclick="if(window.blvd){blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Packages', visitType: 'PACKAGE' }});}">Book a course of two</button>
+        <button type="button" class="book-btn" onclick="bookXerfSingle()">Book a single treatment</button>
+        <button type="button" class="book-btn ghost" onclick="bookXerfCourse()">Book a course of two</button>
       </div>
 
       <p class="book-note">A course of two is where most people start, and it is the better value of the two options. Whether you go beyond two is decided by how your skin responds at four to eight weeks rather than booked in advance, which is why the course of three to four described above is a range and not a package. Face and neck, or face alone, are both offered and the difference is shown at booking.</p>
@@ -442,6 +481,8 @@
       <p class="care-sheet"><a href="care-xerf.html" rel="nofollow">All of this on one printable page &rarr;</a></p>
       </div>
     </div>
+
+    <p class="book-inline reveal">Ready when you are: <button type="button" class="book-link" onclick="bookXerfSingle()">book a single treatment</button> or <button type="button" class="book-link" onclick="bookXerfCourse()">book a course of two</button>, both at the Danville location.</p>
 
     <div class="faq reveal">
       <h2>Common questions</h2>
@@ -642,9 +683,13 @@
 <!-- CTA -->
 <section class="section-cta">
   <div class="cta-inner">
-    <div class="cta-title">Care built for the skin you actually have</div>
-    <p class="cta-desc">Aahana opens in 2026 in San Francisco's Dogpatch. Physician-led, with a device stack chosen to treat the full range of skin.</p>
-    <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="cta-btn">Join the waitlist</button>
+    <div class="cta-title">Book XERF in Danville</div>
+    <p class="cta-desc">Running now at our satellite location in the East Bay while the San Francisco clinic is built. Physician-led, with a device stack chosen to treat the full range of skin.</p>
+    <div class="cta-book">
+      <button type="button" class="book-btn" onclick="bookXerfSingle()">Book a single treatment</button>
+      <button type="button" class="book-btn ghost" onclick="bookXerfCourse()">Book a course of two</button>
+    </div>
+    <p class="cta-waitlist"><button type="button" data-tally-open="kdJBYJ" data-tally-overlay="1">Or join the waitlist for San Francisco</button></p>
   </div>
 </section></main>
 
