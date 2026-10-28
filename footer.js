@@ -53,6 +53,7 @@
           '<p>' +
             '<button class="footer-waitlist" data-tally-open="' + TALLY_ID + '" data-tally-overlay="1">Join the waitlist</button>' +
             '<br><br>' +
+            '<span class="footer-note">Text or call</span><br>' +
             '<a href="tel:' + PHONE_E164 + '">' + PHONE + '</a>' +
             '<br><br>' +
             '<a href="mailto:' + EMAIL + '">' + EMAIL + '</a>' +
