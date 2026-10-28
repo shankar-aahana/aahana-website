@@ -332,11 +332,14 @@
     .book-btn:hover { opacity: .85; }
     .book-btn.ghost { background: transparent; color: var(--ivory); }
     .book-btn.ghost:hover { background: rgba(237,232,225,.12); opacity: 1; }
-    .keyband.dark .book-note { font-size: 16px; margin-top: 28px; }
-    .keyband.dark .book-fallback {
-      font-size: 13px; margin-top: 18px; color: rgba(237,232,225,.86);
-    }
-    .keyband.dark .book-fallback a { color: #F2DACE; }
+    /* The booking band sits on the light tint, between two dark bands, so its
+       buttons invert: filled espresso for the primary, outlined for the other. */
+    #book .book-btn { background: var(--espresso); color: var(--ivory); border-color: var(--espresso); }
+    #book .book-btn.ghost { background: transparent; color: #8C4426; border-color: rgba(140,68,38,.5); }
+    #book .book-btn.ghost:hover { background: rgba(140,68,38,.07); border-color: #8C4426; opacity: 1; }
+    #book .book-note { font-size: 16px; margin-top: 28px; }
+    #book .book-fallback { font-size: 13px; margin-top: 18px; color: #5A4036; }
+    #book .book-fallback a { color: #8C4426; }
     .hero-book { margin-top: 34px; }
     .hero-book-note { font-size: 14px; line-height: 1.6; color: rgba(237,232,225,.86); margin: 14px 0 0; }
     .hero-book-note a { color: #F2DACE; text-decoration: underline; text-underline-offset: 3px; }
@@ -402,7 +405,7 @@
         <div>Structural lift<span>Tightening at the SMAS layer</span></div>
         <div>Skin quality<span>Firmness and texture</span></div>
         <div>Body laxity<span>Abdomen, arms and thighs</span></div>
-        <div>Post weight loss laxity<span>Including after major weight loss</span></div>
+        <div>Post weight loss laxity<span>Including after GLP-1 treatment</span></div>
         <div>Collagen remodeling<span>Progressive over months</span></div>
       </div>
 
@@ -416,7 +419,7 @@
       </details>
     </div>
 
-    <div class="keyband reveal">
+    <div class="keyband dark reveal">
       <div class="keylabel"><span class="keynum">02</span></div>
       <h2>What a session is like</h2>
 
@@ -432,7 +435,7 @@
       </dl>
     </div>
 
-    <div class="keyband dark reveal" id="book">
+    <div class="keyband reveal" id="book">
       <div class="keylabel"><span class="keynum">BOOKING NOW &middot; DANVILLE</span></div>
       <h2>Book XERF in Danville</h2>
 
@@ -546,7 +549,7 @@
         <li>If you are pregnant or breastfeeding. This treatment is not performed during pregnancy.</li>
         <li>Any active skin infection, open wound or significant rash on the area.</li>
         <li>Any history of melasma, or a tendency to get dark marks after a scrape, a breakout or a bug bite.</li>
-        <li>Recent significant weight loss, however it happened. It changes what to expect.</li>
+        <li>Recent significant weight loss, including on GLP-1 medication. It changes what to expect.</li>
         <li>Any previous radiofrequency, ultrasound tightening or surgical lifting.</li>
       </ul>
 
