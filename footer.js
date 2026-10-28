@@ -12,7 +12,7 @@
                  'We treat more than what we see. Opening San Francisco, 2026.';
   var MEANING  = 'Aahana · आहान · first light of dawn';
   var ADDRESS  = '2175 3rd Street, Unit C1<br>San Francisco, CA 94107';
-  var HOURS    = 'Hours: by appointment';
+  var HOURS    = 'Opening soon';
   var PHONE    = '415-691-7603';
   var PHONE_E164 = '+14156917603';
   var EMAIL    = 'hello@aahanaskin.com';
