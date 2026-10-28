@@ -71,6 +71,11 @@
             '<a href="care.html" rel="nofollow">Care instructions</a>' +
             '<br><br>' +
             '<span class="footer-note">Before and after care for every treatment, on one page.</span>' +
+            /* TEMPORARY, until the San Francisco clinic opens. A plain link to
+               the Xerf page, deliberately not a booking button: the Boulevard
+               script stays on xerf.html alone rather than loading site wide. */
+            '<br><br>' +
+            '<a href="xerf.html#book">XERF, booking now in Danville</a>' +
           '</p>' +
         '</div>' +
       '</div>' +
