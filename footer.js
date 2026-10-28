@@ -9,10 +9,10 @@
 (function () {
 
   var TAGLINE  = 'Physician-led medical aesthetics, grounded in precision medicine. ' +
-                 'We treat more than what we see. Opening San Francisco, 2026.';
+                 'We treat more than what we see. Opening San Francisco, early 2027.';
   var MEANING  = 'Aahana · आहान · first light of dawn';
   var ADDRESS  = '2175 3rd Street, Unit C1<br>San Francisco, CA 94107';
-  var HOURS    = 'Opening soon';
+  var HOURS    = 'Opening early 2027';
   var PHONE    = '415-691-7603';
   var PHONE_E164 = '+14156917603';
   var EMAIL    = 'hello@aahanaskin.com';
