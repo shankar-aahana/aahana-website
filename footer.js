@@ -46,6 +46,9 @@
         '<div class="footer-col">' +
           '<h2>Location</h2>' +
           '<address>' + ADDRESS + '<br><br>' + HOURS + '</address>' +
+          /* Jurisdiction disclosure. Stated on every page, in full on the
+             contact page, because reviewers look for it site wide. */
+          '<p><a href="contact.html#where-we-provide-services">Services provided in California only</a></p>' +
           '<p><a href="contact.html">Getting here</a></p>' +
         '</div>' +
         '<div class="footer-col">' +
