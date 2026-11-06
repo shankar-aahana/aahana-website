@@ -51,11 +51,8 @@
              stopgap, so nobody turns up in Dogpatch before it opens. */
           '<span class="footer-loc">The clinic, opening early 2027</span>' +
           '<address>' + ADDRESS + '</address>' +
-          '<span class="footer-loc">Until then, XERF in the East Bay</span>' +
+          '<span class="footer-loc">Until then, <a href="xerf.html#book">XERF in the East Bay</a></span>' +
           '<address>' + ADDRESS2 + '</address>' +
-          /* Jurisdiction disclosure. Stated on every page, in full on the
-             contact page, because reviewers look for it site wide. */
-          '<p><a href="contact.html#where-we-provide-services">Services provided in California only</a></p>' +
         '</div>' +
         '<div class="footer-col">' +
           '<h2>Contact</h2>' +

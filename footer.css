@@ -89,6 +89,22 @@
   margin: 18px 0 6px;
 }
 .section-footer .footer-col > .footer-loc:first-of-type { margin-top: 0; }
+.section-footer .footer-col .footer-loc a {
+  color: inherit;
+  font: inherit; letter-spacing: inherit; text-transform: inherit;
+  /* An underline, not a border: a border would be drawn at the edge of the
+     padding below and float away from the word it belongs to. */
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(243,236,228,.34);
+  padding-block: 6px; min-height: 24px;   /* target size, 2.5.8 */
+}
+.section-footer .footer-col .footer-loc a:hover {
+  color: var(--ivory); text-decoration-color: rgba(237,232,225,.7);
+}
+/* The padding above adds 12px, so the label gives 12px back. */
+.section-footer .footer-col .footer-loc:has(a) { margin: 6px 0 0; }
 .section-footer .footer-col address { margin: 0; }
 
 .section-footer .footer-col a { color: rgba(243,236,228,.8); text-decoration: none; }
