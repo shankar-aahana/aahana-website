@@ -258,6 +258,25 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
+
+/* A deep link such as #ai-assistant is followed by an outside form. The shared
+   nav is injected at parse time and the web fonts land after first layout, so
+   a cold load can scroll before the target has settled and end up at the top.
+   Re-apply the hash once everything has loaded, and reveal the target so it is
+   not scrolled to while still transparent. Same approach as care.html. */
+function goToHash() {
+  var id = (location.hash || '').replace('#', '');
+  if (!id) return;
+  var el = document.getElementById(id);
+  if (!el) return;
+  var band = el;
+  while (band && !band.classList.contains('reveal')) band = band.parentElement;
+  (band || el).classList.add('visible');
+  el.classList.add('visible');
+  el.scrollIntoView({ block: 'start' });
+}
+window.addEventListener('hashchange', goToHash);
+window.addEventListener('load', goToHash);
 </script>
 </body>
 </html>
