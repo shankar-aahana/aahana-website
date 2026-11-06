@@ -96,7 +96,7 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
       border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);
       font-family: 'Spectral', serif;
       font-size: clamp(21px, 2.8vw, 27px); font-weight: 300; line-height: 1.42;
-      text-align: center; color: var(--rose); text-wrap: balance;
+      text-align: center; color: #7C5A50; text-wrap: balance;  /* deepened rose, 5.02:1 on ivory; --rose is 3.57 and this drops under 24px */
     }
 .faq { margin-top: 72px; padding-top: 44px; border-top: 0.5px solid var(--border); }
 .faq h2 { margin-top: 0 !important; }

@@ -79,6 +79,18 @@
   color: rgba(243,236,228,.8);
   font-style: normal;
 }
+/* Sits above each address in the Locations column. Without it the two
+   addresses run together and read as one place on two streets. */
+.section-footer .footer-loc {
+  display: block;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(243,236,228,.72);   /* 5.9:1 on the footer ground */
+  margin: 18px 0 6px;
+}
+.section-footer .footer-col > .footer-loc:first-of-type { margin-top: 0; }
+.section-footer .footer-col address { margin: 0; }
+
 .section-footer .footer-col a { color: rgba(243,236,228,.8); text-decoration: none; }
 .section-footer .footer-col a:hover { color: var(--ivory); }
 /* Says what is behind the Care instructions link before anyone

@@ -46,10 +46,13 @@
         '</div>' +
         '<div class="footer-col">' +
           '<h2>Locations</h2>' +
-          /* Both locations, because until San Francisco opens the Danville
-             satellite is the only one a patient can actually walk into. */
-          '<address>' + ADDRESS + '<br>' + HOURS + '</address>' +
-          '<address>' + ADDRESS2 + '<br><a href="xerf.html#book">XERF, booking now</a></address>' +
+          /* Two addresses need labels or they read as one long block. The
+             heading above each says which is the clinic and which is the
+             stopgap, so nobody turns up in Dogpatch before it opens. */
+          '<span class="footer-loc">The clinic, opening early 2027</span>' +
+          '<address>' + ADDRESS + '</address>' +
+          '<span class="footer-loc">Until then, XERF in the East Bay</span>' +
+          '<address>' + ADDRESS2 + '<br><a href="xerf.html#book">Book XERF in Danville</a></address>' +
           /* Jurisdiction disclosure. Stated on every page, in full on the
              contact page, because reviewers look for it site wide. */
           '<p><a href="contact.html#where-we-provide-services">Services provided in California only</a></p>' +
@@ -65,7 +68,7 @@
             '<br><br>' +
             '<a href="mailto:' + EMAIL + '">' + EMAIL + '</a>' +
             '<br><br>' +
-            '<a class="footer-ig" href="' + INSTAGRAM + '" rel="me noopener" aria-label="Aahana on Instagram">' + IG_GLYPH + '<span>' + IG_HANDLE + '</span></a>' +
+            '<a class="footer-ig" href="' + INSTAGRAM + '" rel="me noopener" aria-label="' + IG_HANDLE + ' on Instagram">' + IG_GLYPH + '<span>' + IG_HANDLE + '</span></a>' +
           '</p>' +
         '</div>' +
         /* Patients. The care sheets are open to anyone with the link but stay

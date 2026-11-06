@@ -82,13 +82,13 @@ body { font-family: 'Cairo', sans-serif; font-weight: 400; background: var(--ivo
       border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);
       font-family: 'Spectral', serif;
       font-size: clamp(21px, 2.8vw, 27px); font-weight: 300; line-height: 1.42;
-      text-align: center; color: var(--rose); text-wrap: balance;
+      text-align: center; color: #7C5A50; text-wrap: balance;  /* deepened rose, 5.02:1 on ivory; --rose is 3.57 and this drops under 24px */
     }
 blockquote {
       margin: 44px 0; padding-left: 28px;
       border-left: 2px solid var(--clay);
       font-family: 'Spectral', serif; font-style: italic;
-      font-size: 20px; font-weight: 300; line-height: 1.55; color: var(--rose);
+      font-size: 20px; font-weight: 300; line-height: 1.55; color: #7C5A50;  /* see .pull above */
     }
 sup a { font-size: 10px; text-decoration: none; color: #8C4426; border-bottom: 0; padding: 0 1px; }
 .asks { counter-reset: ask; list-style: none; margin: 36px 0 26px; }

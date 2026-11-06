@@ -281,8 +281,13 @@
     .v-risk { background: rgba(192,122,90,.2); }
     .v-ind  { background: rgba(107,81,71,.05); }
     .fm-row { cursor: pointer; }
-    .fm-row:hover th strong, .fm-row:focus-visible th strong { color: #8C4426; }
-    .fm-row:focus-visible { outline: 2px solid #8C4426; outline-offset: -2px; }
+    .fm-btn {
+      display: block; width: 100%; text-align: left;
+      background: none; border: 0; padding: 0; margin: 0;
+      font: inherit; color: inherit; cursor: pointer;
+    }
+    .fm-row:hover th strong, .fm-btn:focus-visible strong { color: #8C4426; }
+    .fm-btn:focus-visible { outline: 2px solid #8C4426; outline-offset: 2px; }
     .fm-row.is-open { background: rgba(192,122,90,.05); }
     .fm-hint { font-size: 12.5px; line-height: 1.6; color: #6B5147; margin-top: 10px; }
     .fm-note {
@@ -464,40 +469,40 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="fm-row" id="fm-r0" data-row="r0" tabindex="0" role="button" aria-label="1064 nm Nd:YAG, long pulse. Read why">
-            <th scope="row"><strong>1064 nm Nd:YAG, long pulse</strong><span class="fm-chrom">Targets: Melanin, weakly</span></th>
+          <tr class="fm-row" id="fm-r0" data-row="r0">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>1064 nm Nd:YAG, long pulse</strong></button><span class="fm-chrom">Targets: Melanin, weakly</span></th>
             <td data-fitz="I–II" class="v-ok"><span>Suited</span></td><td data-fitz="III–IV" class="v-ok"><span>Suited</span></td><td data-fitz="V–VI" class="v-ok"><span>Suited</span></td>
           </tr>
-          <tr class="fm-row" id="fm-r1" data-row="r1" tabindex="0" role="button" aria-label="Radiofrequency and RF microneedling. Read why">
-            <th scope="row"><strong>Radiofrequency and RF microneedling</strong><span class="fm-chrom">Targets: None, it is not light</span></th>
+          <tr class="fm-row" id="fm-r1" data-row="r1">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>Radiofrequency and RF microneedling</strong></button><span class="fm-chrom">Targets: None, it is not light</span></th>
             <td data-fitz="I–II" class="v-ind"><span>Tone independent</span></td><td data-fitz="III–IV" class="v-ind"><span>Tone independent</span></td><td data-fitz="V–VI" class="v-ind"><span>Tone independent</span></td>
           </tr>
-          <tr class="fm-row" id="fm-r2" data-row="r2" tabindex="0" role="button" aria-label="Microneedling, mechanical. Read why">
-            <th scope="row"><strong>Microneedling, mechanical</strong><span class="fm-chrom">Targets: None, it is not light</span></th>
+          <tr class="fm-row" id="fm-r2" data-row="r2">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>Microneedling, mechanical</strong></button><span class="fm-chrom">Targets: None, it is not light</span></th>
             <td data-fitz="I–II" class="v-ind"><span>Tone independent</span></td><td data-fitz="III–IV" class="v-ind"><span>Tone independent</span></td><td data-fitz="V–VI" class="v-adj"><span>Settings change</span></td>
           </tr>
-          <tr class="fm-row" id="fm-r3" data-row="r3" tabindex="0" role="button" aria-label="Superficial chemical peel. Read why">
-            <th scope="row"><strong>Superficial chemical peel</strong><span class="fm-chrom">Targets: None, chemical</span></th>
+          <tr class="fm-row" id="fm-r3" data-row="r3">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>Superficial chemical peel</strong></button><span class="fm-chrom">Targets: None, chemical</span></th>
             <td data-fitz="I–II" class="v-ok"><span>Suited</span></td><td data-fitz="III–IV" class="v-ok"><span>Suited</span></td><td data-fitz="V–VI" class="v-adj"><span>Settings change</span></td>
           </tr>
-          <tr class="fm-row" id="fm-r4" data-row="r4" tabindex="0" role="button" aria-label="Medium and deep chemical peel. Read why">
-            <th scope="row"><strong>Medium and deep chemical peel</strong><span class="fm-chrom">Targets: None, chemical</span></th>
+          <tr class="fm-row" id="fm-r4" data-row="r4">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>Medium and deep chemical peel</strong></button><span class="fm-chrom">Targets: None, chemical</span></th>
             <td data-fitz="I–II" class="v-ok"><span>Suited</span></td><td data-fitz="III–IV" class="v-adj"><span>Settings change</span></td><td data-fitz="V–VI" class="v-risk"><span>High risk</span></td>
           </tr>
-          <tr class="fm-row" id="fm-r5" data-row="r5" tabindex="0" role="button" aria-label="IPL and broadband light. Read why">
-            <th scope="row"><strong>IPL and broadband light</strong><span class="fm-chrom">Targets: Melanin, strongly</span></th>
+          <tr class="fm-row" id="fm-r5" data-row="r5">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>IPL and broadband light</strong></button><span class="fm-chrom">Targets: Melanin, strongly</span></th>
             <td data-fitz="I–II" class="v-ok"><span>Suited</span></td><td data-fitz="III–IV" class="v-risk"><span>High risk</span></td><td data-fitz="V–VI" class="v-risk"><span>High risk</span></td>
           </tr>
-          <tr class="fm-row" id="fm-r6" data-row="r6" tabindex="0" role="button" aria-label="532 nm KTP and 755 nm alexandrite. Read why">
-            <th scope="row"><strong>532 nm KTP and 755 nm alexandrite</strong><span class="fm-chrom">Targets: Melanin, strongly</span></th>
+          <tr class="fm-row" id="fm-r6" data-row="r6">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>532 nm KTP and 755 nm alexandrite</strong></button><span class="fm-chrom">Targets: Melanin, strongly</span></th>
             <td data-fitz="I–II" class="v-ok"><span>Suited</span></td><td data-fitz="III–IV" class="v-adj"><span>Settings change</span></td><td data-fitz="V–VI" class="v-risk"><span>High risk</span></td>
           </tr>
-          <tr class="fm-row" id="fm-r7" data-row="r7" tabindex="0" role="button" aria-label="Ablative CO2 and Er:YAG resurfacing. Read why">
-            <th scope="row"><strong>Ablative CO2 and Er:YAG resurfacing</strong><span class="fm-chrom">Targets: Water</span></th>
+          <tr class="fm-row" id="fm-r7" data-row="r7">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>Ablative CO2 and Er:YAG resurfacing</strong></button><span class="fm-chrom">Targets: Water</span></th>
             <td data-fitz="I–II" class="v-ok"><span>Suited</span></td><td data-fitz="III–IV" class="v-adj"><span>Settings change</span></td><td data-fitz="V–VI" class="v-risk"><span>High risk</span></td>
           </tr>
-          <tr class="fm-row" id="fm-r8" data-row="r8" tabindex="0" role="button" aria-label="Non-ablative fractional, 1550 and 1927 nm. Read why">
-            <th scope="row"><strong>Non-ablative fractional, 1550 and 1927 nm</strong><span class="fm-chrom">Targets: Water</span></th>
+          <tr class="fm-row" id="fm-r8" data-row="r8">
+            <th scope="row"><button type="button" class="fm-btn" aria-expanded="false"><strong>Non-ablative fractional, 1550 and 1927 nm</strong></button><span class="fm-chrom">Targets: Water</span></th>
             <td data-fitz="I–II" class="v-ok"><span>Suited</span></td><td data-fitz="III–IV" class="v-adj"><span>Settings change</span></td><td data-fitz="V–VI" class="v-adj"><span>Settings change</span></td>
           </tr>
         </tbody>
@@ -689,22 +694,26 @@
   }
 
   rows.forEach(function (row) {
-    row.setAttribute('aria-expanded', 'false');
+    var btn = row.querySelector('.fm-btn');
     function toggle() {
       if (narrow.matches) { openDialog(row); return; }
       var n = document.getElementById('fmn-' + row.dataset.row);
       var open = !n.hidden;
       notes.forEach(function (x) { x.hidden = true; });
-      rows.forEach(function (r) { r.classList.remove('is-open'); r.setAttribute('aria-expanded', 'false'); });
+      rows.forEach(function (r) {
+        r.classList.remove('is-open');
+        r.querySelector('.fm-btn').setAttribute('aria-expanded', 'false');
+      });
       if (open) return;
       n.hidden = false;
       row.classList.add('is-open');
-      row.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-expanded', 'true');
       n.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth', block: 'nearest' });
     }
-    row.addEventListener('click', toggle);
-    row.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    btn.addEventListener('click', function (e) { e.stopPropagation(); toggle(); });
+    row.addEventListener('click', function (e) {
+      if (e.target.closest('.fm-btn')) return;
+      toggle();
     });
   });
 })();
