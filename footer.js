@@ -12,6 +12,7 @@
                  'We treat more than what we see. Opening San Francisco, early 2027.';
   var MEANING  = 'Aahana · आहान · first light of dawn';
   var ADDRESS  = '2175 3rd Street, Unit C1<br>San Francisco, CA 94107';
+  var ADDRESS2 = '125 Railroad Avenue, Suite 206<br>Danville, CA 94526';
   var HOURS    = 'Opening early 2027';
   var PHONE    = '415-691-7603';
   var PHONE_E164 = '+14156917603';
@@ -44,8 +45,11 @@
           '<p class="footer-tagline">' + TAGLINE + '</p>' +
         '</div>' +
         '<div class="footer-col">' +
-          '<h2>Location</h2>' +
-          '<address>' + ADDRESS + '<br><br>' + HOURS + '</address>' +
+          '<h2>Locations</h2>' +
+          /* Both locations, because until San Francisco opens the Danville
+             satellite is the only one a patient can actually walk into. */
+          '<address>' + ADDRESS + '<br>' + HOURS + '</address>' +
+          '<address>' + ADDRESS2 + '<br><a href="xerf.html#book">XERF, booking now</a></address>' +
           /* Jurisdiction disclosure. Stated on every page, in full on the
              contact page, because reviewers look for it site wide. */
           '<p><a href="contact.html#where-we-provide-services">Services provided in California only</a></p>' +
@@ -74,11 +78,6 @@
             '<a href="care.html" rel="nofollow">Care instructions</a>' +
             '<br><br>' +
             '<span class="footer-note">Before and after care for every treatment, on one page.</span>' +
-            /* TEMPORARY, until the San Francisco clinic opens. A plain link to
-               the Xerf page, deliberately not a booking button: the Boulevard
-               script stays on xerf.html alone rather than loading site wide. */
-            '<br><br>' +
-            '<a href="xerf.html#book">XERF, booking now in Danville</a>' +
           '</p>' +
         '</div>' +
       '</div>' +
