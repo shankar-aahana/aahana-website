@@ -16,7 +16,7 @@
   var PHONE    = '415-691-7603';
   var PHONE_E164 = '+14156917603';
   var EMAIL    = 'hello@aahanaskin.com';
-  var LEGAL    = '© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · San Francisco, CA';
+  var LEGAL    = '© 2026 Aahana Medical Aesthetics · Dr. Shankar Mundluru MD MBA · CA license A153775 · San Francisco, CA';
   var DOMAIN   = 'aahanasf.com';
   var INSTAGRAM = 'https://www.instagram.com/aahanaskin/';
   var IG_HANDLE = '@aahanaskin';
