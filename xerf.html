@@ -303,9 +303,16 @@
   </script>
   <!-- End Boulevard Self-Booking overlay -->
 
-  <!-- Every booking control on this page calls one of these two. If a path
+  <!-- Every booking control on this page calls one of these three. If a path
        ever needs changing, it changes here and nowhere else. -->
   <script>
+    /* XERF Consultation is its own category in Boulevard, so the path is the
+       category and the widget resolves the single service inside it. */
+    function bookXerfConsult() {
+      if (window.blvd) {
+        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/XERF%20Consultation', visitType: 'SELF_VISIT' }});
+      }
+    }
     function bookXerfSingle() {
       if (window.blvd) {
         blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Skin%20Tightening%20-%20Single%20Treatment', visitType: 'SELF_VISIT' }});
@@ -351,6 +358,12 @@
     }
     .book-link:hover { border-bottom-color: #8C4426; }
     .cta-book { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 10px; }
+    /* Three buttons across do not fit the measure anywhere on this page, and
+       a 2 + 1 wrap reads as an accident. The consultation leads on its own
+       line and the two treatment options sit under it as the alternatives
+       they are. */
+    .book-alts { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; }
+    .cta-book + .book-alts { justify-content: center; }
     .cta-waitlist { margin: 28px 0 0; }
     .cta-waitlist button {
       background: none; border: 0; padding: 0;
@@ -382,10 +395,13 @@
 
     <div class="hero-book">
       <div class="book-buttons">
-        <button type="button" class="book-btn" onclick="bookXerfSingle()">Book a single treatment</button>
-        <button type="button" class="book-btn ghost" onclick="bookXerfCourse()">Book a course of two</button>
+        <button type="button" class="book-btn" onclick="bookXerfConsult()">Book a free consultation</button>
       </div>
-      <p class="hero-book-note">Running now at our Danville satellite in the East Bay while the San Francisco clinic is built. <a href="#book">What is on offer and how the course works</a>.</p>
+      <div class="book-alts">
+        <button type="button" class="book-btn ghost" onclick="bookXerfSingle()">A single treatment</button>
+        <button type="button" class="book-btn ghost" onclick="bookXerfCourse()">A course of two</button>
+      </div>
+      <p class="hero-book-note">Consultations are free for now, in person with Dr.&nbsp;Mundluru, while the San Francisco clinic is built. Everything runs at our Danville satellite in the East Bay. <a href="#book">What is on offer and how the course works</a>.</p>
     </div>
   </div>
 </section>
@@ -442,9 +458,14 @@
       <p>The San Francisco clinic is still being built. XERF is running now at our satellite location in the East Bay, at 125 Railroad&nbsp;Avenue, Suite&nbsp;206, Danville, CA&nbsp;94526, and you can book it here.</p>
 
       <div class="book-buttons">
-        <button type="button" class="book-btn" onclick="bookXerfSingle()">Book a single treatment</button>
-        <button type="button" class="book-btn ghost" onclick="bookXerfCourse()">Book a course of two</button>
+        <button type="button" class="book-btn" onclick="bookXerfConsult()">Book a free consultation</button>
       </div>
+      <div class="book-alts">
+        <button type="button" class="book-btn ghost" onclick="bookXerfSingle()">A single treatment</button>
+        <button type="button" class="book-btn ghost" onclick="bookXerfCourse()">A course of two</button>
+      </div>
+
+      <p class="book-note">Start with the consultation if you are not sure. It is free while the San Francisco clinic is being built, it is in person with Dr.&nbsp;Mundluru, and he will look at your skin and say how many sessions you are likely to need. If XERF is not the right thing for you, he will tell you. Online booking is for in-person consultations; for a virtual one, email <a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a>.</p>
 
       <p class="book-note">A course of two is where most people start, and it is the better value of the two options. Most people need one to three sessions to begin with and then once a year to hold it, so a course of two sits in the middle of that and the decision to add a third is made from how your skin responds at four to eight weeks. Face and neck, or face alone, are both offered and the difference is shown at booking.</p>
 
@@ -469,7 +490,7 @@
       </div>
     </div>
 
-    <p class="book-inline reveal">Ready when you are: <button type="button" class="book-link" onclick="bookXerfSingle()">book a single treatment</button> or <button type="button" class="book-link" onclick="bookXerfCourse()">book a course of two</button>, both at the Danville location.</p>
+    <p class="book-inline reveal">Ready when you are: <button type="button" class="book-link" onclick="bookXerfConsult()">book a free consultation</button>, <button type="button" class="book-link" onclick="bookXerfSingle()">a single treatment</button> or <button type="button" class="book-link" onclick="bookXerfCourse()">a course of two</button>, all at the Danville location.</p>
 
     <div class="faq reveal">
       <h2>Common questions</h2>
@@ -673,8 +694,11 @@
     <div class="cta-title">Book XERF in Danville</div>
     <p class="cta-desc">Running now at our satellite location in the East Bay while the San Francisco clinic is built. Physician-led, with a device stack chosen to treat the full range of skin.</p>
     <div class="cta-book">
-      <button type="button" class="book-btn" onclick="bookXerfSingle()">Book a single treatment</button>
-      <button type="button" class="book-btn ghost" onclick="bookXerfCourse()">Book a course of two</button>
+      <button type="button" class="book-btn" onclick="bookXerfConsult()">Book a free consultation</button>
+    </div>
+    <div class="book-alts">
+      <button type="button" class="book-btn ghost" onclick="bookXerfSingle()">A single treatment</button>
+      <button type="button" class="book-btn ghost" onclick="bookXerfCourse()">A course of two</button>
     </div>
     <p class="cta-waitlist"><button type="button" data-tally-open="kdJBYJ" data-tally-overlay="1">Or join the waitlist for San Francisco</button></p>
   </div>
