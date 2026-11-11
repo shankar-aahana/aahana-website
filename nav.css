@@ -129,7 +129,11 @@ nav.scrolled {
 .dropdown-cols {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4px 8px;
+  /* Seven groups wrap onto two rows, so the taller columns in the first row
+     ended up almost touching the labels in the second. The row gap is what
+     keeps them apart; the column gap is unchanged. */
+  gap: 26px 8px;
+  align-content: start;
   padding: 4px 8px 0;
 }
 .dropdown-col .dropdown-label { padding: 6px 14px 8px; }
