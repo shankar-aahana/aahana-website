@@ -86,6 +86,12 @@
     { group: 'Wellness',        links: [
         { label: 'Medical weight loss', href: 'medical-weight-loss.html' },
         { label: 'Sexual wellness',    href: 'sexual-wellness.html' }
+      ] },
+    { group: 'Headache',        links: [
+        { label: 'Migraine & headache',    href: 'migraine-headache.html' },
+        { label: 'Botox for migraine',     href: 'migraine-botox.html' },
+        { label: 'Occipital nerve block',  href: 'occipital-nerve-block.html' },
+        { label: 'Supraorbital nerve block', href: 'supraorbital-nerve-block.html' }
       ] }
   ];
 
