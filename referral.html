@@ -68,6 +68,11 @@ h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
 .note { background:var(--blush); border-radius:6px; padding:16px 18px; margin:10px 0 6px; }
 .note strong { display:block; font-family:'Spectral', serif; font-weight:400; font-size:19px; }
 .offer { margin-bottom:8px; }
+.ref { list-style:none; margin-top:8px; }
+.ref li { font-family:'Spectral', serif; font-weight:300; font-size:16px; line-height:1.5; padding-left:16px; position:relative; margin-top:6px; }
+.ref li::before { content:""; position:absolute; left:2px; top:.7em; width:5px; height:5px; border-radius:50%; background:var(--accent); }
+.ref b { font-weight:500; }
+.note p.fine { font-size:14px; color:var(--brown); margin-top:10px; }
 .note p { font-family:'Spectral', serif; font-weight:300; font-size:16px; line-height:1.5; margin-top:4px; }
 
 /* ---------- footnotes and footer ---------- */
@@ -107,8 +112,13 @@ h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
 
 <main id="main">
   <div class="note offer">
-    <strong>$100 off your first treatment.</strong>
-    <p>For new patients referred by a friend, on a first treatment or package of $300 or more. Just mention who referred you when you book.</p>
+    <strong>How referrals work</strong>
+    <ul class="ref">
+      <li><b>You get $100 off</b> your first treatment or package of $300 or more. Just mention who referred you when you book.</li>
+      <li><b>Your friend gets $100 in Aahana credit</b> once your treatment is paid.</li>
+      <li><b>Refer friends yourself</b> and earn $100 in credit for each one who books and pays for a treatment of $300 or more. Credit adds up, so five referrals is $500.</li>
+    </ul>
+    <p class="fine">Credit can be used on any Aahana service. It has no cash value and can't be transferred.</p>
   </div>
 
   <div class="cols" aria-hidden="true"><span>Service</span><span>Price</span></div>
