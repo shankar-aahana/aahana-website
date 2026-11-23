@@ -306,21 +306,24 @@
   <!-- Every booking control on this page calls one of these three. If a path
        ever needs changing, it changes here and nowhere else. -->
   <script>
-    /* XERF Consultation is its own category in Boulevard, so the path is the
-       category and the widget resolves the single service inside it. */
+    /* The consultation is reached by its service id. Its category alone no
+       longer resolves: Boulevard renamed the categories in Nov 2026 and a bare
+       category path that no longer exists lands the widget on "things have
+       moved" rather than failing loudly. Service ids are stable, so this one
+       points straight at the consultation. */
     function bookXerfConsult() {
       if (window.blvd) {
-        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/XERF%20Consultation', visitType: 'SELF_VISIT' }});
+        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/XERF%20Consultation/s_7e71f36a-c284-4e31-b392-25f2f1d8de04', visitType: 'SELF_VISIT' }});
       }
     }
     function bookXerfSingle() {
       if (window.blvd) {
-        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Skin%20Tightening%20-%20Single%20Treatment', visitType: 'SELF_VISIT' }});
+        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/XERF%20skin%20tightening%20%28Danville%29', visitType: 'SELF_VISIT' }});
       }
     }
     function bookXerfCourse() {
       if (window.blvd) {
-        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/Xerf%20Packages', visitType: 'PACKAGE' }});
+        blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu/XERF%20series%20%28Danville%29', visitType: 'PACKAGE' }});
       }
     }
   </script>
