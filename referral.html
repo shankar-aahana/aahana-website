@@ -86,6 +86,11 @@ h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
 .book .contact { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 20px; font-family:'Cairo', sans-serif; font-size:17px; font-weight:600; }
 .book .contact a { display:inline-block; padding:8px 4px; color:var(--accent); text-decoration:underline; text-decoration-color:rgba(140,68,38,.35); text-underline-offset:3px; }
 .book .small { font-size:16px; color:var(--brown); }
+/* The pill echoes the hero badge, filled rather than outlined so it reads as
+   the action on the page. Ivory on --accent is 5.8:1. */
+.book .book-online { display:inline-block; margin-bottom:6px; padding:13px 28px; background:var(--accent); color:var(--ivory); border-radius:999px; font-family:'Cairo', sans-serif; font-size:14px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; text-decoration:none; }
+.book .book-online:hover { opacity:.88; }
+.book .book-online:focus-visible { outline:2px solid var(--deep); outline-offset:3px; }
 .links { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 18px; margin-top:22px; }
 .links a { display:inline-block; padding:8px 4px; font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); text-decoration:none; }
 .links a:hover { text-decoration:underline; }
@@ -159,7 +164,8 @@ h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
   </div>
 
   <div class="book">
-    <p>An online booking link will follow. Until then, text or call Ryan to book, or email us with any questions.</p>
+    <p><a class="book-online" href="https://www.joinblvd.com/b/38a32e8c-24a6-4e5e-acac-6795a1ffc0d6/widget?injector-version=1.0&amp;locationId=b12412b9-b086-4a4a-8606-fa5d9e988977&amp;path=%2Fcart%2Fmenu&amp;visitType=SELF_VISIT" onclick="return bookNow(event)">Book online</a></p>
+    <p>Or text or call Ryan to book, or email us with any questions.</p>
     <p class="contact"><a href="tel:+17143237365">714-323-7365</a><a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a></p>
     <p class="small">We will send the address once your appointment is confirmed.</p>
   </div>
@@ -171,5 +177,33 @@ h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
   </nav>
 </main>
 
+<!-- Boulevard Self-Booking overlay -->
+<script>
+  (function (a) {
+    var b = { businessId: '38a32e8c-24a6-4e5e-acac-6795a1ffc0d6' };
+    var c = a.createElement('script');
+    var d = a.querySelector('script');
+    c.src = 'https://static.joinboulevard.com/injector.min.js';
+    c.async = true;
+    c.onload = function () { blvd.init(b); };
+    d.parentNode.insertBefore(c, d);
+  })(document);
+</script>
+
+<script>
+  /* The button is a real link to the booking page, so it still works if the
+     injector is blocked or slow. When the overlay is available we cancel the
+     navigation and open it instead, which keeps the reader on this page.
+     locationId is required: without it the injector navigates away rather
+     than opening the overlay. */
+  function bookNow(e) {
+    if (window.blvd && window.blvd.openBookingWidget) {
+      e.preventDefault();
+      blvd.openBookingWidget({ urlParams: { locationId: 'b12412b9-b086-4a4a-8606-fa5d9e988977', path: '/cart/menu', visitType: 'SELF_VISIT' }});
+      return false;
+    }
+    return true;
+  }
+</script>
 </body>
 </html>
