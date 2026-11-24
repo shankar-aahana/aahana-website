@@ -368,3 +368,22 @@ body:has(.hero-about) .section-cta .btn-primary { background: #463331 !important
 }
 .svShot--ph { background: linear-gradient(180deg, rgba(40,26,22,.05), rgba(40,26,22,.45)), var(--g1t) center / cover !important; }
 .svCat:nth-of-type(odd) .svShot--ph { background: linear-gradient(180deg, rgba(40,26,22,.05), rgba(40,26,22,.45)), var(--g3t) center / cover !important; }
+
+/* 12. Loft and referral price sheets (CSS only, markup untouched) ---- */
+body:has(.brand-mark) .hero {
+  background: linear-gradient(180deg, rgba(40,26,22,.3), rgba(40,26,22,.55)), var(--g2) center / cover !important;
+  padding: 44px 24px 52px !important; border-radius: 0 0 28px 28px;
+}
+body:has(.brand-mark) .brand-mark, body:has(.brand-mark) .brand-rule { display: none !important; }
+body:has(.brand-mark) .brand-words { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+body:has(.brand-mark) .brand-name { font-size: 34px; font-weight: 400; letter-spacing: -.01em; text-transform: lowercase; color: #C6ECA9; }
+body:has(.brand-mark) .brand-sub { font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: rgba(238,233,218,.7); }
+body:has(.brand-mark) .hero h1 { font-weight: 300; margin-top: 18px; }
+body:has(.brand-mark) .hero h1 em { font-style: normal; color: #C6ECA9; }
+body:has(.brand-mark) .badge { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; border-color: rgba(198,236,169,.7); color: #C6ECA9; }
+body:has(.brand-mark) .cols, body:has(.brand-mark) h2 { font-family: var(--mono); font-weight: 400; letter-spacing: .16em; }
+body:has(.brand-mark) .cols { border-bottom-width: 1px; }
+body:has(.brand-mark) h2 { color: #7A5741; font-size: 11.5px; }
+body:has(.brand-mark) .note { border-radius: 18px; background: linear-gradient(160deg, #F6F2E8, #EEE6D6); box-shadow: inset 0 0 0 1px rgba(122,87,65,.12); }
+body:has(.brand-mark) .book-online { border-radius: 999px !important; background: #463331 !important; color: #C6ECA9 !important; font-family: var(--mono); letter-spacing: .14em; }
+body:has(.brand-mark) .links a { font-family: var(--mono); letter-spacing: .14em; }
