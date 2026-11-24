@@ -398,6 +398,7 @@
     .fm-dverdicts span { font-size: 12.5px; line-height: 1.35; }
   </style>
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=2">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -431,32 +432,47 @@
       </ul>
     </div>
 
-    <p class="reveal">A version of this conversation happens in consultation rooms every day. Someone comes in having read about a treatment, or having watched a friend get a beautiful result from it, and is told she isn't a candidate. Her skin is too dark. It's too risky.</p>
+    <p class="reveal">A version of this conversation happens in consultation rooms every day. Someone wants a treatment and is told she isn't a candidate: her skin is too dark, it's too risky.</p>
 
-    <p class="reveal">I want to be precise about what is being said in that moment, because it is rarely what the patient hears. She hears that something about her skin is a problem. What is usually true is narrower and much more fixable: the device in that room, at the settings that practice runs, is not appropriate for her skin.</p>
+    <p class="reveal">What is usually true is narrower and more fixable. The device in that room, at the settings that practice runs, is not right for her skin.</p>
 
-    <p class="reveal">One of those is a statement about a person. The other is a statement about equipment and training.</p>
+    <div class="xPull reveal"><p>One is a statement about a person.</p><p>The other is about <em>equipment and training.</em></p></div>
 
     <h2 class="reveal">What the Fitzpatrick scale was actually built for</h2>
 
-    <p class="reveal">Someone has probably assigned you a number. Fitzpatrick III, or IV, or V.</p>
-
-    <p class="reveal">That scale was developed by Thomas Fitzpatrick at Harvard in 1975, and it was never designed to describe skin color. It was built to solve a dosing problem. He was treating psoriasis with psoralen and ultraviolet A, and needed to predict how much UVA a patient could tolerate before burning, so he built four categories graded by how readily skin <em>responds</em> to sun, running from always burns and never tans, to rarely burns and tans easily.<sup><a href="#ref2">2</a></sup> All four described lighter skin. Types V and VI were appended later, which is why they have always felt like an afterthought, two boxes asked to hold an enormous range of human pigmentation.</p>
-
-    <p class="reveal">So a scale built to predict sunburn is now used as a proxy for melanin content and for laser risk, neither of which it measures. In most clinics it is still the entire risk assessment.</p>
+    <div class="xNum reveal">
+      <div class="xNum-fig"><b>1975</b><span>Harvard &middot; psoriasis dosing</span></div>
+      <div class="xNum-body">
+        <p>Thomas Fitzpatrick built the scale to predict how much ultraviolet light a psoriasis patient could take before burning, not to describe skin color.<sup><a href="#ref2">2</a></sup> His four types, from "always burns" to "rarely burns", all described lighter skin. Types V and VI were added later, two boxes asked to hold an enormous range of pigmentation.</p>
+        <p>In most clinics it is still the entire laser risk assessment, though it measures neither melanin nor laser risk.</p>
+      </div>
+    </div>
 
     <div class="pull reveal">A scale invented to predict sunburn is now doing the work of a safety protocol.</div>
 
     <h2 class="reveal">How a laser chooses its target</h2>
 
-    <p class="reveal">Every aesthetic laser works on selective photothermolysis, described by Anderson and Parrish in 1983.<sup><a href="#ref1">1</a></sup> Choose a wavelength your target absorbs more strongly than the surrounding tissue does, deliver it in a pulse short enough that the heat stays put, and you can destroy something very small while leaving its neighbors intact.</p>
+    <p class="reveal">Every aesthetic laser relies on selective photothermolysis:<sup><a href="#ref1">1</a></sup> pick a wavelength the target absorbs more than the tissue around it, pulse it briefly so the heat stays put, and destroy something tiny while sparing its neighbors. The target is the <strong>chromophore</strong>: hemoglobin for vessels, water for resurfacing, melanin for hair and pigment.</p>
 
-    <p class="reveal">The absorbing structure is the <strong>chromophore</strong>, and three matter here: hemoglobin, water, and melanin. A vascular laser aims at hemoglobin. A resurfacing laser aims at water. A hair or pigment laser aims at melanin.</p>
+    <p class="reveal">When the target is melanin and the epidermis is also full of melanin, the surface intercepts energy meant for something deeper and turns it into heat. That is behind nearly every bad laser outcome in darker skin, and why the guidance is longer wavelengths, lower fluence, longer pulses.<sup><a href="#ref3">3</a></sup> Move the slider to see why.</p>
 
-    <p class="reveal">Which is where the problem lives. When your target is melanin and your epidermis is also full of melanin, the light has to pass through a layer made of the exact thing it was designed to be absorbed by. Epidermal melanin becomes a competing chromophore, intercepting energy meant for something deeper and converting it to heat at the surface. That is the mechanism behind essentially every bad laser outcome in darker skin, and the standard clinical guidance follows directly from it: longer wavelengths, lower fluences, longer pulse durations.<sup><a href="#ref3">3</a></sup></p>
-
-    <p class="reveal">Melanin's absorption falls off steadily as wavelength increases. The greens and yellows around 500 to 600&nbsp;nm that lift a sunspot beautifully off fair skin are absorbed intensely by epidermal melanin. Out at 1064&nbsp;nm that absorption drops by roughly an order of magnitude, the light penetrates more deeply, and far less of it is intercepted on the way down. That is why the 1064&nbsp;nm Nd:YAG became the backbone of laser treatment in skin of color.</p>
-
+    <figure class="xBeam reveal" data-xbeam>
+      <div class="xBeam-stage" aria-hidden="true">
+        <div class="xBeam-light"></div>
+        <div class="xBeam-epi"><span class="xBeam-heat"></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="xBeam-derm"><span class="xBeam-target"></span></div>
+        <span class="xBeam-lab l1">Epidermis &middot; melanin</span><span class="xBeam-lab l2">Dermis &middot; the target</span>
+      </div>
+      <div class="xBeam-panel">
+        <div class="xBeam-stops" role="radiogroup" aria-label="Wavelength">
+          <button type="button" role="radio" data-i="0">532 nm</button><button type="button" role="radio" data-i="1">755 nm</button><button type="button" role="radio" data-i="2">1064 nm</button>
+        </div>
+        <input class="xBeam-range" type="range" min="0" max="2" step="1" value="0" aria-label="Wavelength, 532 to 1064 nanometers">
+        <div class="xBeam-meter"><span>Absorbed by melanin</span><div><i></i></div></div>
+        <p class="xBeam-text" aria-live="polite"></p>
+      </div>
+      <figcaption>Melanin absorbs less as wavelength rises. At 1064&nbsp;nm absorption is roughly an order of magnitude lower than in the greens and yellows, so far less energy is caught at the surface.</figcaption>
+    </figure>
 
     <div class="fitz-matrix reveal">
       <table>
@@ -524,43 +540,79 @@
 
     <h2 class="reveal">Where broadband light goes wrong</h2>
 
-    <p class="reveal">Intense pulsed light is not a laser. It is a broadband flashlamp, filtered rather than tuned, emitting a wide spectrum at once. On fair skin that versatility is a real strength. On darker skin a meaningful fraction of the output sits in exactly the wavelengths melanin absorbs most strongly, and you cannot filter your way out of that and still have a device that does anything.</p>
+    <p class="reveal">Intense pulsed light is not a laser. It is a filtered flashlamp that emits a wide spectrum at once, including the wavelengths melanin absorbs most. "Never IPL" is too blunt, though. The real answer depends on the skin:</p>
 
-    <p class="reveal">I want to be fair, though, because "never IPL" is too blunt to be useful. Cutoff filters remove the shortest wavelengths. Fluence comes down, pulse duration goes up, cooling gets more aggressive, sessions get spaced further apart. Used that way, in experienced hands, these devices are used in Fitzpatrick IV, though burns have been reported even there.<sup><a href="#ref8">8</a></sup> At V and VI the margin runs out. No filter and no setting makes a broadband device a sensible choice for that skin, and a practice offering you one should be able to explain why.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a">
+        <span class="xSplit-k">Fitzpatrick IV</span>
+        <b>Possible, with care</b>
+        <ul><li>Cutoff filters remove the shortest wavelengths</li><li>Fluence down, pulse longer</li><li>More aggressive cooling</li><li>Sessions spaced further apart</li></ul>
+        <p>Burns have still been reported.<sup><a href="#ref8">8</a></sup></p>
+      </div>
+      <div class="xSplit-b">
+        <span class="xSplit-k">Fitzpatrick V and VI</span>
+        <b>The margin runs out</b>
+        <p>No filter or setting makes a broadband device a sensible choice. A practice offering one should be able to explain why.</p>
+      </div>
+    </div>
 
-    <p class="reveal">The failure in practice is rarely that a clinic owns the wrong machine. It is that the machine gets run at the settings it came configured with, on the quiet assumption that the settings are the treatment and the patient is a variable. That assumption is what produces the injuries.</p>
+    <div class="xPull xPull--sm reveal"><p>The failure is rarely the machine.</p><p>It is running it at <em>the settings it came with.</em></p></div>
 
     <h2 class="reveal">What the newer resurfacing platforms changed</h2>
 
-    <p class="reveal">A newer class of resurfacing device has genuinely shifted part of this. These platforms deliver two wavelengths in a single pass: an ablative erbium wavelength at 2940&nbsp;nm that removes tissue in the top fraction of the epidermis, and a non-ablative infrared wavelength around 1470&nbsp;nm that coagulates several hundred microns into the dermis.<sup><a href="#ref5">5</a></sup> Both target water. Neither is chasing melanin, so the competing chromophore problem is substantially reduced, and the honest answer for a patient with deep skin who wants resurfacing is no longer simply no.</p>
+    <p class="reveal">Hybrid resurfacing devices fire two wavelengths in one pass: 2940&nbsp;nm erbium to remove a thin layer of epidermis and about 1470&nbsp;nm to heat several hundred microns into the dermis.<sup><a href="#ref5">5</a></sup> Both target water, not melanin, so for deep skin the answer to resurfacing is no longer simply no.</p>
 
-    <p class="reveal">What has not kept pace is the evidence. One widely used hybrid system's own technical whitepaper specifies its wavelengths and its ablation and coagulation depths to the micron, and says nothing about Fitzpatrick type, skin of color, or hyperpigmentation risk.<sup><a href="#ref5">5</a></sup> A trial studying that class of device for acne scarring specifically in Fitzpatrick IV and V began recruiting in 2023 and is not scheduled to finish until 2029.<sup><a href="#ref6">6</a></sup> The physics improved before the evidence did. Ask what density and what depth your provider runs, because on a fractional device those are the two levers that decide whether you heal cleanly or pigment.</p>
+    <div class="xNum xNum--inline reveal">
+      <div class="xNum-fig"><b>2029</b><span>first skin-of-color trial ends</span></div>
+      <div class="xNum-body"><p>The evidence lags the physics. One maker's whitepaper specifies depths to the micron but says nothing about Fitzpatrick type or pigment risk,<sup><a href="#ref5">5</a></sup> and the trial in types IV and V will not finish until 2029.<sup><a href="#ref6">6</a></sup> Ask what density and depth your provider runs: on a fractional device, those decide whether you heal cleanly or pigment.</p></div>
+    </div>
 
     <h2 class="reveal">Why hyperpigmentation is the real risk</h2>
 
-    <p class="reveal">The most common adverse outcome here is post-inflammatory hyperpigmentation. Melanocytes in richly pigmented skin are not more numerous, they are more <em>reactive</em>, and inflammation of nearly any kind can trigger them to overproduce pigment during healing. The result is a darkened patch that appears after the treatment, sometimes weeks after, exactly where the energy went.</p>
+    <p class="reveal">The most common bad outcome is post-inflammatory hyperpigmentation. Melanocytes in deeper skin are not more numerous, they are more <em>reactive</em>: inflammation can make them overproduce pigment, sometimes weeks after treatment, exactly where the energy went. Where that pigment settles decides what happens next.</p>
 
-    <p class="reveal">When that pigment stays in the epidermis it usually fades over six to twelve months with rigorous sun protection and topical therapy. When inflammation breaches the dermal-epidermal junction, pigment drops into the dermis, where it can persist for years.</p>
-
-    <p class="reveal">Sit with that for a moment. A patient comes in <em>for</em> uneven pigmentation, the treatment produces more of it in a form harder to treat than what she started with, and she is told to wait a year. It is the exact outcome the whole conversation is trying to prevent, and it is overwhelmingly preventable.</p>
+    <div class="xPaths reveal">
+      <div class="xPaths-row">
+        <span class="xPaths-k">Stays in the epidermis</span>
+        <div class="xPaths-track"><i style="width: 22%"></i><em>Fades in 6 to 12 months</em></div>
+        <span class="xPaths-n">with sun protection and topicals</span>
+      </div>
+      <div class="xPaths-row is-deep">
+        <span class="xPaths-k">Reaches the dermis</span>
+        <div class="xPaths-track"><i style="width: 100%"></i><em>Can persist for years</em></div>
+        <span class="xPaths-n">after inflammation breaches the junction</span>
+      </div>
+    </div>
 
     <blockquote class="reveal">The risk in darker skin is not that the treatment won't work. It's that the wrong treatment produces the exact problem the patient came in to solve.</blockquote>
 
     <h2 class="reveal">What "FDA cleared" does not tell you</h2>
 
-    <p class="reveal">Patients reasonably assume a cleared device was shown safe in skin like theirs. Often it was not. An analysis of dermatology trials on ClinicalTrials.gov across the fifteen most common skin conditions found 447 completed trials with published results. Only 278 of them, 62.2 percent, reported participants' race, ethnicity or Fitzpatrick type at all, and among those that did, 69.1 percent of participants were white.<sup><a href="#ref4">4</a></sup> A clearance can be entirely legitimate and still rest on an evidence base that barely looked at your skin, which shifts the burden of judgment onto whoever is holding the handpiece.</p>
+    <div class="xStats reveal">
+      <div><b>447</b><span>completed dermatology trials with results, across the 15 most common conditions</span></div>
+      <div><b>62.2%</b><span>reported participants' race, ethnicity or Fitzpatrick type at all</span></div>
+      <div><b>69.1%</b><span>of participants in those were white</span></div>
+    </div>
+    <p class="reveal">A clearance can be legitimate and still rest on evidence that barely looked at your skin.<sup><a href="#ref4">4</a></sup> That shifts the judgment onto whoever holds the handpiece.</p>
 
     <h2 class="reveal">How we chose the devices at Aahana</h2>
 
-    <p class="reveal">We are opening in Dogpatch, in a city with no majority skin tone. Building a device stack around one would have been a clinical failure and an arithmetic one, so the constraint came before the device list: every platform has to be appropriate across the full range of skin we expect to see.</p>
+    <p class="reveal">Dogpatch is in a city with no majority skin tone, so the rule came before the device list: every platform must be appropriate across all six Fitzpatrick types.</p>
 
-    <p class="reveal">Our primary laser is a 1064&nbsp;nm Nd:YAG with a 650 microsecond pulse, cleared across Fitzpatrick types I through VI. The wavelength does the first half of the work. The pulse duration does the second: energy is delivered and gone before much heat accumulates at the surface, which makes treatment more comfortable and leaves less thermal energy to provoke the pigment response. Alongside it we run monopolar radiofrequency for tightening and structural work, which is not light at all and so is unconstrained by skin tone. Additional laser platforms are under evaluation, and each is held to the standard these two already meet: demonstrated safety across all six Fitzpatrick types, not only the lighter three. We would rather offer less than offer something with an asterisk next to it. The current stack is on our <a href="services.html">services page</a>.</p>
+    <div class="xStack reveal">
+      <div class="xStack-row"><span class="xStack-k">Primary laser</span><b>1064&nbsp;nm Nd:YAG</b><span class="xStack-chips"><i>650&nbsp;&micro;s pulse</i><i>Cleared I to VI</i></span><p>The wavelength gets past surface melanin; the short pulse is gone before heat builds, so it is more comfortable and less likely to provoke pigment.</p></div>
+      <div class="xStack-row"><span class="xStack-k">Tightening</span><b>Monopolar radiofrequency</b><span class="xStack-chips"><i>Not light</i><i>Tone independent</i></span><p>Used for structural work. Melanin plays no part.</p></div>
+      <div class="xStack-row is-next"><span class="xStack-k">Under evaluation</span><b>Further lasers</b><span class="xStack-chips"><i>Same standard</i></span><p>Each must show safety across all six types. We would rather offer less than offer something with an asterisk. The current stack is on our <a href="services.html">services page</a>.</p></div>
+    </div>
 
-    <p class="reveal">The trade is one worth naming: a wavelength that melanin absorbs weakly is also less efficient against melanin, so results here come as a series of four to six sessions rather than a single visit.<sup><a href="#ref7">7</a></sup> I would still rather run a small number of platforms appropriate for everyone who walks in than a large menu with an asterisk next to half of it.</p>
+    <div class="xSeries reveal">
+      <div class="xSeries-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i></div>
+      <p><b>The trade:</b> a wavelength melanin barely absorbs is also less efficient against it, so results come as a series of four to six sessions, not one visit.<sup><a href="#ref7">7</a></sup></p>
+    </div>
 
     <h2 class="reveal">Eight questions worth asking before anyone treats you</h2>
 
-    <ol class="asks reveal">
+        <ol class="asks reveal">
       <li><b>What wavelength is this device, in nanometers?</b><span>A specific number should come back immediately.</span></li>
       <li><b>Is this a laser or IPL?</b><span>Ask directly. The two get used interchangeably in marketing and are not interchangeable on your skin.</span></li>
       <li><b>What settings will you use, and are they different from what you'd use on lighter skin?</b><span>If the answer is that nothing changes, that is the answer you were looking for.</span></li>
@@ -571,9 +623,9 @@
       <li><b>Who is operating the device, and who is supervising?</b><span>You are entitled to know both, and to know what happens if something goes wrong mid-treatment.</span></li>
     </ol>
 
-    <p class="reveal">A good provider welcomes all eight. The physics has been settled since 1983 and the wavelength behavior of melanin is not in dispute. What has lagged is the willingness to build a practice around it, when buying one versatile device and treating a narrower slice of the population has always been cheaper.</p>
+    <p class="reveal">A good provider welcomes all eight. The physics has been settled since 1983. What lagged was the will to build a practice around it.</p>
 
-    <p class="reveal">If you have been told your skin is too dark for something you wanted, it is worth finding out whether that was a statement about your skin or about the room you were standing in.</p>
+    <div class="xPull reveal"><p>Told your skin is too dark for something?</p><p>Find out whether that was about your skin, or about <em>the room you were standing in.</em></p></div>
 
     <!-- FAQ -->
     <div class="faq reveal">
@@ -730,5 +782,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=1" defer></script>
 </body>
 </html>
