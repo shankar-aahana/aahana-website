@@ -2,171 +2,108 @@
    Aahana shared footer styles
    Loaded by every page. Pairs with footer.js, which writes the
    footer markup. Edit here to restyle the footer site-wide.
+   Direction A: mono labels, even spacing, the wordmark set
+   very large across the foot to echo the homepage hero.
    ============================================================ */
 
 .section-footer {
-  background: #463331;
-  padding: 80px 48px 40px;
+  background: #463331; color: #EEE9DA;
+  padding: clamp(64px, 8vw, 110px) clamp(22px, 3.4vw, 48px) 28px;
+  overflow: hidden;
 }
+.section-footer a { color: inherit; }
 
-.section-footer .footer-top {
+.section-footer .f-top {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr;
-  gap: 44px;
-  padding-bottom: 60px;
-  border-bottom: 0.5px solid rgba(244, 239, 228,.08);
+  grid-template-columns: 1.4fr 1fr 1fr .8fr;
+  gap: clamp(32px, 4vw, 64px);
   align-items: start;
 }
-.section-footer .footer-top > div:not(:first-child) { padding-top: 40px; }
-
-/* Same masked-mark technique as the nav, so both share one cached
-   aahana-mark.svg and both take their colour from the surrounding text. */
-.section-footer .footer-brand-lockup {
-  display: flex; align-items: center; gap: 14px;
-  margin-bottom: 20px;
+.section-footer .f-tagline {
+  margin: 0 0 28px; max-width: 34ch;
+  font-size: clamp(17px, 1.4vw, 21px); font-weight: 300; line-height: 1.5;
+  color: rgba(238,233,218,.92);
 }
-.section-footer .footer-brand-words { display: flex; flex-direction: column; }
-/* The old leaf mark and its rule are parked here the same way they are in
-   the nav, so nav and footer stay one lockup. They come back when the agency
-   supplies the real logotype. */
-.section-footer .footer-mark,
-.section-footer .footer-rule { display: none !important; }
-.section-footer .footer-brand-lockup { gap: 0; }
-.section-footer .footer-brand-name {
-  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
-  font-size: 32px; font-weight: 500;
+.section-footer .f-cta {
+  display: inline-flex; align-items: center; gap: 14px;
+  min-height: 48px; padding: 0 26px; border-radius: 999px; cursor: pointer;
+  background: transparent; color: #C6ECA9; border: 1px solid rgba(198,236,169,.7);
+  font-family: 'Satoshi', sans-serif; font-size: 11.5px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  transition: gap .25s ease, background .25s ease;
+}
+.section-footer .f-cta svg { width: 30px; height: 12px; }
+.section-footer .f-cta:hover { gap: 22px; background: rgba(198,236,169,.08); }
+.section-footer .f-cta:focus-visible { outline: 2px solid #C6ECA9; outline-offset: 3px; }
+
+.section-footer .f-label {
+  margin: 0 0 20px; padding-bottom: 14px;
+  border-bottom: 1px solid rgba(238,233,218,.16);
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10.5px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase;
   color: #C6ECA9;
-  letter-spacing: -.005em;
-  line-height: 1;
 }
-.section-footer .footer-brand-sub {
-  display: none;
-  font-size: 9px; font-weight: 300;
-  letter-spacing: .2em; text-transform: uppercase;
-  color: #E3DAC8;
-  margin-top: 4px;
+.section-footer .f-loc {
+  margin: 0 0 6px;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(238,233,218,.6);
 }
-.section-footer .footer-name-meaning {
-  font-size: 12px; font-weight: 300;
-  color: rgba(244, 239, 228, 0.59);
-  letter-spacing: .08em;
-  font-style: italic;
-  margin-bottom: 14px;
+.section-footer .f-loc a { color: rgba(238,233,218,.85); text-decoration: underline; text-underline-offset: 3px; }
+.section-footer address {
+  margin: 0 0 22px; font-style: normal;
+  font-size: 14px; font-weight: 300; line-height: 1.65; color: rgba(238,233,218,.9);
 }
-.section-footer .footer-tagline {
-  font-size: 13px; font-weight: 300; line-height: 1.8;
-  color: rgba(244, 239, 228,.7);
-  max-width: 240px;
-}
+.section-footer address:last-child { margin-bottom: 0; }
 
-.section-footer .footer-col h2, .section-footer .footer-col h5 {
-  font-size: 12px; font-weight: 500;
-  letter-spacing: .14em; text-transform: uppercase;
-  color: #E3DAC8;
-  margin-bottom: 16px;
+.section-footer .f-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.section-footer .f-list li { display: grid; gap: 3px; }
+.section-footer .f-note {
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(238,233,218,.6);
 }
-.section-footer .footer-col p,
-.section-footer .footer-col address {
-  font-size: 13px; font-weight: 300; line-height: 1.9;
-  color: rgba(244, 239, 228,.8);
-  font-style: normal;
+.section-footer .f-list a {
+  display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+  min-height: 24px; text-decoration: none;
+  font-size: 14px; font-weight: 300; color: rgba(238,233,218,.92);
+  border-bottom: 1px solid transparent;
 }
-/* Sits above each address in the Locations column. Without it the two
-   addresses run together and read as one place on two streets. */
-.section-footer .footer-loc {
-  display: block;
-  font-size: 11px; font-weight: 500;
-  letter-spacing: .1em; text-transform: uppercase;
-  color: rgba(244, 239, 228,.72);   /* 5.9:1 on the footer ground */
-  margin: 18px 0 6px;
-}
-.section-footer .footer-col > .footer-loc:first-of-type { margin-top: 0; }
-.section-footer .footer-col .footer-loc a {
-  color: inherit;
-  font: inherit; letter-spacing: inherit; text-transform: inherit;
-  /* An underline, not a border: a border would be drawn at the edge of the
-     padding below and float away from the word it belongs to. */
-  text-decoration: underline;
-  text-decoration-thickness: 0.5px;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(244, 239, 228,.34);
-  padding-block: 6px; min-height: 24px;   /* target size, 2.5.8 */
-}
-.section-footer .footer-col .footer-loc a:hover {
-  color: var(--ivory); text-decoration-color: rgba(238, 233, 218,.7);
-}
-/* The padding above adds 12px, so the label gives 12px back. */
-.section-footer .footer-col .footer-loc:has(a) { margin: 6px 0 0; }
-.section-footer .footer-col address { margin: 0; }
-
-.section-footer .footer-col a { color: rgba(244, 239, 228,.8); text-decoration: none; }
-.section-footer .footer-col a:hover { color: var(--ivory); }
-/* Says what is behind the Care instructions link before anyone
-   clicks it, so the password page is not a surprise. */
-.section-footer .footer-note {
-  display: block; font-size: 12px; line-height: 1.7;
-  color: rgba(244, 239, 228,.68);   /* 5.5:1 on the footer ground. At .55 it was 4.2:1 and failed AA. */
-}
-
-.section-footer .footer-waitlist {
-  background: none; border: none; cursor: pointer;
-  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
-  font-size: 13px; font-weight: 300;
-  color: rgba(244, 239, 228,.8);
-  padding: 0; text-align: left;
-}
-.section-footer .footer-waitlist:hover { color: var(--ivory); }
-
-.section-footer .footer-bottom {
-  padding-top: 32px;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.section-footer .footer-legal {
-  font-size: 10px; font-weight: 300;
-  color: rgba(244, 239, 228,.66);
-  letter-spacing: .06em;
-}
-.section-footer .footer-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: var(--terra); opacity: .4;
-}
-
-@media (max-width: 1180px) {
-  .section-footer .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-}
-@media (max-width: 900px) {
-  .section-footer { padding: 56px 24px 32px; }
-  .section-footer .footer-top { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
-  .section-footer .footer-top > div:not(:first-child) { padding-top: 0; }
-  .section-footer .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-}
-
-.footer-legal-link {
-      color: inherit; text-decoration: none;
-      border-bottom: 0.5px solid transparent;
-      transition: border-color .2s, color .2s;
-    }
-.footer-legal-link:hover { color: var(--ivory); border-bottom-color: rgba(238, 233, 218,.5); }
-
-.section-footer .footer-ig {
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-.section-footer .ig-glyph {
-      width: 14px; height: 14px; flex: none;
-      fill: none; stroke: currentColor; stroke-width: 1.7;
-      overflow: visible;
-    }
+.section-footer .f-list a:hover { color: #C6ECA9; }
+.section-footer .f-links { gap: 8px; }
+.section-footer .f-links a { font-size: 15px; }
+.section-footer .ig-glyph { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .section-footer .ig-glyph .ig-dot { fill: currentColor; stroke: none; }
 
-/* Target size (WCAG 2.2 AA, 2.5.8). The legal links sit at 10px type in the
-   footer bar; padding grows the pointer target to 24px without moving the
-   text or changing the bar's height. */
-.section-footer .footer-legal-link,
-.section-footer .footer-waitlist,
-.section-footer .footer-col a,
-.section-footer .footer-ig {
-  display: inline-block;
-  padding-block: 6px;
-  min-height: 24px;
+/* PLACEHOLDER WORDMARK, same as the nav. Swap for the agency's SVG. */
+.section-footer .f-word {
+  margin: clamp(56px, 7vw, 100px) 0 0;
+  font-family: 'Satoshi', sans-serif; font-weight: 500;
+  font-size: clamp(96px, 28.5vw, 470px); line-height: .78; letter-spacing: -.05em;
+  color: #C6ECA9; text-align: center; white-space: nowrap;
+  margin-left: -.03em; user-select: none;
 }
-.section-footer .footer-ig { display: inline-flex; align-items: center; }
+.section-footer .f-bottom {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 10px 28px; margin-top: clamp(22px, 2.6vw, 34px); padding-top: 18px;
+  border-top: 1px solid rgba(238,233,218,.16);
+}
+.section-footer .f-legal, .section-footer .f-meaning, .section-footer .footer-legal {
+  margin: 0; font-size: 11px; font-weight: 300; letter-spacing: .03em; color: rgba(238,233,218,.62);
+}
+.section-footer .f-meaning { font-style: italic; }
+.section-footer .f-legal-links { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.section-footer .footer-legal { text-decoration: none; display: inline-block; padding-block: 4px; }
+.section-footer .footer-legal:hover { color: #EEE9DA; }
+
+@media (max-width: 960px) {
+  .section-footer .f-top { grid-template-columns: 1fr 1fr; }
+  .section-footer .f-intro { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .section-footer .f-top { grid-template-columns: 1fr; gap: 36px; }
+  .section-footer .f-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-footer .f-cta { transition: none; }
+}

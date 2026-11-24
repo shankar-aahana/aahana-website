@@ -29,68 +29,56 @@
     '</svg>';
   var TALLY_ID = 'kdJBYJ';
 
+  var MONO = "class=\"f-label\"";
   document.write(
     '<footer class="section-footer">' +
-      '<div class="footer-top">' +
-        '<div>' +
-          '<div class="footer-brand-lockup">' +
-            '<span class="footer-mark" aria-hidden="true"></span>' +
-            '<span class="footer-rule" aria-hidden="true"></span>' +
-            '<div class="footer-brand-words">' +
-              /* PLACEHOLDER WORDMARK, same as the nav. */
-              '<div class="footer-brand-name">aahana</div>' +
-              '<div class="footer-brand-sub">Medical Aesthetics</div>' +
-            '</div>' +
-          '</div>' +
-          '<div class="footer-name-meaning">' + MEANING + '</div>' +
-          '<p class="footer-tagline">' + TAGLINE + '</p>' +
+      '<div class="f-top">' +
+        '<div class="f-intro">' +
+          '<p class="f-tagline">' + TAGLINE + '</p>' +
+          '<button class="f-cta footer-waitlist" data-tally-open="' + TALLY_ID + '" data-tally-overlay="1">Join the waitlist' +
+            '<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></button>' +
         '</div>' +
-        '<div class="footer-col">' +
-          '<h2>Locations</h2>' +
+        '<div class="f-col">' +
+          '<h2 ' + MONO + '>Locations</h2>' +
           /* Two addresses need labels or they read as one long block. The
-             heading above each says which is the clinic and which is the
+             label above each says which is the clinic and which is the
              stopgap, so nobody turns up in Dogpatch before it opens. */
-          '<span class="footer-loc">The clinic, opening early 2027</span>' +
+          '<p class="f-loc">The clinic, opening early 2027</p>' +
           '<address>' + ADDRESS + '</address>' +
-          '<span class="footer-loc">Until then, <a href="xerf.html#book">XERF in the East Bay</a></span>' +
+          '<p class="f-loc">Until then, <a href="xerf.html#book">XERF in the East Bay</a></p>' +
           '<address>' + ADDRESS2 + '</address>' +
         '</div>' +
-        '<div class="footer-col">' +
-          '<h2>Contact</h2>' +
-          '<p>' +
-            '<button class="footer-waitlist" data-tally-open="' + TALLY_ID + '" data-tally-overlay="1">Join the waitlist</button>' +
-            '<br><br>' +
-            '<span class="footer-note">Text or call</span><br>' +
-            '<a href="tel:' + PHONE_E164 + '">' + PHONE + '</a>' +
-            '<br><br>' +
-            '<a href="mailto:' + EMAIL + '">' + EMAIL + '</a>' +
-            '<br><br>' +
-            '<a class="footer-ig" href="' + INSTAGRAM + '" rel="me noopener" aria-label="' + IG_HANDLE + ' on Instagram">' + IG_GLYPH + '<span>' + IG_HANDLE + '</span></a>' +
-          '</p>' +
+        '<div class="f-col">' +
+          '<h2 ' + MONO + '>Contact</h2>' +
+          '<ul class="f-list">' +
+            '<li><span class="f-note">Text or call</span><a href="tel:' + PHONE_E164 + '">' + PHONE + '</a></li>' +
+            '<li><span class="f-note">Email</span><a href="mailto:' + EMAIL + '">' + EMAIL + '</a></li>' +
+            '<li><span class="f-note">Instagram</span><a class="footer-ig" href="' + INSTAGRAM + '" rel="me noopener" aria-label="' + IG_HANDLE + ' on Instagram">' + IG_GLYPH + '<span>' + IG_HANDLE + '</span></a></li>' +
+          '</ul>' +
         '</div>' +
         /* Patients. The care sheets are open to anyone with the link but stay
            noindex: the same instructions are already on the treatment pages,
            where they earn their search traffic, and two indexed copies would
            compete with each other. rel=nofollow for the same reason. */
-        '<div class="footer-col">' +
-          '<h2>Patients</h2>' +
-          '<p>' +
-            '<a href="care.html" rel="nofollow">Care instructions</a>' +
-            '<br><br>' +
-            '<span class="footer-note">Before and after care for every treatment, on one page.</span>' +
-          '</p>' +
+        '<div class="f-col">' +
+          '<h2 ' + MONO + '>Explore</h2>' +
+          '<ul class="f-list f-links">' +
+            '<li><a href="services.html">Services</a></li>' +
+            '<li><a href="about.html">Dr. Mundluru</a></li>' +
+            '<li><a href="journal.html">Daybreak</a></li>' +
+            '<li><a href="care.html" rel="nofollow">Care instructions</a></li>' +
+          '</ul>' +
         '</div>' +
       '</div>' +
-      '<div class="footer-bottom">' +
-        '<div class="footer-legal">' + LEGAL + '</div>' +
-        '<div class="footer-dot"></div>' +
-        '<a class="footer-legal footer-legal-link" href="privacy.html">Privacy Policy</a>' +
-        '<div class="footer-dot"></div>' +
-        '<a class="footer-legal footer-legal-link" href="notice-of-privacy-practices.html">Notice of Privacy Practices</a>' +
-        '<div class="footer-dot"></div>' +
-        '<a class="footer-legal footer-legal-link" href="accessibility.html">Accessibility</a>' +
-        '<div class="footer-dot"></div>' +
-        '<div class="footer-legal">' + DOMAIN + '</div>' +
+      '<div class="f-word" aria-hidden="true">aahana</div>' +
+      '<div class="f-bottom">' +
+        '<p class="f-legal">' + LEGAL + '</p>' +
+        '<p class="f-meaning">' + MEANING + '</p>' +
+        '<div class="f-legal-links" role="navigation" aria-label="Legal">' +
+          '<a class="footer-legal" href="privacy.html">Privacy Policy</a>' +
+          '<a class="footer-legal" href="notice-of-privacy-practices.html">Notice of Privacy Practices</a>' +
+          '<a class="footer-legal" href="accessibility.html">Accessibility</a>' +
+        '</div>' +
       '</div>' +
     '</footer>'
   );
