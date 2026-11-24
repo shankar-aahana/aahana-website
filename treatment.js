@@ -31,12 +31,12 @@
   var btns = items.map(function (it, i) {
     var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'tab');
     b.innerHTML = '<span>' + String(i + 1).padStart(2, '0') + '</span>' + it.t;
-    b.addEventListener('click', function () { stop(); set(i); });
+    b.addEventListener('click', function () { touched = true; stop(); set(i); });
     list.appendChild(b); return b;
   });
   wrap.appendChild(stage); wrap.appendChild(list);
   dl.parentNode.insertBefore(wrap, dl); dl.classList.add('is-dialled');
-  var cur = -1, timer = null;
+  var cur = -1, timer = null, touched = false;
   function set(i) {
     cur = i;
     arcs.forEach(function (p, k) { p.classList.toggle('is-on', k === i); p.classList.toggle('is-past', k < i); });
@@ -50,10 +50,10 @@
   if (!reduce && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (es) {
       es.forEach(function (e) {
-        if (e.isIntersecting && !timer && cur !== -2) timer = setInterval(function () { set((cur + 1) % n); }, 4200);
+        if (e.isIntersecting && !timer && !touched) timer = setInterval(function () { set((cur + 1) % n); }, 4200);
         else if (!e.isIntersecting) stop();
       });
     }, { threshold: .4 }).observe(wrap);
-    wrap.addEventListener('pointerenter', function () { stop(); cur = cur; });
+    ['pointerenter', 'pointerdown', 'focusin'].forEach(function (ev) { wrap.addEventListener(ev, function () { touched = true; stop(); }); });
   }
 })();
