@@ -325,3 +325,46 @@ body:has(.hero-about) .section-cta .btn-primary { background: #463331 !important
 .tx { border-radius: 14px; transition: background .25s; }
 .tx:hover { background: rgba(196,172,157,.12); }
 .urgentnote { border-radius: 14px; }
+
+/* 10. Story rows (homepage, services) ------------------------------- */
+.storyRow { background: #EEE9DA; padding: clamp(64px, 8vw, 110px) 22px; }
+.storyRow-head { max-width: 1180px; margin: 0 auto 28px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.storyRow-kicker { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #7A5741; display: block; margin-bottom: 12px; }
+.storyRow h2 { font-size: clamp(30px, 3.6vw, 48px); font-weight: 300; line-height: 1.05; color: #463331; letter-spacing: -.01em; margin: 0; }
+.storyRow-all { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #463331; text-decoration: none; border-bottom: 1px solid rgba(70,51,49,.4); padding-bottom: 3px; white-space: nowrap; }
+.storyRow-track { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.storyCard {
+  position: relative; isolation: isolate; overflow: hidden; border-radius: 24px; aspect-ratio: 9 / 14;
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; text-decoration: none; color: #EEE9DA;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.storyCard::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(40,26,22,0) 25%, rgba(40,26,22,.55) 55%, rgba(40,26,22,.88)); }
+.sc-bg { position: absolute; inset: 0; z-index: -2; background: center / cover no-repeat; transition: transform .8s ease; }
+.sc-bg.g1 { background-image: var(--g1t); } .sc-bg.g2 { background-image: var(--g2t); } .sc-bg.g3 { background-image: var(--g3t); }
+.sc-tag { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(238,233,218,.88); margin-bottom: 10px; }
+.sc-title { font-size: clamp(16px, 1.35vw, 20px); font-weight: 500; line-height: 1.16; text-transform: uppercase; letter-spacing: .02em; color: #C6ECA9; }
+.sc-more { align-self: flex-start; margin-top: 16px; padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(198,236,169,.6); color: #C6ECA9; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; transition: background .25s; }
+.storyCard:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px rgba(40,26,22,.6); }
+.storyCard:hover .sc-bg { transform: scale(1.05); }
+.storyCard:hover .sc-more { background: rgba(198,236,169,.12); }
+.storyCard:focus-visible { outline: 2px solid #463331; outline-offset: 3px; }
+@media (max-width: 900px) {
+  .storyRow-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -22px; padding: 0 22px 6px; gap: 10px; }
+  .storyRow-track::-webkit-scrollbar { display: none; }
+  .storyCard { flex: 0 0 min(72vw, 300px); scroll-snap-align: start; }
+  .storyRow-head { align-items: flex-start; flex-direction: column; }
+}
+
+/* 11. Homepage and services surfaces --------------------------------- */
+.aRing-left { background: linear-gradient(180deg, rgba(40,26,22,.12), rgba(40,26,22,.3)), var(--g3) center / cover !important; }
+.aRing-left::before { opacity: 0 !important; }
+.aDr { background: linear-gradient(180deg, rgba(40,26,22,.45), rgba(40,26,22,.6)), var(--g2) center / cover !important; }
+.sHero { background: linear-gradient(180deg, rgba(40,26,22,.4), rgba(40,26,22,.62)), var(--g2) center / cover !important; }
+.svCat--b {
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgba(196,172,157,.38), transparent 60%),
+    radial-gradient(55% 80% at 100% 100%, rgba(198,236,169,.28), transparent 65%),
+    #E9E2D2 !important;
+}
+.svShot--ph { background: linear-gradient(180deg, rgba(40,26,22,.05), rgba(40,26,22,.45)), var(--g1t) center / cover !important; }
+.svCat:nth-of-type(odd) .svShot--ph { background: linear-gradient(180deg, rgba(40,26,22,.05), rgba(40,26,22,.45)), var(--g3t) center / cover !important; }
