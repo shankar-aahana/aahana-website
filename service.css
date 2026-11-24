@@ -859,3 +859,108 @@ body:has(.keyband) .article-hero-inner { max-width: 1120px; }
 .keyband + .photo-band { margin-top: -68px; }
 .photo-band + .keyband { margin-top: 0; }
 @media (max-width: 900px) { .keyband + .photo-band { margin-top: -52px; } }
+
+/* ---- Direction A, part 3: gradients, arch, rings, dial ---- */
+.article-hero {
+  background:
+    radial-gradient(70% 90% at 92% 10%, rgba(154,113,88,.55), transparent 62%),
+    radial-gradient(60% 70% at 0% 100%, rgba(122,87,65,.35), transparent 70%),
+    linear-gradient(180deg, #4E3935 0%, #463331 60%, #3E2D2B 100%) !important;
+  isolation: isolate; overflow: hidden;
+}
+.article-hero::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.93 0 0 0 0 0.91 0 0 0 0 0.85 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* arch photo with concentric rings behind it */
+.hero-media { overflow: visible !important; position: relative; border-radius: 0 !important; }
+.hero-media img { border-radius: 999px 999px 18px 18px; position: relative; z-index: 1; }
+.hero-media::before {
+  content: ''; position: absolute; left: 50%; top: 42%; width: 170%; aspect-ratio: 1; transform: translate(-50%, -50%);
+  border-radius: 50%; pointer-events: none; z-index: 0;
+  background: repeating-radial-gradient(circle, transparent 0 46px, rgba(198,236,169,.16) 46px 47px);
+  -webkit-mask: radial-gradient(circle, #000 30%, transparent 70%); mask: radial-gradient(circle, #000 30%, transparent 70%);
+}
+.hero-media::after {
+  content: ''; position: absolute; z-index: 2; width: 14px; height: 14px; border-radius: 50%;
+  background: #C6ECA9; right: 9%; top: 11%; box-shadow: 0 0 0 6px rgba(198,236,169,.18);
+}
+@media (max-width: 999px) {
+  .hero-media { aspect-ratio: 4 / 4.2; max-width: 420px; margin-left: auto; margin-right: auto; }
+}
+
+/* light bands: warm wash; dark bands: sandalwood glow */
+.keyband:not(.dark) {
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgba(196,172,157,.38), transparent 60%),
+    radial-gradient(55% 80% at 100% 100%, rgba(198,236,169,.28), transparent 65%),
+    #E9E2D2 !important;
+}
+.keyband.dark {
+  background:
+    radial-gradient(70% 80% at 12% 0%, rgba(154,113,88,.5), transparent 62%),
+    radial-gradient(50% 70% at 100% 100%, rgba(198,236,169,.07), transparent 70%),
+    #463331 !important;
+}
+
+/* treats cards: numbered, soft gradient, leaf tick */
+.treats { counter-reset: tr; }
+.keyband .treats div, .treats div {
+  position: relative; background: linear-gradient(160deg, #F6F2E8 0%, #EEE6D6 100%) !important;
+  box-shadow: inset 0 0 0 1px rgba(122,87,65,.10);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.treats div::before {
+  counter-increment: tr; content: counter(tr, decimal-leading-zero);
+  display: block; margin-bottom: 14px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; color: #7A5741;
+}
+.treats div::after {
+  content: ''; position: absolute; right: 18px; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: #C6ECA9;
+  box-shadow: 0 0 0 1px rgba(70,51,49,.25);
+}
+.treats div:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px rgba(122,87,65,.22), 0 10px 24px -16px rgba(70,51,49,.45); }
+
+/* session dial */
+.glance.is-dialled { display: none !important; }
+@media print { .glance.is-dialled { display: grid !important; } .tDial { display: none; } }
+.tDial { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 36px; align-items: center; margin-top: 8px; }
+.tDial-stage { position: relative; aspect-ratio: 1; }
+.tDial-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.tDial-inner { fill: rgba(238,233,218,.04); stroke: rgba(238,233,218,.10); }
+.tDial-arc { stroke: rgba(238,233,218,.28); stroke-width: 1.4; stroke-linecap: round; transition: stroke .4s, stroke-width .4s; }
+.tDial-arc.is-past { stroke: rgba(198,236,169,.45); }
+.tDial-arc.is-on { stroke: #C6ECA9; stroke-width: 3; }
+.tDial-dot { fill: rgba(238,233,218,.5); transition: fill .4s; }
+.tDial-dot.is-on { fill: #C6ECA9; }
+.tDial-center {
+  position: absolute; inset: 18%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.tDial-k { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; color: #C6ECA9; margin-bottom: 12px; }
+.tDial-center strong { font-weight: 300; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.15; color: #EEE9DA; margin-bottom: 10px; }
+.keyband.dark .tDial-center p { margin: 0; font-size: 14.5px; line-height: 1.55; color: rgba(238,233,218,.82); }
+.tDial-list { display: flex; flex-direction: column; border-top: 1px solid rgba(238,233,218,.14); }
+.tDial-list button {
+  all: unset; cursor: pointer; display: flex; gap: 14px; align-items: baseline; padding: 11px 2px;
+  border-bottom: 1px solid rgba(238,233,218,.14); font-size: 15px; color: rgba(238,233,218,.72); transition: color .25s;
+}
+.tDial-list button span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; color: rgba(238,233,218,.45); }
+.tDial-list button:hover, .tDial-list button.is-on { color: #C6ECA9; }
+.tDial-list button.is-on span { color: #C6ECA9; }
+.tDial-list button:focus-visible { outline: 1px solid #C6ECA9; outline-offset: 2px; }
+@media (max-width: 760px) {
+  .tDial { grid-template-columns: 1fr; gap: 20px; }
+  .tDial-stage { width: min(100%, 340px); margin: 0 auto; }
+  .tDial-list { flex-direction: row; flex-wrap: wrap; gap: 8px; border: 0; }
+  .tDial-list button { border: 1px solid rgba(238,233,218,.2); border-radius: 999px; padding: 8px 14px; font-size: 13px; }
+  .tDial-list button span { display: none; }
+  .tDial-list button.is-on { border-color: #C6ECA9; }
+}
+@media (prefers-reduced-motion: reduce) { .tDial-arc, .tDial-dot, .treats div { transition: none; } }
+.keyband.tDial-band {
+  background:
+    radial-gradient(120% 80% at 20% 0%, rgba(201,150,112,.5), transparent 60%),
+    radial-gradient(90% 70% at 100% 100%, rgba(70,51,49,.75), transparent 70%),
+    linear-gradient(180deg, #8E6851 0%, #6E5043 60%, #5A423A 100%) !important;
+  border-color: transparent;
+}
+.keyband.tDial-band .tDial-center strong { color: #F3EEE2; }
