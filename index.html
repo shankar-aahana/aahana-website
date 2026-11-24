@@ -300,6 +300,26 @@
     opacity: 0; transform: scale(1.05); transition: opacity .55s ease, transform 1s cubic-bezier(.2,.7,.2,1);
   }
   .aMenu-shot.is-on { opacity: 1; transform: none; }
+  /* Rows without a fitting agency photograph get a brand panel instead of
+     a mismatched image. Swap for real photography when it arrives. */
+  .aMenu-shot--type, .aMenu-pic--type {
+    background-color: #463331;
+    background-image: radial-gradient(90% 70% at 20% 0%, rgba(122,87,65,.6), transparent 65%);
+    color: #C6ECA9;
+  }
+  .aMenu-shot--type { display: flex; flex-direction: column; justify-content: space-between; padding: 30px; }
+  .aMenu-shot--type b {
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 13px; font-weight: 400; letter-spacing: .16em;
+  }
+  .aMenu-shot--type i {
+    font-style: normal; font-size: clamp(40px, 4.4vw, 64px); font-weight: 500;
+    line-height: 1; letter-spacing: -.03em;
+  }
+  .aMenu-pic--type b {
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 15px; font-weight: 400; letter-spacing: .1em;
+  }
   .aMenu-foot {
     display: flex; align-items: center; justify-content: space-between; gap: 18px 40px; flex-wrap: wrap;
     margin-top: clamp(36px, 4vw, 56px);
@@ -327,6 +347,7 @@
       display: block; grid-column: 2; grid-row: 1 / 4; align-self: center;
       aspect-ratio: 1; border-radius: 10px; background-size: cover; background-position: center;
     }
+    .aMenu-pic--type { display: flex; align-items: center; justify-content: center; }
     .aMenu-all { width: 100%; justify-content: center; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -1362,7 +1383,7 @@ body {
         <span class="aMenu-num">04</span>
         <a class="aMenu-name" href="services.html#skin">Skin treatments<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
         <span class="aMenu-tags"><a href="microneedling.html">Microneedling</a><a href="vi-peel.html">Chemical peels</a><a href="hydrafacial.html">Hydrafacial &middot; Exosomes</a></span>
-        <span class="aMenu-pic" style="background-image:url('svc-inject.jpg')" aria-hidden="true"></span>
+        <span class="aMenu-pic aMenu-pic--type" aria-hidden="true"><b>04</b></span>
       </li>
       <li class="aMenu-row" data-img="4">
         <span class="aMenu-num">05</span>
@@ -1374,16 +1395,16 @@ body {
         <span class="aMenu-num">06</span>
         <a class="aMenu-name" href="services.html#headache">Headache medicine<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
         <span class="aMenu-tags"><a href="migraine-botox.html">Botox for migraine</a><a href="migraine-headache.html">Nerve blocks</a></span>
-        <span class="aMenu-pic" style="background-image:url('brand-hero.jpg')" aria-hidden="true"></span>
+        <span class="aMenu-pic aMenu-pic--type" aria-hidden="true"><b>06</b></span>
       </li>
       </ol>
       <div class="aMenu-frame" aria-hidden="true">
       <span class="aMenu-shot is-on" style="background-image:url('svc-skin.jpg')"></span>
       <span class="aMenu-shot" style="background-image:url('brand-card-1.jpg')"></span>
       <span class="aMenu-shot" style="background-image:url('svc-laser.jpg')"></span>
-      <span class="aMenu-shot" style="background-image:url('svc-inject.jpg')"></span>
+      <span class="aMenu-shot aMenu-shot--type"><b>04</b><i>Skin<br>treatments</i></span>
       <span class="aMenu-shot" style="background-image:url('svc-wellness.jpg')"></span>
-      <span class="aMenu-shot" style="background-image:url('brand-hero.jpg')"></span>
+      <span class="aMenu-shot aMenu-shot--type"><b>06</b><i>Headache<br>medicine</i></span>
       </div>
     </div>
     <div class="aMenu-foot reveal">
