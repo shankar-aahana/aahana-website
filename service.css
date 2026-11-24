@@ -709,3 +709,63 @@ dialog.care::backdrop { background: rgba(40,26,20,.66); backdrop-filter: blur(2p
   }
   .vs-hint::after { content: ' \2192'; }
 }
+
+
+/* ====================================================================
+   DIRECTION A (rebrand, Nov 2026)
+   One override block so every treatment page follows the homepage and
+   the services page: deep Earth Brown chrome instead of Sandalwood,
+   mono labels, pill buttons, rounded cards, lighter headings, and the
+   matte sage waitlist band in place of the old AAHANA watermark CTA.
+   Page wording is untouched.
+   ==================================================================== */
+:root { --section-dark: #463331; }
+
+.article-hero { background: #463331; padding: clamp(130px, 14vw, 170px) 48px 76px; }
+.article-hero::before { background: radial-gradient(ellipse 55% 75% at 85% 30%, rgba(122,87,65,.45) 0%, transparent 65%); }
+.breadcrumb, .breadcrumb a {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; color: #C6ECA9;
+}
+.breadcrumb { color: rgba(238,233,218,.7); }
+.breadcrumb a { border-bottom-color: rgba(198,236,169,.45); }
+.article-dek { color: rgba(238,233,218,.9); }
+.article-byline { color: rgba(238,233,218,.72); }
+
+.article-inner h2, .keyband h2, .faq h2 { font-weight: 400 !important; letter-spacing: -.01em; }
+
+/* Mono labels */
+.keyband .keynum, .related h3, .refs h3, .related-links .rl-tag, .glance dt {
+  font-family: var(--mono);
+}
+.related h3, .refs h3, .related-links .rl-tag, .glance dt { font-weight: 400; letter-spacing: .14em; }
+.keyband.dark .keynum { color: #C6ECA9; }
+.keyband.dark details.acc.more > summary { color: #C6ECA9; }
+.keyband.dark details.acc.more > summary::after { border-color: #C6ECA9; }
+
+/* Pill buttons */
+.cta-btn, .book-btn {
+  border-radius: 999px !important; padding: 15px 30px !important;
+  font-family: 'Satoshi', sans-serif !important; font-size: 11.5px !important; letter-spacing: .12em !important;
+}
+.book-btn { border-width: 1px !important; }
+
+/* Rounded cards */
+.care-btn, .related-links a { border-radius: 12px; }
+.takeaways { border-left: 0; border-radius: 14px; background: rgba(196,172,157,.14); }
+.takeaways li::before { border-radius: 50%; background: #7A5741; }
+
+/* Closing CTA: the matte sage band from the homepage, no watermark */
+.section-cta { background: #C6ECA9; isolation: isolate; text-align: center; }
+.section-cta::before {
+  content: '' !important; position: absolute; inset: 0; transform: none; z-index: -1;
+  font-size: 0; color: transparent; pointer-events: none;
+  background-color: rgba(176,160,140,.34);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.2 0 0 0 0 0.19 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.section-cta .cta-title { font-weight: 300; color: #463331; }
+.section-cta .cta-desc, .section-cta p { color: #463331; }
+.section-cta .cta-consent { color: #4E3B35; }
+.section-cta .cta-consent a, .section-cta a { color: #463331; }
+.section-cta .cta-btn, .section-cta .book-btn { background: #463331 !important; color: #C6ECA9 !important; border: 1px solid #463331 !important; }
+.section-cta .book-btn.ghost { background: transparent !important; color: #463331 !important; border-color: rgba(70,51,49,.6) !important; }
+.section-cta .cta-btn:hover, .section-cta .book-btn:hover { opacity: .88; }
