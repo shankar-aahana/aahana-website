@@ -507,3 +507,32 @@ article.tx:hover { background: #F6F2E8 !important; }
 @media (min-width: 1180px) { .lMob { display: none; } }
 @media print { .lRail, .lMob, .lNum { display: none !important; } .lCards { display: block; } }
 .legalA .article-inner ul { padding-left: 1.3em; }
+
+/* 15. Single care sheets ------------------------------------------- */
+.sheet-head .brand-name { font-family: var(--sat, 'Satoshi'), sans-serif; text-transform: lowercase; letter-spacing: -.01em !important; font-weight: 500; font-size: 26px; color: #C6ECA9 !important; }
+.sheet-head .brand-sub { font-family: var(--mono); font-size: 9.5px; letter-spacing: .18em; color: rgba(238,233,218,.72) !important; }
+.sheet-head .eyebrow { font-family: var(--mono) !important; font-weight: 400 !important; letter-spacing: .16em; color: #C6ECA9 !important; }
+.sheet-head .alsonote a { color: #C6ECA9 !important; }
+.sheet-head.has-thumb { padding-right: 200px !important; }
+.oneThumb { position: absolute; right: 28px; top: 28px; width: 140px; height: 175px; border-radius: 999px 999px 16px 16px; background: center / cover; box-shadow: 0 0 0 1px rgba(198,236,169,.4); }
+@media (max-width: 640px) {
+  .sheet-head.has-thumb { padding-right: 30px !important; padding-top: 150px !important; }
+  .oneThumb { left: 30px; right: auto; top: 26px; width: 92px; height: 110px; }
+}
+.sheet.single { position: relative; padding-left: 46px; border-top: 0 !important; }
+.sheet.single > details.sec { position: relative; border: 0 !important; border-radius: 14px; background: #FBF8F1; box-shadow: inset 0 0 0 1px rgba(122,87,65,.12); margin-bottom: 10px; }
+.sheet.single > details.sec::before { content: ''; position: absolute; left: -29px; top: -12px; bottom: -12px; width: 1px; background: rgba(122,87,65,.28); }
+.sheet.single > details.sec:first-of-type::before { top: 26px; }
+.sheet.single > details.sec:last-of-type::before { bottom: calc(100% - 26px); }
+.sheet.single > details.sec > summary { display: flex !important; align-items: center; gap: 12px; position: relative; }
+.sheet.single .sectitle { font-weight: 400 !important; }
+.sheet.single > .sec.urgent { background: #F6E6DE !important; box-shadow: inset 0 0 0 1px rgba(154,90,58,.45) !important; border-left: 0 !important; }
+.sheet.single > .sec.urgent .sectitle { color: #7E4228 !important; }
+.sheet-foot { border-radius: 20px; background: rgba(196,172,157,.16); padding: 24px 26px !important; border: 0 !important; margin-top: 30px; }
+.sheet-foot h2 { font-family: var(--mono) !important; font-size: 11px !important; font-weight: 400 !important; letter-spacing: .16em; text-transform: uppercase; color: #7A5741 !important; }
+.backnav a { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; }
+@media (max-width: 560px) {
+  .sheet.single { padding-left: 40px; }
+  .sheet.single > details.sec::before { left: -25px; }
+}
+@media print { .oneThumb, .secnum { display: none !important; } .sheet.single { padding-left: 0; } .sheet.single > details.sec::before { display: none; } }
