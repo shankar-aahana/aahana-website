@@ -236,6 +236,7 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="article.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -277,13 +278,23 @@
 
     <h2 class="reveal">What testosterone does</h2>
 
-    <p class="reveal">Testosterone increases sebum production, and acne follows. In a study of 988 transmasculine patients, 29.6 percent of those aged 18 to 21 developed acne over two years of testosterone therapy.<sup><a href="#ref1">1</a></sup></p>
+    <p class="reveal">Testosterone raises sebum, and acne follows. In a study of 988 transmasculine patients, 29.6 percent of those aged 18 to 21 developed acne over two years on testosterone.<sup><a href="#ref1">1</a></sup> The timing is the useful part:<sup><a href="#ref1">1</a></sup></p>
 
-    <p class="reveal">The timing is the useful part. Acne is most prevalent between 6 and 12 months of therapy.<sup><a href="#ref1">1</a></sup> That is a window, not a permanent state, and knowing where it sits changes how you approach it. Starting treatment at month seven because things have become distressing is a slower path than having something in place at month three.</p>
+    <div class="xTrack reveal" role="img" aria-label="Acne is most common between months 6 and 12 of testosterone; having treatment in place by month 3 is the faster path">
+      <div class="xTrack-bar">
+        <div class="xTrack-line"></div>
+        <div class="xTrack-win" style="left: 25%; width: 25%">MONTHS 6 TO 12</div>
+        <div class="xTrack-mark" style="left: 12.5%"><span>Plan in place by month 3</span></div>
+      </div>
+      <div class="xTrack-ticks"><span>Start</span><span>6 mo</span><span>12 mo</span><span>18 mo</span><span>24 mo</span></div>
+      <p>A window, not a permanent state. Starting treatment at month seven because it has become distressing is slower than having something in place at month three.</p>
+    </div>
 
-    <p class="reveal">The distribution is characteristic too: the lower third of the face, chest, upper arms and back.<sup><a href="#ref1">1</a></sup> Back and chest involvement catches people out, partly because it is harder to see and partly because facial routines do not reach it.</p>
+    <p class="reveal">Where it shows up:<sup><a href="#ref1">1</a></sup></p>
+    <div class="xChips reveal"><span>Lower third of the face</span><span>Chest</span><span>Upper arms</span><span>Back</span></div>
+    <p class="reveal">Chest and back catch people out: harder to see, and face routines do not reach them.</p>
 
-    <p class="reveal">Testosterone also drives facial, chest and abdominal hair growth, which is usually the point.<sup><a href="#ref1">1</a></sup> Less welcome for some is androgenic scalp hair loss, which can begin in young adulthood and is treatable, including with 5-alpha-reductase inhibitors.<sup><a href="#ref1">1</a></sup> Worth raising early, because hair is easier to keep than to recover.</p>
+    <p class="reveal">Testosterone also drives facial, chest and abdominal hair, usually the point. Less welcome for some is androgenic scalp hair loss, which can start in young adulthood and is treatable, including with 5-alpha-reductase inhibitors.<sup><a href="#ref1">1</a></sup> Raise it early: hair is easier to keep than to recover.</p>
 
     <div class="pull reveal">Acne on testosterone is a window between months six and twelve, not a permanent condition.</div>
 
@@ -305,17 +316,17 @@
 
     <h2 class="reveal">The hair that does not go away</h2>
 
-    <p class="reveal">Here is the number that reframes this whole area: 84 percent of transgender women receiving estrogen still report persistent unwanted facial and body hair.<sup><a href="#ref1">1</a></sup></p>
+    <div class="xNum reveal">
+      <div class="xNum-fig"><b>84%</b><span>of trans women on estrogen</span></div>
+      <div class="xNum-body"><p>still report persistent unwanted facial and body hair.<sup><a href="#ref1">1</a></sup> Hormones soften and slow terminal hair; they do not remove it. For most transfeminine people, hair removal is core care, not an extra, and a longer project than most are told.</p></div>
+    </div>
 
-    <p class="reveal">Hormones soften and slow terminal hair. They do not eliminate it. So for most transfeminine people, hair removal is not an optional aesthetic extra; it is a core part of the care, and it is a longer project than most people are told.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Laser</span><b>Fast, needs pigment</b><ul><li>Large areas quickly</li><li>Sessions 4 to 8 weeks apart</li><li>Generally ineffective on thin, light, red, blonde or grey hair</li></ul></div>
+      <div class="xSplit-b"><span class="xSplit-k">Electrolysis</span><b>Every color, slower</b><p>Destroys follicles one at a time with an electrical current. Weekly sessions of about an hour.</p></div>
+    </div>
 
-    <p class="reveal">There are two tools, and they are complementary rather than competing.</p>
-
-    <p class="reveal"><strong>Laser</strong> targets pigment in the hair, which makes it fast over large areas, with sessions spaced four to eight weeks apart. It is also generally ineffective on thin, light, red, blonde or grey hairs, because there is not enough pigment to absorb the energy.<sup><a href="#ref2">2</a></sup></p>
-
-    <p class="reveal"><strong>Electrolysis</strong> destroys follicles individually with an electrical current, so it works on every hair color. The cost is time: weekly sessions, roughly an hour each.<sup><a href="#ref2">2</a></sup></p>
-
-    <p class="reveal">Both achieve roughly 85 to 90 percent reduction, and sustained results often require ongoing treatment.<sup><a href="#ref2">2</a></sup> In practice the combination works best: laser for the dense pigmented hair, electrolysis for what laser cannot see.<sup><a href="#ref2">2</a></sup></p>
+    <p class="reveal">Both reach roughly 85 to 90 percent reduction, and lasting results often need ongoing treatment. Together works best: laser for dense pigmented hair, electrolysis for what laser cannot see.<sup><a href="#ref2">2</a></sup></p>
 
     <h2 class="reveal">Why wavelength matters here specifically</h2>
 
@@ -418,5 +429,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

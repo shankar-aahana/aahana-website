@@ -258,6 +258,7 @@
     }
   </style>
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -333,11 +334,9 @@
 
     <h2 class="reveal">This is not microbiome testing</h2>
 
-    <p class="reveal">The two get conflated constantly, and the reason is fair: both are DNA sequencing. The difference is whose DNA.</p>
+    <p class="reveal">Both are DNA sequencing, so they get confused. The difference is whose DNA: a skin DNA test reads <em>your</em> genome from a cheek swab; a microbiome test reads the organisms living on your skin.</p>
 
-    <p class="reveal">A skin DNA test reads <em>your</em> genome from a cheek swab. A skin microbiome test sequences the genomes of the organisms living on your skin. Same technology, different subject, and almost nothing else in common.</p>
-
-    <div class="reveal" style="margin: 22px 0 8px">
+<div class="reveal" style="margin: 22px 0 8px">
       <table class="compare">
         <thead><tr><th>&nbsp;</th><th>Skin DNA</th><th>Skin microbiome</th></tr></thead>
         <tbody>
@@ -350,21 +349,27 @@
       </table>
     </div>
 
-    <p class="reveal">The evidence behind them is not comparable either, and it is worth being direct about that. Genetic association studies on skin aging rest on many variants of individually modest effect, concentrated in populations of European ancestry, and a result changes the emphasis of a plan rather than its content.<sup><a href="#ref3">3</a></sup> Microbiome work is further along in a way that matters clinically: the molecules are named and measured. <em>Cutibacterium acnes</em> secretes an antioxidant protein that measurably protects skin cells under oxidative stress. <em>Staphylococcus epidermidis</em> produces ceramides that hold the barrier together. Those are mechanisms you can act on, with an organism you can change, and a repeat test that tells you whether you did.</p>
+    <p class="reveal">The evidence is not comparable either. Genetic studies of skin aging rest on many small-effect variants, mostly in people of European ancestry, so a result shifts the emphasis of a plan, not its content.<sup><a href="#ref3">3</a></sup> Microbiome work names and measures molecules: <em>Cutibacterium acnes</em> secretes an antioxidant protein that protects skin cells under oxidative stress, and <em>Staphylococcus epidermidis</em> makes ceramides that hold the barrier together. Mechanisms you can act on, organisms you can change, and a repeat test that shows whether you did.</p>
 
-    <p class="reveal">So if you are choosing between them, they are not really alternatives. One tells you what you were dealt. The other tells you what is happening on your face this month. <a href="skin-microbiome-well-aging.html">The microbiome piece is here</a>, and it is the one we actually use.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Skin DNA</span><b>What you were dealt</b><p>Fixed, and read once.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Skin microbiome</span><b>What is happening this month</b><p><a href="skin-microbiome-well-aging.html" style="color:#C6ECA9">The microbiome piece is here</a>, and it is the one we use.</p></div>
+    </div>
 
-    <p class="reveal"><strong>Aahana does not offer genetic skin testing.</strong> This article stays up because the question comes up and the honest answer is useful, not because there is something to sell at the end of it.</p>
+    <div class="xNote xNote--info reveal"><span class="xNote-k">Please note</span><p><strong>Aahana does not offer genetic skin testing.</strong> This article stays up because the question comes up and an honest answer is useful, not because there is something to sell.</p></div>
 
     <h2 class="reveal">Where it fits</h2>
 
     <p class="reveal">Genetics is one input among several, and it does a specific job well.</p>
 
-    <p class="reveal">It is stable, so it never needs repeating. It is available before anything has visibly changed, which makes it most useful in your twenties and thirties, when the question is what to protect rather than what to correct. And it is complementary to imaging: one describes what your skin has done so far, the other describes what it is inclined to do.</p>
+    <ul class="xChecks reveal">
+      <li><b>It never changes</b>So it never needs repeating.</li>
+      <li><b>It comes early</b>Available before anything shows, so most useful in your twenties and thirties, when the question is what to protect.</li>
+      <li><b>It complements imaging</b>Imaging shows what your skin has done; genetics, what it is inclined to do.</li>
+      <li><b>It weights a plan</b>It moves the order and how hard we push prevention. It never overrides what we can see, or the basics everyone needs.</li>
+    </ul>
 
-    <p class="reveal">In practice we treat the result as a weighting on a plan rather than the plan itself. It moves the order of what we address and how strongly we push on prevention. It does not override what we can see on your skin, and it is not a substitute for the parts of a routine that everyone benefits from regardless of what their report says.</p>
-
-    <p class="reveal">The most useful sentence I can offer about it: your genes are the part of this you cannot change, which is exactly why it is worth knowing them and then spending your attention on the parts you can.</p>
+    <div class="xPull xPull--sm reveal"><p>Your genes are the part you cannot change.</p><p>Know them, then spend your attention <em>on the parts you can.</em></p></div>
 
     <!-- FAQ -->
     <div class="faq reveal">
@@ -445,5 +450,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

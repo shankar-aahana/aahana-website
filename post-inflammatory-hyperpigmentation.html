@@ -224,6 +224,7 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="article.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -279,13 +280,22 @@
 
     <h2 class="reveal">Why depth decides the timeline</h2>
 
-    <p class="reveal">This is the part that determines what I can honestly promise, so it is worth understanding.</p>
+    <p class="reveal">This decides what I can honestly promise.<sup><a href="#ref1">1</a></sup></p>
 
-    <p class="reveal">If the excess pigment stays in the epidermis, it looks brown, and it clears. Epidermal PIH typically resolves or substantially improves within six to twelve months, faster with treatment.<sup><a href="#ref1">1</a></sup> The epidermis renews itself, and the pigment leaves with it.</p>
+    <div class="xPaths reveal">
+      <div class="xPaths-row">
+        <span class="xPaths-k">Epidermal &middot; brown</span>
+        <div class="xPaths-track"><i style="width: 22%"></i><em>Clears in 6 to 12 months</em></div>
+        <span class="xPaths-n">faster with treatment; the epidermis renews and the pigment leaves with it</span>
+      </div>
+      <div class="xPaths-row is-deep">
+        <span class="xPaths-k">Dermal &middot; blue-gray</span>
+        <div class="xPaths-track"><i style="width: 100%"></i><em>Improves slowly, may be permanent</em></div>
+        <span class="xPaths-n">inflammation breached the junction; immune cells (melanophages) hold the pigment, and the dermis does not turn over</span>
+      </div>
+    </div>
 
-    <p class="reveal">If inflammation is severe or prolonged enough to breach the junction between epidermis and dermis, melanin drops into the dermis, where roaming immune cells engulf it. That is called pigment incontinence, and the cells holding the pigment are melanophages. Dermal PIH looks different, more blue-gray than brown, and it behaves differently. It improves slowly and may be permanent.<sup><a href="#ref1">1</a></sup> The dermis does not turn over the way the epidermis does.</p>
-
-    <p class="reveal">A Wood lamp helps distinguish the two in the room, which changes the conversation entirely.<sup><a href="#ref1">1</a></sup> One version is a waiting problem. The other is a management problem. A provider who tells you which one you have, before selling you a package, is doing the part that matters.</p>
+    <p class="reveal">A Wood lamp helps tell them apart in the room.<sup><a href="#ref1">1</a></sup> One is a waiting problem, the other a management problem. A provider who tells you which, before selling a package, is doing the part that matters.</p>
 
     <div class="pull reveal">Brown tends to leave. Blue-gray tends to stay. Knowing which you have is the whole conversation.</div>
 
@@ -305,15 +315,16 @@
 
     <h2 class="reveal">What actually works on the pigment</h2>
 
-    <p class="reveal">Treatment is stepwise and multimodal, and it takes months rather than weeks.<sup><a href="#ref1">1</a></sup></p>
+    <p class="reveal">Stepwise, combined, and measured in months.<sup><a href="#ref1">1</a></sup></p>
 
-    <p class="reveal"><strong>Hydroquinone</strong> remains the mainstay. It inhibits tyrosinase, the enzyme melanocytes need to manufacture melanin, and it has the longest track record of anything on this list. A widely used triple combination pairs hydroquinone 4 percent with tretinoin 0.05 percent and a low-potency corticosteroid, with the steroid deliberately limited to about eight weeks.<sup><a href="#ref1">1</a></sup></p>
+    <ol class="xLadder reveal">
+      <li><span class="xLadder-k">Mainstay</span><b>Hydroquinone</b><p>Blocks tyrosinase, the enzyme melanocytes need to make melanin, with the longest record. A common triple combination: hydroquinone 4%, tretinoin 0.05% and a low-potency corticosteroid, the steroid deliberately limited to about eight weeks.<sup><a href="#ref1">1</a></sup></p></li>
+      <li><span class="xLadder-k">Long-term</span><b>Retinoids and azelaic acid</b><p>Tretinoin, adapalene and tazarotene speed turnover and treat acne at the same time.<sup><a href="#ref1">1</a></sup> Azelaic acid does double duty and is often better tolerated.</p></li>
+      <li><span class="xLadder-k">Newer</span><b>Topical cysteamine</b><p>Among the more potent options now available for pigmentation.<sup><a href="#ref1">1</a></sup></p></li>
+      <li><span class="xLadder-k">Alternative and maintenance</span><b>Tranexamic acid</b><p>Meaningful evidence in melasma and PIH; useful if hydroquinone is not tolerated, or for maintenance.<sup><a href="#ref2">2</a></sup></p></li>
+    </ol>
 
-    <p class="reveal"><strong>Retinoids</strong> such as tretinoin, adapalene and tazarotene accelerate epidermal turnover and treat acne at the same time, which makes them well suited to long-term use.<sup><a href="#ref1">1</a></sup> <strong>Azelaic acid</strong> does similar double duty and tends to be better tolerated.</p>
-
-    <p class="reveal"><strong>Topical cysteamine</strong> is a more recent addition and among the more potent options now available for pigmentation disorders.<sup><a href="#ref1">1</a></sup> <strong>Tranexamic acid</strong> has accumulated meaningful evidence in both melasma and PIH, and is a useful option for patients who cannot tolerate hydroquinone or who need something for maintenance.<sup><a href="#ref2">2</a></sup></p>
-
-    <p class="reveal">None of these is dramatic on its own. Combined, applied consistently, and given the months they need, they work.</p>
+    <p class="reveal">None is dramatic alone. Combined, used consistently, and given months, they work.</p>
 
     <h2 class="reveal">Where peels and lasers fit</h2>
 
@@ -413,5 +424,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

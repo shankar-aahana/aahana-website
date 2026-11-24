@@ -215,3 +215,24 @@
 .xFunnel div:nth-child(2) { background: #7A5741; } .xFunnel div:nth-child(3) { background: #A88A76; } .xFunnel div:nth-child(4) { background: #C4AC9D; color: #463331; }
 
 .xSteps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* timeline track */
+.xTrack { margin: 24px 0 30px; padding: 26px 24px 20px; border-radius: 22px; background: #F3EEE2; box-shadow: inset 0 0 0 1px rgba(122,87,65,.14); }
+.xTrack-bar { position: relative; height: 54px; }
+.xTrack-line { position: absolute; left: 0; right: 0; top: 26px; height: 2px; background: rgba(70,51,49,.25); }
+.xTrack-win { position: absolute; top: 14px; height: 26px; border-radius: 999px; background: rgba(198,236,169,.8); box-shadow: inset 0 0 0 1px #463331; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; color: #463331; white-space: nowrap; }
+.xTrack-mark { position: absolute; top: 0; width: 2px; height: 54px; background: #463331; }
+.xTrack-mark span { position: absolute; left: 8px; top: -2px; font-family: var(--mono); font-size: 10px; letter-spacing: .08em; color: #463331; white-space: nowrap; }
+.xTrack-ticks { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; color: #7A5741; margin-top: 6px; }
+.xTrack p { margin: 14px 0 0 !important; font-size: 14.5px !important; }
+.xChips { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 22px; }
+.xChips span { padding: 8px 14px; border-radius: 999px; background: #463331; color: #EEE9DA; font-size: 14px; }
+.xNote--info { background: rgba(196,172,157,.18); box-shadow: inset 0 0 0 1px rgba(122,87,65,.2); }
+.xNote--info .xNote-k { color: #7A5741; }
+.xStats--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 640px) { .xStats--2 { grid-template-columns: 1fr; } }
+.xTrack-bar { margin-top: 18px; }
+.xTrack-mark span { top: -20px; left: -4px; }
+.xTrack-win { font-size: 9.5px; }
+.xTrack-win::before { content: 'Peak acne'; position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #463331; }
+@media (max-width: 640px) { .xSteps--3 { grid-template-columns: 1fr; } }

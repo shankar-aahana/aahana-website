@@ -284,6 +284,7 @@
     @media print { .tl-step { break-inside: avoid; } }
   </style>
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -484,11 +485,20 @@
 
     <h2 class="reveal">How well studied each area is</h2>
 
-    <p class="reveal">These areas are not all equally well studied, and it is worth knowing which is which before you decide. The face, the back of the hands and the decolletage have the strongest evidence behind them, each with its own trials. The rest of the body rests on a different kind of study.</p>
+    <p class="reveal">Not every area is equally well studied, and it is worth knowing which before you decide.</p>
 
-    <p class="reveal">That study is real and it is reassuring. A 2024 international consensus published per-area protocols for the body, and a 2026 review of 1,651 body sessions across nine United States clinics reported nodules in one patient out of 498 and no granulomas. That is a large number of treatments with a very low complication rate, which is the most useful thing anyone can tell you about safety. What it is not is randomized, and the panel that wrote the consensus said so in its own assessment.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Strongest evidence</span><b>Face, backs of hands, d&eacute;colletage</b><p>Each has its own trials.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">The rest of the body</span><b>A different kind of study</b><p>A 2024 international consensus set per-area protocols. Real and reassuring, but not randomized, as the panel itself said.</p></div>
+    </div>
 
-    <p class="reveal">One distinction matters more than the rest. Large-volume body contouring, where liters of material are placed to change the shape of a body part, is not safe and is not done here. It has caused serious injury and death, and no amount of technique makes that an acceptable trade. Treating the buttock at up to three vials a side for dimpling and skin quality is a different procedure entirely, and conflating the two helps nobody.</p>
+    <div class="xStats reveal">
+      <div><b>1,651</b><span>body sessions in a 2026 review across nine US clinics</span></div>
+      <div><b>1 <small>in</small> 498</b><span>patients with nodules</span></div>
+      <div><b>0</b><span>granulomas reported</span></div>
+    </div>
+
+    <div class="xNote reveal"><span class="xNote-k">Not done here</span><p>Large-volume body contouring, placing liters of material to change a body part's shape, is not safe. It has caused serious injury and death, and no technique makes that acceptable. Treating the buttock at up to three vials a side for dimpling and skin quality is a different procedure entirely; conflating the two helps nobody.</p></div>
 
     <h2 class="reveal">What a vial count does not tell you</h2>
 
@@ -653,5 +663,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>
