@@ -396,7 +396,15 @@
 
   /* ---------- Waitlist ----------
      The one Young Leaf band on the page. Brown on leaf measures 9:1. */
-  .aWait { background: #C6ECA9; color: #463331; padding: clamp(72px, 9vw, 140px) 22px clamp(36px, 4vw, 56px); overflow: hidden; }
+  .aWait { background: #C6ECA9; color: #463331; padding: clamp(72px, 9vw, 140px) 22px clamp(36px, 4vw, 56px); overflow: hidden; position: relative; isolation: isolate; }
+  /* Matte finish over the whole band: a clay wash knocks the leaf back to
+     a dusty sage, and fine grain takes the sheen off. Sits above the
+     background, beneath the content. */
+  .aWait::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background-color: rgba(176,160,140,.34);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.2 0 0 0 0 0.19 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
   .aWait-inner {
     max-width: 1240px; margin: 0 auto;
     display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(36px, 5vw, 90px); align-items: end;
