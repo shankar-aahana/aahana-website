@@ -5,6 +5,16 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/visia-skin-analysis.html",
+      "destination": "/aura-3d-imaging.html",
+      "permanent": true
+    },
+    {
+      "source": "/visia-imaging-skin-analysis.html",
+      "destination": "/3d-skin-imaging-explained.html",
+      "permanent": true
     }
   ],
   "headers": [
