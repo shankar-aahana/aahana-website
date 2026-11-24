@@ -280,3 +280,48 @@ body:has(.hero-prakriti) {
 
 body:has(.hero-about) .section-cta h2, body:has(.hero-about) .section-cta p { color: #463331 !important; }
 body:has(.hero-about) .section-cta .btn-primary { background: #463331 !important; color: #C6ECA9 !important; }
+
+/* 7. Your first visit: the visit as a journey ----------------------- */
+.treats.journey { display: block !important; position: relative; margin-left: 6px !important; padding-left: 34px; }
+.treats.journey::before { content: ''; position: absolute; left: 7px; top: 22px; bottom: 30px; width: 1px; background: linear-gradient(#7A5741, rgba(122,87,65,.15)); }
+.treats.journey > div { margin-bottom: 10px; position: relative; overflow: visible; }
+.treats.journey > div::after {
+  left: -34px !important; right: auto !important; top: 22px !important; width: 15px !important; height: 15px !important;
+  background: #EEE9DA !important; box-shadow: inset 0 0 0 1px #7A5741, 0 0 0 4px rgba(198,236,169,.0) !important;
+}
+.treats.journey > div:first-child::after { background: #C6ECA9 !important; box-shadow: inset 0 0 0 1px #463331, 0 0 0 5px rgba(198,236,169,.35) !important; }
+.treats.journey > div:last-child::after { background: #463331 !important; }
+.treats.journey > div a { color: #463331; border: 0; font-size: 18px; }
+.treats.journey > div:hover::after { background: #C6ECA9 !important; }
+
+/* 8. Location & hours: a quiet radar on Dogpatch -------------------- */
+.article-hero-inner:has(.cRadar) { position: relative; }
+.cRadar { position: absolute; right: 0; top: 50%; width: 340px; transform: translateY(-50%); overflow: visible; pointer-events: none; }
+.cRadar circle, .cRadar line { fill: none; stroke: rgba(198,236,169,.22); stroke-width: 1; }
+.cRadar .d { stroke-dasharray: 3 7; stroke: rgba(198,236,169,.4); }
+.cRadar-rings { transform-origin: 250px 250px; animation: cSpin 120s linear infinite; }
+.cRadar .cRadar-pin { fill: #C6ECA9; stroke: none; }
+.cRadar .cRadar-pulse { fill: rgba(198,236,169,.25); stroke: none; transform-origin: 250px 250px; animation: cPulse 2.6s ease-out infinite; }
+.cRadar text { font-family: var(--mono); font-size: 13px; letter-spacing: .18em; fill: #C6ECA9; }
+.cRadar text.s { font-size: 10.5px; fill: rgba(238,233,218,.6); }
+@keyframes cSpin { to { transform: rotate(360deg); } }
+@keyframes cPulse { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(3.2); opacity: 0; } }
+@media (max-width: 999px) { .cRadar { width: 220px; right: -60px; top: 30%; opacity: .5; } }
+@media (prefers-reduced-motion: reduce) { .cRadar-rings, .cRadar .cRadar-pulse { animation: none; } }
+
+/* 9. Patient care instructions: calm utility page ------------------- */
+.sheet-head {
+  position: relative; border-radius: 22px; padding: 30px 30px 26px !important; margin-bottom: 26px; overflow: hidden; isolation: isolate;
+  background: linear-gradient(180deg, rgba(40,26,22,.35), rgba(40,26,22,.55)), var(--g3) center / cover;
+  color: #EEE9DA;
+}
+.sheet-head * { color: #EEE9DA !important; }
+.sheet-head h1 { font-weight: 300 !important; }
+.sheet-head .forpatients { background: rgba(238,233,218,.1) !important; border: 0 !important; border-radius: 14px; }
+.sheet-head > :first-child, .sheet-head .meta { font-family: var(--mono) !important; letter-spacing: .16em; }
+.sheet-head > :first-child { color: #C6ECA9 !important; }
+.grouphead { font-family: var(--mono) !important; font-weight: 400 !important; letter-spacing: .14em !important; }
+.jtools button, .jtools a { border-radius: 999px !important; font-family: var(--mono) !important; }
+.tx { border-radius: 14px; transition: background .25s; }
+.tx:hover { background: rgba(196,172,157,.12); }
+.urgentnote { border-radius: 14px; }
