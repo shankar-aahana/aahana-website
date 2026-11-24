@@ -250,24 +250,6 @@
     .aRing-arc, .aRing-detail p, .aRing-step { transition: none; }
   }
 
-  /* ---------- Full-bleed break ---------- */
-  .aBreak { position: relative; background: var(--deep); }
-  .aBreak-photo {
-    height: clamp(260px, 40vw, 460px);
-    background: url('brand-break.jpg') center 46% / cover no-repeat;
-  }
-  .aBreak::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(40,26,22,.1), rgba(40,26,22,.62));
-    pointer-events: none;
-  }
-  .aBreak-line {
-    position: absolute; z-index: 1; left: 0; right: 0; bottom: clamp(24px, 4vw, 48px);
-    margin: 0; padding: 0 22px; text-align: center;
-    font-size: clamp(22px, 3.4vw, 44px); font-weight: 300;
-    letter-spacing: -.01em; color: var(--ivory);
-  }
-
   /* ---------- Services ---------- */
   .aSvc { background: var(--ivory); padding: clamp(72px, 9vw, 132px) 22px; }
   .aSvc-inner { max-width: 1140px; margin: 0 auto; }
@@ -387,10 +369,6 @@
     .aSvc-shot { aspect-ratio: 3 / 2; }
     .aSvc-actions { width: 100%; flex-direction: column; }
     .aSvc-actions .aBtn { width: 100%; }
-    /* The break photograph is a 2.4:1 crop. A tall box on a narrow screen
-       cover-crops the hands away and leaves only a mouth. */
-    .aBreak-photo { height: 210px; }
-    .aBreak-line { bottom: 18px; }
   }
   </style>
 <style>:root {
@@ -1263,17 +1241,6 @@ body {
       <p class="aRing-tag">Understand your skin</p>
     </div>
   </div>
-</section>
-
-<!-- ===================================================================
-     FULL-BLEED BREAK
-     The deck sets its line over a photograph rather than on a coloured
-     band. One of these between the argument and the menu.
-     =================================================================== -->
-<section class="aBreak">
-  <div class="aBreak-photo" role="img"
-       aria-label="A pair of eyes in close-up, looking to the side."></div>
-  <p class="aBreak-line">Every skin, considered.</p>
 </section>
 
 <!-- ===================================================================
