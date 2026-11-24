@@ -387,3 +387,5 @@ body:has(.brand-mark) h2 { color: #7A5741; font-size: 11.5px; }
 body:has(.brand-mark) .note { border-radius: 18px; background: linear-gradient(160deg, #F6F2E8, #EEE6D6); box-shadow: inset 0 0 0 1px rgba(122,87,65,.12); }
 body:has(.brand-mark) .book-online { border-radius: 999px !important; background: #463331 !important; color: #C6ECA9 !important; font-family: var(--mono); letter-spacing: .14em; }
 body:has(.brand-mark) .links a { font-family: var(--mono); letter-spacing: .14em; }
+.jlinks a.sub { padding-left: 12px; font-size: .94em; }
+@media (min-width: 900px) { .jgrid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } }
