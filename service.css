@@ -769,3 +769,72 @@ dialog.care::backdrop { background: rgba(40,26,20,.66); backdrop-filter: blur(2p
 .section-cta .cta-btn, .section-cta .book-btn { background: #463331 !important; color: #C6ECA9 !important; border: 1px solid #463331 !important; }
 .section-cta .book-btn.ghost { background: transparent !important; color: #463331 !important; border-color: rgba(70,51,49,.6) !important; }
 .section-cta .cta-btn:hover, .section-cta .book-btn:hover { opacity: .88; }
+
+/* ---- Direction A, part 2: editorial layout for treatment pages ----
+   Only pages with key bands (the treatment pages). Wider measure, heading
+   in a sticky left column like the services page, cards instead of rules. */
+.article-inner:has(> .keyband) { max-width: 1120px; }
+body:has(.keyband) .article-hero-inner { max-width: 1120px; }
+
+.keyband {
+  padding-left: max(24px, calc(50vw - 560px)) !important;
+  padding-right: max(24px, calc(50vw - 560px)) !important;
+  background: #E6DECD;
+}
+.keyband h2, .faq h2 {
+  font-size: clamp(30px, 3.4vw, 46px) !important; font-weight: 300 !important;
+  line-height: 1.08 !important; letter-spacing: -.015em !important;
+}
+.article-inner:has(> .keyband) > p:first-child {
+  font-size: clamp(19px, 1.9vw, 23px); line-height: 1.6; color: #463331;
+}
+
+/* treats: cards */
+.keyband .treats, .treats {
+  grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;
+  border-top: 0 !important; margin: 8px 0 28px;
+}
+.keyband .treats div, .treats div {
+  background: #F3EEE2; border: 0 !important; border-radius: 14px;
+  padding: 20px 22px; font-size: 17px; color: #463331;
+}
+.treats div span { font-size: 13.5px; margin-top: 6px; }
+.keyband.dark .treats div { background: rgba(238,233,218,.07); color: #EEE9DA; }
+.keyband.dark .treats div span { color: rgba(238,233,218,.7); }
+
+/* glance: tiles */
+.keyband .glance, .glance {
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px;
+  border: 0 !important; padding: 0; margin: 8px 0 0;
+}
+.glance > div { border-radius: 14px; padding: 18px 20px; background: #F3EEE2; }
+.glance dt { font-family: var(--mono); font-weight: 400; color: #7A5741; }
+.glance dd { font-size: 15px; }
+.keyband.dark .glance > div { background: transparent; border: 1px solid rgba(238,233,218,.16); }
+.keyband.dark .glance dt { color: #C6ECA9; }
+
+@media (min-width: 1000px) {
+  .keyband, .faq {
+    display: grid; grid-template-columns: 300px minmax(0, 1fr);
+    column-gap: 80px; row-gap: 0; align-items: start;
+  }
+  .keyband > .keylabel { grid-column: 1 / -1; grid-row: 1; margin-bottom: 26px; }
+  .keyband > h2, .keyband > .detail-group > h2 {
+    grid-column: 1; grid-row: 2 / span 40; position: sticky; top: 110px; margin: 0 !important;
+  }
+  .keyband > .detail-group { display: contents; }
+  .keyband > :not(.keylabel):not(h2):not(.detail-group),
+  .keyband > .detail-group > :not(h2) { grid-column: 2; }
+  .faq > h2 { grid-column: 1; grid-row: 1 / span 40; position: sticky; top: 110px; }
+  .faq > :not(h2) { grid-column: 2; }
+  .faq { border-top: 0; padding-top: 24px; }
+  .article-inner:has(> .keyband) > :not(.keyband):not(.faq) { margin-left: 380px; }
+}
+@media (max-width: 560px) {
+  .keyband .treats, .treats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .keyband .treats div, .treats div { padding: 16px; font-size: 15px; }
+  .treats div span { font-size: 12.5px; }
+  .keyband .glance, .glance { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .glance > div { padding: 14px 16px; }
+}
+.section-cta .cta-waitlist button { color: #463331 !important; border-bottom-color: rgba(70,51,49,.45) !important; opacity: 1; }
