@@ -72,7 +72,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .sheet-head h1 {
   font-family: var(--serif);
   font-size: clamp(32px, 7vw, 44px);
-  font-weight: 700; line-height: 1.1;
+  font-weight: 500; line-height: 1.1;
   letter-spacing: .01em;
   margin-bottom: 14px;
   text-wrap: balance;
@@ -259,7 +259,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .sec > summary:hover .sectitle { color: var(--accent); }
 .sec .sectitle {
   font-family: var(--serif);
-  font-size: 19px; font-weight: 700;
+  font-size: 19px; font-weight: 500;
   line-height: 1.3;
   margin: 0;
 }
