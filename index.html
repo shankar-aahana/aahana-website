@@ -144,45 +144,109 @@
   .aBtn--line:hover { background: rgba(70,51,49,.06); }
 
   /* ---------- What sets us apart ---------- */
-  .aSay { background: var(--ivory); padding: clamp(72px, 9vw, 132px) 22px; }
-  .aSay-inner { max-width: 1140px; margin: 0 auto; }
+  .aSay { background: var(--ivory); padding: clamp(80px, 10vw, 150px) 22px; }
+  .aSay-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(40px, 6vw, 110px); align-items: start;
+  }
+  .aSay-lead { position: sticky; top: 120px; }
   .aSay-head {
-    margin: 0 0 clamp(34px, 4vw, 56px);
-    font-size: clamp(32px, 4.4vw, 58px); font-weight: 500; line-height: 1.12;
-    letter-spacing: -.015em; color: #463331; max-width: 16ch;
+    margin: 0 0 26px;
+    font-size: clamp(34px, 4.2vw, 60px); font-weight: 500; line-height: 1.06;
+    letter-spacing: -.02em; color: #463331;
   }
   .aSay-head em { font-style: normal; color: #7A5741; }
-  .aSay-cols { columns: 2; column-gap: 54px; max-width: 980px; }
-  .aSay-cols p {
-    margin: 0 0 18px; break-inside: avoid;
-    font-size: 15px; font-weight: 300; line-height: 1.85; color: #463331;
+  .aSay-text { margin: 0; max-width: 42ch; font-size: 16px; font-weight: 300; line-height: 1.75; color: #5C463E; }
+  .aSay-proof { list-style: none; margin: 0; padding: 0; }
+  .aSay-proof li {
+    display: grid; grid-template-columns: clamp(110px, 12vw, 170px) 1fr; gap: 24px;
+    padding: 34px 0; border-top: 1px solid rgba(70,51,49,.2);
   }
-  .aSay-cols a { color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.45); }
-  .aSay-cols a:hover { border-bottom-color: #7A5741; }
+  .aSay-proof li:last-child { border-bottom: 1px solid rgba(70,51,49,.2); }
+  .aSay-num {
+    font-size: clamp(64px, 7.5vw, 112px); font-weight: 300; line-height: .82;
+    letter-spacing: -.04em; color: #7A5741;
+  }
+  .aSay-num small { font-size: .38em; letter-spacing: 0; margin-left: 2px; color: #A08572; }
+  .aSay-kicker {
+    margin: 4px 0 10px !important;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10.5px !important; letter-spacing: .16em; text-transform: uppercase; color: #463331 !important;
+  }
+  .aSay-proof p { margin: 0 0 12px; font-size: 15px; font-weight: 300; line-height: 1.7; color: #5C463E; }
+  .aSay-proof a {
+    display: inline-block; padding: 4px 0; min-height: 24px;
+    font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+    color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.4);
+  }
+  .aSay-proof a:hover { color: #463331; border-bottom-color: #463331; }
 
   /* ---------- Our process ---------- */
-  .aProc { background: var(--deep); padding: clamp(72px, 9vw, 132px) 22px; }
-  .aProc-inner { max-width: 1140px; margin: 0 auto; }
-  .aProc-grid {
-    list-style: none; margin: 0; padding: 0;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 46px;
+  .aProc { background: var(--deep); padding: clamp(80px, 10vw, 150px) 22px; }
+  .aProc-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 100px); align-items: start;
   }
-  .aProc-num {
-    display: block; margin-bottom: 14px;
+  .aProc-media {
+    position: sticky; top: 100px; height: min(72vh, 640px);
+    border-radius: 14px; overflow: hidden; background: #3A2A28;
+  }
+  .aProc-shot {
+    position: absolute; inset: 0; background-size: cover; background-position: center 30%;
+    opacity: 0; transform: scale(1.04);
+    transition: opacity .7s ease, transform 1.2s cubic-bezier(.2,.7,.2,1);
+  }
+  .aProc-shot.is-on { opacity: 1; transform: none; }
+  .aProc-media-num {
+    position: absolute; z-index: 1; left: 18px; bottom: 16px; margin: 0;
     font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 11px; letter-spacing: .16em; color: #C6ECA9;
+    font-size: 10.5px; letter-spacing: .16em; color: #C6ECA9;
+    background: rgba(70,51,49,.55); padding: 6px 10px; border-radius: 999px;
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   }
-  .aProc-step { padding-top: 20px; border-top: 1px solid rgba(238,233,218,.22); }
-  .aProc-step h3 {
-    margin: 0 0 12px; font-size: 20px; font-weight: 500;
-    letter-spacing: -.01em; color: var(--ivory);
+  .aProc-head {
+    margin: 0 0 clamp(30px, 4vw, 60px);
+    font-size: clamp(32px, 3.8vw, 54px); font-weight: 500; line-height: 1.08;
+    letter-spacing: -.02em; color: var(--ivory);
   }
-  .aProc-step p {
-    margin: 0; font-size: 14px; font-weight: 300; line-height: 1.8;
-    color: rgba(238,233,218,.86);
+  .aProc-head em { font-style: normal; color: #C6ECA9; }
+  .aProc-steps { list-style: none; margin: 0; padding: 0; }
+  .aProc-step {
+    min-height: 46vh; padding: 30px 0 40px; border-top: 1px solid rgba(238,233,218,.18);
+    opacity: .38; transition: opacity .5s ease;
   }
+  .aProc-step.is-on { opacity: 1; }
+  .aProc-pic { display: none; }
+  .aProc-num {
+    display: block; margin-bottom: 18px;
+    font-size: clamp(48px, 5vw, 76px); font-weight: 300; line-height: .9;
+    letter-spacing: -.03em; color: #C6ECA9;
+  }
+  .aProc-step h3 { margin: 0 0 14px; font-size: 24px; font-weight: 500; letter-spacing: -.01em; color: var(--ivory); }
+  .aProc-step p { margin: 0; max-width: 46ch; font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(238,233,218,.86); }
   .aProc-step a { color: #C6ECA9; text-decoration: none; border-bottom: 1px solid rgba(198,236,169,.4); }
   .aProc-step a:hover { border-bottom-color: #C6ECA9; }
+  .aProc-step a.aProc-cta {
+    display: inline-flex; align-items: center; margin-top: 24px; min-height: 44px; padding: 0 24px;
+    border: 1px solid rgba(198,236,169,.7); border-radius: 999px;
+    font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .aProc-step a.aProc-cta:hover { background: rgba(198,236,169,.1); }
+  @media (max-width: 860px) {
+    .aSay-inner, .aProc-inner { grid-template-columns: 1fr; }
+    .aSay-lead { position: static; }
+    .aSay-proof li { grid-template-columns: 84px 1fr; gap: 16px; padding: 26px 0; }
+    .aSay-num { font-size: 58px; }
+    .aProc-media { display: none; }
+    .aProc-step { min-height: 0; opacity: 1; padding: 28px 0 36px; }
+    .aProc-pic {
+      display: block; aspect-ratio: 4 / 3; border-radius: 12px; margin-bottom: 22px;
+      background-size: cover; background-position: center 30%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .aProc-shot, .aProc-step { transition: none; }
+  }
 
   /* ---------- Full-bleed break ---------- */
   .aBreak { position: relative; background: var(--deep); }
@@ -312,10 +376,8 @@
   }
   @media (max-width: 1000px) {
     .aSvc-grid { grid-template-columns: repeat(2, 1fr); gap: 22px 18px; }
-    .aProc-grid { grid-template-columns: 1fr; gap: 30px; }
   }
   @media (max-width: 560px) {
-    .aSay-cols { columns: 1; }
     /* One column on a phone, but a 4:5 card at full width is nearly 500px
        tall and four of them turn the menu into a scroll. The shot goes
        landscape here so a whole card fits in a thumb's reach. */
@@ -1156,58 +1218,93 @@ body {
      =================================================================== -->
 <section class="aSay" id="approach">
   <div class="aSay-inner">
-    <p class="aLabel reveal">What sets us apart</p>
-    <h2 class="aSay-head reveal">Beyond what the <em>surface shows</em></h2>
-    <div class="aSay-cols reveal">
-      <p>Most practices treat what they can see. We go deeper. Every plan at Aahana is
-         grounded in precision medicine, anchored by Visia clinical imaging. When more
-         insight is needed, we extend the picture with advanced diagnostics like skin
-         microbiome testing and lab markers of inflammation and hormonal health.
-         <a href="precision.html">Explore precision medicine &rarr;</a></p>
-      <p>Where it adds insight, we also incorporate Ayurvedic constitutional typing, a
-         framework for understanding how your skin is built, not just how it behaves
-         today. <a href="prakriti.html">Explore Prakriti &rarr;</a></p>
-      <p>Aahana is built for everyone, with particular expertise in skin of color, all
-         gender identities, and patients who have historically felt underserved by
+    <div class="aSay-lead">
+      <p class="aLabel reveal">What sets us apart</p>
+      <h2 class="aSay-head reveal">Beyond what the <em>surface shows.</em></h2>
+      <p class="aSay-text reveal">Most practices treat what they can see. Every plan at Aahana is
+         grounded in precision medicine, and built for everyone, with particular expertise in
+         skin of color, all gender identities, and patients who have felt underserved by
          conventional aesthetics.</p>
     </div>
+    <ul class="aSay-proof">
+      <li class="reveal">
+        <span class="aSay-num">8</span>
+        <div>
+          <p class="aSay-kicker">Measured first</p>
+          <p>Features of your skin photographed by Visia imaging, including pigment still below
+             the surface, before anything is recommended. Microbiome and lab testing when they
+             would change the plan.</p>
+          <a href="precision.html">Precision medicine &rarr;</a>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="aSay-num">6<small>/6</small></span>
+        <div>
+          <p class="aSay-kicker">Every skin tone</p>
+          <p>Fitzpatrick skin types a device must be proven safe on before it enters the
+             practice. Not just the lighter three.</p>
+          <a href="laser-treatments-skin-of-color.html">Lasers and skin of color &rarr;</a>
+        </div>
+      </li>
+      <li class="reveal">
+        <span class="aSay-num">1</span>
+        <div>
+          <p class="aSay-kicker">Physician-led</p>
+          <p>Physician who examines you and performs every injectable, with an Ayurvedic
+             constitutional assessment to understand how your skin is built.</p>
+          <a href="prakriti.html">Prakriti &rarr;</a>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
 <!-- ===================================================================
      OUR PROCESS  (deep brown)
-     Three steps across, rather than stacked in a narrow column.
+     Sticky photograph on the left that changes with the step in view on
+     the right. On phones each step carries its own photograph instead.
      =================================================================== -->
-<section class="aProc">
+<section class="aProc" aria-labelledby="proc-title">
   <div class="aProc-inner">
-    <p class="aLabel aLabel--onDark reveal">Our process</p>
-    <ol class="aProc-grid">
-      <li class="aProc-step reveal">
-        <span class="aProc-num">01</span>
-        <h3>Understand you</h3>
-        <p>Every plan begins with a thorough intake: health history, skin concerns,
-           lifestyle, and goals. Every first visit includes an Ayurvedic
-           <a href="prakriti.html">Prakriti constitutional assessment</a> to tell us how
-           your skin is built, not just how it looks today.</p>
-      </li>
-      <li class="aProc-step reveal">
-        <span class="aProc-num">02</span>
-        <h3>Analyze your skin</h3>
-        <p>Visia clinical imaging anchors every analysis with eight clinical metrics
-           matched to your age and skin tone. Where it adds insight, we layer in
-           <a href="precision.html">precision diagnostics</a> like labs or skin
-           microbiome testing.</p>
-      </li>
-      <li class="aProc-step reveal">
-        <span class="aProc-num">03</span>
-        <h3>Your personalized plan</h3>
-        <p>A treatment plan built from everything we&rsquo;ve learned, including your
-           clinical data, your constitution, your skin tone, your goals, and your life.
-           Not a template borrowed from someone else&rsquo;s skin. Specific to you,
-           sequenced correctly, explained clearly. Here is
-           <a href="first-visit.html">what the first visit involves</a>, in order.</p>
-      </li>
-    </ol>
+    <div class="aProc-media" aria-hidden="true">
+      <div class="aProc-shot is-on" style="background-image:url('brand-hero.jpg')"></div>
+      <div class="aProc-shot" style="background-image:url('brand-card-2.jpg')"></div>
+      <div class="aProc-shot" style="background-image:url('brand-card-1.jpg')"></div>
+      <p class="aProc-media-num"><span data-proc-now>01</span> / 03</p>
+    </div>
+    <div class="aProc-body">
+      <p class="aLabel aLabel--onDark">Our process</p>
+      <h2 class="aProc-head" id="proc-title">Three steps, <em>in order.</em></h2>
+      <ol class="aProc-steps">
+        <li class="aProc-step is-on" data-step="0">
+          <div class="aProc-pic" style="background-image:url('brand-hero.jpg')"></div>
+          <span class="aProc-num">01</span>
+          <h3>Understand you</h3>
+          <p>Every plan begins with a thorough intake: health history, skin concerns,
+             lifestyle, and goals. Every first visit includes an Ayurvedic
+             <a href="prakriti.html">Prakriti constitutional assessment</a> to tell us how
+             your skin is built, not just how it looks today.</p>
+        </li>
+        <li class="aProc-step" data-step="1">
+          <div class="aProc-pic" style="background-image:url('brand-card-2.jpg')"></div>
+          <span class="aProc-num">02</span>
+          <h3>Analyze your skin</h3>
+          <p>Visia clinical imaging anchors every analysis with eight clinical metrics
+             matched to your age and skin tone. Where it adds insight, we layer in
+             <a href="precision.html">precision diagnostics</a> like labs or skin
+             microbiome testing.</p>
+        </li>
+        <li class="aProc-step" data-step="2">
+          <div class="aProc-pic" style="background-image:url('brand-card-1.jpg')"></div>
+          <span class="aProc-num">03</span>
+          <h3>Your personalized plan</h3>
+          <p>A treatment plan built from your clinical data, your constitution, your skin
+             tone, your goals, and your life. Not a template borrowed from someone
+             else&rsquo;s skin. Sequenced correctly, explained clearly.</p>
+          <a class="aProc-cta" href="first-visit.html">What the first visit involves &rarr;</a>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -1468,5 +1565,24 @@ reveals.forEach(el => observer.observe(el));
 })();
 </script>
 
+<script>
+/* Process: the step nearest the middle of the viewport is "on"; the sticky
+   photograph and counter follow it. Phones show each step's own photo. */
+(function () {
+  var steps = [].slice.call(document.querySelectorAll('.aProc-step'));
+  var shots = [].slice.call(document.querySelectorAll('.aProc-shot'));
+  var now = document.querySelector('[data-proc-now]');
+  if (!steps.length || !('IntersectionObserver' in window)) return;
+  function set(i) {
+    steps.forEach(function (s, k) { s.classList.toggle('is-on', k === i); });
+    shots.forEach(function (s, k) { s.classList.toggle('is-on', k === i); });
+    if (now) now.textContent = '0' + (i + 1);
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) set(+e.target.getAttribute('data-step')); });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  steps.forEach(function (s) { io.observe(s); });
+})();
+</script>
 </body>
 </html>
