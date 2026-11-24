@@ -1,0 +1,150 @@
+/* ====================================================================
+   brand-a.css: Direction A shared layer.
+   1. The agency's three grain gradients as surfaces across the site
+   2. Story cards (tall image or gradient, leaf-green caps title)
+   3. Daybreak articles brought in line with the treatment pages
+   Swap gradient-1/2/3 for the agency's files when they arrive.
+   ==================================================================== */
+:root {
+  --g1: url('gradient-1-wide.jpg'); --g2: url('gradient-2-wide.jpg'); --g3: url('gradient-3-wide.jpg');
+  --g1t: url('gradient-1.jpg');     --g2t: url('gradient-2.jpg');     --g3t: url('gradient-3.jpg');
+  --mono: 'Social Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+/* 1. Surfaces ----------------------------------------------------- */
+.article-hero {
+  background: linear-gradient(180deg, rgba(40,26,22,.25), rgba(40,26,22,.45)), var(--g2) center / cover !important;
+}
+body:not(:has(.keyband)) .article-hero {
+  background: linear-gradient(180deg, rgba(40,26,22,.35), rgba(40,26,22,.5)), var(--g3) center / cover !important;
+}
+.article-hero::after { opacity: 0 !important; }
+.keyband.dark:not(.tDial-band) {
+  background: linear-gradient(rgba(40,26,22,.38), rgba(40,26,22,.38)), var(--g2) 30% 60% / cover !important;
+}
+.keyband.tDial-band {
+  background: linear-gradient(rgba(40,26,22,.18), rgba(40,26,22,.3)), var(--g1) center / cover !important;
+}
+.section-footer {
+  background: linear-gradient(180deg, rgba(40,26,22,.55), rgba(40,26,22,.72)), var(--g2) center 70% / cover !important;
+}
+
+/* 2. Story cards -------------------------------------------------- */
+.related-links { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important; gap: 12px !important; }
+.related-links a {
+  position: relative; display: flex !important; flex-direction: column; justify-content: flex-end;
+  aspect-ratio: 4 / 5; padding: 22px !important; border: 0 !important; border-radius: 22px !important; overflow: hidden;
+  background: var(--g1t) center / cover; color: #EEE9DA !important; isolation: isolate;
+  transition: transform .35s ease;
+}
+.related-links a:nth-child(3n+2) { background-image: var(--g3t); }
+.related-links a:nth-child(3n+3) { background-image: var(--g2t); }
+.related-links a::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(40,26,22,0) 30%, rgba(40,26,22,.55) 100%);
+}
+.related-links a::after {
+  content: 'Read more'; align-self: flex-start; margin-top: 18px; padding: 6px 14px; border-radius: 999px;
+  border: 1px solid rgba(198,236,169,.6); color: #C6ECA9; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+}
+.related-links a:hover { transform: translateY(-3px); background-color: transparent; }
+.related-links .rl-tag { font-family: var(--mono) !important; font-weight: 400 !important; color: rgba(238,233,218,.85) !important; letter-spacing: .16em !important; margin-bottom: 10px !important; }
+.related-links .rl-title {
+  font-size: 18px !important; font-weight: 500 !important; line-height: 1.2 !important; text-transform: uppercase; letter-spacing: .02em;
+  color: #C6ECA9;
+}
+
+/* 3. Daybreak articles (article.css pages) ------------------------- */
+.breadcrumb, .breadcrumb a { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; }
+.breadcrumb a { color: #C6ECA9 !important; }
+.article-title { font-weight: 300 !important; letter-spacing: -.01em; }
+.article-inner h2 { font-weight: 400 !important; }
+.takeaways { border-left: 0 !important; border-radius: 16px; background: rgba(196,172,157,.16) !important; }
+.takeaways h2 { font-family: var(--mono) !important; font-weight: 400 !important; }
+.takeaways li::before { border-radius: 50%; background: #7A5741 !important; }
+.related h3, .refs h3 { font-family: var(--mono) !important; font-weight: 400 !important; letter-spacing: .14em !important; }
+.cta-btn, .book-btn { border-radius: 999px !important; }
+body:not(:has(.keyband)) .section-cta { background: #C6ECA9 !important; isolation: isolate; }
+body:not(:has(.keyband)) .section-cta::before {
+  content: '' !important; position: absolute; inset: 0; transform: none; z-index: -1; font-size: 0;
+  background-color: rgba(176,160,140,.34);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.2 0 0 0 0 0.19 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+body:not(:has(.keyband)) .section-cta .cta-title { font-weight: 300 !important; color: #463331 !important; }
+body:not(:has(.keyband)) .section-cta p, body:not(:has(.keyband)) .section-cta a { color: #463331 !important; }
+body:not(:has(.keyband)) .section-cta .cta-btn { background: #463331 !important; color: #C6ECA9 !important; }
+
+/* 4. Daybreak index: story cards ----------------------------------- */
+.journal-body .category-count { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; }
+.journal-body .featured-post, .journal-body .small-post {
+  position: relative; display: block !important; border: 0 !important; border-radius: 24px !important; overflow: hidden;
+  isolation: isolate; color: #EEE9DA; background: #463331; transition: transform .35s ease, box-shadow .35s ease !important;
+}
+.journal-body .featured-post { aspect-ratio: 16 / 8; margin-bottom: 14px; }
+.journal-body .small-post { aspect-ratio: 3 / 4.2; }
+.journal-body .small-posts { gap: 14px; }
+.journal-body .featured-post-img, .journal-body .small-post-img {
+  position: absolute !important; inset: 0; height: auto !important; min-height: 0 !important; padding: 0 !important; z-index: -2;
+  background: var(--g2t) center / cover no-repeat !important; transition: transform .8s ease;
+}
+.journal-body .featured-post-img { background-image: var(--g2) !important; }
+.journal-body .small-post-img.alt1 { background-image: var(--g1t) !important; }
+.journal-body .small-post-img.alt3 { background-image: var(--g3t) !important; }
+.journal-body .small-post-img.alt4 { background-image: var(--g1t) !important; background-position: 70% 30% !important; }
+.journal-body .small-post-img.alt5 { background-image: var(--g3t) !important; background-position: 30% 70% !important; }
+.journal-body .featured-post-img::before, .journal-body .small-img-label, .journal-body .featured-img-label { display: none !important; }
+.journal-body .featured-post-body, .journal-body .small-post-body {
+  position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,26,22,0) 25%, rgba(40,26,22,.72) 100%) !important;
+  display: flex !important; flex-direction: column; justify-content: flex-end; padding: 26px !important;
+}
+.journal-body .featured-post-body > div:first-child { max-width: 640px; }
+.journal-body .post-tag { font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: .16em; color: rgba(238,233,218,.88); }
+.journal-body .featured-post-title, .journal-body .small-post-title {
+  color: #C6ECA9 !important; text-transform: uppercase; font-weight: 500; letter-spacing: .02em; line-height: 1.15; flex: 0 0 auto;
+}
+.journal-body .small-post-title { font-size: 19px; margin-bottom: 10px; }
+.journal-body .featured-post-title { font-size: clamp(26px, 3vw, 40px); }
+.journal-body .featured-post-excerpt, .journal-body .small-post-excerpt {
+  color: rgba(238,233,218,.85); flex: 0 0 auto; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.journal-body .featured-post-excerpt { font-size: 15.5px; line-height: 1.6; margin-bottom: 14px; }
+.journal-body .small-post-excerpt { font-size: 13px; line-height: 1.55; }
+.journal-body .post-meta { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: rgba(238,233,218,.62); }
+.journal-body .featured-post-body::after, .journal-body .small-post-body::after {
+  content: 'Read more'; align-self: flex-start; margin-top: 16px; padding: 6px 14px; border-radius: 999px;
+  border: 1px solid rgba(198,236,169,.6); color: #C6ECA9; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  transition: background .25s;
+}
+.journal-body a.featured-post:hover, .journal-body a.small-post:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px rgba(40,26,22,.6) !important; }
+.journal-body a:hover .featured-post-img, .journal-body a:hover .small-post-img { transform: scale(1.04); }
+.journal-body a:hover .featured-post-body::after, .journal-body a:hover .small-post-body::after { background: rgba(198,236,169,.12); }
+@media (max-width: 900px) {
+  .journal-body .featured-post { aspect-ratio: 4 / 5; }
+  .journal-body .small-posts { grid-template-columns: 1fr 1fr !important; }
+  .journal-body .small-post-excerpt { display: none; }
+  .journal-body .small-post-title { font-size: 16px; }
+}
+@media (max-width: 560px) {
+  .journal-body .small-posts {
+    display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px;
+    margin: 0 -24px; padding: 0 24px 6px; scrollbar-width: none;
+  }
+  .journal-body .small-posts::-webkit-scrollbar { display: none; }
+  .journal-body .small-post { flex: 0 0 74%; scroll-snap-align: start; }
+  .journal-body .small-post-excerpt { display: -webkit-box; }
+}
+@media (prefers-reduced-motion: reduce) { .journal-body * { transition: none !important; } }
+
+.journal-body a[href="looking-younger-vs-looking-like-yourself.html"] > :first-child { background-image: url('tx-skinvive-hero.jpg') !important; }
+.journal-body a[href="botox-units.html"] > :first-child { background-image: url('tx-botox-dysport-hero.jpg') !important; }
+.journal-body a[href="filler-syringes.html"] > :first-child { background-image: url('tx-dermal-fillers-hero.jpg') !important; }
+.journal-body a[href="biostimulator-timeline.html"] > :first-child { background-image: url('tx-biostimulators-hero.jpg') !important; }
+.journal-body a[href="3d-skin-imaging-explained.html"] > :first-child { background-image: url('tx-aura-3d-imaging-hero.jpg') !important; }
+.journal-body a[href="skin-microbiome-well-aging.html"] > :first-child { background-image: url('tx-skin-microbiome-testing-hero.jpg') !important; }
+.journal-body a[href="laser-treatments-skin-of-color.html"] > :first-child { background-image: url('tx-aerolase-neo-elite-hero.jpg') !important; }
+.journal-body a[href="melasma-darker-skin-tones.html"] > :first-child { background-image: url('tx-prp-skin-hero.jpg') !important; }
+.journal-body a[href="skin-dna-testing-explained.html"] > :first-child { background-image: url('tx-lab-testing-hero.jpg') !important; }
+.journal-body a[href="biostimulators-or-filler.html"] > :first-child { background-image: url('tx-biostimulators-or-filler-hero.jpg') !important; }
+.journal-body a[href="prp-or-microneedling.html"] > :first-child { background-image: url('tx-prp-or-microneedling-hero.jpg') !important; }
+.journal-body a[href="skinvive-or-filler.html"] > :first-child { background-image: url('tx-skinvive-or-filler-hero.jpg') !important; }
+.journal-body a[href="laser-or-peel-for-pigmentation.html"] > :first-child { background-image: url('tx-laser-or-peel-for-pigmentation-hero.jpg') !important; }
