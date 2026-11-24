@@ -439,6 +439,134 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
     ]
   }
   </script>
+<style>
+/* ---------- Direction A services hero: treatment carousel ----------
+   One photograph framed in brown, a row of treatment cards along its foot.
+   One card is always open (the glass card) and carries the blurb; the rest
+   are photo thumbnails. Arrows, a click on a thumbnail, or the keyboard
+   change which card is open, and the row scrolls to keep it in view. */
+.sHero-stage { position: relative; }
+.sHero { background: #463331; padding: calc(88px + env(safe-area-inset-top)) 22px 30px; }
+.sHero-frame {
+  position: relative; height: clamp(460px, 66vh, 680px);
+  border-radius: 16px; overflow: hidden;
+}
+.sHero-photo { position: absolute; inset: 0; background: url('brand-break.jpg') center 46% / cover no-repeat; }
+.sHero-frame::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 58%; pointer-events: none;
+  background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.55));
+}
+.sCar {
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: 26px;
+  display: flex; align-items: flex-end; gap: 14px; padding: 0 26px;
+}
+.sCar-track {
+  flex: 1 1 auto; min-width: 0;
+  display: flex; align-items: flex-end; gap: 14px;
+  list-style: none; margin: 0; padding: 4px 2px;
+  overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 60px), transparent);
+          mask-image: linear-gradient(90deg, #000 calc(100% - 60px), transparent);
+}
+.sCar-track::-webkit-scrollbar { display: none; }
+.sCar-item {
+  position: relative; flex: 0 0 auto; width: 168px; height: 134px;
+  border-radius: 12px; overflow: hidden; scroll-snap-align: start;
+  transition: width .45s cubic-bezier(.2,.7,.2,1), height .45s cubic-bezier(.2,.7,.2,1);
+}
+.sCar-item.is-open { width: min(340px, 78vw); height: 196px; }
+.sCar-thumb {
+  position: absolute; inset: 0; width: 100%; padding: 0; border: 0; cursor: pointer;
+  background-size: cover; background-position: center; font: inherit; text-align: left;
+  transition: opacity .3s ease;
+}
+.sCar-thumb::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 70%;
+  background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.55) 55%, rgba(40,26,22,.9));
+}
+.sCar-thumb span {
+  position: absolute; z-index: 1; left: 12px; right: 10px; bottom: 10px;
+  font-size: 10.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  color: #C6ECA9;
+}
+.sCar-thumb:hover { filter: brightness(1.06); }
+.sCar-thumb:focus-visible { outline: 2px solid #C6ECA9; outline-offset: -2px; border-radius: 12px; }
+.sCar-glass {
+  position: absolute; inset: 0; padding: 18px 20px;
+  display: flex; flex-direction: column;
+  background: rgba(70,51,49,.6);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border: 1px solid rgba(238,233,218,.24); border-radius: 12px;
+  opacity: 0; visibility: hidden; transition: opacity .3s ease .12s, visibility 0s linear .45s;
+}
+.sCar-item.is-open .sCar-thumb { opacity: 0; pointer-events: none; }
+.sCar-item.is-open .sCar-glass { opacity: 1; visibility: visible; transition: opacity .3s ease .15s; }
+.sCar-glass h2 {
+  margin: 0 0 9px; font-size: 11.5px; font-weight: 500; letter-spacing: .13em;
+  text-transform: uppercase; color: #C6ECA9;
+}
+.sCar-glass p { margin: 0; font-size: 13.5px; line-height: 1.55; color: rgba(238,233,218,.94); }
+.sCar-more {
+  margin-top: auto; align-self: flex-start; padding: 6px 0; min-height: 24px;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: #C6ECA9; text-decoration: none;
+}
+.sCar-more:hover { color: #EEE9DA; }
+.sCar-nav { flex: 0 0 auto; display: flex; gap: 8px; padding-bottom: 4px; }
+.sCar-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 62px; height: 44px; border-radius: 999px; cursor: pointer;
+  background: rgba(70,51,49,.35); color: #EEE9DA;
+  border: 1px solid rgba(238,233,218,.55);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.sCar-btn--next { width: 92px; }
+.sCar-btn:hover { border-color: #C6ECA9; color: #C6ECA9; }
+.sCar-btn:focus-visible { outline: 2px solid #C6ECA9; outline-offset: 2px; }
+.sCar-btn svg { width: 100%; max-width: 54px; height: 12px; }
+.sCar-btn--prev svg { max-width: 26px; }
+.sCar-count {
+  position: absolute; z-index: 1; top: 22px; right: 26px; margin: 0;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px; letter-spacing: .16em; color: rgba(238,233,218,.85);
+}
+.sHero-claim {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 18px 40px; flex-wrap: wrap; padding: 30px 6px 4px;
+}
+.sHero-claim h1 {
+  margin: 0; font-family: 'Satoshi', sans-serif; font-weight: 700;
+  font-size: clamp(28px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -.015em;
+  color: #EEE9DA; max-width: 18ch;
+}
+.sHero-claim h1 em { font-style: normal; color: #C6ECA9; }
+.sHero-claim p {
+  margin: 0; max-width: 52ch; font-size: 15px; font-weight: 300; line-height: 1.75;
+  color: rgba(238,233,218,.86);
+}
+@media (max-width: 860px) {
+  .sHero { padding: calc(74px + env(safe-area-inset-top)) 14px 22px; }
+  /* On a phone the frame keeps the photograph's own proportion and the
+     carousel drops below it, so the row of cards is not fighting a
+     cover-cropped image for the same 300 pixels. */
+  .sHero-frame { height: auto; aspect-ratio: 1782 / 781; border-radius: 13px; }
+  .sHero-frame::after { display: none; }
+  .sCar { position: relative; bottom: auto; padding: 0; margin-top: 12px; flex-wrap: wrap; }
+  .sCar-track { flex-basis: 100%; -webkit-mask-image: none; mask-image: none; }
+  .sCar-item { width: 132px; height: 120px; }
+  .sCar-item.is-open { height: 200px; }
+  .sCar-glass { background: rgba(70,51,49,.85); }
+  .sCar-nav { margin-left: auto; }
+  .sCar-count { top: 14px; right: 16px; }
+  .sHero-claim { padding: 22px 2px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sCar-track { scroll-behavior: auto; }
+  .sCar-item, .sCar-thumb, .sCar-glass { transition: none; }
+}
+</style>
 </head>
 <body>
 <script src="nav.js"></script>
@@ -449,10 +577,57 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
 
 <!-- HERO. DARK -->
 <main id="main">
-<section class="hero-services">
-  <div class="hero-eyebrow">What we offer</div>
-  <h1 class="hero-title">Services built for<br><em>your skin, specifically</em></h1>
-  <p class="hero-sub">Every service at Aahana begins with a Visia skin analysis and a Prakriti constitutional assessment. What follows is a protocol built around your clinical data, your skin tone, and your goals.</p>
+<section class="sHero" aria-labelledby="svc-title">
+  <div class="sHero-stage">
+  <div class="sHero-frame">
+    <div class="sHero-photo" role="img" aria-label="Close-up of a pair of eyes, deep brown skin"></div>
+    <p class="sCar-count" aria-hidden="true"><span data-car-now>03</span> / <span data-car-total>08</span></p>
+  </div>
+    <div class="sCar" data-carousel>
+      <ul class="sCar-track" aria-label="Featured treatments">
+        <li class="sCar-item">
+          <button class="sCar-thumb" type="button" style="background-image:url('brand-card-1.jpg')" aria-label="Show Neuromodulators"><span>Neuromodulators</span></button>
+          <div class="sCar-glass"><h2>Neuromodulators</h2><p>Relaxes targeted muscles to smooth movement lines, lift and subtly contour. Botox and Dysport, placed by Dr. Mundluru.</p><a class="sCar-more" href="botox-dysport.html">Read more &rarr;</a></div>
+        </li>
+        <li class="sCar-item">
+          <button class="sCar-thumb" type="button" style="background-image:url('brand-card-2.jpg')" aria-label="Show Dermal fillers"><span>Dermal fillers</span></button>
+          <div class="sCar-glass"><h2>Dermal fillers</h2><p>Hyaluronic acid used as a structural tool: volume and contour placed for facial balance, not just to fill a line.</p><a class="sCar-more" href="dermal-fillers.html">Read more &rarr;</a></div>
+        </li>
+        <li class="sCar-item is-open">
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-skin.jpg')" aria-label="Show Skin microbiome testing"><span>Skin microbiome testing</span></button>
+          <div class="sCar-glass"><h2>Skin microbiome testing</h2><p>A snapshot of your skin&rsquo;s current microbiome, not a diagnosis. It tracks changes over time, without analysing your DNA.</p><a class="sCar-more" href="skin-microbiome-testing.html">Read more &rarr;</a></div>
+        </li>
+        <li class="sCar-item">
+          <button class="sCar-thumb" type="button" style="background-image:url('brand-space.jpg')" aria-label="Show Visia skin analysis"><span>Visia skin analysis</span></button>
+          <div class="sCar-glass"><h2>Visia skin analysis</h2><p>Standardized imaging, including ultraviolet, that shows pigment below the surface. Part of every consultation.</p><a class="sCar-more" href="visia-skin-analysis.html">Read more &rarr;</a></div>
+        </li>
+        <li class="sCar-item">
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-inject.jpg')" aria-label="Show Biostimulators"><span>Biostimulators</span></button>
+          <div class="sCar-glass"><h2>Biostimulators</h2><p>Sculptra and Radiesse signal your skin to build its own collagen, for gradual and lasting structural support.</p><a class="sCar-more" href="biostimulators.html">Read more &rarr;</a></div>
+        </li>
+        <li class="sCar-item">
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-laser.jpg')" aria-label="Show Aerolase Neo Elite"><span>Aerolase Neo Elite</span></button>
+          <div class="sCar-glass"><h2>Aerolase Neo Elite</h2><p>A no-contact 1064 nm laser for acne, rosacea, redness and pigment, chosen for its safety across every skin tone.</p><a class="sCar-more" href="aerolase-neo-elite.html">Read more &rarr;</a></div>
+        </li>
+        <li class="sCar-item">
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-wellness.jpg')" aria-label="Show XERF"><span>XERF</span></button>
+          <div class="sCar-glass"><h2>XERF</h2><p>Dual-frequency radiofrequency that reaches every layer of the skin, down to the tissue responsible for lift and firmness.</p><a class="sCar-more" href="xerf.html">Read more &rarr;</a></div>
+        </li>
+        <li class="sCar-item">
+          <button class="sCar-thumb" type="button" style="background-image:url('brand-hero.jpg')" aria-label="Show GLP-1 therapy"><span>GLP-1 therapy</span></button>
+          <div class="sCar-glass"><h2>GLP-1 therapy</h2><p>Medical weight loss built into a skin plan, with attention to the volume loss and laxity that can follow.</p><a class="sCar-more" href="medical-weight-loss.html">Read more &rarr;</a></div>
+        </li>
+      </ul>
+      <div class="sCar-nav">
+        <button class="sCar-btn sCar-btn--prev" type="button" data-car-prev aria-label="Previous treatment"><svg viewBox="0 0 26 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M26 6H1M6 1L1 6l5 5"/></svg></button>
+        <button class="sCar-btn sCar-btn--next" type="button" data-car-next aria-label="Next treatment"><svg viewBox="0 0 54 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 6h53M48 1l5 5-5 5"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="sHero-claim">
+    <h1 id="svc-title">Services built for <em>your skin, specifically.</em></h1>
+    <p>Every service at Aahana begins with a Visia skin analysis and a Prakriti constitutional assessment. What follows is a protocol built around your clinical data, your skin tone, and your goals.</p>
+  </div>
 </section>
 
 <!-- WHAT TO EXPECT. LIGHT -->
@@ -839,5 +1014,56 @@ reveals.forEach(el => observer.observe(el));
 })();
 </script>
 
+<script>
+/* Services hero carousel. One card open at a time; arrows step through and
+   wrap, a click on a thumbnail opens it, Left/Right work when focus is in
+   the row. The row scrolls so the open card is in view. */
+(function () {
+  var root = document.querySelector('[data-carousel]');
+  if (!root) return;
+  var track = root.querySelector('.sCar-track');
+  var items = [].slice.call(track.children);
+  var now = document.querySelector('[data-car-now]');
+  var total = document.querySelector('[data-car-total]');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+  var open = Math.max(0, items.findIndex(function (li) { return li.classList.contains('is-open'); }));
+  if (total) total.textContent = pad(items.length);
+
+  function show(i, focus) {
+    open = (i + items.length) % items.length;
+    items.forEach(function (li, k) {
+      var on = k === open;
+      li.classList.toggle('is-open', on);
+      li.querySelector('.sCar-thumb').setAttribute('aria-expanded', on ? 'true' : 'false');
+      li.querySelector('.sCar-thumb').tabIndex = on ? -1 : 0;
+      li.querySelector('.sCar-more').tabIndex = on ? 0 : -1;
+    });
+    if (now) now.textContent = pad(open + 1);
+    /* Wait for the width transition to settle before measuring, or the
+       scroll target is computed from the old, narrower card. */
+    setTimeout(function () {
+      var li = items[open];
+      var left = li.offsetLeft - track.offsetLeft - 2;
+      var right = left + li.offsetWidth + 64;
+      if (left < track.scrollLeft || right > track.scrollLeft + track.clientWidth) {
+        track.scrollTo({ left: Math.max(0, left - (open ? 24 : 0)), behavior: reduce ? 'auto' : 'smooth' });
+      }
+      if (focus) items[open].querySelector('.sCar-more').focus({ preventScroll: true });
+    }, reduce ? 0 : 460);
+  }
+
+  items.forEach(function (li, k) {
+    li.querySelector('.sCar-thumb').addEventListener('click', function () { show(k, true); });
+  });
+  root.querySelector('[data-car-prev]').addEventListener('click', function () { show(open - 1); });
+  root.querySelector('[data-car-next]').addEventListener('click', function () { show(open + 1); });
+  track.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(open + 1, true); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); show(open - 1, true); }
+  });
+  show(open);
+})();
+</script>
 </body>
 </html>

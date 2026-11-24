@@ -56,83 +56,71 @@
     font-weight: 100 900; font-style: italic; font-display: swap;
   }
   */
-  /* ---------- Direction A hero ---------- */
-  .aHero { background: var(--deep); padding: calc(88px + env(safe-area-inset-top)) 22px 26px; }
-  .aHero-stage { position: relative; }
+  /* ---------- Direction A hero (homepage frame) ---------- */
+  .aHero { background: var(--deep); padding-top: calc(76px + env(safe-area-inset-top)); }
   .aHero-frame {
-    position: relative; height: clamp(400px, 56vh, 560px);
-    border-radius: 16px; overflow: hidden;
+    position: relative; overflow: hidden;
+    height: clamp(560px, calc(100vh - 76px), 900px);
   }
   .aHero-photo {
     position: absolute; inset: 0;
-    background: url('brand-wide.jpg') center 38% / cover no-repeat;
+    background: url('brand-wide.jpg') center 40% / cover no-repeat;
   }
+  /* Young Leaf needs a dark ground. The scrim darkens the bottom band and a
+     little of the left, where the copy sits, and leaves the eyes alone. */
   .aHero-frame::after {
-    content: ""; position: absolute; inset: auto 0 0 0; height: 62%;
-    background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.6));
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(40,26,22,0) 45%, rgba(40,26,22,.62) 100%),
+      linear-gradient(90deg, rgba(40,26,22,.28), rgba(40,26,22,0) 45%);
   }
-  .aHero-cards {
-    position: absolute; z-index: 1; left: 26px; bottom: 26px;
-    display: flex; gap: 14px; align-items: flex-end; flex-wrap: wrap;
-  }
-  .aCard-thumb {
-    position: relative; width: 150px; height: 116px; border-radius: 11px;
-    overflow: hidden; background-size: cover; background-position: center;
-    text-decoration: none; flex: 0 0 auto;
-  }
-  .aCard-thumb::after {
-    content: ""; position: absolute; inset: auto 0 0 0; height: 68%;
-    background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.55) 55%, rgba(40,26,22,.9));
-  }
-  .aCard-thumb span {
-    position: absolute; z-index: 1; left: 11px; bottom: 9px;
-    font-size: 10px; font-weight: 500; letter-spacing: .12em;
-    text-transform: uppercase; color: #C6ECA9;
-  }
-  .aCard-glass {
-    width: 300px; border-radius: 12px; padding: 17px 18px;
-    background: rgba(70,51,49,.62);
-    -webkit-backdrop-filter: blur(13px); backdrop-filter: blur(13px);
-    border: 1px solid rgba(238,233,218,.22);
-  }
-  .aCard-glass h2 {
-    margin: 0 0 8px; font-size: 11px; font-weight: 500; letter-spacing: .13em;
-    text-transform: uppercase; color: #C6ECA9;
-  }
-  .aCard-glass p {
-    margin: 0 0 12px; font-size: 13px; line-height: 1.55;
-    color: rgba(238,233,218,.92);
-  }
-  .aCard-more {
-    font-size: 10px; letter-spacing: .13em; text-transform: uppercase;
-    color: rgba(238,233,218,.78); text-decoration: none;
-    display: inline-block; padding: 6px 0; min-height: 24px;
-  }
-  .aCard-more:hover { color: #C6ECA9; }
-  .aHero-claim {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 24px; flex-wrap: wrap; padding: 26px 6px 2px;
-  }
-  .aHero-line {
-    margin: 0; font-size: clamp(20px, 2.4vw, 27px); line-height: 1.3;
-    color: var(--ivory); letter-spacing: -.01em; max-width: 46ch;
-  }
-  .aHero-line em { font-style: normal; color: #C6ECA9; }
-  .aHero-cta {
-    flex: 0 0 auto; display: inline-flex; align-items: center;
-    border: none; cursor: pointer; font-family: inherit;
-    background: #C6ECA9; color: #2C3D1C; border-radius: 999px;
-    padding: 15px 30px; font-size: 12px; font-weight: 500;
-    letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
-    min-height: 44px;
-  }
-  .aHero-cta:hover { opacity: .9; }
-  .aHero-meta {
-    margin: 14px 0 0; padding: 0 6px;
+  .aHero-kicker, .aHero-copy, .aHero-word { position: absolute; z-index: 1; margin: 0; }
+  .aHero-kicker {
+    left: clamp(22px, 3vw, 44px); top: 50%;
     font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-    color: #CFC6B6;
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #C6ECA9;
+  }
+  .aHero-copy {
+    left: clamp(22px, 3vw, 44px); bottom: clamp(26px, 4vw, 52px);
+    max-width: min(560px, 44vw);
+  }
+  .aHero-title {
+    margin: 0 0 14px; font-size: clamp(22px, 2.3vw, 34px); font-weight: 700;
+    line-height: 1.15; letter-spacing: .01em; text-transform: uppercase; color: #C6ECA9;
+  }
+  .aHero-lead {
+    margin: 0; font-size: clamp(14px, 1.15vw, 16px); font-weight: 400; line-height: 1.6;
+    color: #DDEFC9;
+  }
+  .aHero-meta {
+    margin: 16px 0 0;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(238,233,218,.85);
     display: flex; flex-wrap: wrap; gap: 0 9px;
+  }
+  .aHero-word {
+    right: clamp(18px, 2.4vw, 40px); bottom: clamp(6px, 1.4vw, 22px);
+    font-family: 'Satoshi', sans-serif; font-weight: 500;
+    font-size: clamp(96px, 17vw, 300px); line-height: .86; letter-spacing: -.035em;
+    color: #C6ECA9; user-select: none;
+  }
+  @media (max-width: 860px) {
+    .aHero { padding-top: calc(66px + env(safe-area-inset-top)); }
+    .aHero-frame { height: auto; min-height: 0; display: flex; flex-direction: column; }
+    .aHero-photo { position: relative; inset: auto; aspect-ratio: 1800 / 934; }
+    .aHero-frame::after { display: none; }
+    /* Photo at its own proportion (full width, so 100vw tall-to-wide);
+       kicker and wordmark stay on it, the copy drops below on brown. */
+    .aHero-kicker { top: 16px; left: 16px; font-size: 10px; }
+    .aHero-word {
+      top: calc(100vw * 934 / 1800 - 4px); bottom: auto; right: 12px;
+      transform: translateY(-100%); font-size: 25vw;
+    }
+    .aHero-copy { position: static; max-width: none; padding: 34px 18px 30px; }
+    .aHero-title { font-size: 22px; }
+    .aHero-lead { color: rgba(238,233,218,.9); }
+    .aHero-meta-sep { display: none; }
+    .aHero-meta span { flex: 0 0 100%; line-height: 1.9; }
   }
 
   /* ---------- Direction A: shared ---------- */
@@ -339,24 +327,6 @@
        cover-crops the hands away and leaves only a mouth. */
     .aBreak-photo { height: 210px; }
     .aBreak-line { bottom: 18px; }
-  }
-  @media (max-width: 860px) {
-    .aHero-meta { margin-top: 16px; padding: 0 2px; }
-    .aHero-meta-sep { display: none; }
-    .aHero-meta span { flex: 0 0 100%; line-height: 1.9; }
-    .aHero { padding: calc(74px + env(safe-area-inset-top)) 14px 20px; }
-    /* The hero photograph is a wide two-face crop. Holding a tall frame on a
-       phone would cover-crop it down to a single brow and lose the pairing
-       that is the whole point of the image, so the frame takes the image's
-       own proportion here and the cards drop below it instead of over it. */
-    .aHero-frame { height: auto; aspect-ratio: 1800 / 934; border-radius: 13px; }
-    .aHero-cards {
-      position: static; margin-top: 10px; gap: 10px;
-    }
-    .aCard-thumb { width: calc(50% - 5px); height: 108px; border-radius: 10px; }
-    .aCard-glass { width: 100%; background: rgba(70,51,49,.72); }
-    .aHero-claim { padding: 20px 2px 0; }
-    .aHero-cta { width: 100%; justify-content: center; }
   }
   </style>
 <style>:root {
@@ -1157,41 +1127,24 @@ body {
      Images are the deck's own, placed at full resolution.
      =================================================================== -->
 <section class="aHero">
-  <!-- The cards sit outside .aHero-frame so that the phone layout can drop
-       them below the photograph. The frame clips its own overflow, so a card
-       inside it could never leave it. -->
-  <div class="aHero-stage">
-    <div class="aHero-frame">
-      <div class="aHero-photo" role="img"
-           aria-label="Two faces side by side in close-up, eyes open, different skin tones."></div>
+  <!-- Homepage hero, from the agency's homepage frame: one full-bleed
+       photograph, the claim bottom left, the wordmark large bottom right.
+       Treatments live on the Services page carousel, not here. -->
+  <div class="aHero-frame">
+    <div class="aHero-photo" role="img"
+         aria-label="Two faces side by side in close-up, eyes open, different skin tones."></div>
+    <p class="aHero-kicker">Every skin, considered.</p>
+    <div class="aHero-copy">
+      <h1 class="aHero-title">Honest care, beautifully delivered.</h1>
+      <p class="aHero-lead">Every device is chosen for the skin it will care for, across every tone. Every plan is designed to evolve with you, visit after visit. Feeling like yourself deserves care you can trust.</p>
+      <p class="aHero-meta">
+        <span>2175 3rd Street, Unit C1 &middot; San Francisco</span>
+        <span class="aHero-meta-sep" aria-hidden="true">&middot;</span>
+        <span>Opening early 2027</span>
+      </p>
     </div>
-
-    <div class="aHero-cards">
-      <a class="aCard-thumb" href="botox-dysport.html" style="background-image:url('brand-card-1.jpg')">
-        <span>Neuromodulators</span>
-      </a>
-      <a class="aCard-thumb" href="dermal-fillers.html" style="background-image:url('brand-card-2.jpg')">
-        <span>Dermal fillers</span>
-      </a>
-      <div class="aCard-glass">
-        <h2>Skin microbiome testing</h2>
-        <p>A snapshot of your skin&rsquo;s current microbiome, not a diagnosis.
-           It tracks changes over time, without analysing your DNA.</p>
-        <a href="skin-microbiome-testing.html" class="aCard-more">Read more &rarr;</a>
-      </div>
-    </div>
+    <p class="aHero-word" aria-hidden="true">aahana</p>
   </div>
-
-  <div class="aHero-claim">
-    <p class="aHero-line">We believe every face deserves <em>a closer look.</em></p>
-    <button class="aHero-cta" data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
-  </div>
-
-  <p class="aHero-meta">
-    <span>2175 3rd Street, Unit C1 &middot; San Francisco</span>
-    <span class="aHero-meta-sep" aria-hidden="true">&middot;</span>
-    <span>Opening early 2027</span>
-  </p>
 </section>
 
 <!-- INTRO -->
