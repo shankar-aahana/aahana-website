@@ -22,3 +22,25 @@
     set(0);
   });
 })();
+(function () {
+  document.querySelectorAll('.xTabs').forEach(function (t) {
+    var bs = t.querySelectorAll('.xTabs-bar button'), ps = t.querySelectorAll('.xTabs-panel');
+    function set(i) { bs.forEach(function (b, k) { b.setAttribute('aria-selected', k === i); b.tabIndex = k === i ? 0 : -1; }); ps.forEach(function (p, k) { p.hidden = k !== i; }); }
+    bs.forEach(function (b, k) { b.addEventListener('click', function () { set(k); }); });
+    set(0);
+  });
+  document.querySelectorAll('.xQuiz').forEach(function (q) {
+    var steps = q.querySelectorAll('.xQuiz-step'), ans = q.querySelectorAll('.xQuiz-ans');
+    q.querySelectorAll('[data-go]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var step = b.closest('.xQuiz-step'), go = b.getAttribute('data-go'), idx = [].indexOf.call(steps, step);
+        step.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+        steps.forEach(function (s, k) { if (k > idx) { s.hidden = s.id !== go; s.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); } });
+        ans.forEach(function (a) { a.hidden = a.id !== go; });
+      });
+    });
+    var r = q.querySelector('.xQuiz-reset');
+    if (r) r.addEventListener('click', function () { steps.forEach(function (s, k) { s.hidden = k > 0; }); ans.forEach(function (a) { a.hidden = true; }); q.querySelectorAll('button[aria-pressed]').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); });
+  });
+
+})();

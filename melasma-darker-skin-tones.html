@@ -229,6 +229,7 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="article.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=4">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -278,11 +279,15 @@
 
     <h2 class="reveal">It is not a melanocyte problem</h2>
 
-    <p class="reveal">If melasma were simply melanocytes making too much pigment, suppressing melanocytes would fix it. That approach has been tried exhaustively for decades, and it does not hold.</p>
+    <p class="reveal">If melasma were only melanocytes making too much pigment, suppressing them would fix it. Decades of trying say otherwise. Biopsies point lower, to the dermis.<sup><a href="#ref1">1</a></sup></p>
 
-    <p class="reveal">Biopsy studies tell a different story. In one review of the dermal pathology, <strong>95.8 percent of melasma lesions showed damage to the basement membrane</strong>, the structural boundary separating epidermis from dermis.<sup><a href="#ref1">1</a></sup> When that boundary is compromised, pigment cells and pigment itself can migrate downward into territory they were never meant to occupy. Pendulous melanocytes, which hang down into the dermis, were found in 76 percent of lesional biopsies compared with 42 percent of adjacent skin.<sup><a href="#ref1">1</a></sup></p>
+    <div class="xStats reveal">
+      <div><b>95.8%</b><span>of melasma lesions showed damage to the basement membrane, the boundary between epidermis and dermis</span></div>
+      <div><b>76% <small style="font-size:.4em">vs</small> 42%</b><span>pendulous melanocytes hanging into the dermis, lesion vs nearby skin</span></div>
+      <div><b>83% <small style="font-size:.4em">vs</small> 29%</b><span>solar elastosis, the signature of UV damage, lesion vs nearby skin</span></div>
+    </div>
 
-    <p class="reveal">The dermis in melasma is altered in other ways too. Mast cell numbers are increased, releasing histamine and tryptase that both stimulate pigment production and degrade collagen. Vessel density, vessel size and VEGF expression are all elevated, consistent with ongoing low-grade inflammation. Solar elastosis, the accumulated signature of ultraviolet damage, appeared in 83 percent of melasma skin against 29 percent of neighboring skin.<sup><a href="#ref1">1</a></sup> Senescent fibroblasts, aging cells that secrete pigment-promoting signals, appear to contribute as well.</p>
+    <p class="reveal">Through a damaged boundary, pigment cells and pigment drift down where they do not belong. The dermis is busy too: more mast cells releasing histamine and tryptase that drive pigment and break down collagen; more and larger vessels and higher VEGF, a sign of low-grade inflammation; and senescent fibroblasts sending pigment-promoting signals.<sup><a href="#ref1">1</a></sup></p>
 
     <div class="pull reveal">The pigment is the symptom. The damaged boundary underneath it is the disease.</div>
 
@@ -314,15 +319,15 @@
 
     <h2 class="reveal">What actually works</h2>
 
-    <p class="reveal">Treatment is layered, and it is measured in months.</p>
+    <p class="reveal">Treatment is layered, and measured in months.</p>
 
-    <p class="reveal"><strong>Photoprotection is the foundation</strong>, not a supporting player, and it should be tinted for the reasons above. Every other agent is working against light exposure.</p>
+    <ol class="xLadder reveal">
+      <li><span class="xLadder-k">Foundation</span><b>Photoprotection, tinted</b><p>Not a supporting player. Every other agent is working against light exposure.</p></li>
+      <li><span class="xLadder-k">Core</span><b>Topical therapy</b><p>Hydroquinone, usually as a triple combination with a retinoid and a short course of low-potency corticosteroid, has the longest record. Azelaic acid, cysteamine, niacinamide and topical tranexamic acid are reasonable additions or alternatives. Combinations beat single agents, for the structural reasons above.</p></li>
+      <li><span class="xLadder-k">The biggest addition in years</span><b>Oral tranexamic acid</b><p>A network meta-analysis of six randomized trials (599 patients) found 750 mg a day, as 250 mg three times daily for twelve weeks, the best regimen, with 250 mg twice daily acceptable when adherence is a concern.<sup><a href="#ref3">3</a></sup> Serious clotting events were rare at these doses, far below those used in coagulation medicine; stomach upset and lighter periods are common.<sup><a href="#ref3">3</a></sup></p></li>
+    </ol>
 
-    <p class="reveal"><strong>Topical therapy</strong> remains the core. Hydroquinone, usually in a triple combination with a retinoid and a short course of a low-potency corticosteroid, has the longest record of any approach. Azelaic acid, cysteamine, niacinamide and topical tranexamic acid are all reasonable additions or alternatives, and combinations outperform single agents for the structural reasons already described.</p>
-
-    <p class="reveal"><strong>Oral tranexamic acid</strong> is the most meaningful addition to melasma treatment in years. A network meta-analysis of six randomized trials covering 599 patients identified 750 mg per day, given as 250 mg three times daily for twelve weeks, as the optimal regimen, with 250 mg twice daily an acceptable option for patients likely to struggle with adherence.<sup><a href="#ref3">3</a></sup> Serious thromboembolic complications were rare at these doses, which are far below those used in coagulation medicine, though gastrointestinal upset and lighter periods are commonly reported.<sup><a href="#ref3">3</a></sup></p>
-
-    <p class="reveal">That said, tranexamic acid is an antifibrinolytic, and it is a prescription medication that requires a real history before it is written. Personal or family history of clotting, current hormonal contraception, smoking, immobility, recent surgery and pregnancy all belong in that conversation. Anyone offering it without taking that history is skipping the part that matters.</p>
+    <div class="xNote reveal"><span class="xNote-k">Before tranexamic acid</span><p>It is an antifibrinolytic and a prescription medication that needs a real history first. Personal or family history of clotting, current hormonal contraception, smoking, immobility, recent surgery and pregnancy all belong in that conversation. Anyone offering it without that history is skipping the part that matters.</p></div>
 
     <h2 class="reveal">Where peels and lasers fit</h2>
 
@@ -421,5 +426,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=4" defer></script>
 </body>
 </html>

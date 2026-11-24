@@ -215,6 +215,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=4">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -260,16 +261,30 @@
 
     <h2 class="reveal">Which treatment is for which headache</h2>
 
-    <p class="reveal">The distinction that matters most is between preventing headaches and treating one. Preventive treatment is for people who have headaches often enough that the month is shaped around them. It does nothing for the headache you have today, and it is not meant to. It works on a twelve-week cycle, builds over two to four weeks, and is judged on how many headache days a month you have afterwards.</p>
+    <p class="reveal">The distinction that matters most is between preventing headaches and treating one. Answer two questions to see where you would likely start. The consultation still decides.</p>
 
-    <p class="reveal">A nerve block does the opposite. It targets one nerve, and relief can start within minutes. Where the pain sits points to which nerve. Pain that begins at the base of the skull and travels up over the back of the head points to the occipital nerve. Pain concentrated in the forehead above one eyebrow points to the supraorbital nerve. How long the relief lasts is useful in itself: it tells us whether that nerve was the source, and it sets the interval if the block is repeated.</p>
+    <div class="xQuiz reveal">
+      <div class="xQuiz-step" id="q-what">
+        <span class="xQuiz-k">Question 1</span>
+        <p class="xQuiz-q">What do you need most?</p>
+        <div class="xQuiz-opts"><button type="button" data-go="a-prevent" aria-pressed="false">Fewer headache days a month</button><button type="button" data-go="q-where" aria-pressed="false">Relief from a headache now</button></div>
+      </div>
+      <div class="xQuiz-step" id="q-where" hidden>
+        <span class="xQuiz-k">Question 2</span>
+        <p class="xQuiz-q">Where does the pain sit?</p>
+        <div class="xQuiz-opts"><button type="button" data-go="a-occ" aria-pressed="false">Base of the skull, up over the back of the head</button><button type="button" data-go="a-supra" aria-pressed="false">Forehead, above one eyebrow</button></div>
+      </div>
+      <div class="xQuiz-ans" id="a-prevent" hidden><span class="xQuiz-k">Likely starting point</span><b>Preventive treatment</b><p>For when headaches shape the month. It does nothing for today's headache and is not meant to. It runs on a twelve-week cycle, builds over two to four weeks, and is judged by how many headache days you have afterwards.</p><p><a href="migraine-botox.html">Botox for chronic migraine</a></p></div>
+      <div class="xQuiz-ans" id="a-occ" hidden><span class="xQuiz-k">Likely starting point</span><b>Occipital nerve block</b><p>Targets one nerve, and relief can start within minutes. How long it lasts tells us whether that nerve was the source, and sets the interval if it is repeated.</p><p><a href="occipital-nerve-block.html">Occipital nerve block</a></p></div>
+      <div class="xQuiz-ans" id="a-supra" hidden><span class="xQuiz-k">Likely starting point</span><b>Supraorbital nerve block</b><p>Targets one nerve, and relief can start within minutes. How long it lasts tells us whether that nerve was the source, and sets the interval if it is repeated.</p><p><a href="supraorbital-nerve-block.html">Supraorbital nerve block</a></p></div>
+      <button type="button" class="xQuiz-reset">Start again</button>
+    </div>
 
-    <p class="reveal">The two are not alternatives to each other. A nerve block can sit alongside preventive treatment, because one answers now and the other answers over weeks.</p>
+    <div class="xPull xPull--sm reveal"><p>They are not alternatives.</p><p>One answers now, <em>the other over weeks.</em></p></div>
 
-    <div class="keyband dark reveal">
-      <div class="keylabel"><span class="keynum">02</span></div>
-      <div class="detail-group">
-      <h2>The consultation is where this is decided</h2>
+    <p class="reveal">A nerve block can sit alongside preventive treatment.</p>
+
+    <h2>The consultation is where this is decided</h2>
 
       <p>Nothing on this page settles which treatment you should have. That is decided in person, from three things.</p>
 
@@ -376,5 +391,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=4" defer></script>
 </body>
 </html>
