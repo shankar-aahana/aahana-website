@@ -80,8 +80,7 @@
     { group: 'Lasers & devices', links: [
         { label: 'Aerolase Neo Elite', href: 'aerolase-neo-elite.html' },
         { label: 'XERF',               href: 'xerf.html' },
-        { label: 'Microneedling',      href: 'microneedling.html' },
-        { label: 'Topical exosomes',   href: 'exosomes.html' }
+        { label: 'Microneedling',      href: 'microneedling.html' }
       ] },
     { group: 'Aesthetician services', links: [
         { label: 'Hydrafacial',  href: 'hydrafacial.html' },

@@ -15,6 +15,26 @@
       "source": "/visia-imaging-skin-analysis.html",
       "destination": "/3d-skin-imaging-explained.html",
       "permanent": true
+    },
+    {
+      "source": "/exosomes.html",
+      "destination": "/microneedling.html",
+      "permanent": true
+    },
+    {
+      "source": "/exosomes",
+      "destination": "/microneedling.html",
+      "permanent": true
+    },
+    {
+      "source": "/care-exosomes.html",
+      "destination": "/care.html",
+      "permanent": true
+    },
+    {
+      "source": "/care-exosomes",
+      "destination": "/care.html",
+      "permanent": true
     }
   ],
   "headers": [

@@ -7,7 +7,7 @@
     botox:'tx-botox-dysport-hero.jpg', fillers:'tx-dermal-fillers-hero.jpg', biostimulators:'tx-biostimulators-hero.jpg',
     skinvive:'tx-skinvive-hero.jpg', 'prp-skin':'tx-prp-skin-hero.jpg', 'prp-under-eye':'tx-prp-under-eye-hero.jpg',
     'prp-hair':'tx-prp-hair-hero.jpg', 'prp-microneedling':'tx-prp-microneedling-hero.jpg', aerolase:'tx-aerolase-neo-elite-hero.jpg',
-    xerf:'tx-xerf-hero.jpg', microneedling:'tx-microneedling-hero.jpg', exosomes:'tx-exosomes-hero.jpg',
+    xerf:'tx-xerf-hero.jpg', microneedling:'tx-microneedling-hero.jpg',
     hydrafacial:'tx-hydrafacial-hero.jpg', 'vi-peel':'tx-vi-peel-hero.jpg', 'weight-loss':'tx-medical-weight-loss-hero.jpg',
     'sexual-wellness':'tx-sexual-wellness-hero.jpg', sphincter:'tx-painful-anal-sex-hero.jpg', headache:'tx-migraine-headache-hero.jpg'
   };
