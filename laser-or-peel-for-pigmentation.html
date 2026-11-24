@@ -219,6 +219,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -298,9 +299,14 @@
     <div class="keyband dark reveal">
       <div class="keylabel"><span class="keynum">02</span></div>
       <h2>What we recommend</h2>
-      <p>Combination therapy, sequenced. Pigment is the area where relying on a single modality most often disappoints, and the plan that holds is usually a course of one treatment for what dominates, then the other for what is left: a peel course for surface pigment and texture, laser for the vascular and deeper component, or the reverse depending on what the examination finds.</p>
-      <p>Underneath both of them, and doing more work than either, are the parts nobody sells you. Daily broad-spectrum sunscreen and the right topical regimen are not the supporting act here. They are the treatment that runs continuously, and without them the procedures are money spent on a result that will not hold.</p>
-      <p>The one thing that does not work is stacking the two procedures close together. Each is an inflammatory event, and in richly pigmented skin inflammation is what causes the pigment in the first place. The interval between sessions is not caution, it is what stops the treatment becoming the cause. That is also why the plan is a sequence rather than a package, and why it is built after examination rather than sold in advance.</p>
+
+      <p>Combination therapy, in sequence. Pigment is where a single modality most often disappoints.</p>
+      <ul class="xChecks">
+        <li><b>One, then the other</b>A course of one treatment for what dominates, then the other for what is left: peels for surface pigment and texture, laser for the vascular and deeper part, or the reverse, depending on the examination.</li>
+        <li><b>Sunscreen and topicals, always</b>Daily broad-spectrum sunscreen and the right regimen are the treatment that runs continuously. Without them, the procedures will not hold.</li>
+        <li><b>Never stacked close together</b>Each procedure is an inflammatory event, and in richly pigmented skin inflammation causes the pigment. The interval stops the treatment becoming the cause.</li>
+        <li><b>Built after examination</b>That is why it is a sequence, not a package sold in advance.</li>
+      </ul>
     </div>
 
     <!-- FAQ -->
@@ -396,5 +402,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

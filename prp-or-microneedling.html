@@ -219,6 +219,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -293,11 +294,11 @@
 
     <h2 class="reveal">Where the evidence actually separates them</h2>
 
-    <p class="reveal">For atrophic acne scarring the question has been answered directly. A 2026 systematic review and meta-analysis in Archives of Dermatological Research pooled 17 studies across 1,111 participants comparing microneedling with PRP against microneedling alone. The combination performed better on the standard scar severity score, by a mean difference of 2.91 points, with no increase in side effects. For patients achieving more than 75 percent improvement on photographs, the analysis reached the required information size, meaning enough people have now been studied for that result to be treated as settled.</p>
-
-    <p class="reveal">For everything else the comparison has not been made head to head. There is no trial telling you whether PRP or microneedling is better for general facial texture, because nobody has run it. Anyone who tells you the answer is telling you their preference.</p>
-
-    <p class="reveal">Where the two diverge completely is the scalp. A 2025 review pooled 43 randomized trials across 1,877 participants and found activated PRP increased hair density against placebo. Microneedling has no comparable body of evidence for hair, and it is not offered here for that purpose.</p>
+    <div class="xStack reveal">
+      <div class="xStack-row"><span class="xStack-k">Settled</span><b>Acne scarring: combine them</b><span class="xStack-chips"><i>17 studies</i><i>1,111 people</i></span><p>A 2026 meta-analysis in Archives of Dermatological Research: microneedling with PRP beat microneedling alone on scar severity, by 2.91 points, with no more side effects. For over 75 percent improvement on photographs, enough people have been studied to treat the result as settled.</p></div>
+      <div class="xStack-row is-next"><span class="xStack-k">Not studied</span><b>General texture: no head-to-head</b><span class="xStack-chips"><i>No trial</i></span><p>Nobody has run it. Anyone who gives you an answer is giving you their preference.</p></div>
+      <div class="xStack-row"><span class="xStack-k">Diverge</span><b>Scalp: PRP</b><span class="xStack-chips"><i>43 trials</i><i>1,877 people</i></span><p>A 2025 review found activated PRP increased hair density against placebo. Microneedling has no comparable evidence for hair and is not offered here for it.</p></div>
+    </div>
 
     <h2 class="reveal">Cost, honestly</h2>
 
@@ -407,5 +408,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

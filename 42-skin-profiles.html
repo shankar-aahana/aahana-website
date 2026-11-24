@@ -228,6 +228,7 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="article.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -301,13 +302,16 @@
 
     <h2 class="reveal">What the combination actually tells you</h2>
 
-    <p class="reveal">The clearest way to see why both are needed is to hold one constant and vary the other.</p>
+    <p class="reveal">Hold one constant and vary the other.</p>
 
-    <p class="reveal"><strong>Same constitution, different tone.</strong> Two patients both run hot and reactive, the pattern classically called Pitta. Both will flush and both will inflame in response to an aggressive treatment. But at Fitzpatrick II that inflammation resolves and leaves nothing behind, while at Fitzpatrick V the same inflammation can leave <a href="post-inflammatory-hyperpigmentation.html">post-inflammatory hyperpigmentation</a> that takes months to clear. Constitution predicted the reaction. Tone predicted the consequence.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Same constitution, different tone</span><b>Two Pitta patients</b><p>Both flush and inflame after an aggressive treatment. At Fitzpatrick II it clears and leaves nothing; at V it can leave <a href="post-inflammatory-hyperpigmentation.html">post-inflammatory hyperpigmentation</a> for months.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Same tone, different constitution</span><b>Two type IV patients</b><p>Equally eligible for the same device, since eligibility follows melanin. One has a dry, stinging barrier: repair first, longer intervals, stop sooner. The other has thick, oily skin that usually needs more stimulation, not less.</p></div>
+    </div>
 
-    <p class="reveal"><strong>Same tone, different constitution.</strong> Two patients at Fitzpatrick IV are equally eligible for the same device at the same settings, because eligibility is a function of melanin. But one has a barrier that dries out and stings, and the other has thick, oily, resilient skin. The first needs barrier repair established before anything active, longer intervals, and a lower threshold for stopping. The second usually needs more stimulation than the protocol suggests, not less.</p>
+    <div class="xPull xPull--sm reveal"><p>Constitution predicts the reaction.</p><p>Tone predicts <em>what it leaves behind.</em></p></div>
 
-    <p class="reveal">Either variable alone produces a plan that is half right. Together they answer the two questions that actually determine the outcome: how will this skin react, and what will the reaction leave behind.</p>
+    <p class="reveal">Either alone gives a plan that is half right.</p>
 
     <h2 class="reveal">What this changes in practice</h2>
 
@@ -405,5 +409,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

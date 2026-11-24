@@ -228,6 +228,7 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="article.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -269,15 +270,21 @@
 
     <h2 class="reveal">What estrogen does</h2>
 
-    <p class="reveal">Estrogen is the structural hormone. Its receptors, both ER alpha and ER beta, are expressed on virtually every cell type involved in skin repair: fibroblasts, keratinocytes, inflammatory cells, tissue stem cells and vascular endothelial cells.<sup><a href="#ref1">1</a></sup></p>
+    <p class="reveal">Estrogen is the structural hormone. Its receptors, ER alpha and ER beta, sit on almost every cell involved in skin repair: fibroblasts, keratinocytes, inflammatory cells, stem cells and vessel lining.<sup><a href="#ref1">1</a></sup></p>
 
-    <p class="reveal">What it does with that reach is shift a balance. Estrogen induces transforming growth factor beta and tissue inhibitors of matrix metalloproteinases, while inhibiting the matrix metalloproteinases themselves. In plainer terms, it turns up the machinery that builds collagen and turns down the machinery that dismantles it, which supports the production and maintenance of collagen types I and III.<sup><a href="#ref1">1</a></sup></p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Turns up</span><b>Collagen building</b><p>Induces TGF-beta and tissue inhibitors of matrix metalloproteinases, supporting collagen types I and III. Adds thickness and moisture through hyaluronic acid.<sup><a href="#ref1">1</a></sup></p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Turns down</span><b>Collagen breakdown</b><p>Inhibits the matrix metalloproteinases that dismantle collagen.<sup><a href="#ref1">1</a></sup></p></div>
+    </div>
 
-    <p class="reveal">It also increases skin thickness, moisture and hydration through hyaluronic acid and other mucopolysaccharides.<sup><a href="#ref1">1</a></sup></p>
+    <p class="reveal">So when estrogen falls, several things happen at once: less collagen made, more broken down, less water held. That is why menopause feels abrupt though the hormone declines gradually.</p>
 
-    <p class="reveal">So when estrogen falls, several things happen at once rather than in sequence: less collagen made, more broken down, less water held. That is why the change at menopause feels abrupt even though the hormone declines gradually. Collagen content drops roughly 30 percent in the first five years after menopause and continues falling by about 2 percent annually, leaving skin thinner and structurally weaker.<sup><a href="#ref1">1</a></sup> We cover <a href="menopause-and-skin.html">that transition specifically</a> elsewhere.</p>
+    <div class="xStats xStats--2 reveal">
+      <div><b>~30%</b><span>of skin collagen lost in the first five years after menopause</span></div>
+      <div><b>~2%</b><span>more lost each year after that, leaving skin thinner and weaker<sup><a href="#ref1">1</a></sup></span></div>
+    </div>
 
-    <div class="pull reveal">Estrogen turns up the machinery that builds collagen and turns down the machinery that dismantles it.</div>
+    <p class="reveal">We cover <a href="menopause-and-skin.html">that transition</a> separately.</p>
 
     <h2 class="reveal">What androgens do</h2>
 
@@ -403,5 +410,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

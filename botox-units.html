@@ -274,6 +274,7 @@
     }
   </style>
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -303,11 +304,14 @@
 
     <h2 class="reveal">What Botox and Dysport actually are</h2>
 
-    <p class="reveal">Both are the same thing: a purified protein that stops a muscle from contracting for a while. Injected into the muscle that creases a particular line, the muscle relaxes and the line softens. Nothing is filled in and nothing is removed. It wears off over three to four months, which is why it gets repeated.</p>
+    <p class="reveal">Both are a purified protein that stops a muscle contracting for a while. Injected into the muscle behind a line, it relaxes and the line softens. Nothing is filled or removed. It wears off in three to four months, so it is repeated.</p>
 
-    <p class="reveal">Botox and Dysport are two brands of it, and they do the same job. The difference worth knowing is how they are counted. A Dysport unit is weaker than a Botox unit, so the same result takes roughly two and a half to three times as many of them. That is why a Dysport quote is always a bigger number, and why comparing the two without converting tells you nothing. Every figure on this page is already on the Botox scale.</p>
+    <div class="xNum reveal">
+      <div class="xNum-fig"><b style="font-size: clamp(44px, 5vw, 60px); white-space: nowrap">2.5<div class="xNum-fig"><b>2.5&ndash;3&times;</b>ndash;3<div class="xNum-fig"><b>2.5&ndash;3&times;</b>times;</b><span>Dysport units per Botox unit</span></div>
+      <div class="xNum-body"><p>Botox and Dysport are two brands that do the same job, counted differently. A Dysport unit is weaker, so the same result takes roughly two and a half to three times as many. That is why a Dysport quote is a bigger number, and why comparing without converting tells you nothing. <strong>Every figure on this page is on the Botox scale.</strong></p></div>
+    </div>
 
-    <div class="reveal" style="margin: 18px 0 6px">
+<div class="reveal" style="margin: 18px 0 6px">
       <details class="acc">
         <summary>The rest of the differences, for anyone who wants them</summary>
         <div class="acc-body">
@@ -660,5 +664,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

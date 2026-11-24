@@ -304,6 +304,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=8">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -349,11 +350,21 @@
 
     <h2 class="reveal">Platelet-rich plasma for erectile function</h2>
 
-    <p class="reveal">Blood is drawn, spun to concentrate the platelets, and the concentrate is injected into the erectile tissue of the penis under topical anesthetic and a local block. The proposed mechanism is the same one behind PRP elsewhere: growth factors prompting repair of tissue and small vessels.</p>
+    <ol class="xSteps xSteps--3 reveal">
+      <li><b>Draw</b>A small blood sample.</li>
+      <li><b>Spin</b>To concentrate the platelets.</li>
+      <li><b>Inject</b>Into the erectile tissue, under topical anesthetic and a local block. Growth factors are thought to prompt repair of tissue and small vessels.</li>
+    </ol>
 
-    <p class="reveal">A 2024 meta-analysis pooling 12 controlled trials and 991 patients found greater improvement in erectile function scores with PRP than with placebo, a moderate effect. The same analysis flagged high variability between studies, short follow-up, and too few trials to say which types of erectile dysfunction respond best. A double-blind placebo-controlled trial published in the Journal of Urology reached a similar conclusion, with a meaningful proportion of men reaching a minimum clinically important difference at six months.</p>
+    <div class="xStats reveal">
+      <div><b>12</b><span>controlled trials pooled in a 2024 meta-analysis</span></div>
+      <div><b>991</b><span>patients, with greater improvement in erectile function scores than placebo</span></div>
+      <div><b>Moderate</b><span>effect, with high variability between studies and short follow-up</span></div>
+    </div>
 
-    <p class="reveal">It is a reasonable option, and it is not a cure. Erectile dysfunction also has causes that need identifying before anything is injected, since it is frequently the first sign of vascular disease, and it can be driven by medication, hormones, sleep apnea or depression. That assessment comes first here.</p>
+    <p class="reveal">Too few trials exist to say which types of erectile dysfunction respond best. A double-blind placebo-controlled trial in the Journal of Urology agreed, with a meaningful share of men reaching a minimum clinically important difference at six months. A reasonable option, not a cure.</p>
+
+    <div class="xNote xNote--info reveal"><span class="xNote-k">Assessment comes first</span><p>Erectile dysfunction is often the first sign of vascular disease, and can be driven by medication, hormones, sleep apnea or depression. Those causes are looked for before anything is injected.</p></div>
 
     <h2 class="reveal">Botulinum toxin for the scrotum</h2>
 
@@ -650,5 +661,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>
