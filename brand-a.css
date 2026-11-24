@@ -191,3 +191,92 @@ body:has(.journal-body) .hero-subtitle { margin-top: 14px; }
 .journal-body .featured-post-body, .journal-body .small-post-body {
   background: linear-gradient(180deg, rgba(40,26,22,0) 15%, rgba(40,26,22,.55) 50%, rgba(40,26,22,.88) 100%) !important;
 }
+
+/* 6. The Practice pages (about, precision, prakriti) ---------------- */
+/* heroes on the agency gradients */
+.hero-about { background: linear-gradient(180deg, rgba(40,26,22,.25), rgba(40,26,22,.5)), var(--g2) center / cover !important; }
+body:has(.together-steps) .hero { background: linear-gradient(180deg, rgba(40,26,22,.3), rgba(40,26,22,.5)), var(--g1) center / cover !important; }
+.hero-prakriti { background: linear-gradient(180deg, rgba(40,26,22,.3), rgba(40,26,22,.55)), var(--g3) center / cover !important; }
+.hero-about::before, body:has(.together-steps) .hero::before, .hero-prakriti::before { display: none !important; }
+.hero-about .hero-title, body:has(.together-steps) .hero-title, .hero-prakriti .hero-title { font-weight: 300 !important; }
+.hero-about .hero-title em, body:has(.together-steps) .hero-title em, .hero-prakriti .hero-title em,
+.hero-about .hero-sub em { font-style: normal !important; color: #C6ECA9 !important; }
+.hero-eyebrow, .section-label, .credential-label, .award-org, .card-label, .gap-card-num, .dosha-card-label, .research-stat-label, .cred-tag {
+  font-family: var(--mono) !important; font-weight: 400 !important; letter-spacing: .14em !important;
+}
+.cred-tag { border-radius: 999px !important; }
+.section-heading { font-weight: 300 !important; }
+.section-heading em, .section-quiz-cta h2 em, .section-cta h2 em { font-style: normal !important; color: #7A5741 !important; }
+.section-dark .section-heading em, .section-credentials .section-heading em { color: #C6ECA9 !important; }
+.pull-quote { font-style: normal !important; border-left: 0 !important; padding-left: 0 !important; position: relative; padding-top: 34px !important; }
+.pull-quote::before { content: '\201C'; position: absolute; top: -6px; left: 0; font-size: 56px; line-height: 1; color: #C6ECA9; font-weight: 300; }
+.section-light .pull-quote::before, .section-philosophy .pull-quote::before { color: #7A5741; }
+.btn-primary, .btn-quiz, .btn-discover { border-radius: 999px !important; }
+
+/* dark sections on gradients */
+.section-credentials, .section-profiles, body:has(.together-steps) .section-dark {
+  background: linear-gradient(rgba(40,26,22,.4), rgba(40,26,22,.4)), var(--g2) center / cover !important;
+}
+body:has(.together-steps) .section-dark:nth-of-type(odd) { background: linear-gradient(rgba(40,26,22,.32), rgba(40,26,22,.42)), var(--g1) center / cover !important; }
+
+/* cards: rounded, warm, numbered */
+.gap-card, .research-stat, .section-light .card {
+  border: 0 !important; border-radius: 18px !important;
+  background: linear-gradient(160deg, #F6F2E8 0%, #EEE6D6 100%) !important; box-shadow: inset 0 0 0 1px rgba(122,87,65,.10);
+  position: relative; transition: transform .3s ease;
+}
+.gap-card::after, .section-light .card::after {
+  content: ''; position: absolute; right: 18px; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: #C6ECA9; box-shadow: 0 0 0 1px rgba(70,51,49,.25);
+}
+.gap-card:hover { transform: translateY(-2px); }
+.section-dark .card {
+  border-radius: 18px !important; border: 1px solid rgba(238,233,218,.16) !important; background: rgba(238,233,218,.06) !important;
+}
+.award-item { border-radius: 18px !important; border: 0 !important; background: linear-gradient(160deg, #F6F2E8 0%, #EEE6D6 100%) !important; box-shadow: inset 0 0 0 1px rgba(122,87,65,.10); }
+/* credentials: tall story cards */
+.credential-block {
+  position: relative; isolation: isolate; overflow: hidden; border: 0 !important; border-radius: 22px !important;
+  min-height: 300px; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px !important;
+  background: linear-gradient(180deg, rgba(40,26,22,.05) 20%, rgba(40,26,22,.6)), var(--g1t) center / cover !important;
+}
+.credential-block:nth-child(3n+2) { background: linear-gradient(180deg, rgba(40,26,22,.05) 20%, rgba(40,26,22,.6)), var(--g3t) center / cover !important; }
+.credential-block:nth-child(3n+3) { background: linear-gradient(180deg, rgba(40,26,22,.05) 20%, rgba(40,26,22,.6)), var(--g2t) center / cover !important; }
+.credential-label { color: rgba(238,233,218,.85) !important; }
+.credential-name { color: #C6ECA9 !important; text-transform: uppercase; letter-spacing: .02em; font-weight: 500 !important; }
+/* precision: four steps as a connected path */
+.together-steps { position: relative; gap: 12px !important; }
+.together-step {
+  border: 1px solid rgba(238,233,218,.16) !important; border-radius: 18px; padding: 26px 22px !important; background: rgba(238,233,218,.05);
+  position: relative;
+}
+.together-step-num { font-family: var(--mono) !important; font-size: 11px !important; letter-spacing: .16em; color: #C6ECA9 !important; display: flex; align-items: center; gap: 10px; }
+.together-step-num::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: #C6ECA9; box-shadow: 0 0 0 5px rgba(198,236,169,.16); }
+/* CTAs: no watermark; sage matte band */
+.section-cta::before, .section-quiz-cta::before { content: '' !important; font-size: 0 !important; }
+.section-quiz-cta { background: #C6ECA9 !important; isolation: isolate; }
+.section-quiz-cta::before {
+  position: absolute; inset: 0 !important; transform: none !important; z-index: -1;
+  background-color: rgba(176,160,140,.34);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.2 0 0 0 0 0.19 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.section-quiz-cta h2 { font-weight: 300 !important; }
+.section-quiz-cta .btn-quiz { background: #463331 !important; color: #C6ECA9 !important; }
+/* prakriti: dosha colours moved onto the palette, textured headers */
+body:has(.hero-prakriti) {
+  --vata-primary: #6B6360; --vata-light: #ECE7E1; --vata-accent: #B9AEA6;
+  --pitta-primary: #9A5A3A; --pitta-light: #F2E3D6; --pitta-accent: #C99572;
+  --kapha-primary: #5E6B4E; --kapha-light: #E4E8D8; --kapha-accent: #A9B88F;
+}
+.dosha-card { border-radius: 22px !important; box-shadow: inset 0 0 0 1px rgba(122,87,65,.12); background: #F6F2E8; }
+.dosha-card-header { background-image: var(--g1t) !important; background-size: cover !important; background-blend-mode: multiply; padding-top: 34px !important; }
+.dosha-card-header.pitta { background-image: var(--g3t) !important; }
+.dosha-card-header.kapha { background-image: var(--g2t) !important; background-blend-mode: soft-light; }
+.dosha-card-name { font-weight: 300 !important; }
+.dosha-skin-label.vata { color: #5A5350 !important; } .dosha-skin-label.pitta { color: #8A4E30 !important; } .dosha-skin-label.kapha { color: #4E5A40 !important; }
+.dosha-quote { font-style: normal !important; }
+.matrix-cell { border-radius: 6px; }
+.matrix-cell.vata-dom { background: #6B6360 !important; } .matrix-cell.pitta-dom { background: #9A5A3A !important; } .matrix-cell.kapha-dom { background: #5E6B4E !important; }
+.matrix-cell.vp { background: #82604E !important; } .matrix-cell.vk { background: #656559 !important; } .matrix-cell.pk { background: #7C6444 !important; } .matrix-cell.tri { background: #6E5B4F !important; }
+
+body:has(.hero-about) .section-cta h2, body:has(.hero-about) .section-cta p { color: #463331 !important; }
+body:has(.hero-about) .section-cta .btn-primary { background: #463331 !important; color: #C6ECA9 !important; }
