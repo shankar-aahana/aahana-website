@@ -257,7 +257,7 @@
   }
   .aMenu-head .aLabel { grid-column: 1 / -1; margin-bottom: 0; }
   .aMenu-title {
-    margin: 0; font-size: clamp(36px, 4.6vw, 66px); font-weight: 500; line-height: 1.04;
+    margin: 0; font-size: clamp(30px, 3.4vw, 50px); font-weight: 400; line-height: 1.04;
     letter-spacing: -.025em; color: #463331;
   }
   .aMenu-title em { font-style: normal; color: #7A5741; }
@@ -276,7 +276,7 @@
   }
   .aMenu-name {
     display: inline-flex; align-items: center; gap: 18px; width: fit-content;
-    font-size: clamp(28px, 3.3vw, 46px); font-weight: 500; line-height: 1.1; letter-spacing: -.02em;
+    font-size: clamp(24px, 2.4vw, 34px); font-weight: 400; line-height: 1.1; letter-spacing: -.02em;
     color: rgba(70,51,49,.6); text-decoration: none; transition: color .3s ease;
   }
   .aMenu-name svg { width: 34px; height: 12px; opacity: 0; transform: translateX(-10px); transition: opacity .3s ease, transform .3s ease; }
@@ -292,7 +292,7 @@
   .aMenu-name:focus-visible { outline: 2px solid #7A5741; outline-offset: 4px; border-radius: 4px; }
   .aMenu-pic { display: none; }
   .aMenu-frame {
-    position: sticky; top: 110px; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden;
+    position: sticky; top: 110px; aspect-ratio: 9 / 10; border-radius: 14px; overflow: hidden;
     background: #DED7C6;
   }
   .aMenu-shot {
@@ -320,7 +320,7 @@
     .aMenu-frame { display: none; }
     .aMenu-row { grid-template-columns: 1fr 96px; column-gap: 16px; }
     .aMenu-num { grid-row: auto; grid-column: 1; padding: 0; }
-    .aMenu-name { grid-column: 1; color: #463331; font-size: 27px; }
+    .aMenu-name { grid-column: 1; color: #463331; font-size: 23px; }
     .aMenu-name svg { opacity: 1; transform: none; width: 26px; }
     .aMenu-tags { grid-column: 1; }
     .aMenu-pic {
@@ -341,7 +341,7 @@
   }
   .aDr-head {
     margin: 0 0 clamp(26px, 3vw, 40px);
-    font-size: clamp(40px, 5.4vw, 80px); font-weight: 500; line-height: 1.02;
+    font-size: clamp(32px, 4vw, 58px); font-weight: 400; line-height: 1.02;
     letter-spacing: -.025em; color: var(--ivory);
   }
   .aDr-head em { font-style: normal; color: #C6ECA9; }
@@ -406,13 +406,13 @@
     font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #463331;
   }
-  .aWait-head { margin: 0; font-weight: 500; color: #463331; }
+  .aWait-head { margin: 0; font-weight: 400; color: #463331; }
   .aWait-head span {
     display: block; margin-bottom: .1em;
     font-size: clamp(26px, 3vw, 44px); letter-spacing: -.01em; line-height: 1.1;
   }
   .aWait-head strong {
-    display: block; font-weight: 500;
+    display: block; font-weight: 400;
     font-size: clamp(120px, 21vw, 320px); line-height: .8; letter-spacing: -.06em;
     margin-left: -.04em;
   }
@@ -1325,7 +1325,7 @@ body {
 
 <!-- ===================================================================
      WHAT WE OFFER  (ivory)
-     The five service categories as a typographic menu, grouped as the booking site groups them (procedures split into Injectables and Lasers and devices; Aesthetician services; Medical programs; Diagnostics on its own). Migraine and nerve blocks sit under Injectables: procedures, by Shankar's rule. Hovering or focusing
+     The five service categories as a typographic menu, grouped as the booking site groups them (procedures split into Injectables and Lasers and devices; Aesthetician services; Medical programs; Diagnostics on its own). Migraine and headache is listed under Medical programs, where a patient looks for it, although booking files it under procedures. Hovering or focusing
      a row brings its photograph up in the sticky frame on the right; the
      name goes to that category on services.html, the small links to the
      treatment pages. Phones show each row's photo inline. Deliberately not
@@ -1349,7 +1349,7 @@ body {
       <li class="aMenu-row is-on" data-img="1">
         <span class="aMenu-num">02</span>
         <a class="aMenu-name" href="services.html#injectables">Injectables<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
-        <span class="aMenu-tags"><a href="botox-dysport.html">Neuromodulators</a><a href="dermal-fillers.html">Dermal fillers</a><a href="biostimulators.html">Biostimulators</a><a href="skinvive.html">SkinVive</a><a href="prp.html">PRP</a><a href="migraine-headache.html">Migraine &amp; nerve blocks</a></span>
+        <span class="aMenu-tags"><a href="botox-dysport.html">Neuromodulators</a><a href="dermal-fillers.html">Dermal fillers</a><a href="biostimulators.html">Biostimulators</a><a href="skinvive.html">SkinVive</a><a href="prp.html">PRP</a></span>
         <span class="aMenu-pic" style="background-image:url('brand-card-1.jpg')" aria-hidden="true"></span>
       </li>
       <li class="aMenu-row" data-img="2">
@@ -1367,7 +1367,7 @@ body {
       <li class="aMenu-row" data-img="4">
         <span class="aMenu-num">05</span>
         <a class="aMenu-name" href="services.html#wellness">Medical programs<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
-        <span class="aMenu-tags"><a href="medical-weight-loss.html">Weight management</a><a href="sexual-wellness.html">Sexual health</a></span>
+        <span class="aMenu-tags"><a href="medical-weight-loss.html">Weight management</a><a href="sexual-wellness.html">Sexual health</a><a href="migraine-headache.html">Migraine &amp; headache</a></span>
         <span class="aMenu-pic" style="background-image:url('svc-wellness.jpg')" aria-hidden="true"></span>
       </li>
       </ol>

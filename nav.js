@@ -54,6 +54,12 @@
   var SERVICES_MAIN = { label: 'All services', href: 'services.html' };
 
   /* Individual treatment pages. Add one line here as each ships. */
+  /* Five groups, matching the booking site: Diagnostics, then procedures
+     split into Injectables and Lasers & devices, Aesthetician services,
+     and Medical programs. Migraine and headache is listed under Medical
+     programs here because that is where a patient looks for it, although
+     booking files it under procedures. PRP's uses are indented sub-links
+     (sub: true) inside Injectables rather than a second dropdown. */
   var SERVICES_GROUPS = [
     { group: 'Diagnostics',     links: [
         { label: 'Visia skin analysis',   href: 'visia-skin-analysis.html' },
@@ -64,34 +70,30 @@
         { label: 'Botox & Dysport', href: 'botox-dysport.html' },
         { label: 'Dermal fillers',  href: 'dermal-fillers.html' },
         { label: 'Biostimulators',  href: 'biostimulators.html' },
-        { label: 'SkinVive',        href: 'skinvive.html' }
+        { label: 'SkinVive',        href: 'skinvive.html' },
+        { label: 'PRP',             href: 'prp.html' },
+        { label: 'Skin quality',      href: 'prp-skin.html', sub: true },
+        { label: 'Under the eye',     href: 'prp-under-eye.html', sub: true },
+        { label: 'Hair restoration',  href: 'prp-hair.html', sub: true },
+        { label: 'With microneedling', href: 'prp-microneedling.html', sub: true }
       ] },
-    { group: 'PRP',             links: [
-        { label: 'All PRP',           href: 'prp.html' },
-        { label: 'Skin quality',      href: 'prp-skin.html' },
-        { label: 'Under the eye',     href: 'prp-under-eye.html' },
-        { label: 'Hair restoration',  href: 'prp-hair.html' },
-        { label: 'With microneedling', href: 'prp-microneedling.html' }
-      ] },
-    { group: 'Lasers & energy', links: [
+    { group: 'Lasers & devices', links: [
         { label: 'Aerolase Neo Elite', href: 'aerolase-neo-elite.html' },
-        { label: 'XERF',               href: 'xerf.html' }
+        { label: 'XERF',               href: 'xerf.html' },
+        { label: 'Microneedling',      href: 'microneedling.html' },
+        { label: 'Topical exosomes',   href: 'exosomes.html' }
       ] },
-    { group: 'Skin treatments', links: [
-        { label: 'Microneedling', href: 'microneedling.html' },
-        { label: 'VI Peel',      href: 'vi-peel.html' },
+    { group: 'Aesthetician services', links: [
         { label: 'Hydrafacial',  href: 'hydrafacial.html' },
-        { label: 'Topical exosomes', href: 'exosomes.html' }
+        { label: 'VI Peel',      href: 'vi-peel.html' }
       ] },
-    { group: 'Wellness',        links: [
+    { group: 'Medical programs', links: [
         { label: 'Medical weight loss', href: 'medical-weight-loss.html' },
-        { label: 'Sexual wellness',    href: 'sexual-wellness.html' }
-      ] },
-    { group: 'Headache',        links: [
+        { label: 'Sexual wellness',    href: 'sexual-wellness.html' },
         { label: 'Migraine & headache',    href: 'migraine-headache.html' },
-        { label: 'Botox for migraine',     href: 'migraine-botox.html' },
-        { label: 'Occipital nerve block',  href: 'occipital-nerve-block.html' },
-        { label: 'Supraorbital nerve block', href: 'supraorbital-nerve-block.html' }
+        { label: 'Botox for migraine',     href: 'migraine-botox.html', sub: true },
+        { label: 'Occipital nerve block',  href: 'occipital-nerve-block.html', sub: true },
+        { label: 'Supraorbital nerve block', href: 'supraorbital-nerve-block.html', sub: true }
       ] }
   ];
 
@@ -114,7 +116,7 @@
 
   function desktopItems(links) {
     return links.map(function (l) {
-      return '<a class="dropdown-item" href="' + l.href + '"' +
+      return '<a class="dropdown-item' + (l.sub ? ' sub' : '') + '" href="' + l.href + '"' +
              (l.rel ? ' rel="' + l.rel + '"' : '') + '>' + l.label + '</a>';
     }).join('\n        ');
   }
@@ -138,7 +140,7 @@
 
   function panelItems(links) {
     return links.map(function (l) {
-      return '<a href="' + l.href + '"' +
+      return '<a' + (l.sub ? ' class="sub"' : '') + ' href="' + l.href + '"' +
              (l.rel ? ' rel="' + l.rel + '"' : '') + '>' + l.label + '</a>';
     }).join('\n      ');
   }

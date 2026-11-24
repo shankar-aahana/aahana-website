@@ -155,10 +155,10 @@ nav.scrolled {
 }
 
 /* ---------- wide grouped dropdown (Services) ---------- */
-.dropdown.dropdown-wide { min-width: 640px; padding-bottom: 16px; }
+.dropdown.dropdown-wide { min-width: 860px; padding-bottom: 16px; }
 .dropdown-cols {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   /* Seven groups wrap onto two rows, so the taller columns in the first row
      ended up almost touching the labels in the second. The row gap is what
      keeps them apart; the column gap is unchanged. */
@@ -167,7 +167,18 @@ nav.scrolled {
   padding: 4px 8px 0;
 }
 .dropdown-col .dropdown-label { padding: 6px 14px 8px; }
-.dropdown-col .dropdown-item { padding: 7px 14px; white-space: normal; }
+.dropdown-col .dropdown-item { display: block; padding: 7px 14px; white-space: normal; }
+/* Sub-links (PRP's uses, the headache treatments): indented under their
+   parent in the same column, smaller and quieter, no second dropdown. */
+.dropdown-col .dropdown-item.sub {
+  padding: 4px 14px 4px 28px; font-size: 12px;
+  color: rgba(244, 239, 228,.66); position: relative;
+}
+.dropdown-col .dropdown-item.sub::before {
+  content: ""; position: absolute; left: 16px; top: 50%; width: 6px; height: 1px;
+  background: rgba(244, 239, 228,.4);
+}
+.dropdown-col .dropdown-item.sub:hover { color: var(--ivory); }
 
 @media (max-width: 1100px) {
   .dropdown.dropdown-wide { min-width: 460px; }
@@ -256,6 +267,7 @@ nav.scrolled {
   text-decoration: none;
 }
 .mobile-panel .disabled { opacity: .4; cursor: default; }
+.mobile-panel a.sub { padding-left: 18px; font-size: .86em; opacity: .78; }
 .mobile-panel a.lead {
   font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
   font-size: 14px;
