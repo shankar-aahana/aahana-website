@@ -470,6 +470,8 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
           mask-image: linear-gradient(90deg, #000 calc(100% - 60px), transparent);
 }
 .sCar-track::-webkit-scrollbar { display: none; }
+/* Room after the last card so it can scroll clear of the edge fade. */
+.sCar-track::after { content: ""; flex: 0 0 72px; }
 .sCar-item {
   position: relative; flex: 0 0 auto; width: 168px; height: 134px;
   border-radius: 12px; overflow: hidden; scroll-snap-align: start;
@@ -542,6 +544,14 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
   color: #EEE9DA; max-width: 18ch;
 }
 .sHero-claim h1 em { font-style: normal; color: #C6ECA9; }
+.sHero-lead { max-width: 52ch; }
+.sHero-link {
+  display: inline-flex; align-items: center; gap: 14px; margin-top: 14px; min-height: 24px; padding: 4px 0;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #C6ECA9; text-decoration: none;
+}
+.sHero-link svg { width: 30px; height: 12px; transition: transform .25s ease; }
+.sHero-link:hover svg { transform: translateX(6px); }
 .sHero-claim p {
   margin: 0; max-width: 52ch; font-size: 15px; font-weight: 300; line-height: 1.75;
   color: rgba(238,233,218,.86);
@@ -687,36 +697,36 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
     <div class="sCar" data-carousel>
       <ul class="sCar-track" aria-label="Featured treatments">
         <li class="sCar-item">
-          <button class="sCar-thumb" type="button" style="background-image:url('brand-card-1.jpg')" aria-label="Show Neuromodulators"><span>Neuromodulators</span></button>
+          <button class="sCar-thumb" type="button" style="background-image:url('brand-card-1.jpg');" aria-label="Show Neuromodulators"><span>Neuromodulators</span></button>
           <div class="sCar-glass"><h2>Neuromodulators</h2><p>Relaxes targeted muscles to smooth movement lines, lift and subtly contour. Botox and Dysport, placed by Dr. Mundluru.</p><a class="sCar-more" href="botox-dysport.html">Read more &rarr;</a></div>
         </li>
         <li class="sCar-item">
-          <button class="sCar-thumb" type="button" style="background-image:url('brand-card-2.jpg')" aria-label="Show Dermal fillers"><span>Dermal fillers</span></button>
+          <button class="sCar-thumb" type="button" style="background-image:url('brand-card-2.jpg');" aria-label="Show Dermal fillers"><span>Dermal fillers</span></button>
           <div class="sCar-glass"><h2>Dermal fillers</h2><p>Hyaluronic acid used as a structural tool: volume and contour placed for facial balance, not just to fill a line.</p><a class="sCar-more" href="dermal-fillers.html">Read more &rarr;</a></div>
         </li>
         <li class="sCar-item is-open">
-          <button class="sCar-thumb" type="button" style="background-image:url('svc-skin.jpg')" aria-label="Show Skin microbiome testing"><span>Skin microbiome testing</span></button>
-          <div class="sCar-glass"><h2>Skin microbiome testing</h2><p>A snapshot of your skin&rsquo;s current microbiome, not a diagnosis. It tracks changes over time, without analysing your DNA.</p><a class="sCar-more" href="skin-microbiome-testing.html">Read more &rarr;</a></div>
-        </li>
-        <li class="sCar-item">
-          <button class="sCar-thumb" type="button" style="background-image:url('process-face.jpg');background-position:center 30%" aria-label="Show Visia skin analysis"><span>Visia skin analysis</span></button>
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-diagnostics.jpg');" aria-label="Show Visia skin analysis"><span>Visia skin analysis</span></button>
           <div class="sCar-glass"><h2>Visia skin analysis</h2><p>Standardized imaging, including ultraviolet, that shows pigment below the surface. Part of every consultation.</p><a class="sCar-more" href="visia-skin-analysis.html">Read more &rarr;</a></div>
         </li>
         <li class="sCar-item">
-          <button class="sCar-thumb" type="button" style="background-image:url('svc-inject.jpg')" aria-label="Show Biostimulators"><span>Biostimulators</span></button>
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-inject.jpg');" aria-label="Show Biostimulators"><span>Biostimulators</span></button>
           <div class="sCar-glass"><h2>Biostimulators</h2><p>Sculptra and Radiesse signal your skin to build its own collagen, for gradual and lasting structural support.</p><a class="sCar-more" href="biostimulators.html">Read more &rarr;</a></div>
         </li>
         <li class="sCar-item">
-          <button class="sCar-thumb" type="button" style="background-image:url('svc-laser.jpg')" aria-label="Show Aerolase Neo Elite"><span>Aerolase Neo Elite</span></button>
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-devices.jpg');" aria-label="Show Aerolase Neo Elite"><span>Aerolase Neo Elite</span></button>
           <div class="sCar-glass"><h2>Aerolase Neo Elite</h2><p>A no-contact 1064 nm laser for acne, rosacea, redness and pigment, chosen for its safety across every skin tone.</p><a class="sCar-more" href="aerolase-neo-elite.html">Read more &rarr;</a></div>
         </li>
         <li class="sCar-item">
-          <button class="sCar-thumb" type="button" style="background-image:url('svc-wellness.jpg')" aria-label="Show XERF"><span>XERF</span></button>
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-laser.jpg');" aria-label="Show XERF"><span>XERF</span></button>
           <div class="sCar-glass"><h2>XERF</h2><p>Dual-frequency radiofrequency that reaches every layer of the skin, down to the tissue responsible for lift and firmness.</p><a class="sCar-more" href="xerf.html">Read more &rarr;</a></div>
         </li>
         <li class="sCar-item">
-          <button class="sCar-thumb" type="button" style="background-image:url('brand-hero.jpg')" aria-label="Show GLP-1 therapy"><span>GLP-1 therapy</span></button>
-          <div class="sCar-glass"><h2>GLP-1 therapy</h2><p>Medical weight loss built into a skin plan, with attention to the volume loss and laxity that can follow.</p><a class="sCar-more" href="medical-weight-loss.html">Read more &rarr;</a></div>
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-skin.jpg');" aria-label="Show Hydrafacial"><span>Hydrafacial</span></button>
+          <div class="sCar-glass"><h2>Hydrafacial</h2><p>Cleanses, exfoliates, extracts and infuses hydrating serums in one visit. Performed by our aesthetician.</p><a class="sCar-more" href="hydrafacial.html">Read more &rarr;</a></div>
+        </li>
+        <li class="sCar-item">
+          <button class="sCar-thumb" type="button" style="background-image:url('svc-headache.jpg');background-position:center 25%;" aria-label="Show Migraine and headache"><span>Migraine &amp; headache</span></button>
+          <div class="sCar-glass"><h2>Migraine &amp; headache</h2><p>Botox for chronic migraine and nerve blocks, from a physician board certified in Internal Medicine.</p><a class="sCar-more" href="migraine-headache.html">Read more &rarr;</a></div>
         </li>
       </ul>
       <div class="sCar-nav">
@@ -727,20 +737,9 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
   </div>
   <div class="sHero-claim">
     <h1 id="svc-title">Services built for <em>your skin, specifically.</em></h1>
-    <p>Every service at Aahana begins with a Visia skin analysis and a Prakriti constitutional assessment. What follows is a protocol built around your clinical data, your skin tone, and your goals.</p>
-  </div>
-</section>
-
-<!-- WHAT TO EXPECT -->
-<section class="svExpect" aria-labelledby="expect-title">
-  <div class="svExpect-inner reveal">
-    <div>
-      <p class="svLabel">What to expect</p>
-      <h2 class="svExpect-title" id="expect-title">Your first visit, <em>in forty five minutes.</em></h2>
-    </div>
-    <div>
-      <p class="svExpect-lede">Visia imaging measures your skin, Dr. Mundluru examines it, and you leave with a sequenced treatment plan: which procedures, in what order, and how far apart.</p>
-      <a class="svExpect-link" href="first-visit.html">What your first visit involves, in order<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+    <div class="sHero-lead">
+      <p>Every service at Aahana begins with a Visia skin analysis and a Prakriti constitutional assessment. What follows is a protocol built around your clinical data, your skin tone, and your goals.</p>
+      <a class="sHero-link" href="first-visit.html">What your first visit involves<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
     </div>
   </div>
 </section>
