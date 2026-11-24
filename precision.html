@@ -364,18 +364,6 @@ p.body:last-child { margin-bottom: 0; }
 @keyframes pSpin { to { transform: rotate(360deg); } }
 @media (max-width: 760px) { .pGeo { width: 360px; right: -140px; top: 62%; opacity: .55; } }
 
-.pIce { margin: 0 0 40px; position: relative; }
-.pIce svg { width: 100%; max-width: 420px; display: block; }
-.pIce-tip { fill: #C6ECA9; }
-.pIce-l1 { fill: #C4AC9D; } .pIce-l2 { fill: #A88A76; } .pIce-l3 { fill: #7A5741; } .pIce-l4 { fill: #463331; }
-.pIce rect { transition: opacity .4s; }
-.pIce-water { stroke: #463331; stroke-width: 1; stroke-dasharray: 4 5; }
-.pIce-labels { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 0; max-width: 420px; }
-.pIce-labels li { display: flex; gap: 14px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid rgba(122,87,65,.2); font-size: 15px; color: #463331; transition: color .3s, padding .3s; cursor: default; }
-.pIce-labels li span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; color: #7A5741; min-width: 58px; text-transform: uppercase; }
-.pIce-labels li.is-tip { font-size: 14px; color: rgba(70,51,49,.85); }
-.pIce.is-hover rect { opacity: .3; } .pIce.is-hover rect.is-on { opacity: 1; }
-.pIce-labels li.is-on { padding-left: 6px; }
 
 .pLayers { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 56px; align-items: center; }
 .pRings { width: 100%; overflow: visible; }
@@ -392,6 +380,30 @@ p.body:last-child { margin-bottom: 0; }
 }
 @media (max-width: 560px) { .pLayers .together-steps { grid-template-columns: 1fr !important; } }
 @media (prefers-reduced-motion: reduce) { .pGeo-spin { animation: none; } }
+
+.pGeo-orbit { transform-origin: 300px 300px; animation: pSpin 26s linear infinite; }
+.pGeo-orbit.o2 { animation-duration: 18s; animation-direction: reverse; }
+.pGeo-orbit.o3 { animation-duration: 12s; }
+.pScan { position: relative; margin: 0 0 40px; aspect-ratio: 4 / 5; max-width: 460px; border-radius: 24px; overflow: hidden; isolation: isolate; user-select: none; touch-action: pan-y; box-shadow: 0 30px 60px -40px rgba(40,26,22,.7); }
+.pScan > img, .pScan-data, .pScan-data img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.pScan-data { clip-path: inset(0 0 0 var(--pos)); }
+.pPin { transition: opacity .25s; position: absolute; transform: translate(-6px, -50%); display: flex; align-items: center; gap: 8px; white-space: nowrap;
+  font-family: 'Social Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #EEE9DA;
+  background: rgba(40,26,22,.72); padding: 5px 10px 5px 6px; border-radius: 999px; backdrop-filter: blur(4px); }
+.pPin.r { transform: translate(calc(-100% + 6px), -50%); flex-direction: row-reverse; padding: 5px 6px 5px 10px; }
+.pPin i { width: 9px; height: 9px; border-radius: 50%; background: #C6ECA9; box-shadow: 0 0 0 4px rgba(198,236,169,.25); animation: pPulse 2.4s ease-in-out infinite; }
+@keyframes pPulse { 50% { box-shadow: 0 0 0 8px rgba(198,236,169,0); } }
+.pScan-tag { position: absolute; top: 16px; z-index: 3; font-family: 'Social Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 999px; background: rgba(238,233,218,.85); color: #463331; }
+.pScan-tag.l { left: 16px; } .pScan-tag.r { right: 16px; background: rgba(40,26,22,.75); color: #C6ECA9; }
+.pScan-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: #C6ECA9; z-index: 2; pointer-events: none; }
+.pScan-handle span { position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: #C6ECA9; box-shadow: 0 6px 18px rgba(40,26,22,.4); }
+.pScan-handle span::before, .pScan-handle span::after { content: ''; position: absolute; top: 50%; width: 0; height: 0; border: 6px solid transparent; margin-top: -6px; }
+.pScan-handle span::before { left: 8px; border-right-color: #463331; } .pScan-handle span::after { right: 8px; border-left-color: #463331; }
+.pScan-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; z-index: 4; }
+.pScan-range:focus-visible + * , .pScan:has(.pScan-range:focus-visible) { outline: 2px solid #463331; outline-offset: 4px; }
+@media (max-width: 560px) { .pPin { font-size: 8.5px; letter-spacing: .06em; } }
+@media (prefers-reduced-motion: reduce) { .pGeo-orbit, .pPin i { animation: none; } }
 </style>
 </head>
 <body>
@@ -406,9 +418,8 @@ p.body:last-child { margin-bottom: 0; }
 <section class="hero">
 <svg class="pGeo" viewBox="0 0 600 600" aria-hidden="true">
   <g class="pGeo-spin"><circle cx="300" cy="300" r="270"/><circle cx="300" cy="300" r="205"/><circle cx="300" cy="300" r="140" class="pGeo-dash"/><circle cx="300" cy="300" r="70"/></g>
-  <polygon class="pGeo-tri" points="300,95 477.5,402.5 122.5,402.5"/>
   <circle cx="300" cy="300" r="5" class="pGeo-core"/>
-  <circle cx="300" cy="95" r="4" class="pGeo-node"/><circle cx="477.5" cy="402.5" r="4" class="pGeo-node"/><circle cx="122.5" cy="402.5" r="4" class="pGeo-node"/>
+  <g class="pGeo-orbit"><circle cx="300" cy="30" r="4" class="pGeo-node"/></g><g class="pGeo-orbit o2"><circle cx="300" cy="95" r="3" class="pGeo-node"/></g><g class="pGeo-orbit o3"><circle cx="300" cy="160" r="3.5" class="pGeo-node"/></g>
 </svg>
   <div class="hero-eyebrow">Precision medicine</div>
   <h1 class="hero-title">Beyond the surface.<br><em>Your skin at the molecular level.</em></h1>
@@ -426,25 +437,17 @@ p.body:last-child { margin-bottom: 0; }
         <p class="body light-text">Precision medicine for skin means diagnosing those root causes before treating their symptoms. It is what separates a protocol that works from one that manages.</p>
       </div>
       <div class="reveal">
-        <figure class="pIce" aria-label="A visible skin concern is the tip of deeper processes">
-  <svg viewBox="0 0 420 380" role="img" aria-hidden="true">
-    <defs><clipPath id="iceClip"><polygon points="210,10 410,370 10,370"/></clipPath></defs>
-    <g clip-path="url(#iceClip)">
-      <rect x="0" y="0" width="420" height="96" class="pIce-tip"/>
-      <rect x="0" y="96" width="420" height="68" class="pIce-l1"/>
-      <rect x="0" y="164" width="420" height="68" class="pIce-l2"/>
-      <rect x="0" y="232" width="420" height="68" class="pIce-l3"/>
-      <rect x="0" y="300" width="420" height="70" class="pIce-l4"/>
-    </g>
-    <line x1="0" y1="96" x2="420" y2="96" class="pIce-water"/>
-  </svg>
-  <ol class="pIce-labels">
-    <li class="is-tip"><span>Visible</span>Dryness, pigmentation, premature aging, reactivity</li>
-    <li><span>01</span>Genetic predispositions</li>
-    <li><span>02</span>Microbial imbalances</li>
-    <li><span>03</span>Inflammatory signaling</li>
-    <li><span>04</span>Nutrient deficiencies</li>
-  </ol>
+        <figure class="pScan" style="--pos:35%">
+  <img src="precision-surface.jpg" alt="Close portrait of a woman's face and shoulders" width="800" height="1000" loading="lazy">
+  <div class="pScan-data" aria-hidden="true"><img src="precision-data.jpg" alt="" width="800" height="1000" loading="lazy">
+    <span class="pPin r" style="left:82%;top:14%"><i></i>Genetic predispositions</span>
+    <span class="pPin r" style="left:84%;top:36%"><i></i>Inflammatory signaling</span>
+    <span class="pPin r" style="left:80%;top:54%"><i></i>Microbial imbalances</span>
+    <span class="pPin r" style="left:90%;top:78%"><i></i>Nutrient deficiencies</span>
+  </div>
+  <span class="pScan-tag l">Surface</span><span class="pScan-tag r">Beneath</span>
+  <div class="pScan-handle" aria-hidden="true"><span></span></div>
+  <input class="pScan-range" type="range" min="0" max="100" value="35" aria-label="Drag to compare the surface of the skin with what lies beneath it">
 </figure>
 <div class="pull-quote">"We are trying to take this concept a step further by using the patient's genetic profile, medical history, microbiome, lifestyle, diet and other environmental factors to create the most effective treatment plan for that individual."</div>
         <p class="body light-text" style="font-size:14px;color:rgba(70, 51, 49,.80)">Dr. Julie C. Harper, MD, Dermatology Times</p>
@@ -619,12 +622,17 @@ reveals.forEach(el => observer.observe(el));
 </script>
 <script>
 (function(){
-  var ice=document.querySelector('.pIce'); if(ice){
-    var rects=ice.querySelectorAll('rect'), lis=ice.querySelectorAll('.pIce-labels li');
-    lis.forEach(function(li,i){
-      li.addEventListener('mouseenter',function(){ice.classList.add('is-hover');rects.forEach(function(r,k){r.classList.toggle('is-on',k===i)});lis.forEach(function(l,k){l.classList.toggle('is-on',k===i)});});
-      li.addEventListener('mouseleave',function(){ice.classList.remove('is-hover');lis.forEach(function(l){l.classList.remove('is-on')});});
-    });
+  var sc=document.querySelector('.pScan'); if(sc){
+    var r=sc.querySelector('.pScan-range'), touched=false;
+    var pins=[].slice.call(sc.querySelectorAll('.pPin'));
+    function setp(v){ sc.style.setProperty('--pos', v+'%'); r.value=v; var b=sc.getBoundingClientRect(), cut=b.left+b.width*v/100; pins.forEach(function(p){ p.style.opacity = p.getBoundingClientRect().left > cut+4 ? 1 : 0; }); }
+    setp(35);
+    r.addEventListener('input',function(){ touched=true; setp(r.value); });
+    if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)&&'IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ io.disconnect(); var t0=null;
+        function step(ts){ if(touched) return; t0=t0||ts; var p=(ts-t0)/2600; if(p>1) p=1; var v=35+ (p<.5? 40*Math.sin(p*2*Math.PI): -20*Math.sin((p-.5)*2*Math.PI)); setp(Math.round(v)); if(p<1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);} },{threshold:.5}); io.observe(sc);
+    }
   }
   var wrap=document.querySelector('.pLayers'); if(!wrap) return;
   var steps=[].slice.call(wrap.querySelectorAll('.together-step')), parts=[].slice.call(wrap.querySelectorAll('.pRings [data-l]'));
