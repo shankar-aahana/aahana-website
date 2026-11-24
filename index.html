@@ -248,49 +248,90 @@
     .aRing-arc, .aRing-detail p, .aRing-step { transition: none; }
   }
 
-  /* ---------- Services ---------- */
-  .aSvc { background: var(--ivory); padding: clamp(72px, 9vw, 132px) 22px; }
-  .aSvc-inner { max-width: 1140px; margin: 0 auto; }
-  .aSvc-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px;
+  /* ---------- What we offer: category menu ---------- */
+  .aMenu { background: var(--ivory); padding: clamp(80px, 10vw, 150px) 22px; }
+  .aMenu-inner { max-width: 1240px; margin: 0 auto; }
+  .aMenu-head {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px clamp(40px, 6vw, 100px); align-items: end;
+    margin-bottom: clamp(36px, 4.5vw, 64px);
   }
-  .aSvc-shot {
-    position: relative; display: block; aspect-ratio: 4 / 5;
-    border-radius: 12px; overflow: hidden; margin-bottom: 18px;
-    background-size: cover; background-position: center; text-decoration: none;
+  .aMenu-head .aLabel { grid-column: 1 / -1; margin-bottom: 0; }
+  .aMenu-title {
+    margin: 0; font-size: clamp(36px, 4.6vw, 66px); font-weight: 500; line-height: 1.04;
+    letter-spacing: -.025em; color: #463331;
   }
-  .aSvc-shot::after {
-    content: ""; position: absolute; inset: auto 0 0 0; height: 56%;
-    background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.55) 55%, rgba(40,26,22,.9));
+  .aMenu-title em { font-style: normal; color: #7A5741; }
+  .aMenu-lead { margin: 0; max-width: 40ch; font-size: 16px; font-weight: 300; line-height: 1.7; color: #5C463E; }
+  .aMenu-body { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(30px, 4vw, 70px); align-items: start; }
+  .aMenu-list { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid rgba(70,51,49,.22); }
+  .aMenu-row {
+    display: grid; grid-template-columns: 52px 1fr; column-gap: 8px; row-gap: 8px;
+    padding: 20px 0 18px; border-top: 1px solid rgba(70,51,49,.22);
+    transition: padding .35s ease;
   }
-  .aSvc-shot span {
-    position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 12px;
+  .aMenu-num {
+    grid-row: 1 / 3; padding-top: .55em;
     font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-    color: #C6ECA9;
+    font-size: 11px; letter-spacing: .12em; color: #7A5741;
   }
-  .aSvc-card h3 {
-    margin: 0 0 10px; font-size: 15px; font-weight: 500; line-height: 1.5;
-    letter-spacing: -.005em; color: #463331;
+  .aMenu-name {
+    display: inline-flex; align-items: center; gap: 18px; width: fit-content;
+    font-size: clamp(28px, 3.3vw, 46px); font-weight: 500; line-height: 1.1; letter-spacing: -.02em;
+    color: rgba(70,51,49,.6); text-decoration: none; transition: color .3s ease;
   }
-  .aSvc-card h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(70,51,49,.3); }
-  .aSvc-card h3 a:hover { color: #7A5741; border-bottom-color: #7A5741; }
-  .aSvc-card > p {
-    margin: 0; font-size: 13.5px; font-weight: 300; line-height: 1.75; color: #5C463E;
+  .aMenu-name svg { width: 34px; height: 12px; opacity: 0; transform: translateX(-10px); transition: opacity .3s ease, transform .3s ease; }
+  .aMenu-tags { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .aMenu-tags a, .aMenu-tags span {
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #6B574C;
+    text-decoration: none; padding: 3px 0; border-bottom: 1px solid transparent;
   }
-  .aSvc-card > p a { color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.45); }
-  .aSvc-foot {
-    margin-top: clamp(44px, 5vw, 68px); padding-top: 30px;
-    border-top: 1px solid rgba(70,51,49,.18);
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 24px; flex-wrap: wrap;
+  .aMenu-tags a:hover { color: #463331; border-bottom-color: #463331; }
+  .aMenu-row.is-on .aMenu-name { color: #463331; }
+  .aMenu-row.is-on .aMenu-name svg { opacity: 1; transform: none; }
+  .aMenu-name:focus-visible { outline: 2px solid #7A5741; outline-offset: 4px; border-radius: 4px; }
+  .aMenu-pic { display: none; }
+  .aMenu-frame {
+    position: sticky; top: 110px; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden;
+    background: #DED7C6;
   }
-  .aSvc-foot > p {
-    margin: 0; font-size: 13.5px; font-weight: 300; color: #5C463E; max-width: 46ch;
+  .aMenu-shot {
+    position: absolute; inset: 0; background-size: cover; background-position: center;
+    opacity: 0; transform: scale(1.05); transition: opacity .55s ease, transform 1s cubic-bezier(.2,.7,.2,1);
   }
-  .aSvc-foot > p a { color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.45); }
-  .aSvc-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
+  .aMenu-shot.is-on { opacity: 1; transform: none; }
+  .aMenu-foot {
+    display: flex; align-items: center; justify-content: space-between; gap: 18px 40px; flex-wrap: wrap;
+    margin-top: clamp(36px, 4vw, 56px);
+  }
+  .aMenu-foot p { margin: 0; font-size: 14px; font-weight: 300; color: #5C463E; }
+  .aMenu-foot p a { color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.45); }
+  .aMenu-all {
+    display: inline-flex; align-items: center; gap: 16px; min-height: 52px; padding: 0 30px;
+    border-radius: 999px; background: #463331; color: #C6ECA9; text-decoration: none;
+    font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+    transition: gap .25s ease;
+  }
+  .aMenu-all svg { width: 34px; height: 12px; }
+  .aMenu-all:hover { gap: 24px; }
+  @media (max-width: 860px) {
+    .aMenu-head { grid-template-columns: 1fr; }
+    .aMenu-body { grid-template-columns: 1fr; }
+    .aMenu-frame { display: none; }
+    .aMenu-row { grid-template-columns: 1fr 96px; column-gap: 16px; }
+    .aMenu-num { grid-row: auto; grid-column: 1; padding: 0; }
+    .aMenu-name { grid-column: 1; color: #463331; font-size: 27px; }
+    .aMenu-name svg { opacity: 1; transform: none; width: 26px; }
+    .aMenu-tags { grid-column: 1; }
+    .aMenu-pic {
+      display: block; grid-column: 2; grid-row: 1 / 4; align-self: center;
+      aspect-ratio: 1; border-radius: 10px; background-size: cover; background-position: center;
+    }
+    .aMenu-all { width: 100%; justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .aMenu-shot, .aMenu-name, .aMenu-name svg { transition: none; }
+  }
 
   /* ---------- The practice ---------- */
   .aDr { background: var(--deep); padding: clamp(80px, 10vw, 150px) 22px; }
@@ -407,17 +448,7 @@
     .aWait-cta { width: 100%; justify-content: center; }
   }
 
-  @media (max-width: 1000px) {
-    .aSvc-grid { grid-template-columns: repeat(2, 1fr); gap: 22px 18px; }
-  }
   @media (max-width: 560px) {
-    /* One column on a phone, but a 4:5 card at full width is nearly 500px
-       tall and four of them turn the menu into a scroll. The shot goes
-       landscape here so a whole card fits in a thumb's reach. */
-    .aSvc-grid { grid-template-columns: 1fr; gap: 30px; }
-    .aSvc-shot { aspect-ratio: 3 / 2; }
-    .aSvc-actions { width: 100%; flex-direction: column; }
-    .aSvc-actions .aBtn { width: 100%; }
   }
   </style>
 <style>:root {
@@ -1293,72 +1324,72 @@ body {
 </section>
 
 <!-- ===================================================================
-     SERVICES  (ivory, photo cards)
+     WHAT WE OFFER  (ivory)
+     The six service categories as a typographic menu. Hovering or focusing
+     a row brings its photograph up in the sticky frame on the right; the
+     name goes to that category on services.html, the small links to the
+     treatment pages. Phones show each row's photo inline. Deliberately not
+     a second carousel: the Services page has that.
      =================================================================== -->
-<section class="aSvc" id="services">
-  <div class="aSvc-inner">
-    <p class="aLabel reveal">What we offer</p>
-    <div class="aSvc-grid">
-
-      <div class="aSvc-card reveal">
-        <a class="aSvc-shot" href="services.html#injectables"
-           style="background-image:url('svc-inject.jpg')">
-          <span>Injectables</span>
-        </a>
-        <h3><a href="botox-dysport.html">Botox</a> &middot;
-            <a href="dermal-fillers.html">Fillers</a> &middot;
-            <a href="biostimulators.html">Biostimulators</a> &middot;
-            <a href="prp.html">PRP</a></h3>
-        <p>Neuromodulators for smoothing and contouring. Hyaluronic acid fillers for
-           volume. Biostimulators that rebuild your own collagen. PRP for tissue renewal
-           and hair, <a href="skinvive.html">SkinVive</a> for skin quality.</p>
-      </div>
-
-      <div class="aSvc-card reveal">
-        <a class="aSvc-shot" href="services.html#laser"
-           style="background-image:url('svc-laser.jpg')">
-          <span>Laser &amp; energy</span>
-        </a>
-        <h3><a href="xerf.html">XERF</a> &middot;
-            <a href="aerolase-neo-elite.html">Aerolase Neo Elite</a></h3>
-        <p>Two platforms, both cleared across all six Fitzpatrick types. Monopolar
-           radiofrequency for structural tightening, and a 1064&nbsp;nm Nd:YAG for
-           pigment, redness, acne and skin quality.</p>
-      </div>
-
-      <div class="aSvc-card reveal">
-        <a class="aSvc-shot" href="services.html#skin"
-           style="background-image:url('svc-skin.jpg')">
-          <span>Skin treatments</span>
-        </a>
-        <h3><a href="microneedling.html">Microneedling</a> &middot;
-            <a href="exosomes.html">Exosomes</a> &middot;
-            <a href="vi-peel.html">Peels</a> &middot;
-            <a href="hydrafacial.html">Hydrafacial</a></h3>
-        <p>Collagen stimulation, exosomes, chemical exfoliation, deep cleansing, and
-           more, all calibrated to your skin type and constitution.</p>
-      </div>
-
-      <div class="aSvc-card reveal">
-        <a class="aSvc-shot" href="services.html#wellness"
-           style="background-image:url('svc-wellness.jpg')">
-          <span>Wellness</span>
-        </a>
-        <h3><a href="medical-weight-loss.html">GLP-1</a> &middot;
-            <a href="sexual-wellness.html">Sexual Health</a></h3>
-        <p>Medically supervised weight loss and sexual health services. Evidence-based,
-           clinically overseen.</p>
-      </div>
-
+<section class="aMenu" id="services" aria-labelledby="menu-title">
+  <div class="aMenu-inner">
+    <div class="aMenu-head">
+      <p class="aLabel reveal">What we offer</p>
+      <h2 class="aMenu-title reveal" id="menu-title">Six disciplines. <em>One plan.</em></h2>
+      <p class="aMenu-lead reveal">Every plan starts with diagnostics and draws on whichever of these your skin needs, in the order it needs them.</p>
     </div>
-
-    <div class="aSvc-foot reveal">
-      <p>All treatment plans begin with a Visia skin analysis and consultation, set out
-         on <a href="first-visit.html">your first visit</a>.</p>
-      <div class="aSvc-actions">
-        <a class="aBtn aBtn--line" href="services.html">All services &rarr;</a>
-        <button class="aBtn aBtn--leaf" data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
+    <div class="aMenu-body">
+      <ol class="aMenu-list" data-menu>
+      <li class="aMenu-row is-on" data-img="0">
+        <span class="aMenu-num">01</span>
+        <a class="aMenu-name" href="services.html#diagnostics">Diagnostics<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+        <span class="aMenu-tags"><a href="visia-skin-analysis.html">Visia imaging</a><a href="skin-microbiome-testing.html">Skin microbiome</a><a href="lab-testing.html">Lab testing</a></span>
+        <span class="aMenu-pic" style="background-image:url('svc-skin.jpg')" aria-hidden="true"></span>
+      </li>
+      <li class="aMenu-row" data-img="1">
+        <span class="aMenu-num">02</span>
+        <a class="aMenu-name" href="services.html#injectables">Injectables<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+        <span class="aMenu-tags"><a href="botox-dysport.html">Neuromodulators</a><a href="dermal-fillers.html">Dermal fillers</a><a href="biostimulators.html">Biostimulators &middot; SkinVive &middot; PRP</a></span>
+        <span class="aMenu-pic" style="background-image:url('brand-card-1.jpg')" aria-hidden="true"></span>
+      </li>
+      <li class="aMenu-row" data-img="2">
+        <span class="aMenu-num">03</span>
+        <a class="aMenu-name" href="services.html#energy">Lasers &amp; devices<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+        <span class="aMenu-tags"><a href="aerolase-neo-elite.html">Aerolase Neo Elite</a><a href="xerf.html">XERF</a></span>
+        <span class="aMenu-pic" style="background-image:url('svc-laser.jpg')" aria-hidden="true"></span>
+      </li>
+      <li class="aMenu-row" data-img="3">
+        <span class="aMenu-num">04</span>
+        <a class="aMenu-name" href="services.html#skin">Skin treatments<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+        <span class="aMenu-tags"><a href="microneedling.html">Microneedling</a><a href="vi-peel.html">Chemical peels</a><a href="hydrafacial.html">Hydrafacial &middot; Exosomes</a></span>
+        <span class="aMenu-pic" style="background-image:url('svc-inject.jpg')" aria-hidden="true"></span>
+      </li>
+      <li class="aMenu-row" data-img="4">
+        <span class="aMenu-num">05</span>
+        <a class="aMenu-name" href="services.html#wellness">Wellness<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+        <span class="aMenu-tags"><a href="medical-weight-loss.html">GLP-1 therapy</a><a href="sexual-wellness.html">Sexual wellness</a></span>
+        <span class="aMenu-pic" style="background-image:url('svc-wellness.jpg')" aria-hidden="true"></span>
+      </li>
+      <li class="aMenu-row" data-img="5">
+        <span class="aMenu-num">06</span>
+        <a class="aMenu-name" href="services.html#headache">Headache medicine<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+        <span class="aMenu-tags"><a href="migraine-botox.html">Botox for migraine</a><a href="migraine-headache.html">Nerve blocks</a></span>
+        <span class="aMenu-pic" style="background-image:url('brand-hero.jpg')" aria-hidden="true"></span>
+      </li>
+      </ol>
+      <div class="aMenu-frame" aria-hidden="true">
+      <span class="aMenu-shot is-on" style="background-image:url('svc-skin.jpg')"></span>
+      <span class="aMenu-shot" style="background-image:url('brand-card-1.jpg')"></span>
+      <span class="aMenu-shot" style="background-image:url('svc-laser.jpg')"></span>
+      <span class="aMenu-shot" style="background-image:url('svc-inject.jpg')"></span>
+      <span class="aMenu-shot" style="background-image:url('svc-wellness.jpg')"></span>
+      <span class="aMenu-shot" style="background-image:url('brand-hero.jpg')"></span>
       </div>
+    </div>
+    <div class="aMenu-foot reveal">
+      <a class="aMenu-all" href="services.html">See all services
+        <svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      <p>Every plan begins with a Visia skin analysis and consultation, set out on <a href="first-visit.html">your first visit</a>.</p>
     </div>
   </div>
 </section>
@@ -1589,6 +1620,23 @@ reveals.forEach(el => observer.observe(el));
     dial.addEventListener('pointerdown', function () { dial.dataset.touched = 1; stop(); });
     dial.addEventListener('mouseenter', function () { dial.dataset.touched = 1; stop(); });
   }
+})();
+</script>
+<script>
+/* What we offer: the row under the pointer, or with focus, lights up and
+   brings its photograph into the frame. The last one chosen stays. */
+(function () {
+  var rows = [].slice.call(document.querySelectorAll('.aMenu-row'));
+  var shots = [].slice.call(document.querySelectorAll('.aMenu-shot'));
+  if (!rows.length) return;
+  function set(i) {
+    rows.forEach(function (r, k) { r.classList.toggle('is-on', k === i); });
+    shots.forEach(function (s, k) { s.classList.toggle('is-on', k === i); });
+  }
+  rows.forEach(function (r, k) {
+    r.addEventListener('mouseenter', function () { set(k); });
+    r.addEventListener('focusin', function () { set(k); });
+  });
 })();
 </script>
 </body>
