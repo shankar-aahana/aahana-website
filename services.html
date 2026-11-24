@@ -567,6 +567,107 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
   .sCar-item, .sCar-thumb, .sCar-glass { transition: none; }
 }
 </style>
+<style>
+/* ---------- Services page body, Direction A ----------
+   Each category: sticky header column (number, label, title, intro,
+   photo) beside its treatments. Treatment copy is unchanged; only the
+   layout around it is new. Photos match the homepage menu. */
+.svLabel, .svCat-kicker {
+  margin: 0 0 18px;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: #7A5741;
+}
+.svExpect { background: #EEE9DA; padding: clamp(64px, 8vw, 110px) 22px; border-bottom: 1px solid rgba(70,51,49,.14); }
+.svExpect-inner, .svCta-inner {
+  max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px clamp(40px, 6vw, 100px); align-items: end;
+}
+.svExpect-title, .svCta-title {
+  margin: 0; font-family: 'Satoshi', sans-serif; font-weight: 400;
+  font-size: clamp(28px, 3vw, 42px); line-height: 1.1; letter-spacing: -.02em; color: #463331;
+}
+.svExpect-title em, .svCta-title em { font-style: normal; color: #7A5741; }
+.svExpect-lede { margin: 0 0 18px; max-width: 46ch; font-size: 16px; font-weight: 300; line-height: 1.7; color: #5C463E; }
+.svExpect-link {
+  display: inline-flex; align-items: center; gap: 14px; min-height: 24px; padding: 4px 0;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #7A5741; text-decoration: none;
+}
+.svExpect-link svg { width: 30px; height: 12px; transition: transform .25s ease; }
+.svExpect-link:hover svg { transform: translateX(6px); }
+
+.svCat { padding: clamp(72px, 9vw, 130px) 22px; }
+.svCat--a { background: #EEE9DA; }
+.svCat--b { background: #E6E0CF; }
+.svCat-inner {
+  max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 6vw, 100px); align-items: start;
+}
+.svCat-head { position: sticky; top: 100px; }
+.svCat-kicker { display: flex; gap: 14px; }
+.svCat-kicker span { color: #463331; }
+.svCat-title {
+  margin: 0 0 18px; font-family: 'Satoshi', sans-serif; font-weight: 400;
+  font-size: clamp(30px, 3.2vw, 46px); line-height: 1.08; letter-spacing: -.02em; color: #463331;
+}
+.svCat-title em { font-style: normal; color: #7A5741; }
+.svCat-intro { margin: 0 0 28px; max-width: 44ch; font-size: 15px; font-weight: 300; line-height: 1.75; color: #5C463E; }
+.svCat-photo { aspect-ratio: 5 / 4; border-radius: 14px; background-size: cover; background-position: center; }
+
+.svCat-list { border-top: 1px solid rgba(70,51,49,.22); }
+.svCat .service-item {
+  padding: 28px 0 30px; border-bottom: 1px solid rgba(70,51,49,.22);
+  background: none; border-left: 0; border-right: 0; border-top: 0; border-radius: 0; box-shadow: none;
+}
+.svCat .service-name {
+  margin: 0 0 6px; font-family: 'Satoshi', sans-serif; font-size: 22px; font-weight: 500;
+  letter-spacing: -.01em; line-height: 1.25; color: #463331;
+}
+.svCat .service-tag {
+  display: block; width: auto; margin: 0 0 14px; padding: 0; border: 0; background: none; border-radius: 0;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: #7A5741;
+}
+.svCat .service-desc { margin: 0 0 12px; font-size: 15px; font-weight: 300; line-height: 1.75; color: #463331; }
+.svCat .service-note { margin: 0 0 14px; font-size: 13px; font-weight: 300; line-height: 1.6; color: #6B574C; }
+.svCat .service-link {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 24px; padding: 4px 0;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+  color: #463331; text-decoration: none; border-bottom: 1px solid rgba(70,51,49,.4);
+}
+.svCat .service-link:hover { color: #7A5741; border-bottom-color: #7A5741; }
+.svCat .service-item a:not(.service-link) { color: #7A5741; }
+
+.svCta { position: relative; isolation: isolate; background: #C6ECA9; padding: clamp(64px, 8vw, 110px) 22px; }
+.svCta::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-color: rgba(176,160,140,.34);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.2 0 0 0 0 0.19 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.svCta .svLabel { color: #463331; }
+.svCta-title em { color: #463331; opacity: .72; }
+.svCta p:not(.svLabel) { margin: 0 0 20px; max-width: 40ch; font-size: 16px; line-height: 1.6; color: #463331; }
+.svCta-btn {
+  display: inline-flex; align-items: center; gap: 16px; min-height: 52px; padding: 0 30px;
+  border: 0; border-radius: 999px; cursor: pointer; background: #463331; color: #C6ECA9;
+  font-family: 'Satoshi', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  transition: gap .25s ease;
+}
+.svCta-btn svg { width: 34px; height: 12px; }
+.svCta-btn:hover { gap: 24px; }
+.svCta-btn:focus-visible { outline: 2px solid #463331; outline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .svExpect-inner, .svCta-inner, .svCat-inner { grid-template-columns: 1fr; }
+  .svCat-head { position: static; }
+  .svCat-photo { aspect-ratio: 16 / 9; }
+  .svCta-btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .svExpect-link svg, .svCta-btn { transition: none; }
+}
+</style>
 </head>
 <body>
 <script src="nav.js"></script>
@@ -630,28 +731,30 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
   </div>
 </section>
 
-<!-- WHAT TO EXPECT. LIGHT -->
-<section class="section-expect">
-  <div class="section-inner">
-    <span class="section-label">What to expect</span>
-    <h2 class="section-heading" style="color:var(--deep)">Your first visit<br><em style="font-style:italic;color:var(--rose)">at Aahana</em></h2>
-    <p class="expect-lede reveal">Forty five minutes. Visia imaging measures your skin, Dr. Mundluru examines it, and you leave with a sequenced treatment plan: which procedures, in what order, and how far apart.</p>
-    <p class="reveal"><a class="expect-link" href="first-visit.html">What your first visit involves, in order &rarr;</a></p>
+<!-- WHAT TO EXPECT -->
+<section class="svExpect" aria-labelledby="expect-title">
+  <div class="svExpect-inner reveal">
+    <div>
+      <p class="svLabel">What to expect</p>
+      <h2 class="svExpect-title" id="expect-title">Your first visit, <em>in forty five minutes.</em></h2>
+    </div>
+    <div>
+      <p class="svExpect-lede">Visia imaging measures your skin, Dr. Mundluru examines it, and you leave with a sequenced treatment plan: which procedures, in what order, and how far apart.</p>
+      <a class="svExpect-link" href="first-visit.html">What your first visit involves, in order<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+    </div>
   </div>
 </section>
 
-<!-- 01 DIAGNOSTICS. DARK -->
-<div class="service-category dark" id="diagnostics">
-  <div class="section-inner">
-    <div class="category-header reveal">
-      <div class="category-num">01</div>
-      <div>
-        <span class="section-label" style="color:#E3DAC8">Diagnostics</span>
-        <h2 class="category-title">Measure first.<br><em>Then treat.</em></h2>
-        <p class="category-intro">Imaging comes before any treatment is recommended, for everyone. The other two are optional, carry their own cost, and are suggested only where the result would change what the plan says.</p>
-      </div>
-    </div>
-    <div class="services-list reveal">
+<!-- 01 DIAGNOSTICS -->
+<section class="svCat svCat--a" id="diagnostics" aria-labelledby="cat-diagnostics">
+  <div class="svCat-inner">
+    <header class="svCat-head reveal">
+      <p class="svCat-kicker"><span>01</span>Diagnostics</p>
+      <h2 class="svCat-title" id="cat-diagnostics">Measure first.<br><em>Then treat.</em></h2>
+      <p class="svCat-intro">Imaging comes before any treatment is recommended, for everyone. The other two are optional, carry their own cost, and are suggested only where the result would change what the plan says.</p>
+      <div class="svCat-photo" style="background-image:url('svc-diagnostics.jpg')" aria-hidden="true"></div>
+    </header>
+    <div class="svCat-list reveal">
       <div class="service-item">
         <div class="service-name">Visia Skin Analysis</div>
         <span class="service-tag">Clinical Imaging</span>
@@ -675,20 +778,18 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- 02 INJECTABLES. LIGHT -->
-<div class="service-category light" id="injectables">
-  <div class="section-inner">
-    <div class="category-header reveal">
-      <div class="category-num">02</div>
-      <div>
-        <span class="section-label">Injectables</span>
-        <h2 class="category-title">Precision placement.<br><em>Natural results.</em></h2>
-        <p class="category-intro">All injectable treatments are performed directly by Dr. Shankar. Placement, dosing, and sequencing are calibrated to your anatomy, your skin tone, and your goals.</p>
-      </div>
-    </div>
-    <div class="services-list reveal">
+<!-- 02 INJECTABLES -->
+<section class="svCat svCat--b" id="injectables" aria-labelledby="cat-injectables">
+  <div class="svCat-inner">
+    <header class="svCat-head reveal">
+      <p class="svCat-kicker"><span>02</span>Injectables</p>
+      <h2 class="svCat-title" id="cat-injectables">Precision placement.<br><em>Natural results.</em></h2>
+      <p class="svCat-intro">All injectable treatments are performed directly by Dr. Shankar. Placement, dosing, and sequencing are calibrated to your anatomy, your skin tone, and your goals.</p>
+      <div class="svCat-photo" style="background-image:url('brand-card-1.jpg')" aria-hidden="true"></div>
+    </header>
+    <div class="svCat-list reveal">
       <div class="service-item">
         <div class="service-name">Neuromodulators</div>
         <span class="service-tag">Botox · Dysport</span>
@@ -730,20 +831,18 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- 03 LASERS AND DEVICES. DARK -->
-<div class="service-category dark" id="energy">
-  <div class="section-inner">
-    <div class="category-header reveal">
-      <div class="category-num">03</div>
-      <div>
-        <span class="section-label" style="color:#E3DAC8">Lasers &amp; devices</span>
-        <h2 class="category-title">Technology chosen<br><em>for your skin.</em></h2>
-        <p class="category-intro">Every device at Aahana is selected for its precision, its safety record across all skin tones, and the strength of its clinical evidence. Microneedling sits here too: it is a device treatment, performed by Dr. Mundluru.</p>
-      </div>
-    </div>
-    <div class="services-list reveal">
+<!-- 03 LASERS AND DEVICES -->
+<section class="svCat svCat--a" id="energy" aria-labelledby="cat-energy">
+  <div class="svCat-inner">
+    <header class="svCat-head reveal">
+      <p class="svCat-kicker"><span>03</span>Lasers &amp; devices</p>
+      <h2 class="svCat-title" id="cat-energy">Technology chosen<br><em>for your skin.</em></h2>
+      <p class="svCat-intro">Every device at Aahana is selected for its precision, its safety record across all skin tones, and the strength of its clinical evidence. Microneedling sits here too: it is a device treatment, performed by Dr. Mundluru.</p>
+      <div class="svCat-photo" style="background-image:url('svc-devices.jpg')" aria-hidden="true"></div>
+    </header>
+    <div class="svCat-list reveal">
       <div class="service-item">
         <div class="service-name">XERF by Lutronic</div>
         <span class="service-tag">Structural Skin Tightening · FDA Cleared</span>
@@ -777,20 +876,18 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- 04 AESTHETICIAN SERVICES. LIGHT -->
-<div class="service-category light" id="skin">
-  <div class="section-inner">
-    <div class="category-header reveal">
-      <div class="category-num">04</div>
-      <div>
-        <span class="section-label">Aesthetician services</span>
-        <h2 class="category-title">Performed by our aesthetician.<br><em>Overseen by a physician.</em></h2>
-        <p class="category-intro">Hydrafacial and VI Peel are performed by Aahana&rsquo;s aesthetician under Dr. Mundluru&rsquo;s direct clinical oversight, and sequenced into the same plan as everything else.</p>
-      </div>
-    </div>
-    <div class="services-list reveal">
+<!-- 04 AESTHETICIAN SERVICES -->
+<section class="svCat svCat--b" id="skin" aria-labelledby="cat-skin">
+  <div class="svCat-inner">
+    <header class="svCat-head reveal">
+      <p class="svCat-kicker"><span>04</span>Aesthetician services</p>
+      <h2 class="svCat-title" id="cat-skin">Performed by our aesthetician.<br><em>Overseen by a physician.</em></h2>
+      <p class="svCat-intro">Hydrafacial and VI Peel are performed by Aahana&rsquo;s aesthetician under Dr. Mundluru&rsquo;s direct clinical oversight, and sequenced into the same plan as everything else.</p>
+      <div class="svCat-photo" style="background-image:url('svc-skin.jpg')" aria-hidden="true"></div>
+    </header>
+    <div class="svCat-list reveal">
       <div class="service-item">
         <div class="service-name">Chemical Peels</div>
         <span class="service-tag">VI Peel · Custom protocols</span>
@@ -807,20 +904,18 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- 05 MEDICAL PROGRAMS. DARK (migraine and headache moved in from its own category) -->
-<div class="service-category dark" id="wellness">
-  <div class="section-inner">
-    <div class="category-header reveal">
-      <div class="category-num">05</div>
-      <div>
-        <span class="section-label" style="color:#E3DAC8">Medical programs</span>
-        <h2 class="category-title">The internal medicine<br><em>side of the practice.</em></h2>
-        <p class="category-intro">Dr. Mundluru is board certified in Internal Medicine and practiced for fifteen years before opening Aahana. These programs draw on that training: metabolic health, sexual health, and headache care.</p>
-      </div>
-    </div>
-    <div class="services-list reveal">
+<!-- 05 MEDICAL PROGRAMS -->
+<section class="svCat svCat--a" id="wellness" aria-labelledby="cat-wellness">
+  <div class="svCat-inner">
+    <header class="svCat-head reveal">
+      <p class="svCat-kicker"><span>05</span>Medical programs</p>
+      <h2 class="svCat-title" id="cat-wellness">The internal medicine<br><em>side of the practice.</em></h2>
+      <p class="svCat-intro">Dr. Mundluru is board certified in Internal Medicine and practiced for fifteen years before opening Aahana. These programs draw on that training: metabolic health, sexual health, and headache care.</p>
+      <div class="svCat-photo" style="background-image:url('svc-wellness.jpg')" aria-hidden="true"></div>
+    </header>
+    <div class="svCat-list reveal">
       <span id="headache" aria-hidden="true"></span>
       <div class="service-item">
         <div class="service-name">GLP-1 Therapy</div>
@@ -866,16 +961,21 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
       </div>
     </div>
   </div>
-</div>
+</section>
+
 
 
 <!-- CTA. DARK -->
-<section class="section-cta">
-  <div class="cta-inner">
-    <span class="section-label" style="display:block;text-align:center;color:#E3DAC8">Opening early 2027</span>
-    <h2>Ready to build<br><em>your skin protocol?</em></h2>
-    <p>Join the waitlist for early access and exclusive benefits for our first patients.</p>
-    <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="btn-primary">Join the waitlist</button>
+<section class="svCta" aria-labelledby="svcta-title">
+  <div class="svCta-inner reveal">
+    <div>
+      <p class="svLabel">Opening early 2027</p>
+      <h2 class="svCta-title" id="svcta-title">Ready to build <em>your skin protocol?</em></h2>
+    </div>
+    <div>
+      <p>Join the waitlist for early access and exclusive benefits for our first patients.</p>
+      <button class="svCta-btn" data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></button>
+    </div>
   </div>
 </section>
 
