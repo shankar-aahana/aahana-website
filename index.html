@@ -300,26 +300,6 @@
     opacity: 0; transform: scale(1.05); transition: opacity .55s ease, transform 1s cubic-bezier(.2,.7,.2,1);
   }
   .aMenu-shot.is-on { opacity: 1; transform: none; }
-  /* Rows without a fitting agency photograph get a brand panel instead of
-     a mismatched image. Swap for real photography when it arrives. */
-  .aMenu-shot--type, .aMenu-pic--type {
-    background-color: #463331;
-    background-image: radial-gradient(90% 70% at 20% 0%, rgba(122,87,65,.6), transparent 65%);
-    color: #C6ECA9;
-  }
-  .aMenu-shot--type { display: flex; flex-direction: column; justify-content: space-between; padding: 30px; }
-  .aMenu-shot--type b {
-    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 13px; font-weight: 400; letter-spacing: .16em;
-  }
-  .aMenu-shot--type i {
-    font-style: normal; font-size: clamp(40px, 4.4vw, 64px); font-weight: 500;
-    line-height: 1; letter-spacing: -.03em;
-  }
-  .aMenu-pic--type b {
-    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 15px; font-weight: 400; letter-spacing: .1em;
-  }
   .aMenu-foot {
     display: flex; align-items: center; justify-content: space-between; gap: 18px 40px; flex-wrap: wrap;
     margin-top: clamp(36px, 4vw, 56px);
@@ -347,7 +327,6 @@
       display: block; grid-column: 2; grid-row: 1 / 4; align-self: center;
       aspect-ratio: 1; border-radius: 10px; background-size: cover; background-position: center;
     }
-    .aMenu-pic--type { display: flex; align-items: center; justify-content: center; }
     .aMenu-all { width: 100%; justify-content: center; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -1346,7 +1325,7 @@ body {
 
 <!-- ===================================================================
      WHAT WE OFFER  (ivory)
-     The six service categories as a typographic menu. Hovering or focusing
+     The five service categories as a typographic menu, grouped as the booking site groups them (procedures split into Injectables and Lasers and devices; Aesthetician services; Medical programs; Diagnostics on its own). Migraine and nerve blocks sit under Injectables: procedures, by Shankar's rule. Hovering or focusing
      a row brings its photograph up in the sticky frame on the right; the
      name goes to that category on services.html, the small links to the
      treatment pages. Phones show each row's photo inline. Deliberately not
@@ -1356,7 +1335,7 @@ body {
   <div class="aMenu-inner">
     <div class="aMenu-head">
       <p class="aLabel reveal">What we offer</p>
-      <h2 class="aMenu-title reveal" id="menu-title">Six disciplines. <em>One plan.</em></h2>
+      <h2 class="aMenu-title reveal" id="menu-title">Five disciplines. <em>One plan.</em></h2>
       <p class="aMenu-lead reveal">Every plan starts with diagnostics and draws on whichever of these your skin needs, in the order it needs them.</p>
     </div>
     <div class="aMenu-body">
@@ -1365,46 +1344,39 @@ body {
         <span class="aMenu-num">01</span>
         <a class="aMenu-name" href="services.html#diagnostics">Diagnostics<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
         <span class="aMenu-tags"><a href="visia-skin-analysis.html">Visia imaging</a><a href="skin-microbiome-testing.html">Skin microbiome</a><a href="lab-testing.html">Lab testing</a></span>
-        <span class="aMenu-pic aMenu-pic--type" aria-hidden="true"><b>01</b></span>
+        <span class="aMenu-pic" style="background-image:url('svc-diagnostics.jpg')" aria-hidden="true"></span>
       </li>
       <li class="aMenu-row is-on" data-img="1">
         <span class="aMenu-num">02</span>
         <a class="aMenu-name" href="services.html#injectables">Injectables<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
-        <span class="aMenu-tags"><a href="botox-dysport.html">Neuromodulators</a><a href="dermal-fillers.html">Dermal fillers</a><a href="biostimulators.html">Biostimulators &middot; SkinVive &middot; PRP</a></span>
+        <span class="aMenu-tags"><a href="botox-dysport.html">Neuromodulators</a><a href="dermal-fillers.html">Dermal fillers</a><a href="biostimulators.html">Biostimulators</a><a href="skinvive.html">SkinVive</a><a href="prp.html">PRP</a><a href="migraine-headache.html">Migraine &amp; nerve blocks</a></span>
         <span class="aMenu-pic" style="background-image:url('brand-card-1.jpg')" aria-hidden="true"></span>
       </li>
       <li class="aMenu-row" data-img="2">
         <span class="aMenu-num">03</span>
         <a class="aMenu-name" href="services.html#energy">Lasers &amp; devices<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
-        <span class="aMenu-tags"><a href="aerolase-neo-elite.html">Aerolase Neo Elite</a><a href="xerf.html">XERF</a></span>
-        <span class="aMenu-pic aMenu-pic--type" aria-hidden="true"><b>03</b></span>
+        <span class="aMenu-tags"><a href="aerolase-neo-elite.html">Aerolase Neo Elite</a><a href="xerf.html">XERF</a><a href="microneedling.html">Microneedling</a></span>
+        <span class="aMenu-pic" style="background-image:url('svc-devices.jpg')" aria-hidden="true"></span>
       </li>
       <li class="aMenu-row" data-img="3">
         <span class="aMenu-num">04</span>
-        <a class="aMenu-name" href="services.html#skin">Skin treatments<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
-        <span class="aMenu-tags"><a href="microneedling.html">Microneedling</a><a href="vi-peel.html">Chemical peels</a><a href="hydrafacial.html">Hydrafacial &middot; Exosomes</a></span>
+        <a class="aMenu-name" href="services.html#skin">Aesthetician services<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+        <span class="aMenu-tags"><a href="hydrafacial.html">Hydrafacial</a><a href="vi-peel.html">VI Peel</a></span>
         <span class="aMenu-pic" style="background-image:url('svc-skin.jpg')" aria-hidden="true"></span>
       </li>
       <li class="aMenu-row" data-img="4">
         <span class="aMenu-num">05</span>
-        <a class="aMenu-name" href="services.html#wellness">Wellness<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
-        <span class="aMenu-tags"><a href="medical-weight-loss.html">GLP-1 therapy</a><a href="sexual-wellness.html">Sexual wellness</a></span>
+        <a class="aMenu-name" href="services.html#wellness">Medical programs<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+        <span class="aMenu-tags"><a href="medical-weight-loss.html">Weight management</a><a href="sexual-wellness.html">Sexual health</a></span>
         <span class="aMenu-pic" style="background-image:url('svc-wellness.jpg')" aria-hidden="true"></span>
-      </li>
-      <li class="aMenu-row" data-img="5">
-        <span class="aMenu-num">06</span>
-        <a class="aMenu-name" href="services.html#headache">Headache medicine<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
-        <span class="aMenu-tags"><a href="migraine-botox.html">Botox for migraine</a><a href="migraine-headache.html">Nerve blocks</a></span>
-        <span class="aMenu-pic aMenu-pic--type" aria-hidden="true"><b>06</b></span>
       </li>
       </ol>
       <div class="aMenu-frame" aria-hidden="true">
-      <span class="aMenu-shot aMenu-shot--type"><b>01</b><i>Diagnostics</i></span>
+      <span class="aMenu-shot" style="background-image:url('svc-diagnostics.jpg')"></span>
       <span class="aMenu-shot is-on" style="background-image:url('brand-card-1.jpg')"></span>
-      <span class="aMenu-shot aMenu-shot--type"><b>03</b><i>Lasers &amp;<br>devices</i></span>
+      <span class="aMenu-shot" style="background-image:url('svc-devices.jpg')"></span>
       <span class="aMenu-shot" style="background-image:url('svc-skin.jpg')"></span>
       <span class="aMenu-shot" style="background-image:url('svc-wellness.jpg')"></span>
-      <span class="aMenu-shot aMenu-shot--type"><b>06</b><i>Headache<br>medicine</i></span>
       </div>
     </div>
     <div class="aMenu-foot reveal">
