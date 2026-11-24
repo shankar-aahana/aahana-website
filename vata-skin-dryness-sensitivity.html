@@ -230,6 +230,7 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="article.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=19">
+  <link rel="stylesheet" href="article-a.css?v=5">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -289,13 +290,20 @@
 
     <p class="reveal">Quite a lot, once you measure the right thing.</p>
 
-    <p class="reveal">Baseline transepidermal water loss, the standard barrier measurement, shows only minimal differences in people with sensitive skin. But when researchers applied an occlusion stress test and modeled the water desorption curve rather than reading a single value, the differences became clear and statistically significant. The authors described it as unequivocal evidence of barrier impairment.<sup><a href="#ref3">3</a></sup></p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Usual measurement</span><b>Barely a difference</b><p>Baseline transepidermal water loss shows only minimal differences in sensitive skin.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Stress test</span><b>Clear impairment</b><p>With occlusion and the full water-loss curve modeled, the differences were significant: "unequivocal evidence of barrier impairment".<sup><a href="#ref3">3</a></sup></p></div>
+    </div>
 
-    <p class="reveal">That result is worth sitting with. The impairment was always there. The usual instrument was not sensitive enough to see it, and a better-designed measurement found it. Which is a familiar shape of problem in this journal, and a useful reminder that absence of evidence often means the measurement was too blunt.</p>
+    <p class="reveal">The impairment was always there; the instrument was too blunt. The biology:<sup><a href="#ref2">2</a></sup></p>
 
-    <p class="reveal">The underlying biology is reasonably well described. Reduced ceramides and sphingolipids in the stratum corneum, which allows greater penetration of irritants and leaves nerve endings less protected. Upregulated TRPV1, a receptor involved in heat and pain signaling, with expression correlating to symptom intensity. Lower intraepidermal nerve fiber density.<sup><a href="#ref2">2</a></sup></p>
+    <ol class="xSteps xSteps--3 reveal">
+      <li><b>Thinner lipid barrier</b>Fewer ceramides and sphingolipids in the stratum corneum.</li>
+      <li><b>More irritant gets in</b>And nerve endings are less protected, with lower nerve fiber density.</li>
+      <li><b>Nerves report louder</b>TRPV1, a heat and pain receptor, is upregulated in step with symptoms.</li>
+    </ol>
 
-    <p class="reveal">A thinner lipid barrier, more irritant reaching the nerves, and nerves set to report more loudly. That is a mechanism, and it maps onto the classical description more closely than it has any right to.</p>
+    <p class="reveal">That is a mechanism, and it maps onto the classical description more closely than it has any right to.</p>
 
     <h2 class="reveal">Why the constitutional framing changes anything</h2>
 
@@ -309,17 +317,14 @@
 
     <h2 class="reveal">What that looks like in practice</h2>
 
-    <p class="reveal"><strong>Barrier first, and for long enough to count.</strong> Ceramide-containing moisturizers are the best supported option here, and the trials are consistent even if most of them are small. In one, a ceramide lotion raised stratum corneum hydration substantially over 24 hours and lowered water loss compared with the untreated control site.<sup><a href="#ref4">4</a></sup> Weeks, not days, before judging whether it worked.</p>
-
-    <p class="reveal"><strong>Fewer products, introduced one at a time.</strong> Reactive skin makes it impossible to identify a culprit when five things change at once. This is unglamorous and it is most of the win.</p>
-
-    <p class="reveal"><strong>Actives come later and lower.</strong> Retinoids, acids and vitamin C are all still available. They are introduced at reduced frequency onto an intact barrier, not onto a compromised one, and the ramp is slower than the label suggests.</p>
-
-    <p class="reveal"><strong>Cleansing is where most damage happens.</strong> Hot water and foaming surfactants strip the lipid layer that is already thin. This is the single change that produces the fastest improvement in most people.</p>
-
-    <p class="reveal"><strong>Expect seasonal variation and plan for it.</strong> Skin built this way does not behave the same in July and January. A protocol that assumes it will is a protocol that fails twice a year.</p>
-
-    <p class="reveal"><strong>In-clinic treatment is not off the table.</strong> It is sequenced differently. Barrier established first, gentler settings, longer intervals, and a lower tolerance for pushing through irritation that has not settled.</p>
+    <ul class="xChecks reveal">
+      <li><b>Barrier first, long enough to count</b>Ceramide moisturizers are best supported. In one trial a ceramide lotion raised hydration substantially over 24 hours and cut water loss against an untreated site.<sup><a href="#ref4">4</a></sup> Judge it in weeks, not days.</li>
+      <li><b>Fewer products, one at a time</b>Change five things and you cannot find the culprit. Unglamorous, and most of the win.</li>
+      <li><b>Actives later and lower</b>Retinoids, acids and vitamin C stay available, at reduced frequency, on an intact barrier, ramped slower than the label says.</li>
+      <li><b>Fix cleansing first</b>Hot water and foaming surfactants strip an already thin lipid layer. The fastest improvement for most people.</li>
+      <li><b>Plan for the seasons</b>This skin is different in July and January. A protocol that ignores that fails twice a year.</li>
+      <li><b>In-clinic is still on the table</b>Sequenced differently: barrier first, gentler settings, longer intervals, no pushing through irritation.</li>
+    </ul>
 
     <h2 class="reveal">Where this stops</h2>
 
@@ -409,5 +414,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=5" defer></script>
 </body>
 </html>
