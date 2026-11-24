@@ -143,109 +143,111 @@
   .aBtn--line { background: transparent; color: #463331; box-shadow: inset 0 0 0 1px rgba(70,51,49,.45); }
   .aBtn--line:hover { background: rgba(70,51,49,.06); }
 
-  /* ---------- What sets us apart ---------- */
-  .aSay { background: var(--ivory); padding: clamp(80px, 10vw, 150px) 22px; }
-  .aSay-inner {
-    max-width: 1180px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(40px, 6vw, 110px); align-items: start;
+  /* ---------- Our process: Built around every skin ---------- */
+  .aRing { display: grid; grid-template-columns: 1fr 1fr; background: #6B4E40; }
+  .aRing-left {
+    position: relative; display: flex; flex-direction: column; align-items: center;
+    padding: clamp(56px, 6vw, 92px) clamp(22px, 4vw, 64px) clamp(36px, 4vw, 56px);
+    text-align: center; color: #EEE9DA; overflow: hidden;
+    background:
+      radial-gradient(120% 80% at 30% 0%, rgba(201,150,112,.55), transparent 60%),
+      radial-gradient(90% 70% at 100% 100%, rgba(110,78,64,.7), transparent 70%),
+      linear-gradient(180deg, #9A7158 0%, #7E5C4B 55%, #6E5043 100%);
   }
-  .aSay-lead { position: sticky; top: 120px; }
-  .aSay-head {
-    margin: 0 0 26px;
-    font-size: clamp(34px, 4.2vw, 60px); font-weight: 500; line-height: 1.06;
-    letter-spacing: -.02em; color: #463331;
+  /* Film grain, as on the agency's spread. */
+  .aRing-left::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .22; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-  .aSay-head em { font-style: normal; color: #7A5741; }
-  .aSay-text { margin: 0; max-width: 42ch; font-size: 16px; font-weight: 300; line-height: 1.75; color: #5C463E; }
-  .aSay-proof { list-style: none; margin: 0; padding: 0; }
-  .aSay-proof li {
-    display: grid; grid-template-columns: clamp(110px, 12vw, 170px) 1fr; gap: 24px;
-    padding: 34px 0; border-top: 1px solid rgba(70,51,49,.2);
+  .aRing-left > * { position: relative; }
+  .aRing-head {
+    margin: 0 0 18px; font-size: clamp(19px, 1.7vw, 26px); font-weight: 500;
+    letter-spacing: .01em; text-transform: uppercase; color: #C6ECA9;
   }
-  .aSay-proof li:last-child { border-bottom: 1px solid rgba(70,51,49,.2); }
-  .aSay-num {
-    font-size: clamp(64px, 7.5vw, 112px); font-weight: 300; line-height: .82;
-    letter-spacing: -.04em; color: #7A5741;
+  .aRing-sub { margin: 0 auto; max-width: 36ch; font-size: clamp(14px, 1.05vw, 16px); line-height: 1.5; color: #F3EEE2; }
+  .aRing-dial { position: relative; width: min(100%, 560px); aspect-ratio: 1; margin: clamp(18px, 3vw, 40px) auto 0; }
+  .aRing-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .aRing-arc { stroke: rgba(243,238,226,.55); stroke-width: 1.4; transition: stroke .4s ease, stroke-width .4s ease; }
+  .aRing-arc.is-on { stroke: #C6ECA9; stroke-width: 2.4; }
+  .aRing-dots circle { fill: #F3EEE2; transition: fill .4s ease; }
+  .aRing-dots circle.is-on { fill: #C6ECA9; }
+  .aRing-step {
+    position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%);
+    width: 190px; padding: 8px; border: 0; background: none; cursor: pointer;
+    font: inherit; font-size: clamp(13px, 1.05vw, 15.5px); line-height: 1.45; color: #F3EEE2;
+    border-radius: 10px; transition: color .3s ease;
   }
-  .aSay-num small { font-size: .38em; letter-spacing: 0; margin-left: 2px; color: #A08572; }
-  .aSay-kicker {
-    margin: 4px 0 10px !important;
+  .aRing-step span {
+    display: block; margin-bottom: 8px;
     font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 10.5px !important; letter-spacing: .16em; text-transform: uppercase; color: #463331 !important;
+    font-size: clamp(16px, 1.4vw, 21px); letter-spacing: .04em;
   }
-  .aSay-proof p { margin: 0 0 12px; font-size: 15px; font-weight: 300; line-height: 1.7; color: #5C463E; }
-  .aSay-proof a {
-    display: inline-block; padding: 4px 0; min-height: 24px;
-    font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
-    color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.4);
+  .aRing-step:hover, .aRing-step.is-on { color: #C6ECA9; }
+  .aRing-step:focus-visible { outline: 1px solid #C6ECA9; outline-offset: 2px; }
+  .aRing-detail {
+    position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+    width: 44%; display: grid;
   }
-  .aSay-proof a:hover { color: #463331; border-bottom-color: #463331; }
-
-  /* ---------- Our process ---------- */
-  .aProc { background: var(--deep); padding: clamp(80px, 10vw, 150px) 22px; }
-  .aProc-inner {
-    max-width: 1180px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 100px); align-items: start;
+  .aRing-detail p {
+    grid-area: 1 / 1; margin: 0; font-size: clamp(12.5px, .95vw, 14px); line-height: 1.6; color: rgba(243,238,226,.92);
+    opacity: 0; transform: translateY(6px); transition: opacity .45s ease, transform .45s ease;
   }
-  .aProc-media {
-    position: sticky; top: 100px; height: min(72vh, 640px);
-    border-radius: 14px; overflow: hidden; background: #3A2A28;
-  }
-  .aProc-shot {
-    position: absolute; inset: 0; background-size: cover; background-position: center 30%;
-    opacity: 0; transform: scale(1.04);
-    transition: opacity .7s ease, transform 1.2s cubic-bezier(.2,.7,.2,1);
-  }
-  .aProc-shot.is-on { opacity: 1; transform: none; }
-  .aProc-media-num {
-    position: absolute; z-index: 1; left: 18px; bottom: 16px; margin: 0;
+  .aRing-detail p.is-on { opacity: 1; transform: none; }
+  .aRing-list { display: none; }
+  .aRing-foot {
+    margin-top: clamp(18px, 2.5vw, 34px); padding: 6px 0; min-height: 24px;
     font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 10.5px; letter-spacing: .16em; color: #C6ECA9;
-    background: rgba(70,51,49,.55); padding: 6px 10px; border-radius: 999px;
-    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: #C6ECA9; text-decoration: none; border-bottom: 1px solid rgba(198,236,169,.45);
   }
-  .aProc-head {
-    margin: 0 0 clamp(30px, 4vw, 60px);
-    font-size: clamp(32px, 3.8vw, 54px); font-weight: 500; line-height: 1.08;
-    letter-spacing: -.02em; color: var(--ivory);
+  .aRing-foot:hover { border-bottom-color: #C6ECA9; }
+  /* The photograph is the agency's, with "We look before we treat." taken
+     out of the pixels and set live. The frame reproduces background-size:
+     cover by hand (container query units), so the line is positioned
+     against the photo as rendered and always sits on the cheek, at the
+     spot where the original lettering was removed. */
+  .aRing-right { position: relative; overflow: hidden; container-type: size; min-height: 520px; background: #3A2A28; }
+  .aRing-frame {
+    /* Pinned right: when the panel is narrower than the photo, the crop
+       comes off the left (hand and cheek), never off the line. */
+    position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+    width: max(100cqw, calc(100cqh * 1248 / 1426)); aspect-ratio: 1248 / 1426;
+    container-type: inline-size;
   }
-  .aProc-head em { font-style: normal; color: #C6ECA9; }
-  .aProc-steps { list-style: none; margin: 0; padding: 0; }
-  .aProc-step {
-    min-height: 46vh; padding: 30px 0 40px; border-top: 1px solid rgba(238,233,218,.18);
-    opacity: .38; transition: opacity .5s ease;
+  .aRing-photo { position: absolute; inset: 0; background: url('process-face.jpg') center / 100% 100% no-repeat; }
+  .aRing-claim, .aRing-tag { position: absolute; margin: 0; color: #C6ECA9; }
+  .aRing-claim {
+    right: 4.6%; top: 45.4%; font-size: 3.15cqw; font-weight: 500;
+    letter-spacing: .01em; text-transform: uppercase; white-space: nowrap;
+    text-shadow: 0 1px 14px rgba(40,26,22,.25);
   }
-  .aProc-step.is-on { opacity: 1; }
-  .aProc-pic { display: none; }
-  .aProc-num {
-    display: block; margin-bottom: 18px;
-    font-size: clamp(48px, 5vw, 76px); font-weight: 300; line-height: .9;
-    letter-spacing: -.03em; color: #C6ECA9;
+  .aRing-tag {
+    left: 50%; bottom: 3.4%; transform: translateX(-50%); white-space: nowrap;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: max(10px, 1.45cqw); letter-spacing: .1em; text-transform: uppercase;
   }
-  .aProc-step h3 { margin: 0 0 14px; font-size: 24px; font-weight: 500; letter-spacing: -.01em; color: var(--ivory); }
-  .aProc-step p { margin: 0; max-width: 46ch; font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(238,233,218,.86); }
-  .aProc-step a { color: #C6ECA9; text-decoration: none; border-bottom: 1px solid rgba(198,236,169,.4); }
-  .aProc-step a:hover { border-bottom-color: #C6ECA9; }
-  .aProc-step a.aProc-cta {
-    display: inline-flex; align-items: center; margin-top: 24px; min-height: 44px; padding: 0 24px;
-    border: 1px solid rgba(198,236,169,.7); border-radius: 999px;
-    font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  @media (max-width: 1100px) {
+    .aRing-step { width: 150px; }
   }
-  .aProc-step a.aProc-cta:hover { background: rgba(198,236,169,.1); }
   @media (max-width: 860px) {
-    .aSay-inner, .aProc-inner { grid-template-columns: 1fr; }
-    .aSay-lead { position: static; }
-    .aSay-proof li { grid-template-columns: 84px 1fr; gap: 16px; padding: 26px 0; }
-    .aSay-num { font-size: 58px; }
-    .aProc-media { display: none; }
-    .aProc-step { min-height: 0; opacity: 1; padding: 28px 0 36px; }
-    .aProc-pic {
-      display: block; aspect-ratio: 4 / 3; border-radius: 12px; margin-bottom: 22px;
-      background-size: cover; background-position: center 30%;
+    .aRing { grid-template-columns: 1fr; }
+    .aRing-right { order: -1; min-height: 0; aspect-ratio: 1248 / 1426; }
+    .aRing-dial { display: none; }
+    .aRing-list {
+      display: block; list-style: none; margin: 28px 0 0; padding: 0; text-align: left; width: 100%;
     }
+    .aRing-list li {
+      padding: 20px 0; border-top: 1px solid rgba(243,238,226,.28);
+      font-size: 14.5px; line-height: 1.65; color: rgba(243,238,226,.9);
+    }
+    .aRing-list span {
+      display: block; margin-bottom: 6px; color: #C6ECA9;
+      font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 13px;
+    }
+    .aRing-list strong { display: block; margin-bottom: 4px; font-weight: 500; color: #F3EEE2; font-size: 16px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .aProc-shot, .aProc-step { transition: none; }
+    .aRing-arc, .aRing-detail p, .aRing-step { transition: none; }
   }
 
   /* ---------- Full-bleed break ---------- */
@@ -1211,99 +1213,54 @@ body {
 
 <!-- INTRO -->
 <!-- ===================================================================
-     WHAT SETS US APART  (ivory)
-     The old page ran this and the process steps side by side in one
-     cramped two-column block. The deck gives one idea one band, so the
-     two are split. Copy is unchanged.
+     OUR PROCESS
+     From the agency's "Built around every skin" spread: a warm ground with
+     the four steps on a broken ring, beside the face photograph. The ring is
+     interactive: choosing a step lights its arc and puts its detail in the
+     centre. Phones get the four steps as a list.
      =================================================================== -->
-<section class="aSay" id="approach">
-  <div class="aSay-inner">
-    <div class="aSay-lead">
-      <p class="aLabel reveal">What sets us apart</p>
-      <h2 class="aSay-head reveal">Beyond what the <em>surface shows.</em></h2>
-      <p class="aSay-text reveal">Most practices treat what they can see. Every plan at Aahana is
-         grounded in precision medicine, and built for everyone, with particular expertise in
-         skin of color, all gender identities, and patients who have felt underserved by
-         conventional aesthetics.</p>
-    </div>
-    <ul class="aSay-proof">
-      <li class="reveal">
-        <span class="aSay-num">8</span>
-        <div>
-          <p class="aSay-kicker">Measured first</p>
-          <p>Features of your skin photographed by Visia imaging, including pigment still below
-             the surface, before anything is recommended. Microbiome and lab testing when they
-             would change the plan.</p>
-          <a href="precision.html">Precision medicine &rarr;</a>
-        </div>
-      </li>
-      <li class="reveal">
-        <span class="aSay-num">6<small>/6</small></span>
-        <div>
-          <p class="aSay-kicker">Every skin tone</p>
-          <p>Fitzpatrick skin types a device must be proven safe on before it enters the
-             practice. Not just the lighter three.</p>
-          <a href="laser-treatments-skin-of-color.html">Lasers and skin of color &rarr;</a>
-        </div>
-      </li>
-      <li class="reveal">
-        <span class="aSay-num">1</span>
-        <div>
-          <p class="aSay-kicker">Physician-led</p>
-          <p>Physician who examines you and performs every injectable, with an Ayurvedic
-             constitutional assessment to understand how your skin is built.</p>
-          <a href="prakriti.html">Prakriti &rarr;</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
+<section class="aRing" id="approach" aria-labelledby="ring-title">
+  <div class="aRing-left">
+    <h2 class="aRing-head" id="ring-title">Built around every skin.</h2>
+    <p class="aRing-sub">Our devices and protocols cater to your skin tone, goals, and desired appearance. Physician-led, for every skin and every identity.</p>
 
-<!-- ===================================================================
-     OUR PROCESS  (deep brown)
-     Sticky photograph on the left that changes with the step in view on
-     the right. On phones each step carries its own photograph instead.
-     =================================================================== -->
-<section class="aProc" aria-labelledby="proc-title">
-  <div class="aProc-inner">
-    <div class="aProc-media" aria-hidden="true">
-      <div class="aProc-shot is-on" style="background-image:url('brand-hero.jpg')"></div>
-      <div class="aProc-shot" style="background-image:url('brand-card-2.jpg')"></div>
-      <div class="aProc-shot" style="background-image:url('brand-card-1.jpg')"></div>
-      <p class="aProc-media-num"><span data-proc-now>01</span> / 03</p>
+    <div class="aRing-dial" data-ring>
+      <svg class="aRing-svg" viewBox="0 0 600 600" aria-hidden="true">
+        <g fill="none" stroke-linecap="round">
+          <path class="aRing-arc" data-arc="0" d=""/>
+          <path class="aRing-arc" data-arc="1" d=""/>
+          <path class="aRing-arc" data-arc="2" d=""/>
+          <path class="aRing-arc" data-arc="3" d=""/>
+        </g>
+        <g class="aRing-dots"></g>
+      </svg>
+      <button class="aRing-step is-on" type="button" data-i="0" style="--x:16%;--y:26%" aria-pressed="true"><span>01</span>Examined first.<br>Recommended second.</button>
+      <button class="aRing-step" type="button" data-i="1" style="--x:86%;--y:39%" aria-pressed="false"><span>02</span>Specific to your skin.</button>
+      <button class="aRing-step" type="button" data-i="2" style="--x:74%;--y:84%" aria-pressed="false"><span>03</span>A plan designed around&nbsp;you.</button>
+      <button class="aRing-step" type="button" data-i="3" style="--x:18%;--y:73%" aria-pressed="false"><span>04</span>Guided by what you need.</button>
+      <div class="aRing-detail" aria-live="polite">
+        <p class="is-on">Dr. Mundluru takes your history and goals, then Visia imaging measures eight features of your skin. Nothing is recommended until we have looked.</p>
+        <p>Only devices proven safe on all six Fitzpatrick skin types. A Prakriti assessment of how your skin is built, and testing only where it would change the plan.</p>
+        <p>Your clinical data, skin tone and goals become one plan: which treatments, in what order, how far apart. Explained clearly.</p>
+        <p>Repeat imaging at around six months measures what changed, and the plan evolves with you, visit after visit.</p>
+      </div>
     </div>
-    <div class="aProc-body">
-      <p class="aLabel aLabel--onDark">Our process</p>
-      <h2 class="aProc-head" id="proc-title">Three steps, <em>in order.</em></h2>
-      <ol class="aProc-steps">
-        <li class="aProc-step is-on" data-step="0">
-          <div class="aProc-pic" style="background-image:url('brand-hero.jpg')"></div>
-          <span class="aProc-num">01</span>
-          <h3>Understand you</h3>
-          <p>Every plan begins with a thorough intake: health history, skin concerns,
-             lifestyle, and goals. Every first visit includes an Ayurvedic
-             <a href="prakriti.html">Prakriti constitutional assessment</a> to tell us how
-             your skin is built, not just how it looks today.</p>
-        </li>
-        <li class="aProc-step" data-step="1">
-          <div class="aProc-pic" style="background-image:url('brand-card-2.jpg')"></div>
-          <span class="aProc-num">02</span>
-          <h3>Analyze your skin</h3>
-          <p>Visia clinical imaging anchors every analysis with eight clinical metrics
-             matched to your age and skin tone. Where it adds insight, we layer in
-             <a href="precision.html">precision diagnostics</a> like labs or skin
-             microbiome testing.</p>
-        </li>
-        <li class="aProc-step" data-step="2">
-          <div class="aProc-pic" style="background-image:url('brand-card-1.jpg')"></div>
-          <span class="aProc-num">03</span>
-          <h3>Your personalized plan</h3>
-          <p>A treatment plan built from your clinical data, your constitution, your skin
-             tone, your goals, and your life. Not a template borrowed from someone
-             else&rsquo;s skin. Sequenced correctly, explained clearly.</p>
-          <a class="aProc-cta" href="first-visit.html">What the first visit involves &rarr;</a>
-        </li>
-      </ol>
+
+    <ol class="aRing-list">
+      <li><span>01</span><strong>Examined first. Recommended second.</strong> Dr. Mundluru takes your history and goals, then Visia imaging measures eight features of your skin. Nothing is recommended until we have looked.</li>
+      <li><span>02</span><strong>Specific to your skin.</strong> Only devices proven safe on all six Fitzpatrick skin types. A Prakriti assessment of how your skin is built, and testing only where it would change the plan.</li>
+      <li><span>03</span><strong>A plan designed around you.</strong> Your clinical data, skin tone and goals become one plan: which treatments, in what order, how far apart.</li>
+      <li><span>04</span><strong>Guided by what you need.</strong> Repeat imaging at around six months measures what changed, and the plan evolves with you.</li>
+    </ol>
+
+    <a class="aRing-foot" href="first-visit.html">What the first visit involves &rarr;</a>
+  </div>
+
+  <div class="aRing-right">
+    <div class="aRing-frame">
+      <div class="aRing-photo" role="img" aria-label="A woman with deep brown skin, hands to her cheeks, glancing to the side."></div>
+      <p class="aRing-claim">We look before we treat.</p>
+      <p class="aRing-tag">Understand your skin</p>
     </div>
   </div>
 </section>
@@ -1566,22 +1523,56 @@ reveals.forEach(el => observer.observe(el));
 </script>
 
 <script>
-/* Process: the step nearest the middle of the viewport is "on"; the sticky
-   photograph and counter follow it. Phones show each step's own photo. */
+/* Process ring. Four arcs between four nodes; the chosen step's arc and dot
+   turn Young Leaf and its detail shows in the centre. It advances on its own
+   every few seconds until someone hovers, focuses or chooses a step, and
+   never under reduced motion. */
 (function () {
-  var steps = [].slice.call(document.querySelectorAll('.aProc-step'));
-  var shots = [].slice.call(document.querySelectorAll('.aProc-shot'));
-  var now = document.querySelector('[data-proc-now]');
-  if (!steps.length || !('IntersectionObserver' in window)) return;
+  var dial = document.querySelector('[data-ring]');
+  if (!dial) return;
+  var C = 300, R = 220, NS = 'http://www.w3.org/2000/svg';
+  /* Each step's arc, in degrees clockwise from 3 o'clock, kept clear of
+     the four labels. Arc i belongs to step i and ends in a dot. */
+  var spans = [[232, 320], [4, 32], [86, 122], [166, 197]];
+  function pt(a) { a = a * Math.PI / 180; return [C + R * Math.cos(a), C + R * Math.sin(a)]; }
+  var arcs = dial.querySelectorAll('.aRing-arc'), dots = dial.querySelector('.aRing-dots'), dotEls = [];
+  spans.forEach(function (sp, i) {
+    var start = sp[0], sweep = ((sp[1] - start) % 360 + 360) % 360;
+    var p0 = pt(start), p1 = pt(start + sweep);
+    arcs[i].setAttribute('d', 'M' + p0[0].toFixed(1) + ' ' + p0[1].toFixed(1) +
+      ' A' + R + ' ' + R + ' 0 ' + (sweep > 180 ? 1 : 0) + ' 1 ' + p1[0].toFixed(1) + ' ' + p1[1].toFixed(1));
+    var d = document.createElementNS(NS, 'circle');
+    d.setAttribute('cx', p1[0].toFixed(1)); d.setAttribute('cy', p1[1].toFixed(1)); d.setAttribute('r', 4.5);
+    dots.appendChild(d); dotEls.push(d);
+  });
+  var steps = [].slice.call(dial.querySelectorAll('.aRing-step'));
+  var texts = [].slice.call(dial.querySelectorAll('.aRing-detail p'));
+  var cur = 0, timer = null;
   function set(i) {
-    steps.forEach(function (s, k) { s.classList.toggle('is-on', k === i); });
-    shots.forEach(function (s, k) { s.classList.toggle('is-on', k === i); });
-    if (now) now.textContent = '0' + (i + 1);
+    cur = i;
+    steps.forEach(function (s, k) { s.classList.toggle('is-on', k === i); s.setAttribute('aria-pressed', k === i); });
+    texts.forEach(function (t, k) { t.classList.toggle('is-on', k === i); });
+    [].forEach.call(arcs, function (a, k) { a.classList.toggle('is-on', k === i); });
+    dotEls.forEach(function (d, k) { d.classList.toggle('is-on', k === i); });
   }
-  var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) set(+e.target.getAttribute('data-step')); });
-  }, { rootMargin: '-45% 0px -45% 0px' });
-  steps.forEach(function (s) { io.observe(s); });
+  function stop() { clearInterval(timer); timer = null; }
+  steps.forEach(function (s, k) {
+    s.addEventListener('click', function () { stop(); set(k); });
+    s.addEventListener('mouseenter', function () { stop(); set(k); });
+    s.addEventListener('focus', function () { stop(); set(k); });
+  });
+  set(0);
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && timer === null && !dial.dataset.touched) {
+          timer = setInterval(function () { set((cur + 1) % 4); }, 4200);
+        } else if (!e.isIntersecting) { stop(); }
+      });
+    }, { threshold: .4 }).observe(dial);
+    dial.addEventListener('pointerdown', function () { dial.dataset.touched = 1; stop(); });
+    dial.addEventListener('mouseenter', function () { dial.dataset.touched = 1; stop(); });
+  }
 })();
 </script>
 </body>
