@@ -62,7 +62,7 @@
      (sub: true) inside Injectables rather than a second dropdown. */
   var SERVICES_GROUPS = [
     { group: 'Diagnostics',     links: [
-        { label: 'Visia skin analysis',   href: 'visia-skin-analysis.html' },
+        { label: 'Aura 3D imaging',   href: 'visia-skin-analysis.html' },
         { label: 'Skin microbiome testing', href: 'skin-microbiome-testing.html' },
         { label: 'Lab testing',           href: 'lab-testing.html' }
       ] },
