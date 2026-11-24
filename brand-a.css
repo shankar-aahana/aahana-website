@@ -459,3 +459,51 @@ article.tx:hover { background: #F6F2E8 !important; }
   .secnum { left: -40px; width: 30px; height: 30px; }
   .txbody details.sec::before { left: -25px; }
 }
+
+/* 14. Legal reader (privacy, NPP, accessibility) --------------------- */
+.legalA .article-inner > h2 { display: flex; align-items: baseline; gap: 14px; font-weight: 300 !important; scroll-margin-top: 110px; padding-top: 22px; border-top: 1px solid rgba(122,87,65,.18); }
+.legalA .article-inner > h2:first-of-type { border-top: 0; }
+.lNum { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: #7A5741; flex: 0 0 auto; position: relative; top: -3px; }
+.lCards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 8px 0 30px; }
+.lCard { border-radius: 16px; padding: 18px 20px 6px; background: linear-gradient(160deg, #F6F2E8, #EEE6D6); box-shadow: inset 0 0 0 1px rgba(122,87,65,.12); }
+.lCard h3 { font-family: var(--mono) !important; font-size: 10.5px !important; font-weight: 400 !important; letter-spacing: .14em !important; text-transform: uppercase; color: #7A5741 !important; margin: 0 0 10px !important; }
+.lCard p { font-size: 15px !important; line-height: 1.65 !important; margin-bottom: 12px !important; }
+@media (max-width: 700px) { .lCards { grid-template-columns: 1fr; } }
+/* rail */
+.lRail { display: none; }
+@media (min-width: 1180px) {
+  .legalA .article-body { display: grid; grid-template-columns: 260px minmax(0, 720px); gap: 72px; justify-content: center; }
+  .legalA .article-inner { margin: 0 !important; }
+  .lRail { display: block; position: sticky; top: 100px; align-self: start; padding-left: 18px; position: sticky; }
+  .lRail-k { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #7A5741; margin-bottom: 14px; }
+  .lRail-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: rgba(122,87,65,.16); border-radius: 2px; }
+  .lRail-bar i { display: block; width: 100%; height: 0; background: #7A5741; border-radius: 2px; transition: height .2s; }
+  .lRail ol { list-style: none; margin: 0; padding: 0; }
+  .lRail a { display: flex; gap: 10px; padding: 7px 0; font-size: 13.5px; line-height: 1.35; color: rgba(70,51,49,.65); text-decoration: none; border: 0 !important; transition: color .2s; }
+  .lRail a span { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; padding-top: 2px; color: rgba(122,87,65,.6); }
+  .lRail a:hover { color: #463331; }
+  .lRail a.is-on { color: #463331; }
+  .lRail a.is-on span { color: #463331; }
+  .lRail a.is-on::before { content: ''; position: absolute; left: -4px; width: 10px; height: 10px; margin-top: 3px; border-radius: 50%; background: #C6ECA9; box-shadow: 0 0 0 1px #463331; }
+}
+/* phone bar */
+.lMob { position: fixed; left: 12px; right: 12px; bottom: 14px; z-index: 60; transform: translateY(140%); transition: transform .35s ease; }
+.lMob.is-shown { transform: none; }
+.lMob-btn {
+  all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  border-radius: 18px 18px 0 0; background: rgba(70,51,49,.94); backdrop-filter: blur(10px); color: #EEE9DA;
+}
+.lMob-n { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; color: #C6ECA9; flex: 0 0 auto; }
+.lMob-t { flex: 1; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lMob-c { font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(198,236,169,.5); color: #C6ECA9; }
+.lMob-bar { display: block; height: 3px; background: rgba(70,51,49,.94); border-radius: 0 0 18px 18px; overflow: hidden; padding: 0 16px 10px; box-sizing: content-box; }
+.lMob-bar i { display: block; height: 3px; width: 0; background: #C6ECA9; border-radius: 3px; }
+.lMob-sheet { display: none; position: absolute; bottom: calc(100% + 8px); left: 0; right: 0; max-height: 60vh; overflow: auto; border-radius: 18px; background: #F6F2E8; box-shadow: 0 20px 50px -20px rgba(40,26,22,.6), inset 0 0 0 1px rgba(122,87,65,.15); padding: 8px; }
+.lMob.is-open .lMob-sheet { display: block; }
+.lMob-sheet ol { list-style: none; margin: 0; padding: 0; }
+.lMob-sheet a { display: flex; gap: 12px; padding: 11px 12px; border-radius: 12px; color: #463331; text-decoration: none; font-size: 15px; }
+.lMob-sheet a span { font-family: var(--mono); font-size: 10px; color: #7A5741; padding-top: 3px; }
+.lMob-sheet a.is-on { background: rgba(198,236,169,.35); }
+@media (min-width: 1180px) { .lMob { display: none; } }
+@media print { .lRail, .lMob, .lNum { display: none !important; } .lCards { display: block; } }
+.legalA .article-inner ul { padding-left: 1.3em; }
