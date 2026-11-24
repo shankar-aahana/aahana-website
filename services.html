@@ -668,6 +668,55 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
 .svCta-btn:hover { gap: 24px; }
 .svCta-btn:focus-visible { outline: 2px solid #463331; outline-offset: 3px; }
 
+
+/* Treatment rows (succinct) and the photo that follows the hovered row. */
+.svCat-photo { position: relative; overflow: hidden; background: #DED7C6; }
+.svShot {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  opacity: 0; transform: scale(1.04); transition: opacity .5s ease, transform .9s cubic-bezier(.2,.7,.2,1);
+}
+.svShot.is-on { opacity: 1; transform: none; }
+.svShot--ph {
+  display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 22px;
+  background: #463331 radial-gradient(90% 70% at 20% 0%, rgba(122,87,65,.6), transparent 65%);
+}
+.svShot--ph b {
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: rgba(238,233,218,.6);
+}
+.svShot--ph i { font-style: normal; font-size: clamp(20px, 1.8vw, 26px); font-weight: 300; color: #C6ECA9; }
+.svCat-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(70,51,49,.22); }
+.svRow {
+  display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: baseline;
+  padding: 22px 0; border-bottom: 1px solid rgba(70,51,49,.22); cursor: default;
+}
+.svRow-main { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.svRow h3 {
+  margin: 0; font-family: 'Satoshi', sans-serif; font-size: 21px; font-weight: 400;
+  letter-spacing: -.01em; color: rgba(70,51,49,.62); transition: color .3s ease;
+}
+.svRow.is-on h3 { color: #463331; }
+.svRow-tag {
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #7A5741;
+}
+.svRow p { grid-column: 1; margin: 0; max-width: 54ch; font-size: 14.5px; font-weight: 300; line-height: 1.65; color: #5C463E; }
+.svRow-note { color: #7A5741; }
+.svRow-link {
+  grid-column: 2; grid-row: 1 / 3; align-self: center;
+  display: inline-flex; align-items: center; gap: 10px; min-height: 24px; padding: 4px 0;
+  font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #463331; text-decoration: none;
+  white-space: nowrap;
+}
+.svRow-link svg { width: 26px; height: 12px; transition: transform .25s ease; }
+.svRow-link:hover svg, .svRow.is-on .svRow-link svg { transform: translateX(4px); }
+@media (max-width: 900px) {
+  .svRow { grid-template-columns: 1fr; }
+  .svRow-link { grid-column: 1; grid-row: auto; }
+  .svRow h3 { color: #463331; }
+}
+@media (prefers-reduced-motion: reduce) { .svShot, .svRow h3, .svRow-link svg { transition: none; } }
 @media (max-width: 900px) {
   .svExpect-inner, .svCta-inner, .svCat-inner { grid-template-columns: 1fr; }
   .svCat-head { position: static; }
@@ -745,222 +794,180 @@ body { font-family: 'Satoshi', sans-serif; font-weight: 400; background: var(--i
 </section>
 
 <!-- 01 DIAGNOSTICS -->
-<section class="svCat svCat--a" id="diagnostics" aria-labelledby="cat-diagnostics">
+<section class="svCat svCat--a" id="diagnostics" aria-labelledby="cat-diagnostics" data-svcat>
   <div class="svCat-inner">
     <header class="svCat-head reveal">
       <p class="svCat-kicker"><span>01</span>Diagnostics</p>
-      <h2 class="svCat-title" id="cat-diagnostics">Measure first.<br><em>Then treat.</em></h2>
-      <p class="svCat-intro">Imaging comes before any treatment is recommended, for everyone. The other two are optional, carry their own cost, and are suggested only where the result would change what the plan says.</p>
-      <div class="svCat-photo" style="background-image:url('svc-diagnostics.jpg')" aria-hidden="true"></div>
+      <h2 class="svCat-title" id="cat-diagnostics">Measure first. <em>Then treat.</em></h2>
+      <p class="svCat-intro">Imaging comes first, for everyone. Everything else only when it would change your plan.</p>
+      <div class="svCat-photo" aria-hidden="true"><span class="svShot is-on" style="background-image:url('svc-diagnostics.jpg');"></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Microbiome swab kit</i></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Lab draw</i></span></div>
     </header>
-    <div class="svCat-list reveal">
-      <div class="service-item">
-        <div class="service-name">Visia Skin Analysis</div>
-        <span class="service-tag">Clinical Imaging</span>
-        <p class="service-desc">Eight features of the skin photographed under standardized light, including ultraviolet imaging that shows pigment damage sitting below the surface before it emerges. Separating the red channel from the brown is what distinguishes pigment from inflammation in deeper skin, where the two look identical to the eye.</p>
-        <p class="service-note">Included in every consultation. Repeated at around six months to measure change.</p>
-        <a class="service-link" href="visia-skin-analysis.html">Visia skin analysis &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Skin Microbiome Testing</div>
-        <span class="service-tag">Sequencing &middot; Parallel Health</span>
-        <p class="service-desc">A swab that reads which organisms live on your skin, in what proportion, and what they are producing. It is a measurement of the present rather than a diagnosis, and its value shows up on the repeat test, after something has been changed deliberately. It is not a genetic test and reads none of your own DNA.</p>
-        <p class="service-note">Optional, for an additional fee. Recommended where straightforward treatment has already failed.</p>
-        <a class="service-link" href="skin-microbiome-testing.html">Skin microbiome testing &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Lab Testing</div>
-        <span class="service-tag">Nutrient &middot; Inflammatory &middot; Hormonal</span>
-        <p class="service-desc">Individual markers chosen from the clinical picture rather than a fixed panel, where something systemic appears to be driving a skin problem. Never a general wellness screen. Any value outside the normal range is communicated to your primary care physician.</p>
-        <p class="service-note">Optional, for an additional fee. Not ordered routinely. Recent results from your own physician are often enough.</p>
-        <a class="service-link" href="lab-testing.html">Lab testing &rarr;</a>
-      </div>
-    </div>
+    <ul class="svCat-list reveal">
+      <li class="svRow is-on" data-i="0" tabindex="-1">
+        <div class="svRow-main"><h3>Visia skin analysis</h3><span class="svRow-tag">Clinical imaging</span></div>
+        <p>Eight features of your skin under standardized light, including pigment still below the surface. <span class="svRow-note">Included in every consultation.</span></p>
+        <a class="svRow-link" href="visia-skin-analysis.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="1" tabindex="-1">
+        <div class="svRow-main"><h3>Skin microbiome testing</h3><span class="svRow-tag">Parallel Health</span></div>
+        <p>A swab that reads the organisms living on your skin. A measurement, not a diagnosis, and not a DNA test.</p>
+        <a class="svRow-link" href="skin-microbiome-testing.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="2" tabindex="-1">
+        <div class="svRow-main"><h3>Lab testing</h3><span class="svRow-tag">Targeted markers</span></div>
+        <p>Specific blood markers, ordered only when something internal seems to be driving a skin problem.</p>
+        <a class="svRow-link" href="lab-testing.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+    </ul>
   </div>
 </section>
 
 <!-- 02 INJECTABLES -->
-<section class="svCat svCat--b" id="injectables" aria-labelledby="cat-injectables">
+<section class="svCat svCat--b" id="injectables" aria-labelledby="cat-injectables" data-svcat>
   <div class="svCat-inner">
     <header class="svCat-head reveal">
       <p class="svCat-kicker"><span>02</span>Injectables</p>
-      <h2 class="svCat-title" id="cat-injectables">Precision placement.<br><em>Natural results.</em></h2>
-      <p class="svCat-intro">All injectable treatments are performed directly by Dr. Shankar. Placement, dosing, and sequencing are calibrated to your anatomy, your skin tone, and your goals.</p>
-      <div class="svCat-photo" style="background-image:url('brand-card-1.jpg')" aria-hidden="true"></div>
+      <h2 class="svCat-title" id="cat-injectables">Precision placement. <em>Natural results.</em></h2>
+      <p class="svCat-intro">Performed by Dr. Mundluru, dosed to your anatomy and your skin tone.</p>
+      <div class="svCat-photo" aria-hidden="true"><span class="svShot is-on" style="background-image:url('brand-card-1.jpg');"></span><span class="svShot" style="background-image:url('brand-card-2.jpg');"></span><span class="svShot" style="background-image:url('svc-inject.jpg');"></span><span class="svShot svShot--ph"><b>Photo to come</b><i>SkinVive treatment close-up</i></span><span class="svShot svShot--ph"><b>Photo to come</b><i>PRP preparation</i></span></div>
     </header>
-    <div class="svCat-list reveal">
-      <div class="service-item">
-        <div class="service-name">Neuromodulators</div>
-        <span class="service-tag">Botox · Dysport</span>
-        <p class="service-desc">Neuromodulators relax targeted muscles to smooth dynamic wrinkles, lift specific areas, and subtly contour the face. Used for the forehead, glabella, crow's feet, brow lifting, lip lines, neck bands, and more.</p>
-        <p class="service-note">Results visible in 3 to 14 days. Duration typically 3 to 4 months.</p>
-        <a class="service-link" href="botox-dysport.html">Botox and Dysport &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Dermal Fillers</div>
-        <span class="service-tag">Hyaluronic Acid</span>
-        <p class="service-desc">Hyaluronic acid fillers restore volume and define contours. Dr. Shankar approaches filler as a structural tool, with each placement considering facial balance, tissue depth, and long-term outcomes. Used for cheeks, lips, jawline, temples, and nasolabial folds.</p>
-        <p class="service-note">Results immediate, refined over 2 weeks. Duration 9 to 18 months depending on area.</p>
-        <a class="service-link" href="dermal-fillers.html">Dermal fillers &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Biostimulators</div>
-        <span class="service-tag">Sculptra · Radiesse</span>
-        <p class="service-desc">Rather than adding immediate volume, biostimulators signal your skin to produce its own collagen, creating gradual, lasting improvement in skin quality and structural support. Sculptra uses poly-L-lactic acid; Radiesse uses calcium hydroxylapatite. Both work best as part of a longer-term rejuvenation strategy.</p>
-        <p class="service-note">Results develop over 4 to 12 weeks. Duration 1 to 2 years or more.</p>
-        <a class="service-link" href="biostimulators.html">Sculptra and Radiesse &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">SkinVive</div>
-        <span class="service-tag">Skin quality</span>
-        <p class="service-desc">A hyaluronic acid gel placed in the skin itself as small microdroplets rather than underneath it. It treats smoothness and hydration rather than shape, and it is FDA approved for the cheeks and, since June 2026, for lines on the neck.</p>
-        <p class="service-note">Visible in 1 to 2 weeks, assessed at 1 month. Retreatment studied at around 6 months.</p>
-        <a class="service-link" href="skinvive.html">SkinVive &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">PRP</div>
-        <span class="service-tag">Platelet-Rich Plasma</span>
-        <p class="service-desc">PRP concentrates your own growth factors from a small blood draw to stimulate tissue renewal. What it does depends on where it goes, so each use has its own page, its own protocol and its own account of the evidence behind it.</p>
-        <p class="service-note">Series of treatments typically recommended. Hair restoration protocols available.</p>
-        <a class="service-link" href="prp.html">All PRP &rarr;</a>
-        <a class="service-link" href="prp-skin.html">Skin quality &rarr;</a>
-        <a class="service-link" href="prp-under-eye.html">Under the eye &rarr;</a>
-        <a class="service-link" href="prp-hair.html">Hair restoration &rarr;</a>
-        <a class="service-link" href="prp-microneedling.html">With microneedling &rarr;</a>
-      </div>
-    </div>
+    <ul class="svCat-list reveal">
+      <li class="svRow is-on" data-i="0" tabindex="-1">
+        <div class="svRow-main"><h3>Neuromodulators</h3><span class="svRow-tag">Botox &middot; Dysport</span></div>
+        <p>Relaxes targeted muscles to smooth movement lines, lift and subtly contour.</p>
+        <a class="svRow-link" href="botox-dysport.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="1" tabindex="-1">
+        <div class="svRow-main"><h3>Dermal fillers</h3><span class="svRow-tag">Hyaluronic acid</span></div>
+        <p>Restores volume and defines contour, placed for facial balance.</p>
+        <a class="svRow-link" href="dermal-fillers.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="2" tabindex="-1">
+        <div class="svRow-main"><h3>Biostimulators</h3><span class="svRow-tag">Sculptra &middot; Radiesse</span></div>
+        <p>Prompts your skin to build its own collagen, for gradual and lasting support.</p>
+        <a class="svRow-link" href="biostimulators.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="3" tabindex="-1">
+        <div class="svRow-main"><h3>SkinVive</h3><span class="svRow-tag">Skin quality</span></div>
+        <p>Microdroplets of hyaluronic acid placed in the skin itself, for smoothness and hydration.</p>
+        <a class="svRow-link" href="skinvive.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="4" tabindex="-1">
+        <div class="svRow-main"><h3>PRP</h3><span class="svRow-tag">Platelet-rich plasma</span></div>
+        <p>Your own growth factors, for skin quality, under the eyes and hair.</p>
+        <a class="svRow-link" href="prp.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- 03 LASERS AND DEVICES -->
-<section class="svCat svCat--a" id="energy" aria-labelledby="cat-energy">
+<!-- 03 LASERS & DEVICES -->
+<section class="svCat svCat--a" id="energy" aria-labelledby="cat-energy" data-svcat>
   <div class="svCat-inner">
     <header class="svCat-head reveal">
       <p class="svCat-kicker"><span>03</span>Lasers &amp; devices</p>
-      <h2 class="svCat-title" id="cat-energy">Technology chosen<br><em>for your skin.</em></h2>
-      <p class="svCat-intro">Every device at Aahana is selected for its precision, its safety record across all skin tones, and the strength of its clinical evidence. Microneedling sits here too: it is a device treatment, performed by Dr. Mundluru.</p>
-      <div class="svCat-photo" style="background-image:url('svc-devices.jpg')" aria-hidden="true"></div>
+      <h2 class="svCat-title" id="cat-energy">Technology chosen <em>for your skin.</em></h2>
+      <p class="svCat-intro">Devices selected for their safety record across every skin tone.</p>
+      <div class="svCat-photo" aria-hidden="true"><span class="svShot is-on" style="background-image:url('svc-devices.jpg');"></span><span class="svShot svShot--ph"><b>Photo to come</b><i>XERF device</i></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Microneedling pen</i></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Exosome serum</i></span></div>
     </header>
-    <div class="svCat-list reveal">
-      <div class="service-item">
-        <div class="service-name">XERF by Lutronic</div>
-        <span class="service-tag">Structural Skin Tightening · FDA Cleared</span>
-        <p class="service-desc">XERF delivers radiofrequency energy at two frequencies simultaneously, reaching every layer of the skin including the SMAS, the deep structural tissue responsible for lifting and firmness. Real-time impedance feedback adapts energy delivery to your skin continuously, ensuring precision and safety across all skin tones. Results build progressively as collagen remodels over weeks.</p>
-        <p class="service-note">Single sessions and series available. Results continue developing over 3 to 6 months.</p>
-        <a class="service-link" href="xerf.html">XERF skin tightening &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Aerolase Neo Elite</div>
-        <span class="service-tag">1064 nm Nd:YAG · FDA Cleared · All Skin Tones</span>
-        <p class="service-desc">A 1064 nm Nd:YAG laser that delivers energy in 650-microsecond pulses with no contact, no cooling, and no numbing. It is cleared for more than thirty indications, and at Aahana it is used primarily for acne, rosacea and persistent redness, melasma and post-inflammatory pigmentation, vascular lesions, scarring, and overall skin quality.</p>
-        <p class="service-note">Typically a series, spaced two to four weeks apart. No numbing, no cooling, and no social downtime.</p>
-        <a class="service-link" href="aerolase-neo-elite.html">Aerolase Neo Elite &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Additional Laser Platforms</div>
-        <span class="service-tag">Under evaluation</span>
-        <p class="service-desc">Further devices are being assessed for resurfacing and specific pigmentary concerns, with the same requirement applied to each: demonstrated safety across all six Fitzpatrick types, not just the lighter three. Additions will be announced only once that standard is met.</p>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Microneedling</div>
-        <span class="service-tag">Collagen Induction</span>
-        <p class="service-desc">Controlled micro-injuries stimulate the skin's natural repair cascade, producing new collagen and elastin. Effective for texture refinement, scar reduction, pore size, and overall skin quality. Needle depth and parameters are calibrated to your skin and goals.</p>
-        <a class="service-link" href="microneedling.html">Microneedling &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Exosomes</div>
-        <span class="service-tag">Biostimulation</span>
-        <p class="service-desc">Topical exosomes are applied after microneedling, while the skin is open. The signaling they carry is well characterized in the laboratory. What that translates to on the face is less settled than the marketing around it suggests, and the page sets out where the evidence actually stands.</p>
-        <a class="service-link" href="exosomes.html">Topical exosomes &rarr;</a>
-      </div>
-    </div>
+    <ul class="svCat-list reveal">
+      <li class="svRow is-on" data-i="0" tabindex="-1">
+        <div class="svRow-main"><h3>Aerolase Neo Elite</h3><span class="svRow-tag">1064 nm laser</span></div>
+        <p>For acne, rosacea, redness and pigment. No contact, no numbing.</p>
+        <a class="svRow-link" href="aerolase-neo-elite.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="1" tabindex="-1">
+        <div class="svRow-main"><h3>XERF</h3><span class="svRow-tag">Radiofrequency</span></div>
+        <p>Tightens and lifts by reaching every layer of the skin, down to the deep structural tissue.</p>
+        <a class="svRow-link" href="xerf.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="2" tabindex="-1">
+        <div class="svRow-main"><h3>Microneedling</h3><span class="svRow-tag">Collagen induction</span></div>
+        <p>Controlled micro-injuries that rebuild texture, scarring and pores.</p>
+        <a class="svRow-link" href="microneedling.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="3" tabindex="-1">
+        <div class="svRow-main"><h3>Topical exosomes</h3><span class="svRow-tag">With microneedling</span></div>
+        <p>Applied after microneedling while the skin is open. Promising, and still being studied.</p>
+        <a class="svRow-link" href="exosomes.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+    </ul>
   </div>
 </section>
 
 <!-- 04 AESTHETICIAN SERVICES -->
-<section class="svCat svCat--b" id="skin" aria-labelledby="cat-skin">
+<section class="svCat svCat--b" id="skin" aria-labelledby="cat-skin" data-svcat>
   <div class="svCat-inner">
     <header class="svCat-head reveal">
       <p class="svCat-kicker"><span>04</span>Aesthetician services</p>
-      <h2 class="svCat-title" id="cat-skin">Performed by our aesthetician.<br><em>Overseen by a physician.</em></h2>
-      <p class="svCat-intro">Hydrafacial and VI Peel are performed by Aahana&rsquo;s aesthetician under Dr. Mundluru&rsquo;s direct clinical oversight, and sequenced into the same plan as everything else.</p>
-      <div class="svCat-photo" style="background-image:url('svc-skin.jpg')" aria-hidden="true"></div>
+      <h2 class="svCat-title" id="cat-skin">Aesthetician-performed. <em>Physician-overseen.</em></h2>
+      <p class="svCat-intro">Facials and peels, sequenced into the same plan as everything else.</p>
+      <div class="svCat-photo" aria-hidden="true"><span class="svShot is-on" style="background-image:url('svc-skin.jpg');"></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Prakriti facial</i></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Facial treatment</i></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Back facial</i></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Chemical peel application</i></span></div>
     </header>
-    <div class="svCat-list reveal">
-      <div class="service-item">
-        <div class="service-name">Chemical Peels</div>
-        <span class="service-tag">VI Peel · Custom protocols</span>
-        <p class="service-desc">Chemical exfoliation accelerates cell turnover and addresses pigmentation, texture, and active acne. Peel selection is determined by your skin tone, sensitivity, and goals. Deeper skin tones require particular care in acid selection and post-procedure support.</p>
-        <p class="service-note">VI Peel performed by our Esthetician under Dr. Shankar's direct oversight.</p>
-        <a class="service-link" href="vi-peel.html">VI Peel &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Hydrafacial</div>
-        <span class="service-tag">Deep Cleansing · Hydration</span>
-        <p class="service-desc">A multi-step treatment that simultaneously cleanses, exfoliates, extracts, and infuses the skin with hydrating serums. An ideal maintenance treatment and a strong entry point for patients new to medical aesthetics.</p>
-        <p class="service-note">Performed by our Esthetician under Dr. Shankar's direct oversight.</p>
-        <a class="service-link" href="hydrafacial.html">Hydrafacial &rarr;</a>
-      </div>
-    </div>
+    <ul class="svCat-list reveal">
+      <li class="svRow is-on" data-i="0" tabindex="-1">
+        <div class="svRow-main"><h3>Hydrafacial</h3><span class="svRow-tag">30, 60 or 75 minutes</span></div>
+        <p>Cleanse, exfoliate, extract and hydrate in one visit.</p>
+        <a class="svRow-link" href="hydrafacial.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="1" tabindex="-1">
+        <div class="svRow-main"><h3>Prakriti facial</h3><span class="svRow-tag">Ayurvedic</span></div>
+        <p>A facial matched to your dosha at the visit, or the longer ritual with facial massage and ubtan.</p>
+        
+      </li>
+      <li class="svRow" data-i="2" tabindex="-1">
+        <div class="svRow-main"><h3>Facials</h3><span class="svRow-tag">Express &middot; Clarifying &middot; Brightening</span></div>
+        <p>Focused facials for upkeep, congestion and tone.</p>
+        
+      </li>
+      <li class="svRow" data-i="3" tabindex="-1">
+        <div class="svRow-main"><h3>Back &amp; body</h3><span class="svRow-tag">Back &middot; Glute</span></div>
+        <p>Facials and Hydrafacial for the back and glutes.</p>
+        
+      </li>
+      <li class="svRow" data-i="4" tabindex="-1">
+        <div class="svRow-main"><h3>VI Peel</h3><span class="svRow-tag">Superficial peel</span></div>
+        <p>A superficial chemical peel for pigment, texture and acne.</p>
+        <a class="svRow-link" href="vi-peel.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+    </ul>
   </div>
 </section>
 
 <!-- 05 MEDICAL PROGRAMS -->
-<section class="svCat svCat--a" id="wellness" aria-labelledby="cat-wellness">
+<section class="svCat svCat--a" id="wellness" aria-labelledby="cat-wellness" data-svcat>
   <div class="svCat-inner">
     <header class="svCat-head reveal">
       <p class="svCat-kicker"><span>05</span>Medical programs</p>
-      <h2 class="svCat-title" id="cat-wellness">The internal medicine<br><em>side of the practice.</em></h2>
-      <p class="svCat-intro">Dr. Mundluru is board certified in Internal Medicine and practiced for fifteen years before opening Aahana. These programs draw on that training: metabolic health, sexual health, and headache care.</p>
-      <div class="svCat-photo" style="background-image:url('svc-wellness.jpg')" aria-hidden="true"></div>
+      <h2 class="svCat-title" id="cat-wellness">Medical care, <em>not just cosmetic.</em></h2>
+      <p class="svCat-intro">Everything above is aesthetic. These treat medical conditions, with a physician.</p>
+      <div class="svCat-photo" aria-hidden="true"><span class="svShot svShot--ph is-on"><b>Photo to come</b><i>Skin condition close-up</i></span><span class="svShot" style="background-image:url('svc-wellness.jpg');"></span><span class="svShot svShot--ph"><b>Photo to come</b><i>Sexual health consultation</i></span><span class="svShot" style="background-image:url('svc-headache.jpg');background-position:center 25%;"></span></div>
     </header>
-    <div class="svCat-list reveal">
-      <span id="headache" aria-hidden="true"></span>
-      <div class="service-item">
-        <div class="service-name">GLP-1 Therapy</div>
-        <span class="service-tag">Metabolic Health</span>
-        <p class="service-desc">For appropriate candidates, GLP-1 therapy is integrated into a comprehensive wellness and skin plan, with close attention to the skin changes that can accompany significant body composition shifts, including volume loss, laxity, and nutritional gaps that affect skin quality.</p>
-        <p class="service-note">Available following a full medical intake and assessment.</p>
-        <a class="service-link" href="medical-weight-loss.html">Medical weight loss &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Sexual Wellness</div>
-        <span class="service-tag">PRP &middot; Botulinum Toxin</span>
-        <p class="service-desc">Platelet-rich plasma for erectile function, and botulinum toxin for the dartos muscle of the scrotum and for the internal anal sphincter, including chronic anal fissure. The evidence behind each one differs a great deal, and it is discussed openly at consultation rather than assumed.</p>
-        <p class="service-note">Assessment and examination precede any treatment in this category.</p>
-        <a class="service-link" href="sexual-wellness.html">Sexual wellness &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Botox for Chronic Migraine</div>
-        <span class="service-tag">Preventive</span>
-        <p class="service-desc">A series of small injections across areas of the head, neck and shoulders, aimed at how many headache days you have in a month rather than at any single headache. Prevention builds over two to four weeks, and some people need two treatment cycles for the full benefit.</p>
-        <p class="service-note">Repeated every twelve weeks. A headache diary guides the dosing.</p>
-        <a class="service-link" href="migraine-botox.html">Botox for chronic migraine &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Occipital Nerve Block</div>
-        <span class="service-tag">Nerve Block</span>
-        <p class="service-desc">An injection near the nerves at the back of the head, for occipital neuralgia and for some migraines and cluster headaches. Relief can begin within minutes and can last weeks.</p>
-        <p class="service-note">Repeated based on how long relief lasts, rather than on a fixed interval.</p>
-        <a class="service-link" href="occipital-nerve-block.html">Occipital nerve block &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Supraorbital Nerve Block</div>
-        <span class="service-tag">Nerve Block</span>
-        <p class="service-desc">An injection just above the eyebrow, near the nerve behind some forehead headaches. Relief can begin within minutes, and how long it lasts is part of how the source of the pain is established.</p>
-        <p class="service-note">Repeated based on how long relief lasts, rather than on a fixed interval.</p>
-        <a class="service-link" href="supraorbital-nerve-block.html">Supraorbital nerve block &rarr;</a>
-      </div>
-      <div class="service-item">
-        <div class="service-name">Which Treatment, And Why</div>
-        <span class="service-tag">Consultation</span>
-        <p class="service-desc">Which of the three fits follows from headache history, frequency and what has already been tried, rather than from a preference. Preventive treatment acts on the month. A nerve block acts on one nerve, now. They are not alternatives to each other.</p>
-        <p class="service-note">Decided in person, after examination.</p>
-        <a class="service-link" href="migraine-headache.html">Migraine and headache &rarr;</a>
-      </div>
-    </div>
+    <ul class="svCat-list reveal">
+      <li class="svRow is-on" data-i="0" tabindex="-1">
+        <div class="svRow-main"><h3>Medical dermatology</h3><span class="svRow-tag">Acne &middot; eczema &middot; psoriasis &middot; rosacea &middot; melasma</span></div>
+        <p>Diagnosis and prescription treatment for skin conditions.</p>
+        
+      </li>
+      <li class="svRow" data-i="1" tabindex="-1">
+        <div class="svRow-main"><h3>Weight management</h3><span class="svRow-tag">GLP-1 therapy</span></div>
+        <p>Medically supervised weight loss, with attention to what it does to your skin.</p>
+        <a class="svRow-link" href="medical-weight-loss.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="2" tabindex="-1">
+        <div class="svRow-main"><h3>Sexual health</h3><span class="svRow-tag">PRP &middot; botulinum toxin</span></div>
+        <p>PRP for erectile function, and botulinum toxin for the scrotum and for anal fissure.</p>
+        <a class="svRow-link" href="sexual-wellness.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+      <li class="svRow" data-i="3" tabindex="-1"><span id="headache" aria-hidden="true"></span>
+        <div class="svRow-main"><h3>Migraine &amp; headache</h3><span class="svRow-tag">Botox &middot; nerve blocks</span></div>
+        <p>Preventive Botox for chronic migraine, and nerve blocks for faster relief.</p>
+        <a class="svRow-link" href="migraine-headache.html">Learn more<svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 6h33M28 1l5 5-5 5"/></svg></a>
+      </li>
+    </ul>
   </div>
 </section>
+
 
 
 
@@ -1119,6 +1126,24 @@ reveals.forEach(el => observer.observe(el));
     if (e.key === 'ArrowLeft')  { e.preventDefault(); show(open - 1, true); }
   });
   show(open);
+})();
+</script>
+<script>
+/* Services categories: the row under the pointer, or with focus inside,
+   lights up and swaps the photo in that category's header. */
+(function () {
+  [].forEach.call(document.querySelectorAll('[data-svcat]'), function (cat) {
+    var rows = [].slice.call(cat.querySelectorAll('.svRow'));
+    var shots = [].slice.call(cat.querySelectorAll('.svShot'));
+    function set(i) {
+      rows.forEach(function (r, k) { r.classList.toggle('is-on', k === i); });
+      shots.forEach(function (s, k) { s.classList.toggle('is-on', k === i); });
+    }
+    rows.forEach(function (r, k) {
+      r.addEventListener('mouseenter', function () { set(k); });
+      r.addEventListener('focusin', function () { set(k); });
+    });
+  });
 })();
 </script>
 </body>
