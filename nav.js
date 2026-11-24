@@ -150,17 +150,19 @@
         '<span class="nav-mark" aria-hidden="true"></span>' +
         '<span class="nav-rule" aria-hidden="true"></span>' +
         '<span class="nav-words">' +
-          '<span class="nav-name">AAHANA</span>' +
-          '<span class="nav-sub">Medical Aesthetics</span>' +
+          /* PLACEHOLDER WORDMARK. Set in Satoshi lowercase until the
+             agency supplies the real logotype as SVG. The real mark has
+             reversed "a" forms that cannot be reproduced with a font. */
+          '<span class="nav-name">aahana</span>' +
         '</span>' +
       '</a>' +
       '<ul class="nav-links">' +
         '<li class="nav-item">' +
-          '<a class="nav-link" href="#" onclick="toggleNav(event)">The Practice <span class="chevron">▼</span></a>' +
+          '<a class="nav-link" href="#" onclick="toggleNav(event)" aria-haspopup="true" aria-expanded="false">The Practice <span class="chevron" aria-hidden="true">▾</span></a>' +
           '<div class="dropdown">' + desktopItems(PRACTICE_LINKS) + '</div>' +
         '</li>' +
         '<li class="nav-item">' +
-          '<a class="nav-link" href="#" onclick="toggleNav(event)">Services <span class="chevron">▼</span></a>' +
+          '<a class="nav-link" href="#" onclick="toggleNav(event)" aria-haspopup="true" aria-expanded="false">Services <span class="chevron" aria-hidden="true">▾</span></a>' +
           '<div class="dropdown dropdown-wide">' +
             '<a class="dropdown-item lead" href="' + SERVICES_MAIN.href + '">' + SERVICES_MAIN.label + '</a>' +
             '<div class="dropdown-divider"></div>' +
@@ -168,7 +170,7 @@
           '</div>' +
         '</li>' +
         '<li class="nav-item">' +
-          '<a class="nav-link" href="#" onclick="toggleNav(event)">Daybreak <span class="chevron">▼</span></a>' +
+          '<a class="nav-link" href="#" onclick="toggleNav(event)" aria-haspopup="true" aria-expanded="false">Daybreak <span class="chevron" aria-hidden="true">▾</span></a>' +
           '<div class="dropdown">' +
             '<a class="dropdown-item lead" href="' + DAYBREAK_MAIN.href + '">' + DAYBREAK_MAIN.label + '</a>' +
             '<div class="dropdown-divider"></div>' +
@@ -177,7 +179,10 @@
           '</div>' +
         '</li>' +
       '</ul>' +
-      '<button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-cta">' + CTA_LABEL + '</button>' +
+      '<div class="nav-right">' +
+        '<button data-tally-open="kdJBYJ" data-tally-overlay="1" class="nav-pill nav-pill--leaf">' + CTA_LABEL + '</button>' +
+        '<a class="nav-pill nav-pill--ivory" href="contact.html">Contact us</a>' +
+      '</div>' +
       '<button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileMenu()">' +
         '<span></span><span></span><span></span>' +
       '</button>' +
@@ -266,7 +271,60 @@
     if (!isOpen) item.classList.add('open');
   };
 
+  /* ------------------------------------------------------------------
+     CURRENT SECTION
+     The leaf-ringed pill in the link group marks the section the visitor
+     is in, the way the brand studio's nav does. The section is worked out
+     from the link lists above, so adding a page to one of those arrays is
+     all it takes. Article pages are not listed individually, so they fall
+     back to their breadcrumb, which links to journal.html.
+     ------------------------------------------------------------------ */
+  function pageFile() {
+    var f = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    return f === '' ? 'index.html' : f;
+  }
+
+  function sectionOfPage() {
+    var file = pageFile();
+    function files(list) {
+      return list.map(function (l) { return l.href.split('#')[0].toLowerCase(); });
+    }
+    var practice = files(PRACTICE_LINKS);
+    var services = ['services.html'];
+    SERVICES_GROUPS.forEach(function (g) { services = services.concat(files(g.links)); });
+    var daybreak = ['journal.html'].concat(files(DAYBREAK_CATEGORIES));
+
+    if (file === 'index.html') return null;
+    if (practice.indexOf(file) > -1) return 'practice';
+    if (services.indexOf(file) > -1) return 'services';
+    if (daybreak.indexOf(file) > -1) return 'daybreak';
+    /* The standalone care sheets hang off the practice menu's care.html. */
+    if (file.indexOf('care-') === 0) return 'practice';
+
+    /* Everything else: read the breadcrumb the page itself prints. */
+    var crumb = document.querySelector('.breadcrumb a[href]');
+    if (crumb) {
+      var target = crumb.getAttribute('href').split('#')[0].toLowerCase();
+      if (target === 'journal.html')   return 'daybreak';
+      if (target === 'services.html')  return 'services';
+    }
+    return null;
+  }
+
+  function markCurrentSection() {
+    var sec = sectionOfPage();
+    if (!sec) return;
+    var index = { practice: 0, services: 1, daybreak: 2 }[sec];
+    var items = document.querySelectorAll('.nav-links > .nav-item');
+    var item  = items[index];
+    if (!item) return;
+    item.classList.add('current');
+    var link = item.querySelector('.nav-link');
+    if (link) link.setAttribute('aria-current', 'true');
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    markCurrentSection();
 
     /* If BOOKING_URL is set, retarget and relabel every waitlist button
        on the page, including the one at the bottom. */

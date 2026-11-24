@@ -9,7 +9,7 @@
 (function () {
 
   var TAGLINE  = 'Physician-led medical aesthetics, grounded in precision medicine. ' +
-                 'We treat more than what we see. Opening San Francisco, early 2027.';
+                 'Care, seen clearly. Opening San Francisco, early 2027.';
   var MEANING  = 'Aahana · आहान · first light of dawn';
   var ADDRESS  = '2175 3rd Street, Unit C1<br>San Francisco, CA 94107';
   var ADDRESS2 = '125 Railroad Avenue, Suite 206<br>Danville, CA 94526';
@@ -37,7 +37,8 @@
             '<span class="footer-mark" aria-hidden="true"></span>' +
             '<span class="footer-rule" aria-hidden="true"></span>' +
             '<div class="footer-brand-words">' +
-              '<div class="footer-brand-name">AAHANA</div>' +
+              /* PLACEHOLDER WORDMARK, same as the nav. */
+              '<div class="footer-brand-name">aahana</div>' +
               '<div class="footer-brand-sub">Medical Aesthetics</div>' +
             '</div>' +
           '</div>' +

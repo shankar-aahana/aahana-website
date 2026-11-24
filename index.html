@@ -7,7 +7,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#4A3328">
+<meta name="theme-color" content="#463331">
 <title>Aahana Medical Aesthetics, San Francisco</title>
 <meta name="description" content="Physician-led medical aesthetics in San Francisco. Precision diagnostics, devices for every skin tone, and Ayurvedic constitutional medicine.">
   <meta property="og:type" content="website">
@@ -39,7 +39,7 @@
        The weight range is declared 100-900 deliberately: one Black file then
        answers every weight the stylesheet asks for, so nothing needs its
        font-weight changed. Until the font is installed, headings fall back to
-       Spectral and the wordmark to Cairo — which is exactly how the site
+       Satoshi and the wordmark to the Aahana logotype — which is exactly how the site
        looks today. Nothing breaks in the meantime.
   -->
   <link rel="stylesheet" href="footer.css">
@@ -55,22 +55,325 @@
     src: url('fonts/ContraltoBig-BlackItalic.woff2') format('woff2');
     font-weight: 100 900; font-style: italic; font-display: swap;
   }
-  */</style>
+  */
+  /* ---------- Direction A hero ---------- */
+  .aHero { background: var(--deep); padding: calc(88px + env(safe-area-inset-top)) 22px 26px; }
+  .aHero-stage { position: relative; }
+  .aHero-frame {
+    position: relative; height: clamp(400px, 56vh, 560px);
+    border-radius: 16px; overflow: hidden;
+  }
+  .aHero-photo {
+    position: absolute; inset: 0;
+    background: url('brand-wide.jpg') center 38% / cover no-repeat;
+  }
+  .aHero-frame::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 62%;
+    background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.6));
+  }
+  .aHero-cards {
+    position: absolute; z-index: 1; left: 26px; bottom: 26px;
+    display: flex; gap: 14px; align-items: flex-end; flex-wrap: wrap;
+  }
+  .aCard-thumb {
+    position: relative; width: 150px; height: 116px; border-radius: 11px;
+    overflow: hidden; background-size: cover; background-position: center;
+    text-decoration: none; flex: 0 0 auto;
+  }
+  .aCard-thumb::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 68%;
+    background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.55) 55%, rgba(40,26,22,.9));
+  }
+  .aCard-thumb span {
+    position: absolute; z-index: 1; left: 11px; bottom: 9px;
+    font-size: 10px; font-weight: 500; letter-spacing: .12em;
+    text-transform: uppercase; color: #C6ECA9;
+  }
+  .aCard-glass {
+    width: 300px; border-radius: 12px; padding: 17px 18px;
+    background: rgba(70,51,49,.62);
+    -webkit-backdrop-filter: blur(13px); backdrop-filter: blur(13px);
+    border: 1px solid rgba(238,233,218,.22);
+  }
+  .aCard-glass h2 {
+    margin: 0 0 8px; font-size: 11px; font-weight: 500; letter-spacing: .13em;
+    text-transform: uppercase; color: #C6ECA9;
+  }
+  .aCard-glass p {
+    margin: 0 0 12px; font-size: 13px; line-height: 1.55;
+    color: rgba(238,233,218,.92);
+  }
+  .aCard-more {
+    font-size: 10px; letter-spacing: .13em; text-transform: uppercase;
+    color: rgba(238,233,218,.78); text-decoration: none;
+    display: inline-block; padding: 6px 0; min-height: 24px;
+  }
+  .aCard-more:hover { color: #C6ECA9; }
+  .aHero-claim {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap; padding: 26px 6px 2px;
+  }
+  .aHero-line {
+    margin: 0; font-size: clamp(20px, 2.4vw, 27px); line-height: 1.3;
+    color: var(--ivory); letter-spacing: -.01em; max-width: 46ch;
+  }
+  .aHero-line em { font-style: normal; color: #C6ECA9; }
+  .aHero-cta {
+    flex: 0 0 auto; display: inline-flex; align-items: center;
+    border: none; cursor: pointer; font-family: inherit;
+    background: #C6ECA9; color: #2C3D1C; border-radius: 999px;
+    padding: 15px 30px; font-size: 12px; font-weight: 500;
+    letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+    min-height: 44px;
+  }
+  .aHero-cta:hover { opacity: .9; }
+  .aHero-meta {
+    margin: 14px 0 0; padding: 0 6px;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: #CFC6B6;
+    display: flex; flex-wrap: wrap; gap: 0 9px;
+  }
+
+  /* ---------- Direction A: shared ---------- */
+  .aLabel {
+    margin: 0 0 22px;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+    color: #7A5741;
+  }
+  .aLabel--onDark { color: #C6ECA9; }
+  .aBtn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 14px 28px; border: none; cursor: pointer;
+    font-family: inherit; font-size: 11px; font-weight: 500;
+    letter-spacing: .12em; text-transform: uppercase;
+    text-decoration: none; border-radius: 999px;
+  }
+  .aBtn--leaf { background: #C6ECA9; color: #2C3D1C; }
+  .aBtn--leaf:hover { opacity: .9; }
+  .aBtn--line { background: transparent; color: #463331; box-shadow: inset 0 0 0 1px rgba(70,51,49,.45); }
+  .aBtn--line:hover { background: rgba(70,51,49,.06); }
+
+  /* ---------- What sets us apart ---------- */
+  .aSay { background: var(--ivory); padding: clamp(72px, 9vw, 132px) 22px; }
+  .aSay-inner { max-width: 1140px; margin: 0 auto; }
+  .aSay-head {
+    margin: 0 0 clamp(34px, 4vw, 56px);
+    font-size: clamp(32px, 4.4vw, 58px); font-weight: 700; line-height: 1.12;
+    letter-spacing: -.015em; color: #463331; max-width: 16ch;
+  }
+  .aSay-head em { font-style: normal; color: #7A5741; }
+  .aSay-cols { columns: 2; column-gap: 54px; max-width: 980px; }
+  .aSay-cols p {
+    margin: 0 0 18px; break-inside: avoid;
+    font-size: 15px; font-weight: 300; line-height: 1.85; color: #463331;
+  }
+  .aSay-cols a { color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.45); }
+  .aSay-cols a:hover { border-bottom-color: #7A5741; }
+
+  /* ---------- Our process ---------- */
+  .aProc { background: var(--deep); padding: clamp(72px, 9vw, 132px) 22px; }
+  .aProc-inner { max-width: 1140px; margin: 0 auto; }
+  .aProc-grid {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 46px;
+  }
+  .aProc-num {
+    display: block; margin-bottom: 14px;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11px; letter-spacing: .16em; color: #C6ECA9;
+  }
+  .aProc-step { padding-top: 20px; border-top: 1px solid rgba(238,233,218,.22); }
+  .aProc-step h3 {
+    margin: 0 0 12px; font-size: 20px; font-weight: 500;
+    letter-spacing: -.01em; color: var(--ivory);
+  }
+  .aProc-step p {
+    margin: 0; font-size: 14px; font-weight: 300; line-height: 1.8;
+    color: rgba(238,233,218,.86);
+  }
+  .aProc-step a { color: #C6ECA9; text-decoration: none; border-bottom: 1px solid rgba(198,236,169,.4); }
+  .aProc-step a:hover { border-bottom-color: #C6ECA9; }
+
+  /* ---------- Full-bleed break ---------- */
+  .aBreak { position: relative; background: var(--deep); }
+  .aBreak-photo {
+    height: clamp(260px, 40vw, 460px);
+    background: url('brand-break.jpg') center 46% / cover no-repeat;
+  }
+  .aBreak::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(40,26,22,.1), rgba(40,26,22,.62));
+    pointer-events: none;
+  }
+  .aBreak-line {
+    position: absolute; z-index: 1; left: 0; right: 0; bottom: clamp(24px, 4vw, 48px);
+    margin: 0; padding: 0 22px; text-align: center;
+    font-size: clamp(22px, 3.4vw, 44px); font-weight: 300;
+    letter-spacing: -.01em; color: var(--ivory);
+  }
+
+  /* ---------- Services ---------- */
+  .aSvc { background: var(--ivory); padding: clamp(72px, 9vw, 132px) 22px; }
+  .aSvc-inner { max-width: 1140px; margin: 0 auto; }
+  .aSvc-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px;
+  }
+  .aSvc-shot {
+    position: relative; display: block; aspect-ratio: 4 / 5;
+    border-radius: 12px; overflow: hidden; margin-bottom: 18px;
+    background-size: cover; background-position: center; text-decoration: none;
+  }
+  .aSvc-shot::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 56%;
+    background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.55) 55%, rgba(40,26,22,.9));
+  }
+  .aSvc-shot span {
+    position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 12px;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: #C6ECA9;
+  }
+  .aSvc-card h3 {
+    margin: 0 0 10px; font-size: 15px; font-weight: 500; line-height: 1.5;
+    letter-spacing: -.005em; color: #463331;
+  }
+  .aSvc-card h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(70,51,49,.3); }
+  .aSvc-card h3 a:hover { color: #7A5741; border-bottom-color: #7A5741; }
+  .aSvc-card > p {
+    margin: 0; font-size: 13.5px; font-weight: 300; line-height: 1.75; color: #5C463E;
+  }
+  .aSvc-card > p a { color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.45); }
+  .aSvc-foot {
+    margin-top: clamp(44px, 5vw, 68px); padding-top: 30px;
+    border-top: 1px solid rgba(70,51,49,.18);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .aSvc-foot > p {
+    margin: 0; font-size: 13.5px; font-weight: 300; color: #5C463E; max-width: 46ch;
+  }
+  .aSvc-foot > p a { color: #7A5741; text-decoration: none; border-bottom: 1px solid rgba(122,87,65,.45); }
+  .aSvc-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+
+  /* ---------- The practice ---------- */
+  .aDr { background: var(--deep); padding: clamp(72px, 9vw, 132px) 22px; }
+  .aDr-inner { max-width: 1140px; margin: 0 auto; }
+  .aDr-head {
+    margin: 0 0 clamp(38px, 4.5vw, 62px);
+    font-size: clamp(32px, 4.4vw, 58px); font-weight: 700; line-height: 1.12;
+    letter-spacing: -.015em; color: var(--ivory);
+  }
+  .aDr-head em { font-style: normal; color: #C6ECA9; }
+  .aDr-grid { display: grid; grid-template-columns: 1fr 1.65fr; gap: clamp(32px, 4vw, 64px); }
+  .aDr-photo {
+    aspect-ratio: 4 / 5; border-radius: 12px; margin-bottom: 18px;
+    background: url('brand-space.jpg') center / cover no-repeat;
+  }
+  .aDr-cap {
+    margin: 12px 0 0;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+    color: #CFC6B6;
+  }
+  .aDr-bio .aDr-name {
+    margin: 0 0 4px; font-size: 17px; font-weight: 500; color: var(--ivory);
+  }
+  .aDr-bio .aDr-creds {
+    margin: 0 0 16px;
+    font-family: 'Social Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: #CFC6B6;
+  }
+  .aDr-right > p {
+    margin: 0 0 20px; font-size: 15px; font-weight: 300; line-height: 1.85;
+    color: rgba(238,233,218,.92);
+  }
+  .aDr-bio {
+    margin-top: 34px; padding-top: 26px;
+    border-top: 1px solid rgba(238,233,218,.22);
+  }
+  .aDr-bio p {
+    margin: 0 0 14px; font-size: 13.5px; font-weight: 300; line-height: 1.8;
+    color: rgba(238,233,218,.78);
+  }
+  .aDr-bio p:last-child { margin-bottom: 0; }
+
+  /* ---------- Waitlist ---------- */
+  .aWait { background: var(--ivory); padding: clamp(72px, 9vw, 132px) 22px; text-align: center; }
+  .aWait-inner { max-width: 640px; margin: 0 auto; }
+  .aWait-head {
+    margin: 0 0 20px; font-size: clamp(30px, 4vw, 50px); font-weight: 700;
+    line-height: 1.14; letter-spacing: -.015em; color: #463331;
+  }
+  .aWait-head em { font-style: normal; color: #7A5741; }
+  .aWait-lead {
+    margin: 0 0 30px; font-size: 15px; font-weight: 300; line-height: 1.8; color: #5C463E;
+  }
+  .aWait-consent {
+    margin: 30px 0 0; font-size: 11.5px; font-weight: 300; line-height: 1.75;
+    color: #6B574C;
+  }
+  .aWait-consent a { color: #7A5741; }
+
+  @media (max-width: 860px) {
+    .aDr-grid { grid-template-columns: 1fr; }
+    .aDr-photo { aspect-ratio: 3 / 2; }
+  }
+  @media (max-width: 1000px) {
+    .aSvc-grid { grid-template-columns: repeat(2, 1fr); gap: 22px 18px; }
+    .aProc-grid { grid-template-columns: 1fr; gap: 30px; }
+  }
+  @media (max-width: 560px) {
+    .aSay-cols { columns: 1; }
+    /* One column on a phone, but a 4:5 card at full width is nearly 500px
+       tall and four of them turn the menu into a scroll. The shot goes
+       landscape here so a whole card fits in a thumb's reach. */
+    .aSvc-grid { grid-template-columns: 1fr; gap: 30px; }
+    .aSvc-shot { aspect-ratio: 3 / 2; }
+    .aSvc-actions { width: 100%; flex-direction: column; }
+    .aSvc-actions .aBtn { width: 100%; }
+    /* The break photograph is a 2.4:1 crop. A tall box on a narrow screen
+       cover-crops the hands away and leaves only a mouth. */
+    .aBreak-photo { height: 210px; }
+    .aBreak-line { bottom: 18px; }
+  }
+  @media (max-width: 860px) {
+    .aHero-meta { margin-top: 16px; padding: 0 2px; }
+    .aHero-meta-sep { display: none; }
+    .aHero-meta span { flex: 0 0 100%; line-height: 1.9; }
+    .aHero { padding: calc(74px + env(safe-area-inset-top)) 14px 20px; }
+    /* The hero photograph is a wide two-face crop. Holding a tall frame on a
+       phone would cover-crop it down to a single brow and lose the pairing
+       that is the whole point of the image, so the frame takes the image's
+       own proportion here and the cards drop below it instead of over it. */
+    .aHero-frame { height: auto; aspect-ratio: 1800 / 934; border-radius: 13px; }
+    .aHero-cards {
+      position: static; margin-top: 10px; gap: 10px;
+    }
+    .aCard-thumb { width: calc(50% - 5px); height: 108px; border-radius: 10px; }
+    .aCard-glass { width: 100%; background: rgba(70,51,49,.72); }
+    .aHero-claim { padding: 20px 2px 0; }
+    .aHero-cta { width: 100%; justify-content: center; }
+  }
+  </style>
 <style>:root {
-  --ivory:    #EDE8E1;
-  --brown:    #7A5A4A;
-  --espresso: #4A3328;
-  --deep:     #4A3328;
-  --clay:     #B48A7A;
-  --rose:     #9A6F63;
-  --terra:    #C07A5A;
-  --border:   #DDD8D0;
+  --ivory:    #EEE9DA;
+  --brown:    #7A5741;
+  --espresso: #463331;
+  --deep:     #463331;
+  --clay:     #C4AC9D;
+  --rose:     #7A5741;
+  --terra:    #C4AC9D;
+  --border:   #DED7C6;
   --white:    #FFFFFF;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-weight: 400;
   background: var(--ivory);
   color: var(--deep);
@@ -106,9 +409,9 @@ body {
   position: absolute; inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(74,51,40,.88) 0%,
-    rgba(74,51,40,.82) 40%,
-    rgba(74,51,40,.92) 100%
+    rgba(70, 51, 49,.88) 0%,
+    rgba(70, 51, 49,.82) 40%,
+    rgba(70, 51, 49,.92) 100%
   );
 }
 .hero-rule {
@@ -129,13 +432,13 @@ body {
 .hero-lines::after  { left: 66.66%; }
 .hero-eyebrow {
   font-size: 15px; font-weight: 600; letter-spacing: .12em;
-  text-transform: uppercase; color: #F2DACE;
+  text-transform: uppercase; color: #E3DAC8;
   text-shadow: 0 1px 8px rgba(0,0,0,.6);
   margin-bottom: 24px; position: relative;
   opacity: 0; animation: fadeUp .8s ease .2s forwards;
 }
 .hero-title {
-  font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: clamp(52px, 8vw, 96px);
   font-weight: 300;
   letter-spacing: .01em; line-height: 1.0;
@@ -155,7 +458,7 @@ body {
 .hero-divider-dot  { width: 4px; height: 4px; border-radius: 50%; background: var(--terra); }
 .hero-sub {
   font-size: clamp(16px, 1.8vw, 19px); font-weight: 300;
-  line-height: 1.8; color: rgba(243,236,228,.9);
+  line-height: 1.8; color: rgba(244, 239, 228,.9);
   max-width: 560px;
   text-shadow: 0 1px 12px rgba(0,0,0,.5);
   opacity: 0; animation: fadeUp .8s ease .8s forwards;
@@ -176,7 +479,7 @@ body {
   font-size: 11px; font-weight: 400; letter-spacing: .12em;
   text-transform: uppercase; color: var(--ivory);
   background: transparent; padding: 14px 32px;
-  border: 0.5px solid rgba(243,236,228,.3); border-radius: 2px;
+  border: 0.5px solid rgba(244, 239, 228,.3); border-radius: 2px;
   cursor: pointer; text-decoration: none; transition: all .2s;
 }
 .btn-ghost:hover { border-color: var(--ivory); }
@@ -184,13 +487,13 @@ body {
   position: absolute; bottom: 32px; right: 48px;
   writing-mode: vertical-rl; text-orientation: mixed;
   font-size: 9px; font-weight: 300; letter-spacing: .2em;
-  text-transform: uppercase; color: rgba(243,236,228,.3);
+  text-transform: uppercase; color: rgba(244, 239, 228,.3);
   display: flex; align-items: center; gap: 12px;
   opacity: 0; animation: fadeIn 1s ease 1.4s forwards;
 }
 .hero-scroll::before {
   content: ''; display: block; width: 0.5px;
-  height: 48px; background: rgba(243,236,228,.2);
+  height: 48px; background: rgba(244, 239, 228,.2);
 }
 /* ── PILLARS ── */
 .section-pillars {
@@ -223,13 +526,13 @@ body {
   letter-spacing: .1em;
 }
 .pillar-num {
-  font-family: 'Spectral', serif;
+  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: 56px; font-weight: 300;
   color: #C4B8AE; line-height: 1;
   margin-bottom: 20px; margin-top: 0;
 }
 .pillar h3 {
-  font-family: 'Spectral', serif;
+  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: 26px; font-weight: 500;
   color: var(--deep); margin-bottom: 12px; letter-spacing: .02em;
 }
@@ -259,7 +562,7 @@ body {
   border-radius: 2px; pointer-events: none;
 }
 .dr-name {
-  font-family: 'Spectral', serif;
+  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: 32px; font-weight: 400; font-style: italic;
   color: var(--ivory); margin-bottom: 6px; letter-spacing: .02em;
 }
@@ -270,11 +573,11 @@ body {
 }
 .dr-detail {
   font-size: 13px; font-weight: 300; line-height: 1.9;
-  color: rgba(243,236,228,.92); margin-bottom: 10px;
+  color: rgba(244, 239, 228,.92); margin-bottom: 10px;
 }
 .dr-right .section-label { margin-bottom: 14px; }
 .dr-right h2 {
-  font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: clamp(28px, 3vw, 40px); font-weight: 300;
   line-height: 1.3; color: var(--deep); margin-bottom: 18px;
   letter-spacing: .02em;
@@ -310,10 +613,10 @@ body {
 }
 .service-cat {
   font-size: 11px; font-weight: 600; letter-spacing: .16em;
-  text-transform: uppercase; color: #8C4426;
+  text-transform: uppercase; color: #7A5741;
 }
 .service-item h4 {
-  font-family: 'Spectral', serif;
+  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: 24px; font-weight: 400; color: var(--deep);
   line-height: 1.2;
 }
@@ -323,17 +626,17 @@ body {
 .service-item h4 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid rgba(140, 68, 38, .28);
+  border-bottom: 1px solid rgba(122, 87, 65, .28);
   transition: color .2s, border-color .2s;
 }
-.service-item h4 a:hover { color: #8C4426; border-bottom-color: #8C4426; }
+.service-item h4 a:hover { color: #7A5741; border-bottom-color: #7A5741; }
 .service-all {
   display: inline-block;
   font-size: 11px; font-weight: 500;
   letter-spacing: .12em; text-transform: uppercase;
-  color: #8C4426; text-decoration: none;
+  color: #7A5741; text-decoration: none;
   padding: 8px 2px; min-height: 24px;
-  border-bottom: 1px solid rgba(140, 68, 38, .35);
+  border-bottom: 1px solid rgba(122, 87, 65, .35);
   margin-bottom: 26px;
 }
 .service-all:hover { color: var(--deep); border-bottom-color: var(--deep); }
@@ -342,13 +645,13 @@ body {
   color: var(--deep);
 }
 /* Dark override (legacy / future use) */
-.section-services--dark { background: #6B5147; }
+.section-services--dark { background: #7A5741; }
 .section-services--dark .service-item h4 { color: var(--ivory); }
-.section-services--dark .service-item p { color: rgba(243,236,228,.92); }
-.section-services--dark .services-grid { border-top-color: rgba(180,138,122,.1); }
-.section-services--dark .service-item { border-right-color: rgba(180,138,122,.15); border-bottom-color: rgba(180,138,122,.15); }
+.section-services--dark .service-item p { color: rgba(244, 239, 228,.92); }
+.section-services--dark .services-grid { border-top-color: rgba(196, 172, 157,.1); }
+.section-services--dark .service-item { border-right-color: rgba(196, 172, 157,.15); border-bottom-color: rgba(196, 172, 157,.15); }
 .waitlist-tally-btn {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: 11px; font-weight: 500; letter-spacing: .12em;
   text-transform: uppercase;
   background: var(--deep); color: var(--ivory);
@@ -368,16 +671,16 @@ body {
   content: 'AAHANA';
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: 300px; font-weight: 300;
-  color: rgba(74,51,40,.04);
+  color: rgba(70, 51, 49,.04);
   letter-spacing: .05em; white-space: nowrap;
   pointer-events: none; user-select: none;
 }
 .waitlist-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
-.waitlist-inner .section-label { color: #8C4426; margin-bottom: 14px; }
+.waitlist-inner .section-label { color: #7A5741; margin-bottom: 14px; }
 .waitlist-inner h2 {
-  font-family: 'Contralto Big', 'Contralto Big Black', 'Spectral', Georgia, serif;
+  font-family: 'Contralto Big', 'Contralto Big Black', 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: clamp(32px, 4vw, 48px); font-weight: 300;
   color: var(--deep); margin-bottom: 16px; letter-spacing: .02em;
 }
@@ -386,18 +689,18 @@ body {
   color: var(--espresso); margin-bottom: 40px;
 }
 .waitlist-form {
-  display: flex; gap: 0; border: 0.5px solid rgba(74,51,40,.2);
+  display: flex; gap: 0; border: 0.5px solid rgba(70, 51, 49,.2);
   border-radius: 2px; overflow: hidden;
 }
 .waitlist-input {
   flex: 1; padding: 16px 20px;
-  background: rgba(74,51,40,.04);
+  background: rgba(70, 51, 49,.04);
   border: none; outline: none;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: 13px; font-weight: 300;
   color: var(--deep);
 }
-.waitlist-input::placeholder { color: rgba(74,51,40,.4); }
+.waitlist-input::placeholder { color: rgba(70, 51, 49,.4); }
 /* SMS consent notice under the waitlist button. Small, but it has to be
    readable: 13px at 4.5:1 on the ivory ground, and the link is a real
    24px target rather than a hairline. */
@@ -407,14 +710,14 @@ body {
   color: #5C4438;
 }
 .waitlist-consent a {
-  color: #8C4426; text-decoration: underline;
+  color: #7A5741; text-decoration: underline;
   text-underline-offset: 3px;
 }
 .waitlist-btn {
   padding: 16px 28px;
   background: var(--deep); color: var(--ivory);
   border: none; cursor: pointer;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: 11px; font-weight: 500; letter-spacing: .1em;
   text-transform: uppercase; transition: background .2s;
   white-space: nowrap;
@@ -446,7 +749,7 @@ body {
   display: flex; align-items: center; gap: 10px;
   margin-top: 20px; margin-bottom: 8px;
   font-size: 13px; font-weight: 300; letter-spacing: .08em;
-  color: rgba(243,236,228,.65);
+  color: rgba(244, 239, 228,.65);
   text-shadow: 0 1px 8px rgba(0,0,0,.5);
   opacity: 0; animation: fadeUp .8s ease .9s forwards;
 }
@@ -472,7 +775,7 @@ body {
   .section-pillars, .section-ayurveda, .section-services { padding: 56px 24px; }
   .section-waitlist { padding: 80px 24px; }
   .dosha-trio { flex-direction: column; }
-  .dosha { border-right: none; border-bottom: 0.5px solid rgba(180,138,122,.15); }
+  .dosha { border-right: none; border-bottom: 0.5px solid rgba(196, 172, 157,.15); }
   .services-grid { grid-template-columns: 1fr; }
   .service-item { border-right: none; padding: 24px 0; border-bottom: 0.5px solid var(--border); }
   .service-item:not(:first-child) { padding-left: 0; }
@@ -483,7 +786,7 @@ body {
 }
 /* ── COMBINED APPROACH + PRAKRITI ── */
 .section-combined {
-  background: #6B5147;
+  background: #7A5741;
   padding: 64px 48px;
   position: relative; overflow: hidden;
 }
@@ -503,7 +806,7 @@ body {
 }
 .combined-left p, .combined-right p {
   font-size: 15px; font-weight: 300; line-height: 1.75;
-  color: rgba(243,236,228,.92); margin-bottom: 14px;
+  color: rgba(244, 239, 228,.92); margin-bottom: 14px;
 }
 .dosha-stack {
   display: flex; flex-direction: column; gap: 0;
@@ -511,7 +814,7 @@ body {
 }
 .dosha-row {
   padding: 18px 0;
-  border-bottom: 0.5px solid rgba(180,138,122,.15);
+  border-bottom: 0.5px solid rgba(196, 172, 157,.15);
   display: grid;
   grid-template-columns: 72px 140px 1fr;
   gap: 16px;
@@ -519,7 +822,7 @@ body {
 }
 .dosha-row:last-child { border-bottom: none; }
 .dosha-name-sm {
-  font-family: 'Spectral', serif;
+  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: 18px; font-weight: 300; font-style: italic;
   color: var(--clay);
 }
@@ -530,7 +833,7 @@ body {
 }
 .dosha-desc-sm {
   font-size: 13px; font-weight: 300; line-height: 1.75;
-  color: rgba(243,236,228,.92);
+  color: rgba(244, 239, 228,.92);
 }
 /* ── PROCESS STACK (right column of combined section) ── */
 .process-stack {
@@ -542,20 +845,20 @@ body {
   grid-template-columns: 64px 1fr;
   gap: 20px;
   padding: 22px 0;
-  border-bottom: 0.5px solid rgba(180,138,122,.15);
+  border-bottom: 0.5px solid rgba(196, 172, 157,.15);
   align-items: start;
 }
 .process-step:last-child { border-bottom: none; }
 .process-step:first-child { padding-top: 8px; }
 .process-num {
-  font-family: 'Spectral', serif;
+  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: 28px; font-weight: 300;
-  color: #F2DACE;
+  color: #E3DAC8;
   line-height: 1;
   padding-top: 4px;
 }
 .process-body h3 {
-  font-family: 'Spectral', serif;
+  font-family: 'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif;
   font-size: 19px; font-weight: 400;
   color: var(--ivory);
   margin-bottom: 8px;
@@ -563,12 +866,12 @@ body {
 }
 .process-body p {
   font-size: 14px; font-weight: 300; line-height: 1.8;
-  color: rgba(243,236,228,.85);
+  color: rgba(244, 239, 228,.85);
   margin-bottom: 0;
 }
 .process-body p a {
-  color: #F2DACE; text-decoration: none;
-  border-bottom: 0.5px solid rgba(180,138,122,.45);
+  color: #E3DAC8; text-decoration: none;
+  border-bottom: 0.5px solid rgba(196, 172, 157,.45);
   padding-bottom: 1px;
 }
 .process-body p a:hover { color: var(--terra); border-color: var(--terra); }
@@ -582,23 +885,23 @@ body {
 }
 /* ── DR SECTION DARK VARIANT ── */
 .section-dr--dark {
-  background: #6B5147;
+  background: #7A5741;
 }
 .section-dr .section-label { color: var(--terra); }
-.section-dr--dark .section-label { color: #F2DACE; }
+.section-dr--dark .section-label { color: #E3DAC8; }
 .section-dr--dark h2 { color: var(--ivory); }
 .section-dr h2 { color: #C4A292; }
-.section-dr--dark .dr-right p { color: rgba(243,236,228,.92); }
+.section-dr--dark .dr-right p { color: rgba(244, 239, 228,.92); }
 .section-dr--dark .dr-card {
   background: rgba(255,255,255,.05);
-  border: 0.5px solid rgba(180,138,122,.2);
+  border: 0.5px solid rgba(196, 172, 157,.2);
 }
 .section-dr--dark .dr-card::before {
-  border-color: rgba(180,138,122,.1);
+  border-color: rgba(196, 172, 157,.1);
 }
 .section-dr--dark .dr-name { color: var(--ivory); }
-.section-dr--dark .dr-creds { color: #F2DACE; }
-.section-dr--dark .dr-detail { color: rgba(243,236,228,.92); }
+.section-dr--dark .dr-creds { color: #E3DAC8; }
+.section-dr--dark .dr-detail { color: rgba(244, 239, 228,.92); }
 /* Mobile menu */
 /* PANELS: main + each submenu stack horizontally inside .mobile-menu */
 /* Submenu panel back-bar */
@@ -631,8 +934,10 @@ body {
        turns solid once the page scrolls; every other page uses the
        solid background from nav.css.
        ------------------------------------------------------------ */
-    nav { background: linear-gradient(to bottom, rgba(74,51,40,.5) 0%, transparent 100%); }
-    nav.scrolled { background: rgba(74, 51, 40, .96); }
+    /* Direction A puts the nav ON the brown chrome, above the photo frame,
+       rather than floating over the image. So no transparency here. */
+    nav { background: var(--deep); }
+    nav.scrolled { background: var(--deep); }
   </style>
 
   <script type="application/ld+json">
@@ -845,176 +1150,272 @@ body {
 
 <!-- HERO -->
 <main id="main">
-<section class="hero">
-  <div class="hero-bg">
-      <!-- ------------------------------------------------------------
-           Hero video slot (currently empty by design).
+<!-- ===================================================================
+     DIRECTION A HERO
+     Brown chrome wrapping one large photograph, service cards floating
+     in glass over it, per the agency's homepage mockup (proposal p.17).
+     Images are the deck's own, placed at full resolution.
+     =================================================================== -->
+<section class="aHero">
+  <!-- The cards sit outside .aHero-frame so that the phone layout can drop
+       them below the photograph. The frame clips its own overflow, so a card
+       inside it could never leave it. -->
+  <div class="aHero-stage">
+    <div class="aHero-frame">
+      <div class="aHero-photo" role="img"
+           aria-label="Two faces side by side in close-up, eyes open, different skin tones."></div>
+    </div>
 
-           The still image comes from .hero-bg's background-image, so the
-           hero looks correct with no video present. The .hero-video CSS
-           below is kept ready.
-
-           TO ADD A VIDEO LATER: put hero.mp4 (and optionally hero.webm)
-           in this folder, then uncomment the block below.
-
-           <video class="hero-video" autoplay muted loop playsinline
-                  preload="metadata" poster="building.jpg">
-             <source src="hero.mp4" type="video/mp4">
-             <source src="hero.webm" type="video/webm">
-           </video>
-           ------------------------------------------------------------ -->
+    <div class="aHero-cards">
+      <a class="aCard-thumb" href="botox-dysport.html" style="background-image:url('brand-card-1.jpg')">
+        <span>Neuromodulators</span>
+      </a>
+      <a class="aCard-thumb" href="dermal-fillers.html" style="background-image:url('brand-card-2.jpg')">
+        <span>Dermal fillers</span>
+      </a>
+      <div class="aCard-glass">
+        <h2>Skin microbiome testing</h2>
+        <p>A snapshot of your skin&rsquo;s current microbiome, not a diagnosis.
+           It tracks changes over time, without analysing your DNA.</p>
+        <a href="skin-microbiome-testing.html" class="aCard-more">Read more &rarr;</a>
       </div>
-  <div class="hero-rule"></div>
-  <div class="hero-lines"></div>
-  <div class="hero-eyebrow">San Francisco · Physician-Led Medical Aesthetics</div>
-  <h1 class="hero-title">
-    Care,<br>
-    <em>seen clearly.</em>
-  </h1>
-  <div class="hero-divider">
-    <div class="hero-divider-line"></div>
-    <div class="hero-divider-dot"></div>
-  </div>
-  <p class="hero-sub">
-    Physician-led medical aesthetics in San Francisco, grounded in precision medicine.
-  </p>
-  <div class="hero-location">
-    <span class="hero-location-dot"></span>
-    2175 3rd Street, Unit C1 · San Francisco, CA 94107 · Opening early 2027
+    </div>
   </div>
 
-  <div class="hero-actions" style="margin-top:24px">
-    <a href="#approach" class="btn-ghost">Learn about our approach</a>
-    
+  <div class="aHero-claim">
+    <p class="aHero-line">We believe every face deserves <em>a closer look.</em></p>
+    <button class="aHero-cta" data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
   </div>
-  <div class="hero-scroll">Scroll</div>
+
+  <p class="aHero-meta">
+    <span>2175 3rd Street, Unit C1 &middot; San Francisco</span>
+    <span class="aHero-meta-sep" aria-hidden="true">&middot;</span>
+    <span>Opening early 2027</span>
+  </p>
 </section>
 
 <!-- INTRO -->
-<section class="section-combined" id="approach">
-  <div class="combined-inner">
+<!-- ===================================================================
+     WHAT SETS US APART  (ivory)
+     The old page ran this and the process steps side by side in one
+     cramped two-column block. The deck gives one idea one band, so the
+     two are split. Copy is unchanged.
+     =================================================================== -->
+<section class="aSay" id="approach">
+  <div class="aSay-inner">
+    <p class="aLabel reveal">What sets us apart</p>
+    <h2 class="aSay-head reveal">Beyond what the <em>surface shows</em></h2>
+    <div class="aSay-cols reveal">
+      <p>Most practices treat what they can see. We go deeper. Every plan at Aahana is
+         grounded in precision medicine, anchored by Visia clinical imaging. When more
+         insight is needed, we extend the picture with advanced diagnostics like skin
+         microbiome testing and lab markers of inflammation and hormonal health.
+         <a href="precision.html">Explore precision medicine &rarr;</a></p>
+      <p>Where it adds insight, we also incorporate Ayurvedic constitutional typing, a
+         framework for understanding how your skin is built, not just how it behaves
+         today. <a href="prakriti.html">Explore Prakriti &rarr;</a></p>
+      <p>Aahana is built for everyone, with particular expertise in skin of color, all
+         gender identities, and patients who have historically felt underserved by
+         conventional aesthetics.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Left: What sets us apart (precision medicine focus) -->
-    <div class="combined-left reveal">
-      <div class="section-label" style="color:#F2DACE;margin-bottom:28px">What sets us apart</div>
-      <h2 style="font-family:'Spectral',serif;font-size:clamp(32px,3.5vw,48px);font-weight:300;color:var(--ivory);line-height:1.2;letter-spacing:.02em;margin-bottom:28px">
-        Beyond what the<br><em style="font-style:italic;color:#C4A396">surface shows</em>
-      </h2>
-      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.92);margin-bottom:18px">
-        Most practices treat what they can see. We go deeper. Every plan at Aahana is grounded in precision medicine, anchored by Visia clinical imaging. When more insight is needed, we extend the picture with advanced diagnostics like skin microbiome testing and lab markers of inflammation and hormonal health. <a href="precision.html" style="color:#DDCAC3;text-decoration:none;border-bottom:0.5px solid rgba(221,202,195,.55);padding-bottom:1px">Explore precision medicine →</a>
-      </p>
-      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.92);margin-bottom:18px">
-        Where it adds insight, we also incorporate Ayurvedic constitutional typing, a framework for understanding how your skin is built, not just how it behaves today. <a href="prakriti.html" style="color:#DDCAC3;text-decoration:none;border-bottom:0.5px solid rgba(221,202,195,.55);padding-bottom:1px">Explore Prakriti →</a>
-      </p>
-      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(243,236,228,.92)">
-        Aahana is built for everyone, with particular expertise in skin of color, all gender identities, and patients who have historically felt underserved by conventional aesthetics.
-      </p>
+<!-- ===================================================================
+     OUR PROCESS  (deep brown)
+     Three steps across, rather than stacked in a narrow column.
+     =================================================================== -->
+<section class="aProc">
+  <div class="aProc-inner">
+    <p class="aLabel aLabel--onDark reveal">Our process</p>
+    <ol class="aProc-grid">
+      <li class="aProc-step reveal">
+        <span class="aProc-num">01</span>
+        <h3>Understand you</h3>
+        <p>Every plan begins with a thorough intake: health history, skin concerns,
+           lifestyle, and goals. Every first visit includes an Ayurvedic
+           <a href="prakriti.html">Prakriti constitutional assessment</a> to tell us how
+           your skin is built, not just how it looks today.</p>
+      </li>
+      <li class="aProc-step reveal">
+        <span class="aProc-num">02</span>
+        <h3>Analyze your skin</h3>
+        <p>Visia clinical imaging anchors every analysis with eight clinical metrics
+           matched to your age and skin tone. Where it adds insight, we layer in
+           <a href="precision.html">precision diagnostics</a> like labs or skin
+           microbiome testing.</p>
+      </li>
+      <li class="aProc-step reveal">
+        <span class="aProc-num">03</span>
+        <h3>Your personalized plan</h3>
+        <p>A treatment plan built from everything we&rsquo;ve learned, including your
+           clinical data, your constitution, your skin tone, your goals, and your life.
+           Not a template borrowed from someone else&rsquo;s skin. Specific to you,
+           sequenced correctly, explained clearly. Here is
+           <a href="first-visit.html">what the first visit involves</a>, in order.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================================================================
+     FULL-BLEED BREAK
+     The deck sets its line over a photograph rather than on a coloured
+     band. One of these between the argument and the menu.
+     =================================================================== -->
+<section class="aBreak">
+  <div class="aBreak-photo" role="img"
+       aria-label="A pair of eyes in close-up, looking to the side."></div>
+  <p class="aBreak-line">Every skin, considered.</p>
+</section>
+
+<!-- ===================================================================
+     SERVICES  (ivory, photo cards)
+     =================================================================== -->
+<section class="aSvc" id="services">
+  <div class="aSvc-inner">
+    <p class="aLabel reveal">What we offer</p>
+    <div class="aSvc-grid">
+
+      <div class="aSvc-card reveal">
+        <a class="aSvc-shot" href="services.html#injectables"
+           style="background-image:url('svc-inject.jpg')">
+          <span>Injectables</span>
+        </a>
+        <h3><a href="botox-dysport.html">Botox</a> &middot;
+            <a href="dermal-fillers.html">Fillers</a> &middot;
+            <a href="biostimulators.html">Biostimulators</a> &middot;
+            <a href="prp.html">PRP</a></h3>
+        <p>Neuromodulators for smoothing and contouring. Hyaluronic acid fillers for
+           volume. Biostimulators that rebuild your own collagen. PRP for tissue renewal
+           and hair, <a href="skinvive.html">SkinVive</a> for skin quality.</p>
+      </div>
+
+      <div class="aSvc-card reveal">
+        <a class="aSvc-shot" href="services.html#laser"
+           style="background-image:url('svc-laser.jpg')">
+          <span>Laser &amp; energy</span>
+        </a>
+        <h3><a href="xerf.html">XERF</a> &middot;
+            <a href="aerolase-neo-elite.html">Aerolase Neo Elite</a></h3>
+        <p>Two platforms, both cleared across all six Fitzpatrick types. Monopolar
+           radiofrequency for structural tightening, and a 1064&nbsp;nm Nd:YAG for
+           pigment, redness, acne and skin quality.</p>
+      </div>
+
+      <div class="aSvc-card reveal">
+        <a class="aSvc-shot" href="services.html#skin"
+           style="background-image:url('svc-skin.jpg')">
+          <span>Skin treatments</span>
+        </a>
+        <h3><a href="microneedling.html">Microneedling</a> &middot;
+            <a href="exosomes.html">Exosomes</a> &middot;
+            <a href="vi-peel.html">Peels</a> &middot;
+            <a href="hydrafacial.html">Hydrafacial</a></h3>
+        <p>Collagen stimulation, exosomes, chemical exfoliation, deep cleansing, and
+           more, all calibrated to your skin type and constitution.</p>
+      </div>
+
+      <div class="aSvc-card reveal">
+        <a class="aSvc-shot" href="services.html#wellness"
+           style="background-image:url('svc-wellness.jpg')">
+          <span>Wellness</span>
+        </a>
+        <h3><a href="medical-weight-loss.html">GLP-1</a> &middot;
+            <a href="sexual-wellness.html">Sexual Health</a></h3>
+        <p>Medically supervised weight loss and sexual health services. Evidence-based,
+           clinically overseen.</p>
+      </div>
+
     </div>
 
-    <!-- Right: Our process (3 steps stacked) -->
-    <div class="combined-right reveal">
-      <div class="section-label" style="color:#F2DACE;margin-bottom:28px">Our process</div>
-      <div class="process-stack">
-        <div class="process-step">
-          <div class="process-num">01</div>
-          <div class="process-body">
-            <h3>Understand you</h3>
-            <p>Every plan begins with a thorough intake: health history, skin concerns, lifestyle, and goals. Every first visit includes an Ayurvedic <a href="prakriti.html">Prakriti constitutional assessment</a> to tell us how your skin is built, not just how it looks today.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">02</div>
-          <div class="process-body">
-            <h3>Analyze your skin</h3>
-            <p>Visia clinical imaging anchors every analysis with eight clinical metrics matched to your age and skin tone. Where it adds insight, we layer in <a href="precision.html">precision diagnostics</a> like labs or skin microbiome testing.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">03</div>
-          <div class="process-body">
-            <h3>Your personalized plan</h3>
-            <p>A treatment plan built from everything we've learned, including your clinical data, your constitution, your skin tone, your goals, and your life. Not a template borrowed from someone else's skin. Specific to you, sequenced correctly, explained clearly. Here is <a href="first-visit.html">what the first visit involves</a>, in order.</p>
-          </div>
+    <div class="aSvc-foot reveal">
+      <p>All treatment plans begin with a Visia skin analysis and consultation, set out
+         on <a href="first-visit.html">your first visit</a>.</p>
+      <div class="aSvc-actions">
+        <a class="aBtn aBtn--line" href="services.html">All services &rarr;</a>
+        <button class="aBtn aBtn--leaf" data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     THE PRACTICE  (deep brown)
+     Was a pale clay headline on the sandalwood band, which measured badly.
+     Rebuilt on the deep brown with the clinic photograph carrying the left
+     column. Copy is unchanged.
+     =================================================================== -->
+<section class="aDr" id="dr">
+  <div class="aDr-inner">
+    <p class="aLabel aLabel--onDark reveal">The practice</p>
+    <h2 class="aDr-head reveal">Physician-led.<br><em>Every step.</em></h2>
+
+    <div class="aDr-grid">
+      <div class="aDr-left reveal">
+        <div class="aDr-photo" role="img"
+             aria-label="The Aahana clinic interior, reception and waiting bench."></div>
+        <p class="aDr-cap">The clinic &middot; 2175 3rd Street, San Francisco</p>
+      </div>
+
+      <div class="aDr-right reveal">
+        <p>At most medical aesthetics practices, a physician signs off on a treatment
+           plan and someone else delivers it, sometimes without the doctor ever setting
+           foot in the clinic. At Aahana, Dr. Shankar leads all medical consultations and
+           treatments directly, setting the standard of care for every patient, every
+           time.</p>
+        <p>Our Esthetician performs Hydrafacial and VI Peel treatments under Dr.
+           Shankar&rsquo;s direct clinical oversight. Every provider at Aahana works
+           within a physician-led framework. That&rsquo;s not the industry standard.
+           It&rsquo;s ours.</p>
+        <p>Aahana is built for everyone, with deep expertise across all skin tones,
+           gender identities, and backgrounds. We have a particular commitment to
+           patients who have felt overlooked, rushed, or underserved by conventional
+           aesthetics. Every person deserves a plan built specifically for their skin.</p>
+
+        <div class="aDr-bio">
+          <p class="aDr-name">Dr. Shankar Mundluru</p>
+          <p class="aDr-creds">MD &middot; MBA &middot; Medical Aesthetics</p>
+          <p>Dr. Shankar Mundluru is the founder of Aahana Medical Aesthetics and a
+             physician trained at Duke University, Boston University School of Medicine,
+             and the Wharton School. He brings a rare combination of clinical depth,
+             scientific rigor, and business acumen to the practice of medical aesthetics.</p>
+          <p>Before founding Aahana, he served as an executive at a luxury skincare brand
+             and continues to advise healthcare innovation startups and venture capital
+             investors, keeping him at the forefront of emerging technology and clinical
+             innovations.</p>
+          <p>His clinical focus is precision medical aesthetics, drawing on advanced
+             diagnostics, AI, and emerging clinical innovations, with particular expertise
+             in skin of color and all gender identities.</p>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-
-<!-- AYURVEDA -->
-
-
-<!-- DR MUNDLURU -->
-<section class="section-services" id="services">
-  <div class="section-label reveal">What we offer</div>
-  <div class="services-grid">
-    <div class="service-item reveal">
-      <div class="service-cat">Injectables</div>
-      <h4><a href="botox-dysport.html">Botox</a> · <a href="dermal-fillers.html">Fillers</a> · <a href="biostimulators.html">Biostimulators</a> · <a href="prp.html">PRP</a></h4>
-      <p>Neuromodulators for smoothing and contouring. Hyaluronic acid fillers for volume. Biostimulators that rebuild your own collagen. PRP for tissue renewal and hair, <a href="skinvive.html">SkinVive</a> for skin quality.</p>
-    </div>
-    <div class="service-item reveal">
-      <div class="service-cat">Laser &amp; Energy</div>
-      <h4><a href="xerf.html">XERF</a> · <a href="aerolase-neo-elite.html">Aerolase Neo Elite</a></h4>
-      <p>Two platforms, both cleared across all six Fitzpatrick types. Monopolar radiofrequency for structural tightening, and a 1064&nbsp;nm Nd:YAG for pigment, redness, acne and skin quality.</p>
-    </div>
-    <div class="service-item reveal">
-      <div class="service-cat">Skin Treatments</div>
-      <h4><a href="microneedling.html">Microneedling</a> · <a href="exosomes.html">Exosomes</a> · <a href="vi-peel.html">Peels</a> · <a href="hydrafacial.html">Hydrafacial</a></h4>
-      <p>Collagen stimulation, exosomes, chemical exfoliation, deep cleansing, and more, all calibrated to your skin type and constitution.</p>
-    </div>
-    <div class="service-item reveal">
-      <div class="service-cat">Wellness</div>
-      <h4><a href="medical-weight-loss.html">GLP-1</a> · <a href="sexual-wellness.html">Sexual Health</a></h4>
-      <p>Medically supervised weight loss and sexual health services. Evidence-based, clinically overseen.</p>
-    </div>
-  </div>
-  <div style="margin-top:48px;text-align:center" class="reveal">
-    <p style="font-size:13px;font-weight:300;color:var(--espresso);margin-bottom:20px">All treatment plans begin with a Visia skin analysis and consultation, set out on <a href="first-visit.html" style="color:#8C4426">your first visit</a>.</p>
-    <div><a class="service-all" href="services.html">All services &rarr;</a></div>
-    <button data-tally-open="kdJBYJ" data-tally-overlay="1" style="display:inline-block;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);background:var(--deep);padding:14px 32px;border:none;border-radius:2px;transition:background .2s">Join the waitlist</button>
-  </div>
-</section>
-
-
-<!-- SERVICES -->
-<section class="section-dr section-dr--dark" id="dr">
-  <div class="dr-left reveal">
-    <div class="dr-card">
-      <div class="dr-name">Dr. Shankar Mundluru</div>
-      <div class="dr-creds">MD · MBA · Medical Aesthetics</div>
-      <div class="dr-detail">Dr. Shankar Mundluru is the founder of Aahana Medical Aesthetics and a physician trained at Duke University, Boston University School of Medicine, and the Wharton School. He brings a rare combination of clinical depth, scientific rigor, and business acumen to the practice of medical aesthetics.</div>
-      <div class="dr-detail">Before founding Aahana, he served as an executive at a luxury skincare brand and continues to advise healthcare innovation startups and venture capital investors, keeping him at the forefront of emerging technology and clinical innovations.</div>
-      <div class="dr-detail">His clinical focus is precision medical aesthetics, drawing on advanced diagnostics, AI, and emerging clinical innovations, with particular expertise in skin of color and all gender identities.</div>
-    </div>
-  </div>
-  <div class="dr-right reveal">
-    <div class="section-label">The practice</div>
-    <h2>Physician-led.<br>Every step.</h2>
-    <p>
-      At most medical aesthetics practices, a physician signs off on a treatment plan and someone else delivers it, sometimes without the doctor ever setting foot in the clinic. At Aahana, Dr. Shankar leads all medical consultations and treatments directly, setting the standard of care for every patient, every time.
+<!-- ===================================================================
+     WAITLIST  (ivory)
+     The ghost "AAHANA" watermark behind this block belonged to the old
+     brand, so it goes. The button becomes the leaf pill used everywhere
+     else on the page.
+     =================================================================== -->
+<section class="aWait" id="waitlist">
+  <div class="aWait-inner">
+    <p class="aLabel reveal">Waitlist</p>
+    <h2 class="aWait-head reveal">Opening early 2027.<br><em>Be the first to know.</em></h2>
+    <p class="aWait-lead reveal">Aahana Medical Aesthetics opens in San Francisco in early
+       2027. Join the waitlist for early access and exclusive benefits for our first
+       patients.</p>
+    <p class="reveal">
+      <button class="aBtn aBtn--leaf" data-tally-open="kdJBYJ" data-tally-overlay="1">Join the waitlist</button>
     </p>
-    <p>
-      Our Esthetician performs Hydrafacial and VI Peel treatments under Dr. Shankar's direct clinical oversight. Every provider at Aahana works within a physician-led framework. That's not the industry standard. It's ours.
-    </p>
-    <p>
-      Aahana is built for everyone, with deep expertise across all skin tones, gender identities, and backgrounds. We have a particular commitment to patients who have felt overlooked, rushed, or underserved by conventional aesthetics. Every person deserves a plan built specifically for their skin.
-    </p>
-  </div>
-</section>
-
-<!-- WAITLIST -->
-<section class="section-waitlist" id="waitlist">
-  <div class="waitlist-inner">
-    <div class="section-label">Waitlist</div>
-    <h2>Opening early 2027.<br>Be the first to know.</h2>
-    <p>Aahana Medical Aesthetics opens in San Francisco in early 2027. Join the waitlist for early access and exclusive benefits for our first patients.</p>
-    <button data-tally-open="kdJBYJ" data-tally-overlay="1" class="waitlist-tally-btn">Join the waitlist</button>
-
-    <p class="waitlist-consent">The mobile number on that form is optional. By entering your phone number, you are agreeing to receive text messages from us. Message and data rates may apply. Message frequency may vary. Reply HELP for more information. You can reply STOP or UNSUBSCRIBE to opt-out. We will not share mobile information or personally identifiable information with third parties for marketing or promotional purposes. See our <a href="privacy.html#text-messages">Privacy Policy</a>.</p>
-
+    <p class="aWait-consent">The mobile number on that form is optional. By entering your
+       phone number, you are agreeing to receive text messages from us. Message and data
+       rates may apply. Message frequency may vary. Reply HELP for more information. You
+       can reply STOP or UNSUBSCRIBE to opt-out. We will not share mobile information or
+       personally identifiable information with third parties for marketing or promotional
+       purposes. See our <a href="privacy.html#text-messages">Privacy Policy</a>.</p>
   </div>
 </section>
 
