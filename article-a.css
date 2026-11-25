@@ -256,3 +256,19 @@
 .keyband.dark .xNote { background: rgba(238,233,218,.07); box-shadow: inset 0 0 0 1px rgba(238,233,218,.18); }
 .keyband.dark .xNote-k { color: #C6ECA9; }
 .keyband.dark .xNote p { color: rgba(238,233,218,.88) !important; }
+
+/* live steps */
+.xSteps.is-live > li { cursor: pointer; opacity: .5; transition: opacity .3s; outline: none; }
+.xSteps.is-live > li.on, .xSteps.is-live > li:hover, .xSteps.is-live > li:focus-visible { opacity: 1; }
+.xSteps.is-live > li::before { transition: background .3s, transform .3s, box-shadow .3s; }
+.xSteps.is-live > li:first-child::before { background: #EEE9DA; }
+.xSteps.is-live > li.on::before, .xSteps.is-live > li.done::before { background: #C6ECA9; }
+.xSteps.is-live > li.on::before { transform: scale(1.12); box-shadow: inset 0 0 0 1.5px #463331, 0 0 0 5px rgba(198,236,169,.45); font-weight: 600; }
+.xSteps.is-live > li.on b { font-weight: 600; }
+.xSteps.is-live > li::after { transition: background .3s; }
+.xSteps.is-live > li.done::after { background: #463331; }
+.xSteps.is-live > li:focus-visible::before { box-shadow: inset 0 0 0 1.5px #463331, 0 0 0 3px #7A5741; }
+.keyband.dark .xSteps.is-live > li:first-child::before { background: #EEE9DA; }
+.keyband.dark .xSteps.is-live > li.on::before, .keyband.dark .xSteps.is-live > li.done::before { background: #C6ECA9; }
+.keyband.dark .xSteps.is-live > li.done::after { background: #C6ECA9 !important; }
+@media print { .xSteps.is-live > li { opacity: 1; } }

@@ -43,4 +43,33 @@
     if (r) r.addEventListener('click', function () { steps.forEach(function (s, k) { s.hidden = k > 0; }); ans.forEach(function (a) { a.hidden = true; }); q.querySelectorAll('button[aria-pressed]').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); });
   });
 
+
+  /* Steps: scroll lights them up in order; click or keyboard picks one */
+  document.querySelectorAll('.xSteps').forEach(function (ol) {
+    var li = [].slice.call(ol.children); if (li.length < 2) return;
+    ol.classList.add('is-live');
+    var picked = -1;
+    function set(i) { li.forEach(function (x, k) { x.classList.toggle('on', k === i); x.classList.toggle('done', k < i); x.setAttribute('aria-current', k === i ? 'step' : 'false'); }); }
+    li.forEach(function (x, k) {
+      x.tabIndex = 0;
+      x.addEventListener('click', function () { picked = k; set(k); });
+      x.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); picked = k; set(k); }
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); var n = li[Math.min(k + 1, li.length - 1)]; n.focus(); n.click(); }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); var p = li[Math.max(k - 1, 0)]; p.focus(); p.click(); }
+      });
+    });
+    set(0);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var tick = false;
+    function onScroll() {
+      tick = false; if (picked > -1) return;
+      var r = ol.getBoundingClientRect(), vh = window.innerHeight;
+      var p = (vh * 0.85 - r.top) / (vh * 0.65);
+      set(Math.max(0, Math.min(li.length - 1, Math.floor(p * li.length))));
+    }
+    window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    onScroll();
+  });
+
 })();
