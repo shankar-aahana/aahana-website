@@ -135,19 +135,33 @@ body:not(:has(.keyband)) .section-cta .cta-btn { background: #463331 !important;
 }
 @media (prefers-reduced-motion: reduce) { .journal-body * { transition: none !important; } }
 
-.journal-body a[href="looking-younger-vs-looking-like-yourself.html"] > :first-child { background-image: url('tx-skinvive-hero.jpg') !important; }
-.journal-body a[href="botox-units.html"] > :first-child { background-image: url('tx-botox-dysport-hero.jpg') !important; }
-.journal-body a[href="filler-syringes.html"] > :first-child { background-image: url('tx-dermal-fillers-hero.jpg') !important; }
-.journal-body a[href="biostimulator-timeline.html"] > :first-child { background-image: url('tx-biostimulators-hero.jpg') !important; }
-.journal-body a[href="3d-skin-imaging-explained.html"] > :first-child { background-image: url('tx-aura-3d-imaging-hero.jpg') !important; }
-.journal-body a[href="skin-microbiome-well-aging.html"] > :first-child { background-image: url('tx-skin-microbiome-testing-hero.jpg') !important; }
-.journal-body a[href="laser-treatments-skin-of-color.html"] > :first-child { background-image: url('tx-aerolase-neo-elite-hero.jpg') !important; }
-.journal-body a[href="melasma-darker-skin-tones.html"] > :first-child { background-image: url('tx-prp-skin-hero.jpg') !important; }
-.journal-body a[href="skin-dna-testing-explained.html"] > :first-child { background-image: url('tx-lab-testing-hero.jpg') !important; }
-.journal-body a[href="biostimulators-or-filler.html"] > :first-child { background-image: url('tx-biostimulators-or-filler-hero.jpg') !important; }
-.journal-body a[href="prp-or-microneedling.html"] > :first-child { background-image: url('tx-prp-or-microneedling-hero.jpg') !important; }
-.journal-body a[href="skinvive-or-filler.html"] > :first-child { background-image: url('tx-skinvive-or-filler-hero.jpg') !important; }
-.journal-body a[href="laser-or-peel-for-pigmentation.html"] > :first-child { background-image: url('tx-laser-or-peel-for-pigmentation-hero.jpg') !important; }
+.journal-body a[href="3d-skin-imaging-explained.html"] > :first-child { background-image: url('dbk-3d-skin-imaging-explained.jpg') !important; }
+.journal-body a[href="42-skin-profiles.html"] > :first-child { background-image: url('dbk-42-skin-profiles.jpg') !important; }
+.journal-body a[href="affirming-aesthetic-care.html"] > :first-child { background-image: url('dbk-affirming-aesthetic-care.jpg') !important; }
+.journal-body a[href="biostimulator-timeline.html"] > :first-child { background-image: url('dbk-biostimulator-timeline.jpg') !important; }
+.journal-body a[href="biostimulators-or-filler.html"] > :first-child { background-image: url('dbk-biostimulators-or-filler.jpg') !important; }
+.journal-body a[href="botox-units.html"] > :first-child { background-image: url('dbk-botox-units.jpg') !important; }
+.journal-body a[href="collagen-decline-and-stimulation.html"] > :first-child { background-image: url('dbk-collagen-decline-and-stimulation.jpg') !important; }
+.journal-body a[href="filler-syringes.html"] > :first-child { background-image: url('dbk-filler-syringes.jpg') !important; }
+.journal-body a[href="fitzpatrick-scale-explained.html"] > :first-child { background-image: url('dbk-fitzpatrick-scale-explained.jpg') !important; }
+.journal-body a[href="hormone-therapy-skin-changes.html"] > :first-child { background-image: url('dbk-hormone-therapy-skin-changes.jpg') !important; }
+.journal-body a[href="laser-or-peel-for-pigmentation.html"] > :first-child { background-image: url('dbk-laser-or-peel-for-pigmentation.jpg') !important; }
+.journal-body a[href="laser-treatments-skin-of-color.html"] > :first-child { background-image: url('dbk-laser-treatments-skin-of-color.jpg') !important; }
+.journal-body a[href="looking-younger-vs-looking-like-yourself.html"] > :first-child { background-image: url('dbk-looking-younger-vs-looking-like-yourself.jpg') !important; }
+.journal-body a[href="melasma-darker-skin-tones.html"] > :first-child { background-image: url('dbk-melasma-darker-skin-tones.jpg') !important; }
+.journal-body a[href="menopause-and-skin.html"] > :first-child { background-image: url('dbk-menopause-and-skin.jpg') !important; }
+.journal-body a[href="post-inflammatory-hyperpigmentation.html"] > :first-child { background-image: url('dbk-post-inflammatory-hyperpigmentation.jpg') !important; }
+.journal-body a[href="prakriti-constitutional-medicine.html"] > :first-child { background-image: url('dbk-prakriti-constitutional-medicine.jpg') !important; }
+.journal-body a[href="prep-and-skin.html"] > :first-child { background-image: url('dbk-prep-and-skin.jpg') !important; }
+.journal-body a[href="prp-or-microneedling.html"] > :first-child { background-image: url('dbk-prp-or-microneedling.jpg') !important; }
+.journal-body a[href="sexual-health-and-skin.html"] > :first-child { background-image: url('dbk-sexual-health-and-skin.jpg') !important; }
+.journal-body a[href="skin-aging-gay-men.html"] > :first-child { background-image: url('dbk-skin-aging-gay-men.jpg') !important; }
+.journal-body a[href="skin-dna-testing-explained.html"] > :first-child { background-image: url('dbk-skin-dna-testing-explained.jpg') !important; }
+.journal-body a[href="skin-microbiome-well-aging.html"] > :first-child { background-image: url('dbk-skin-microbiome-well-aging.jpg') !important; }
+.journal-body a[href="skinvive-or-filler.html"] > :first-child { background-image: url('dbk-skinvive-or-filler.jpg') !important; }
+.journal-body a[href="structural-aging-vs-surface-aging.html"] > :first-child { background-image: url('dbk-structural-aging-vs-surface-aging.jpg') !important; }
+.journal-body a[href="testosterone-estrogen-skin.html"] > :first-child { background-image: url('dbk-testosterone-estrogen-skin.jpg') !important; }
+.journal-body a[href="vata-skin-dryness-sensitivity.html"] > :first-child { background-image: url('dbk-vata-skin-dryness-sensitivity.jpg') !important; }
 
 /* 5. Daybreak filter bar: one floating row of chips ------------------ */
 .filters {
