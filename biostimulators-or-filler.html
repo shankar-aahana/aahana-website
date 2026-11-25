@@ -219,6 +219,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=21">
+  <link rel="stylesheet" href="article-a.css?v=12">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -273,32 +274,45 @@
 
     <h2 class="reveal">The trade-off, stated plainly</h2>
 
-    <p class="reveal">Filler buys control. You see the result while you are still in the chair, it can be adjusted, and it can be removed. That is a real advantage and it is the reason filler remains the right answer for anything that needs a specific shape in a specific place.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Filler buys</span><b>Control</b><p>You see the result in the chair. It can be adjusted, and it can be removed. The right answer for a specific shape in a specific place.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Biostimulators buy</span><b>Longevity</b><p>Your own collagen arrives gradually across an area, so the face reads as improved rather than added to. The cost: patience, and no undo. If you dislike it, you wait it out.</p></div>
+    </div>
 
-    <p class="reveal">Biostimulators buy longevity and a different quality of result. Because the change is your own collagen appearing gradually across an area, it tends to read as the face having improved rather than as something having been added. The cost of that is patience and irreversibility. If you dislike it, you wait it out.</p>
-
-    <p class="reveal">Anyone who tells you one of these is simply better than the other is not describing the treatments. They are describing their own preference.</p>
+    <div class="xPull xPull--sm reveal"><p>Anyone who says one is simply better is describing their own preference, not the treatments.</p></div>
 
     <div class="keyband dark reveal">
       <div class="keylabel"><span class="keynum">01</span></div>
       <h2>Why it cannot be judged at two weeks</h2>
-      <p>Sculptra is suspended in liquid, and immediately after treatment you look fuller because of that liquid. It absorbs within days and you go back to how you looked before. That is expected, it is not the treatment failing, and people who do not know it is coming often conclude at two weeks that nothing worked. The collagen response is what you are waiting for, and it arrives from about week four onwards.</p>
+
+      <ol class="xSteps xSteps--3">
+        <li><b>Right after</b>You look fuller. Sculptra is suspended in liquid, and that is the liquid.</li>
+        <li><b>Within days</b>The liquid absorbs and you look as you did before. Expected, not a failure.</li>
+        <li><b>From week 4</b>The collagen response you are waiting for begins to arrive.</li>
+      </ol>
+      <p>People who are not told this often decide at two weeks that nothing worked.</p>
     </div>
 
     <h2 class="reveal">Which suits which problem</h2>
 
-    <p class="reveal">Broad, diffuse volume loss across the midface, the temples or the whole upper face is where biostimulators do their best work, because the problem is spread out and so is the treatment. The same is true of the hands and the chest, where Radiesse is used and where filler placed for contour would look wrong.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Spread-out loss</span><b>Biostimulators</b><p>Diffuse volume loss across the midface, temples or whole upper face. Also hands and chest, where Radiesse is used and contour filler would look wrong.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">A specific shape</span><b>Filler</b><p>Chin projection, a defined jawline edge, lip shape. These need a material that stays where it is placed. Collagen stimulation does not substitute.</p></div>
+    </div>
 
-    <p class="reveal">A chin that needs projection, a jawline that needs a defined edge, a lip that needs shape: these need a material that stays where you put it. That is filler, and no amount of collagen stimulation substitutes for it.</p>
-
-    <p class="reveal">Rapid weight loss is its own case. Facial volume lost during <a href="medical-weight-loss.html">GLP-1 treatment</a> is diffuse rather than localized, which points toward biostimulators, but it is also worth waiting until the weight has stabilized before treating a face that is still changing.</p>
+    <div class="xNote xNote--info reveal"><span class="xNote-k">After rapid weight loss</span><p>Volume lost during <a href="medical-weight-loss.html">GLP-1 treatment</a> is diffuse, which points toward biostimulators. But wait until your weight has stabilized before treating a face that is still changing.</p></div>
 
     <div class="keyband dark reveal">
       <div class="keylabel"><span class="keynum">02</span></div>
       <h2>What we recommend</h2>
-      <p>Both, in that order. These are complementary rather than competing, and the plan that works for most faces is a biostimulator course to rebuild the broad foundation, then filler afterwards for whatever still needs a defined edge. Building the base first usually means less filler is needed at the end, not more, because a supported face needs less correction placed into it.</p>
-      <p>The order is not a preference. Doing filler first means placing precise volume onto a face that is about to change underneath it, and then judging that filler against a moving baseline. Biostimulators are assessed from about week four onward, so the filler conversation happens once you can see what the collagen has already done.</p>
-      <p>They are not combined in a single appointment. The aftercare instructions contradict each other, one result appears immediately and the other over months, and stacking them makes it impossible to tell which produced what.</p>
+
+      <p><strong>Both, in that order.</strong> They are complementary, not competing.</p>
+      <ol class="xSteps xSteps--3">
+        <li><b>Biostimulator course</b>Rebuilds the broad foundation. A supported face usually needs less filler at the end, not more.</li>
+        <li><b>Read from week 4</b>See what the collagen has done before the filler conversation.</li>
+        <li><b>Filler for the edges</b>Whatever still needs definition. Doing it first means judging filler against a face about to change underneath it.</li>
+      </ol>
+      <div class="xNote"><span class="xNote-k">Never the same appointment</span><p>The aftercare instructions contradict each other, one result is immediate and the other takes months, and stacking them makes it impossible to tell which did what.</p></div>
     </div>
 
     <!-- FAQ -->
@@ -394,5 +408,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

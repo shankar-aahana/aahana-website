@@ -284,6 +284,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=21">
+  <link rel="stylesheet" href="article-a.css?v=12">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -342,9 +343,14 @@
 
     <h2 class="reveal">Dosing is not one number</h2>
 
-    <p class="reveal">Muscle mass, muscle strength and the area being treated all change the dose required. Men generally need meaningfully more units than women for a comparable effect, and a dose derived from an average produces an under-treated result that is often mistaken for the product not working.</p>
+    <p class="reveal">Three things set the dose:</p>
+    <div class="xChips reveal"><span>Muscle mass</span><span>Muscle strength</span><span>The area treated</span></div>
+    <p class="reveal">Men generally need meaningfully more units than women for a comparable effect.</p>
 
-    <p class="reveal">Dosing here starts from your anatomy and is adjusted against how you responded to your previous session.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Dosed from an average</span><b>Under-treated</b><p>Often mistaken for the product not working.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Dosed here</span><b>From your anatomy</b><p>Then adjusted against how you responded to your previous session.</p></div>
+    </div>
 
     <p class="reveal"><a href="botox-units.html">See the typical range for every area &rarr;</a></p>
 
@@ -606,5 +612,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

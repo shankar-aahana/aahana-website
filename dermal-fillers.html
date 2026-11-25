@@ -280,6 +280,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=21">
+  <link rel="stylesheet" href="article-a.css?v=12">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -328,9 +329,14 @@
 
     <h2 class="reveal">Structure before volume</h2>
 
-    <p class="reveal">Faces lose bone and deep fat before they lose surface volume, and the visible result is usually descent rather than deflation. Filling the place that looks empty often makes that worse, because weight is added to tissue that has lost its support.</p>
+    <p class="reveal">Faces lose bone and deep fat before they lose surface volume, so aging usually looks like descent rather than deflation.</p>
 
-    <p class="reveal">Placement here follows the structure: what is holding the face up, where support has been lost, and what the tissue above it will do once it is restored. We wrote about <a href="structural-aging-vs-surface-aging.html">the difference between structural and surface aging</a> in more detail.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Filling what looks empty</span><b>Adds weight</b><p>To tissue that has lost its support, which often makes descent worse.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Placing for structure</span><b>Restores support</b><p>What holds the face up, where support was lost, and what the tissue above will do once it is back.</p></div>
+    </div>
+
+    <p class="reveal">More on <a href="structural-aging-vs-surface-aging.html">structural versus surface aging</a>.</p>
 
     <div class="keyband reveal">
       <div class="keylabel"><span class="keynum">02</span></div>
@@ -611,5 +617,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

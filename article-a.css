@@ -249,3 +249,10 @@
 .keyband.dark .xSplit-a .xSplit-k { color: #C6ECA9; }
 .keyband.dark .xSplit-a p { color: rgba(238,233,218,.85) !important; }
 .xTrack-mark--end span { left: auto !important; right: 8px; }
+@media (min-width: 1000px) { .article-inner:has(> .keyband) > .xSteps { margin-left: 380px !important; } }
+.keyband.dark .xSteps > li { color: rgba(238,233,218,.82) !important; }
+.keyband.dark .xSteps > li b { color: #EEE9DA !important; }
+.keyband.dark .xSteps > li::after { background: rgba(238,233,218,.28) !important; }
+.keyband.dark .xNote { background: rgba(238,233,218,.07); box-shadow: inset 0 0 0 1px rgba(238,233,218,.18); }
+.keyband.dark .xNote-k { color: #C6ECA9; }
+.keyband.dark .xNote p { color: rgba(238,233,218,.88) !important; }

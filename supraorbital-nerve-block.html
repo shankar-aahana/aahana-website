@@ -225,6 +225,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=21">
+  <link rel="stylesheet" href="article-a.css?v=12">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -259,11 +260,12 @@
       <div class="keylabel"><span class="keynum">01</span></div>
       <h2>What it treats</h2>
 
-      <p><strong>Headache concentrated in the forehead.</strong> Typically above one eyebrow, sometimes with tenderness at a single point on the brow bone that reproduces the pain when pressed.</p>
+      <div class="xSplit">
+        <div class="xSplit-a"><span class="xSplit-k">Most often</span><b>Forehead headache</b><p>Typically above one eyebrow, sometimes with one tender point on the brow bone that reproduces the pain when pressed.</p></div>
+        <div class="xSplit-b"><span class="xSplit-k">Sometimes</span><b>Some migraines</b><p>Where the pain pattern points to this nerve. Your response to the block is part of how that is established.</p></div>
+      </div>
 
-      <p><strong>Some migraines.</strong> Where the pain pattern points to this nerve rather than elsewhere. The response to the block is part of how that is established.</p>
-
-      <p>Which category you are in is worked out at the consultation from your headache history, where the pain sits, and an examination of the area. It is not decided from a description over the phone.</p>
+      <p>Which one you have is worked out at consultation, from your headache history, where the pain sits and an examination. Not from a description over the phone.</p>
     </div>
 
     <div class="keyband reveal">
@@ -480,5 +482,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

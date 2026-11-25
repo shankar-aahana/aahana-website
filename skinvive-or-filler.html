@@ -219,6 +219,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=21">
+  <link rel="stylesheet" href="article-a.css?v=12">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -275,11 +276,14 @@
 
     <h2 class="reveal">The question that decides it</h2>
 
-    <p class="reveal">Look in a mirror in flat light and describe what bothers you without naming a treatment.</p>
+    <p class="reveal">In a mirror in flat light, describe what bothers you without naming a treatment.</p>
 
-    <p class="reveal">If the words are flat, hollow, heavy, tired around the structure, sagging, or lost definition, that is shape, and shape is filler territory. If the words are dull, crepey, dry, rough, lacklustre, or that skin quality is not what it was, that is surface, and SkinVive is one of the answers to it.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">If your words are</span><b>Shape: filler</b><p>Flat, hollow, heavy, tired around the structure, sagging, lost definition.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">If your words are</span><b>Surface: SkinVive</b><p>Dull, crepey, dry, rough, lacklustre, skin quality not what it was. SkinVive is one of the answers.</p></div>
+    </div>
 
-    <p class="reveal">People often have both. That is normal and it does not mean booking both at once. Which to do first is a sequencing question, and the usual answer is structure before surface, since correcting shape changes how the skin sits.</p>
+    <p class="reveal">Most people have both. That is normal, and it is a sequencing question, not a reason to book both at once. Usually structure first, since correcting shape changes how the skin sits.</p>
 
     <div class="keyband dark reveal">
       <div class="keylabel"><span class="keynum">01</span></div>
@@ -289,9 +293,20 @@
 
     <h2 class="reveal">What SkinVive has that filler does not</h2>
 
-    <p class="reveal">Trial evidence for exactly what it claims. The cheek approval rests on a randomized multicenter trial of 125 patients, with 58 percent reaching at least a one-point improvement on the cheek smoothness scale at one month and 56 percent still there at six. Patient reported satisfaction with hydration went from 24 percent before treatment to 72 percent at six months, and with radiance from 11 percent to 63 percent. The trial enrolled across Fitzpatrick skin types I to VI.</p>
+    <p class="reveal">Trial evidence for exactly what it claims.</p>
 
-    <p class="reveal">The neck approval, granted in June 2026, rests on a separate trial of 105 patients, with just under 75 percent reaching a one-point improvement at one month and more than 65 percent holding it at six. It is the first hyaluronic acid injectable approved for the neck, which is worth knowing if that is the area bothering you, because until three months ago there was no on-label option there at all.</p>
+    <div class="xStats xStats--2 reveal">
+      <div><b>58%</b><span><strong>Cheeks.</strong> Of 125 patients in a randomized multicenter trial, improved at least one point in smoothness by month one. At six months, 56% still had it.</span></div>
+      <div><b>~75%</b><span><strong>Neck.</strong> Just under three in four of 105 patients improved at least one point by month one. More than 65% held it at six.</span></div>
+    </div>
+
+    <div class="xBars reveal" role="img" aria-label="Cheek patient satisfaction before treatment versus six months: hydration 24 to 72 percent, radiance 11 to 63 percent">
+      <div class="xBars-legend"><span><i></i>At six months</span><span><i class="b"></i>Before treatment</span></div>
+      <div class="xBars-row"><span class="xBars-k">Satisfied with hydration</span><div class="xBars-pair"><span><i style="width: 72%"></i>72%</span><span class="b"><i style="width: 24%"></i>24%</span></div><span class="xBars-r">&times;3</span></div>
+      <div class="xBars-row"><span class="xBars-k">Satisfied with radiance</span><div class="xBars-pair"><span><i style="width: 63%"></i>63%</span><span class="b"><i style="width: 11%"></i>11%</span></div><span class="xBars-r">&times;5.7</span></div>
+    </div>
+
+    <div class="xNote xNote--info reveal"><span class="xNote-k">Worth knowing</span><p>The cheek trial enrolled Fitzpatrick types I to VI. The neck approval, June 2026, made SkinVive the first hyaluronic acid injectable approved for the neck. Before then there was no on-label option there at all.</p></div>
 
     <h2 class="reveal">What filler has that SkinVive does not</h2>
 
@@ -300,8 +315,14 @@
     <div class="keyband dark reveal">
       <div class="keylabel"><span class="keynum">02</span></div>
       <h2>What we recommend</h2>
-      <p>Usually both, in an order. Almost everyone asking about either of these has a structural component and a surface component, and treating only one leaves the other exactly as it was. Structure goes first, because correcting shape changes how the skin sits over it, and you want to see that before deciding what the surface still needs. SkinVive follows, once the filler has settled at around two weeks.</p>
-      <p>They are not done in the same appointment, and that is deliberate rather than cautious. Filler is assessed at day 14 and SkinVive at one month, so combining them in one visit makes it impossible to tell which one produced what. Doing them in sequence costs you a few weeks and tells you what each was worth.</p>
+
+      <p><strong>Usually both, in an order.</strong> Almost everyone asking has a structural and a surface component, and treating one leaves the other as it was.</p>
+      <ol class="xSteps xSteps--3">
+        <li><b>Filler first</b>Correcting shape changes how the skin sits over it.</li>
+        <li><b>Assess at day 14</b>Once the filler has settled, see what the surface still needs.</li>
+        <li><b>Then SkinVive</b>Assessed at one month.</li>
+      </ol>
+      <div class="xNote"><span class="xNote-k">Not the same appointment, deliberately</span><p>Combined, you cannot tell which produced what. Sequencing costs a few weeks and tells you what each was worth.</p></div>
     </div>
 
     <h2 class="reveal">Where this leaves the under-eye</h2>
@@ -401,5 +422,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>
