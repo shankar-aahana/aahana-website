@@ -217,7 +217,8 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
-  <link rel="stylesheet" href="brand-a.css?v=23">
+  <link rel="stylesheet" href="brand-a.css?v=24">
+  <link rel="stylesheet" href="article-a.css?v=15">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -264,26 +265,49 @@
 
     <h2 class="reveal">Why anti-inflammatories undo it</h2>
 
-    <p class="reveal">PRP works by starting a controlled inflammatory response. Anti-inflammatories suppress exactly that response. Ibuprofen, naproxen, fish oil, vitamin E and flaxseed oil stop three days before treatment and stay stopped for three days afterwards. This is the most important instruction on this page, because it changes how well the treatment works rather than how comfortable it is. Prescribed blood thinners are a different matter and are never stopped without speaking to the physician who prescribed them.</p>
+    <p class="reveal">PRP works by starting a controlled inflammatory response, and anti-inflammatories suppress exactly that. This is the most important instruction on this page: it changes how well the treatment works, not how comfortable it is.</p>
 
-    <h2 class="reveal">What the trials show</h2>
+    <div class="xTrack reveal" role="img" aria-label="Stop anti-inflammatories from three days before treatment until three days after">
+      <div class="xTrack-bar">
+        <div class="xTrack-line"></div>
+        <div class="xTrack-win xTrack-win--left" style="left: 0%; width: 100%">NO ANTI-INFLAMMATORIES</div>
+        <div class="xTrack-mark" style="left: 50%"><span>Treatment</span></div>
+      </div>
+      <div class="xTrack-ticks"><span>3 days before</span><span>Day of</span><span>3 days after</span></div>
+    </div>
 
-    <p class="reveal">A 2026 systematic review and meta-analysis in Archives of Dermatological Research pooled 17 studies across 1,111 participants with atrophic acne scarring, comparing microneedling with PRP against microneedling alone. The combination performed better on the standard scar severity score, with a mean difference of 2.91 points in its favor and moderate variation between studies.</p>
+    <div class="xChips reveal"><span>Ibuprofen</span><span>Naproxen</span><span>Fish oil</span><span>Vitamin E</span><span>Flaxseed oil</span></div>
 
-    <p class="reveal">The more useful finding is a statistical one. For patients achieving more than 75 percent improvement on photographs, the analysis reached what is called the required information size, meaning enough patients have now been studied for the result to be treated as settled rather than provisional. Most aesthetic treatments have never cleared that bar. Adverse effects were no different from microneedling on its own.</p>
+    <div class="xNote reveal"><span class="xNote-k">Prescribed blood thinners are different</span><p>Never stopped without speaking to the physician who prescribed them.</p></div>
 
-    <p class="reveal">The honest limitation is that most of the underlying studies were single-center and small, and none separated results by the type of scar. Rolling, boxcar and ice-pick scars behave differently, so which of your scars is likely to respond is a question for examination rather than for the literature.</p>
+    <div class="keyband reveal">
+      <div class="keylabel"><span class="keynum">02</span></div>
+      <h2>What the trials show</h2>
+
+    <p class="reveal">A 2026 systematic review and meta-analysis in <em>Archives of Dermatological Research</em>: 17 studies, 1,111 participants with atrophic acne scarring, microneedling with PRP against microneedling alone.</p>
+
+    <div class="xStats xStats--2 reveal">
+      <div><b>2.91</b><span>Points better on the standard scar severity score for the combination, with moderate variation between studies. Adverse effects no different.</span></div>
+      <div><b>Settled</b><span>For more than 75% improvement on photographs, enough patients have been studied (the required information size). Most aesthetic treatments never clear that bar.</span></div>
+    </div>
+
+    <div class="xNote xNote--info reveal"><span class="xNote-k">The honest limitation</span><p>Most studies were small and single-center, and none split results by scar type. Rolling, boxcar and ice-pick scars behave differently, so which of yours will respond is a question for examination.</p></div>
+    </div>
 
     <h2 class="reveal">What it does not do</h2>
 
-    <p class="reveal">Ice-pick scars, the narrow deep ones, respond poorly to anything that works by resurfacing, and this combination is no exception. Deep tethered scarring often needs to be released before any surface treatment has something to work with. Active acne is treated before scar work begins, because treating scars while new ones are forming is a poor use of both your time and money.</p>
+    <div class="xStack reveal">
+      <div class="xStack-row"><span class="xStack-k">Ice-pick scars</span><b>Respond poorly</b><p>The narrow deep ones respond poorly to anything that resurfaces, this included.</p></div>
+      <div class="xStack-row"><span class="xStack-k">Tethered scars</span><b>Release first</b><p>Deep tethered scarring often needs releasing before a surface treatment has anything to work with.</p></div>
+      <div class="xStack-row"><span class="xStack-k">Active acne</span><b>Treat it first</b><p>Treating scars while new ones form wastes your time and money.</p></div>
+    </div>
 
     <h2 class="reveal">How the result arrives</h2>
 
     <p class="reveal">Redness settles within a day or two and the skin looks better within a week, but that early change is swelling rather than remodeling. The real change follows collagen. Most people see it at four to six weeks, and scar work in particular is judged at three to six months after a completed series rather than between sessions.</p>
 
     <div class="keyband reveal">
-      <div class="keylabel"><span class="keynum">02</span></div>
+      <div class="keylabel"><span class="keynum">03</span></div>
       <h2>What a session is like</h2>
 
       <dl class="glance">
@@ -301,7 +325,7 @@
     <figure class="photo-band reveal"><img src="tx-prp-microneedling-band.jpg" alt="Close view of an eye in brown skin" loading="lazy" width="1800" height="648"></figure>
 
 <div class="keyband dark reveal">
-      <div class="keylabel"><span class="keynum">03</span></div>
+      <div class="keylabel"><span class="keynum">04</span></div>
       <div class="detail-group">
       <h2>Before, during and after</h2>
       <p>This is the protocol we follow. Open any of these to read it before booking, or again the week of your appointment.</p>
@@ -511,5 +535,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

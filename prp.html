@@ -215,7 +215,8 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
-  <link rel="stylesheet" href="brand-a.css?v=23">
+  <link rel="stylesheet" href="brand-a.css?v=24">
+  <link rel="stylesheet" href="article-a.css?v=15">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -262,15 +263,28 @@
 
     <h2 class="reveal">One instruction that applies to all of them</h2>
 
-    <p class="reveal">PRP works by starting a controlled inflammatory response, and anti-inflammatories suppress exactly that response. Ibuprofen, naproxen, fish oil, vitamin E and flaxseed oil stop three days before treatment and stay stopped for three days afterwards, whichever of the four you are having. Prescribed blood thinners are a different matter and are never stopped without speaking to the physician who prescribed them. The full protocol is on each treatment page.</p>
+    <p class="reveal">PRP works by starting a controlled inflammatory response, and anti-inflammatories suppress exactly that. The same rule applies whichever of the four you are having.</p>
+
+    <div class="xTrack reveal" role="img" aria-label="Stop anti-inflammatories from three days before treatment until three days after">
+      <div class="xTrack-bar">
+        <div class="xTrack-line"></div>
+        <div class="xTrack-win xTrack-win--left" style="left: 0%; width: 100%">NO ANTI-INFLAMMATORIES</div>
+        <div class="xTrack-mark" style="left: 50%"><span>Treatment</span></div>
+      </div>
+      <div class="xTrack-ticks"><span>3 days before</span><span>Day of</span><span>3 days after</span></div>
+    </div>
+
+    <div class="xChips reveal"><span>Ibuprofen</span><span>Naproxen</span><span>Fish oil</span><span>Vitamin E</span><span>Flaxseed oil</span></div>
+
+    <div class="xNote reveal"><span class="xNote-k">Prescribed blood thinners are different</span><p>Never stopped without speaking to the physician who prescribed them. The full protocol is on each treatment page.</p></div>
 
     <h2 class="reveal">What is true of all of them</h2>
 
-    <p class="reveal">The material is autologous. It is drawn from you at the start of the visit, concentrated, and used the same session, so there is nothing to be allergic to and nothing foreign left behind.</p>
-
-    <p class="reveal">The result arrives slowly. PRP works by prompting your own repair response, so change follows the pace of tissue rather than the pace of an injection. Four to six weeks for the first sign, three to six months after a completed series for the fuller picture, across every indication.</p>
-
-    <p class="reveal">Preparation is not incidental. How the plasma is separated, whether it is activated and what volume is delivered all change the result, and these details are not consistently reported in the published literature. It is the main reason results from different clinics are difficult to compare, and it is worth asking about anywhere you are treated.</p>
+    <ul class="xChecks reveal">
+      <li><b>Your own material</b>Drawn from you at the start of the visit, concentrated and used the same session. Nothing to be allergic to, nothing foreign left behind.</li>
+      <li><b>Slow by design</b>It prompts your own repair response, so change follows tissue, not an injection. First sign at four to six weeks; the fuller picture three to six months after a completed series, for every indication.</li>
+      <li><b>Preparation changes the result</b>How the plasma is separated, whether it is activated and the volume delivered all matter, and the literature does not report them consistently. It is why clinics' results are hard to compare, and worth asking about anywhere you are treated.</li>
+    </ul>
 
     <!-- FAQ -->
     <div class="faq reveal">
@@ -365,5 +379,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=6" defer></script>
 </body>
 </html>

@@ -249,7 +249,7 @@
 .keyband.dark .xSplit-a .xSplit-k { color: #C6ECA9; }
 .keyband.dark .xSplit-a p { color: rgba(238,233,218,.85) !important; }
 .xTrack-mark--end span { left: auto !important; right: 8px; }
-@media (min-width: 1000px) { .article-inner:has(> .keyband) > .xSteps { margin-left: 380px !important; } }
+@media (min-width: 1000px) { .article-inner:has(> .keyband) > :is(.xSteps, .xChecks) { margin-left: 380px !important; } }
 .keyband.dark .xSteps > li { color: rgba(238,233,218,.82) !important; }
 .keyband.dark .xSteps > li b { color: #EEE9DA !important; }
 .keyband.dark .xSteps > li::after { background: rgba(238,233,218,.28) !important; }
@@ -272,3 +272,6 @@
 .keyband.dark .xSteps.is-live > li.on::before, .keyband.dark .xSteps.is-live > li.done::before { background: #C6ECA9; }
 .keyband.dark .xSteps.is-live > li.done::after { background: #C6ECA9 !important; }
 @media print { .xSteps.is-live > li { opacity: 1; } }
+
+.xSplit-b a { color: #C6ECA9 !important; text-decoration-color: rgba(198,236,169,.5); }
+.xTrack-win--left { justify-content: flex-start !important; padding-left: 16px; }
