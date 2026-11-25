@@ -550,3 +550,54 @@ article.tx:hover { background: #F6F2E8 !important; }
   .sheet.single > details.sec::before { left: -25px; }
 }
 @media print { .oneThumb, .secnum { display: none !important; } .sheet.single { padding-left: 0; } .sheet.single > details.sec::before { display: none; } }
+
+/* 16. Care protocol pop-ups (dialog.care on service pages) */
+dialog.care { border-radius: 24px !important; background: #EEE9DA !important; box-shadow: 0 40px 100px -30px rgba(40,26,22,.6) !important; width: min(720px, calc(100vw - 32px)) !important; }
+dialog.care::backdrop { background: rgba(40,26,22,.55) !important; backdrop-filter: blur(6px) !important; }
+dialog.care[open] { animation: careIn .32s cubic-bezier(.2,.8,.2,1); }
+@keyframes careIn { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+dialog.care .care-head {
+  position: relative; align-items: center; padding: 30px 30px 26px !important; border: 0 !important; overflow: hidden;
+  background: linear-gradient(180deg, rgba(70,51,49,.35), rgba(70,51,49,.82)), var(--g2t, #463331) center / cover !important;
+}
+dialog.care .care-head::before {
+  content: 'Care protocol'; position: absolute; left: 30px; top: 22px;
+  font-family: var(--mono, 'Social Mono', ui-monospace, monospace); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(238,233,218,.78);
+}
+dialog.care .care-head::after {
+  content: ''; position: absolute; right: -60px; bottom: -90px; width: 220px; height: 220px; border-radius: 50%;
+  border: 1px solid rgba(198,236,169,.35); box-shadow: 0 0 0 26px rgba(198,236,169,.06), 0 0 0 27px rgba(198,236,169,.18); pointer-events: none;
+}
+dialog.care .care-head h3 { margin-top: 18px; font-size: clamp(26px, 3.4vw, 34px) !important; font-weight: 300 !important; letter-spacing: -.01em; color: #C6ECA9 !important; }
+dialog.care .care-close { position: relative; z-index: 1; width: 40px !important; height: 40px !important; border: 1px solid rgba(238,233,218,.45) !important; background: rgba(238,233,218,.08) !important; }
+dialog.care .care-close:hover { background: rgba(198,236,169,.18) !important; border-color: #C6ECA9 !important; }
+dialog.care .care-close::before, dialog.care .care-close::after { left: 13px !important; top: 19px !important; width: 13px !important; background: #EEE9DA !important; }
+dialog.care .care-scroll { padding: 28px 30px 34px !important; max-height: calc(min(82vh, 900px) - 118px) !important; }
+dialog.care .care-scroll h4 {
+  display: inline-flex; align-items: center; gap: 10px; margin: 30px 0 14px !important; padding: 7px 14px 7px 12px; border-radius: 999px;
+  background: rgba(198,236,169,.5); color: #463331 !important; font-family: var(--mono, 'Social Mono', ui-monospace, monospace) !important; font-weight: 400 !important; font-size: 11px !important; letter-spacing: .16em !important;
+}
+dialog.care .care-scroll h4::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #463331; }
+dialog.care .care-scroll h4:first-child { margin-top: 0 !important; }
+dialog.care .care-scroll ul { margin-left: 15px !important; padding-left: 22px !important; border-left: 1px solid rgba(122,87,65,.28); }
+dialog.care .care-scroll > ul:first-child { margin-left: 0 !important; padding-left: 0 !important; border-left: 0; }
+dialog.care .care-scroll li { padding: 12px 16px 12px 40px !important; margin-bottom: 8px !important; border-radius: 14px; background: rgba(255,255,255,.55); font-size: 15px; line-height: 1.6; }
+dialog.care .care-scroll li::before { left: 16px !important; top: 21px !important; width: 8px !important; height: 8px !important; border-radius: 50%; background: #C4AC9D !important; }
+dialog.care .care-scroll li strong { color: #463331; font-weight: 500; }
+dialog.care .care-scroll ul.urgent li { background: rgba(196,172,157,.28); }
+dialog.care .care-scroll ul.urgent li::before { background: #7A5741 !important; box-shadow: 0 0 0 4px rgba(122,87,65,.18); }
+dialog.care .care-scroll p { color: #463331; }
+@media (max-width: 640px) {
+  dialog.care { width: 100vw !important; border-radius: 24px 24px 0 0 !important; }
+  dialog.care[open] { animation: careUp .34s cubic-bezier(.2,.8,.2,1); }
+  @keyframes careUp { from { transform: translateY(40px); opacity: .4; } to { transform: none; opacity: 1; } }
+  dialog.care .care-head { padding: 30px 20px 22px !important; }
+  dialog.care .care-head::before { left: 20px; }
+  dialog.care .care-head h3 { font-size: 24px !important; }
+  dialog.care .care-scroll { padding: 22px 18px 30px !important; max-height: calc(92vh - 108px) !important; }
+  dialog.care .care-scroll ul { margin-left: 5px !important; padding-left: 12px !important; }
+  dialog.care .care-scroll li { padding: 11px 14px 11px 34px !important; }
+  dialog.care .care-scroll li::before { left: 14px !important; top: 19px !important; }
+}
+@media (prefers-reduced-motion: reduce) { dialog.care[open] { animation: none !important; } }
+@media print { dialog.care .care-head { background: none !important; } dialog.care .care-head h3 { color: #463331 !important; } dialog.care .care-head::before, dialog.care .care-head::after { display: none; } }
