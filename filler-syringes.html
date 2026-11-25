@@ -258,6 +258,7 @@
     }
   </style>
   <link rel="stylesheet" href="brand-a.css?v=28">
+  <link rel="stylesheet" href="article-a.css?v=18">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -383,17 +384,39 @@
       </div>
     </div>
 
-    <h2 class="reveal">The place that looks hollow is rarely the place that emptied</h2>
+    <div class="xBand reveal">
+      <h2 class="reveal">The place that looks hollow is rarely the place that emptied</h2>
 
-    <p class="reveal">Volume loss in the face starts in the midface. The fat pads sitting over the cheekbone deflate and slide downward, and what shows at the surface is a crease from nose to mouth, heaviness along the jaw, a flat place where the cheek used to catch light. The fold is the symptom.</p>
+    <ol class="xSteps xSteps--3 reveal">
+      <li><b>The midface empties</b>Fat pads over the cheekbone deflate and slide down.</li>
+      <li><b>The surface shows it lower</b>A crease from nose to mouth, heaviness along the jaw, a flat cheek that no longer catches light.</li>
+      <li><b>The fold is the symptom</b>Not the cause.</li>
+    </ol>
 
-    <p class="reveal">Filling it treats the shadow and leaves the cause above it untouched, while adding weight to a lower face that is already carrying too much. That is why people who keep filling the same fold find that it keeps coming back and that their face keeps getting heavier. Restoring the midface usually softens the fold without the fold being touched, and it is the single most useful thing to understand before buying any syringes, because it changes what you ask for.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Filling the fold</span><b>Treats the shadow</b><p>The cause stays untouched, and weight is added to a lower face already carrying too much. The fold returns and the face gets heavier.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Restoring the midface</span><b>Softens the fold</b><p>Usually without touching it. The most useful thing to understand before buying syringes, because it changes what you ask for.</p></div>
+    </div>
+    </div>
 
     <h2 class="reveal">More is not the same as better</h2>
 
-    <p class="reveal">Hyaluronic acid draws water. What goes in on the day keeps filling for around two weeks, so the amount that looks right in the mirror on the way out is already more than the amount that will look right two weeks later. Treating to a finished result on day one is how faces end up looking done, and it is cumulative: each session starts from the last one rather than from zero.</p>
+    <div class="xTrack reveal" role="img" aria-label="Hyaluronic acid keeps drawing water and filling for around two weeks after treatment">
+      <div class="xTrack-bar">
+        <div class="xTrack-line"></div>
+        <div class="xTrack-win xTrack-win--left" style="left: 0%; width: 100%">STILL DRAWING WATER, STILL FILLING</div>
+        <div class="xTrack-mark xTrack-mark--end" style="left: calc(100% - 2px)"><span>Settled, ~2 weeks</span></div>
+      </div>
+      <div class="xTrack-ticks"><span>Day of</span><span>1 week</span><span>2 weeks</span></div>
+      <p>What looks right in the mirror on the way out is already more than will look right two weeks later.</p>
+    </div>
 
-    <p class="reveal">Filler also does not lift. It replaces volume. Where the real problem is loose skin rather than lost volume, more syringes read as heavier rather than tighter, and the honest answer is that filler is the wrong tool for it.</p>
+    <div class="xNote reveal"><span class="xNote-k">It adds up</span><p>Treating to a finished result on day one is how faces end up looking done, and each session starts from the last, not from zero.</p></div>
+
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Filler does</span><b>Replace volume</b></div>
+      <div class="xSplit-b"><span class="xSplit-k">Filler does not</span><b>Lift</b><p>Where the problem is loose skin, more syringes read heavier, not tighter. The wrong tool.</p></div>
+    </div>
 
     <h2 class="reveal">Not on the face</h2>
 
@@ -407,9 +430,10 @@
 
     <h2 class="reveal">What a syringe count does not tell you</h2>
 
-    <p class="reveal">A syringe is a milliliter, so the number itself compares honestly between clinics, which is more than can be said for most things quoted in aesthetics. What it leaves out is which product went in, how deep it was placed, and who placed it. The same milliliter in the same area produces a different result depending on all three, and the firmest products placed on bone behave nothing like the softest placed under skin.</p>
-
-    <p class="reveal">So the number is worth asking for, and it is worth asking for alongside the product and the plane. A quote that gives you a count and nothing else is describing the volume, not the treatment.</p>
+    <p class="reveal">A syringe is a milliliter, so the number compares honestly between clinics, more than most quotes in aesthetics. What it leaves out:</p>
+    <div class="xChips reveal"><span>Which product</span><span>How deep</span><span>Who placed it</span></div>
+    <p class="reveal">The same milliliter in the same area gives a different result depending on all three; the firmest product on bone behaves nothing like the softest under skin.</p>
+    <div class="xPull xPull--sm reveal"><p>A count with nothing else describes the volume, <em>not the treatment.</em></p></div>
 
     <h2 class="reveal">Common questions</h2>
 
@@ -550,5 +574,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=9" defer></script>
 </body>
 </html>
