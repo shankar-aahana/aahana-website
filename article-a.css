@@ -234,10 +234,18 @@
 .xTrack-bar { margin-top: 18px; }
 .xTrack-mark span { top: -20px; left: -4px; }
 .xTrack-win { font-size: 9.5px; }
-.xTrack-win::before { content: 'Peak acne'; position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #463331; }
+.xTrack-win::before { content: attr(data-label); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #463331; }
 @media (max-width: 640px) { .xSteps--3 { grid-template-columns: 1fr; } }
 
 /* plain-language strip above legal sections */
 .xStrip { list-style: none; margin: 4px 0 22px !important; padding: 0 !important; display: flex; flex-wrap: wrap; gap: 8px; }
 .xStrip li { margin: 0 !important; padding: 8px 14px 8px 30px !important; position: relative; border-radius: 999px; background: rgba(198,236,169,.45); color: #463331; font-size: 14px; line-height: 1.35; }
 .xStrip li::before { content: ''; position: absolute; left: 12px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: #463331; }
+
+/* treatment-page fit: keep patterns inside the text column and dark bands */
+.article-inner:has(> .keyband) > :is(.xSplit, .xStats, .xStack, .xBeam) { margin-right: 0; }
+.keyband :is(.xSplit, .xStats) { margin-left: 0 !important; margin-right: 0 !important; }
+.keyband.dark .xSplit-a { background: rgba(238,233,218,.07); box-shadow: inset 0 0 0 1px rgba(238,233,218,.16); color: #EEE9DA; }
+.keyband.dark .xSplit-a .xSplit-k { color: #C6ECA9; }
+.keyband.dark .xSplit-a p { color: rgba(238,233,218,.85) !important; }
+.xTrack-mark--end span { left: auto !important; right: 8px; }
