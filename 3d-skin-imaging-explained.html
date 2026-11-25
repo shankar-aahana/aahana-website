@@ -214,6 +214,7 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="article.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=28">
+  <link rel="stylesheet" href="article-a.css?v=18">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -261,29 +262,38 @@
 
     <h2 class="reveal">Shape is most of the story</h2>
 
-    <p class="reveal">Much of what changes with age is shape rather than color: volume lost from the temples and cheeks, a jawline that softens, a midface that descends. Much of what injectables and devices are meant to change is shape too. A photograph records none of it reliably. A 3D model measures it, so the difference between two visits is a number rather than an impression.</p>
+    <p class="reveal">Much of what changes with age, and much of what injectables and devices change, is shape rather than color:</p>
+    <div class="xChips reveal"><span>Volume lost from temples and cheeks</span><span>A softening jawline</span><span>A descending midface</span></div>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">A photograph</span><b>An impression</b><p>Records none of that reliably.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">A 3D model</span><b>A number</b><p>Measures shape, so the change between two visits is quantified.</p></div>
+    </div>
 
-    <div class="pull reveal">A photograph records color. A 3D model also records shape.</div>
+    <div class="xBand reveal">
+      <h2 class="reveal">Separating red from brown</h2>
 
-    <h2 class="reveal">Separating red from brown</h2>
-
-    <p class="reveal">Pigment and redness are analysed separately.<sup><a href="#ref1">1</a></sup> That is more useful than it sounds, and disproportionately useful in richly pigmented skin.</p>
-
-    <p class="reveal">Discoloration across the cheeks could be <a href="melasma-darker-skin-tones.html">melasma</a>, <a href="post-inflammatory-hyperpigmentation.html">post-inflammatory hyperpigmentation</a>, background vascular flushing, or some combination. Against a deeper skin tone these can look nearly identical in the room. They are treated differently, and treating one as though it were another is how people get worse rather than better. Seeing them apart narrows the question before anyone touches the skin.</p>
+    <p class="reveal">Pigment and redness are analysed separately,<sup><a href="#ref1">1</a></sup> which is disproportionately useful in richly pigmented skin. Discoloration across the cheeks could be:</p>
+    <div class="xChips reveal"><span><a href="melasma-darker-skin-tones.html">Melasma</a></span><span><a href="post-inflammatory-hyperpigmentation.html">Post-inflammatory hyperpigmentation</a></span><span>Vascular flushing</span><span>A combination</span></div>
+    <div class="xNote reveal"><span class="xNote-k">Why it matters</span><p>Against a deeper skin tone these can look nearly identical in the room, yet they are treated differently, and treating one as another is how people get worse. Seeing them apart narrows the question before anyone touches the skin.</p></div>
+    </div>
 
     <h2 class="reveal">The limits, which nobody puts on their website</h2>
 
-    <p class="reveal"><strong>It measures, it does not diagnose.</strong> It does not identify skin cancer, and it is not a substitute for examination by a clinician. Anything concerning on your skin should be looked at whether or not it showed up on a scan.</p>
-
-    <p class="reveal"><strong>Scores carry noise.</strong> A number that moves a little between visits may be telling you nothing. The images, and measured change in shape, are more trustworthy than any single score.</p>
-
-    <p class="reveal"><strong>Skin types are under-studied.</strong> We have not found published data on how its skin scores perform across different skin types. That gap is familiar across this field, and it is a reason to read the images carefully rather than lean on a number, particularly in deeper skin.</p>
+    <div class="xStack reveal">
+      <div class="xStack-row"><span class="xStack-k">Measures</span><b>Does not diagnose</b><p>It does not identify skin cancer and is no substitute for examination. Anything concerning should be looked at whether or not it showed on a scan.</p></div>
+      <div class="xStack-row"><span class="xStack-k">Scores</span><b>Carry noise</b><p>A small move between visits may mean nothing. Images and measured change in shape are more trustworthy than any single score.</p></div>
+      <div class="xStack-row"><span class="xStack-k">Skin types</span><b>Under-studied</b><p>We have not found published data on how its scores perform across skin types, a familiar gap in this field, and a reason to read the images carefully, especially in deeper skin.</p></div>
+    </div>
 
     <h2 class="reveal">How we use it</h2>
 
-    <p class="reveal">Every patient here starts with <a href="aura-3d-imaging.html">imaging</a>, before any treatment is discussed. It shows what is actually present rather than what is most visible. It establishes the baseline that makes the next visit meaningful. And it lets you see your own face the way a clinician sees it, which turns a list of recommendations into a conversation about evidence you are both looking at.</p>
-
-    <p class="reveal">The images are not the plan. They are the part of the plan you can check.</p>
+    <p class="reveal">Every patient starts with <a href="aura-3d-imaging.html">imaging</a>, before any treatment is discussed.</p>
+    <ul class="xChecks reveal">
+      <li><b>What is there</b>Not what is most visible.</li>
+      <li><b>A baseline</b>That makes the next visit meaningful.</li>
+      <li><b>A shared view</b>Your face as a clinician sees it, so recommendations become a conversation about evidence you both see.</li>
+    </ul>
+    <div class="xPull xPull--sm reveal"><p>The images are not the plan. <em>They are the part of the plan you can check.</em></p></div>
 
     <!-- FAQ -->
     <div class="faq reveal">
@@ -391,5 +401,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=9" defer></script>
 </body>
 </html>

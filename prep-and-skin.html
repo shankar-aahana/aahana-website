@@ -229,6 +229,7 @@
   <link rel="stylesheet" href="nav.css?v=20261124">
   <link rel="stylesheet" href="article.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=28">
+  <link rel="stylesheet" href="article-a.css?v=18">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -270,57 +271,77 @@
 
     <h2 class="reveal">What doxy-PEP is</h2>
 
-    <p class="reveal">In 2024 the CDC issued clinical guidelines recommending doxycycline postexposure prophylaxis for gay and bisexual men, other men who have sex with men, and transgender women who have had a bacterial sexually transmitted infection diagnosed in the previous 12 months.<sup><a href="#ref1">1</a></sup></p>
+    <p class="reveal">In 2024 the CDC issued guidelines recommending doxycycline postexposure prophylaxis for gay and bisexual men, other men who have sex with men, and transgender women with a bacterial STI diagnosed in the previous 12 months.<sup><a href="#ref1">1</a></sup></p>
 
-    <p class="reveal">The regimen is a single 200 mg dose of doxycycline taken as soon as possible within 72 hours after sex, with no more than 200 mg in any 24 hour period. In trials it reduced syphilis by 70 to 73 percent, chlamydia by 70 to 88 percent, and gonorrhea by roughly 43 to 55 percent.<sup><a href="#ref1">1</a></sup></p>
+    <div class="xNote xNote--info reveal"><span class="xNote-k">The regimen</span><p>A single 200 mg dose of doxycycline as soon as possible within 72 hours after sex, and no more than 200 mg in any 24 hours.<sup><a href="#ref1">1</a></sup></p></div>
 
-    <p class="reveal">Those are substantial numbers for a simple intervention, which is why uptake has been fast.</p>
+    <p class="reveal">Reduction in trials:<sup><a href="#ref1">1</a></sup></p>
+    <div class="xBars xBars--one reveal" role="img" aria-label="Trial reductions: syphilis 70 to 73 percent, chlamydia 70 to 88 percent, gonorrhea about 43 to 55 percent">
+      <div class="xBars-row"><span class="xBars-k">Syphilis</span><div class="xBars-pair"><span><i style="width: 73%"></i>70&ndash;73%</span></div><span class="xBars-r"></span></div>
+      <div class="xBars-row"><span class="xBars-k">Chlamydia</span><div class="xBars-pair"><span><i style="width: 88%"></i>70&ndash;88%</span></div><span class="xBars-r"></span></div>
+      <div class="xBars-row"><span class="xBars-k">Gonorrhea</span><div class="xBars-pair"><span><i style="width: 55%"></i>~43&ndash;55%</span></div><span class="xBars-r"></span></div>
+    </div>
+    <p class="reveal">Substantial numbers for a simple intervention, which is why uptake has been fast.</p>
 
     <h2 class="reveal">The part that matters here</h2>
 
-    <p class="reveal">Doxycycline is photosensitizing. The CDC guidelines list photosensitivity among its common side effects alongside gastrointestinal symptoms.<sup><a href="#ref1">1</a></sup></p>
+    <p class="reveal">Doxycycline is photosensitizing; the CDC guidelines list photosensitivity among its common side effects, alongside gastrointestinal symptoms.<sup><a href="#ref1">1</a></sup></p>
 
-    <p class="reveal">A systematic review of doxycycline phototoxicity describes reactions ranging from a mild sunburn-like sensation with burning and erythema through to large-area photodermatitis, with onycholysis, separation of the nail from its bed, also possible. The reaction is driven mainly by UVA1, wavelengths of 340 to 400 nanometers, and it is dose-related.<sup><a href="#ref2">2</a></sup></p>
+    <div class="xStack reveal">
+      <div class="xStack-row"><span class="xStack-k">Mild</span><b>Sunburn-like</b><p>Burning and redness.</p></div>
+      <div class="xStack-row"><span class="xStack-k">Severe</span><b>Large-area photodermatitis</b></div>
+      <div class="xStack-row"><span class="xStack-k">Nails</span><b>Onycholysis</b><p>The nail separating from its bed.</p></div>
+    </div>
+    <p class="reveal">Driven mainly by UVA1, 340 to 400 nanometers, and dose-related.<sup><a href="#ref2">2</a></sup></p>
 
-    <p class="reveal">Two honest qualifiers. The same review notes the published literature is thin, so the frequency is not well quantified. And doxy-PEP is episodic rather than daily, so cumulative exposure is far lower than a months-long course of doxycycline for acne, which likely means lower risk.<sup><a href="#ref2">2</a></sup></p>
-
-    <p class="reveal">Lower is not zero, and the relevant question is not how much you take over a year. It is whether there is doxycycline in your system on the day someone points a laser at your face.</p>
+    <div class="xNote xNote--info reveal"><span class="xNote-k">Two honest qualifiers</span><p>The literature is thin, so frequency is not well quantified. And doxy-PEP is episodic, so cumulative exposure is far lower than a months-long acne course, which likely means lower risk.<sup><a href="#ref2">2</a></sup> Lower is not zero.</p></div>
 
     <div class="pull reveal">The question is not your annual dose. It is whether the drug is in your system on the day of treatment.</div>
 
     <h2 class="reveal">Why intake forms miss it</h2>
 
-    <p class="reveal">This is the interesting part, and it is a design problem rather than a patient problem.</p>
+    <p class="reveal">A design problem, not a patient problem.</p>
 
-    <p class="reveal">Intake forms ask what medications you take. That phrasing assumes a daily pill. Doxy-PEP is taken after an event, sometimes twice a month, sometimes not for six weeks. People taking it correctly and consistently still do not experience it as being on a medication, so they do not write it down.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">The usual form asks</span><b>"What medications do you take?"</b><p>It assumes a daily pill. Doxy-PEP is taken after an event: twice a month, or not for six weeks. People taking it correctly do not experience it as being on a medication, so they do not write it down.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">A better form asks</span><b>"Anything in the past two weeks?"</b><p>Including as-needed medication. That catches it. The fix is on the form, not on you.</p></div>
+    </div>
 
-    <p class="reveal">The fix is on the form, not on you. A question that asks about anything taken in the past two weeks, including as-needed medication, catches it. We made a similar point about intake design in <a href="affirming-aesthetic-care.html">what affirming aesthetic care actually looks like</a>, and this is the same principle: the form determines what the clinician knows before anyone speaks.</p>
+    <p class="reveal">The same principle as <a href="affirming-aesthetic-care.html">affirming aesthetic care</a>: the form determines what the clinician knows before anyone speaks.</p>
 
-    <h2 class="reveal">What to actually do about it</h2>
+    <div class="xBand reveal">
+      <h2 class="reveal">What to actually do about it</h2>
 
-    <p class="reveal">Nothing dramatic, and nothing that should involve stopping doxy-PEP.</p>
+    <p class="reveal">Nothing dramatic, and nothing that involves stopping doxy-PEP.</p>
 
-    <p class="reveal"><strong>Mention it.</strong> If you have taken a dose in the past week or two, say so before a light-based treatment. It is a scheduling detail, not a confession, and a decent clinician will treat it as one.</p>
-
-    <p class="reveal"><strong>Expect timing to shift, not treatment to be cancelled.</strong> Most light-based treatments can simply be spaced away from a recent dose. Some can proceed with reduced settings. The decision belongs to the clinician who knows the device.</p>
-
-    <p class="reveal"><strong>Use sunscreen that actually covers UVA.</strong> The phototoxic range is 340 to 400 nanometers, which is the part of the spectrum that many sunscreens cover least well.<sup><a href="#ref2">2</a></sup> Look for broad-spectrum products with high UVA protection, and a tinted formulation with iron oxides if you are also managing pigment.</p>
-
-    <p class="reveal"><strong>Watch for the nail sign.</strong> Onycholysis is an unusual presentation that people rarely connect to a medication. If your nails start lifting after sun exposure, doxycycline is worth mentioning to whoever is looking at them.</p>
+    <ul class="xChecks reveal">
+      <li><b>Mention it</b>A dose in the past week or two, before a light-based treatment. A scheduling detail, not a confession.</li>
+      <li><b>Expect timing to shift</b>Not cancellation. Most treatments can be spaced from a recent dose; some proceed at reduced settings. The clinician who knows the device decides.</li>
+      <li><b>Sunscreen that covers UVA</b>340 to 400 nm is what many sunscreens cover least well.<sup><a href="#ref2">2</a></sup> Broad-spectrum, high UVA; tinted with iron oxides if you also manage pigment.</li>
+      <li><b>Watch for the nail sign</b>Nails lifting after sun exposure is rarely linked to a medication. Mention doxycycline to whoever is looking at them.</li>
+    </ul>
+    </div>
 
     <h2 class="reveal">Injectable PrEP and the lumps</h2>
 
-    <p class="reveal">Long-acting injectable PrEP has changed the picture for a lot of people, and it produces a visible local reaction that patients often ask about.</p>
+    <p class="reveal">Long-acting injectable PrEP has changed the picture for many people, with a visible local reaction patients often ask about. In the twice-yearly lenacapavir trials:<sup><a href="#ref3">3</a></sup></p>
 
-    <p class="reveal">In the trials supporting twice-yearly lenacapavir, injection site reactions occurred in 69 percent of participants in one study and 83 percent in the other. Nodules were the most common, at 63 to 64 percent, followed by pain. The majority were mild or moderate, no serious injection site reactions occurred, and incidence declined with subsequent injections.<sup><a href="#ref3">3</a></sup></p>
+    <div class="xStats xStats--2 reveal">
+      <div><b>69&ndash;83%</b><span>Had injection site reactions (69% in one study, 83% in the other)</span></div>
+      <div><b>63&ndash;64%</b><span>Had nodules, the most common, followed by pain. Mostly mild or moderate, none serious, and fewer with later injections.</span></div>
+    </div>
 
-    <p class="reveal">A palpable lump at an injection site is therefore the expected outcome rather than a sign something went wrong. It is not something an aesthetics practice should be treating, and anything that is painful, spreading, hot or persistent belongs with the clinician who administered the injection.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Expected</span><b>A palpable lump</b><p>Not a sign anything went wrong, and not something an aesthetics practice should treat.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Back to who injected it</span><b>Painful, spreading, hot, persistent</b><p>Any of these belongs with the clinician who gave the injection.</p></div>
+    </div>
 
     <h2 class="reveal">The broader point</h2>
 
-    <p class="reveal">None of this is a reason for anyone to change their prevention regimen, and it would be a poor trade to reduce protection against HIV or bacterial infection to make a laser appointment simpler.</p>
-
-    <p class="reveal">It is a reason for aesthetic practices to ask better questions. The medication most likely to affect a light-based treatment is the one patients do not think of as medication, and no amount of caution on the patient's side fixes a form that never asks.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Not a reason</span><b>To change your prevention</b><p>Reducing protection against HIV or bacterial infection to simplify a laser appointment would be a poor trade.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">A reason</span><b>For better questions</b><p>The medication most likely to affect a light treatment is the one patients do not think of as medication. No caution on the patient's side fixes a form that never asks.</p></div>
+    </div>
 
     <!-- FAQ -->
     <div class="faq reveal">
@@ -425,5 +446,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="article-a.js?v=9" defer></script>
 </body>
 </html>

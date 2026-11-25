@@ -279,3 +279,4 @@
 .xBars--one .xBars-pair span:only-child { margin: 0; }
 .xBars--one .xBars-row { grid-template-columns: 220px minmax(0,1fr) 0; }
 @media (max-width: 640px) { .xBars--one .xBars-row { grid-template-columns: 1fr; } }
+.xChips span a { color: #C6ECA9 !important; text-decoration-color: rgba(198,236,169,.5); }
