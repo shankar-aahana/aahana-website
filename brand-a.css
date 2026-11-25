@@ -662,3 +662,12 @@ dialog.care .care-scroll p { color: #463331; }
 .xBand + .xBand { margin-top: -64px !important; }
 @media (max-width: 640px) { .xBand { margin: 48px calc(50% - 50vw) !important; padding: 40px calc(50vw - 50%) 44px !important; } }
 @media print { .xBand { background: none; margin: 24px 0 !important; padding: 0 !important; } .xBand::before { display: none; } }
+
+/* 20. FAQ accordions on pages without service.css (Daybreak articles) */
+.faq details.acc > summary { list-style: none; cursor: pointer; position: relative; color: #463331; font-weight: 400; line-height: 1.35; transition: color .2s; }
+.faq details.acc > summary::-webkit-details-marker { display: none; }
+.faq details.acc > summary:hover { color: #7A5741; }
+.faq details.acc > summary::after { content: ''; position: absolute; top: 50%; width: 9px; height: 9px; margin-top: -6px; border-right: 1.5px solid #7A5741; border-bottom: 1.5px solid #7A5741; transform: rotate(45deg); transition: transform .25s; }
+.faq details.acc[open] > summary::after { transform: rotate(-135deg); margin-top: -2px; }
+.faq details.acc .acc-body p { font-size: 16px !important; margin: 0 0 14px !important; }
+.faq details.acc .acc-body > :last-child { margin-bottom: 0 !important; }
