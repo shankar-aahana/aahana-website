@@ -601,3 +601,20 @@ dialog.care .care-scroll p { color: #463331; }
 }
 @media (prefers-reduced-motion: reduce) { dialog.care[open] { animation: none !important; } }
 @media print { dialog.care .care-head { background: none !important; } dialog.care .care-head h3 { color: #463331 !important; } dialog.care .care-head::before, dialog.care .care-head::after { display: none; } }
+
+/* 17. Light key bands on treatment pages: sage with clay wash and grain, so they separate from the ivory page */
+.keyband:not(.dark) {
+  position: relative; isolation: isolate;
+  background:
+    radial-gradient(60% 90% at 0% 0%, rgba(196,172,157,.55), transparent 62%),
+    radial-gradient(50% 80% at 100% 100%, rgba(122,87,65,.16), transparent 70%),
+    #CFE2BA !important;
+  border-top: 0 !important; border-bottom: 0 !important;
+}
+.keyband:not(.dark)::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .55; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.2 0 0 0 0 0.19 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n); }
+.keyband:not(.dark) .keylabel::after { background: rgba(70,51,49,.28) !important; }
+.keyband:not(.dark) .keynum { color: #463331 !important; }
+.keyband:not(.dark) .treats div { background: #F6F2E8 !important; box-shadow: 0 1px 0 rgba(70,51,49,.06), 0 12px 26px -20px rgba(70,51,49,.55) !important; }
+.keyband:not(.dark) .treats div::after { background: #7A5741 !important; }
+.keyband:not(.dark) details.acc.more > summary { color: #463331 !important; }
+.keyband:not(.dark) .xSplit-a, .keyband:not(.dark) .xNote { background: #F6F2E8 !important; box-shadow: 0 12px 26px -20px rgba(70,51,49,.5) !important; }
