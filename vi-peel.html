@@ -292,6 +292,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=26">
+  <link rel="stylesheet" href="article-a.css?v=16">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -348,20 +349,45 @@
 
     <h2 class="reveal">The peel goes home with you</h2>
 
-    <p class="reveal">Most treatments end at the door. This one does not. The peel is left on the skin and keeps working for several hours, and you wash it off yourself, usually four to six hours later, at the time you are given in the clinic.</p>
+    <p class="reveal">Most treatments end at the door. This one does not.</p>
 
-    <p class="reveal">That means the result depends on you following the timing. Washing it off early cuts the treatment short. Sweating heavily while it is on can make it work unevenly. Plan the afternoon after your appointment around it.</p>
+    <div class="xTrack reveal" role="img" aria-label="The peel stays on and keeps working for four to six hours; you wash it off yourself at the time given in clinic">
+      <div class="xTrack-bar">
+        <div class="xTrack-line"></div>
+        <div class="xTrack-win xTrack-win--left" style="left: 0%; width: 65%">STILL WORKING</div>
+        <div class="xTrack-win xTrack-win--soft" style="left: 66%; width: 34%">WASH OFF</div>
+      </div>
+      <div class="xTrack-ticks"><span>Leave clinic</span><span>2 h</span><span>4 h</span><span>6 h</span></div>
+      <p>You wash it off yourself, usually four to six hours later, at the time you are given in clinic.</p>
+    </div>
 
-    <h2 class="reveal">Why the four weeks before matter in deeper skin</h2>
-
-    <p class="reveal">A peel works by causing controlled inflammation, and in skin with more active melanocytes, inflammation is also what produces post-inflammatory hyperpigmentation. The same mechanism that clears pigment can create it. What decides which one you get is largely the state of the skin when it arrives.</p>
-
-    <p class="reveal">For Fitzpatrick III and above, preparation starts about four weeks out: calming the barrier, stopping irritating actives earlier than standard, daily SPF 50 from four weeks before rather than from the day after, and in most cases a topical that slows melanin production, chosen at consultation. Any active inflammatory acne is treated first, because peeling over inflamed acne is one of the most reliable ways to produce pigment in deeper skin.</p>
-
-    <p class="reveal">This is the part that gets skipped elsewhere, and it is the part that decides the outcome. We wrote about the underlying mechanism in <a href="post-inflammatory-hyperpigmentation.html">post-inflammatory hyperpigmentation</a> and about the specific case of <a href="melasma-darker-skin-tones.html">melasma in darker skin tones</a>.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">Washed off early</span><b>Cut short</b><p>The treatment stops before it has finished working.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Heavy sweating while it is on</span><b>Uneven</b><p>It can work unevenly. Plan the afternoon after your appointment around it.</p></div>
+    </div>
 
     <div class="keyband reveal">
       <div class="keylabel"><span class="keynum">02</span></div>
+      <h2>Why the four weeks before matter in deeper skin</h2>
+
+    <div class="xPull xPull--sm reveal"><p>The same mechanism that clears pigment can create it.</p></div>
+
+    <p class="reveal">A peel works through controlled inflammation, and in skin with more active melanocytes inflammation also produces post-inflammatory hyperpigmentation. Which one you get depends largely on the state of the skin when it arrives. For Fitzpatrick III and above, preparation starts about four weeks out:</p>
+
+    <ol class="xSteps reveal">
+      <li><b>Calm the barrier</b>Before anything else.</li>
+      <li><b>Stop irritating actives</b>Earlier than the standard protocol.</li>
+      <li><b>SPF 50 daily</b>From four weeks before, not from the day after.</li>
+      <li><b>Slow melanin production</b>In most cases a topical, chosen at consultation.</li>
+    </ol>
+
+    <div class="xNote reveal"><span class="xNote-k">Active acne comes first</span><p>Peeling over inflamed acne is one of the most reliable ways to produce pigment in deeper skin, so it is treated before the peel.</p></div>
+
+    <p class="reveal">This is the part skipped elsewhere, and it decides the outcome. More on <a href="post-inflammatory-hyperpigmentation.html">post-inflammatory hyperpigmentation</a> and <a href="melasma-darker-skin-tones.html">melasma in darker skin tones</a>.</p>
+    </div>
+
+    <div class="keyband reveal">
+      <div class="keylabel"><span class="keynum">03</span></div>
       <h2>What a session is like</h2>
 
       <dl class="glance">
@@ -381,7 +407,7 @@
     <figure class="photo-band reveal"><img src="tx-vi-peel-band.jpg" alt="Freckled face of a woman with auburn hair" loading="lazy" width="1800" height="648"></figure>
 
 <div class="keyband dark reveal">
-      <div class="keylabel"><span class="keynum">03</span></div>
+      <div class="keylabel"><span class="keynum">04</span></div>
       <div class="detail-group">
       <h2>Before, during and after</h2>
       <p>This is the protocol we follow. Open any of these to read it before booking, or again the week of your appointment.</p>
@@ -663,5 +689,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=9" defer></script>
 </body>
 </html>

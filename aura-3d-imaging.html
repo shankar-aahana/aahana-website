@@ -223,6 +223,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=26">
+  <link rel="stylesheet" href="article-a.css?v=16">
 </head>
 
 <body>
@@ -275,18 +276,24 @@
       <div>Volume and lift<span>Volume differences and lifting between visits, in three dimensions</span></div>
     </div>
 
-    <h2 class="reveal">Why three dimensions matter</h2>
+    <div class="keyband reveal">
+      <div class="keylabel"><span class="keynum">02</span></div>
+      <h2>Why three dimensions matter</h2>
 
-    <p class="reveal">A flat photograph records color. It does not record shape. Much of what changes with age, and much of what injectables and devices are meant to change, is shape: volume lost from the temples or cheeks, a jawline that softens, lift that comes or goes. A 3D model measures those differences between visits instead of leaving them to a side-by-side impression.<sup><a href="#ref1">1</a></sup></p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">A flat photograph records</span><b>Color</b><p>Not shape. Side-by-side photos leave change to impression.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">A 3D model measures</span><b>Shape</b><p>Volume lost from temples or cheeks, a softening jawline, lift that comes or goes. Much of what treatments change, measured between visits.<sup><a href="#ref1">1</a></sup></p></div>
+    </div>
 
-    <p class="reveal">Color still matters, and it matters most in deeper skin. Pigment and redness are analysed separately, and against a deeper skin tone the two can look nearly identical in the room while needing very different treatment. Seeing them apart narrows the question before anyone touches your skin.</p>
+    <div class="xNote xNote--info reveal"><span class="xNote-k">Color still matters, most in deeper skin</span><p>Pigment and redness are analysed separately. Against a deeper skin tone they can look nearly identical in the room yet need very different treatment, and seeing them apart narrows the question before anyone touches your skin.</p></div>
+    </div>
 
     <h2 class="reveal">Seeing the plan before it happens</h2>
 
     <p class="reveal">Aura can simulate the effect of treatment on areas such as the temples, cheeks, under-eyes, chin and jawline.<sup><a href="#ref1">1</a></sup> A simulation is an illustration, not a promise. Its value is agreeing on what you are aiming for before anything is placed.</p>
 
     <div class="keyband reveal">
-      <div class="keylabel"><span class="keynum">02</span></div>
+      <div class="keylabel"><span class="keynum">03</span></div>
       <h2>What the appointment involves</h2>
 
       <dl class="glance">
@@ -303,22 +310,25 @@
 
     <h2 class="reveal">What it changes about your plan</h2>
 
-    <p class="reveal">It shows what is actually present rather than what is most visible. The loudest thing on a face is rarely the thing with the most to gain from treatment.</p>
-
-    <p class="reveal">It establishes a baseline, which is the only way the next visit means anything. Without one, judging whether a treatment worked means comparing today against a memory, and memory is heavily biased toward believing the money was well spent.</p>
-
-    <p class="reveal">And it changes the consultation itself. You see your own face the way a clinician sees it, which turns a list of recommendations into a conversation about evidence you are both looking at.</p>
+    <ul class="xChecks reveal">
+      <li><b>What is there, not what is loudest</b>The most visible thing on a face is rarely the one with the most to gain from treatment.</li>
+      <li><b>A baseline</b>The only way the next visit means anything. Without one you compare today against memory, which is biased toward believing the money was well spent.</li>
+      <li><b>A shared view</b>You see your face the way a clinician does, so recommendations become a conversation about evidence you are both looking at.</li>
+    </ul>
 
     <h2 class="reveal">What it does not do</h2>
 
-    <p class="reveal">It measures. It does not diagnose. Aura quantifies features and models the face; it does not identify skin cancer, and it is not a substitute for examination by a clinician.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">It does</span><b>Measure</b><p>Quantifies features and models the face.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">It does not</span><b>Diagnose</b><p>It does not identify skin cancer, and it is no substitute for examination by a clinician.</p></div>
+    </div>
 
-    <p class="reveal">Its skin scores also deserve some skepticism. We have not found published data on how they perform across different skin types, so in deeper skin the images and the 3D measurements carry more weight here than any single number.</p>
+    <div class="xNote xNote--info reveal"><span class="xNote-k">Its skin scores, with skepticism</span><p>We have not found published data on how they perform across skin types, so in deeper skin the images and 3D measurements count for more than any single number.</p></div>
 
     <figure class="photo-band reveal"><img src="tx-aura-3d-imaging-band.jpg" alt="Profile of a woman's cheek and jaw in soft light" loading="lazy" width="1800" height="648"></figure>
 
 <div class="keyband dark reveal">
-      <div class="keylabel"><span class="keynum">03</span></div>
+      <div class="keylabel"><span class="keynum">04</span></div>
       <h2>Where it sits among the other measurements</h2>
       <p>Imaging describes what your skin and face have done so far. <a href="skin-microbiome-testing.html">Microbiome sequencing</a> describes what is living on your skin right now. <a href="lab-testing.html">Lab work</a> describes what is driving it from the inside. Imaging is the one everybody gets; the other two are ordered only where they would change something.</p>
     </div>
@@ -427,5 +437,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=9" defer></script>
 </body>
 </html>

@@ -317,6 +317,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=26">
+  <link rel="stylesheet" href="article-a.css?v=16">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -427,13 +428,36 @@
 
     <h2 class="reveal">Why the first laser here is a 1064&nbsp;nm one</h2>
 
-    <p class="reveal">Most laser injury in deeper skin comes from wavelengths that melanin absorbs strongly. The epidermis competes with the intended target for the energy, and the result is a burn or a patch of hyperpigmentation.</p>
+    <p class="reveal">Most laser injury in deeper skin comes from wavelengths melanin absorbs strongly. The epidermis competes with the target for the energy, and the result is a burn or a patch of hyperpigmentation. Move the slider to see why the wavelength matters.</p>
 
-    <p class="reveal">At 1064&nbsp;nm the Neo Elite sits at the longest wavelength in common aesthetic use and the one melanin absorbs least, which is why Nd:YAG is the platform most often chosen for Fitzpatrick types IV through VI. Aerolase pairs that wavelength with a 650-microsecond pulse, placed deliberately between the nanosecond and millisecond ranges, which limits thermal spread into surrounding tissue.</p>
+    <figure class="xBeam reveal" data-xbeam>
+      <div class="xBeam-stage" aria-hidden="true">
+        <div class="xBeam-light"></div>
+        <div class="xBeam-epi"><span class="xBeam-heat"></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="xBeam-derm"><span class="xBeam-target"></span></div>
+        <span class="xBeam-lab l1">Epidermis &middot; melanin</span><span class="xBeam-lab l2">Dermis &middot; the target</span>
+      </div>
+      <div class="xBeam-panel">
+        <div class="xBeam-stops" role="radiogroup" aria-label="Wavelength">
+          <button type="button" role="radio" data-i="0">532 nm</button><button type="button" role="radio" data-i="1">755 nm</button><button type="button" role="radio" data-i="2">1064 nm</button>
+        </div>
+        <input class="xBeam-range" type="range" min="0" max="2" step="1" value="0" aria-label="Wavelength, 532 to 1064 nanometers">
+        <div class="xBeam-meter"><span>Absorbed by melanin</span><div><i></i></div></div>
+        <p class="xBeam-text" aria-live="polite"></p>
+      </div>
+      <figcaption>Melanin absorbs less as wavelength rises. At 1064&nbsp;nm absorption is roughly an order of magnitude lower than in the greens and yellows, so far less energy is caught at the surface.</figcaption>
+    </figure>
 
-    <p class="reveal">In practice that means treatment without contact, without cryogen or contact cooling, and without topical anesthetic. We wrote at length about <a href="laser-treatments-skin-of-color.html">what makes a laser appropriate for deeper skin tones</a>, and about <a href="fitzpatrick-scale-explained.html">the limits of the Fitzpatrick scale itself</a>.</p>
+    <div class="xStats xStats--2 reveal">
+      <div><b>1064&nbsp;nm</b><span>The longest wavelength in common aesthetic use, and the one melanin absorbs least. Why Nd:YAG is most often chosen for Fitzpatrick IV to VI.</span></div>
+      <div><b>650&nbsp;&micro;s</b><span>A pulse placed deliberately between the nanosecond and millisecond ranges, limiting heat spread into surrounding tissue.</span></div>
+    </div>
 
-    <p class="reveal">IPL is never substituted for this treatment.</p>
+    <div class="xChips reveal"><span>No contact</span><span>No cryogen or contact cooling</span><span>No topical anesthetic</span></div>
+
+    <div class="xNote reveal"><span class="xNote-k">Never substituted</span><p>IPL is never used in place of this treatment.</p></div>
+
+    <p class="reveal">More on <a href="laser-treatments-skin-of-color.html">what makes a laser appropriate for deeper skin tones</a> and <a href="fitzpatrick-scale-explained.html">the limits of the Fitzpatrick scale</a>.</p>
 
     <div class="keyband reveal">
       <div class="keylabel"><span class="keynum">02</span></div>
@@ -473,9 +497,11 @@
 
     <h2 class="reveal">Where it fits</h2>
 
-    <p class="reveal">Every treatment here begins with <a href="3d-skin-imaging-explained.html">clinical imaging</a> and a constitutional assessment, so the laser is prescribed against measurements rather than an impression. For pigmentation in particular, what happens between sessions matters as much as the sessions themselves.</p>
-
-    <p class="reveal">Additional laser platforms are under evaluation for resurfacing and specific pigmentary concerns, held to the same requirement: demonstrated safety across all six Fitzpatrick types, not just the lighter three.</p>
+    <ul class="xChecks reveal">
+      <li><b>Measured first</b>Every treatment begins with <a href="3d-skin-imaging-explained.html">clinical imaging</a> and a constitutional assessment, so the laser is prescribed against measurements, not an impression.</li>
+      <li><b>Between sessions counts</b>For pigmentation, what happens between sessions matters as much as the sessions.</li>
+      <li><b>More platforms, same bar</b>Others are under evaluation for resurfacing and specific pigment concerns. Each must show safety across all six Fitzpatrick types, not just the lighter three.</li>
+    </ul>
 
     <!-- FAQ -->
     <div class="faq reveal">
@@ -716,5 +742,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=9" defer></script>
 </body>
 </html>

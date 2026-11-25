@@ -282,6 +282,7 @@
   <link rel="stylesheet" href="service.css?v=20261124e">
   <link rel="stylesheet" href="footer.css?v=20261124">
   <link rel="stylesheet" href="brand-a.css?v=26">
+  <link rel="stylesheet" href="article-a.css?v=16">
 </head>
 <body>
 <script src="nav.js?v=20261124x"></script>
@@ -339,9 +340,10 @@
 
     <h2 class="reveal">On its own, or alongside other treatments</h2>
 
-    <p class="reveal">Most people have a Hydrafacial as its own thing. It clears congestion, restores hydration and leaves skin visibly better the same day, and on a four to six week rhythm it keeps it there. Nothing else has to be planned around it.</p>
-
-    <p class="reveal">It also pairs well with the rest of what happens here. Having one before a laser or peel means that treatment lands on skin that is clear, hydrated and calm rather than congested. That is worth more in deeper skin, where the level of inflammation the skin starts from is one of the things that influences pigmentation risk, and a Hydrafacial improves condition without adding inflammation of its own.</p>
+    <div class="xSplit reveal">
+      <div class="xSplit-a"><span class="xSplit-k">On its own</span><b>Its own thing</b><p>Clears congestion, restores hydration, skin visibly better the same day. Every four to six weeks keeps it there, with nothing to plan around it.</p></div>
+      <div class="xSplit-b"><span class="xSplit-k">Before a laser or peel</span><b>A calmer start</b><p>That treatment lands on clear, hydrated, calm skin. It matters more in deeper skin, where starting inflammation affects pigment risk, and a Hydrafacial adds none of its own.</p></div>
+    </div>
 
     <p class="reveal">Whether to pair them, and in what order, is decided at consultation.</p>
 
@@ -578,5 +580,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 </script>
 <script src="treatment.js?v=3" defer></script>
+<script src="article-a.js?v=9" defer></script>
 </body>
 </html>
