@@ -671,3 +671,10 @@ dialog.care .care-scroll p { color: #463331; }
 .faq details.acc[open] > summary::after { transform: rotate(-135deg); margin-top: -2px; }
 .faq details.acc .acc-body p { font-size: 16px !important; margin: 0 0 14px !important; }
 .faq details.acc .acc-body > :last-child { margin-bottom: 0 !important; }
+
+/* 21. Focus and selection rings in brand green, never the browser blue */
+:focus-visible { outline: 3px solid #C6ECA9 !important; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(70,51,49,.55); border-radius: 6px; }
+svg :focus, svg :focus-visible, .zone:focus { outline: none !important; box-shadow: none !important; }
+.zone:focus-visible, .zone.is-active { stroke: #463331 !important; stroke-opacity: 1 !important; fill: #C6ECA9 !important; fill-opacity: .85 !important; }
+.zone:hover { fill: #C6ECA9 !important; fill-opacity: .6 !important; }
+body:not(:has(.keyband)) .faq { display: block !important; }
