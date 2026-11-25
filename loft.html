@@ -10,9 +10,9 @@
   <meta name="theme-color" content="#463331">
   <title>Loft Pricing for Friends and Family | Aahana</title>
   <meta name="description" content="Friends and family pricing at the Aahana loft in San Francisco's Design District.">
-  <link rel="preload" as="font" type="font/woff2" href="cairo-latin-400-normal.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="spectral-latin-300-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="satoshi-300.woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="offer-a.css?v=1">
 <!--
   loft.html: friends and family price list.
   UNLISTED. noindex, kept out of sitemap.xml and llms.txt, and linked from
@@ -20,146 +20,76 @@
   as shareable rather than secret. It links out to the homepage and to each
   service page, never the other way round.
 -->
-<style>
-:root {
-  --ivory:#EEE9DA; --brown:#7A5741; --deep:#463331; --accent:#7A5741;
-  --blush:#E3DAC8; --border:#DED7C6;
-}
-*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'Satoshi', sans-serif; font-weight:400; background:var(--ivory); color:var(--deep); -webkit-text-size-adjust:100%; }
-a { color:inherit; }
-a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-
-/* ---------- hero ---------- */
-.hero { background:var(--deep); color:var(--ivory); text-align:center; padding:48px 24px 44px; }
-.brand { display:inline-flex; align-items:center; gap:16px; text-decoration:none; padding:6px; }
-.brand-mark, .brand-rule { display:none; }
-@supports ((-webkit-mask-image:url(aahana-mark.svg)) or (mask-image:url(aahana-mark.svg))) {
-  .brand-mark { display:block; width:44px; height:47px; background-color:var(--ivory);
-    -webkit-mask:url(aahana-mark.svg) no-repeat center / contain; mask:url(aahana-mark.svg) no-repeat center / contain; }
-  .brand-rule { display:block; width:1px; height:42px; background:rgba(244, 239, 228,.34); }
-}
-.brand-words { display:flex; flex-direction:column; align-items:flex-start; }
-.brand-name { font-weight:200; font-size:30px; letter-spacing:.22em; text-transform:uppercase; line-height:1.1; }
-.brand-sub { font-weight:300; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--blush); margin-top:3px; }
-.hero h1 { font-family:'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif; font-weight:300; font-size:clamp(40px, 9vw, 60px); line-height:1.05; letter-spacing:.02em; margin-top:36px; }
-.hero h1 em { font-style:italic; color:var(--blush); }
-.hero .dek { font-family:'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif; font-weight:300; font-size:18px; line-height:1.55; color:var(--blush); max-width:520px; margin:16px auto 0; }
-.badge { display:inline-block; margin-top:24px; border:1px solid rgba(244, 239, 228,.5); border-radius:999px; padding:9px 22px; font-size:14px; letter-spacing:.2em; text-transform:uppercase; }
-
-/* ---------- list ---------- */
-#main { max-width:760px; margin:0 auto; padding:36px 20px 64px; }
-.cols { display:grid; grid-template-columns:minmax(0,1fr) 84px 96px; gap:0 12px; padding-bottom:10px; border-bottom:2px solid var(--deep); font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--brown); }
-.cols span:nth-child(n+2) { text-align:right; }
-.cols span:last-child { color:var(--deep); }
-h2 { font-size:14px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin:30px 0 4px; }
-h2 span { font-weight:300; letter-spacing:.12em; color:var(--brown); }
-.row { display:grid; grid-template-columns:minmax(0,1fr) 84px 96px; gap:0 12px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--border); }
-.row:last-child { border-bottom:none; }
-.svc { font-family:'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif; font-size:19px; line-height:1.3; }
-.svc a { text-decoration:underline; text-decoration-color:rgba(122, 87, 65,.35); text-underline-offset:3px; }
-.svc a:hover { color:var(--accent); text-decoration-color:var(--accent); }
-.svc em { display:block; font-style:italic; font-weight:300; font-size:15px; color:var(--brown); }
-.std { text-align:right; font-weight:300; font-size:16px; color:var(--brown); text-decoration:line-through; text-decoration-color:rgba(122, 87, 65,.6); }
-.loft { text-align:right; font-weight:600; font-size:19px; }
-.pkg { grid-column:1 / -1; margin-top:4px; font-size:14px; letter-spacing:.03em; color:var(--accent); }
-.pkg b { font-weight:600; }
-.range { grid-column:1 / -1; margin-top:4px; font-size:15px; }
-.range b { font-weight:600; }
-.note { background:var(--blush); border-radius:6px; padding:16px 18px; margin:10px 0 6px; }
-.note strong { display:block; font-family:'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif; font-weight:400; font-size:19px; }
-.note p { font-family:'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif; font-weight:300; font-size:16px; line-height:1.5; margin-top:4px; }
-
-/* ---------- footnotes and footer ---------- */
-.foot p:target { background:var(--blush); color:var(--deep); padding:4px 8px; }
-.foot { margin-top:30px; padding-top:18px; border-top:1px solid var(--border); }
-.fn { display:inline-block; min-width:24px; min-height:24px; padding:0 4px; text-align:center; color:var(--accent); text-decoration:none; font-family:'Satoshi', sans-serif; font-weight:600; }
-.fn:hover { text-decoration:underline; }
-.foot p { scroll-margin-top:24px; border-radius:4px; transition:background .3s;  font-family:'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif; font-style:italic; font-weight:300; font-size:15px; line-height:1.5; color:var(--brown); margin-bottom:6px; }
-.book { margin-top:28px; text-align:center; font-family:'Satoshi','Social','Avenir Next','Inter','Helvetica Neue',system-ui,sans-serif; font-weight:300; font-size:18px; line-height:1.55; }
-.book p + p { margin-top:10px; }
-.book .contact { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 20px; font-family:'Satoshi', sans-serif; font-size:17px; font-weight:600; }
-.book .contact a { display:inline-block; padding:8px 4px; color:var(--accent); text-decoration:underline; text-decoration-color:rgba(122, 87, 65,.35); text-underline-offset:3px; }
-.book .small { font-size:16px; color:var(--brown); }
-/* The pill echoes the hero badge, filled rather than outlined so it reads as
-   the action on the page. Ivory on --accent is 5.8:1. */
-.book .book-online { display:inline-block; margin-bottom:6px; padding:13px 28px; background:var(--accent); color:var(--ivory); border-radius:999px; font-family:'Satoshi', sans-serif; font-size:14px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; text-decoration:none; }
-.book .book-online:hover { opacity:.88; }
-.book .book-online:focus-visible { outline:2px solid var(--deep); outline-offset:3px; }
-.links { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 18px; margin-top:22px; }
-.links a { display:inline-block; padding:8px 4px; font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); text-decoration:none; }
-.links a:hover { text-decoration:underline; }
-
-@media (max-width:420px) {
-  .cols, .row { grid-template-columns:minmax(0,1fr) 64px 80px; gap:0 8px; }
-  .svc { font-size:17px; }
-  .std { font-size:14px; }
-  .loft { font-size:17px; }
-}
-</style>
+<style>.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to prices</a>
 
-<header class="hero">
-  <a class="brand" href="/" aria-label="Aahana Medical Aesthetics home">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span class="brand-rule" aria-hidden="true"></span>
-    <span class="brand-words"><span class="brand-name">Aahana</span> <span class="brand-sub">Medical Aesthetics</span></span>
-  </a>
-  <h1>Loft <em>Pricing</em></h1>
-  <p class="dek">For friends and family, at our temporary loft in the Design District, before our clinic opens in Dogpatch in early 2027.</p>
-  <p class="badge">25% off clinic pricing</p>
+<header class="oHero">
+  <div class="oRing" aria-hidden="true"></div>
+  <div class="oTop">
+    <a class="oMark" href="/" aria-label="Aahana Medical Aesthetics home">aahana</a>
+    <nav aria-label="Aahana website"><a href="services.html">Services</a><a href="about.html">Dr. Mundluru</a></nav>
+  </div>
+  <div class="oIntro">
+    <p class="oKick">Friends and family</p>
+    <h1>Loft <span>pricing</span></h1>
+    <p class="oDek">For friends and family, at our temporary loft in the Design District, before our clinic opens in Dogpatch in early 2027.</p>
+    <p class="oBadge">25% off clinic pricing</p>
+  </div>
 </header>
 
 <main id="main">
-  <div class="cols" aria-hidden="true"><span>Service</span><span>Clinic</span><span>Loft</span></div>
+    <p class="oLabel">Crossed-out prices are clinic pricing. Green prices are loft pricing.</p>
 
-  <section aria-labelledby="h-neuro">
-    <h2 id="h-neuro">Neuromodulators</h2>
-    <div class="row"><div class="svc"><a href="botox-dysport.html">Botox</a><em>per unit</em></div><div class="std">$18</div><div class="loft">$13.50</div></div>
-    <div class="row"><div class="svc"><a href="botox-dysport.html">Dysport</a><a class="fn" href="#fn-dysport" aria-label="Note on Dysport units">*</a><em>per Botox-equivalent unit</em></div><div class="std">$18</div><div class="loft">$13.50</div></div>
-    <div class="row"><div class="svc"><a href="botox-dysport.html">Daxxify</a><a class="fn" href="#fn-daxxify" aria-label="Note on Daxxify units and duration">†</a><em>per Botox-equivalent unit</em></div><div class="std">$25</div><div class="loft">$18.75</div></div>
-    <div class="row"><div class="svc"><a href="botox-dysport.html">Migraine Botox</a><a class="fn" href="#fn-migraine" aria-label="Note on Migraine Botox pricing">‡</a><em>per treatment, typically 120 units</em></div><div class="std">$1,200</div><div class="loft">$900</div></div>
-  </section>
+    <section class="oGroup" aria-labelledby="h-neuro">
+      <h2 id="h-neuro">Neuromodulators </h2>
+      <div class="oList">
+        <div class="oItem"><div class="oName"><a href="botox-dysport.html">Botox</a><em>per unit</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$18</s><b class="leaf"><span class="sr">Loft price </span>$13.50</b></div></div>
+        <div class="oItem"><div class="oName"><a href="botox-dysport.html">Dysport</a><a class="fn" href="#fn-dysport" aria-label="Note on Dysport units">*</a><em>per Botox-equivalent unit</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$18</s><b class="leaf"><span class="sr">Loft price </span>$13.50</b></div></div>
+        <div class="oItem"><div class="oName"><a href="botox-dysport.html">Daxxify</a><a class="fn" href="#fn-daxxify" aria-label="Note on Daxxify units and duration">†</a><em>per Botox-equivalent unit</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$25</s><b class="leaf"><span class="sr">Loft price </span>$18.75</b></div></div>
+        <div class="oItem"><div class="oName"><a href="botox-dysport.html">Migraine Botox</a><a class="fn" href="#fn-migraine" aria-label="Note on Migraine Botox pricing">‡</a><em>per treatment, typically 120 units</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$1,200</s><b class="leaf"><span class="sr">Loft price </span>$900</b></div></div>
+      </div>
+    </section>
 
-  <section aria-labelledby="h-xerf">
-    <h2 id="h-xerf">Xerf Skin Tightening <span>· Danville<a class="fn" href="#fn-xerf" aria-label="Note on Xerf location">§</a></span></h2>
-    <div class="row"><div class="svc"><a href="xerf.html">Xerf Face + Neck</a><em>per session</em></div><div class="std">$3,250</div><div class="loft">$2,437.50</div><div class="pkg">Course of 2 · clinic $5,500 · loft <b>$4,125</b></div></div>
-    <div class="row"><div class="svc"><a href="xerf.html">Xerf Face</a><em>per session</em></div><div class="std">$2,500</div><div class="loft">$1,875</div><div class="pkg">Course of 2 · clinic $4,000 · loft <b>$3,000</b></div></div>
-    <div class="row"><div class="svc"><a href="xerf.html">Xerf Body Area</a><a class="fn" href="#fn-body" aria-label="Note on Xerf body pricing">¶</a><em>per session</em></div><div></div><div></div><div class="range">Clinic approx. $2,400 to $4,500 · Loft <b>approx. $1,800 to $3,375</b></div></div>
-  </section>
+    <section class="oGroup" aria-labelledby="h-xerf">
+      <h2 id="h-xerf">Xerf Skin Tightening <small>Danville<a class="fn" href="#fn-xerf" aria-label="Note on Xerf location">§</a></small></h2>
+      <div class="oList">
+        <div class="oItem"><div class="oName"><a href="xerf.html">Xerf Face + Neck</a><em>per session</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$3,250</s><b class="leaf"><span class="sr">Loft price </span>$2,437.50</b></div><div class="oPkg"><span>Course of 2</span> clinic <s>$5,500</s> · loft <b>$4,125</b></div></div>
+        <div class="oItem"><div class="oName"><a href="xerf.html">Xerf Face</a><em>per session</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$2,500</s><b class="leaf"><span class="sr">Loft price </span>$1,875</b></div><div class="oPkg"><span>Course of 2</span> clinic <s>$4,000</s> · loft <b>$3,000</b></div></div>
+        <div class="oItem"><div class="oName"><a href="xerf.html">Xerf Body Area</a><a class="fn" href="#fn-body" aria-label="Note on Xerf body pricing">¶</a><em>per session</em></div><div class="oPrice"><span class="range">Clinic approx. $2,400 to $4,500 · Loft <b class="leaf">approx. $1,800 to $3,375</b></span></div></div>
+      </div>
+    </section>
 
-  <section aria-labelledby="h-series">
-    <h2 id="h-series">Series Treatments</h2>
-    <div class="row"><div class="svc"><a href="microneedling.html">Microneedling + GF</a><em>per treatment</em></div><div class="std">$750</div><div class="loft">$562.50</div><div class="pkg">Buy 2, get 1 free · package <b>$1,125</b></div></div>
-    <div class="row"><div class="svc"><a href="vi-peel.html">VI Peel</a><em>per treatment</em></div><div class="std">$350</div><div class="loft">$262.50</div><div class="pkg">Buy 2, get 1 free · package <b>$525</b></div></div>
-    <div class="row"><div class="svc"><a href="aerolase-neo-elite.html">Aerolase Face + Neck</a><em>per session</em></div><div class="std">$750</div><div class="loft">$562.50</div><div class="pkg">Buy 3, get 1 free · package <b>$1,687.50</b></div></div>
-    <div class="row"><div class="svc"><a href="aerolase-neo-elite.html">Aerolase Face</a><em>per session</em></div><div class="std">$600</div><div class="loft">$450</div><div class="pkg">Buy 3, get 1 free · package <b>$1,350</b></div></div>
-  </section>
+    <section class="oGroup" aria-labelledby="h-series">
+      <h2 id="h-series">Series Treatments </h2>
+      <div class="oList">
+        <div class="oItem"><div class="oName"><a href="microneedling.html">Microneedling + GF</a><em>per treatment</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$750</s><b class="leaf"><span class="sr">Loft price </span>$562.50</b></div><div class="oPkg"><span>Buy 2, get 1 free</span> package <b>$1,125</b></div></div>
+        <div class="oItem"><div class="oName"><a href="vi-peel.html">VI Peel</a><em>per treatment</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$350</s><b class="leaf"><span class="sr">Loft price </span>$262.50</b></div><div class="oPkg"><span>Buy 2, get 1 free</span> package <b>$525</b></div></div>
+        <div class="oItem"><div class="oName"><a href="aerolase-neo-elite.html">Aerolase Face + Neck</a><em>per session</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$750</s><b class="leaf"><span class="sr">Loft price </span>$562.50</b></div><div class="oPkg"><span>Buy 3, get 1 free</span> package <b>$1,687.50</b></div></div>
+        <div class="oItem"><div class="oName"><a href="aerolase-neo-elite.html">Aerolase Face</a><em>per session</em></div><div class="oPrice"><s><span class="sr">Clinic price </span>$600</s><b class="leaf"><span class="sr">Loft price </span>$450</b></div><div class="oPkg"><span>Buy 3, get 1 free</span> package <b>$1,350</b></div></div>
+      </div>
+    </section>
 
-  <div class="foot">
-    <p>Crossed-out prices are clinic pricing. Bold prices are loft pricing.</p>
-    <p id="fn-dysport">*Dysport is priced in Botox-equivalent units for easy comparison. About 2.5 to 3 Dysport units equal one Botox unit, so if your Dysport unit count looks high, divide it by 2.5 to 3.</p>
-    <p id="fn-daxxify">†Daxxify is priced in Botox-equivalent units too. About 2 Daxxify units equal one Botox unit. It costs more per unit because it lasts longer, around six months rather than three to four, so the cost per month works out slightly below Botox.</p>
-    <p id="fn-migraine">‡Migraine Botox is priced lower per unit because it is a medical treatment.</p>
-    <p id="fn-xerf">§Xerf treatments are performed at our satellite location in Danville, CA.</p>
-    <p id="fn-body">¶Xerf body pricing is based on pulses used, so it varies by area.</p>
-  </div>
+    <div class="oNotes">
+      <p id="fn-dysport">*Dysport is priced in Botox-equivalent units for easy comparison. About 2.5 to 3 Dysport units equal one Botox unit, so if your Dysport unit count looks high, divide it by 2.5 to 3.</p>
+      <p id="fn-daxxify">†Daxxify is priced in Botox-equivalent units too. About 2 Daxxify units equal one Botox unit. It costs more per unit because it lasts longer, around six months rather than three to four, so the cost per month works out slightly below Botox.</p>
+      <p id="fn-migraine">‡Migraine Botox is priced lower per unit because it is a medical treatment.</p>
+      <p id="fn-xerf">§Xerf treatments are performed at our satellite location in Danville, CA.</p>
+      <p id="fn-body">¶Xerf body pricing is based on pulses used, so it varies by area.</p>
+    </div>
 
-  <div class="book">
-    <p><a class="book-online" href="https://www.joinblvd.com/b/38a32e8c-24a6-4e5e-acac-6795a1ffc0d6/widget?injector-version=1.0&amp;locationId=b12412b9-b086-4a4a-8606-fa5d9e988977&amp;path=%2Fcart%2Fmenu&amp;visitType=SELF_VISIT" onclick="return bookNow(event)">Book online</a></p>
-    <p class="small">Prices shown in the booking system are clinic prices. Mention loft pricing when you book and we will adjust it.</p>
-    <p>Or text or call Ryan to book, or email us with any questions.</p>
-    <p class="contact"><a href="tel:+17143237365">714-323-7365</a><a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a></p>
-    <p class="small">We will send the loft address once your appointment is confirmed.</p>
-  </div>
-
-  <nav class="links" aria-label="Aahana website">
-    <a href="/">Home</a>
-    <a href="services.html">All services</a>
-    <a href="about.html">Dr. Mundluru</a>
-  </nav>
+    <section class="oBook" aria-labelledby="h-book">
+      <h2 id="h-book">Ready when you are</h2>
+      <a class="oBtn" href="https://www.joinblvd.com/b/38a32e8c-24a6-4e5e-acac-6795a1ffc0d6/widget?injector-version=1.0&amp;locationId=b12412b9-b086-4a4a-8606-fa5d9e988977&amp;path=%2Fcart%2Fmenu&amp;visitType=SELF_VISIT" onclick="return bookNow(event)">Book online</a>
+      <p class="small">Prices shown in the booking system are clinic prices. Mention loft pricing when you book and we will adjust it.</p>
+      <p class="or">Or text or call Ryan to book, or email us with any questions.</p>
+      <p class="oContact"><a href="tel:+17143237365">714-323-7365</a><a href="mailto:hello@aahanaskin.com">hello@aahanaskin.com</a></p>
+      <p class="small">We will send the loft address once your appointment is confirmed.</p>
+    </section>
 </main>
+
+<footer><a href="/">Home</a><a href="services.html">All services</a><a href="about.html">Dr. Mundluru</a></footer>
 
 <!-- Boulevard Self-Booking overlay -->
 <script>
