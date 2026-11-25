@@ -244,7 +244,7 @@
 
 /* treatment-page fit: keep patterns inside the text column and dark bands */
 .article-inner:has(> .keyband) > :is(.xSplit, .xStats, .xStack, .xBeam) { margin-right: 0; }
-.keyband :is(.xSplit, .xStats) { margin-left: 0 !important; margin-right: 0 !important; }
+.keyband :is(.xSplit, .xStats, .xPull, .xStack) { margin-left: 0 !important; margin-right: 0 !important; }
 .keyband.dark .xSplit-a { background: rgba(238,233,218,.07); box-shadow: inset 0 0 0 1px rgba(238,233,218,.16); color: #EEE9DA; }
 .keyband.dark .xSplit-a .xSplit-k { color: #C6ECA9; }
 .keyband.dark .xSplit-a p { color: rgba(238,233,218,.85) !important; }
