@@ -765,3 +765,12 @@ html { scroll-padding-top: calc(104px + env(safe-area-inset-top)); }
 h3.stepsub { margin-top: 40px !important; margin-bottom: 12px !important; font-size: 22px !important; font-weight: 400 !important; color: #463331; }
 .treats.journey a[href^="#"]::after { content: ' \2193'; color: #7A5741; }
 @media (min-width: 1000px) { .keyband:not(:has(> .keylabel)) > h2 { grid-row: 1 / span 40 !important; } }
+
+/* 26. Dosha pop-up headers use the same colours as the grid cells */
+.tooltip-header.vata, .result-header.vata { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #6B6360 !important; }
+.tooltip-header.pitta, .result-header.pitta { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #9A5A3A !important; }
+.tooltip-header.kapha, .result-header.kapha { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #5E6B4E !important; }
+.tooltip-header.vp { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #82604E !important; }
+.tooltip-header.vk { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #656559 !important; }
+.tooltip-header.pk { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #7C6444 !important; }
+.tooltip-header.tri { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #6E5B4F !important; }
