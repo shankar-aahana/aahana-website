@@ -681,3 +681,11 @@ body:not(:has(.keyband)) .faq { display: block !important; }
 
 /* 22. Anchor links clear the fixed header ------------------------- */
 html { scroll-padding-top: calc(104px + env(safe-area-inset-top)); }
+
+/* 23. Daybreak story row sits on the clay band, aligned to the page grid */
+.storyRow { position: relative; isolation: isolate; background:
+    radial-gradient(55% 90% at 100% 0%, rgba(122,87,65,.16), transparent 65%),
+    radial-gradient(50% 80% at 0% 100%, rgba(196,172,157,.45), transparent 70%),
+    #E3D8C6 !important; }
+.storyRow::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.2 0 0 0 0 0.19 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.storyRow-head, .storyRow-track { max-width: 1240px; }
