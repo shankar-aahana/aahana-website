@@ -280,3 +280,17 @@
 .xBars--one .xBars-row { grid-template-columns: 220px minmax(0,1fr) 0; }
 @media (max-width: 640px) { .xBars--one .xBars-row { grid-template-columns: 1fr; } }
 .xChips span a { color: #C6ECA9 !important; text-decoration-color: rgba(198,236,169,.5); }
+
+/* ---- Consistency pass (26 Nov 2026) --------------------------------
+   One pull-quote style, one card text size, calmer body leading.     */
+.article-inner > p, .article-inner > ul > li, .article-inner > ol > li { line-height: 1.75 !important; }
+.article-inner .pull, .article-inner .xPull {
+  margin: 44px 0 !important; padding: 28px 0 !important;
+  border-top: 1px solid rgba(122,87,65,.22); border-bottom: 1px solid rgba(122,87,65,.22);
+  text-align: left; text-wrap: balance;
+}
+.article-inner .pull { font-size: clamp(22px, 2.8vw, 30px); line-height: 1.3; color: #463331; }
+.article-inner .xPull p { font-size: clamp(22px, 2.8vw, 30px) !important; line-height: 1.3 !important; letter-spacing: 0; }
+.article-inner .xPull em { background: none; padding: 0; }
+.keyband .xPull, .xBand .xPull { border-color: rgba(70,51,49,.25); }
+.article-inner :is(.xStack, .xSteps, .xLadder, .xSplit, .xTrack, .xChecks, .xNote, .takeaways) :is(p, li) { font-size: 16px !important; line-height: 1.6 !important; }

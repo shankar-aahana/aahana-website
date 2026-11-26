@@ -678,3 +678,6 @@ svg :focus, svg :focus-visible, .zone:focus { outline: none !important; box-shad
 .zone:focus-visible, .zone.is-active { stroke: #463331 !important; stroke-opacity: 1 !important; fill: #C6ECA9 !important; fill-opacity: .85 !important; }
 .zone:hover { fill: #C6ECA9 !important; fill-opacity: .6 !important; }
 body:not(:has(.keyband)) .faq { display: block !important; }
+
+/* 22. Anchor links clear the fixed header ------------------------- */
+html { scroll-padding-top: calc(104px + env(safe-area-inset-top)); }
