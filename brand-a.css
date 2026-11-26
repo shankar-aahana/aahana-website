@@ -758,3 +758,10 @@ html { scroll-padding-top: calc(104px + env(safe-area-inset-top)); }
   .quiz-modal, .profile-tooltip { border-radius: 24px 24px 0 0 !important; max-height: 92vh !important; width: 100% !important; }
   .quiz-body, .quiz-modal-header, .tooltip-header, .tooltip-body { padding-left: 22px !important; padding-right: 22px !important; }
 }
+
+/* 25. First visit: step kickers tie each section to the overview */
+.stepk { display: block; margin-bottom: 10px; font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; color: #7A5741; }
+.keyband.dark .stepk { color: #C6ECA9; }
+h3.stepsub { margin-top: 40px !important; margin-bottom: 12px !important; font-size: 22px !important; font-weight: 400 !important; color: #463331; }
+.treats.journey a[href^="#"]::after { content: ' \2193'; color: #7A5741; }
+@media (min-width: 1000px) { .keyband:not(:has(> .keylabel)) > h2 { grid-row: 1 / span 40 !important; } }
