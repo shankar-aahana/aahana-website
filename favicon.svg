@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#4A3328"/>
-  <text x="32" y="47" text-anchor="middle"
-        font-family="Spectral, Georgia, 'Times New Roman', serif"
-        font-size="46" font-weight="400" fill="#EDE8E1">A</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#463331"/><g transform="translate(32 33) scale(0.84) translate(-20.9 -49.4)"><path fill="#C6ECA9" d="M38.05,55.7c-1.36.54-1.7.83-5.29,5.36-3.62,4.56-7.5,8.39-14.36,8.39s-11.17-3.05-11.17-9.04c0-5.49,3.76-9.55,13-10.37l16.33-1.15c2.88-.2,5.11-2.59,5.11-5.48v-1.29c0-13.01-8.33-18.7-19.71-18.7-12.09,0-20.22,6.4-20.22,16.36h6.4c0-6.6,5.08-10.47,13.62-10.47,7.21,0,13,3.05,13,12.71v1.62l-16.25,1.32C7.02,45.88.12,51.57.12,60.61s6.19,14.53,16.66,14.53c8.33,0,15.74-4.68,18.79-10.87v10.84h6.1v-16.95c0-1.87-1.88-3.15-3.62-2.46h0Z"/></g></svg>

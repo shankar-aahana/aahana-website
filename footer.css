@@ -75,7 +75,7 @@
 .section-footer .ig-glyph { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .section-footer .ig-glyph .ig-dot { fill: currentColor; stroke: none; }
 
-/* PLACEHOLDER WORDMARK, same as the nav. Swap for the agency's SVG. */
+/* Agency logotype, same as the nav (brand-a.css section 27). */
 .section-footer .f-word {
   margin: clamp(48px, 5.5vw, 80px) 0 0;
   font-family: 'Satoshi', sans-serif; font-weight: 500;

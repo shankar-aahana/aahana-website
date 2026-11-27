@@ -774,3 +774,13 @@ h3.stepsub { margin-top: 40px !important; margin-bottom: 12px !important; font-s
 .tooltip-header.vk { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #656559 !important; }
 .tooltip-header.pk { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #7C6444 !important; }
 .tooltip-header.tri { background: linear-gradient(180deg, rgba(40,26,22,0), rgba(40,26,22,.28)), #6E5B4F !important; }
+
+/* 27. The agency logotype (aahana-logo.svg), coloured by the surrounding text.
+   Height follows the font-size of its container, so existing sizes carry over. */
+.aLogo {
+  display: inline-block; vertical-align: baseline; height: .82em; aspect-ratio: 298.17 / 75.36;
+  background-color: currentColor;
+  -webkit-mask: url('aahana-logo.svg') no-repeat center / contain; mask: url('aahana-logo.svg') no-repeat center / contain;
+}
+@media (forced-colors: active) { .aLogo { background-color: CanvasText; } }
+@media (max-width: 860px) { .nav-name .aLogo { height: 1em; } }

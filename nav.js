@@ -151,10 +151,8 @@
         '<span class="nav-mark" aria-hidden="true"></span>' +
         '<span class="nav-rule" aria-hidden="true"></span>' +
         '<span class="nav-words">' +
-          /* PLACEHOLDER WORDMARK. Set in Satoshi lowercase until the
-             agency supplies the real logotype as SVG. The real mark has
-             reversed "a" forms that cannot be reproduced with a font. */
-          '<span class="nav-name">aahana</span>' +
+          /* Agency logotype: aahana-logo.svg as a mask (brand-a.css section 27). */
+          '<span class="nav-name"><span class="aLogo" role="img" aria-label="Aahana"></span></span>' +
         '</span>' +
       '</a>' +
       '<ul class="nav-links">' +

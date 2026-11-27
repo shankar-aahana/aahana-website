@@ -70,7 +70,7 @@
           '</ul>' +
         '</div>' +
       '</div>' +
-      '<div class="f-word" aria-hidden="true">aahana</div>' +
+      '<div class="f-word" aria-hidden="true"><span class="aLogo"></span></div>' +
       '<div class="f-bottom">' +
         '<p class="f-legal">' + LEGAL + '</p>' +
         '<p class="f-meaning">' + MEANING + '</p>' +

@@ -146,9 +146,9 @@ function page(pathname, wrong) {
   .card { width: 100%; max-width: 420px; }
   .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 44px; }
   .mark {
-    width: 34px; height: 36px; flex: 0 0 auto; background-color: var(--ivory);
-    -webkit-mask: url(/aahana-mark.svg) no-repeat center / contain;
-            mask: url(/aahana-mark.svg) no-repeat center / contain;
+    width: 119px; height: 30px; flex: 0 0 auto; background-color: #C6ECA9;
+    -webkit-mask: url(/aahana-logo.svg) no-repeat center / contain;
+            mask: url(/aahana-logo.svg) no-repeat center / contain;
   }
   .rule { width: .5px; height: 32px; background: rgba(243,236,228,.34); }
   .name { font-size: 19px; letter-spacing: .3em; line-height: 1; }
@@ -183,12 +183,9 @@ function page(pathname, wrong) {
 <body>
   <main class="card">
     <div class="brand">
-      <span class="mark" aria-hidden="true"></span>
+      <span class="mark" role="img" aria-label="Aahana"></span>
       <span class="rule" aria-hidden="true"></span>
-      <span>
-        <span class="name">AAHANA</span>
-        <span class="sub" style="display:block">Medical Aesthetics</span>
-      </span>
+      <span class="sub">Medical Aesthetics</span>
     </div>
 
     <h1>Care instructions for our patients</h1>

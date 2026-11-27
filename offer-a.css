@@ -86,3 +86,5 @@ footer a{text-decoration:none;margin:0 10px}footer a:hover{color:var(--brown)}
 .oPrice .range{font-size:14px;line-height:1.7;max-width:280px;margin-left:auto}
 .oPrice .range b{font-size:17px;white-space:nowrap;font-weight:400}
 @media (max-width:720px){.oPrice .range{margin-left:0}}
+.aLogo{display:inline-block;vertical-align:baseline;height:.82em;aspect-ratio:298.17/75.36;background-color:currentColor;-webkit-mask:url('aahana-logo.svg') no-repeat center/contain;mask:url('aahana-logo.svg') no-repeat center/contain}
+@media print{.aLogo{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
