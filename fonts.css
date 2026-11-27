@@ -2,13 +2,11 @@
    Aahana type, per the brand proposal.
 
    Satoshi      headlines and UI   free licence, self-hosted below
-   Social       body               EUR 173, abcdinamo.com  (web licence TBC)
-   Social Mono  accents and labels EUR 173, abcdinamo.com  (web licence TBC)
+   Social       body               ABC Dinamo, licensed Nov 2026 (fonts/)
+   Social Mono  accents and labels ABC Dinamo, licensed Nov 2026 (fonts/)
 
-   Satoshi is live. Social is not bought yet, so body copy currently
-   falls back to Satoshi, which is the same family and holds together
-   fine. When Social is licensed, add its @font-face here and put it
-   ahead of Satoshi in the body stack.
+   All three are live. Roles are applied in brand-a.css section 28
+   (offer-a.css for the loft and referral pages).
 
    The old Cairo and Spectral woff2 files are still in the repo and
    can be deleted once this is signed off.
@@ -25,4 +23,9 @@
 @font-face{font-family:'Satoshi';font-style:normal;font-weight:900;font-display:swap;
   src:url('satoshi-900.woff2') format('woff2');}
 
-/* Social Mono stand-in until the real one is licensed. */
+@font-face{font-family:'Social';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url('fonts/social-400.woff2') format('woff2');}
+@font-face{font-family:'Social';font-style:italic;font-weight:100 900;font-display:swap;
+  src:url('fonts/social-400-italic.woff2') format('woff2');}
+@font-face{font-family:'Social Mono';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url('fonts/social-mono-400.woff2') format('woff2');}

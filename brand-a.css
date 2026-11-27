@@ -784,3 +784,10 @@ h3.stepsub { margin-top: 40px !important; margin-bottom: 12px !important; font-s
 }
 @media (forced-colors: active) { .aLogo { background-color: CanvasText; } }
 @media (max-width: 860px) { .nav-name .aLogo { height: 1em; } }
+
+/* 28. Brand type roles: Satoshi for headlines and UI, Social for body text,
+   Social Mono for labels (via --mono). Social has one weight, so bold
+   lead-ins inside body text are set in Satoshi Medium. */
+:root { --body: 'Social', 'Satoshi', 'Avenir Next', 'Helvetica Neue', system-ui, sans-serif; }
+:is(p, li, dd, td, blockquote, figcaption):not(.xPull p, .aDr-name, .aRing-claim, .xQuiz-q, .aDr-card-top, .aDr-kicker, .aHero-kicker, .aHero-meta, .aLabel, .aRing-tag, .aWait-label, .eyebrow, .f-loc, .oKick, .oLabel, .sCar-count, .svCat-kicker, .svLabel, .txlink) { font-family: var(--body) !important; }
+:is(p, li, dd, td, blockquote, figcaption) :is(strong, b) { font-family: 'Satoshi', sans-serif; font-weight: 500; }

@@ -88,3 +88,6 @@ footer a{text-decoration:none;margin:0 10px}footer a:hover{color:var(--brown)}
 @media (max-width:720px){.oPrice .range{margin-left:0}}
 .aLogo{display:inline-block;vertical-align:baseline;height:.82em;aspect-ratio:298.17/75.36;background-color:currentColor;-webkit-mask:url('aahana-logo.svg') no-repeat center/contain;mask:url('aahana-logo.svg') no-repeat center/contain}
 @media print{.aLogo{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+:root{--body:'Social','Satoshi','Avenir Next','Helvetica Neue',system-ui,sans-serif}
+:is(p,li,dd,td,blockquote,figcaption):not(.oKick,.oLabel){font-family:var(--body)!important}
+:is(p,li,dd,td,blockquote,figcaption) :is(strong,b){font-family:'Satoshi',sans-serif;font-weight:500}
